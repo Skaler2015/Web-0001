@@ -513,6 +513,8 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs
   let selectedTarget = 0;     // bytes; 0 = off
   let queue = [];             // batch items
   let queuePaused = false;
+  let predictTimer = null;    // debounce handle for live prediction
+  let probeCache = { key:'', model:null }; // first-page size-probe cache
 
   /* ---- Compression modes (DPI scale + JPEG quality) ---- */
   const MODES = {
@@ -833,7 +835,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs
   }
 
   /* ════════════ 6. SIZE PROBE / PREDICTION ════════════ */
-  let probeCache = { key:'', model:null };
+  // probeCache is declared at the top (State) to avoid any TDZ
   async function buildProbeModel(file, scale){
     const key = file.name + ':' + file.size + ':' + scale.toFixed(2);
     if(probeCache.key===key && probeCache.model) return probeCache.model;
@@ -862,7 +864,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs
   }
   const dataUrlBytes = u => Math.round((u.length - (u.indexOf(',')+1)) * 0.75);
 
-  let predictTimer;
+  // predictTimer is declared at the top (State) to avoid any TDZ
   function updatePrediction(){
     clearTimeout(predictTimer);
     predictTimer = setTimeout(runPrediction, 220); // debounced
