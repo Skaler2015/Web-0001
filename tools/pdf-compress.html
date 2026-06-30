@@ -217,6 +217,13 @@ body.pdfc-light .pdfc-opt select,body.pdfc-light .pdfc-opt input[type=number]{ba
 .pdfc-related-card .ico{font-size:1.15rem}
 .pdfc-related-card .nm{font-size:.82rem;font-weight:600}
 
+/* visible breadcrumb (matches Breadcrumb schema) */
+.pdfc-breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:7px;font-size:.8rem;padding:18px 0 0;color:var(--pdfc-dim)}
+.pdfc-breadcrumb a{color:var(--pdfc-accent);text-decoration:none}
+.pdfc-breadcrumb a:hover{text-decoration:underline}
+.pdfc-breadcrumb .sep{opacity:.5}
+.pdfc-breadcrumb [aria-current=page]{color:var(--pdfc-text);font-weight:600}
+
 .btn.ghost{background:var(--pdfc-glass);border:1px solid var(--pdfc-brd);color:var(--pdfc-text);box-shadow:none}
 .btn.ghost:hover{border-color:var(--pdfc-accent)}
 @media(max-width:560px){.pdfc-toolbar{flex-direction:column;align-items:flex-start}}
@@ -231,6 +238,13 @@ body.pdfc-light .pdfc-opt select,body.pdfc-light .pdfc-opt input[type=number]{ba
 </header>
 
 <div class="container">
+  <nav class="pdfc-breadcrumb" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a>
+    <span class="sep">›</span>
+    <a href="../category/pdf-tools.html">PDF Tools</a>
+    <span class="sep">›</span>
+    <span aria-current="page">PDF Compress</span>
+  </nav>
   <div class="tool-header">
     <h1>📉 PDF Compressor</h1>
     <p>Smart, private PDF compression — pick a mode (Basic → Maximum), an exact target size, or <b>Lossless</b> (keeps text selectable). AI analyzes your file and recommends the best settings. Everything runs in your browser.</p>
@@ -484,25 +498,49 @@ body.pdfc-light .pdfc-opt select,body.pdfc-light .pdfc-opt input[type=number]{ba
 
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="../assets/common.js"></script>
 <script>
 /* ════════════════════════════════════════════════════════════════════════
    PDF COMPRESSOR — vanilla JS, modular. Reuses common.js helpers
    (setupDropzone, downloadBlob, formatBytes, premToast).
-   pdf.js runs its parser in a Web Worker (set below). Page rendering stays
-   on the main thread (canvas) but yields between pages to keep the UI live.
+   Heavy libraries (pdf-lib, pdf.js, jszip) are LAZY-LOADED on first file
+   selection, so the page loads fast for SEO / Core Web Vitals. pdf.js runs
+   its parser in a Web Worker; page rendering stays on the main thread but
+   yields between pages to keep the UI live.
 ══════════════════════════════════════════════════════════════════════════ */
-pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-
 (function(){
   "use strict";
-  const { PDFDocument } = PDFLib;
+  let PDFDocument;            // assigned once libraries are loaded
+  let libsPromise = null;     // memoised lazy-loader
   const $ = id => document.getElementById(id);
   const clamp = (v,a,b) => Math.max(a, Math.min(b, v));
   const toast = (m) => { try{ premToast(m); }catch(e){} };
+
+  /* ---- Lazy library loader (page-speed / SEO) ---- */
+  const CDN = {
+    pdflib: 'https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js',
+    pdfjs:  'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js',
+    worker: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js',
+    jszip:  'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js'
+  };
+  function loadScript(src){
+    return new Promise((res, rej) => {
+      const s = document.createElement('script');
+      s.src = src; s.async = true;
+      s.onload = res; s.onerror = () => rej(new Error('Failed to load ' + src));
+      document.head.appendChild(s);
+    });
+  }
+  // Loads pdf-lib, pdf.js and jszip once, on demand. Idempotent.
+  function ensureLibs(){
+    if(libsPromise) return libsPromise;
+    libsPromise = (async () => {
+      await Promise.all([ loadScript(CDN.pdflib), loadScript(CDN.pdfjs), loadScript(CDN.jszip) ]);
+      pdfjsLib.GlobalWorkerOptions.workerSrc = CDN.worker;
+      PDFDocument = PDFLib.PDFDocument;
+    })();
+    return libsPromise;
+  }
 
   /* ---- State ---- */
   let currentFile = null;     // active single file
@@ -567,6 +605,9 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs
     $('origSize').textContent = formatBytes(file.size);
 
     try{
+      $('statusMsg').textContent = '⏳ Loading engine…';
+      await ensureLibs();
+      $('statusMsg').textContent = '';
       const buf = await file.arrayBuffer();
       const pdf = await pdfjsLib.getDocument({ data: buf.slice(0) }).promise;
       totalPages = pdf.numPages;
@@ -837,6 +878,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs
   /* ════════════ 6. SIZE PROBE / PREDICTION ════════════ */
   // probeCache is declared at the top (State) to avoid any TDZ
   async function buildProbeModel(file, scale){
+    await ensureLibs();
     const key = file.name + ':' + file.size + ':' + scale.toFixed(2);
     if(probeCache.key===key && probeCache.model) return probeCache.model;
     const buf = await file.arrayBuffer();
@@ -904,6 +946,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs
 
   /* ════════════ 7. COMPRESSION ENGINE ════════════ */
   async function compressPDF(file, cfg, onProgress){
+    await ensureLibs();
     const t0 = performance.now();
     const srcBytes = new Uint8Array(await file.arrayBuffer());
 
@@ -1084,6 +1127,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs
     }catch(e){ $('compareBox').style.display='none'; }
   }
   async function renderFirstPage(fileOrBlob, scale){
+    await ensureLibs();
     const buf = fileOrBlob.arrayBuffer ? await fileOrBlob.arrayBuffer() : fileOrBlob;
     const pdf = await pdfjsLib.getDocument({ data: buf.slice(0) }).promise;
     const pg = await pdf.getPage(1); const vp = pg.getViewport({ scale });
@@ -1142,6 +1186,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs
     const done = queue.filter(it=>it.blob);
     if(!done.length){ toast('Nothing compressed yet'); return; }
     toast('📦 Building ZIP…');
+    await ensureLibs();
     const zip = new JSZip();
     done.forEach(it => zip.file(it.file.name.replace(/\.pdf$/i,'')+'-compressed.pdf', it.blob));
     const blob = await zip.generateAsync({ type:'blob' });
