@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>ApneSoftware — Free Online Utility Tools</title>
+<meta name="description" content="PDF, image, text and calculator tools — all free, no signup, right in your browser.">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+/* ═══════════════════════════════════════════
+   GLASSMORPHISM HOMEPAGE
+═══════════════════════════════════════════ */
+
+/* Full-page gradient background */
+body{
+  background: linear-gradient(135deg, #1a0533 0%, #2d1b69 25%, #1a3a5c 50%, #0d3d2e 75%, #1a2a4a 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Animated background orbs */
+.bg-orbs{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;overflow:hidden;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.45;animation:float 8s ease-in-out infinite}
+.orb1{width:500px;height:500px;background:radial-gradient(circle,#7C5CFC,transparent);top:-100px;left:-100px;animation-delay:0s}
+.orb2{width:400px;height:400px;background:radial-gradient(circle,#16C079,transparent);top:30%;right:-80px;animation-delay:-3s}
+.orb3{width:350px;height:350px;background:radial-gradient(circle,#4F46E5,transparent);bottom:10%;left:20%;animation-delay:-5s}
+.orb4{width:300px;height:300px;background:radial-gradient(circle,#06B6D4,transparent);top:60%;right:30%;animation-delay:-2s}
+@keyframes float{0%,100%{transform:translateY(0) scale(1);opacity:.45}50%{transform:translateY(-30px) scale(1.08);opacity:.55}}
+
+/* Override site-header for glass look */
+.site-header{
+  background:rgba(255,255,255,.08)!important;
+  backdrop-filter:blur(20px)!important;
+  -webkit-backdrop-filter:blur(20px)!important;
+  border-bottom:1px solid rgba(255,255,255,.15)!important;
+  box-shadow:0 4px 30px rgba(0,0,0,.2)!important;
+}
+.site-header .brand{color:#fff!important}
+.site-header .brand span{color:#A78BFA!important}
+.site-header .back-link,.header-link,.nav-link{color:rgba(255,255,255,.8)!important}
+
+/* Glass card mixin */
+.glass-card{
+  background:rgba(255,255,255,.1);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:20px;
+  box-shadow:0 8px 32px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.15);
+}
+
+/* ── HOME LAYOUT ── */
+.home-layout{display:flex;align-items:flex-start;gap:0;width:100%}
+.home-main{flex:1;min-width:0;padding:0 24px}
+.left-sidebar,.right-sidebar{
+  width:270px;min-width:270px;flex-shrink:0;
+  position:sticky;top:58px;
+  height:calc(100vh - 58px);overflow-y:auto;
+  display:flex;flex-direction:column;gap:12px;
+  padding:16px;
+  background:rgba(10,4,26,.6);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+}
+.left-sidebar{border-right:1px solid rgba(255,255,255,.12)}
+.right-sidebar{border-left:1px solid rgba(255,255,255,.12)}
+.left-sidebar::-webkit-scrollbar,.right-sidebar::-webkit-scrollbar{width:4px}
+.left-sidebar::-webkit-scrollbar-track,.right-sidebar::-webkit-scrollbar-track{background:transparent}
+.left-sidebar::-webkit-scrollbar-thumb,.right-sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:2px}
+@media(max-width:1400px){.left-sidebar{display:none}}
+@media(max-width:1100px){.right-sidebar{display:none}}
+
+/* Sidebar cards */
+.rsb-card{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:14px;
+  padding:12px 14px;
+}
+.rsb-card h3{font-size:.8rem;font-weight:700;margin-bottom:10px;color:rgba(255,255,255,.9)}
+.rsb-row{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:.79rem;color:rgba(255,255,255,.8);text-decoration:none}
+.rsb-row:last-child{border-bottom:none}
+.rsb-row:hover{color:#A78BFA}
+.rsb-rank{width:18px;height:18px;border-radius:5px;background:rgba(255,255,255,.12);color:rgba(255,255,255,.6);font-size:.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rsb-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rsb-count{color:rgba(255,255,255,.4);font-size:.68rem;flex-shrink:0}
+.rsb-empty{font-size:.75rem;color:rgba(255,255,255,.4);font-style:italic}
+.rsb-stat-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:.78rem}
+.rsb-stat-row:last-child{border-bottom:none}
+.rsb-stat-row span{color:rgba(255,255,255,.5)}
+.rsb-stat-row strong{color:#A78BFA;font-size:.85rem}
+
+/* ── HERO ── */
+.hero{padding:48px 0 36px;text-align:center}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.25);
+  padding:8px 20px;border-radius:999px;
+  font-size:.8rem;font-weight:600;color:rgba(255,255,255,.9);
+  margin-bottom:24px;backdrop-filter:blur(10px);
+}
+.hero h1{
+  font-size:3.2rem;font-weight:800;color:#fff;
+  line-height:1.1;margin-bottom:14px;
+  text-shadow:0 4px 30px rgba(0,0,0,.4);
+  letter-spacing:-1px;
+}
+.hero h1 .accent{
+  background:linear-gradient(135deg,#A78BFA,#34D399);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-sub{
+  font-size:1.08rem;color:rgba(255,255,255,.7);
+  max-width:560px;margin:0 auto 32px;line-height:1.6;
+}
+
+/* Glass search bar */
+.adv-search-container{max-width:680px;margin:0 auto 28px;position:relative}
+.adv-search-wrap{
+  background:rgba(255,255,255,.1);
+  backdrop-filter:blur(24px);
+  -webkit-backdrop-filter:blur(24px);
+  border:1.5px solid rgba(255,255,255,.25);
+  border-radius:18px;
+  padding:5px 5px 5px 18px;
+  display:flex;align-items:center;gap:10px;
+  box-shadow:0 8px 32px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.15);
+  transition:.25s;
+}
+.adv-search-wrap:focus-within{
+  border-color:rgba(124,92,252,.6);
+  box-shadow:0 8px 32px rgba(0,0,0,.25),0 0 0 4px rgba(124,92,252,.2),inset 0 1px 0 rgba(255,255,255,.15);
+}
+.adv-search-icon{font-size:1.1rem;opacity:.6;flex-shrink:0}
+.adv-search-input{
+  flex:1;background:none;border:none;outline:none;
+  font-size:1rem;color:#fff;font-family:inherit;padding:8px 0;
+}
+.adv-search-input::placeholder{color:rgba(255,255,255,.45)}
+.adv-search-clear{background:none;border:none;color:rgba(255,255,255,.4);cursor:pointer;font-size:1rem;padding:4px;display:none;transition:.15s}
+.adv-search-clear:hover{color:rgba(255,255,255,.8)}
+.adv-search-divider{width:1px;height:28px;background:rgba(255,255,255,.15);flex-shrink:0}
+.adv-search-btn{
+  background:linear-gradient(135deg,#7C5CFC,#5A3FE0);
+  color:#fff;border:none;border-radius:13px;
+  padding:11px 24px;font-size:.9rem;font-weight:700;
+  cursor:pointer;flex-shrink:0;transition:.2s;
+  box-shadow:0 4px 15px rgba(124,92,252,.4);
+  font-family:inherit;
+}
+.adv-search-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(124,92,252,.5)}
+
+/* Dropdown */
+.adv-search-dropdown{
+  position:absolute;top:calc(100% + 8px);left:0;right:0;
+  background:rgba(10,5,25,.97);
+  backdrop-filter:blur(24px);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:16px;overflow:hidden;
+  box-shadow:0 16px 48px rgba(0,0,0,.5);
+  z-index:200;display:none;
+}
+.adv-search-dropdown.show{display:block}
+.adv-dd-section{padding:10px 0}
+.adv-dd-label{
+  font-size:.68rem;font-weight:700;color:rgba(255,255,255,.35);
+  text-transform:uppercase;letter-spacing:.1em;
+  padding:4px 16px 6px;
+}
+.adv-dd-item{
+  display:flex;align-items:center;gap:10px;padding:9px 16px;
+  cursor:pointer;transition:.15s;text-decoration:none;
+}
+.adv-dd-item:hover{background:rgba(124,92,252,.15)}
+.adv-dd-item .di-icon{font-size:1.1rem;width:28px;height:28px;background:rgba(255,255,255,.06);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.adv-dd-item .di-name{font-size:.86rem;color:#fff;font-weight:600}
+.adv-dd-item .di-cat{font-size:.72rem;color:rgba(255,255,255,.4);margin-top:1px}
+.adv-dd-item .di-arrow{margin-left:auto;font-size:.75rem;color:rgba(255,255,255,.3)}
+.adv-dd-item.highlighted{background:rgba(124,92,252,.2)}
+.adv-dd-divider{height:1px;background:rgba(255,255,255,.07);margin:2px 0}
+
+/* Category quick filter pills */
+.search-cat-pills{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin:0 auto 26px;max-width:680px}
+.search-cat-pill{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  color:rgba(255,255,255,.7);border-radius:999px;
+  padding:7px 16px;font-size:.8rem;font-weight:700;
+  cursor:pointer;transition:.2s;font-family:inherit;
+}
+.search-cat-pill:hover,.search-cat-pill.active{
+  background:rgba(124,92,252,.25);border-color:rgba(124,92,252,.5);color:#A78BFA;
+}
+/* Trending tags */
+.trending-tags{display:flex;align-items:center;gap:8px;justify-content:center;margin-bottom:8px;flex-wrap:wrap}
+.trending-label{font-size:.72rem;color:rgba(255,255,255,.35);font-weight:700}
+.trending-tag{font-size:.74rem;color:rgba(255,255,255,.55);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:4px 12px;cursor:pointer;transition:.15s;font-family:inherit}
+.trending-tag:hover{background:rgba(124,92,252,.2);color:#A78BFA;border-color:rgba(124,92,252,.4)}
+/* Hero search backward compat */
+.hero-search-wrap{display:none!important}
+
+/* Hero CTAs */
+.hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+.hero-cta{
+  padding:12px 28px;border-radius:12px;font-weight:700;font-size:.92rem;
+  cursor:pointer;border:none;transition:.2s;
+}
+.hero-cta.primary{
+  background:linear-gradient(135deg,#7C5CFC,#5A3FE0);color:#fff;
+  box-shadow:0 6px 20px rgba(124,92,252,.4);
+}
+.hero-cta.primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(124,92,252,.5)}
+.hero-cta.secondary{
+  background:rgba(255,255,255,.12);color:#fff;
+  border:1px solid rgba(255,255,255,.25);
+  backdrop-filter:blur(10px);
+}
+.hero-cta.secondary:hover{background:rgba(255,255,255,.2);transform:translateY(-2px)}
+
+/* Hero stats */
+.hero-stats{display:flex;gap:0;justify-content:center;margin-bottom:12px}
+.hero-stat{padding:16px 32px;text-align:center;border-right:1px solid rgba(255,255,255,.12)}
+.hero-stat:last-child{border-right:none}
+.hero-stat-num{font-size:1.6rem;font-weight:800;color:#fff;display:block;line-height:1}
+.hero-stat-label{font-size:.75rem;color:rgba(255,255,255,.55);margin-top:4px;display:block}
+
+/* ── CATEGORY CARDS ── */
+.section-title{text-align:center;margin:40px 0 20px}
+.section-title h2{font-size:1.6rem;font-weight:800;color:#fff;margin-bottom:6px}
+.section-title p{font-size:.9rem;color:rgba(255,255,255,.6)}
+
+.cat-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:40px}
+.cat-card{
+  background:rgba(255,255,255,.1);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:22px;
+  padding:22px 20px;
+  cursor:pointer;transition:.3s cubic-bezier(.34,1.56,.64,1);
+  display:flex;flex-direction:column;
+  box-shadow:0 8px 32px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.2);
+  text-decoration:none;color:#fff;
+  position:relative;overflow:hidden;
+}
+.cat-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--cat-color,#7C5CFC),transparent);
+}
+.cat-card:hover{
+  background:rgba(255,255,255,.18);transform:translateY(-8px) scale(1.02);
+  box-shadow:0 20px 50px rgba(0,0,0,.3),0 0 0 1px rgba(255,255,255,.3),0 0 30px rgba(124,92,252,.15);
+}
+.cat-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.cat-icon-wrap{
+  width:52px;height:52px;border-radius:16px;
+  background:rgba(255,255,255,.18);
+  display:flex;align-items:center;justify-content:center;font-size:1.6rem;
+  backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.25);
+  box-shadow:0 4px 16px rgba(0,0,0,.15);
+  transition:.25s;
+}
+.cat-card:hover .cat-icon-wrap{transform:scale(1.1) rotate(-5deg);background:rgba(255,255,255,.25)}
+.cat-pill{
+  background:rgba(255,255,255,.15);color:rgba(255,255,255,.9);
+  font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:999px;
+}
+.cat-card h3{font-size:1.1rem;font-weight:800;margin-bottom:5px;color:#fff;letter-spacing:-.3px}
+.cat-tagline{font-size:.8rem;color:rgba(255,255,255,.65);display:flex;align-items:center;gap:5px}
+.cat-featured{
+  margin-top:12px;padding-top:10px;
+  border-top:1px solid rgba(255,255,255,.12);
+  font-size:.76rem;color:rgba(255,255,255,.7);
+}
+.cat-featured b{color:#A78BFA}
+
+.cat-card.cat-pdf{--cat-color:#F472B6}
+.cat-card.cat-image{--cat-color:#34D399}
+.cat-card.cat-text{--cat-color:#FBBF24}
+.cat-card.cat-calculator{--cat-color:#60A5FA}
+.cat-card.cat-developer{--cat-color:#A78BFA}
+
+/* ── FEATURED TOOLS ── */
+.featured-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;
+  margin-bottom:40px;
+}
+.featured-card{
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.15);border-radius:18px;
+  padding:20px;cursor:pointer;transition:.3s cubic-bezier(.34,1.56,.64,1);
+  text-decoration:none;color:#fff;
+  position:relative;overflow:hidden;
+}
+.featured-card::after{
+  content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent);
+  transition:.5s;
+}
+.featured-card:hover::after{left:150%}
+.featured-card:hover{
+  background:rgba(255,255,255,.15);transform:translateY(-4px);
+  box-shadow:0 12px 28px rgba(0,0,0,.2);border-color:rgba(255,255,255,.3);
+}
+.ficon{font-size:1.8rem;margin-bottom:10px}
+.featured-card h3{font-size:.9rem;font-weight:700;margin-bottom:5px;color:#fff}
+.featured-card p{font-size:.78rem;color:rgba(255,255,255,.6);line-height:1.4}
+.try-link{margin-top:10px;font-size:.78rem;color:#A78BFA;font-weight:600}
+
+/* ── FILTER TABS ── */
+.filter-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.filter-tab{
+  padding:8px 18px;border-radius:10px;border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.08);color:rgba(255,255,255,.75);
+  font-size:.83rem;font-weight:600;cursor:pointer;transition:.2s;
+  backdrop-filter:blur(10px);
+}
+.filter-tab:hover{background:rgba(255,255,255,.15);color:#fff}
+.filter-tab.active{
+  background:linear-gradient(135deg,#7C5CFC,#5A3FE0);color:#fff;
+  border-color:transparent;
+  box-shadow:0 4px 20px rgba(124,92,252,.5),0 0 0 1px rgba(124,92,252,.3);
+  transform:translateY(-1px);
+}
+
+/* ── TOOL CARDS ── */
+.tool-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;
+}
+.tool-card{
+  background:rgba(255,255,255,.07);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.12);border-radius:16px;
+  padding:18px;text-decoration:none;color:#fff;
+  transition:.25s cubic-bezier(.34,1.56,.64,1);display:block;
+}
+.tool-card:hover{
+  background:rgba(255,255,255,.15);transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(0,0,0,.2);border-color:rgba(255,255,255,.25);
+}
+.tool-card .icon{font-size:1.5rem;margin-bottom:8px;transition:.2s;display:block}
+.tool-card:hover .icon{transform:scale(1.15)}
+.tool-card h3{font-size:.84rem;font-weight:700;margin-bottom:4px;color:#fff}
+.tool-card p{font-size:.76rem;color:rgba(255,255,255,.55);line-height:1.4}
+
+/* ── LOAD MORE ── */
+.load-more-wrap{text-align:center;margin-top:28px}
+.load-more-btn{
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);
+  color:#fff;padding:12px 32px;border-radius:999px;
+  font-weight:700;font-size:.88rem;cursor:pointer;
+  backdrop-filter:blur(10px);transition:.2s;
+}
+.load-more-btn:hover{background:rgba(255,255,255,.2)}
+.tools-count-label{color:rgba(255,255,255,.5);font-size:.8rem;margin-top:10px}
+
+/* ── FAQ ── */
+.faq-list{max-width:760px;margin:20px auto 0;display:flex;flex-direction:column;gap:10px}
+.faq-item{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  border-radius:14px;overflow:hidden;backdrop-filter:blur(12px);
+}
+.faq-q{
+  width:100%;text-align:left;padding:16px 20px;background:none;border:none;
+  cursor:pointer;font-weight:700;font-size:.9rem;color:#fff;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.faq-q .caret{color:rgba(255,255,255,.5);transition:.2s;flex-shrink:0}
+.faq-item.open .faq-q .caret{transform:rotate(180deg);color:#A78BFA}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease}
+.faq-item.open .faq-a{max-height:240px}
+.faq-a p{padding:0 20px 16px;color:rgba(255,255,255,.65);font-size:.87rem;line-height:1.6}
+
+/* ── FOOTER ── */
+.footer-rich{
+  background:rgba(0,0,0,.3);backdrop-filter:blur(20px);
+  border-top:1px solid rgba(255,255,255,.1);
+  margin-top:60px;
+}
+.footer-inner{max-width:100%;padding:40px 40px 20px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:30px;margin-bottom:30px}
+.footer-col h4{font-size:.85rem;font-weight:700;color:#A78BFA;margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em}
+.footer-col a{display:block;color:rgba(255,255,255,.6);font-size:.82rem;margin-bottom:6px;text-decoration:none;transition:.15s}
+.footer-col a:hover{color:#A78BFA}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:.8rem;color:rgba(255,255,255,.4)}
+.footer-bottom a{color:#A78BFA;font-weight:600}
+
+/* Search loading */
+.loading-msg{text-align:center;color:rgba(255,255,255,.5);padding:40px}
+
+/* No results */
+#noResults{color:rgba(255,255,255,.6)}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero h1{font-size:2rem}
+  .hero-stat{padding:12px 18px}
+  .home-main{padding:0 14px}
+  .hero-stats{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-orbs">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+  <div class="orb orb4"></div>
+</div>
+
+<!-- Site Header — nav auto-injected by common.js -->
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="index.html">Apne<span>Software</span></a>
+  </div>
+</header>
+
+<div class="home-layout">
+
+<!-- LEFT SIDEBAR -->
+<aside class="left-sidebar" id="leftSidebar">
+  <div class="rsb-card">
+    <h3>⚡ Quick Links</h3>
+    <a href="tools/pdf-merge.html" class="rsb-row">📄 PDF Merge</a>
+    <a href="tools/image-compressor.html" class="rsb-row">🖼️ Image Compressor</a>
+    <a href="tools/word-counter.html" class="rsb-row">📝 Word Counter</a>
+    <a href="tools/emi-calculator.html" class="rsb-row">💰 EMI Calculator</a>
+    <a href="tools/qr-generator.html" class="rsb-row">🔲 QR Generator</a>
+    <a href="tools/password-generator.html" class="rsb-row">🔑 Password Generator</a>
+    <a href="tools/image-to-pdf.html" class="rsb-row">🖼️ Image to PDF</a>
+    <a href="tools/pdf-compress.html" class="rsb-row">📦 PDF Compress</a>
+  </div>
+  <div class="rsb-card">
+    <h3>🆕 Recently Added</h3>
+    <div id="lsbNew"><p class="rsb-empty">Loading...</p></div>
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<div class="home-main">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div style="font-size:.75rem;color:rgba(255,255,255,.35);margin-bottom:8px;letter-spacing:.04em">Managed by <span style="color:#A78BFA;font-weight:600">Subhash Kaler</span></div>
+    <div class="hero-badge">⚡ 154+ Free Tools &nbsp;·&nbsp; No Login &nbsp;·&nbsp; No Upload &nbsp;·&nbsp; No Limits</div>
+    <h1>Free Tools to Make<br>Your <span class="accent" id="rotateWord">Work</span> Simple</h1>
+    <p class="hero-sub">PDF, Image, Text & Calculator tools — everything runs right in your browser.<br>Your files <strong style="color:#34D399">never leave your device</strong>.</p>
+
+    <!-- ADVANCED SEARCH -->
+    <div class="adv-search-container" id="advSearchContainer">
+      <div class="adv-search-wrap">
+        <span class="adv-search-icon">🔍</span>
+        <input type="text" class="adv-search-input" id="searchInput"
+          placeholder="Search 154+ tools... PDF Merge, EMI Calculator, QR Code..."
+          autocomplete="off" spellcheck="false">
+        <button class="adv-search-clear" id="searchClearBtn" title="Clear">✕</button>
+        <div class="adv-search-divider"></div>
+        <button class="adv-search-btn" id="searchBtnHero">Search</button>
+      </div>
+      <!-- Results Dropdown -->
+      <div class="adv-search-dropdown" id="advSearchDropdown"></div>
+    </div>
+
+    <!-- Trending Tags -->
+    <div class="trending-tags" id="trendingTags">
+      <span class="trending-label">🔥 Popular:</span>
+      <button class="trending-tag" onclick="quickSearch('PDF Merge')">PDF Merge</button>
+      <button class="trending-tag" onclick="quickSearch('Image Compress')">Image Compress</button>
+      <button class="trending-tag" onclick="quickSearch('QR Code')">QR Code</button>
+      <button class="trending-tag" onclick="quickSearch('EMI Calculator')">EMI Calculator</button>
+      <button class="trending-tag" onclick="quickSearch('Word Counter')">Word Counter</button>
+      <button class="trending-tag" onclick="quickSearch('Password')">Password Gen</button>
+    </div>
+
+    <!-- Category Pills -->
+    <div class="search-cat-pills" id="catPills">
+      <button class="search-cat-pill active" data-cat="all" onclick="filterCatPill(this,'all')">✨ All Tools</button>
+      <button class="search-cat-pill" data-cat="pdf" onclick="filterCatPill(this,'pdf')">📄 PDF</button>
+      <button class="search-cat-pill" data-cat="image" onclick="filterCatPill(this,'image')">🖼️ Image</button>
+      <button class="search-cat-pill" data-cat="text" onclick="filterCatPill(this,'text')">📝 Text</button>
+      <button class="search-cat-pill" data-cat="calculator" onclick="filterCatPill(this,'calculator')">🧮 Calculator</button>
+      <button class="search-cat-pill" data-cat="developer" onclick="filterCatPill(this,'developer')">⚙️ Developer</button>
+    </div>
+
+    <div class="hero-ctas">
+      <button class="hero-cta primary" id="ctaExplore">Explore All Tools</button>
+      <button class="hero-cta secondary" id="ctaCategories">Browse Categories</button>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num" id="statTools">154+</span>
+        <span class="hero-stat-label">Free Tools</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">5</span>
+        <span class="hero-stat-label">Categories</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">100%</span>
+        <span class="hero-stat-label">Free Always</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">0</span>
+        <span class="hero-stat-label">Files Uploaded</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY CARDS -->
+  <div class="section-title" id="catCards" style="scroll-margin-top:80px">
+    <h2>Browse by Category</h2>
+    <p>Pick a category or search above for any tool</p>
+  </div>
+  <div class="cat-cards" id="catCardsGrid"></div>
+
+  <!-- FEATURED -->
+  <div class="section-title">
+    <h2>✨ Popular Tools</h2>
+    <p>Most used tools — open and start for free</p>
+  </div>
+  <div class="featured-grid" id="featuredGrid"></div>
+  <div style="text-align:center;margin-bottom:40px">
+    <button class="hero-cta secondary" id="ctaViewAll">View All Tools ↓</button>
+  </div>
+
+  <!-- ALL TOOLS BROWSE -->
+  <div class="section-title" id="browseSection" style="scroll-margin-top:80px">
+    <h2>All Tools</h2>
+    <p>Filter by category or use the search bar above</p>
+  </div>
+
+  <div class="filter-tabs" id="filterTabs">
+    <button class="filter-tab active" data-cat="all">All Tools</button>
+  </div>
+
+  <div id="toolsContainer" class="tool-grid">
+    <p class="loading-msg">Loading tools...</p>
+  </div>
+  <p id="noResults" style="display:none;text-align:center;color:rgba(255,255,255,.5);margin-top:30px">No tools found 🙁</p>
+  <div class="load-more-wrap" id="loadMoreWrap" style="display:none">
+    <button class="load-more-btn" id="loadMoreBtn">Load More Tools</button>
+    <p class="tools-count-label" id="toolsCountLabel"></p>
+  </div>
+
+  <!-- RECENTLY ADDED -->
+  <div class="section-title" style="margin-top:50px">
+    <h2>🆕 Recently Added Tools</h2>
+    <p>Brand new tools — try them first</p>
+  </div>
+  <div class="featured-grid" id="recentGrid"></div>
+
+  <!-- FAQ -->
+  <div class="section-title" style="margin-top:50px">
+    <h2>Frequently Asked Questions</h2>
+    <p>Quick answers — click a question to expand</p>
+  </div>
+  <div class="faq-list" id="faqList"></div>
+
+</div><!-- /home-main -->
+
+<!-- RIGHT SIDEBAR -->
+<aside class="right-sidebar" id="rightSidebar">
+  <div class="rsb-card">
+    <h3>📊 Site Analytics</h3>
+    <div id="rsbSiteStats">
+      <div class="rsb-stat-row"><span>👥 Total Visitors</span><strong id="statTotalVisitors">—</strong></div>
+      <div class="rsb-stat-row"><span>⚡ Total Uses</span><strong id="statTotalRuns">—</strong></div>
+      <div class="rsb-stat-row"><span>📅 Today Visitors</span><strong id="statTodayVisitors">—</strong></div>
+      <div class="rsb-stat-row"><span>🔥 Today Uses</span><strong id="statTodayRuns">—</strong></div>
+      <div class="rsb-stat-row"><span>🛠️ Total Tools</span><strong id="statTotalToolsDb">—</strong></div>
+    </div>
+  </div>
+  <div class="rsb-card">
+    <h3>🏆 Most Used Tools</h3>
+    <div id="rsbMostUsed"><p class="rsb-empty">Loading...</p></div>
+  </div>
+  <div class="rsb-card">
+    <h3>📁 Categories</h3>
+    <div id="rsbCategories"></div>
+  </div>
+</aside>
+
+</div><!-- /home-layout -->
+
+<!-- FOOTER -->
+<footer class="footer-rich">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div style="font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:8px">Apne<span style="color:#A78BFA">Software</span></div>
+        <p style="font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.6">Free online tools for everyone. No login, no upload, no limits.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <div id="footerCatCol"></div>
+      </div>
+      <div class="footer-col">
+        <h4>Popular Tools</h4>
+        <a href="tools/pdf-merge.html">📄 PDF Merge</a>
+        <a href="tools/image-compressor.html">🖼️ Image Compressor</a>
+        <a href="tools/qr-generator.html">🔲 QR Generator</a>
+        <a href="tools/emi-calculator.html">💰 EMI Calculator</a>
+        <a href="tools/word-counter.html">📝 Word Counter</a>
+        <a href="tools/pdf-compress.html">📦 PDF Compress</a>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="index.html">🏠 Home</a>
+        <a href="blog.html">📰 Blog</a>
+
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ApneSoftware.com — Free Tools, No Limits</span>
+      <span>Managed by <strong style="color:#A78BFA">Subhash Kaler</strong> &nbsp;·&nbsp; Made with ❤️ for everyone</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/common.js"></script>
+<script>
+let toolsData = null;
+let currentCategory = 'all';
+
+/* ── ROTATING HERO WORD ── */
+const ROTATE_WORDS = ['Work','Studies','Business','Daily Tasks','Life'];
+let rotateIdx = 0;
+(function rotateHeroWord(){
+  const el = document.getElementById('rotateWord');
+  if(!el) return;
+  setInterval(()=>{
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(-8px)';
+    setTimeout(()=>{
+      rotateIdx = (rotateIdx+1) % ROTATE_WORDS.length;
+      el.textContent = ROTATE_WORDS[rotateIdx];
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    },250);
+  },2400);
+  el.style.transition = 'opacity .25s,transform .25s';
+})();
+
+/* ── DATA LOAD ── */
+async function loadData(){
+  try{
+    const res = await fetch('assets/tools-data.json',{cache:'no-store'});
+    toolsData = await res.json();
+    renderCatCards();
+    renderFilterTabs();
+    renderFooterCategories();
+    renderFeatured();
+    renderRecentTools();
+    renderSidebars();
+    document.getElementById('statTools').textContent = toolsData.tools.filter(t=>t.published).length + '+';
+    setupSearch();
+    render();
+  }catch(err){
+    document.getElementById('toolsContainer').innerHTML='<p class="loading-msg">⚠️ Could not load tools. Please refresh.</p>';
+  }
+}
+
+/* ── CATEGORY CARDS ── */
+const FEATURED_TOOL_PER_CAT={pdf:'pdf-merge',image:'image-compressor',text:'word-counter',calculator:'emi-calculator',developer:'qr-generator'};
+
+function renderCatCards(){
+  const wrap = document.getElementById('catCardsGrid');
+  wrap.innerHTML='';
+  toolsData.categories.forEach(cat=>{
+    const toolsInCat = toolsData.tools.filter(t=>t.category===cat.id&&t.published);
+    const count = toolsInCat.length;
+    const featuredTool = toolsData.tools.find(t=>t.id===FEATURED_TOOL_PER_CAT[cat.id])||toolsInCat[0];
+    const card = document.createElement('a');
+    card.className = 'cat-card cat-'+cat.id;
+    card.href = '#';
+    card.addEventListener('click',(e)=>{
+      e.preventDefault();
+      setCategory(cat.id);
+      document.getElementById('browseSection').scrollIntoView({behavior:'smooth'});
+    });
+    card.innerHTML=`
+      <div class="cat-top">
+        <div class="cat-icon-wrap">${cat.icon}</div>
+        <div class="cat-pill">${count}+ tools</div>
+      </div>
+      <h3>${cat.name}</h3>
+      <div class="cat-tagline">Explore ${cat.name.replace(/ Tools$|& Converters$/,'')} →</div>
+      ${featuredTool?`<div class="cat-featured">Featured: <b>${featuredTool.name}</b></div>`:''}
+    `;
+    wrap.appendChild(card);
+  });
+}
+
+/* ── FEATURED TOOLS ── */
+const FEATURED_IDS=['pdf-merge','image-compressor','resume-builder','income-tax-calculator','certificate-generator','qr-generator'];
+function renderFeatured(){
+  const grid = document.getElementById('featuredGrid');
+  grid.innerHTML='';
+  FEATURED_IDS.forEach(id=>{
+    const tool = toolsData.tools.find(t=>t.id===id);
+    if(!tool) return;
+    const a = document.createElement('a');
+    a.className='featured-card';
+    a.href=tool.url;
+    a.innerHTML=`<div class="ficon">${tool.icon}</div><h3>${tool.name}</h3><p>${tool.description}</p><div class="try-link">Try it free →</div>`;
+    grid.appendChild(a);
+  });
+}
+
+/* ── FILTER TABS ── */
+function renderFilterTabs(){
+  const wrap = document.getElementById('filterTabs');
+  wrap.innerHTML='<button class="filter-tab active" data-cat="all">All Tools</button>';
+  toolsData.categories.forEach(cat=>{
+    const btn=document.createElement('button');
+    btn.className='filter-tab';
+    btn.dataset.cat=cat.id;
+    btn.textContent=cat.icon+' '+cat.name;
+    wrap.appendChild(btn);
+  });
+  wrap.querySelectorAll('.filter-tab').forEach(btn=>btn.addEventListener('click',()=>setCategory(btn.dataset.cat)));
+}
+
+/* ── FOOTER CATEGORIES ── */
+function renderFooterCategories(){
+  const col=document.getElementById('footerCatCol');
+  toolsData.categories.forEach(cat=>{
+    const a=document.createElement('a');
+    a.href='#';
+    a.textContent=cat.icon+' '+cat.name;
+    a.addEventListener('click',(e)=>{e.preventDefault();setCategory(cat.id);document.getElementById('browseSection').scrollIntoView({behavior:'smooth'});});
+    col.appendChild(a);
+  });
+}
+
+/* ── RECENT TOOLS ── */
+function renderRecentTools(){
+  const grid = document.getElementById('recentGrid');
+  if(!grid) return;
+  const recent = toolsData.tools.filter(t=>t.published).slice(-6).reverse();
+  grid.innerHTML='';
+  recent.forEach(tool=>{
+    const a=document.createElement('a');
+    a.className='featured-card';
+    a.href=tool.url;
+    a.innerHTML=`
+      <div style="position:absolute;top:12px;right:12px;background:linear-gradient(135deg,#16C079,#0EA562);color:#fff;font-size:.65rem;font-weight:700;padding:3px 8px;border-radius:999px">NEW</div>
+      <div class="ficon">${tool.icon}</div>
+      <h3>${tool.name}</h3>
+      <p>${tool.description}</p>
+      <div class="try-link">Try it free →</div>
+    `;
+    grid.appendChild(a);
+  });
+}
+
+/* ── SIDEBARS ── */
+async function renderSidebars(){
+  // Left sidebar — new tools
+  const lsbNew=document.getElementById('lsbNew');
+  if(lsbNew){
+    const newTools=toolsData.tools.filter(t=>t.published).slice(-6).reverse();
+    lsbNew.innerHTML=newTools.map(t=>`<a href="${t.url}" class="rsb-row"><span class="rsb-name">${t.icon||''} ${t.name}</span></a>`).join('');
+  }
+
+  // Right sidebar — categories
+  const cats=[...toolsData.categories].sort((a,b)=>{
+    return toolsData.tools.filter(t=>t.category===b.id&&t.published).length -
+           toolsData.tools.filter(t=>t.category===a.id&&t.published).length;
+  });
+  document.getElementById('rsbCategories').innerHTML=cats.map(c=>{
+    const count=toolsData.tools.filter(t=>t.category===c.id&&t.published).length;
+    return `<div class="rsb-row" style="cursor:pointer" onclick="setCategory('${c.id}');document.getElementById('browseSection').scrollIntoView({behavior:'smooth'})"><span class="rsb-name">${c.icon} ${c.name}</span><span class="rsb-count">${count}</span></div>`;
+  }).join('');
+
+  // Analytics
+  try{
+    const r=await fetch('backend/site_stats.php',{cache:'no-store'});
+    const d=await r.json();
+    const fmt=n=>Number(n||0).toLocaleString('en-IN');
+    document.getElementById('statTotalVisitors').textContent=fmt(d.total_visitors);
+    document.getElementById('statTotalRuns').textContent=fmt(d.total_runs);
+    document.getElementById('statTodayVisitors').textContent=fmt(d.today_visitors);
+    document.getElementById('statTodayRuns').textContent=fmt(d.today_runs);
+    document.getElementById('statTotalToolsDb').textContent=fmt(d.total_tools);
+    const box=document.getElementById('rsbMostUsed');
+    if(d.has_data&&d.top_tools.length){
+      box.innerHTML=d.top_tools.map((t,i)=>`<div class="rsb-row"><span class="rsb-rank">${i+1}</span><span class="rsb-name">${t.icon||''} ${t.tool_name}</span><span class="rsb-count">▶${fmt(t.total_runs)}</span></div>`).join('');
+    } else {
+      box.innerHTML='<p class="rsb-empty">Stats appear once visitors use tools.</p>';
+    }
+  }catch(e){
+    document.getElementById('rsbMostUsed').innerHTML='<p class="rsb-empty">Stats unavailable.</p>';
+  }
+}
+
+/* ── TOOL GRID ── */
+function setCategory(catId){
+  currentCategory=catId;
+  visibleCount=PAGE_SIZE;
+  document.getElementById('searchInput').value='';
+  document.querySelectorAll('.filter-tab').forEach(b=>b.classList.toggle('active',b.dataset.cat===catId));
+  render();
+}
+
+const PAGE_SIZE=12;
+let visibleCount=PAGE_SIZE;
+
+function getFilteredTools(){
+  return toolsData.tools.filter(t=>t.published&&(currentCategory==='all'||t.category===currentCategory));
+}
+
+function render(){
+  const container=document.getElementById('toolsContainer');
+  const loadMoreWrap=document.getElementById('loadMoreWrap');
+  const noResults=document.getElementById('noResults');
+  container.innerHTML='';
+  const filtered=getFilteredTools();
+  const toShow=filtered.slice(0,visibleCount);
+  toShow.forEach(tool=>{
+    const a=document.createElement('a');
+    a.className='tool-card';
+    a.href=tool.url;
+    a.innerHTML=`<div class="icon">${tool.icon}</div><h3>${tool.name}</h3><p>${tool.description}</p>`;
+    container.appendChild(a);
+  });
+  noResults.style.display=filtered.length?'none':'block';
+  if(filtered.length>visibleCount){
+    loadMoreWrap.style.display='block';
+    document.getElementById('loadMoreBtn').style.display='';
+    document.getElementById('toolsCountLabel').textContent=`Showing ${toShow.length} of ${filtered.length} tools`;
+  } else if(filtered.length>PAGE_SIZE){
+    loadMoreWrap.style.display='block';
+    document.getElementById('loadMoreBtn').style.display='none';
+    document.getElementById('toolsCountLabel').textContent=`Showing all ${filtered.length} tools`;
+  } else {
+    loadMoreWrap.style.display='none';
+  }
+}
+
+document.getElementById('loadMoreBtn').addEventListener('click',()=>{visibleCount+=PAGE_SIZE;render();});
+
+/* ── SEARCH ── */
+function setupSearch(){
+/* ── ADVANCED SEARCH ── */
+const advInput = document.getElementById('searchInput');
+const advDropdown = document.getElementById('advSearchDropdown');
+const advClearBtn = document.getElementById('searchClearBtn');
+let searchDebounce = null;
+let selectedIdx = -1;
+
+// Quick search from trending tags
+function quickSearch(q){
+  advInput.value = q;
+  renderAdvResults(q);
+  advInput.focus();
+}
+
+// Category pill filter
+function filterCatPill(btn, cat){
+  document.querySelectorAll('.search-cat-pill').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentCategory = cat;
+  renderAllTools(toolsData);
+  // Scroll to tools section
+  const sec = document.getElementById('allToolsSection');
+  if(sec) sec.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+if(advInput){
+  advInput.addEventListener('input', function(){
+    const q = this.value.trim();
+    advClearBtn.style.display = q ? 'block' : 'none';
+    clearTimeout(searchDebounce);
+    searchDebounce = setTimeout(() => {
+      if(q.length >= 1) renderAdvResults(q);
+      else closeDropdown();
+    }, 150);
+  });
+
+  advInput.addEventListener('keydown', function(e){
+    const items = advDropdown.querySelectorAll('.adv-dd-item');
+    if(e.key === 'ArrowDown'){ e.preventDefault(); selectItem(items, selectedIdx+1); }
+    else if(e.key === 'ArrowUp'){ e.preventDefault(); selectItem(items, selectedIdx-1); }
+    else if(e.key === 'Enter'){
+      if(selectedIdx >= 0 && items[selectedIdx]){
+        items[selectedIdx].click();
+      } else {
+        performSearch(this.value);
+      }
+      e.preventDefault();
+    }
+    else if(e.key === 'Escape'){ closeDropdown(); }
+  });
+
+  advInput.addEventListener('focus', function(){
+    if(this.value.trim().length >= 1) renderAdvResults(this.value.trim());
+  });
+}
+
+if(advClearBtn){
+  advClearBtn.addEventListener('click', () => {
+    advInput.value = '';
+    advClearBtn.style.display = 'none';
+    closeDropdown();
+    advInput.focus();
+  });
+}
+
+document.addEventListener('click', e => {
+  if(!e.target.closest('#advSearchContainer')) closeDropdown();
+});
+
+document.getElementById('searchBtnHero')?.addEventListener('click', () => {
+  performSearch(advInput.value);
+});
+
+function selectItem(items, idx){
+  items.forEach(i => i.classList.remove('highlighted'));
+  selectedIdx = Math.max(-1, Math.min(items.length-1, idx));
+  if(selectedIdx >= 0){ items[selectedIdx].classList.add('highlighted'); items[selectedIdx].scrollIntoView({block:'nearest'}); }
+}
+
+function closeDropdown(){
+  advDropdown.classList.remove('show');
+  advDropdown.innerHTML = '';
+  selectedIdx = -1;
+}
+
+function renderAdvResults(q){
+  if(!toolsData) return;
+  selectedIdx = -1;
+  const ql = q.toLowerCase();
+  const results = toolsData.tools.filter(t => t.published && (
+    t.name.toLowerCase().includes(ql) ||
+    t.description?.toLowerCase().includes(ql) ||
+    t.category?.toLowerCase().includes(ql)
+  )).slice(0, 8);
+
+  const catMap = {'pdf':'📄 PDF','image':'🖼️ Image','text':'📝 Text','calculator':'🧮 Calculator','developer':'⚙️ Developer'};
+
+  if(!results.length){
+    advDropdown.innerHTML = '<div style="padding:18px;text-align:center;color:rgba(255,255,255,.35);font-size:.84rem">🔍 No tools found for "' + q + '"</div>';
+    advDropdown.classList.add('show');
+    return;
+  }
+
+  // Group by category
+  const grouped = {};
+  results.forEach(t => {
+    if(!grouped[t.category]) grouped[t.category] = [];
+    grouped[t.category].push(t);
+  });
+
+  let html = '';
+  Object.entries(grouped).forEach(([cat, tools]) => {
+    html += '<div class="adv-dd-section">';
+    html += '<div class="adv-dd-label">' + (catMap[cat] || cat) + '</div>';
+    tools.forEach(t => {
+      html += '<a class="adv-dd-item" href="' + t.url + '">'
+        + '<div class="di-icon">' + (t.icon||'🔧') + '</div>'
+        + '<div><div class="di-name">' + t.name + '</div>'
+        + '<div class="di-cat">' + (t.description||'').substring(0,50) + '</div></div>'
+        + '<span class="di-arrow">→</span></a>';
+    });
+    html += '</div><div class="adv-dd-divider"></div>';
+  });
+
+  // "See all results" footer
+  html += '<div class="adv-dd-section" style="padding:8px 16px;display:flex;justify-content:space-between;align-items:center">'
+    + '<span style="font-size:.76rem;color:rgba(255,255,255,.4)">' + results.length + ' result' + (results.length>1?'s':'') + ' found</span>'
+    + '<span class="adv-see-all" style="background:rgba(124,92,252,.2);border:1px solid rgba(124,92,252,.35);color:#A78BFA;border-radius:7px;padding:5px 12px;font-size:.76rem;cursor:pointer">See all results →</span>'
+    + '</div>';
+  advDropdown.innerHTML = html;
+  advDropdown.classList.add('show');
+  // See-all click
+  advDropdown.querySelector('.adv-see-all')?.addEventListener('click', () => performSearch(q));
+}
+
+function performSearch(q){
+  closeDropdown();
+  if(!q.trim()) return;
+  // Filter tool grid
+  currentCategory = 'all';
+  document.querySelectorAll('.search-cat-pill').forEach(p => p.classList.remove('active'));
+  document.querySelector('.search-cat-pill[data-cat="all"]')?.classList.add('active');
+  const filterInput = document.getElementById('toolFilter');
+  if(filterInput){ filterInput.value = q; filterInput.dispatchEvent(new Event('input')); }
+  // Scroll to tools
+  const sec = document.getElementById('allToolsSection');
+  if(sec) sec.scrollIntoView({behavior:'smooth'});
+}
+
+  const inp=document.getElementById('searchInput');
+  inp.oninput=()=>{
+    const q=inp.value.trim().toLowerCase();
+    const container=document.getElementById('toolsContainer');
+    const noResults=document.getElementById('noResults');
+    if(!q){render();return;}
+    const matches=toolsData.tools.filter(t=>t.published&&(t.name+' '+t.description).toLowerCase().includes(q));
+    container.innerHTML='';
+    matches.forEach(tool=>{
+      const a=document.createElement('a');
+      a.className='tool-card';a.href=tool.url;
+      a.innerHTML=`<div class="icon">${tool.icon}</div><h3>${tool.name}</h3><p>${tool.description}</p>`;
+      container.appendChild(a);
+    });
+    noResults.style.display=matches.length?'none':'block';
+    document.getElementById('loadMoreWrap').style.display='none';
+  };
+}
+
+/* ── FAQ ── */
+const FAQ_ITEMS=[
+  {q:'Is ApneSoftware really free?',a:'Yes — every tool is completely free with no hidden limits, no premium tier, and no trial period.'},
+  {q:'Do I need to sign up or log in?',a:'No. There is no account system — just open a tool and start using it straight away.'},
+  {q:'Are my files uploaded to a server?',a:'No. Every tool runs entirely inside your browser — your files never leave your device.'},
+  {q:'Which devices and browsers are supported?',a:'Any modern browser on desktop, tablet, or mobile — Chrome, Firefox, Edge, and Safari all work.'},
+  {q:'Can I suggest a new tool?',a:'Yes — new tools are added regularly. ApneSoftware is always growing based on what people find useful.'},
+];
+(function renderFAQ(){
+  const wrap=document.getElementById('faqList');
+  wrap.innerHTML=FAQ_ITEMS.map((item,i)=>`
+    <div class="faq-item" data-i="${i}">
+      <button class="faq-q" type="button"><span>${item.q}</span><span class="caret">▾</span></button>
+      <div class="faq-a"><p>${item.a}</p></div>
+    </div>`).join('');
+  wrap.querySelectorAll('.faq-item').forEach(item=>item.querySelector('.faq-q').addEventListener('click',()=>item.classList.toggle('open')));
+})();
+
+/* ── CTA BUTTONS ── */
+document.getElementById('ctaExplore').addEventListener('click',()=>document.getElementById('browseSection').scrollIntoView({behavior:'smooth'}));
+document.getElementById('ctaCategories').addEventListener('click',()=>document.getElementById('catCardsGrid').scrollIntoView({behavior:'smooth'}));
+document.getElementById('ctaViewAll').addEventListener('click',()=>document.getElementById('browseSection').scrollIntoView({behavior:'smooth'}));
+
+loadData();
+</script>
+
+</body>
+</html>

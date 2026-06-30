@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /skaler2015/
+Disallow: /backend/
+Disallow: /assets/check.php
+
+Allow: /assets/style.css
+Allow: /assets/common.js
+Allow: /assets/code-preview-style.css
+Allow: /assets/code-preview-script.js
+
+Sitemap: https://apnesoftware.com/sitemap.xml
