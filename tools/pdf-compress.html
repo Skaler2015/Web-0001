@@ -1013,10 +1013,14 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs
       const res = cfg.target>0 ? await compressToTarget(currentFile, cfg, onP) : await compressPDF(currentFile, cfg, onP);
       lastResult = res;
       showResult(res.stats);
+      // Auto-download immediately (button says "Compress & Download")
+      downloadBlob(dlName(), res.blob);
       await buildComparison(currentFile, res.blob, cfg);
-      $('statusMsg').textContent = '✅ Done — '+formatBytes(res.stats.original)+' → '+formatBytes(res.stats.compressed)+
-        ' ('+res.stats.pct+'% smaller)';
-      toast('✅ Compressed '+res.stats.pct+'% smaller');
+      const note = res.stats.saved > 0
+        ? ' ('+res.stats.pct+'% smaller)'
+        : ' — already well-compressed; try Strong/Maximum mode or a target size for more reduction';
+      $('statusMsg').textContent = '✅ Done — '+formatBytes(res.stats.original)+' → '+formatBytes(res.stats.compressed)+ note;
+      toast(res.stats.saved>0 ? ('✅ Compressed '+res.stats.pct+'% smaller') : '✅ Saved (little to compress)');
     }catch(err){
       $('statusMsg').textContent = '❌ Error: ' + err.message;
       toast('❌ '+err.message);
