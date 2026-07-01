@@ -40,6 +40,12 @@
 body.dark-mode { background: var(--bg, #0e1117) !important; }
 #module-editor { height: calc(100vh - 44px - 46px) !important; }
 #module-preview { height: calc(100vh - 44px) !important; }
+/* Fix: Website Preview panel is a flex row, so its layout child must grow to
+   full width — otherwise the preview collapses to a narrow column with a large
+   empty area on the right. */
+#module-preview > .wp-layout { flex: 1 1 auto !important; width: 100% !important; min-width: 0 !important; }
+.wp-iframe-container { align-items: stretch !important; }
+.wp-iframe-wrap.vp-tablet, .wp-iframe-wrap.vp-mobile { align-self: center; }
 </style>
 </head>
 <body class="dark-mode" id="appBody">
