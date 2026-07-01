@@ -288,7 +288,13 @@ body.wc-focus .wc-hidefocus{display:none!important}
   </div>
 </div>
 
-<div class="wc-seo wc-faq"><h2>❓ Frequently Asked Questions / अक्सर पूछे जाने वाले प्रश्न</h2><div id="faqList"></div></div>
+<div class="wc-seo wc-faq"><h2>❓ Frequently Asked Questions / अक्सर पूछे जाने वाले प्रश्न</h2>
+  <div class="info-section">
+    <div class="info-block"><h3>English</h3><div id="faqListEn"></div></div>
+    <hr class="info-divider">
+    <div class="info-block"><h3>हिंदी (Hindi)</h3><div id="faqListHi"></div></div>
+  </div>
+</div>
 
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
@@ -602,9 +608,8 @@ body.wc-focus .wc-hidefocus{display:none!important}
     'क्या यह Word Counter सचमुच मुफ़्त है?','हाँ, पूरी तरह मुफ़्त — कोई सीमा नहीं, कोई watermark नहीं और किसी account की ज़रूरत नहीं।']
   ];
   const faqRow = (q,a)=>'<details><summary>'+esc(q)+'</summary><p>'+esc(a)+'</p></details>';
-  $('faqList').innerHTML =
-    '<h3 style="margin:6px 0 10px">English</h3>' + FAQ.map(f=>faqRow(f[0],f[1])).join('') +
-    '<h3 style="margin:22px 0 10px">हिंदी (Hindi)</h3>' + FAQ.map(f=>faqRow(f[2],f[3])).join('');
+  $('faqListEn').innerHTML = FAQ.map(f=>faqRow(f[0],f[1])).join('');
+  $('faqListHi').innerHTML = FAQ.map(f=>faqRow(f[2],f[3])).join('');
   try{ const sc=$('faqSchema'); const data=JSON.parse(sc.textContent);
     data.mainEntity=[].concat(
       FAQ.map(f=>({'@type':'Question',name:f[0],acceptedAnswer:{'@type':'Answer',text:f[1]}})),
