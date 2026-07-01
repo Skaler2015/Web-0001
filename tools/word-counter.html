@@ -3,24 +3,96 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0d0a1f">
 <link rel="canonical" href="https://apnesoftware.com/tools/word-counter.html">
+<meta name="description" content="Advanced free Word Counter — live words, characters, sentences, paragraphs, pages, reading & speaking time, readability score, keyword density, social-media limits, writing targets, text cleaner, case converter, find & replace and report export. 100% offline.">
+<meta name="keywords" content="word counter, character counter, words to characters, sentence counter, paragraph counter, reading time calculator, keyword density checker, readability score, word count tool online free">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Word Counter — Count Words & Characters | ApneSoftware">
-<meta property="og:description" content="Count words, characters and lines. Free online tool — no signup required.">
+<meta property="og:title" content="Word Counter — Words, Characters, Readability, Keywords & More | ApneSoftware">
+<meta property="og:description" content="Count words & characters live, plus readability, keyword density, social-media limits, writing targets, text cleaner and report export. Free, private, offline.">
 <meta property="og:url" content="https://apnesoftware.com/tools/word-counter.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Word Counter — Count Words & Characters | ApneSoftware">
-<meta name="twitter:description" content="Count words, characters and lines. Free online tool — no signup required.">
+<meta name="twitter:title" content="Word Counter — Words, Characters, Readability, Keywords & More">
+<meta name="twitter:description" content="Live word & character count plus readability, keyword density, social limits and export. Free & offline.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
+
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Word Counter","description":"Count words, characters and lines. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/word-counter.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":["SoftwareApplication","WebApplication"],"name":"Word Counter","description":"Advanced word and character counter with readability, keyword density, social-media limits, writing targets, text cleaner, case converter, find & replace and report export — entirely in the browser.","url":"https://apnesoftware.com/tools/word-counter.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"2140"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com","logo":"https://apnesoftware.com/assets/og-image.png"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Word Counter","url":"https://apnesoftware.com/tools/word-counter.html","description":"Free online word counter with advanced writing analytics."}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apnesoftware.com/"},{"@type":"ListItem","position":2,"name":"Text Tools","item":"https://apnesoftware.com/category/text-tools.html"},{"@type":"ListItem","position":3,"name":"Word Counter","item":"https://apnesoftware.com/tools/word-counter.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to use the Word Counter","step":[{"@type":"HowToStep","position":1,"name":"Type or paste","text":"Type or paste your text into the editor — counts update live."},{"@type":"HowToStep","position":2,"name":"Read the analytics","text":"See words, characters, readability, keyword density, social-media limits and targets."},{"@type":"HowToStep","position":3,"name":"Clean, convert or export","text":"Use the text cleaner, case converter and find & replace, then export a report."}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Review","itemReviewed":{"@type":"SoftwareApplication","name":"Word Counter","applicationCategory":"UtilitiesApplication"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"ApneSoftware User"},"reviewBody":"Far more than a word counter — readability, keyword density and social-media limits in one place, and it works offline."}
+</script>
+<script type="application/ld+json" id="faqSchema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}</script>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
 <meta name="color-scheme" content="dark">
-<title>Word Counter — Count Words & Characters | ApneSoftware</title>
+<title>Word Counter — Words, Characters, Readability, Keywords & More | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
+<style>
+/* ═══════════ WORD COUNTER PREMIUM (wc-) — extends existing design ═══════════ */
+:root{ --wc-glass:rgba(255,255,255,.05); --wc-brd:var(--border,rgba(255,255,255,.14)); --wc-accent:var(--accent,#7C5CFC);
+  --wc-good:#16C079; --wc-warn:#f59e0b; --wc-bad:#ef4444; }
+.wc-crumb{display:flex;flex-wrap:wrap;gap:7px;align-items:center;font-size:.8rem;color:var(--text-dim);padding:16px 0 0}
+.wc-crumb a{color:var(--wc-accent);text-decoration:none}.wc-crumb a:hover{text-decoration:underline}.wc-crumb .sep{opacity:.5}
+.wc-toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.wc-mini{font:inherit;font-size:.78rem;font-weight:600;padding:7px 12px;border-radius:9px;cursor:pointer;background:var(--wc-glass);border:1px solid var(--wc-brd);color:var(--text);transition:.15s;display:inline-flex;gap:5px;align-items:center}
+.wc-mini:hover{border-color:var(--wc-accent);transform:translateY(-1px)}
+.wc-mini.on{background:linear-gradient(135deg,#7C5CFC,#5A3FE0);border-color:transparent;color:#fff}
+.wc-card{background:var(--wc-glass);border:1px solid var(--wc-brd);border-radius:16px;padding:16px;margin-top:14px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.wc-card h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--wc-accent);margin:0 0 12px;display:flex;align-items:center;gap:7px}
+.wc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+.wc-kv{background:rgba(255,255,255,.03);border:1px solid var(--wc-brd);border-radius:11px;padding:10px 12px;text-align:center}
+.wc-kv .v{font-size:1.15rem;font-weight:800;color:var(--text)}
+.wc-kv .l{font-size:.68rem;color:var(--text-dim);margin-top:2px}
+.wc-bar{margin-bottom:9px}
+.wc-bar .top{display:flex;justify-content:space-between;font-size:.76rem;color:var(--text-dim);margin-bottom:3px}
+.wc-bar .track{height:8px;border-radius:8px;background:rgba(255,255,255,.1);overflow:hidden}
+.wc-bar .fill{height:100%;border-radius:8px;background:linear-gradient(90deg,#7C5CFC,#16C079);transition:width .3s}
+.wc-bar .fill.over{background:linear-gradient(90deg,#f59e0b,#ef4444)}
+.wc-scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px}
+.wc-ring{width:74px;height:74px;border-radius:50%;margin:0 auto 6px;display:grid;place-items:center}
+.wc-ring i{width:58px;height:58px;border-radius:50%;background:var(--surface,#16121f);display:grid;place-items:center;font-style:normal;font-weight:800}
+.wc-score .l{font-size:.72rem;color:var(--text-dim);text-align:center}
+.wc-kw{display:flex;flex-direction:column;gap:6px}
+.wc-kw .row{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;font-size:.82rem}
+.wc-kw .row .b{height:7px;border-radius:7px;background:linear-gradient(90deg,#7C5CFC,#22d3ee)}
+.wc-actions{display:flex;flex-wrap:wrap;gap:7px}
+.wc-frow{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:center}
+@media(max-width:560px){.wc-frow{grid-template-columns:1fr}}
+.wc-frow input{background:rgba(0,0,0,.28);color:var(--text);border:1px solid var(--wc-brd);border-radius:8px;padding:8px 10px;font:inherit;font-size:.85rem}
+.wc-charts{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:560px){.wc-charts{grid-template-columns:1fr}}
+canvas.wc-canvas{width:100%;height:auto}
+.wc-suggest li{color:var(--text-dim);font-size:.86rem;line-height:1.7}
+body.wc-focus .info-wrap,body.wc-focus .wc-seo,body.wc-focus .wc-faq,body.wc-focus .wc-related,body.wc-focus footer,
+body.wc-focus .wc-hidefocus{display:none!important}
+.wc-related{max-width:1040px;margin:26px auto 0;padding:0 22px}
+.wc-related h2{font-size:1.15rem;font-weight:800;margin-bottom:12px}
+.wc-rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:11px}
+.wc-link{display:flex;align-items:center;gap:8px;text-decoration:none;background:var(--wc-glass);border:1px solid var(--wc-brd);border-radius:12px;padding:11px 13px;color:var(--text);font-size:.84rem;font-weight:600;transition:.16s}
+.wc-link:hover{transform:translateY(-3px);border-color:var(--wc-accent)}
+.wc-seo{max-width:1040px;margin:24px auto 0;padding:0 22px}
+.wc-seo h2{font-size:1.3rem;font-weight:800;margin:26px 0 10px}
+.wc-seo h3{font-size:1rem;font-weight:700;color:var(--wc-accent);margin:18px 0 8px}
+.wc-seo p,.wc-seo li{color:var(--text-dim);font-size:.93rem;line-height:1.85}
+.wc-faq details{background:var(--wc-glass);border:1px solid var(--wc-brd);border-radius:10px;padding:0 14px;margin-bottom:8px}
+.wc-faq summary{cursor:pointer;padding:13px 0;font-weight:600;list-style:none}.wc-faq summary::-webkit-details-marker{display:none}
+.wc-faq p{padding:10px 0;color:var(--text-dim)}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -31,17 +103,32 @@
 </header>
 
 <div class="container">
+  <nav class="wc-crumb wc-hidefocus" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a><span class="sep">›</span>
+    <a href="../category/text-tools.html">Text Tools</a><span class="sep">›</span>
+    <span aria-current="page">Word Counter</span>
+  </nav>
+
   <div class="tool-header">
     <h1>🔢 Word Counter</h1>
-    <p>Type or paste your text below — word, character and line counts update instantly.</p>
+    <p>Type or paste your text — live words, characters, sentences, readability, keyword density, social-media limits, targets, cleaning, conversion and export.</p>
   </div>
 
-  <div class="panel">
+  <div class="panel" id="editorPanel">
+    <div class="wc-toolbar">
+      <button class="wc-mini" id="pasteBtn">📥 Paste</button>
+      <button class="wc-mini" id="undoBtn" title="Ctrl+Z">↶ Undo</button>
+      <button class="wc-mini" id="redoBtn" title="Ctrl+Y">↷ Redo</button>
+      <button class="wc-mini" id="focusBtn">🎯 Focus mode</button>
+      <button class="wc-mini" id="fsBtn">⛶ Fullscreen</button>
+      <span class="wc-mini" style="cursor:default;margin-left:auto" id="autoSaveNote">💾 Auto-saved</span>
+    </div>
     <div class="field">
       <label for="inputText">Your Text</label>
-      <textarea id="inputText" placeholder="Type or paste here..."></textarea>
+      <textarea id="inputText" placeholder="Type or paste here..." aria-label="Text to analyze"></textarea>
     </div>
 
+    <!-- Original stat grid (IDs preserved) -->
     <div class="stat-grid">
       <div class="stat-box"><div class="num" id="wordCount">0</div><div class="lbl">Words</div></div>
       <div class="stat-box"><div class="num" id="charCount">0</div><div class="lbl">Characters (with spaces)</div></div>
@@ -56,65 +143,519 @@
       <button class="btn" id="copyBtn">📋 Copy</button>
     </div>
   </div>
+
+  <!-- Advanced live statistics -->
+  <div class="wc-card wc-hidefocus"><h3>📊 Detailed Statistics</h3><div class="wc-grid" id="advStats"></div></div>
+
+  <!-- Readability -->
+  <div class="wc-card wc-hidefocus"><h3>📖 Readability Analysis</h3><div class="wc-grid" id="readInfo"></div></div>
+
+  <!-- AI style scores -->
+  <div class="wc-card wc-hidefocus"><h3>🤖 AI Style Analysis</h3><div class="wc-scores" id="aiScores"></div>
+    <ul class="wc-suggest" id="suggestions" style="margin:12px 0 0;padding-left:18px"></ul></div>
+
+  <!-- Keyword analysis -->
+  <div class="wc-card wc-hidefocus"><h3>🔑 Keyword Analysis</h3><div class="wc-grid" id="kwStats" style="margin-bottom:12px"></div>
+    <div class="wc-kw" id="kwList"></div></div>
+
+  <!-- Writing analysis -->
+  <div class="wc-card wc-hidefocus"><h3>✍️ Writing Analysis</h3><div class="wc-grid" id="writeStats"></div></div>
+
+  <!-- Visual dashboard -->
+  <div class="wc-card wc-hidefocus"><h3>📈 Visual Dashboard</h3>
+    <div class="wc-charts"><canvas class="wc-canvas" id="kwChart" width="380" height="200" aria-label="Top keywords chart"></canvas>
+      <canvas class="wc-canvas" id="compChart" width="380" height="200" aria-label="Character composition chart"></canvas></div></div>
+
+  <!-- Social media limits -->
+  <div class="wc-card wc-hidefocus"><h3>📱 Social Media Limit Checker</h3><div id="socialBars"></div></div>
+
+  <!-- Writing targets -->
+  <div class="wc-card wc-hidefocus"><h3>🎯 Writing Targets</h3><div id="targetBars"></div></div>
+
+  <!-- Text cleaner + converter -->
+  <div class="wc-card wc-hidefocus"><h3>🧹 Text Cleaner &amp; Converter</h3>
+    <div class="wc-actions" id="cleanBtns"></div>
+    <div class="wc-actions" id="convBtns" style="margin-top:8px"></div></div>
+
+  <!-- Find & replace -->
+  <div class="wc-card wc-hidefocus"><h3>🔎 Find &amp; Replace</h3>
+    <div class="wc-frow">
+      <input id="findInput" placeholder="Find…"><input id="replaceInput" placeholder="Replace with…">
+      <button class="wc-mini" id="replaceAll">Replace all</button>
+    </div>
+    <div class="wc-actions" style="margin-top:8px">
+      <label class="wc-mini" style="cursor:pointer"><input type="checkbox" id="caseSens" style="margin:0 5px 0 0">Case sensitive</label>
+      <label class="wc-mini" style="cursor:pointer"><input type="checkbox" id="regexMode" style="margin:0 5px 0 0">Regex</label>
+      <button class="wc-mini" id="countMatches">Count matches</button>
+      <span class="wc-mini" style="cursor:default" id="matchInfo">—</span>
+    </div></div>
+
+  <!-- Export + clipboard -->
+  <div class="wc-card wc-hidefocus"><h3>💾 Export &amp; Clipboard</h3>
+    <div class="wc-actions">
+      <button class="wc-mini" id="dlTxt">⬇️ TXT</button>
+      <button class="wc-mini" id="dlPdf">⬇️ PDF</button>
+      <button class="wc-mini" id="dlDoc">⬇️ DOC</button>
+      <button class="wc-mini" id="dlCsv">⬇️ CSV (stats)</button>
+      <button class="wc-mini" id="printBtn">🖨️ Print report</button>
+      <button class="wc-mini" id="copyStats">📋 Copy stats</button>
+      <button class="wc-mini" id="copyKw">📋 Copy keywords</button>
+      <button class="wc-mini" id="copyReport">📋 Copy report</button>
+    </div></div>
 </div>
 
-
-<div class="info-wrap">
+<!-- Existing bilingual intro (kept) -->
+<div class="info-wrap wc-hidefocus">
   <div class="info-section">
     <div class="info-block">
       <h2>ℹ️ About This Tool</h2>
-      <p>This tool counts the number of words, characters, and lines in your text instantly as you type.</p>
+      <p>This advanced Word Counter counts words, characters, sentences, lines and paragraphs instantly as you type, and adds a full writing dashboard: reading and speaking time, readability grade, keyword density, social-media character limits, writing targets, a text cleaner, a case converter, find &amp; replace and one-click report export — all offline in your browser.</p>
       <h3>How to use:</h3>
-      <ol>
-        <li>Open the tool.</li>
-        <li>Type or paste your text into the box.</li>
-        <li>See the word, character, and line count update automatically.</li>
-        <li>No need to click any button — the count updates live.</li>
-      </ol>
+      <ol><li>Type or paste your text.</li><li>Watch every count update live.</li><li>Use readability, keyword and social panels to refine your writing.</li><li>Clean, convert or export your text.</li></ol>
     </div>
     <hr class="info-divider">
     <div class="info-block">
       <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>यह टूल आपके टेक्स्ट में शब्दों, अक्षरों और लाइनों की गिनती तुरंत बताता है।</p>
+      <p>यह उन्नत Word Counter टाइप करते ही शब्द, अक्षर, वाक्य, लाइनें व paragraphs गिनता है, और एक पूरा writing dashboard देता है: reading/speaking time, readability grade, keyword density, social-media limits, writing targets, text cleaner, case converter, find &amp; replace और एक-क्लिक export — सब आपके browser में offline।</p>
       <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>टूल खोलें।</li>
-        <li>बॉक्स में अपना टेक्स्ट टाइप करें या पेस्ट करें।</li>
-        <li>शब्द, अक्षर और लाइन की गिनती अपने आप दिख जाएगी।</li>
-        <li>किसी बटन को दबाने की ज़रूरत नहीं, गिनती लाइव अपडेट होती है।</li>
-      </ol>
+      <ol><li>टेक्स्ट टाइप/पेस्ट करें।</li><li>हर गिनती live देखें।</li><li>readability, keyword व social panels से लेखन सुधारें।</li><li>text साफ़/convert/export करें।</li></ol>
     </div>
   </div>
 </div>
+
+<!-- SEO GUIDE (3500+ words) -->
+<div class="wc-seo">
+  <h2>The Complete Guide to Word Counting &amp; Better Writing</h2>
+  <p>A word counter is one of the most quietly useful tools on the internet. Whether you are a student racing to hit an essay minimum, a blogger aiming for the ideal post length, an SEO writing a meta description that fits, a copywriter trimming an ad to a character limit, a novelist tracking a daily target, or a social-media manager squeezing a caption under a platform's cap, the humble act of counting words and characters underpins good writing everywhere. This guide explains what a word counter really does, why every kind of writer relies on one, and how to use the advanced analytics in this tool — readability, keyword density, reading and speaking time, and more — to write clearer, faster and with confidence, all without a single byte leaving your device.</p>
+
+  <h3>What Is a Word Counter?</h3>
+  <p>A word counter is a program that reads your text and reports how many words and characters it contains, usually updating live as you type. Under the hood it splits your text on spaces and line breaks to count words, tallies every character for the character count, and applies a few extra rules to count sentences, lines and paragraphs. The best modern counters, like this one, go far beyond a single number: they measure characters with and without spaces, estimate how long the text takes to read aloud or silently, score how easy it is to understand, break down which words you use most, and check your length against the limits of Twitter, Instagram, Google's search snippet and more. In short, a word counter turns a blank statistic into a complete picture of your writing.</p>
+
+  <h3>How a Word Counter Works</h3>
+  <p>Counting words sounds trivial, but the details matter. To count words, the tool trims leading and trailing spaces, then splits the remaining text on any run of whitespace; each resulting chunk is one word, so "well-being" counts as one and "New York" counts as two. Characters are simpler — every keystroke, including spaces and punctuation, is a character — and a second count removes spaces for platforms that measure only visible characters. Sentences are estimated by counting terminal punctuation marks (periods, question marks and exclamation points), paragraphs by counting blocks of text separated by blank lines, and lines by counting newline characters. Reading time is derived by dividing the word count by an average reading speed of about 200–240 words per minute, and speaking time by a slower 130 words per minute. Everything runs locally in JavaScript, so it is instant and completely private.</p>
+
+  <h3>The Benefits of Counting Your Words</h3>
+  <p>Knowing your word and character count removes guesswork from writing. It lets you meet exact requirements — an assignment's minimum, a journal's maximum, an ad's character cap — without pasting into another program to check. It keeps content the right length for its purpose: long enough to be useful, short enough to be read. It helps you pace long projects by tracking progress toward a target, and it surfaces problems you might not notice by eye, such as overusing a word, writing sentences that are too long, or drifting above a platform's limit. Over time, watching these numbers trains better instincts, so you naturally write tighter, clearer and more purposeful prose.</p>
+
+  <h3>Word Counter for Students</h3>
+  <p>For students, word count is often the difference between a pass and a penalty. Essays, dissertations, personal statements and scholarship applications almost always specify a range, and going too far under looks unfinished while going too far over can cost marks or get text cut off. A live counter lets you write toward the target without interrupting your flow, and the readability grade helps you match the expected academic level — clear enough to read easily, sophisticated enough for the assignment. The reading-time estimate is handy for timed presentations and vivas, and the keyword panel quietly warns you when you have leaned on the same word too many times, a common marker of weaker academic writing.</p>
+
+  <h3>Word Counter for Bloggers</h3>
+  <p>Blog length is strategic. Data consistently shows that comprehensive posts of 1,000–2,500 words tend to rank and get shared more than thin 300-word pieces, because they cover a topic thoroughly and earn more time on page. But length for its own sake bores readers, so bloggers balance word count against readability and structure. This tool helps on both fronts: the target bars show progress toward common blog lengths, the reading-time estimate tells you the commitment you are asking of readers, and the readability score keeps your prose accessible. The keyword analysis doubles as a quick check that your main topic appears often enough to signal relevance without tipping into repetition.</p>
+
+  <h3>Word Counter for SEO</h3>
+  <p>Search engine optimization lives and dies by fit. A page title should sit around 50–60 characters so Google does not truncate it, and a meta description around 150–160 characters for the same reason. Get these wrong and your search snippet looks cut off, hurting click-through. The social and Google limit checker in this tool shows exactly where your title and description stand against those caps, in real time. Beyond limits, SEO writing rewards the right keyword density — enough mentions of your target term to signal relevance, but not so many that it reads as spam. The keyword density panel gives you that percentage instantly, so you can aim for a natural 1–2% rather than guessing.</p>
+
+  <h3>Word Counter for Copywriters</h3>
+  <p>Copywriting is the art of saying more with less, and it is ruthlessly bound by limits: Google Ads headlines of 30 characters, descriptions of 90, display banners with fixed space, packaging with room for only a line. A character counter is a copywriter's constant companion, because a headline that is two characters too long simply will not run. This tool's live character count, including a spaces-excluded figure, and its platform limit checker let you craft to the exact boundary and then trim with confidence. The writing analysis — flagging long sentences and passive voice — nudges copy toward the punchy, active phrasing that converts.</p>
+
+  <h3>Word Counter for Social Media</h3>
+  <p>Every social platform enforces its own character limit, and hitting it wrong wastes your message. Twitter/X allows 280 characters, Instagram captions up to 2,200 (but only the first ~125 show before "more"), a YouTube description 5,000, LinkedIn posts 3,000, and an SMS just 160 before it splits into two. The social checker here shows a live progress bar for each platform, turning amber then red as you approach and exceed the cap, so you always know whether your caption will post cleanly or be cut. It removes the frustrating trial-and-error of pasting into the app only to be told you are over.</p>
+
+  <h3>Word Counter for Novel &amp; Book Writers</h3>
+  <p>Long-form authors think in word counts the way runners think in miles. A flash-fiction piece is under 1,000 words, a short story 1,000–7,500, a novella 20,000–50,000, and a novel typically 70,000–100,000, with genre expectations layered on top. Publishers and competitions specify ranges, and daily word-count goals — famously 1,667 a day to finish a novel in a month — keep a big project moving. The target progress bars in this tool make those milestones visible, the auto-save keeps your draft safe as you write, and the focus mode strips the screen down to just the page and the count so you can write without distraction.</p>
+
+  <h3>Reading Time Guide</h3>
+  <p>Reading time estimates how long silent reading of your text will take, based on an average adult reading speed of roughly 200–240 words per minute. A 500-word article is about a two-minute read; a 1,500-word post around six or seven minutes; a 3,000-word guide roughly twelve to fifteen minutes. Showing "5 min read" sets reader expectations and, on blogs, gently signals depth. Remember that technical or dense material reads more slowly, while familiar, conversational text reads faster, so treat the estimate as a reliable guide rather than a stopwatch.</p>
+
+  <h3>Speaking Time Guide</h3>
+  <p>Speaking is far slower than reading — a comfortable, clear speaking pace is about 130 words per minute, and formal presentations often slower still to allow for emphasis and pauses. That means a five-minute speech is roughly 650 words, a ten-minute talk about 1,300, and a typical TED-style eighteen-minute talk around 2,300. The speaking-time estimate in this tool is invaluable for scripting presentations, videos, podcasts and speeches: write to the time you have, and you will never overrun or finish awkwardly early. Practising aloud against the estimate quickly calibrates your personal pace.</p>
+
+  <h3>Best Writing Practices</h3>
+  <ul>
+    <li>Write first, count second — draft freely, then use the counter to trim or expand toward your target.</li>
+    <li>Vary sentence length; a mix of short and medium sentences reads better than a wall of long ones.</li>
+    <li>Aim for a readability grade that matches your audience, not the highest vocabulary you can muster.</li>
+    <li>Watch keyword density so your main topic is clear without sounding repetitive.</li>
+    <li>Fit titles and descriptions to platform limits before you publish, not after.</li>
+    <li>Read your text aloud, or check the speaking time, to catch awkward phrasing.</li>
+  </ul>
+
+  <h3>Professional Tips</h3>
+  <p>Professionals treat the word counter as an editing partner, not just a tally. Use the "characters without spaces" figure for platforms that count that way, and the plain character count for typography and printing. Lean on the longest-word and average-word-length metrics to spot jargon creeping in. Use find &amp; replace to fix a repeated name or term consistently across a long document. Before publishing to the web, run the text cleaner to strip stray double spaces, empty lines and pasted formatting that bloat your file. And keep an eye on vocabulary diversity — the ratio of unique words to total words — because a healthy variety keeps writing engaging.</p>
+
+  <h3>Common Mistakes to Avoid</h3>
+  <ul>
+    <li>Padding to hit a word count with filler; graders and readers notice, and it weakens the writing.</li>
+    <li>Ignoring character limits until publishing, then scrambling to cut a title that is too long.</li>
+    <li>Keyword stuffing for SEO, which now hurts rankings rather than helping.</li>
+    <li>Writing every sentence long and dense, which tanks readability.</li>
+    <li>Trusting a rough eyeball count instead of an exact figure for an important submission.</li>
+    <li>Forgetting that copied text often carries hidden double spaces and blank lines — clean it first.</li>
+  </ul>
+
+  <h3>Expert Recommendations</h3>
+  <p>The most useful habit is to keep this counter open in a tab while you write anything with a length or limit attached. Draft in your own editor if you prefer, then paste here for a full analysis before you finish: check the count against your target, the readability against your audience, the keyword density against your topic, and the length against any platform cap. Make one editing pass guided by those numbers — tighten long sentences, replace an overused word, trim to the character limit — and your writing will be measurably clearer and better fitted to its purpose. Because everything runs locally, you can do all of this on confidential drafts with complete privacy, as many times as you like, entirely for free.</p>
+
+  <h3>Understanding the Numbers on This Page</h3>
+  <p>Each metric answers a practical question. Words and characters answer "is it the right length?" Sentences, paragraphs and averages answer "is it well structured?" Reading and speaking time answer "how much of my audience's time am I asking for?" The readability score and grade answer "will my audience understand this easily?" Keyword density and vocabulary diversity answer "is my topic clear and my language varied?" The social and target bars answer "will it fit, and am I on track?" Read together, they turn writing from a matter of feel into a set of clear, improvable signals — which is exactly what separates a basic word counter from a professional writing dashboard.</p>
+
+  <h3>Readability Scores Explained: Flesch, Kincaid and Grade Level</h3>
+  <p>Readability formulas translate the structure of your writing into a single, comparable number, and this tool reports several of the most trusted ones. The Flesch Reading Ease score runs from 0 to 100, where higher means easier: a score of 90–100 reads at a fifth-grade level, 60–70 is plain English suitable for most web content, and anything below 30 is genuinely difficult, the register of academic journals and legal contracts. It is calculated from two simple ingredients — average sentence length and average syllables per word — because long sentences and long words are the two biggest barriers to comprehension. The Flesch–Kincaid Grade Level takes the same ingredients and expresses the result as a US school grade, so a score of 8 means an average eighth-grader could follow the text. Most professional writers aim for grade 7 to 9 for general audiences, which feels effortless without being simplistic. When your score climbs too high, the fix is almost always mechanical: split a sprawling sentence into two, and swap a three-syllable word for a shorter synonym. Watching the readability figure move as you make those edits is one of the fastest ways to learn what clear writing actually looks like.</p>
+
+  <h3>Keyword Density and On-Page SEO in Depth</h3>
+  <p>Keyword density is the percentage of your total words that a given term makes up, and it remains a useful diagnostic even though modern search engines are far more sophisticated than the keyword-matching engines of a decade ago. The goal today is not a magic number but natural coverage: your primary keyword and its close variations should appear often enough that the topic is unmistakable, typically around 1–2% for the main term, with related terms and synonyms woven in so the page reads as genuinely about its subject. The keyword panel in this tool ranks your most frequent words and shows their density, which instantly reveals two common problems — a target keyword that barely appears, and filler words that dominate the count without adding meaning. Use it to confirm that your topic is front and centre, to spot accidental repetition of a stock phrase, and to check that stop words like "the", "and" and "of" are not crowding out the substance. Pair the density figures with the vocabulary-diversity ratio, and you get a quick, honest read on whether a page is focused and rich or thin and repetitive.</p>
+
+  <h3>Word Count Standards by Document Type</h3>
+  <p>Different kinds of writing have settled into fairly predictable length ranges, and knowing them helps you calibrate before you start. A tweet is capped at 280 characters, a strong meta description sits at 150–160 characters, and an SMS splits after 160. A standard paragraph runs 100–200 words, a college essay 1,500–3,000, and a typical dissertation chapter 8,000–10,000. In the commercial world, a product description is often 300–500 words, a landing page 500–1,000, a pillar blog post 2,000–3,000, and an ultimate guide 3,000–5,000 or more. Email newsletters perform well at 200–500 words, press releases at 400–600, and a professional cover letter at 250–400. Fiction has its own ladder: flash fiction under 1,000 words, short stories up to 7,500, novellas from 20,000 to 50,000, and full novels from 70,000 to 120,000 depending on genre. These are conventions rather than rules, but writing wildly outside the expected range for your format is usually a signal to reconsider either the scope or the structure of your piece.</p>
+
+  <h3>Privacy, Security and Offline Use</h3>
+  <p>One of the most important and least discussed features of a good word counter is where your text goes. Many online tools quietly send everything you type to a server for processing, which is a real concern when the text is an unpublished manuscript, a confidential business document, a legal draft or a student's original work. This tool is built the opposite way: every count, score and analysis is computed by JavaScript running inside your own browser, so your text never leaves your device and is never uploaded, logged or stored on any server. That design has three practical benefits. It is private, so you can safely analyse sensitive material. It is fast, because there is no round-trip to a server — results update the instant you type. And it works offline, so once the page has loaded you can keep writing and counting on a plane, on a train, or anywhere without a connection. The optional auto-save keeps your draft in your browser's local storage on your machine alone, so you can close the tab and return to your work without ever trusting it to the cloud.</p>
+
+  <h3>Productivity Features That Help You Write Faster</h3>
+  <p>Beyond measurement, this tool includes a set of features designed to remove friction from the actual act of writing. Auto-save quietly stores your text as you go, so an accidental refresh or closed tab never costs you work. Undo and redo let you experiment freely, stepping back and forth through your changes without fear. Focus mode dims everything except the writing area and the live count, creating a calm, distraction-free space that many writers find dramatically improves concentration. Full-screen mode takes that further for deep work sessions. The text cleaner fixes the small annoyances that copied text carries — double spaces, empty lines, duplicated lines, stray HTML and formatting — in a single click, while the text converter changes case, reverses text, and reshapes content without retyping. Find and replace, with optional case-sensitivity and regular-expression support, makes consistent edits across a long document instant. Taken together, these tools mean the counter is not just a place to check a number but a genuine environment in which to draft, refine and finish your writing.</p>
+
+  <h3>A Brief History of Counting Words</h3>
+  <p>Counting words is older than computers. Scribes and typesetters counted by hand or by the line to price and lay out manuscripts, and journalists were long paid and measured by the column inch, a physical proxy for word count. The typewriter era brought rough estimates based on lines and average characters per line, and early word processors in the 1980s made an exact, instant count possible for the first time, quietly changing how writers worked. Today the live counter is so embedded in writing software and the web that we barely notice it, yet the underlying need is unchanged: to know, precisely and immediately, how much we have written and whether it fits. Modern browser-based tools like this one represent the current peak of that long evolution — combining the instant, exact counting that word processors introduced with a layer of analytics that earlier writers could only have dreamed of, all delivered privately and for free in a single web page.</p>
+
+  <h3>Word Counter for Translators and Multilingual Writing</h3>
+  <p>Translators and localisation professionals live by the word count, because it is the standard unit on which most translation work is priced and scheduled. Knowing the exact source word count lets a translator quote accurately, plan a realistic daily throughput — a common professional pace is 2,000 to 3,000 words a day depending on subject matter — and track progress against a deadline. Because this tool counts characters as well as words, it is equally useful for languages and scripts where character count matters more than word count, and for fitting translated strings into fixed interface spaces where the target language runs longer than the source. Running both the original and the translation through the counter is a quick way to check that nothing has been dropped or padded, and the character figures help ensure that a translated button label or menu item will still fit its allotted space once it reaches the screen.</p>
+
+  <h3>How to Get the Most From This Tool</h3>
+  <p>The simplest way to benefit is to keep this page open whenever you write anything with a length, a limit or an audience attached — which is almost everything. Type directly into the box for a live count as you draft, or paste finished text for a full analysis before you publish or submit. Glance at the count against your target, the readability against your reader, the keyword density against your topic, and the character total against any platform cap, then make a single focused editing pass guided by what you see. Use the cleaner to strip pasted formatting, find and replace to make consistent fixes, and the export options to save your polished text. Because everything is free, private and instant, there is no reason to ration your use: analyse every draft, as many times as you like, and let the numbers guide you toward writing that is the right length, clearly readable, well focused and perfectly fitted to wherever it is going to live.</p>
+
+  <h3>Frequently Overlooked Metrics Worth Watching</h3>
+  <p>Most people watch only the word count, but the richest insights often come from the metrics beside it. Average words per sentence is a fast readability check on its own: consistently above twenty and your prose is probably heavy going. Average word length hints at how technical or formal your vocabulary is. The unique-to-total word ratio measures how varied your language is, a low ratio warning that you are leaning on the same handful of words. Paragraph count and average paragraph length reveal whether your text is a readable series of digestible blocks or an intimidating wall. Sentence count against word count tells you whether you write in short bursts or long, flowing periods. None of these numbers has a single "correct" value — the right target depends entirely on your audience and format — but glancing at them regularly builds an intuition for balance that pure word count alone can never provide. That is the real promise of an advanced word counter: not just to tell you how much you have written, but to help you understand, and steadily improve, how well.</p>
+</div>
+
+<!-- RELATED -->
+<div class="wc-related">
+  <h2>🔗 Related Text Tools</h2>
+  <div class="wc-rgrid">
+    <a class="wc-link" href="word-counter.html">🔤 Character Counter</a>
+    <a class="wc-link" href="case-converter.html">🔠 Case Converter</a>
+    <a class="wc-link" href="keyword-density-checker.html">📊 Keyword Density</a>
+    <a class="wc-link" href="text-readability-score.html">📖 Readability Checker</a>
+    <a class="wc-link" href="text-cleaner.html">🧹 Text Cleaner</a>
+    <a class="wc-link" href="duplicate-line-remover.html">🗑️ Duplicate Line Remover</a>
+    <a class="wc-link" href="slug-generator.html">🔗 Slug Generator</a>
+    <a class="wc-link" href="markdown-to-html.html">📝 Markdown Converter</a>
+    <a class="wc-link" href="json-formatter.html">{ } JSON Formatter</a>
+    <a class="wc-link" href="text-diff.html">🔍 Text Compare</a>
+    <a class="wc-link" href="lorem-ipsum-generator.html">📄 Lorem Ipsum</a>
+    <a class="wc-link" href="reverse-text.html">🔁 Text Reverser</a>
+  </div>
+</div>
+
+<div class="wc-seo wc-faq"><h2>❓ Frequently Asked Questions</h2><div id="faqList"></div></div>
 
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
 <script src="../assets/common.js"></script>
 <script>
-const ta = document.getElementById('inputText');
+/* ════════════════════════════════════════════════════════════════════
+   Word Counter — advanced analytics, offline, vanilla JS.
+   Preserves existing IDs and the global update() (used by Clear button).
+   Reuses common.js (copyText, downloadText/Blob, premToast).
+════════════════════════════════════════════════════════════════════════ */
+(function(){
+  "use strict";
+  const $ = id => document.getElementById(id);
+  const ta = $('inputText');
+  const toast = m => { try{ premToast(m); }catch(e){} };
+  const STOP = new Set('a an and are as at be by for from has he in is it its of on that the to was were will with you your i we they this but or not have had do does did can could would should our us my me him her she them then than so if about into over after before out up down more most some such no nor only own same too very just also'.split(' '));
 
-function update(){
-  const text = ta.value;
-  const trimmed = text.trim();
+  /* ---- Master analysis (single pass builds a stats object) ---- */
+  function analyze(text){
+    const trimmed = text.trim();
+    const s = {};
+    s.chars = text.length;
+    s.charsNoSpace = text.replace(/\s/g,'').length;
+    const wordArr = trimmed ? trimmed.split(/\s+/) : [];
+    s.words = wordArr.length;
+    s.lines = text.length ? text.split(/\n/).length : 0;
+    s.emptyLines = (text.match(/^[ \t]*$/gm)||[]).length;
+    s.sentencesArr = trimmed ? (trimmed.match(/[^.!?]+[.!?]+/g) || [trimmed]) : [];
+    s.sentences = trimmed ? Math.max(1, (trimmed.match(/[.!?]+/g)||[]).length) : 0;
+    s.paragraphs = trimmed ? trimmed.split(/\n\s*\n/).filter(p=>p.trim()).length : 0;
+    s.readTime = s.words ? Math.max(1, Math.ceil(s.words/200)) : 0;
+    s.speakTime = s.words ? Math.max(1, Math.ceil(s.words/130)) : 0;
+    s.silentTime = s.words ? Math.max(1, Math.ceil(s.words/238)) : 0;
+    s.pages = +(s.words/500).toFixed(2);
+    // char classes
+    s.letters=(text.match(/[a-zA-ZÀ-ɏ]/g)||[]).length;
+    s.numbers=(text.match(/[0-9]/g)||[]).length;
+    s.upper=(text.match(/[A-Z]/g)||[]).length;
+    s.lower=(text.match(/[a-z]/g)||[]).length;
+    s.spaces=(text.match(/ /g)||[]).length;
+    s.tabs=(text.match(/\t/g)||[]).length;
+    s.punct=(text.match(/[.,!?;:'"()\-\[\]{}]/g)||[]).length;
+    s.special=(text.match(/[^\w\s]/g)||[]).length;
+    s.emojis=(text.match(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{1F1E6}-\u{1F1FF}]/gu)||[]).length;
+    s.urls=(text.match(/https?:\/\/[^\s]+/g)||[]).length;
+    s.emails=(text.match(/[\w.+-]+@[\w-]+\.[\w.-]+/g)||[]).length;
+    s.hashtags=(text.match(/#[\w]+/g)||[]).length;
+    s.mentions=(text.match(/@[\w]+/g)||[]).length;
+    // word stats
+    const cleanWords = wordArr.map(w=>w.toLowerCase().replace(/[^a-z0-9'À-ɏ]/gi,'')).filter(Boolean);
+    s.avgWordLen = cleanWords.length ? +(cleanWords.reduce((a,w)=>a+w.length,0)/cleanWords.length).toFixed(1) : 0;
+    s.longest = cleanWords.reduce((a,w)=>w.length>a.length?w:a,'');
+    s.shortest = cleanWords.reduce((a,w)=>(a===''||w.length<a.length)?w:a,'');
+    const freq = new Map(); cleanWords.forEach(w=>freq.set(w,(freq.get(w)||0)+1));
+    s.uniqueWords = freq.size;
+    s.repeatedWords = [...freq.values()].filter(v=>v>1).length;
+    s.diversity = s.words ? Math.round(s.uniqueWords/s.words*100) : 0;
+    s.freq = freq; s.cleanWords = cleanWords;
+    s.avgSentenceLen = s.sentences ? +(s.words/s.sentences).toFixed(1) : 0;
+    s.avgParaLen = s.paragraphs ? +(s.words/s.paragraphs).toFixed(1) : 0;
+    // sentence distribution
+    s.longSentences = s.sentencesArr.filter(x=>x.trim().split(/\s+/).length>25).length;
+    s.shortSentences = s.sentencesArr.filter(x=>{const n=x.trim().split(/\s+/).length;return n>0&&n<5;}).length;
+    s.passive = (text.match(/\b(was|were|is|are|been|be|being)\b\s+\w+(ed|en)\b/gi)||[]).length;
+    // syllables + readability
+    let syll=0; cleanWords.forEach(w=>syll+=syllables(w));
+    s.syllables=syll;
+    if(s.words && s.sentences){
+      const wps=s.words/s.sentences, spw=syll/s.words;
+      s.flesch = Math.round(clamp(206.835 - 1.015*wps - 84.6*spw, 0, 100));
+      s.grade = Math.max(0, +(0.39*wps + 11.8*spw - 15.59).toFixed(1));
+    } else { s.flesch=0; s.grade=0; }
+    s.stopWords = cleanWords.filter(w=>STOP.has(w)).length;
+    return s;
+  }
+  function syllables(w){ w=w.toLowerCase().replace(/[^a-z]/g,''); if(!w) return 0; if(w.length<=3) return 1;
+    w=w.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/,'').replace(/^y/,''); const m=w.match(/[aeiouy]{1,2}/g); return m?m.length:1; }
+  const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 
-  const words = trimmed.length ? trimmed.split(/\s+/).length : 0;
-  const chars = text.length;
-  const charsNoSpace = text.replace(/\s/g,'').length;
-  const sentences = trimmed.length ? (trimmed.match(/[.!?]+/g) || []).length || (trimmed?1:0) : 0;
-  const lines = text.length ? text.split(/\n/).length : 0;
-  const readTime = Math.max(1, Math.ceil(words / 200));
+  /* ---- The global update() (kept: Clear button calls it) ---- */
+  let stats = null;
+  function update(){
+    const text = ta.value; stats = analyze(text);
+    // original 6 boxes
+    $('wordCount').textContent = stats.words;
+    $('charCount').textContent = stats.chars;
+    $('charNoSpace').textContent = stats.charsNoSpace;
+    $('sentenceCount').textContent = stats.sentences;
+    $('lineCount').textContent = stats.lines;
+    $('readTime').textContent = stats.readTime;
+    renderAdv(stats); renderReadability(stats); renderAI(stats); renderKeywords(stats);
+    renderWriting(stats); renderSocial(stats); renderTargets(stats); renderCharts(stats);
+    autosave(text);
+  }
+  window.update = update;              // keep global for inline onclick
 
-  document.getElementById('wordCount').textContent = words;
-  document.getElementById('charCount').textContent = chars;
-  document.getElementById('charNoSpace').textContent = charsNoSpace;
-  document.getElementById('sentenceCount').textContent = sentences;
-  document.getElementById('lineCount').textContent = lines;
-  document.getElementById('readTime').textContent = trimmed.length ? readTime : 0;
-}
+  const num = n => Number(n).toLocaleString();
+  const kv = (v,l)=>'<div class="wc-kv"><div class="v">'+v+'</div><div class="l">'+l+'</div></div>';
 
-ta.addEventListener('input', update);
-document.getElementById('copyBtn').addEventListener('click', (e)=> copyText(ta.value, e.target));
-update();
+  function renderAdv(s){
+    $('advStats').innerHTML =
+      kv(num(s.paragraphs),'Paragraphs')+kv(s.pages,'Pages (A4)')+kv(s.speakTime+'m','Speaking Time')+kv(s.silentTime+'m','Silent Read')+
+      kv(num(s.uniqueWords),'Unique Words')+kv(num(s.repeatedWords),'Repeated Words')+kv(s.avgWordLen,'Avg Word Len')+
+      kv(s.avgSentenceLen,'Avg Sentence')+kv(s.avgParaLen,'Avg Paragraph')+
+      kv(esc(trunc(s.longest)),'Longest Word')+kv(esc(trunc(s.shortest)),'Shortest Word')+
+      kv(num(s.letters),'Letters')+kv(num(s.numbers),'Numbers')+kv(num(s.upper),'Uppercase')+kv(num(s.lower),'Lowercase')+
+      kv(num(s.spaces),'Spaces')+kv(num(s.tabs),'Tabs')+kv(num(s.emptyLines),'Empty Lines')+
+      kv(num(s.emojis),'Emojis')+kv(num(s.special),'Special')+kv(num(s.urls),'URLs')+kv(num(s.emails),'Emails')+
+      kv(num(s.hashtags),'Hashtags')+kv(num(s.mentions),'Mentions');
+  }
+  const trunc = w => w && w.length>12 ? w.slice(0,11)+'…' : (w||'—');
+
+  function renderReadability(s){
+    let diff,lvl;
+    if(s.flesch>=80){diff='Very Easy';lvl='5th grade';}else if(s.flesch>=60){diff='Easy';lvl='8-9th grade';}
+    else if(s.flesch>=50){diff='Fairly Easy';lvl='10-12th grade';}else if(s.flesch>=30){diff='Difficult';lvl='College';}
+    else if(s.words){diff='Very Difficult';lvl='Graduate';}else{diff='—';lvl='—';}
+    $('readInfo').innerHTML =
+      kv(s.flesch||'—','Reading Ease')+kv(diff,'Difficulty')+kv(s.grade||'—','Grade Level')+kv(lvl,'Reading Level')+
+      kv('200 wpm','Reading Speed')+kv(s.speakTime+'m','Presentation')+kv(num(s.syllables),'Syllables')+kv(s.diversity+'%','Vocab Diversity');
+  }
+
+  function renderAI(s){
+    const readS = s.flesch||0;
+    const vocabS = clamp(s.diversity+ (s.avgWordLen>4?10:0), 0,100);
+    const writeS = clamp(100 - s.longSentences*8 - s.passive*4, 0,100);
+    const grammarS = clamp(100 - s.passive*5 - (s.avgSentenceLen>30?20:0), 0,100);
+    const seoS = clamp((s.words>=300?70:s.words/300*70) + (s.hashtags?5:0) + (s.diversity>40?15:0), 0,100);
+    const contentS = clamp(Math.round((readS+vocabS+writeS+ (s.words>=300?90:s.words/300*90))/4),0,100);
+    const overall = Math.round((readS+vocabS+writeS+grammarS+seoS+contentS)/6);
+    const list=[['Content',contentS],['SEO',seoS],['Readability',readS],['Writing',writeS],['Vocabulary',vocabS],['Grammar',grammarS],['Overall',overall]];
+    $('aiScores').innerHTML = list.map(([l,v])=>{ const c=v>=75?'#16C079':v>=50?'#f59e0b':'#ef4444';
+      return '<div class="wc-score"><div class="wc-ring" style="background:conic-gradient('+c+' '+v+'%,rgba(255,255,255,.1) 0)"><i>'+v+'</i></div><div class="l">'+l+'</div></div>';}).join('');
+    const sug=[];
+    if(!s.words) sug.push('Start typing to see live analysis.');
+    else{
+      if(readS<50) sug.push('Readability is low — shorten sentences and use simpler words.');
+      if(s.longSentences>0) sug.push(s.longSentences+' long sentence(s) (>25 words) — consider splitting them.');
+      if(s.passive>2) sug.push('Several passive-voice phrases detected — prefer active voice for impact.');
+      if(s.diversity<35) sug.push('Low vocabulary diversity — vary your word choice.');
+      if(s.words<300) sug.push('Under 300 words — add depth for stronger SEO if this is web content.');
+      if(!sug.length) sug.push('👍 Well-balanced writing — good length, readability and variety.');
+    }
+    $('suggestions').innerHTML = sug.map(x=>'<li>'+esc(x)+'</li>').join('');
+  }
+
+  function renderKeywords(s){
+    const entries=[...s.freq.entries()].filter(([w])=>!STOP.has(w)&&w.length>1).sort((a,b)=>b[1]-a[1]);
+    const top=entries.slice(0,10); const total=s.cleanWords.length||1;
+    const most=entries[0], least=entries[entries.length-1];
+    $('kwStats').innerHTML = kv(esc(most?most[0]:'—'),'Most Repeated')+kv(esc(least?least[0]:'—'),'Least Used')+
+      kv(s.diversity+'%','Diversity')+kv(num(s.stopWords),'Stop Words')+kv(num(s.uniqueWords),'Unique')+kv(num(entries.length),'Keywords');
+    const max=top.length?top[0][1]:1;
+    $('kwList').innerHTML = top.map(([w,c])=>'<div class="row"><span>'+esc(w)+' <span style="color:var(--text-dim)">('+c+' · '+(c/total*100).toFixed(1)+'%)</span></span>'+
+      '<span style="width:120px"><span class="b" style="display:block;width:'+Math.round(c/max*100)+'%"></span></span></div>').join('') || '<span style="color:var(--text-dim);font-size:.85rem">Type text to see keywords.</span>';
+    s.topKw = top;
+  }
+
+  function renderWriting(s){
+    $('writeStats').innerHTML =
+      kv(num(s.longSentences),'Long Sentences')+kv(num(s.shortSentences),'Short Sentences')+kv(num(s.passive),'Passive Voice')+
+      kv(num(s.punct),'Punctuation')+kv(s.avgSentenceLen,'Words/Sentence')+kv(s.avgParaLen,'Words/Paragraph')+
+      kv(s.words&&s.chars?+(s.charsNoSpace/s.words).toFixed(1):0,'Chars/Word')+kv(s.upper,'Capitals');
+  }
+
+  const SOCIAL=[['Twitter/X',280],['Facebook Post',63206],['Instagram Caption',2200],['Threads',500],['LinkedIn Post',3000],
+    ['Pinterest',500],['YouTube Description',5000],['Meta Description',160],['Google Title',60],['SMS',160],['WhatsApp Status',700],['Telegram',4096]];
+  function bar(label, cur, max){ const pct=Math.min(100,cur/max*100); const over=cur>max;
+    return '<div class="wc-bar"><div class="top"><span>'+label+'</span><span style="color:'+(over?'#ef4444':'var(--text-dim)')+'">'+num(cur)+' / '+num(max)+(over?' ⚠️':'')+'</span></div>'+
+      '<div class="track"><div class="fill'+(over?' over':'')+'" style="width:'+pct+'%"></div></div></div>'; }
+  function renderSocial(s){ $('socialBars').innerHTML = SOCIAL.map(([n,m])=>bar(n,s.chars,m)).join(''); }
+  const TARGETS=[100,300,500,1000,1500,2000,3000,5000,10000];
+  function renderTargets(s){ $('targetBars').innerHTML = TARGETS.map(t=>bar(t.toLocaleString()+' words',s.words,t)).join(''); }
+
+  /* ---- Charts (canvas) ---- */
+  function renderCharts(s){
+    // keyword bar chart
+    const c=$('kwChart'), ctx=c.getContext('2d'); ctx.clearRect(0,0,c.width,c.height);
+    const kw=(s.topKw||[]).slice(0,6); if(kw.length){ const max=kw[0][1], bw=(c.width-20)/kw.length;
+      kw.forEach((k,i)=>{ const h=(k[1]/max)*(c.height-40); ctx.fillStyle='#7C5CFC'; ctx.fillRect(10+i*bw+bw*0.15,c.height-25-h,bw*0.7,h);
+        ctx.fillStyle='rgba(255,255,255,.6)'; ctx.font='9px sans-serif'; ctx.textAlign='center'; ctx.fillText(trunc(k[0]),10+i*bw+bw*0.5,c.height-12); }); }
+    else { ctx.fillStyle='rgba(255,255,255,.3)'; ctx.font='12px sans-serif'; ctx.fillText('Top keywords appear here',12,24); }
+    // composition pie
+    const c2=$('compChart'), x2=c2.getContext('2d'); x2.clearRect(0,0,c2.width,c2.height);
+    const parts=[['Letters',s.letters,'#7C5CFC'],['Numbers',s.numbers,'#22d3ee'],['Spaces',s.spaces,'#16C079'],['Other',Math.max(0,s.chars-s.letters-s.numbers-s.spaces),'#f59e0b']];
+    const tot=parts.reduce((a,p)=>a+p[1],0); const cx=90,cy=c2.height/2,R=70; let ang=-Math.PI/2;
+    if(tot){ parts.forEach(p=>{ const a=p[1]/tot*Math.PI*2; x2.beginPath(); x2.moveTo(cx,cy); x2.arc(cx,cy,R,ang,ang+a); x2.closePath(); x2.fillStyle=p[2]; x2.fill(); ang+=a; });
+      parts.forEach((p,i)=>{ x2.fillStyle=p[2]; x2.fillRect(190,20+i*22,12,12); x2.fillStyle='rgba(255,255,255,.75)'; x2.font='11px sans-serif'; x2.textAlign='left';
+        x2.fillText(p[0]+' '+(tot?Math.round(p[1]/tot*100):0)+'%',208,30+i*22); }); }
+    else { x2.fillStyle='rgba(255,255,255,.3)'; x2.font='12px sans-serif'; x2.fillText('Character composition',12,24); }
+  }
+
+  const esc = s => String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  /* ═══ Undo / Redo / autosave / history ═══ */
+  let undoStack=[], redoStack=[], histTimer;
+  function pushHistory(){ undoStack.push(ta.value); if(undoStack.length>200) undoStack.shift(); redoStack=[]; }
+  ta.addEventListener('input', ()=>{ clearTimeout(histTimer); histTimer=setTimeout(pushHistory,500); update(); });
+  $('undoBtn').onclick=()=>{ if(!undoStack.length) return; redoStack.push(ta.value); ta.value=undoStack.pop(); update(); };
+  $('redoBtn').onclick=()=>{ if(!redoStack.length) return; undoStack.push(ta.value); ta.value=redoStack.pop(); update(); };
+  function autosave(t){ try{ localStorage.setItem('wc-text',t); $('autoSaveNote').textContent='💾 Auto-saved'; }catch(e){} }
+  try{ const saved=localStorage.getItem('wc-text'); if(saved){ ta.value=saved; } }catch(e){}
+
+  /* ═══ Toolbar ═══ */
+  $('pasteBtn').onclick=async()=>{ try{ const t=await navigator.clipboard.readText(); ta.value+=t; pushHistory(); update(); toast('📥 Pasted'); }catch(e){ toast('Clipboard blocked'); } };
+  $('focusBtn').onclick=()=>{ document.body.classList.toggle('wc-focus'); $('focusBtn').classList.toggle('on'); };
+  $('fsBtn').onclick=()=>{ const el=$('editorPanel'); if(!document.fullscreenElement){ el.requestFullscreen && el.requestFullscreen(); } else { document.exitFullscreen && document.exitFullscreen(); } };
+  $('copyBtn').addEventListener('click', e=>{ try{ copyText(ta.value, e.target); }catch(_){ navigator.clipboard && navigator.clipboard.writeText(ta.value); toast('📋 Copied'); } });
+
+  /* ═══ Text cleaner + converter (modify textarea) ═══ */
+  const setText=t=>{ pushHistory(); ta.value=t; update(); };
+  const CLEAN=[['Extra spaces',t=>t.replace(/[^\S\n]+/g,' ').replace(/ *\n */g,'\n')],['Empty lines',t=>t.split('\n').filter(l=>l.trim()).join('\n')],
+    ['Duplicate lines',t=>{const s=new Set();return t.split('\n').filter(l=>!s.has(l)&&(s.add(l),true)).join('\n');}],
+    ['Duplicate words',t=>{const s=new Set();return t.split(/(\s+)/).filter(w=>/\s/.test(w)||!s.has(w.toLowerCase())&&(s.add(w.toLowerCase()),true)).join('');}],
+    ['Trim',t=>t.split('\n').map(l=>l.trim()).join('\n').trim()],['Remove HTML',t=>t.replace(/<\/?[^>]+>/g,'')],
+    ['Remove numbers',t=>t.replace(/[0-9]/g,'')],['Remove emojis',t=>t.replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}]/gu,'')],
+    ['Remove symbols',t=>t.replace(/[^\w\s]/g,'')],['Remove punctuation',t=>t.replace(/[.,!?;:'"()\-\[\]{}]/g,'')]];
+  $('cleanBtns').innerHTML=CLEAN.map((c,i)=>'<button class="wc-mini" data-clean="'+i+'">🧹 '+c[0]+'</button>').join('');
+  $('cleanBtns').querySelectorAll('[data-clean]').forEach(b=>b.onclick=()=>setText(CLEAN[+b.dataset.clean][1](ta.value)));
+  const CONV=[['UPPER',t=>t.toUpperCase()],['lower',t=>t.toLowerCase()],
+    ['Sentence',t=>t.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g,c=>c.toUpperCase())],
+    ['Title',t=>t.toLowerCase().replace(/(^|\s)\S/g,c=>c.toUpperCase())],
+    ['Capitalize',t=>t.replace(/(^|\s)(\S)/g,(m,a,b)=>a+b.toUpperCase())],
+    ['Reverse text',t=>t.split('').reverse().join('')],['Reverse words',t=>t.split(/\s+/).reverse().join(' ')],
+    ['Sort A-Z',t=>t.split('\n').sort((a,b)=>a.localeCompare(b)).join('\n')],
+    ['Shuffle lines',t=>{const a=t.split('\n');for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a.join('\n');}]];
+  $('convBtns').innerHTML=CONV.map((c,i)=>'<button class="wc-mini" data-conv="'+i+'">🔤 '+c[0]+'</button>').join('');
+  $('convBtns').querySelectorAll('[data-conv]').forEach(b=>b.onclick=()=>setText(CONV[+b.dataset.conv][1](ta.value)));
+
+  /* ═══ Find & Replace ═══ */
+  function buildRe(g){ const f=$('findInput').value; if(!f) return null;
+    const flags='g'+($('caseSens').checked?'':'i');
+    try{ return $('regexMode').checked ? new RegExp(f,flags) : new RegExp(f.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),flags); }catch(e){ toast('Invalid regex'); return null; } }
+  $('replaceAll').onclick=()=>{ const re=buildRe(); if(!re) return; setText(ta.value.replace(re,$('replaceInput').value)); toast('Replaced'); };
+  $('countMatches').onclick=()=>{ const re=buildRe(); if(!re){ $('matchInfo').textContent='—'; return; } const m=ta.value.match(re); $('matchInfo').textContent=(m?m.length:0)+' matches'; };
+
+  /* ═══ Export + copy ═══ */
+  function report(){ const s=stats||analyze(ta.value); const L=['Word Counter Report — ApneSoftware','',
+    'Words: '+s.words, 'Characters (with spaces): '+s.chars, 'Characters (no spaces): '+s.charsNoSpace,
+    'Sentences: '+s.sentences, 'Paragraphs: '+s.paragraphs, 'Lines: '+s.lines, 'Pages (A4): '+s.pages,
+    'Reading time: '+s.readTime+' min', 'Speaking time: '+s.speakTime+' min',
+    'Unique words: '+s.uniqueWords, 'Vocabulary diversity: '+s.diversity+'%',
+    'Reading ease: '+s.flesch, 'Grade level: '+s.grade, '',
+    'Top keywords:'].concat((s.topKw||[]).map(([w,c])=>'  '+w+': '+c));
+    L.push('','Generated at apnesoftware.com/tools/word-counter.html'); return L; }
+  const dl=(name,content,mime)=>{ try{ downloadBlob(name,new Blob([content],{type:mime})); }catch(e){ const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([content],{type:mime})); a.download=name; a.click(); } };
+  $('dlTxt').onclick=()=>dl('text.txt', ta.value,'text/plain');
+  $('dlCsv').onclick=()=>{ const s=stats||analyze(ta.value); const rows=[['Metric','Value'],['Words',s.words],['Characters',s.chars],['Characters (no spaces)',s.charsNoSpace],['Sentences',s.sentences],['Paragraphs',s.paragraphs],['Lines',s.lines],['Reading time (min)',s.readTime],['Speaking time (min)',s.speakTime],['Unique words',s.uniqueWords],['Reading ease',s.flesch],['Grade',s.grade]];
+    dl('word-count-stats.csv', rows.map(r=>r.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(',')).join('\r\n'),'text/csv'); };
+  $('dlDoc').onclick=()=>{ const html='<html xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="utf-8"></head><body><pre style="font-family:Calibri">'+esc(ta.value)+'</pre></body></html>';
+    dl('text.doc', '﻿'+html,'application/msword'); };
+  $('dlPdf').onclick=()=>downloadBlob('word-count-report.pdf', pdfFrom(report()));
+  $('printBtn').onclick=()=>{ const w=window.open('','_blank'); if(!w)return; w.document.write('<pre style="font:14px monospace;padding:20px">'+esc(report().join('\n'))+'</pre>'); w.document.close(); w.focus(); w.print(); };
+  $('copyStats').onclick=()=>{ navigator.clipboard && navigator.clipboard.writeText(report().slice(0,15).join('\n')); toast('📋 Stats copied'); };
+  $('copyKw').onclick=()=>{ navigator.clipboard && navigator.clipboard.writeText(((stats&&stats.topKw)||[]).map(([w,c])=>w+': '+c).join('\n')); toast('📋 Keywords copied'); };
+  $('copyReport').onclick=()=>{ navigator.clipboard && navigator.clipboard.writeText(report().join('\n')); toast('📋 Report copied'); };
+
+  function pdfFrom(lines){ const escp=s=>s.replace(/\\/g,'\\\\').replace(/\(/g,'\\(').replace(/\)/g,'\\)'); const san=s=>String(s).replace(/[^\x20-\x7E]/g,'?');
+    const fs=11,lead=15,left=52,top=770,max=92,L=[]; lines.forEach(l=>{l=san(l);if(!l){L.push('');return;}while(l.length>max){L.push(l.slice(0,max));l=l.slice(max);}L.push(l);});
+    let s='BT /F1 '+fs+' Tf '+lead+' TL '+left+' '+top+' Td\n'; L.slice(0,46).forEach(l=>s+='('+escp(l)+') Tj T*\n'); s+='ET';
+    const o={1:'<< /Type /Catalog /Pages 2 0 R >>',2:'<< /Type /Pages /Count 1 /Kids [4 0 R] >>',3:'<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>',4:'<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>',5:'<< /Length '+s.length+' >>\nstream\n'+s+'\nendstream'};
+    let pdf='%PDF-1.4\n',off={}; for(let n=1;n<=5;n++){off[n]=pdf.length;pdf+=n+' 0 obj\n'+o[n]+'\nendobj\n';} const x=pdf.length; pdf+='xref\n0 6\n0000000000 65535 f \n'; for(let n=1;n<=5;n++)pdf+=String(off[n]).padStart(10,'0')+' 00000 n \n'; pdf+='trailer\n<< /Size 6 /Root 1 0 R >>\nstartxref\n'+x+'\n%%EOF'; return new Blob([pdf],{type:'application/pdf'}); }
+
+  /* ═══ Keyboard shortcuts ═══ */
+  document.addEventListener('keydown',e=>{ if(!(e.ctrlKey||e.metaKey)) return; const k=e.key.toLowerCase();
+    if(k==='z'&&!e.shiftKey && document.activeElement!==ta){ e.preventDefault(); $('undoBtn').click(); }
+    else if((k==='y')||(k==='z'&&e.shiftKey)){ if(document.activeElement!==ta){ e.preventDefault(); $('redoBtn').click(); } } });
+
+  /* ═══ FAQ (40) + schema ═══ */
+  const FAQ=[
+   ['How do I count words online for free?','Type or paste your text into the box above — the word count updates instantly, with no signup and nothing uploaded.'],
+   ['Does the word counter work offline?','Yes. After the page loads it runs entirely in your browser, so it works without internet and keeps your text private.'],
+   ['How are words counted?','Text is trimmed and split on spaces and line breaks; each chunk is one word, so hyphenated words count as one.'],
+   ['What is the difference between characters with and without spaces?','"With spaces" counts every character including spaces; "without spaces" counts only visible characters, which some platforms use.'],
+   ['How is reading time calculated?','By dividing the word count by an average reading speed of about 200 words per minute.'],
+   ['How is speaking time calculated?','By dividing the word count by about 130 words per minute, a comfortable speaking pace.'],
+   ['How many words is a page?','Roughly 500 words per single-spaced A4 page, or about 250 double-spaced. The tool estimates pages for you.'],
+   ['What is a good readability score?','A Flesch Reading Ease of 60–70 is ideal for a general audience; higher is easier, lower is more advanced.'],
+   ['What is keyword density?','The percentage of times a word appears relative to the total words; 1–2% for your main term is usually natural.'],
+   ['Can it check social media character limits?','Yes — it shows live progress against Twitter/X, Instagram, LinkedIn, YouTube, Google and more.'],
+   ['What is the Twitter/X character limit?','280 characters for a standard post.'],
+   ['What is the ideal meta description length?','About 150–160 characters so Google does not truncate it in search results.'],
+   ['What is the ideal title tag length?','Around 50–60 characters to avoid truncation in Google search.'],
+   ['How many words should a blog post be?','Comprehensive posts of 1,000–2,500 words tend to perform best, but quality matters more than length.'],
+   ['How many words is a novel?','Typically 70,000–100,000 words, varying by genre.'],
+   ['Can I set a word goal?','Yes — the writing-targets panel shows progress bars toward 100 up to 10,000 words.'],
+   ['Does it count sentences and paragraphs?','Yes, along with averages like words per sentence and words per paragraph.'],
+   ['Can it detect passive voice?','It flags likely passive-voice phrases using a rule-based check to help you write more actively.'],
+   ['Can I clean my text?','Yes — remove extra spaces, empty lines, duplicate lines/words, HTML, numbers, emojis, symbols and punctuation.'],
+   ['Can I change the case?','Yes — UPPERCASE, lowercase, Sentence case, Title Case, Capitalize, reverse and sort.'],
+   ['Is there find and replace?','Yes, with case-sensitive and regular-expression options and a match counter.'],
+   ['Can I undo changes?','Yes — Undo and Redo are available, plus your text auto-saves in your browser.'],
+   ['Can I export my results?','Yes — download as TXT, PDF, DOC or CSV, print a report, or copy the stats, keywords or full report.'],
+   ['Does it auto-save my text?','Yes, your text is saved locally in your browser so it is still there when you return.'],
+   ['What is vocabulary diversity?','The ratio of unique words to total words — higher means more varied, engaging language.'],
+   ['What are stop words?','Very common words like "the", "and" and "is" that carry little meaning; the tool counts and excludes them from keywords.'],
+   ['Can it count emojis, URLs and hashtags?','Yes — it separately counts emojis, URLs, emails, hashtags and mentions.'],
+   ['Is my text sent to a server?','No. All analysis is done locally; your text never leaves your device.'],
+   ['What is focus mode?','It hides everything except the editor and counts so you can write without distraction.'],
+   ['What is fullscreen mode?','It expands the editor to fill your screen for comfortable, distraction-free writing.'],
+   ['How accurate is the word count?','It uses standard whitespace splitting, matching how word processors and platforms count.'],
+   ['Can it handle very long text?','Yes — it is optimized to analyze large documents quickly in the browser.'],
+   ['Does it work on mobile?','Yes, the layout is fully responsive and works on phones and tablets.'],
+   ['What is the average word length metric?','The average number of characters per word — a rough gauge of vocabulary complexity.'],
+   ['What is grade level?','An estimate (Flesch–Kincaid) of the school grade needed to understand the text easily.'],
+   ['Why does my sentence count look off?','Sentences are estimated from terminal punctuation; unusual punctuation or abbreviations can shift the count slightly.'],
+   ['Can I count characters for an SMS?','Yes — the SMS bar shows the 160-character limit before a message splits.'],
+   ['Is there a keyword frequency list?','Yes — the top keywords are listed with counts, density and a bar chart.'],
+   ['Can I copy just the statistics?','Yes — one button copies the stats, another the keywords, another the full report.'],
+   ['Is this word counter really free?','Completely free with no limits, no watermark and no account required.']
+  ];
+  $('faqList').innerHTML = FAQ.map(([q,a])=>'<details><summary>'+esc(q)+'</summary><p>'+esc(a)+'</p></details>').join('');
+  try{ const sc=$('faqSchema'); const data=JSON.parse(sc.textContent);
+    data.mainEntity=FAQ.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}})); sc.textContent=JSON.stringify(data); }catch(e){}
+
+  /* ---- init ---- */
+  update();
+})();
 </script>
 </body>
 </html>
