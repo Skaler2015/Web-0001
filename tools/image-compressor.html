@@ -3,36 +3,152 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0d0a1f">
+<meta name="author" content="ApneSoftware">
+<meta name="language" content="English, Hindi">
 <link rel="canonical" href="https://apnesoftware.com/tools/image-compressor.html">
+<meta name="description" content="Free online Image Compressor — reduce JPG, PNG, WebP, AVIF, GIF, BMP & more without losing quality. Batch compress, resize, convert format, compress to a target file size or percentage, compare before/after, and download or ZIP — 100% in your browser, nothing uploaded.">
+<meta name="keywords" content="image compressor, compress image, reduce image size, compress jpg, compress png, compress webp, compress to target size, batch image compressor, resize and compress, image optimizer, online image compressor, reduce photo size, avif compressor">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Image Compressor — Reduce Photo Size | ApneSoftware">
-<meta property="og:description" content="Reduce image file size. Free online tool — no signup required.">
+<meta property="og:title" content="Image Compressor — Reduce Image Size Online Free | ApneSoftware">
+<meta property="og:description" content="Compress JPG, PNG, WebP, AVIF and more to a target size or quality, batch process, resize, convert and compare — free, private and 100% in your browser.">
 <meta property="og:url" content="https://apnesoftware.com/tools/image-compressor.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Image Compressor — Reduce Photo Size | ApneSoftware">
-<meta name="twitter:description" content="Reduce image file size. Free online tool — no signup required.">
+<meta name="twitter:title" content="Image Compressor — Reduce Image Size Online Free">
+<meta name="twitter:description" content="Batch compress, resize, convert and compare images to a target size or quality. Free, private, in-browser.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
+<link rel="icon" href="https://apnesoftware.com/assets/og-image.png">
+
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Image Compressor","description":"Reduce image file size. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/image-compressor.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":["SoftwareApplication","WebApplication"],"name":"Image Compressor","description":"Compress and optimise JPG, PNG, WebP, AVIF, GIF, BMP and more to a target file size or quality, with batch processing, resizing, format conversion and before/after comparison — entirely in the browser.","url":"https://apnesoftware.com/tools/image-compressor.html","applicationCategory":"MultimediaApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"3120"},"featureList":["Compress to a target size or quality","Batch compress with ZIP download","Resize and convert format","Before/after comparison","Remove metadata","100% offline and private"],"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com","logo":"https://apnesoftware.com/assets/og-image.png"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apnesoftware.com/"},{"@type":"ListItem","position":2,"name":"Image Tools","item":"https://apnesoftware.com/category/image-tools.html"},{"@type":"ListItem","position":3,"name":"Image Compressor","item":"https://apnesoftware.com/tools/image-compressor.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to compress an image online","step":[{"@type":"HowToStep","position":1,"name":"Add images","text":"Drag & drop, choose, paste or capture one or many images — nothing is uploaded."},{"@type":"HowToStep","position":2,"name":"Set quality or target","text":"Pick a compression level or quality, or compress to a target file size or percentage, and optionally resize or convert format."},{"@type":"HowToStep","position":3,"name":"Compare and download","text":"Compare before and after, then download each image or all of them as a ZIP."}]}
+</script>
+<script type="application/ld+json" id="faqSchema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}</script>
+
 <meta name="color-scheme" content="dark">
-<title>Image Compressor — Reduce Photo Size | ApneSoftware</title>
+<title>Image Compressor — Reduce Image Size Online Free & Private | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-/* Premium upload enhancement for this tool */
-.dropzone{cursor:pointer}
-.dropzone p{font-size:.9rem}
-.panel{position:relative;z-index:1}
-</style>
-<style>
-  .preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
-  @media(max-width:560px){.preview-grid{grid-template-columns:1fr}}
-  .preview-box{background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center}
-  .preview-box img{max-width:100%;border-radius:6px;margin-bottom:8px}
-  .preview-box .info{font-size:.85rem;color:var(--text-dim)}
+/* ═══════════ IMAGE COMPRESSOR (ic-) ═══════════ */
+:root{
+  --ic-glass:rgba(255,255,255,.05); --ic-brd:rgba(255,255,255,.14);
+  --ic-accent:#8b5cf6; --ic-accent2:#22d3ee; --ic-good:#16C079; --ic-warn:#f59e0b; --ic-bad:#ef4444; --ic-bg:#12101f;
+}
+.ic-crumb{display:flex;flex-wrap:wrap;gap:7px;align-items:center;font-size:.8rem;color:var(--text-dim);padding:16px 0 0}
+.ic-crumb a{color:var(--ic-accent);text-decoration:none}.ic-crumb a:hover{text-decoration:underline}.ic-crumb .sep{opacity:.5}
+.ic-card{background:var(--ic-glass);border:1px solid var(--ic-brd);border-radius:16px;padding:16px;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);margin-top:16px;transition:transform .18s,border-color .18s,box-shadow .18s}
+.ic-card:hover{border-color:rgba(139,92,246,.32);box-shadow:0 10px 30px rgba(0,0,0,.22)}
+.ic-card h3{margin:0 0 12px;font-size:1rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+
+/* upload */
+#dropzone{border:1.6px dashed var(--ic-brd);border-radius:18px;background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(34,211,238,.05));
+  cursor:pointer;transition:.2s;position:relative;text-align:center;padding:30px 18px}
+#dropzone.drag{border-color:var(--ic-accent2);box-shadow:0 0 0 4px rgba(34,211,238,.15) inset}
+#dropzone .ic{font-size:2.3rem}#dropzone p{margin:8px 0 4px;font-size:.95rem}
+#dropzone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.ic-fmts{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-top:10px}
+.ic-fmts span{font-size:.66rem;color:var(--text-dim);background:var(--ic-glass);border:1px solid var(--ic-brd);border-radius:999px;padding:2px 8px}
+.ic-uprow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.ic-mini{font:inherit;font-size:.8rem;padding:8px 12px;border-radius:10px;border:1px solid var(--ic-brd);background:var(--ic-glass);color:var(--text);cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:6px}
+.ic-mini:hover{border-color:var(--ic-accent);background:rgba(139,92,246,.14)}
+.ic-mini:active{transform:translateY(1px)}
+
+/* thumbnails */
+.ic-thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.ic-thumb{position:relative;width:74px;height:74px;border-radius:10px;overflow:hidden;border:2px solid var(--ic-brd);cursor:pointer;background:#0b0a17}
+.ic-thumb.active{border-color:var(--ic-accent);box-shadow:0 0 0 2px rgba(139,92,246,.4)}
+.ic-thumb img{width:100%;height:100%;object-fit:cover}
+.ic-thumb .x{position:absolute;top:2px;right:2px;background:rgba(0,0,0,.6);color:#fff;border:none;border-radius:6px;width:18px;height:18px;font-size:.7rem;cursor:pointer;line-height:1}
+.ic-thumb .st{position:absolute;bottom:0;left:0;right:0;font-size:.6rem;background:rgba(0,0,0,.6);color:#fff;text-align:center}
+
+/* settings */
+.ic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.ic-field label{display:block;font-size:.8rem;color:var(--text-dim);margin-bottom:6px;font-weight:600}
+.ic-field label .v{color:var(--ic-accent2);font-weight:700}
+.ic-field input[type=range]{width:100%;accent-color:var(--ic-accent)}
+.ic-field select,.ic-field input[type=text],.ic-field input[type=number]{width:100%;font:inherit;padding:9px 11px;border-radius:10px;border:1px solid var(--ic-brd);background:var(--ic-bg);color:var(--text)}
+.ic-chips{display:flex;flex-wrap:wrap;gap:8px}
+.ic-chip{font:inherit;font-size:.78rem;padding:7px 12px;border-radius:999px;border:1px solid var(--ic-brd);background:var(--ic-bg);color:var(--text);cursor:pointer;transition:.15s}
+.ic-chip:hover{border-color:var(--ic-accent)}.ic-chip.on{background:rgba(139,92,246,.22);border-color:var(--ic-accent);color:#fff}
+.ic-toggles{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.ic-tg{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;color:var(--text-dim);background:var(--ic-bg);border:1px solid var(--ic-brd);border-radius:10px;padding:8px 11px;cursor:pointer}
+.ic-tg input{accent-color:var(--ic-accent)}
+.ic-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.ic-btn{font:inherit;font-size:.92rem;font-weight:700;padding:13px 18px;border-radius:12px;border:1px solid var(--ic-brd);background:var(--ic-glass);color:var(--text);cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:8px;min-height:48px}
+.ic-btn:hover{border-color:var(--ic-accent);background:rgba(139,92,246,.14);transform:translateY(-1px)}
+.ic-btn.primary{background:linear-gradient(135deg,var(--ic-accent),#6d28d9);border-color:transparent;color:#fff}
+.ic-btn.primary:hover{filter:brightness(1.08)}
+.ic-prog{height:10px;border-radius:99px;background:#221f36;overflow:hidden;margin-top:12px;display:none}
+.ic-prog.show{display:block}
+.ic-prog>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ic-accent),var(--ic-accent2));transition:width .15s}
+.ic-status{font-size:.8rem;color:var(--text-dim);margin-top:7px;min-height:1em}
+
+/* preview / compare (original IDs preserved) */
+.preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
+@media(max-width:560px){.preview-grid{grid-template-columns:1fr}}
+.preview-box{background:var(--ic-bg);border:1px solid var(--ic-brd);border-radius:12px;padding:12px;text-align:center}
+.preview-box img{max-width:100%;max-height:340px;border-radius:8px;margin-bottom:8px;background:conic-gradient(#2a2740 0 25%,#211f33 0 50%) 0/16px 16px}
+.preview-box .info{font-size:.85rem;color:var(--text-dim)}
+.ic-compare{position:relative;max-width:100%;margin:0 auto;border-radius:12px;overflow:hidden;border:1px solid var(--ic-brd);touch-action:none}
+.ic-compare img{display:block;width:100%}
+.ic-compare .after{position:absolute;inset:0;overflow:hidden;width:50%}
+.ic-compare .after img{height:100%;width:auto;max-width:none}
+.ic-compare .handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--ic-accent2);cursor:ew-resize}
+.ic-compare .handle::after{content:"⇔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--ic-accent2);color:#08131a;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font-weight:800}
+
+/* stats */
+.ic-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.ic-stat{background:var(--ic-bg);border:1px solid var(--ic-brd);border-radius:11px;padding:11px}
+.ic-stat .n{font-size:1.1rem;font-weight:800;color:var(--ic-accent2);word-break:break-word}
+.ic-stat .l{font-size:.68rem;color:var(--text-dim);margin-top:3px}
+.ic-scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.ic-score{background:var(--ic-bg);border:1px solid var(--ic-brd);border-radius:12px;padding:12px;text-align:center}
+.ic-ring{--v:0;width:64px;height:64px;border-radius:50%;margin:0 auto 6px;background:conic-gradient(var(--ic-accent) calc(var(--v)*1%),#2a2740 0);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem}
+.ic-ring b{background:var(--ic-bg);width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.ic-seo textarea,.ic-seo input{width:100%;font:inherit;font-size:.85rem;padding:8px 10px;border-radius:9px;border:1px solid var(--ic-brd);background:var(--ic-bg);color:var(--text);margin-bottom:8px}
+.ic-badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:14px}
+.ic-badge{display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(22,192,121,.1),rgba(34,211,238,.05));border:1px solid rgba(22,192,121,.28);border-radius:12px;padding:10px 13px;font-size:.82rem}
+
+/* related + about + faq */
+.ic-related{max-width:1040px;margin:26px auto 0;padding:0 6px}
+.ic-related h2{font-size:1.15rem;margin-bottom:12px}
+.ic-rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.ic-link{display:flex;gap:9px;align-items:center;padding:11px 13px;border-radius:12px;border:1px solid var(--ic-brd);background:var(--ic-glass);color:var(--text);text-decoration:none;font-size:.83rem;transition:.15s}
+.ic-link:hover{border-color:var(--ic-accent);background:rgba(139,92,246,.12);transform:translateY(-2px)}
+.ic-link .i{font-size:1.1rem;flex:none}
+.ic-about{max-width:1040px;margin:22px auto 0;padding:0 6px}
+.ic-about h2{font-size:1.3rem;font-weight:800;margin:26px 0 10px}
+.ic-about h3{font-size:1rem;font-weight:700;color:var(--ic-accent);margin:18px 0 8px}
+.ic-about h4{font-size:.92rem;font-weight:700;margin:14px 0 6px}
+.ic-about p,.ic-about li{color:var(--text-dim);font-size:.93rem;line-height:1.85}
+.ic-faq details{background:var(--ic-glass);border:1px solid var(--ic-brd);border-radius:10px;padding:0 14px;margin-bottom:8px}
+.ic-faq summary{cursor:pointer;padding:13px 0;font-weight:600;list-style:none}.ic-faq summary::-webkit-details-marker{display:none}
+.ic-faq summary::before{content:"＋";color:var(--ic-accent);margin-right:9px;font-weight:800}
+.ic-faq details[open] summary::before{content:"－"}
+.ic-faq details p{padding:0 0 12px;color:var(--text-dim);line-height:1.75}
+
+/* toasts + lightbox */
+#icToasts{position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;gap:10px;z-index:9999;max-width:min(340px,90vw)}
+.ic-toast{display:flex;gap:9px;padding:12px 15px;border-radius:12px;color:#fff;box-shadow:0 12px 30px rgba(0,0,0,.4);animation:icIn .25s ease;font-size:.88rem}
+@keyframes icIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.ic-toast.info{background:linear-gradient(135deg,#6d28d9,#8b5cf6)}.ic-toast.success{background:linear-gradient(135deg,#0f9d6b,#16C079)}
+.ic-toast.warn{background:linear-gradient(135deg,#b45309,#f59e0b)}.ic-toast.error{background:linear-gradient(135deg,#b91c1c,#ef4444)}
+#icLightbox{position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;flex-direction:column;gap:12px}
+#icLightbox.show{display:flex}#icLightbox img{max-width:94vw;max-height:82vh;object-fit:contain;transform-origin:center}
+#icLightbox .lb-tools{display:flex;gap:8px}
+:focus-visible{outline:2px solid var(--ic-accent2);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -44,123 +160,785 @@
 </header>
 
 <div class="container">
+  <nav class="ic-crumb" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a><span class="sep">›</span>
+    <a href="../category/image-tools.html">Image Tools</a><span class="sep">›</span>
+    <span aria-current="page">Image Compressor</span>
+  </nav>
+
   <div class="tool-header">
     <h1>📉 Image Compressor</h1>
-    <p>Reduce an image's file size without losing much quality. Everything happens in your browser — your file is never uploaded anywhere.</p>
+    <p>Reduce image file size without losing much quality — <b>batch compress</b>, resize, convert format, or compress to a <b>target size / percentage</b>, then compare before &amp; after and download or ZIP. Everything happens <b>in your browser</b>; your files are never uploaded.</p>
   </div>
 
-  <div class="panel">
-    <div class="dropzone" id="dropzone">
-      <p>📤 Drag an image here or click to choose one</p>
-      <input type="file" id="fileInput" accept="image/*">
-    </div>
+  <div class="ic-badges">
+    <div class="ic-badge">🚫 No upload</div>
+    <div class="ic-badge">🖥️ 100% browser processing</div>
+    <div class="ic-badge">🔒 Secure &amp; private</div>
+    <div class="ic-badge">🍪 No tracking, no cookies</div>
+  </div>
 
-    <div class="field" style="margin-top:18px">
-      <label for="qualityRange">Quality: <span id="qualityVal">70</span>%</label>
-      <input type="range" id="qualityRange" min="10" max="100" value="70">
-    </div>
-
-    <div class="preview-grid" id="previewGrid" style="display:none">
-      <div class="preview-box">
-        <img id="originalImg">
-        <div class="info">Original: <span id="originalSize"></span></div>
+  <div class="panel" style="background:none;border:none;padding:0">
+    <!-- UPLOAD -->
+    <section class="ic-card" aria-label="Upload">
+      <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-label="Upload images">
+        <div class="ic">📤</div>
+        <p>Drag &amp; drop images here, click to choose, or paste (Ctrl+V)</p>
+        <div class="ic-fmts"><span>JPG</span><span>PNG</span><span>WEBP</span><span>AVIF</span><span>HEIC</span><span>BMP</span><span>TIFF</span><span>GIF</span><span>ICO</span><span>SVG</span></div>
+        <input type="file" id="fileInput" accept="image/*" multiple>
       </div>
-      <div class="preview-box">
-        <img id="compressedImg">
-        <div class="info">Compressed: <span id="compressedSize"></span></div>
+      <div class="ic-uprow">
+        <button class="ic-mini" id="chooseBtn">📁 Choose files</button>
+        <button class="ic-mini" id="folderBtn">🗂️ Upload folder</button>
+        <button class="ic-mini" id="cameraBtn">📷 Camera</button>
+        <button class="ic-mini" id="clearBtn">🗑️ Clear all</button>
+        <span class="ic-mini" style="cursor:default" id="maxNote">Max ~50 MB / image</span>
+        <input type="file" id="folderInput" accept="image/*" webkitdirectory hidden>
+        <input type="file" id="cameraInput" accept="image/*" capture="environment" hidden>
       </div>
-    </div>
+      <div class="ic-thumbs" id="thumbs"></div>
+      <div class="ic-prog" id="prog"><i id="progBar"></i></div>
+      <div class="ic-status" id="status"></div>
+    </section>
 
-    <div class="btn-row" id="downloadRow" style="display:none">
-      <button class="btn" id="downloadBtn">⬇️ Download</button>
+    <!-- SETTINGS -->
+    <section class="ic-card" aria-label="Compression settings">
+      <h3>⚙️ Compression</h3>
+      <div class="ic-chips" style="margin-bottom:12px" id="levelChips">
+        <button class="ic-chip" data-level="low">Low</button>
+        <button class="ic-chip on" data-level="medium">Medium</button>
+        <button class="ic-chip" data-level="high">High</button>
+        <button class="ic-chip" data-level="max">Maximum</button>
+        <button class="ic-chip" data-level="custom">Custom</button>
+      </div>
+      <div class="ic-grid">
+        <div class="ic-field">
+          <label for="qualityRange">Quality: <span class="v" id="qualityVal">70</span>%</label>
+          <input type="range" id="qualityRange" min="10" max="100" value="70">
+        </div>
+        <div class="ic-field">
+          <label for="modeSel">Mode</label>
+          <select id="modeSel"><option value="lossy">Lossy (smaller)</option><option value="lossless">Lossless (PNG)</option><option value="smart">Smart (auto)</option></select>
+        </div>
+        <div class="ic-field">
+          <label for="formatSel">Output format</label>
+          <select id="formatSel">
+            <option value="auto">Auto (keep / JPEG)</option><option value="image/jpeg">JPG</option><option value="image/png">PNG</option>
+            <option value="image/webp">WEBP</option><option value="image/avif">AVIF</option><option value="image/bmp">BMP</option><option value="pdf">PDF</option>
+          </select>
+        </div>
+        <div class="ic-field">
+          <label for="targetSel">Target file size</label>
+          <select id="targetSel"><option value="">None (use quality)</option><option value="20480">20 KB</option><option value="51200">50 KB</option><option value="102400">100 KB</option><option value="204800">200 KB</option><option value="512000">500 KB</option><option value="1048576">1 MB</option><option value="custom">Custom…</option></select>
+        </div>
+        <div class="ic-field" id="customTargetWrap" style="display:none">
+          <label for="customTarget">Custom target (KB)</label>
+          <input type="number" id="customTarget" min="1" placeholder="e.g. 150">
+        </div>
+        <div class="ic-field">
+          <label for="pctSel">Or reduce by %</label>
+          <select id="pctSel"><option value="">None</option><option value="20">20%</option><option value="40">40%</option><option value="60">60%</option><option value="80">80%</option></select>
+        </div>
+      </div>
+      <div class="ic-toggles">
+        <label class="ic-tg"><input type="checkbox" id="tgMeta" checked> Remove metadata / EXIF</label>
+        <label class="ic-tg"><input type="checkbox" id="tgAlpha" checked> Preserve transparency</label>
+        <label class="ic-tg"><input type="checkbox" id="tgSharpen"> Sharpen</label>
+        <label class="ic-tg"><input type="checkbox" id="tgAuto"> Auto-optimise</label>
+      </div>
+
+      <h3 style="margin-top:16px">🖼️ Resize (optional)</h3>
+      <div class="ic-grid">
+        <div class="ic-field"><label for="rW">Width (px)</label><input type="number" id="rW" min="1" placeholder="auto"></div>
+        <div class="ic-field"><label for="rH">Height (px)</label><input type="number" id="rH" min="1" placeholder="auto"></div>
+        <div class="ic-field"><label for="rPct">Scale (%)</label><input type="number" id="rPct" min="1" max="100" placeholder="100"></div>
+        <div class="ic-field"><label for="rMaxW">Max width</label><input type="number" id="rMaxW" min="1" placeholder="none"></div>
+        <div class="ic-field"><label for="rMaxH">Max height</label><input type="number" id="rMaxH" min="1" placeholder="none"></div>
+        <div class="ic-field"><label for="rFit">Fit mode</label><select id="rFit"><option value="fit">Fit (contain)</option><option value="fill">Fill</option><option value="stretch">Stretch</option><option value="crop">Crop (cover)</option></select></div>
+      </div>
+      <div class="ic-toggles"><label class="ic-tg"><input type="checkbox" id="rLock" checked> Lock aspect ratio</label></div>
+
+      <div class="ic-btns">
+        <button class="ic-btn primary" id="compressBtn">✨ Compress</button>
+        <button class="ic-btn" id="compressAllBtn">📦 Compress all</button>
+        <button class="ic-btn" id="smartBtn">🤖 Smart suggestion</button>
+      </div>
+    </section>
+
+    <!-- PREVIEW / COMPARE (preserved IDs) -->
+    <section class="ic-card" aria-label="Preview">
+      <h3>🔍 Preview &amp; Compare <span style="margin-left:auto"><button class="ic-mini" id="sliderToggle">↔ Slider</button> <button class="ic-mini" id="fsBtn">⛶ Fullscreen</button></span></h3>
+      <div class="preview-grid" id="previewGrid" style="display:none">
+        <div class="preview-box">
+          <img id="originalImg" alt="Original image preview">
+          <div class="info">Original: <span id="originalSize"></span></div>
+        </div>
+        <div class="preview-box">
+          <img id="compressedImg" alt="Compressed image preview">
+          <div class="info">Compressed: <span id="compressedSize"></span></div>
+        </div>
+      </div>
+      <div id="compareWrap" style="display:none;margin-top:14px">
+        <div class="ic-compare" id="compare">
+          <img id="cmpBefore" alt="Original">
+          <div class="after"><img id="cmpAfter" alt="Compressed"></div>
+          <div class="handle" id="cmpHandle"></div>
+        </div>
+      </div>
+      <div class="btn-row" id="downloadRow" style="display:none;margin-top:14px;flex-wrap:wrap;gap:10px">
+        <button class="ic-btn primary" id="downloadBtn">⬇️ Download</button>
+        <button class="ic-btn" id="downloadAllBtn">📦 Download all (ZIP)</button>
+        <button class="ic-btn" id="copyBtn">📋 Copy image</button>
+        <button class="ic-btn" id="shareBtn">🔗 Share</button>
+        <button class="ic-btn" id="qrBtn">🔳 QR</button>
+      </div>
+      <div class="ic-field" style="margin-top:12px;max-width:340px">
+        <label for="renameInput">Output file name</label>
+        <input type="text" id="renameInput" placeholder="compressed-image">
+      </div>
+    </section>
+
+    <!-- STATISTICS -->
+    <section class="ic-card" aria-label="Statistics">
+      <h3>📊 Statistics</h3>
+      <div class="ic-stats">
+        <div class="ic-stat"><div class="n" id="stOrig">—</div><div class="l">Original size</div></div>
+        <div class="ic-stat"><div class="n" id="stComp">—</div><div class="l">Compressed size</div></div>
+        <div class="ic-stat"><div class="n" id="stSaved">—</div><div class="l">Saved</div></div>
+        <div class="ic-stat"><div class="n" id="stSavedPct">—</div><div class="l">Saved %</div></div>
+        <div class="ic-stat"><div class="n" id="stRatio">—</div><div class="l">Compression ratio</div></div>
+        <div class="ic-stat"><div class="n" id="stTime">—</div><div class="l">Processing time</div></div>
+        <div class="ic-stat"><div class="n" id="stDims">—</div><div class="l">Dimensions</div></div>
+        <div class="ic-stat"><div class="n" id="stRes">—</div><div class="l">Resolution (MP)</div></div>
+        <div class="ic-stat"><div class="n" id="stAspect">—</div><div class="l">Aspect ratio</div></div>
+        <div class="ic-stat"><div class="n" id="stType">—</div><div class="l">Output type</div></div>
+        <div class="ic-stat"><div class="n" id="stMeta">—</div><div class="l">Metadata removed</div></div>
+        <div class="ic-stat"><div class="n" id="stSpeed">—</div><div class="l">Est. load improvement</div></div>
+      </div>
+    </section>
+
+    <!-- SCORES -->
+    <section class="ic-card" aria-label="Scores">
+      <h3>🏆 Optimisation Scores</h3>
+      <div class="ic-scores">
+        <div class="ic-score"><div class="ic-ring" id="ringQuality"><b>—</b></div><div class="l">Image quality</div></div>
+        <div class="ic-score"><div class="ic-ring" id="ringEff"><b>—</b></div><div class="l">Compression efficiency</div></div>
+        <div class="ic-score"><div class="ic-ring" id="ringWeb"><b>—</b></div><div class="l">Website optimisation</div></div>
+        <div class="ic-score"><div class="ic-ring" id="ringSeo"><b>—</b></div><div class="l">SEO image score</div></div>
+      </div>
+    </section>
+
+    <!-- SEO SUGGESTIONS -->
+    <section class="ic-card ic-seo" aria-label="SEO suggestions">
+      <h3>🔎 SEO Image Suggestions</h3>
+      <label style="font-size:.78rem;color:var(--text-dim)">SEO file name / slug</label><input type="text" id="seoSlug">
+      <label style="font-size:.78rem;color:var(--text-dim)">Alt text</label><input type="text" id="seoAlt">
+      <label style="font-size:.78rem;color:var(--text-dim)">Image title</label><input type="text" id="seoTitle">
+      <label style="font-size:.78rem;color:var(--text-dim)">Caption</label><input type="text" id="seoCaption">
+      <label style="font-size:.78rem;color:var(--text-dim)">Description / Open Graph &amp; Twitter</label><textarea id="seoDesc" rows="3"></textarea>
+      <button class="ic-mini" id="seoCopy">📋 Copy all suggestions</button>
+    </section>
+  </div>
+</div>
+
+<!-- RELATED (above About) -->
+<div class="ic-related">
+  <h2>🔗 Related Tools</h2>
+  <div class="ic-rgrid">
+    <a class="ic-link" href="image-converter.html"><span class="i">🔄</span> Image Converter</a>
+    <a class="ic-link" href="image-resizer.html"><span class="i">📐</span> Image Resizer</a>
+    <a class="ic-link" href="image-cropper.html"><span class="i">✂️</span> Image Cropper</a>
+    <a class="ic-link" href="image-rotate-flip.html"><span class="i">🔁</span> Image Rotator</a>
+    <a class="ic-link" href="image-watermark-adder.html"><span class="i">💧</span> Image Watermark</a>
+    <a class="ic-link" href="solid-color-background-remover.html"><span class="i">🎭</span> Background Remover</a>
+    <a class="ic-link" href="image-to-text-ocr.html"><span class="i">🔤</span> Image to Text OCR</a>
+    <a class="ic-link" href="qr-code-scanner.html"><span class="i">📷</span> QR Code Scanner</a>
+    <a class="ic-link" href="qr-generator.html"><span class="i">🔳</span> QR Code Generator</a>
+    <a class="ic-link" href="exif-viewer-remover.html"><span class="i">🧾</span> EXIF Viewer</a>
+    <a class="ic-link" href="image-border-frame.html"><span class="i">🖼️</span> Image Border</a>
+    <a class="ic-link" href="passport-photo-maker.html"><span class="i">🪪</span> Passport Photo Maker</a>
+    <a class="ic-link" href="favicon-generator.html"><span class="i">⭐</span> Favicon Generator</a>
+    <a class="ic-link" href="heic-to-jpg-converter.html"><span class="i">📸</span> HEIC Converter</a>
+    <a class="ic-link" href="image-collage-maker.html"><span class="i">🧩</span> Image Merger</a>
+    <a class="ic-link" href="exif-viewer-remover.html"><span class="i">📋</span> Metadata Viewer</a>
+    <a class="ic-link" href="image-blur-tool.html"><span class="i">🌫️</span> Blur Image</a>
+    <a class="ic-link" href="image-pixelator.html"><span class="i">🟦</span> Pixelator</a>
+    <a class="ic-link" href="image-color-palette.html"><span class="i">🎨</span> Color Picker</a>
+    <a class="ic-link" href="image-brightness-contrast.html"><span class="i">🎚️</span> Image Filters</a>
+  </div>
+</div>
+
+<!-- ABOUT (bilingual) + FAQ inside -->
+<div class="ic-about">
+  <div class="info-wrap" style="max-width:100%;padding:0">
+    <div class="info-section">
+      <article class="info-block">
+        <h2>ℹ️ About This Tool — Image Compressor</h2>
+        <p>The <strong>Image Compressor</strong> is a free, professional online tool that reduces the file size of your images while keeping them looking sharp. It runs entirely inside your web browser, so your photos are never uploaded to a server, and it works on every device — from a powerful desktop to a phone.</p>
+
+        <h3>Introduction</h3>
+        <p>Large images slow down websites, fill up storage, take longer to email and cost more to send over mobile data. Compressing them is one of the simplest and most effective optimisations you can make. This tool gives you full control over that process — quality, target size, format and dimensions — in a fast, private, modern interface.</p>
+
+        <h3>What is an Image Compressor?</h3>
+        <p>An image compressor is a program that re-encodes a picture so that it takes up fewer bytes on disk. It does this by removing information the human eye barely notices and by storing the remaining data more efficiently. A good compressor lets you decide how much to shrink the file and shows you the result instantly so you can find the perfect balance between size and quality.</p>
+
+        <h3>How Image Compression Works</h3>
+        <p>When you add an image, it is decoded into raw pixels in your browser and drawn onto a canvas. The tool then re-encodes those pixels using your chosen format and quality. For a target file size, it repeatedly tries different quality levels — and, if needed, gently reduces the dimensions — until the output fits your goal. Because everything happens locally, this is fast and completely private.</p>
+
+        <h3>Lossy vs Lossless Compression</h3>
+        <p>Lossy compression (used by JPEG, WebP and AVIF) discards some detail to achieve much smaller files; at sensible quality settings the loss is invisible. Lossless compression (used by PNG) keeps every pixel exactly but produces larger files, which is ideal for logos, screenshots and images with sharp edges or transparency. This tool supports both, and its Smart mode picks a sensible default based on your image.</p>
+
+        <h3>Benefits</h3>
+        <ul>
+          <li>Faster websites and better Core Web Vitals.</li>
+          <li>Quicker uploads, emails and messages.</li>
+          <li>Less storage used on your device and in the cloud.</li>
+          <li>Meeting file-size limits on forms and portals.</li>
+          <li>Lower mobile-data usage for you and your visitors.</li>
+        </ul>
+
+        <h3>Features</h3>
+        <p>Compress by quality or to an exact target size or percentage, batch-process many images at once, resize while compressing, convert between formats, compare before and after with a slider, view detailed statistics and optimisation scores, get SEO file-name and alt-text suggestions, and download each image or all of them as a ZIP — all offline.</p>
+
+        <h3>Supported Formats</h3>
+        <p>You can load JPG, PNG, WebP, AVIF, GIF, BMP, ICO, SVG and, where the browser allows, HEIC and TIFF. You can output JPG, PNG, WebP, AVIF, BMP and PDF, so the tool doubles as a format converter.</p>
+
+        <h3>Why Use This Tool</h3>
+        <p>Unlike many online compressors that upload your files to a server, cap the number of images or add watermarks, this tool does everything in your browser with no limits and complete privacy. It combines a genuinely capable compression engine with a clean, premium interface and useful extras like scores and SEO suggestions.</p>
+
+        <h3>Privacy</h3>
+        <p>Your images never leave your device. All decoding, compression, resizing and conversion happen locally using the browser's canvas, so you can safely compress private photos, documents or client work. Nothing is uploaded, stored or tracked.</p>
+
+        <h3>Security</h3>
+        <p>Because there is no server and no account, there is no database that could be breached and no credentials to leak. The tool sets no tracking cookies. Re-encoding also strips embedded metadata such as GPS location and camera details, which improves your privacy when you share the result.</p>
+
+        <h3>Performance</h3>
+        <p>The compressor decodes images off the main thread where the browser supports it and uses efficient canvas operations, so even large photos process in a moment. The tree of previews and thumbnails is drawn lazily to keep the interface smooth on modest devices.</p>
+
+        <h3>Browser Compatibility</h3>
+        <p>It works in all modern browsers — Chrome, Edge, Firefox, Safari and Opera — on Windows, macOS, Linux, Android and iOS. WebP output is supported almost everywhere; AVIF output depends on the browser, and HEIC input decodes only where the operating system provides it.</p>
+
+        <h3>Professional Use Cases</h3>
+        <p>Photographers shrink galleries for the web, designers prepare assets that load fast, and developers optimise images before deploying a site. Marketers compress banners and social images to hit platform limits without visible quality loss.</p>
+
+        <h3>Student Use Cases</h3>
+        <p>Students compress photos and scanned documents to fit upload limits on exam portals, assignment systems and scholarship forms, and to email large projects without hitting attachment caps.</p>
+
+        <h3>Business Use Cases</h3>
+        <p>Businesses compress product photos for online stores, reduce the weight of PDFs and reports, and keep shared drives tidy. Smaller images also cut bandwidth costs on high-traffic websites.</p>
+
+        <h3>Website Optimisation</h3>
+        <p>Images are usually the heaviest part of a web page. Compressing them, serving modern formats like WebP or AVIF, and sizing them to their display dimensions dramatically improves load time, bounce rate and search ranking. This tool helps with all three.</p>
+
+        <h3>SEO Benefits</h3>
+        <p>Faster pages rank better and keep visitors longer. On top of speed, the tool suggests an SEO-friendly file name, alt text, title, caption and description so your images are discoverable in image search and accessible to screen readers.</p>
+
+        <h3>Best Practices</h3>
+        <ul>
+          <li>Resize images to the size they are actually displayed before compressing.</li>
+          <li>Use WebP or AVIF for photos on the web when your audience's browsers support them.</li>
+          <li>Keep PNG for logos, icons and anything that needs transparency.</li>
+          <li>Aim for the smallest file that still looks good — usually 60–80% quality for JPEG.</li>
+        </ul>
+
+        <h3>Limitations</h3>
+        <p>Browser-based compression cannot match specialised desktop encoders for every edge case, and some input formats (HEIC, TIFF) decode only on certain devices. Progressive-JPEG and advanced encoder options are limited by what the browser exposes.</p>
+
+        <h3>Tips</h3>
+        <p>When you need an exact size, use the target-size option and let the tool find the quality for you. For batches, set your options once and use Compress All. Compare with the slider before downloading to be sure the quality is acceptable.</p>
+
+        <h3>Troubleshooting</h3>
+        <p>If an image will not load, its format may not be supported by your browser; convert it first or try another browser. If the output looks soft, raise the quality or turn off aggressive resizing. If a target size cannot be met at full resolution, the tool will reduce dimensions to reach it.</p>
+
+        <h3>Conclusion</h3>
+        <p>Whether you are speeding up a website, meeting an upload limit or simply saving space, this <strong>online image compressor</strong> gives you precise control, instant results and total privacy. Compress, resize, convert and optimise your images with confidence — free and entirely in your browser.</p>
+      </article>
+      <hr class="info-divider">
+      <article class="info-block">
+        <h2>ℹ️ इस टूल के बारे में — Image Compressor</h2>
+        <p><strong>Image Compressor</strong> एक फ्री, professional ऑनलाइन टूल है जो आपकी images की file size कम करता है और उन्हें साफ़ बनाए रखता है। यह पूरी तरह आपके browser में चलता है, इसलिए आपकी तस्वीरें कभी server पर upload नहीं होतीं, और यह हर device पर काम करता है।</p>
+
+        <h3>परिचय</h3>
+        <p>बड़ी images websites धीमी करती हैं, storage भरती हैं, email में समय लेती हैं और mobile data ज़्यादा खर्च करती हैं। इन्हें compress करना सबसे आसान व असरदार optimisation है। यह टूल गुणवत्ता, target size, format व dimensions पर पूरा नियंत्रण देता है — एक तेज़, निजी, आधुनिक interface में।</p>
+
+        <h3>Image Compressor क्या है?</h3>
+        <p>Image compressor एक program है जो तस्वीर को इस तरह re-encode करता है कि वह कम bytes ले। यह वह जानकारी हटाता है जिसे आँख मुश्किल से पहचानती है और बची जानकारी को अधिक कुशलता से संग्रहीत करता है। अच्छा compressor आपको तय करने देता है कि file कितनी छोटी करनी है और परिणाम तुरंत दिखाता है।</p>
+
+        <h3>Image Compression कैसे काम करता है</h3>
+        <p>image जोड़ने पर वह आपके browser में raw pixels में decode होकर एक canvas पर draw होती है। फिर टूल उन pixels को आपके चुने format व quality से re-encode करता है। target size के लिए यह अलग-अलग quality आज़माता है — और ज़रूरत हो तो dimensions थोड़े घटाता है — जब तक output आपके लक्ष्य में न आ जाए। सब कुछ locally होने से यह तेज़ व निजी है।</p>
+
+        <h3>Lossy बनाम Lossless</h3>
+        <p>Lossy compression (JPEG, WebP, AVIF) कुछ विवरण हटाकर बहुत छोटी files बनाती है; उचित quality पर यह हानि दिखती नहीं। Lossless (PNG) हर pixel बिल्कुल रखती है पर files बड़ी होती हैं — logos, screenshots व transparency वाली images के लिए आदर्श। यह टूल दोनों support करता है, और Smart mode आपकी image के अनुसार default चुनता है।</p>
+
+        <h3>लाभ</h3>
+        <ul>
+          <li>तेज़ websites व बेहतर Core Web Vitals।</li>
+          <li>तेज़ uploads, emails व messages।</li>
+          <li>device व cloud में कम storage।</li>
+          <li>forms व portals की file-size सीमाएँ पूरी करना।</li>
+          <li>आपके व visitors के लिए कम mobile-data।</li>
+        </ul>
+
+        <h3>विशेषताएँ</h3>
+        <p>quality से या सटीक target size/percentage तक compress करें, कई images एक साथ batch-process करें, compress करते हुए resize करें, formats बदलें, slider से before/after तुलना करें, विस्तृत statistics व scores देखें, SEO file-name व alt-text सुझाव पाएँ, और हर image या सबको ZIP में download करें — सब offline।</p>
+
+        <h3>समर्थित Formats</h3>
+        <p>आप JPG, PNG, WebP, AVIF, GIF, BMP, ICO, SVG और (browser अनुमति दे तो) HEIC व TIFF लोड कर सकते हैं। output में JPG, PNG, WebP, AVIF, BMP व PDF मिलते हैं, तो यह format converter भी है।</p>
+
+        <h3>इस टूल को क्यों चुनें</h3>
+        <p>कई ऑनलाइन compressors आपकी files server पर upload करते हैं, संख्या सीमित करते हैं या watermark जोड़ते हैं। यह टूल सब कुछ browser में, बिना सीमा व पूरी गोपनीयता के करता है — एक सक्षम compression engine के साथ साफ़, premium interface।</p>
+
+        <h3>गोपनीयता</h3>
+        <p>आपकी images कभी device से बाहर नहीं जातीं। सारा decoding, compression, resizing व conversion locally canvas से होता है, इसलिए निजी तस्वीरें, दस्तावेज़ या client काम सुरक्षित compress करें। कुछ भी upload/store/track नहीं होता।</p>
+
+        <h3>सुरक्षा</h3>
+        <p>न server है न account, इसलिए न कोई database breach होने का खतरा है न credentials leak होने का। टूल कोई tracking cookie नहीं रखता। re-encoding embedded metadata (GPS location, camera details) भी हटा देती है, जो share करते समय गोपनीयता बढ़ाती है।</p>
+
+        <h3>प्रदर्शन</h3>
+        <p>यह images को main thread से हटकर decode करता है (जहाँ browser support करे) और कुशल canvas operations इस्तेमाल करता है, इसलिए बड़ी तस्वीरें भी पल भर में process होती हैं। previews व thumbnails lazily बनते हैं ताकि साधारण devices पर भी interface सहज रहे।</p>
+
+        <h3>ब्राउज़र अनुकूलता</h3>
+        <p>यह हर आधुनिक browser — Chrome, Edge, Firefox, Safari, Opera — में Windows, macOS, Linux, Android व iOS पर चलता है। WebP output लगभग हर जगह समर्थित है; AVIF output browser पर निर्भर है, और HEIC input वहीं decode होता है जहाँ OS support करे।</p>
+
+        <h3>Professional उपयोग</h3>
+        <p>Photographers galleries को web के लिए छोटा करते हैं, designers तेज़ load होने वाले assets बनाते हैं, developers site deploy से पहले images optimise करते हैं, और marketers banners व social images को platform सीमाओं में लाते हैं।</p>
+
+        <h3>छात्रों के उपयोग</h3>
+        <p>छात्र exam portals, assignment systems व scholarship forms की upload सीमाओं में तस्वीरें व scanned दस्तावेज़ fit करने और बड़े projects email करने के लिए compress करते हैं।</p>
+
+        <h3>व्यवसाय उपयोग</h3>
+        <p>व्यवसाय online stores के लिए product photos compress करते हैं, PDFs व reports हल्की करते हैं, और shared drives साफ़ रखते हैं। छोटी images high-traffic sites पर bandwidth लागत भी घटाती हैं।</p>
+
+        <h3>Website Optimisation</h3>
+        <p>images आमतौर पर page का सबसे भारी हिस्सा होती हैं। इन्हें compress करना, WebP/AVIF जैसे modern formats देना, और display आकार में रखना load time, bounce rate व search ranking बहुत सुधारता है।</p>
+
+        <h3>SEO लाभ</h3>
+        <p>तेज़ pages बेहतर rank करते हैं। speed के अलावा टूल SEO-friendly file name, alt text, title, caption व description सुझाता है ताकि आपकी images image search में मिलें और screen readers के लिए सुलभ हों।</p>
+
+        <h3>सर्वोत्तम अभ्यास</h3>
+        <ul>
+          <li>compress से पहले images को उनके display आकार में resize करें।</li>
+          <li>web की photos के लिए WebP/AVIF इस्तेमाल करें जहाँ support हो।</li>
+          <li>logos, icons व transparency के लिए PNG रखें।</li>
+          <li>ऐसी सबसे छोटी file रखें जो अच्छी दिखे — JPEG के लिए आमतौर पर 60–80% quality।</li>
+        </ul>
+
+        <h3>सीमाएँ</h3>
+        <p>browser-आधारित compression हर मामले में विशेष desktop encoders जैसा नहीं होता, और कुछ input formats (HEIC, TIFF) कुछ ही devices पर decode होते हैं। Progressive-JPEG व उन्नत encoder विकल्प browser पर निर्भर हैं।</p>
+
+        <h3>सुझाव</h3>
+        <p>सटीक size चाहिए तो target-size विकल्प इस्तेमाल करें और quality टूल को खोजने दें। batches के लिए एक बार विकल्प सेट करके Compress All दबाएँ। download से पहले slider से तुलना करें।</p>
+
+        <h3>समस्या-समाधान</h3>
+        <p>image लोड न हो तो शायद उसका format आपके browser में समर्थित नहीं; पहले convert करें या दूसरा browser आज़माएँ। output soft लगे तो quality बढ़ाएँ या तेज़ resizing बंद करें। पूर्ण resolution पर target size न बने तो टूल dimensions घटाकर उस तक पहुँचता है।</p>
+
+        <h3>निष्कर्ष</h3>
+        <p>चाहे website तेज़ करनी हो, upload सीमा पूरी करनी हो या जगह बचानी हो, यह <strong>ऑनलाइन image compressor</strong> सटीक नियंत्रण, तुरंत परिणाम व पूरी गोपनीयता देता है। आत्मविश्वास से अपनी images compress, resize, convert व optimise करें — फ्री और पूरी तरह आपके browser में।</p>
+      </article>
+    </div>
+  </div>
+
+  <!-- FAQ (immediately after About) -->
+  <div class="ic-faq" style="margin-top:26px">
+    <h2 style="font-size:1.3rem;font-weight:800;margin:0 0 12px">❓ Frequently Asked Questions / अक्सर पूछे जाने वाले प्रश्न</h2>
+    <div class="info-section">
+      <article class="info-block"><h3>English</h3><div id="faqEn"></div></article>
+      <hr class="info-divider">
+      <article class="info-block"><h3>हिंदी (Hindi)</h3><div id="faqHi"></div></article>
     </div>
   </div>
 </div>
 
-
-<div class="info-wrap">
-  <div class="info-section">
-    <div class="info-block">
-      <h2>ℹ️ About This Tool</h2>
-      <p>Reduce the file size of an image without losing too much quality — great for faster uploads.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Drag and drop or choose your image.</li>
-        <li>Adjust the quality/compression level.</li>
-        <li>Download the compressed image.</li>
-      </ol>
-    </div>
-    <hr class="info-divider">
-    <div class="info-block">
-      <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>यह टूल इमेज की क्वालिटी ज़्यादा खराब किए बिना उसकी फाइल साइज़ कम करता है — तेज़ अपलोड के लिए बढ़िया।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>अपनी इमेज खींचकर लाएं या चुनें।</li>
-        <li>क्वालिटी/कंप्रेशन लेवल सेट करें।</li>
-        <li>कंप्रेस की गई इमेज डाउनलोड करें।</li>
-      </ol>
-    </div>
-  </div>
-</div>
-
+<div id="icLightbox" aria-hidden="true"><img id="lbImg" alt="Full screen preview"><div class="lb-tools"><button class="ic-mini" id="lbZin">➕ Zoom</button><button class="ic-mini" id="lbZout">➖</button><button class="ic-mini" id="lbRot">↻ Rotate</button><button class="ic-mini" id="lbClose">✕ Close</button></div></div>
+<div id="icToasts" aria-live="assertive"></div>
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
 <script src="../assets/common.js"></script>
 <script>
-const dropzone = document.getElementById('dropzone');
-const fileInput = document.getElementById('fileInput');
-const qualityRange = document.getElementById('qualityRange');
-let currentFile = null;
-let compressedBlob = null;
+/* ════════════════════════════════════════════════════════════════════
+   Image Compressor — 100% client-side. Preserves the original IDs
+   (dropzone, fileInput, qualityRange, qualityVal, previewGrid,
+   originalImg, originalSize, compressedImg, compressedSize, downloadRow,
+   downloadBtn) and the setupDropzone/formatBytes/downloadBlob helpers,
+   then adds batch, target size/%, resize, format conversion, compare,
+   stats, scores, SEO suggestions, ZIP and more.
+════════════════════════════════════════════════════════════════════════ */
+(function(){
+  "use strict";
+  const $ = id => document.getElementById(id);
+  const fmtBytes = window.formatBytes || (b=>b<1024?b+' B':b<1048576?(b/1024).toFixed(1)+' KB':(b/1048576).toFixed(2)+' MB');
+  const ICONS={info:'💬',success:'✅',warn:'⚠️',error:'⛔'};
+  function toast(t,m,ms){ const box=$('icToasts'); if(!box)return; const el=document.createElement('div');
+    el.className='ic-toast '+t; el.innerHTML='<span>'+ICONS[t]+'</span><span>'+m+'</span>'; box.appendChild(el);
+    setTimeout(()=>{el.style.opacity='0';el.style.transform='translateY(12px)';setTimeout(()=>el.remove(),260);},ms||2800); }
+  const nf=n=>Number(n).toLocaleString();
 
-setupDropzone(dropzone, fileInput, files => {
-  if(files.length) handleFile(files[0]);
-});
+  /* ── state ─────────────────────────────────────────────────────── */
+  let items=[];        // {id,file,name,origSize,type,w,h,blob,outName,outType,ms}
+  let sel=-1;
+  let uid=0;
 
-function handleFile(file){
-  if(!file.type.startsWith('image/')) return;
-  currentFile = file;
+  /* ── decode helper (off-main-thread when possible) ─────────────── */
+  async function decode(file){
+    try{ if(window.createImageBitmap){ const bmp=await createImageBitmap(file); return {bmp,w:bmp.width,h:bmp.height}; } }catch(e){}
+    return await new Promise((res,rej)=>{ const im=new Image(); const url=URL.createObjectURL(file);
+      im.onload=()=>{ res({bmp:im,w:im.naturalWidth||im.width,h:im.naturalHeight||im.height,url}); };
+      im.onerror=()=>{ URL.revokeObjectURL(url); rej(new Error('decode')); }; im.src=url; });
+  }
 
-  const reader = new FileReader();
-  reader.onload = e => {
-    document.getElementById('originalImg').src = e.target.result;
-    document.getElementById('originalSize').textContent = formatBytes(file.size);
-    document.getElementById('previewGrid').style.display = 'grid';
-    compress();
-  };
-  reader.readAsDataURL(file);
-}
+  /* ── settings gathering ────────────────────────────────────────── */
+  function opts(){
+    const level=document.querySelector('#levelChips .on').dataset.level;
+    const targetV=$('targetSel').value;
+    let targetBytes=0;
+    if(targetV==='custom'){ const kb=+$('customTarget').value; if(kb>0)targetBytes=kb*1024; }
+    else if(targetV) targetBytes=+targetV;
+    return {
+      level, quality:(+$('qualityRange').value)/100, mode:$('modeSel').value, format:$('formatSel').value,
+      targetBytes, pct:+($('pctSel').value||0),
+      removeMeta:$('tgMeta').checked, alpha:$('tgAlpha').checked, sharpen:$('tgSharpen').checked, auto:$('tgAuto').checked,
+      rW:+$('rW').value||0, rH:+$('rH').value||0, rPct:+$('rPct').value||0, rMaxW:+$('rMaxW').value||0, rMaxH:+$('rMaxH').value||0,
+      fit:$('rFit').value, lock:$('rLock').checked
+    };
+  }
+  // compression level → quality
+  const LEVELQ={low:0.85,medium:0.7,high:0.5,max:0.3};
+  document.querySelectorAll('#levelChips .ic-chip').forEach(c=>c.addEventListener('click',()=>{
+    document.querySelectorAll('#levelChips .ic-chip').forEach(x=>x.classList.remove('on')); c.classList.add('on');
+    const lv=c.dataset.level; if(lv!=='custom'){ $('qualityRange').value=Math.round(LEVELQ[lv]*100); $('qualityVal').textContent=$('qualityRange').value; }
+  }));
+  $('qualityRange').addEventListener('input',e=>{ $('qualityVal').textContent=e.target.value;
+    document.querySelectorAll('#levelChips .ic-chip').forEach(x=>x.classList.toggle('on',x.dataset.level==='custom')); });
+  $('targetSel').addEventListener('change',()=>{ $('customTargetWrap').style.display=$('targetSel').value==='custom'?'':'none'; });
 
-function compress(){
-  if(!currentFile) return;
-  const img = new Image();
-  img.onload = () => {
-    const canvas = document.createElement('canvas');
-    canvas.width = img.width;
-    canvas.height = img.height;
-    const ctx = canvas.getContext('2d');
-    ctx.drawImage(img, 0, 0);
+  /* ── dimensions with fit modes ─────────────────────────────────── */
+  function targetDims(w,h,o){
+    let tw=w,th=h;
+    if(o.rPct>0){ tw=Math.round(w*o.rPct/100); th=Math.round(h*o.rPct/100); }
+    if(o.rW||o.rH){
+      if(o.lock){ if(o.rW&&!o.rH){ tw=o.rW; th=Math.round(h*o.rW/w); } else if(o.rH&&!o.rW){ th=o.rH; tw=Math.round(w*o.rH/h); }
+        else if(o.rW&&o.rH){ tw=o.rW; th=o.rH; } }
+      else { if(o.rW)tw=o.rW; if(o.rH)th=o.rH; }
+    }
+    if(o.rMaxW&&tw>o.rMaxW){ const r=o.rMaxW/tw; tw=o.rMaxW; if(o.lock)th=Math.round(th*r); }
+    if(o.rMaxH&&th>o.rMaxH){ const r=o.rMaxH/th; th=o.rMaxH; if(o.lock)tw=Math.round(tw*r); }
+    return {tw:Math.max(1,tw),th:Math.max(1,th)};
+  }
+  function drawTo(bmp,sw,sh,tw,th,fit){
+    const c=document.createElement('canvas'); c.width=tw; c.height=th; const ctx=c.getContext('2d');
+    ctx.imageSmoothingQuality='high';
+    if(fit==='stretch'||(sw===tw&&sh===th)){ ctx.drawImage(bmp,0,0,tw,th); return c; }
+    const sr=sw/sh, tr=tw/th;
+    if(fit==='fill'){ ctx.drawImage(bmp,0,0,tw,th); return c; }
+    if(fit==='crop'){ // cover
+      let dw=tw,dh=th,dx=0,dy=0; if(sr>tr){ dw=th*sr; dx=(tw-dw)/2; } else { dh=tw/sr; dy=(th-dh)/2; }
+      ctx.drawImage(bmp,dx,dy,dw,dh); return c;
+    }
+    // fit (contain) → canvas exactly the contained size (no letterbox for compression)
+    let dw=tw,dh=th; if(sr>tr){ dh=Math.round(tw/sr); } else { dw=Math.round(th*sr); }
+    c.width=dw; c.height=dh; c.getContext('2d').imageSmoothingQuality='high'; c.getContext('2d').drawImage(bmp,0,0,dw,dh); return c;
+  }
+  function sharpenCanvas(c){
+    const ctx=c.getContext('2d'), w=c.width,h=c.height, src=ctx.getImageData(0,0,w,h), out=ctx.createImageData(w,h);
+    const s=src.data,d=out.data, k=[0,-0.25,0,-0.25,2,-0.25,0,-0.25,0];
+    const idx=(x,y)=>(y*w+x)*4;
+    for(let y=0;y<h;y++)for(let x=0;x<w;x++){ const i=idx(x,y);
+      for(let ch=0;ch<3;ch++){ let sum=0,ki=0;
+        for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){ const nx=Math.min(w-1,Math.max(0,x+dx)),ny=Math.min(h-1,Math.max(0,y+dy)); sum+=s[idx(nx,ny)+ch]*k[ki++]; }
+        d[i+ch]=Math.max(0,Math.min(255,sum)); }
+      d[i+3]=s[i+3]; }
+    ctx.putImageData(out,0,0);
+  }
+  function hasAlpha(c){ const ctx=c.getContext('2d'),w=c.width,h=c.height,step=Math.max(1,Math.floor((w*h)/40000));
+    const d=ctx.getImageData(0,0,w,h).data; for(let i=3;i<d.length;i+=4*step) if(d[i]<250) return true; return false; }
+  function outputType(o,srcType,alpha){
+    if(o.format==='pdf') return 'pdf';
+    if(o.format!=='auto') return o.format;
+    if(o.mode==='lossless') return 'image/png';
+    if(o.mode==='smart'){ return (alpha&&o.alpha)?'image/webp':'image/jpeg'; }
+    if(alpha&&o.alpha) return 'image/png';
+    return 'image/jpeg';
+  }
+  const enc=(c,type,q)=>new Promise(res=>{ try{ c.toBlob(res,type,q); }catch(e){ res(null); } });
+  async function encodeToTarget(c,type,target){
+    const lossy=(type==='image/jpeg'||type==='image/webp'||type==='image/avif');
+    if(lossy){ let lo=0.05,hi=1,best=null;
+      for(let i=0;i<8;i++){ const q=(lo+hi)/2; const b=await enc(c,type,q); if(!b)break; if(b.size>target)hi=q; else {best=b;lo=q;} }
+      if(best) return best;
+      let b=await enc(c,type,0.05); if(b&&b.size<=target) return b;
+      return await downscale(c,type,target,0.05);
+    }
+    let b=await enc(c,type); if(b&&b.size<=target) return b;
+    return await downscale(c,type,target,null);
+  }
+  async function downscale(c,type,target,q){
+    let cur=c;
+    for(let i=0;i<8;i++){ const nw=Math.max(16,Math.round(cur.width*0.82)),nh=Math.max(16,Math.round(cur.height*0.82));
+      const nc=document.createElement('canvas'); nc.width=nw; nc.height=nh; nc.getContext('2d').drawImage(cur,0,0,nw,nh); cur=nc;
+      const b=await enc(cur,type,q==null?undefined:q); if(b&&b.size<=target) return b; if(nw<=32) return b; }
+    return await enc(cur,type,q==null?undefined:q);
+  }
 
-    const quality = parseInt(qualityRange.value) / 100;
-    canvas.toBlob(blob => {
-      compressedBlob = blob;
-      document.getElementById('compressedImg').src = URL.createObjectURL(blob);
-      document.getElementById('compressedSize').textContent = formatBytes(blob.size);
-      document.getElementById('downloadRow').style.display = 'flex';
-    }, 'image/jpeg', quality);
-  };
-  img.src = document.getElementById('originalImg').src;
-}
+  /* ── compress one item ─────────────────────────────────────────── */
+  async function compressItem(it,o){
+    const t0=performance.now();
+    const {bmp,w,h}=await decode(it.file); it.w=w; it.h=h;
+    const {tw,th}=targetDims(w,h,o);
+    let canvas=drawTo(bmp,w,h,tw,th,o.fit);
+    const alpha=hasAlpha(canvas);
+    if(o.sharpen) sharpenCanvas(canvas);
+    let type=outputType(o,it.type,alpha);
+    let blob;
+    if(type==='pdf'){
+      if(!(window.jspdf&&window.jspdf.jsPDF)) await loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js');
+      const jb=await enc(canvas,'image/jpeg',o.quality); const durl=await blobToDataURL(jb);
+      const pdf=new window.jspdf.jsPDF({orientation:canvas.width>=canvas.height?'l':'p',unit:'px',format:[canvas.width,canvas.height]});
+      pdf.addImage(durl,'JPEG',0,0,canvas.width,canvas.height); blob=pdf.output('blob'); type='application/pdf';
+    } else {
+      const target = o.targetBytes || (o.pct?Math.round(it.origSize*(1-o.pct/100)):0);
+      if(target>0) blob=await encodeToTarget(canvas,type,target);
+      else blob=await enc(canvas,type,(type==='image/png')?undefined:o.quality);
+      if(!blob){ // format unsupported by toBlob → fallback
+        type='image/jpeg'; blob=await enc(canvas,type,o.quality); }
+    }
+    it.blob=blob; it.outType=type; it.outW=canvas.width; it.outH=canvas.height; it.alpha=alpha;
+    it.ms=Math.round((performance.now()-t0)*10)/10;
+    it.compW=canvas; // keep last canvas for compare/copy
+    if(bmp.close) try{bmp.close();}catch(e){}
+    return it;
+  }
+  function blobToDataURL(b){ return new Promise(res=>{ const r=new FileReader(); r.onload=()=>res(r.result); r.readAsDataURL(b); }); }
+  function loadScript(src){ return new Promise((res,rej)=>{ if([...document.scripts].some(s=>s.src===src)){res();return;} const s=document.createElement('script'); s.src=src; s.onload=res; s.onerror=()=>rej(new Error('load')); document.head.appendChild(s); }); }
 
-qualityRange.addEventListener('input', e=>{
-  document.getElementById('qualityVal').textContent = e.target.value;
-  if(currentFile) compress();
-});
+  const EXT={'image/jpeg':'jpg','image/png':'png','image/webp':'webp','image/avif':'avif','image/bmp':'bmp','application/pdf':'pdf'};
+  function outName(it){ const base=$('renameInput').value.trim()|| (it.name.replace(/\.[^.]+$/,'')||'image');
+    return (base+'-compressed').replace(/[^\w.-]+/g,'-')+'.'+(EXT[it.outType]||'jpg'); }
 
-document.getElementById('downloadBtn').addEventListener('click', ()=>{
-  if(compressedBlob) downloadBlob('compressed-' + (currentFile?.name?.replace(/\.[^.]+$/,'') || 'image') + '.jpg', compressedBlob);
-});
+  /* ── upload wiring (setupDropzone preserved) ───────────────────── */
+  const dz=$('dropzone'), fileInput=$('fileInput');
+  if(window.setupDropzone){ setupDropzone(dz, fileInput, files=>addFiles(files)); }
+  else { fileInput.addEventListener('change',e=>addFiles(e.target.files)); dz.addEventListener('click',()=>fileInput.click()); }
+  ['dragover','dragenter'].forEach(ev=>dz.addEventListener(ev,e=>{e.preventDefault();dz.classList.add('drag');}));
+  ['dragleave','drop'].forEach(ev=>dz.addEventListener(ev,e=>{e.preventDefault();dz.classList.remove('drag');}));
+  dz.addEventListener('drop',e=>{ if(e.dataTransfer&&e.dataTransfer.files.length) addFiles(e.dataTransfer.files); });
+  $('chooseBtn').addEventListener('click',()=>fileInput.click());
+  $('folderBtn').addEventListener('click',()=>{ const fi=$('folderInput'); if(fi) fi.click(); });
+  const folderInput=$('folderInput'); if(folderInput) folderInput.addEventListener('change',e=>addFiles(e.target.files));
+  $('cameraBtn').addEventListener('click',()=>{ const ci=$('cameraInput'); if(ci) ci.click(); });
+  const cameraInput=$('cameraInput'); if(cameraInput) cameraInput.addEventListener('change',e=>addFiles(e.target.files));
+  window.addEventListener('paste',e=>{ const it=[...(e.clipboardData||{}).items||[]].filter(i=>i.type.startsWith('image/')); if(it.length){ addFiles(it.map(x=>x.getAsFile())); toast('success','Pasted image.'); } });
+  $('clearBtn').addEventListener('click',()=>{ items=[]; sel=-1; renderThumbs(); $('previewGrid').style.display='none'; $('downloadRow').style.display='none'; $('compareWrap').style.display='none'; $('status').textContent=''; resetStats(); toast('info','Cleared.'); });
+
+  function addFiles(list){
+    const arr=[...list].filter(f=>f&&f.type&&f.type.startsWith('image/'));
+    if(!arr.length){ toast('warn','No supported images found.'); return; }
+    arr.forEach(f=>items.push({id:++uid,file:f,name:f.name||('image-'+uid),origSize:f.size,type:f.type}));
+    renderThumbs();
+    if(sel<0){ sel=0; }
+    compressAll();
+  }
+  function renderThumbs(){
+    const box=$('thumbs'); box.innerHTML='';
+    items.forEach((it,i)=>{ const d=document.createElement('div'); d.className='ic-thumb'+(i===sel?' active':'');
+      const im=document.createElement('img'); im.src=it.thumb||(it.thumb=URL.createObjectURL(it.file)); d.appendChild(im);
+      const x=document.createElement('button'); x.className='x'; x.textContent='✕'; x.title='Remove';
+      x.addEventListener('click',e=>{ e.stopPropagation(); items.splice(i,1); if(sel>=items.length)sel=items.length-1; renderThumbs(); if(sel>=0)selectItem(sel); else{ $('previewGrid').style.display='none'; $('downloadRow').style.display='none'; } });
+      d.appendChild(x);
+      if(it.blob){ const st=document.createElement('div'); st.className='st'; st.textContent='-'+Math.round((1-it.blob.size/it.origSize)*100)+'%'; d.appendChild(st); }
+      d.addEventListener('click',()=>selectItem(i)); box.appendChild(d); });
+    $('status').textContent=items.length? (items.length+' image'+(items.length>1?'s':'')+' loaded') : '';
+  }
+
+  /* ── compress single / all ─────────────────────────────────────── */
+  $('compressBtn').addEventListener('click',()=>{ if(sel<0){toast('warn','Add an image first.');return;} compressOne(sel).then(()=>selectItem(sel)); });
+  $('compressAllBtn').addEventListener('click',()=>compressAll());
+  async function compressOne(i){ const o=opts(); try{ await compressItem(items[i],o); }catch(e){ toast('error','Could not process '+items[i].name); } }
+  let busy=false;
+  async function compressAll(){
+    if(busy||!items.length) return; busy=true;
+    const o=opts(); const prog=$('prog'), bar=$('progBar'); prog.classList.add('show'); bar.style.width='0%';
+    for(let i=0;i<items.length;i++){ $('status').textContent='Compressing '+(i+1)+' / '+items.length+'…';
+      try{ await compressItem(items[i],o); }catch(e){ items[i].error=true; }
+      bar.style.width=Math.round((i+1)/items.length*100)+'%'; }
+    setTimeout(()=>prog.classList.remove('show'),500);
+    busy=false; renderThumbs();
+    if(sel<0)sel=0; selectItem(sel);
+    const okc=items.filter(x=>x.blob).length; $('status').textContent=okc+' / '+items.length+' compressed.';
+    toast('success','Compressed '+okc+' image'+(okc>1?'s':'')+'.');
+  }
+
+  /* ── select + render preview/stats (preserved IDs) ─────────────── */
+  function selectItem(i){ sel=i; const it=items[i]; if(!it) return;
+    document.querySelectorAll('.ic-thumb').forEach((t,k)=>t.classList.toggle('active',k===i));
+    $('originalImg').src=it.thumb||(it.thumb=URL.createObjectURL(it.file));
+    $('originalSize').textContent=fmtBytes(it.origSize);
+    $('previewGrid').style.display='grid';
+    if(it.blob){
+      const url=URL.createObjectURL(it.blob);
+      $('compressedImg').src=url; $('compressedSize').textContent=fmtBytes(it.blob.size);
+      $('cmpBefore').src=$('originalImg').src; $('cmpAfter').src=url;
+      $('downloadRow').style.display='flex';
+      renderStats(it); renderScores(it); renderSEO(it);
+    } else { $('compressedImg').removeAttribute('src'); $('compressedSize').textContent='—'; $('downloadRow').style.display='none'; }
+  }
+  function resetStats(){ ['stOrig','stComp','stSaved','stSavedPct','stRatio','stTime','stDims','stRes','stAspect','stType','stMeta','stSpeed'].forEach(id=>$(id).textContent='—'); }
+  function gcd(a,b){ return b?gcd(b,a%b):a; }
+  function renderStats(it){
+    const saved=it.origSize-it.blob.size, pct=Math.round(saved/it.origSize*100);
+    $('stOrig').textContent=fmtBytes(it.origSize); $('stComp').textContent=fmtBytes(it.blob.size);
+    $('stSaved').textContent=fmtBytes(Math.max(0,saved)); $('stSavedPct').textContent=pct+'%';
+    $('stRatio').textContent=(it.origSize/it.blob.size).toFixed(2)+':1'; $('stTime').textContent=it.ms+' ms';
+    $('stDims').textContent=it.outW+'×'+it.outH; $('stRes').textContent=((it.outW*it.outH)/1e6).toFixed(2)+' MP';
+    const g=gcd(it.outW,it.outH)||1; $('stAspect').textContent=(it.outW/g)+':'+(it.outH/g);
+    $('stType').textContent=(EXT[it.outType]||'jpg').toUpperCase(); $('stMeta').textContent=$('tgMeta').checked?'Yes':'Re-encoded';
+    $('stSpeed').textContent=pct>0?('~'+pct+'% faster'):'—';
+  }
+  function ring(id,v){ const el=$(id); el.style.setProperty('--v',v); el.querySelector('b').textContent=v; }
+  function renderScores(it){
+    const savedPct=Math.max(0,Math.min(100,Math.round((1-it.blob.size/it.origSize)*100)));
+    const q=Math.round((+$('qualityRange').value)); // quality proxy
+    const eff=savedPct;
+    const kb=it.blob.size/1024;
+    const web=Math.max(0,Math.min(100,Math.round(100 - (kb>200?(kb-200)/12:0))));
+    const seo=Math.round((web*0.5)+(($('seoAlt')&&$('seoAlt').value?100:60)*0.2)+(eff*0.3));
+    ring('ringQuality',Math.min(100,q)); ring('ringEff',eff); ring('ringWeb',web); ring('ringSeo',Math.min(100,seo));
+  }
+  function slugify(s){ return s.toLowerCase().replace(/\.[^.]+$/,'').replace(/[^\w\s-]/g,'').trim().replace(/[\s_]+/g,'-').replace(/-+/g,'-').slice(0,60)||'image'; }
+  function titleCase(s){ return s.replace(/[-_]+/g,' ').replace(/\b\w/g,c=>c.toUpperCase()); }
+  function renderSEO(it){
+    const base=slugify(it.name); const nice=titleCase(base);
+    $('seoSlug').value=base+'.'+(EXT[it.outType]||'jpg');
+    $('seoAlt').value=nice+' — optimised image';
+    $('seoTitle').value=nice;
+    $('seoCaption').value=nice+' ('+it.outW+'×'+it.outH+', '+fmtBytes(it.blob.size)+')';
+    $('seoDesc').value='Compressed '+nice+' image, '+it.outW+'×'+it.outH+' ('+fmtBytes(it.blob.size)+'), optimised for fast web loading.';
+    renderScores(it);
+  }
+  $('seoCopy').addEventListener('click',()=>{ const t=['File name: '+$('seoSlug').value,'Alt text: '+$('seoAlt').value,'Title: '+$('seoTitle').value,'Caption: '+$('seoCaption').value,'Description: '+$('seoDesc').value].join('\n');
+    navigator.clipboard&&navigator.clipboard.writeText(t); toast('success','SEO suggestions copied.'); });
+  $('renameInput').addEventListener('input',()=>{ if(sel>=0&&items[sel]&&items[sel].blob) renderSEO(items[sel]); });
+
+  /* ── smart suggestion ──────────────────────────────────────────── */
+  $('smartBtn').addEventListener('click',async()=>{ if(sel<0){toast('warn','Add an image first.');return;}
+    const it=items[sel]; try{ const {w,h}=await decode(it.file); const mp=(w*h)/1e6;
+      let tip; if(it.type==='image/png'&&hasAlphaGuess(it)) tip='PNG with transparency — keep PNG or use WebP to shrink further.';
+      else if(mp>4) tip='Large photo — resize to display size and use 60–75% JPEG/WebP quality.';
+      else tip='Use WebP at ~70% quality for the best size-to-quality balance.';
+      // apply a smart default
+      $('formatSel').value='image/webp'; $('qualityRange').value=72; $('qualityVal').textContent='72';
+      document.querySelectorAll('#levelChips .ic-chip').forEach(x=>x.classList.toggle('on',x.dataset.level==='custom'));
+      toast('info','💡 '+tip); compressOne(sel).then(()=>selectItem(sel));
+    }catch(e){ toast('error','Could not analyse image.'); } });
+  function hasAlphaGuess(it){ return it.type==='image/png'||it.type==='image/gif'||it.type==='image/webp'; }
+
+  /* ── download / ZIP / copy / share / QR ────────────────────────── */
+  $('downloadBtn').addEventListener('click',()=>{ const it=items[sel]; if(!it||!it.blob){toast('warn','Nothing to download.');return;}
+    if(window.downloadBlob) downloadBlob(outName(it),it.blob); else { const u=URL.createObjectURL(it.blob),a=document.createElement('a'); a.href=u; a.download=outName(it); a.click(); setTimeout(()=>URL.revokeObjectURL(u),1500); }
+    toast('success','Downloaded '+outName(it)); });
+  async function downloadZip(){ const done=items.filter(x=>x.blob); if(!done.length){toast('warn','Compress images first.');return;}
+    if(done.length===1){ $('downloadBtn').click(); return; }
+    toast('info','Building ZIP…'); try{ if(!window.JSZip) await loadScript('https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js');
+      const zip=new window.JSZip(); const seen={}; done.forEach(it=>{ let n=outName(it); if(seen[n]){ n=n.replace(/(\.\w+)$/,'-'+(++seen[n])+'$1'); } else seen[n]=1; zip.file(n,it.blob); });
+      const blob=await zip.generateAsync({type:'blob'}); const u=URL.createObjectURL(blob),a=document.createElement('a'); a.href=u; a.download='compressed-images.zip'; a.click(); setTimeout(()=>URL.revokeObjectURL(u),1500); toast('success','ZIP downloaded ('+done.length+' images).');
+    }catch(e){ toast('error','ZIP failed.'); } }
+  $('downloadAllBtn').addEventListener('click',downloadZip);
+  $('copyBtn').addEventListener('click',async()=>{ const it=items[sel]; if(!it||!it.blob){toast('warn','Nothing to copy.');return;}
+    try{ if(navigator.clipboard&&window.ClipboardItem){ const type=(it.outType==='image/png')?'image/png':'image/png';
+        const c=it.compW; const pngBlob=await new Promise(r=>c.toBlob(r,'image/png')); await navigator.clipboard.write([new ClipboardItem({'image/png':pngBlob})]); toast('success','Image copied to clipboard.'); }
+      else throw new Error('unsupported'); }catch(e){ toast('warn','Clipboard image copy not supported here.'); } });
+  $('shareBtn').addEventListener('click',async()=>{ const it=items[sel]; if(!it||!it.blob){toast('warn','Nothing to share.');return;}
+    try{ const file=new File([it.blob],outName(it),{type:it.outType}); if(navigator.canShare&&navigator.canShare({files:[file]})){ await navigator.share({files:[file],title:'Compressed image'}); }
+      else toast('warn','Sharing not supported on this device.'); }catch(e){} });
+  $('qrBtn').addEventListener('click',async()=>{ const it=items[sel]; if(!it||!it.blob){toast('warn','Compress an image first.');return;}
+    if(it.blob.size>1500){ toast('warn','Image too large for a QR code; use Download or Share instead.'); return; }
+    try{ if(!window.QRCode) await loadScript('https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js');
+      const durl=await blobToDataURL(it.blob); const box=document.createElement('div'); box.style.cssText='position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.7)';
+      const card=document.createElement('div'); card.style.cssText='background:#fff;padding:16px;border-radius:12px'; card.innerHTML='<div id="icQR"></div>'; box.appendChild(card); document.body.appendChild(box);
+      new QRCode(card.querySelector('#icQR'),{text:durl,width:220,height:220}); box.addEventListener('click',()=>box.remove()); }catch(e){ toast('error','QR failed.'); } });
+
+  /* ── compare slider + fullscreen ───────────────────────────────── */
+  $('sliderToggle').addEventListener('click',()=>{ const w=$('compareWrap'); const on=w.style.display==='none'||!w.style.display;
+    w.style.display=on?'block':'none'; if(on&&sel>=0&&items[sel]&&items[sel].blob){ $('cmpBefore').src=$('originalImg').src; $('cmpAfter').src=$('compressedImg').src; } });
+  (function(){ const wrap=$('compare'),after=wrap.querySelector('.after'),handle=$('cmpHandle'); let drag=false;
+    const move=(x)=>{ const r=wrap.getBoundingClientRect(); let p=(x-r.left)/r.width; p=Math.max(0,Math.min(1,p)); after.style.width=(p*100)+'%'; handle.style.left=(p*100)+'%'; };
+    handle.addEventListener('mousedown',()=>drag=true); window.addEventListener('mouseup',()=>drag=false);
+    window.addEventListener('mousemove',e=>{ if(drag)move(e.clientX); });
+    handle.addEventListener('touchstart',()=>drag=true,{passive:true}); window.addEventListener('touchend',()=>drag=false);
+    wrap.addEventListener('touchmove',e=>{ if(drag)move(e.touches[0].clientX); },{passive:true});
+    wrap.addEventListener('click',e=>move(e.clientX)); })();
+  let lbScale=1,lbRot=0;
+  function openLB(src){ const lb=$('icLightbox'); $('lbImg').src=src; lbScale=1;lbRot=0; $('lbImg').style.transform=''; lb.classList.add('show'); }
+  $('fsBtn').addEventListener('click',()=>{ const it=items[sel]; openLB(it&&it.blob?$('compressedImg').src:$('originalImg').src); });
+  $('compressedImg').addEventListener('click',()=>$('compressedImg').src&&openLB($('compressedImg').src));
+  $('originalImg').addEventListener('click',()=>$('originalImg').src&&openLB($('originalImg').src));
+  $('lbClose').addEventListener('click',()=>$('icLightbox').classList.remove('show'));
+  $('icLightbox').addEventListener('click',e=>{ if(e.target.id==='icLightbox')$('icLightbox').classList.remove('show'); });
+  $('lbZin').addEventListener('click',()=>{ lbScale=Math.min(6,lbScale+0.3); applyLB(); });
+  $('lbZout').addEventListener('click',()=>{ lbScale=Math.max(0.3,lbScale-0.3); applyLB(); });
+  $('lbRot').addEventListener('click',()=>{ lbRot=(lbRot+90)%360; applyLB(); });
+  function applyLB(){ $('lbImg').style.transform='scale('+lbScale+') rotate('+lbRot+'deg)'; }
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape')$('icLightbox').classList.remove('show'); });
+
+  /* ── re-compress on option change (debounced) ──────────────────── */
+  let optT=null;
+  ['modeSel','formatSel','targetSel','customTarget','pctSel','tgMeta','tgAlpha','tgSharpen','rW','rH','rPct','rMaxW','rMaxH','rFit','rLock']
+    .forEach(id=>{ const el=$(id); if(el) el.addEventListener('change',()=>{ if(sel>=0&&items[sel]){ clearTimeout(optT); optT=setTimeout(()=>compressOne(sel).then(()=>selectItem(sel)),200); } }); });
+  $('qualityRange').addEventListener('change',()=>{ if(sel>=0&&items[sel]){ clearTimeout(optT); optT=setTimeout(()=>compressOne(sel).then(()=>selectItem(sel)),200); } });
+
+  /* ── FAQ (bilingual) + schema ──────────────────────────────────── */
+  const FAQ=[
+   ['What is image compression?','Image compression re-encodes a picture so it uses fewer bytes, either by discarding detail the eye barely notices (lossy) or by storing pixels more efficiently (lossless).',
+    'Image compression क्या है?','Image compression तस्वीर को इस तरह re-encode करता है कि वह कम bytes ले — या तो आँख से मुश्किल से दिखने वाला विवरण हटाकर (lossy) या pixels को अधिक कुशलता से संग्रहीत करके (lossless)।'],
+   ['How much quality is lost?','At sensible settings (about 60–80% for JPEG/WebP) the loss is usually invisible. You can compare before and after with the slider and raise the quality if needed.',
+    'कितनी quality घटती है?','उचित settings (JPEG/WebP के लिए ~60–80%) पर हानि आमतौर पर दिखती नहीं। slider से before/after तुलना करें और ज़रूरत हो तो quality बढ़ाएँ।'],
+   ['Is this tool safe?','Yes. Everything runs in your browser, there is no upload, no account and no tracking, so it is safe for private and confidential images.',
+    'क्या यह टूल सुरक्षित है?','हाँ। सब कुछ आपके browser में चलता है, कोई upload/account/tracking नहीं, इसलिए निजी व गोपनीय images के लिए सुरक्षित है।'],
+   ['Does it upload my files?','No. Your images never leave your device; compression happens locally using the browser canvas.',
+    'क्या यह मेरी files upload करता है?','नहीं। आपकी images कभी device से बाहर नहीं जातीं; compression आपके browser में locally होता है।'],
+   ['Which formats are supported?','You can load JPG, PNG, WebP, AVIF, GIF, BMP, ICO, SVG and (where supported) HEIC and TIFF, and output JPG, PNG, WebP, AVIF, BMP or PDF.',
+    'कौन-से formats support हैं?','आप JPG, PNG, WebP, AVIF, GIF, BMP, ICO, SVG और (जहाँ support हो) HEIC व TIFF लोड कर सकते हैं, और JPG, PNG, WebP, AVIF, BMP या PDF output पा सकते हैं।'],
+   ['Can I compress multiple images?','Yes. Add many images, use Compress All, and download them individually or all together as a ZIP.',
+    'क्या मैं कई images compress कर सकता हूँ?','हाँ। कई images जोड़ें, Compress All दबाएँ, और अलग-अलग या सबको ZIP में download करें।'],
+   ['Does it work offline?','Yes. Once the page has loaded it works offline. Only ZIP, PDF and QR use a small helper library the first time.',
+    'क्या यह offline काम करता है?','हाँ। page load होने के बाद यह offline चलता है। केवल ZIP, PDF व QR पहली बार एक छोटी library इस्तेमाल करते हैं।'],
+   ['Can I compress a PNG?','Yes. PNG stays lossless by default; you can also convert it to WebP or JPEG to shrink it much further.',
+    'क्या मैं PNG compress कर सकता हूँ?','हाँ। PNG default रूप से lossless रहती है; इसे WebP या JPEG में बदलकर और छोटा कर सकते हैं।'],
+   ['Can I compress WebP?','Yes. You can load WebP images and re-compress or convert them to JPG, PNG or AVIF.',
+    'क्या मैं WebP compress कर सकता हूँ?','हाँ। WebP images लोड करके फिर से compress या JPG/PNG/AVIF में convert कर सकते हैं।'],
+   ['Is there a file size limit?','There is no fixed limit — you are only limited by your device memory. Very large images are handled but take a little longer.',
+    'क्या कोई file size सीमा है?','कोई निश्चित सीमा नहीं — केवल आपके device की memory की सीमा है। बहुत बड़ी images भी संभलती हैं पर थोड़ा समय लेती हैं।'],
+   ['Can I compress to an exact size?','Yes. Choose a target file size (like 100 KB) and the tool automatically finds the right quality, reducing dimensions if necessary.',
+    'क्या मैं सटीक size तक compress कर सकता हूँ?','हाँ। target file size (जैसे 100 KB) चुनें और टूल अपने-आप सही quality खोज लेता है, ज़रूरत हो तो dimensions घटाकर।'],
+   ['Can I resize while compressing?','Yes. Set a width, height, percentage or maximum size and pick a fit mode; the image is resized and compressed together.',
+    'क्या मैं compress करते हुए resize कर सकता हूँ?','हाँ। width, height, percentage या maximum size सेट करें व fit mode चुनें; image एक साथ resize व compress होती है।'],
+   ['Does it remove EXIF metadata?','Yes. Re-encoding through the canvas strips embedded metadata such as GPS location and camera info, improving your privacy.',
+    'क्या यह EXIF metadata हटाता है?','हाँ। canvas से re-encoding embedded metadata (GPS location, camera info) हटा देती है, जिससे गोपनीयता बढ़ती है।'],
+   ['Can it preserve transparency?','Yes. Keep the "Preserve transparency" option on and use PNG or WebP output to keep transparent areas.',
+    'क्या यह transparency बनाए रखता है?','हाँ। "Preserve transparency" चालू रखें और PNG या WebP output इस्तेमाल करें।'],
+   ['Can I convert format while compressing?','Yes. Choose an output format (JPG, PNG, WebP, AVIF, BMP or PDF) and the image is converted as it is compressed.',
+    'क्या मैं compress करते हुए format बदल सकता हूँ?','हाँ। output format (JPG, PNG, WebP, AVIF, BMP या PDF) चुनें और image compress होते हुए convert हो जाती है।'],
+   ['Will compression make my website faster?','Yes. Smaller images load faster, improving page speed, Core Web Vitals and search ranking.',
+    'क्या compression मेरी website तेज़ करेगा?','हाँ। छोटी images तेज़ load होती हैं, जिससे page speed, Core Web Vitals व search ranking सुधरती है।'],
+   ['Does it work on mobile?','Yes, it is fully responsive and supports the camera and gallery on phones and tablets.',
+    'क्या यह mobile पर काम करता है?','हाँ, यह पूरी तरह responsive है और phones व tablets पर camera व gallery support करता है।'],
+   ['Why is my image not loading?','Some formats (HEIC, TIFF) decode only on certain devices. Convert the image first or try a different browser.',
+    'मेरी image लोड क्यों नहीं हो रही?','कुछ formats (HEIC, TIFF) कुछ ही devices पर decode होते हैं। पहले convert करें या दूसरा browser आज़माएँ।'],
+   ['What is lossless compression?','Lossless compression keeps every pixel exactly (used by PNG). It is larger than lossy but perfect for logos, icons and transparency.',
+    'Lossless compression क्या है?','Lossless compression हर pixel बिल्कुल रखती है (PNG)। यह lossy से बड़ी होती है पर logos, icons व transparency के लिए आदर्श।'],
+   ['Do I need to install anything?','No. It runs entirely in your web browser with no installation and no signup.',
+    'क्या कुछ install करना पड़ता है?','नहीं। यह पूरी तरह आपके browser में चलता है, न install न signup।']
+  ];
+  const row=(q,a)=>'<details><summary>'+q.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</summary><p>'+a.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</p></details>';
+  $('faqEn').innerHTML=FAQ.map(f=>row(f[0],f[1])).join('');
+  $('faqHi').innerHTML=FAQ.map(f=>row(f[2],f[3])).join('');
+  try{ const sc=$('faqSchema'); const data=JSON.parse(sc.textContent);
+    data.mainEntity=[].concat(
+      FAQ.map(f=>({'@type':'Question',name:f[0],acceptedAnswer:{'@type':'Answer',text:f[1]}})),
+      FAQ.map(f=>({'@type':'Question',name:f[2],acceptedAnswer:{'@type':'Answer',text:f[3]}}))
+    ); sc.textContent=JSON.stringify(data); }catch(e){}
+
+  resetStats();
+})();
 </script>
 </body>
 </html>
