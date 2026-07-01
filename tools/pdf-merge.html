@@ -872,23 +872,26 @@ async function loadPdfMeta(entry){
     const m = head.match(/%PDF-(\d\.\d)/);
     if(m) entry.version = 'v' + m[1];
   }catch(e){}
+  // pdf.js is used ONLY for preview / thumbnail / page-count. The actual
+  // merge is done by pdf-lib, so a pdf.js problem must NEVER block merging.
+  if(typeof pdfjsLib === 'undefined'){ updateCard(entry); renderSummary(); return; }
   try{
     const buf = await entry.file.arrayBuffer();
     const task = pdfjsLib.getDocument({ data: buf.slice(0) });
     const pdfDoc = await task.promise;
     entry.pages = pdfDoc.numPages;
     entry.pdfDoc = pdfDoc;
+    entry.previewErr = false;
     updateCard(entry);
     renderSummary();
     generateThumb(entry);
   }catch(e){
     if(e && (e.name === 'PasswordException' || /password/i.test(e.message||''))){
-      entry.encrypted = true;
-      // try to still read page count ignoring, else unknown
+      entry.encrypted = true;       // still mergeable (ignoreEncryption at merge)
       showToastMsg(`🔒 ${entry.name} is password-protected`);
     } else {
-      entry.corrupt = true;
-      showToastMsg(`❌ ${entry.name} could not be read (corrupted?)`);
+      // preview couldn't be generated — but the file may still merge fine.
+      entry.previewErr = true;
     }
     updateCard(entry);
     renderSummary();
@@ -929,9 +932,9 @@ function renderList(){
     badges.push(`<span class="card-badge">${formatBytes(f.size)}</span>`);
     if(f.version) badges.push(`<span class="card-badge ver">${f.version}</span>`);
     if(f.encrypted) badges.push(`<span class="card-badge enc">🔒 encrypted</span>`);
-    if(f.corrupt) badges.push(`<span class="card-badge bad">⚠ unreadable</span>`);
+    if(f.previewErr) badges.push(`<span class="card-badge bad">⚠ preview N/A</span>`);
     return `
-    <div class="pdf-file-card ${previewFileId === f.id ? 'active':''} ${f.corrupt?'err':''}" data-id="${f.id}" onclick="pmOpenPreview('${f.id}')">
+    <div class="pdf-file-card ${previewFileId === f.id ? 'active':''}" data-id="${f.id}" onclick="pmOpenPreview('${f.id}')">
       <span class="drag-handle" title="Drag to reorder" aria-hidden="true">⠿</span>
       <div class="card-thumb">
         <span class="thumb-loading">📄</span>
@@ -956,29 +959,33 @@ function renderList(){
 
   document.getElementById('fileCountBadge').textContent = files.length;
   document.getElementById('emptyList').style.display = files.length ? 'none' : 'flex';
-  document.getElementById('mergeBtn').disabled = mergeableCount() < 2;
+  // Merge is gated purely on file COUNT so a preview/pdf.js hiccup never
+  // disables the tool — the actual merge (pdf-lib) validates each file.
+  document.getElementById('mergeBtn').disabled = files.length < 2;
   document.getElementById('summaryWrap').style.display = files.length > 0 ? 'block' : 'none';
   document.getElementById('settingsWrap').style.display = files.length > 0 ? 'block' : 'none';
   document.getElementById('mergeActionRow').style.display = files.length > 0 ? 'flex' : 'none';
-  document.getElementById('mobileStickyMerge').classList.toggle('visible', mergeableCount() >= 2);
+  document.getElementById('mobileStickyMerge').classList.toggle('visible', files.length >= 2);
   updateUndoRedo();
 
-  if(sortable){ sortable.destroy(); }
-  if(files.length > 0){
-    sortable = Sortable.create(container, {
-      animation:200, handle:'.drag-handle', ghostClass:'sortable-ghost', dragClass:'sortable-drag',
-      onEnd(evt){
-        const moved = files.splice(evt.oldIndex, 1)[0];
-        files.splice(evt.newIndex, 0, moved);
-        pushHistory();
-        renderList(); renderSummary();
-        files.forEach(generateThumb);
-      }
-    });
-  }
+  // Sortable is optional eye-candy — guard it so a CDN failure can't break the list.
+  try{
+    if(sortable){ sortable.destroy(); sortable = null; }
+    if(files.length > 0 && typeof Sortable !== 'undefined'){
+      sortable = Sortable.create(container, {
+        animation:200, handle:'.drag-handle', ghostClass:'sortable-ghost', dragClass:'sortable-drag',
+        onEnd(evt){
+          const moved = files.splice(evt.oldIndex, 1)[0];
+          files.splice(evt.newIndex, 0, moved);
+          pushHistory();
+          renderList(); renderSummary();
+          files.forEach(generateThumb);
+        }
+      });
+    }
+  }catch(e){}
   files.forEach(f => { if(f.pdfDoc) generateThumb(f); });
 }
-function mergeableCount(){ return files.filter(f => !f.corrupt).length; }
 
 function updateCard(entry){
   // simplest: re-render whole list to reflect badges/pages
@@ -1179,8 +1186,11 @@ function selectedIndices(entry, srcTotal){
 
 /* ── MERGE ── */
 document.getElementById('mergeBtn').addEventListener('click', async () => {
-  const usable = files.filter(f => !f.corrupt);
-  if(usable.length < 2){ showToastMsg('⚠️ Please add at least 2 readable PDF files.'); return; }
+  if(files.length < 2){ showToastMsg('⚠️ Please add at least 2 PDF files.'); return; }
+  if(typeof PDFLib === 'undefined' || !PDFLib.PDFDocument){
+    showToastMsg('❌ PDF engine still loading — check your connection and try again.');
+    return;
+  }
   document.getElementById('successScreen').style.display = 'none';
   const t0 = performance.now();
   showProgress('📂', 'Loading Files…', 'Reading your PDFs', 0);
@@ -1191,30 +1201,40 @@ document.getElementById('mergeBtn').addEventListener('click', async () => {
     const mode = document.getElementById('optMode').value;
     const autoRot = document.getElementById('optRotate').checked;
 
-    let order = usable.slice();
+    let order = files.slice();
     if(mode === 'reverse') order = order.reverse();
 
     const n = order.length;
-    // Load & copy pages per file
+    // Load & copy pages per file — skip (don't abort on) any single bad file.
     const perFilePages = [];
+    const failed = [];
     for(let i=0;i<n;i++){
       const pct = Math.round((i / n) * 75);
       showProgress('📖', 'Reading PDFs…', `Processing file ${i+1} of ${n}`, pct);
-      const buf = await order[i].file.arrayBuffer();
-      const srcPdf = await PDFDocument.load(buf, { ignoreEncryption:true });
-      const total = srcPdf.getPageCount();
-      const idx = selectedIndices(order[i], total);
-      if(!idx.length) continue;
-      const copied = await mergedPdf.copyPages(srcPdf, idx);
-      // apply rotation
-      copied.forEach(p => {
-        let rot = order[i].rotate || 0;
-        if(autoRot) rot = 0; // normalise
-        const base = (typeof p.getRotation === 'function') ? (p.getRotation().angle||0) : 0;
-        p.setRotation(degrees((base + rot) % 360));
-      });
-      perFilePages.push(copied);
+      try{
+        const buf = await order[i].file.arrayBuffer();
+        const srcPdf = await PDFDocument.load(buf, { ignoreEncryption:true });
+        const total = srcPdf.getPageCount();
+        const idx = selectedIndices(order[i], total);
+        if(!idx.length) continue;
+        const copied = await mergedPdf.copyPages(srcPdf, idx);
+        copied.forEach(p => {
+          let rot = order[i].rotate || 0;
+          if(autoRot) rot = 0; // normalise
+          const base = (typeof p.getRotation === 'function') ? (p.getRotation().angle||0) : 0;
+          p.setRotation(degrees((base + rot) % 360));
+        });
+        perFilePages.push(copied);
+      }catch(err){
+        failed.push(order[i].name);
+      }
     }
+    if(perFilePages.length < 1){
+      hideProgress();
+      showToastMsg('❌ None of the files could be read. They may be locked with an open password.');
+      return;
+    }
+    if(failed.length) showToastMsg('⚠️ Skipped unreadable: ' + failed.join(', '));
 
     showProgress('🧩', 'Merging PDFs…', 'Combining all pages', 82);
     if(mode === 'alternate'){
@@ -1249,7 +1269,7 @@ document.getElementById('mergeBtn').addEventListener('click', async () => {
       hideProgress();
       mergeResult = pdfBytes;
       mergeName = (document.getElementById('optFileName').value.trim() || 'merged-apnesoftware').replace(/\.pdf$/i,'');
-      showSuccess(mergedPdf.getPageCount(), pdfBytes.length, elapsed);
+      showSuccess(mergedPdf.getPageCount(), pdfBytes.length, elapsed, perFilePages.length);
     }, 500);
 
   }catch(e){
@@ -1258,12 +1278,12 @@ document.getElementById('mergeBtn').addEventListener('click', async () => {
   }
 });
 
-function showSuccess(pages, bytes, elapsed){
+function showSuccess(pages, bytes, elapsed, mergedCount){
   document.getElementById('mainPanel').style.display = 'none';
   document.getElementById('successScreen').style.display = 'block';
   document.getElementById('successOutName').innerHTML = 'File: <b>' + esc(mergeName) + '.pdf</b>';
   document.getElementById('successStats').innerHTML = `
-    <div class="success-stat"><div class="val">${files.filter(f=>!f.corrupt).length}</div><div class="lbl">Files Merged</div></div>
+    <div class="success-stat"><div class="val">${mergedCount != null ? mergedCount : files.length}</div><div class="lbl">Files Merged</div></div>
     <div class="success-stat"><div class="val">${pages}</div><div class="lbl">Total Pages</div></div>
     <div class="success-stat"><div class="val">${formatBytes(bytes)}</div><div class="lbl">Output Size</div></div>
     <div class="success-stat"><div class="val">${elapsed}s</div><div class="lbl">Process Time</div></div>`;
@@ -1405,6 +1425,7 @@ function showToastMsg(msg){
 
 /* keyboard: Ctrl+Z / Ctrl+Y for file undo/redo */
 document.addEventListener('keydown', e => {
+  if(e.key === 'Escape'){ const panel = document.getElementById('previewPanel'); if(panel && panel.classList.contains('pdf-fs')){ panel.classList.remove('pdf-fs'); setTimeout(renderPreviewPage, 60); } return; }
   if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='z'){ if(document.activeElement && /INPUT|TEXTAREA/.test(document.activeElement.tagName)) return; e.preventDefault(); document.getElementById('undoBtn').click(); }
   else if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='y'){ e.preventDefault(); document.getElementById('redoBtn').click(); }
 });
