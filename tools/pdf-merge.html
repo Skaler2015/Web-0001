@@ -561,25 +561,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
       <button class="clear-btn-sec" id="clearBtn">🗑 Clear All</button>
     </div>
 
-    <!-- SUCCESS SCREEN -->
-    <div id="successScreen" style="display:none">
-      <div class="success-box">
-        <span class="success-icon">✅</span>
-        <div class="success-title">PDF Merged Successfully!</div>
-        <p style="color:rgba(255,255,255,.5);margin-bottom:16px;font-size:.88rem">Your merged PDF is ready to download</p>
-        <div class="success-out-name" id="successOutName"></div>
-        <div class="success-stats" id="successStats"></div>
-        <div class="success-btns">
-          <button class="merge-btn-big" id="downloadBtn" style="flex:none;padding:14px 28px">⬇ Download PDF</button>
-          <button class="btn secondary" id="openBtn" style="padding:14px 20px">👁 Open</button>
-          <button class="btn secondary" id="printBtn" style="padding:14px 20px">🖨 Print</button>
-          <button class="btn secondary" id="shareBtn" style="padding:14px 20px">📤 Share</button>
-          <button class="btn secondary" id="copyNameBtn" style="padding:14px 20px">🔗 Copy Name</button>
-          <button class="btn secondary" id="mergeAnotherBtn" style="padding:14px 22px">🔄 Merge Another</button>
-        </div>
-      </div>
-    </div>
-
     <!-- TRUST SECTION -->
     <div class="section-sep"><span>🔒 Security &amp; Privacy</span></div>
     <div class="trust-row">
@@ -588,6 +569,25 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
       <div class="trust-card"><span class="t-icon">☁</span><div class="t-title">No Registration</div><div class="t-sub">Free forever, no account</div></div>
       <div class="trust-card"><span class="t-icon">🛡️</span><div class="t-title">Privacy Protected</div><div class="t-sub">No server upload, ever</div></div>
       <div class="trust-card"><span class="t-icon">⚡</span><div class="t-title">Instant Merge</div><div class="t-sub">Runs entirely in browser</div></div>
+    </div>
+  </div>
+
+  <!-- SUCCESS SCREEN (sibling of mainPanel, so it stays visible when mainPanel is hidden) -->
+  <div id="successScreen" style="display:none">
+    <div class="success-box">
+      <span class="success-icon">✅</span>
+      <div class="success-title">PDF Merged Successfully!</div>
+      <p style="color:rgba(255,255,255,.5);margin-bottom:16px;font-size:.88rem">Your merged PDF is ready to download</p>
+      <div class="success-out-name" id="successOutName"></div>
+      <div class="success-stats" id="successStats"></div>
+      <div class="success-btns">
+        <button class="merge-btn-big" id="downloadBtn" style="flex:none;padding:14px 28px">⬇ Download PDF</button>
+        <button class="btn secondary" id="openBtn" style="padding:14px 20px">👁 Open</button>
+        <button class="btn secondary" id="printBtn" style="padding:14px 20px">🖨 Print</button>
+        <button class="btn secondary" id="shareBtn" style="padding:14px 20px">📤 Share</button>
+        <button class="btn secondary" id="copyNameBtn" style="padding:14px 20px">🔗 Copy Name</button>
+        <button class="btn secondary" id="mergeAnotherBtn" style="padding:14px 22px">🔄 Merge Another</button>
+      </div>
     </div>
   </div>
 
@@ -1288,8 +1288,9 @@ function showSuccess(pages, bytes, elapsed, mergedCount){
     <div class="success-stat"><div class="val">${formatBytes(bytes)}</div><div class="lbl">Output Size</div></div>
     <div class="success-stat"><div class="val">${elapsed}s</div><div class="lbl">Process Time</div></div>`;
   document.getElementById('mobileStickyMerge').classList.remove('visible');
-  // scroll to top of success
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  // bring the success screen (with the Download button) into view
+  const ss = document.getElementById('successScreen');
+  if(ss && ss.scrollIntoView) ss.scrollIntoView({ behavior:'smooth', block:'center' });
 }
 
 function resultBlob(){ return new Blob([mergeResult], { type:'application/pdf' }); }
