@@ -9,7 +9,7 @@ define('SITE_URL', 'https://apnesoftware.com');
 // Keyword Rank Tracker — real Google results via Serper.dev.
 // Get a free API key at https://serper.dev (generous free tier),
 // then paste it below between the quotes.
-define('SERPER_API_KEY', '');
+define('SERPER_API_KEY', '48331f86da78fa5bde7e8695c8568bcf0e21a675');
 
 function get_db_connection() {
     static $pdo = null;
