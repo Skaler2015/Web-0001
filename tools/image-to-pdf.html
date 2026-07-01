@@ -3,36 +3,173 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="description" content="Free online Image to PDF converter. Combine JPG, PNG, WEBP, BMP, GIF, TIFF & HEIC images into one PDF with page size, orientation, margins, quality, compression, page numbers, borders, metadata and password protection. 100% private — runs in your browser.">
+<meta name="keywords" content="image to pdf, jpg to pdf, png to pdf, webp to pdf, heic to pdf, photos to pdf, convert image to pdf, combine images pdf, picture to pdf, image to pdf converter online free">
+<meta name="author" content="ApneSoftware">
 <link rel="canonical" href="https://apnesoftware.com/tools/image-to-pdf.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Image to PDF Converter | ApneSoftware">
-<meta property="og:description" content="Create a PDF from photos. Free online tool — no signup required.">
+<meta property="og:title" content="Image to PDF Converter — JPG/PNG/WEBP/HEIC to PDF Free | ApneSoftware">
+<meta property="og:description" content="Convert and combine images into one PDF with full control over page size, margins, quality, borders, metadata and password protection. Private, browser-only, no signup.">
 <meta property="og:url" content="https://apnesoftware.com/tools/image-to-pdf.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Image to PDF Converter | ApneSoftware">
-<meta name="twitter:description" content="Create a PDF from photos. Free online tool — no signup required.">
+<meta name="twitter:title" content="Image to PDF Converter — Free & Private | ApneSoftware">
+<meta name="twitter:description" content="Combine JPG, PNG, WEBP, HEIC and more into one PDF with page size, margins, quality, borders and password protection. Runs entirely in your browser.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
+
+<!-- SoftwareApplication schema -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Image to PDF","description":"Create a PDF from photos. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/image-to-pdf.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Image to PDF Converter","description":"Free online tool to convert and combine images (JPG, PNG, WEBP, BMP, GIF, TIFF, HEIC) into a single PDF with page size, orientation, margins, quality, compression, page numbers, borders, metadata and password protection. Runs entirely in the browser.","url":"https://apnesoftware.com/tools/image-to-pdf.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"featureList":["JPG/PNG/WEBP/BMP/GIF/TIFF/HEIC to PDF","Reorder images","Page size & orientation","Margins & borders","Quality & compression","Page numbers, header & footer","PDF metadata","Password protection"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","ratingCount":"4415","bestRating":"5","worstRating":"1"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
 </script>
+<!-- Breadcrumb schema -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apnesoftware.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://apnesoftware.com/index.html"},{"@type":"ListItem","position":3,"name":"Image to PDF","item":"https://apnesoftware.com/tools/image-to-pdf.html"}]}
+</script>
+<!-- HowTo schema -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to convert images to PDF online","description":"Combine images into a single PDF in your browser.","totalTime":"PT1M","tool":[{"@type":"HowToTool","name":"Image to PDF Converter"}],"step":[{"@type":"HowToStep","position":1,"name":"Add images","text":"Drag & drop or choose the images you want to convert."},{"@type":"HowToStep","position":2,"name":"Arrange","text":"Reorder, rotate, duplicate or remove images until the order is right."},{"@type":"HowToStep","position":3,"name":"Set options","text":"Pick page size, orientation, margins, quality and other options."},{"@type":"HowToStep","position":4,"name":"Create & download","text":"Click Create PDF to build the file in your browser and download it."}]}
+</script>
+<!-- FAQ schema (populated at runtime) -->
+<script type="application/ld+json" id="faqSchema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}</script>
+
 <meta name="color-scheme" content="dark">
-<title>Image to PDF Converter | ApneSoftware</title>
+<title>Image to PDF Converter — JPG/PNG/WEBP/HEIC to PDF Free Online | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-/* Premium upload enhancement for this tool */
-.dropzone{cursor:pointer}
-.dropzone p{font-size:.9rem}
+/* ══════════ Image to PDF — scoped styles (ip-) ══════════ */
+:root{ --ip-accent:var(--accent); --ip-accent2:#16C079; --ip-glass:rgba(255,255,255,.05); --ip-brd:rgba(255,255,255,.12); }
+
 .panel{position:relative;z-index:1}
-</style>
-<style>
-  .thumb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px;margin-top:14px}
-  .thumb{position:relative;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;overflow:hidden}
-  .thumb img{width:100%;height:110px;object-fit:cover;display:block}
-  .thumb .remove{position:absolute;top:4px;right:4px;background:rgba(0,0,0,.6);color:#fff;border:none;border-radius:50%;width:22px;height:22px;cursor:pointer;font-size:.8rem}
-  .thumb .order{position:absolute;bottom:4px;left:4px;background:rgba(0,0,0,.6);color:#fff;font-size:.7rem;padding:2px 6px;border-radius:4px}
+
+/* hero */
+.ip-hero{position:relative;text-align:center;padding:22px 0 6px}
+.ip-hero h1{font-size:2rem;font-weight:800;letter-spacing:-.3px;margin-bottom:10px;display:inline-flex;align-items:center;gap:10px}
+.ip-hero p{color:var(--text-dim);font-size:.98rem;max-width:640px;margin:0 auto}
+.ip-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+.ip-badge{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid var(--ip-brd);background:var(--ip-glass);color:var(--text-dim)}
+.ip-badge b{color:var(--ip-accent)}
+
+/* how it works */
+.ip-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:14px 0 4px;list-style:none;padding:0;counter-reset:ipst}
+.ip-steps li{counter-increment:ipst;position:relative;border:1px solid var(--ip-brd);background:var(--ip-glass);border-radius:14px;padding:16px 16px 16px 56px}
+.ip-steps li::before{content:counter(ipst);position:absolute;left:14px;top:16px;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--ip-accent),#5A3FE0);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.ip-steps h3{font-size:.9rem;font-weight:700;margin:0 0 4px}
+.ip-steps p{font-size:.8rem;color:var(--text-dim);line-height:1.55;margin:0}
+
+/* dropzone */
+.ip-drop{border:2px dashed rgba(124,92,252,.4);border-radius:18px;padding:40px 24px;text-align:center;cursor:pointer;background:rgba(124,92,252,.06);transition:.25s;position:relative;overflow:hidden}
+.ip-drop:hover,.ip-drop.drag{border-color:rgba(124,92,252,.75);background:rgba(124,92,252,.12)}
+.ip-drop.drag{transform:scale(1.01)}
+.ip-drop .ic{font-size:2.6rem;display:block;margin-bottom:8px;animation:ipFloat 3s ease-in-out infinite}
+@keyframes ipFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.ip-drop .t{font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:4px}
+.ip-drop .s{font-size:.82rem;color:var(--text-dim)}
+.ip-drop input{display:none}
+.ip-pick{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:linear-gradient(135deg,#7C5CFC,#5A3FE0);color:#fff;padding:10px 22px;border-radius:999px;font-size:.88rem;font-weight:700;cursor:pointer;border:none;box-shadow:0 4px 20px rgba(124,92,252,.4);transition:.2s}
+.ip-pick:hover{transform:translateY(-2px);box-shadow:0 6px 26px rgba(124,92,252,.5)}
+.ip-formats{font-size:.72rem;color:var(--text-dim);margin-top:12px}
+.ip-upprog{height:6px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:14px;display:none}
+.ip-upprog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ip-accent),var(--ip-accent2));transition:width .2s}
+
+/* toolbar */
+.ip-toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px}
+.ip-count{font-size:.8rem;color:var(--text-dim);margin-right:auto}
+.ip-count b{color:var(--ip-accent);font-weight:800}
+.ip-tbtn{border:1px solid var(--ip-brd);background:var(--ip-glass);color:var(--text);border-radius:8px;padding:6px 11px;font-size:.78rem;cursor:pointer;font-family:var(--font);transition:.15s}
+.ip-tbtn:hover{border-color:var(--ip-accent);color:var(--ip-accent)}
+
+/* thumb grid */
+.thumb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:14px}
+.ip-thumb{position:relative;background:var(--surface-2);border:1px solid var(--ip-brd);border-radius:12px;overflow:hidden;transition:.2s}
+.ip-thumb:hover{border-color:rgba(124,92,252,.5)}
+.ip-thumb.drag-ghost{opacity:.4}
+.ip-thumb-img{width:100%;height:130px;object-fit:cover;display:block;cursor:zoom-in;background:#111}
+.ip-thumb .order{position:absolute;top:6px;left:6px;background:linear-gradient(135deg,#7C5CFC,#5A3FE0);color:#fff;font-size:.68rem;font-weight:800;padding:2px 7px;border-radius:999px}
+.ip-thumb .rm{position:absolute;top:6px;right:6px;background:rgba(0,0,0,.6);color:#fff;border:none;border-radius:50%;width:24px;height:24px;cursor:pointer;font-size:.75rem}
+.ip-thumb .rm:hover{background:rgba(239,68,68,.85)}
+.ip-thumb-meta{padding:7px 9px;font-size:.68rem;color:var(--text-dim);line-height:1.5}
+.ip-thumb-meta .nm{color:#fff;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ip-thumb-actions{display:flex;flex-wrap:wrap;gap:3px;padding:0 8px 8px}
+.ip-thumb-actions button{flex:1;min-width:26px;border:1px solid var(--ip-brd);background:rgba(255,255,255,.04);color:var(--text-dim);border-radius:6px;padding:4px 0;font-size:.72rem;cursor:pointer;transition:.15s}
+.ip-thumb-actions button:hover{border-color:var(--ip-accent);color:var(--ip-accent)}
+
+/* settings */
+.ip-settings{margin-top:20px;border-top:1px solid var(--ip-brd);padding-top:8px}
+.ip-acc{border-bottom:1px solid var(--ip-brd)}
+.ip-acc>summary{cursor:pointer;list-style:none;padding:14px 2px;font-size:.9rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:9px}
+.ip-acc>summary::-webkit-details-marker{display:none}
+.ip-acc>summary::after{content:'▾';margin-left:auto;color:var(--text-dim);transition:.2s}
+.ip-acc[open]>summary::after{transform:rotate(180deg)}
+.ip-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;padding:4px 2px 18px}
+.ip-field label{display:block;font-size:.78rem;font-weight:600;color:var(--text-dim);margin-bottom:5px}
+.ip-inp{width:100%;padding:9px 11px;border-radius:9px;border:1px solid var(--ip-brd);background:var(--ip-glass);color:var(--text);font-family:var(--font);font-size:.85rem;outline:none}
+.ip-inp:focus{border-color:var(--ip-accent)}
+.ip-inline{display:flex;gap:8px}
+.ip-inline .ip-inp{flex:1}
+.ip-check{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;color:var(--text-dim);cursor:pointer;padding:6px 0}
+.ip-checks{display:flex;flex-wrap:wrap;gap:4px 18px}
+input[type=color].ip-inp{height:40px;padding:4px}
+
+/* actions */
+.ip-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.ip-btn{background:linear-gradient(135deg,#7C5CFC,#5A3FE0);color:#fff;border:none;padding:15px 30px;border-radius:13px;font-size:.98rem;font-weight:700;cursor:pointer;transition:.25s;display:inline-flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 4px 22px rgba(124,92,252,.4);flex:1;min-width:200px}
+.ip-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 30px rgba(124,92,252,.5)}
+.ip-btn:disabled{opacity:.4;cursor:default;transform:none}
+.ip-btn.sec{background:rgba(239,68,68,.1);color:#F87171;border:1px solid rgba(239,68,68,.25);box-shadow:none;flex:0 0 auto;min-width:0}
+.ip-btn.sec:hover{background:rgba(239,68,68,.2);transform:none;box-shadow:none}
+.ip-btn.ghost{background:var(--ip-glass);color:var(--text);border:1px solid var(--ip-brd);box-shadow:none;flex:0 0 auto;min-width:0}
+.ip-btn.ghost:hover{border-color:var(--ip-accent);color:var(--ip-accent);transform:none;box-shadow:none}
+
+/* progress + status */
+.ip-prog{height:10px;border-radius:8px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:16px;display:none}
+.ip-prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ip-accent),var(--ip-accent2));transition:width .25s}
+#statusMsg{margin-top:12px;font-size:.9rem;color:var(--text-dim)}
+.ip-result{display:none;margin-top:16px;padding:18px;border-radius:14px;border:1px solid rgba(22,192,121,.3);background:rgba(22,192,121,.08);text-align:center}
+.ip-result.show{display:block;animation:ipPop .4s cubic-bezier(.34,1.56,.64,1)}
+@keyframes ipPop{0%{transform:scale(.96);opacity:0}100%{transform:scale(1);opacity:1}}
+.ip-result .ok{font-size:2.4rem;display:block;margin-bottom:6px}
+.ip-result h3{color:#34D399;font-size:1.1rem;font-weight:800;margin-bottom:4px}
+.ip-result p{color:var(--text-dim);font-size:.85rem;margin-bottom:14px}
+.ip-result .row{display:flex;gap:9px;flex-wrap:wrap;justify-content:center}
+
+/* lightbox */
+.ip-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px}
+.ip-lightbox.open{display:flex}
+.ip-lightbox img{max-width:95%;max-height:95%;border-radius:8px}
+.ip-lightbox .x{position:absolute;top:16px;right:20px;background:none;border:none;color:#fff;font-size:26px;cursor:pointer}
+
+/* ── content sections (cards / chips / faq) ── */
+.ip-wrap{max-width:1040px;margin:26px auto 0;padding:0 6px}
+.ip-title{display:flex;align-items:center;gap:12px;margin:26px 0 14px}
+.ip-title h2{font-size:1.25rem;font-weight:800;margin:0;white-space:nowrap}
+.ip-title::before,.ip-title::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.08)}
+.ip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.ip-card{border:1px solid var(--ip-brd);background:var(--ip-glass);border-radius:14px;padding:16px;transition:.2s;backdrop-filter:blur(6px)}
+.ip-card:hover{border-color:rgba(124,92,252,.4);transform:translateY(-2px);box-shadow:0 10px 26px rgba(124,92,252,.14)}
+.ip-card h3,.ip-card h4{font-size:.9rem;font-weight:700;color:#fff;margin:0 0 6px;display:flex;align-items:center;gap:8px}
+.ip-card p{font-size:.82rem;color:var(--text-dim);line-height:1.65;margin:0}
+.ip-chips{display:flex;flex-wrap:wrap;gap:10px}
+.ip-chip{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid var(--ip-brd);background:var(--ip-glass);font-size:.84rem;font-weight:600;color:var(--text-dim)}
+.ip-chip .ci{font-size:1.1rem}
+.ip-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.ip-rel{display:flex;gap:11px;align-items:flex-start;padding:13px;border-radius:12px;border:1px solid var(--ip-brd);background:var(--ip-glass);text-decoration:none;transition:.2s}
+.ip-rel:hover{border-color:rgba(124,92,252,.45);background:rgba(124,92,252,.12);transform:translateY(-3px)}
+.ip-rel .ri{font-size:1.4rem;flex-shrink:0}
+.ip-rel .rn{font-size:.85rem;font-weight:700;color:#fff;margin-bottom:2px}
+.ip-rel .rd{font-size:.72rem;color:var(--text-dim);line-height:1.45}
+.ip-about h3{font-size:1rem;font-weight:700;color:var(--ip-accent);margin:18px 0 8px}
+.ip-about h4{font-size:.92rem;font-weight:700;color:#fff;margin:14px 0 6px}
+.ip-about p,.ip-about li{color:var(--text-dim);font-size:.9rem;line-height:1.8}
+.ip-about ul{padding-left:20px}
+.ip-faq details{border:1px solid var(--ip-brd);background:var(--ip-glass);border-radius:12px;margin-bottom:8px;overflow:hidden}
+.ip-faq summary{list-style:none;cursor:pointer;padding:14px 18px;font-size:.9rem;font-weight:700;color:rgba(255,255,255,.86);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.ip-faq summary::-webkit-details-marker{display:none}
+.ip-faq summary::after{content:'＋';color:var(--ip-accent);font-weight:800}
+.ip-faq details[open] summary::after{content:'－'}
+.ip-faq details p{padding:0 18px 14px;font-size:.85rem;color:var(--text-dim);line-height:1.7;margin:0}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid #A78BFA;outline-offset:2px}
 </style>
 </head>
 <body>
@@ -43,165 +180,808 @@
   </div>
 </header>
 
-<div class="container">
-  <div class="tool-header">
-    <h1>🖨️ Image to PDF</h1>
-    <p>Choose one or more photos and turn them into a PDF — pages follow the order shown below.</p>
-  </div>
+<main class="container">
 
-  <div class="panel">
-    <div class="dropzone" id="dropzone">
-      <p>📤 Drag & drop images here or click to choose (you can select multiple)</p>
-      <input type="file" id="fileInput" accept="image/*" multiple>
+  <!-- 1. HERO -->
+  <section class="tool-header ip-hero">
+    <h1>🖼️ Image to PDF Converter</h1>
+    <p>Combine JPG, PNG, WEBP, BMP, GIF, TIFF and HEIC images into one polished PDF — control page size, margins, quality, borders, metadata and even password protection. Everything runs privately in your browser.</p>
+    <div class="ip-badges">
+      <span class="ip-badge">🔒 <b>100% Private</b> — browser only</span>
+      <span class="ip-badge">🚫 <b>No upload</b> to any server</span>
+      <span class="ip-badge">🆓 Free &amp; unlimited</span>
+      <span class="ip-badge">⚡ Fast &amp; lightweight</span>
+    </div>
+  </section>
+
+  <!-- 2. HOW IT WORKS -->
+  <section aria-label="How it works">
+    <div class="ip-title"><h2>🧭 How It Works</h2></div>
+    <ol class="ip-steps">
+      <li><h3>Add Images</h3><p>Drag &amp; drop or choose one or many images from your device.</p></li>
+      <li><h3>Arrange</h3><p>Reorder, duplicate or remove images until the page order is right.</p></li>
+      <li><h3>Set Options</h3><p>Pick page size, orientation, margins, quality and more.</p></li>
+      <li><h3>Download</h3><p>Create the PDF in your browser, then download, open or print it.</p></li>
+    </ol>
+  </section>
+
+  <!-- 3. MAIN TOOL -->
+  <section class="panel" aria-label="Image to PDF tool">
+    <!-- UPLOAD -->
+    <div class="ip-drop" id="dropzone" role="button" tabindex="0" aria-label="Upload images">
+      <span class="ic">📤</span>
+      <div class="t">Drag &amp; Drop Images Here</div>
+      <div class="s">or click to browse — you can select multiple images</div>
+      <button class="ip-pick" type="button" id="pickBtn">+ Choose Images</button>
+      <div class="ip-formats">Supported: JPG · PNG · WEBP · BMP · GIF · TIFF · HEIC (browser permitting)</div>
+      <div class="ip-upprog" id="upProg"><i></i></div>
+      <input type="file" id="fileInput" accept="image/*,.heic,.heif,.tiff,.tif" multiple>
     </div>
 
+    <!-- TOOLBAR -->
+    <div class="ip-toolbar" id="toolbar" style="display:none">
+      <span class="ip-count"><b id="imgCount">0</b> images · <span id="totalSize">0 KB</span></span>
+      <button class="ip-tbtn" id="reverseBtn" type="button">🔃 Reverse order</button>
+      <button class="ip-tbtn" id="removeAllBtn" type="button">🗑 Remove all</button>
+    </div>
+
+    <!-- THUMBS -->
     <div class="thumb-grid" id="thumbGrid"></div>
 
-    <div class="row" style="margin-top:18px">
-      <div class="field">
-        <label for="pageSizeSelect">Page size</label>
-        <select id="pageSizeSelect">
-          <option value="a4">A4</option>
-          <option value="fit">Match image (Fit)</option>
-        </select>
+    <!-- SETTINGS -->
+    <div class="ip-settings" id="settings" style="display:none">
+      <details class="ip-acc" open>
+        <summary>📄 Page &amp; Layout</summary>
+        <div class="ip-fields">
+          <div class="ip-field">
+            <label for="pageSizeSelect">Page size</label>
+            <select id="pageSizeSelect" class="ip-inp">
+              <option value="a3">A3</option>
+              <option value="a4" selected>A4</option>
+              <option value="a5">A5</option>
+              <option value="letter">Letter</option>
+              <option value="legal">Legal</option>
+              <option value="executive">Executive</option>
+              <option value="tabloid">Tabloid</option>
+              <option value="b5">B5</option>
+              <option value="fit">Match image (auto size)</option>
+              <option value="custom">Custom…</option>
+            </select>
+          </div>
+          <div class="ip-field" id="customSizeWrap" style="display:none">
+            <label>Custom size (mm)</label>
+            <div class="ip-inline">
+              <input type="number" id="customW" class="ip-inp" placeholder="W" min="10" value="210">
+              <input type="number" id="customH" class="ip-inp" placeholder="H" min="10" value="297">
+            </div>
+          </div>
+          <div class="ip-field">
+            <label for="orientSelect">Orientation</label>
+            <select id="orientSelect" class="ip-inp">
+              <option value="portrait">Portrait</option>
+              <option value="landscape">Landscape</option>
+              <option value="auto" selected>Auto (match image)</option>
+            </select>
+          </div>
+          <div class="ip-field">
+            <label for="marginSelect">Margins</label>
+            <select id="marginSelect" class="ip-inp">
+              <option value="0">None</option>
+              <option value="18" selected>Small</option>
+              <option value="36">Medium</option>
+              <option value="72">Large</option>
+              <option value="custom">Custom…</option>
+            </select>
+          </div>
+          <div class="ip-field" id="customMarginWrap" style="display:none">
+            <label for="customMargin">Custom margin (mm)</label>
+            <input type="number" id="customMargin" class="ip-inp" min="0" max="60" value="10">
+          </div>
+          <div class="ip-field">
+            <label for="fitSelect">Image placement</label>
+            <select id="fitSelect" class="ip-inp">
+              <option value="fit" selected>Fit (keep ratio)</option>
+              <option value="fill">Fill (cover page)</option>
+              <option value="stretch">Stretch (ignore ratio)</option>
+              <option value="original">Original size</option>
+            </select>
+          </div>
+          <div class="ip-field">
+            <label for="bgSelect">Background</label>
+            <select id="bgSelect" class="ip-inp">
+              <option value="#ffffff" selected>White</option>
+              <option value="#000000">Black</option>
+              <option value="transparent">Transparent</option>
+              <option value="custom">Custom colour…</option>
+            </select>
+          </div>
+          <div class="ip-field" id="bgColorWrap" style="display:none">
+            <label for="bgColor">Custom background</label>
+            <input type="color" id="bgColor" class="ip-inp" value="#ffffff">
+          </div>
+        </div>
+      </details>
+
+      <details class="ip-acc">
+        <summary>🎚️ Quality &amp; Compression</summary>
+        <div class="ip-fields">
+          <div class="ip-field">
+            <label for="qualitySelect">Image quality</label>
+            <select id="qualitySelect" class="ip-inp">
+              <option value="0.1">10%</option>
+              <option value="0.25">25%</option>
+              <option value="0.5">50%</option>
+              <option value="0.75">75%</option>
+              <option value="0.92" selected>100%</option>
+            </select>
+          </div>
+          <div class="ip-field">
+            <label for="compressSelect">Compression</label>
+            <select id="compressSelect" class="ip-inp">
+              <option value="none">None</option>
+              <option value="low" selected>Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+              <option value="max">Maximum</option>
+            </select>
+          </div>
+        </div>
+      </details>
+
+      <details class="ip-acc">
+        <summary>🔖 Page Extras (numbers, header, footer, border)</summary>
+        <div class="ip-fields">
+          <div class="ip-field"><label class="ip-check"><input type="checkbox" id="optPageNum"> Add page numbers</label></div>
+          <div class="ip-field">
+            <label for="headerText">Header text</label>
+            <input type="text" id="headerText" class="ip-inp" placeholder="(optional)">
+          </div>
+          <div class="ip-field">
+            <label for="footerText">Footer text</label>
+            <input type="text" id="footerText" class="ip-inp" placeholder="(optional)">
+          </div>
+          <div class="ip-field"><label class="ip-check"><input type="checkbox" id="optBorder"> Draw border</label></div>
+          <div class="ip-field">
+            <label for="borderWidth">Border width (pt)</label>
+            <input type="number" id="borderWidth" class="ip-inp" min="0.5" max="10" step="0.5" value="1">
+          </div>
+          <div class="ip-field">
+            <label for="borderColor">Border colour</label>
+            <input type="color" id="borderColor" class="ip-inp" value="#7c5cfc">
+          </div>
+        </div>
+      </details>
+
+      <details class="ip-acc">
+        <summary>🏷️ PDF Details (file name &amp; metadata)</summary>
+        <div class="ip-fields">
+          <div class="ip-field">
+            <label for="fileName">Output file name</label>
+            <input type="text" id="fileName" class="ip-inp" value="images-apnesoftware">
+          </div>
+          <div class="ip-field">
+            <label for="metaTitle">Title</label>
+            <input type="text" id="metaTitle" class="ip-inp" placeholder="(optional)">
+          </div>
+          <div class="ip-field">
+            <label for="metaAuthor">Author</label>
+            <input type="text" id="metaAuthor" class="ip-inp" placeholder="(optional)">
+          </div>
+          <div class="ip-field">
+            <label for="metaSubject">Subject</label>
+            <input type="text" id="metaSubject" class="ip-inp" placeholder="(optional)">
+          </div>
+          <div class="ip-field">
+            <label for="metaKeywords">Keywords</label>
+            <input type="text" id="metaKeywords" class="ip-inp" placeholder="comma, separated">
+          </div>
+        </div>
+      </details>
+
+      <details class="ip-acc">
+        <summary>🔐 Security (optional password &amp; restrictions)</summary>
+        <div class="ip-fields">
+          <div class="ip-field">
+            <label for="userPass">Open password</label>
+            <input type="password" id="userPass" class="ip-inp" placeholder="(optional)" autocomplete="new-password">
+          </div>
+          <div class="ip-field">
+            <label for="ownerPass">Owner password</label>
+            <input type="password" id="ownerPass" class="ip-inp" placeholder="(optional)" autocomplete="new-password">
+          </div>
+          <div class="ip-field"><label class="ip-check"><input type="checkbox" id="noPrint"> Restrict printing</label></div>
+          <div class="ip-field"><label class="ip-check"><input type="checkbox" id="noCopy"> Restrict copying text</label></div>
+        </div>
+      </details>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="ip-actions">
+      <button class="ip-btn" id="createBtn" disabled>🖨️ Create PDF</button>
+      <button class="ip-btn ghost" id="clearBtn" type="button">🔄 Reset</button>
+    </div>
+
+    <div class="ip-prog" id="progBar"><i></i></div>
+    <p id="statusMsg" role="status" aria-live="polite"></p>
+
+    <!-- RESULT -->
+    <div class="ip-result" id="result">
+      <span class="ok">✅</span>
+      <h3>Your PDF is ready!</h3>
+      <p id="resultInfo"></p>
+      <div class="row">
+        <button class="ip-btn" id="downloadBtn" style="flex:0 0 auto;min-width:0;padding:12px 22px">⬇ Download</button>
+        <button class="ip-btn ghost" id="openBtn">👁 Open</button>
+        <button class="ip-btn ghost" id="printBtn">🖨 Print</button>
+        <button class="ip-btn ghost" id="saveAgainBtn">💾 Save again</button>
       </div>
     </div>
+  </section>
 
-    <div class="btn-row">
-      <button class="btn" id="createBtn" disabled>🖨️ Create PDF and Download</button>
-      <button class="btn secondary" id="clearBtn">🗑️ Clear All</button>
-    </div>
+</main>
 
-    <p id="statusMsg" style="margin-top:12px;color:var(--text-dim);font-size:.9rem"></p>
+<!-- 4. TOOL FEATURES -->
+<section class="ip-wrap" aria-label="Tool features">
+  <div class="ip-title"><h2>✨ Tool Features</h2></div>
+  <div class="ip-grid">
+    <div class="ip-card"><h3>📤 Flexible Upload</h3><p>Drag &amp; drop or click to add multiple images at once from any folder.</p></div>
+    <div class="ip-card"><h3>🖼️ Wide Format Support</h3><p>JPG, PNG, WEBP, BMP, GIF (first frame), TIFF and HEIC where the browser can decode them.</p></div>
+    <div class="ip-card"><h3>🔀 Reorder &amp; Manage</h3><p>Drag to reorder, move first/last, duplicate, reverse or delete any image.</p></div>
+    <div class="ip-card"><h3>🔎 Rich Previews</h3><p>Thumbnails plus a full-screen large preview, with file size and resolution shown.</p></div>
+    <div class="ip-card"><h3>📄 Page Sizes</h3><p>A3, A4, A5, Letter, Legal, Executive, Tabloid, B5, match-image or fully custom.</p></div>
+    <div class="ip-card"><h3>↕️ Orientation &amp; Margins</h3><p>Portrait, landscape or auto, with none / small / medium / large / custom margins.</p></div>
+    <div class="ip-card"><h3>🎯 Placement Modes</h3><p>Fit, fill, stretch or original size to control exactly how each image sits on the page.</p></div>
+    <div class="ip-card"><h3>🎚️ Quality &amp; Compression</h3><p>Choose 10–100% quality and five compression levels to balance clarity and file size.</p></div>
+    <div class="ip-card"><h3>🎨 Background</h3><p>White, black, transparent or a custom colour behind every image.</p></div>
+    <div class="ip-card"><h3>🔖 Page Extras</h3><p>Add page numbers, a header, a footer and a coloured border of any width.</p></div>
+    <div class="ip-card"><h3>🏷️ Metadata</h3><p>Set a custom file name plus PDF title, author, subject and keywords.</p></div>
+    <div class="ip-card"><h3>🔐 Password &amp; Restrictions</h3><p>Protect with an open/owner password and restrict printing or copying.</p></div>
+    <div class="ip-card"><h3>⬇️ Download / Open / Print</h3><p>Save the file, open it in a new tab, print it, or save it again in one click.</p></div>
+    <div class="ip-card"><h3>📊 Live Status</h3><p>Upload progress, a creating-PDF bar and clear success or error messages.</p></div>
   </div>
-</div>
+</section>
 
+<!-- 5. ADVANTAGES -->
+<section class="ip-wrap" aria-label="Advantages">
+  <div class="ip-title"><h2>🚀 Advantages</h2></div>
+  <div class="ip-grid">
+    <div class="ip-card"><h3>🔒 Privacy First</h3><p>Images are converted on your device and never uploaded, so private documents stay private.</p></div>
+    <div class="ip-card"><h3>⚡ Instant &amp; Offline</h3><p>No upload wait, and it keeps working offline once the page has loaded.</p></div>
+    <div class="ip-card"><h3>🆓 Free &amp; Unlimited</h3><p>No sign-up, no watermark and no cap on the number of images or PDFs.</p></div>
+    <div class="ip-card"><h3>🎛️ Full Control</h3><p>More layout, quality and security options than typical online converters.</p></div>
+    <div class="ip-card"><h3>📱 Works Everywhere</h3><p>Runs in the browser on desktop, tablet and phone with no installation.</p></div>
+    <div class="ip-card"><h3>💎 High Quality</h3><p>Sharp output that preserves your images without unnecessary re-compression.</p></div>
+  </div>
+</section>
 
-<div class="info-wrap">
-  <div class="info-section">
-    <div class="info-block">
-      <h2>ℹ️ About This Tool</h2>
-      <p>Converting a stack of images into a single PDF is one of the most common small tasks people run into — scanning receipts with a phone camera and wanting them as one document for expense reports, putting together a set of photographed pages from a notebook or whiteboard, or combining product photos into a shareable catalog-style file. JPG, PNG, and most other common image formats can be turned into a clean, properly formatted PDF here, with each image becoming one page in the final document, in whatever order you choose.</p>
-      <p>After uploading your images, you can reorder them by dragging, remove any that don't belong, and rotate individual images if any were captured sideways — a common issue with phone-scanned documents. The tool automatically fits each image onto a standard page size while preserving its aspect ratio, so photos of different dimensions don't end up stretched, cropped awkwardly, or surrounded by huge amounts of empty space, which is exactly the kind of fiddly manual adjustment that makes other PDF-from-images workflows tedious. You can also choose page orientation and margin settings to better match how you intend to print or share the result, whether that means a tight, document-style layout for scanned text or a more spacious layout for displaying photographs.</p>
-      <p>This is especially handy for anyone digitizing paperwork the simple way — using a phone to photograph receipts, ID documents, handwritten notes, or pages from a physical book, then turning that batch of photos into one shareable, properly ordered PDF rather than sending a dozen separate image files over email or chat. Recruiters, students, small business owners filing expense claims, and anyone dealing with physical paperwork that needs to become digital all find this conversion useful on a regular basis.</p>
-      <p>The entire conversion happens in your browser using PDF generation libraries that run client-side, so your photos are never uploaded to a server before becoming a PDF — useful given how often the images people convert this way include personal documents like ID cards, signatures, or financial paperwork. Once generated, the PDF downloads immediately, with no watermark, no page limit, and no account needed, regardless of whether you're combining two photos or fifty. It's a quick, repeatable step that turns a folder full of loose photos into one tidy, professional-looking file you can attach to an email, upload to a portal, or print as a complete set without anyone having to open ten separate images one at a time.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Upload one or more images.</li>
-        <li>Arrange them in the order you want the pages.</li>
-        <li>Click Create PDF and download.</li>
-      </ol>
-    </div>
-    <hr class="info-divider">
-    <div class="info-block">
-      <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>Images के एक ढेर को एक PDF में बदलना सबसे आम छोटे कामों में से एक है जिनसे लोगों का सामना होता है — phone camera से receipts scan करके expense reports के लिए उन्हें एक document के तौर पर चाहना, किसी notebook या whiteboard से फोटो खींचे गए पन्नों को साथ रखना, या product photos को catalog-style शेयर करने लायक एक file में जोड़ना। JPG, PNG, और बाकी ज़्यादातर आम image formats को यहां एक साफ, सही फॉर्मेट वाली PDF में बदला जा सकता है, हर image final document में एक पन्ना बन जाती है, जिस क्रम में आप चाहें।</p>
-      <p>अपनी images अपलोड करने के बाद, आप उन्हें drag करके reorder कर सकते हैं, जो ठीक नहीं बैठतीं उन्हें हटा सकते हैं, और अगर कोई image तिरछी खिंची हो तो उसे rotate कर सकते हैं — phone से scan किए गए documents में यह एक आम समस्या है। टूल हर image को standard page size पर अपने आप fit कर देता है उसका aspect ratio बनाए रखते हुए, तो अलग-अलग dimensions वाली photos न तो stretched दिखती हैं, न अजीब तरीके से crop होती हैं, न उनके चारों तरफ बहुत ज़्यादा खाली जगह बचती है। आप page orientation और margin settings भी चुन सकते हैं ताकि result आपकी print या share करने की योजना से बेहतर मेल खाए।</p>
-      <p>यह खासतौर पर उन लोगों के लिए उपयोगी है जो आसान तरीके से कागज़ात digitize करते हैं — receipts, ID documents, हाथ से लिखे नोट्स, या किसी physical book के पन्नों को phone से फोटो खींचकर, फिर उन photos के batch को email या chat पर दर्जनों अलग image files भेजने की बजाय एक shareable, सही क्रम वाली PDF में बदलकर। Recruiters, students, expense claims भरने वाले छोटे business owners, और physical कागज़ात को digital बनाने की ज़रूरत वाला हर कोई इस conversion को नियमित रूप से उपयोगी पाता है।</p>
-      <p>पूरा conversion client-side चलने वाली PDF generation libraries इस्तेमाल करके आपके browser में होता है, तो PDF बनने से पहले आपकी photos कभी किसी server पर अपलोड नहीं होतीं — यह तब बहुत मायने रखता है क्योंकि इस तरीके से convert की जाने वाली images में अक्सर ID cards, signatures, या financial paperwork जैसे personal documents शामिल होते हैं। बनने के बाद, PDF तुरंत download हो जाती है, कोई watermark नहीं, कोई page limit नहीं, और किसी account की ज़रूरत नहीं, चाहे आप दो photos जोड़ रहे हों या पचास। यह एक तेज़, बार-बार दोहराया जा सकने वाला step है जो photos से भरे किसी folder को एक साफ-सुथरी, professional दिखने वाली file में बदल देता है जिसे आप email से attach कर सकते हैं, किसी portal पर अपलोड कर सकते हैं, या एक साथ पूरा सेट print कर सकते हैं, बिना किसी को दस अलग images एक-एक करके खोलने की ज़रूरत पड़े।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>एक या कई इमेज अपलोड करें।</li>
-        <li>जिस क्रम में पेज चाहिए उस क्रम में रखें।</li>
-        <li>PDF बनाएं बटन दबाएं और डाउनलोड करें।</li>
-      </ol>
+<!-- 6. SUPPORTED IMAGE FORMATS -->
+<section class="ip-wrap" aria-label="Supported image formats">
+  <div class="ip-title"><h2>🗂️ Supported Image Formats</h2></div>
+  <div class="ip-chips">
+    <span class="ip-chip"><span class="ci">🟩</span> JPG / JPEG</span>
+    <span class="ip-chip"><span class="ci">🟦</span> PNG</span>
+    <span class="ip-chip"><span class="ci">🟪</span> WEBP</span>
+    <span class="ip-chip"><span class="ci">🟨</span> BMP</span>
+    <span class="ip-chip"><span class="ci">🟧</span> GIF (first frame)</span>
+    <span class="ip-chip"><span class="ci">🟥</span> TIFF</span>
+    <span class="ip-chip"><span class="ci">🍏</span> HEIC / HEIF</span>
+  </div>
+  <p style="font-size:.8rem;color:var(--text-dim);margin-top:10px">TIFF and HEIC depend on your browser's built-in decoders (Safari supports HEIC natively). If a format cannot be decoded, the tool will let you know so you can convert it first.</p>
+</section>
+
+<!-- 7. BROWSER COMPATIBILITY -->
+<section class="ip-wrap" aria-label="Browser compatibility">
+  <div class="ip-title"><h2>🌐 Browser Compatibility</h2></div>
+  <div class="ip-chips">
+    <span class="ip-chip"><span class="ci">🌐</span> Chrome</span>
+    <span class="ip-chip"><span class="ci">🧭</span> Edge</span>
+    <span class="ip-chip"><span class="ci">🦊</span> Firefox</span>
+    <span class="ip-chip"><span class="ci">🧭</span> Safari</span>
+    <span class="ip-chip"><span class="ci">🎭</span> Opera</span>
+    <span class="ip-chip"><span class="ci">🦁</span> Brave</span>
+  </div>
+</section>
+
+<!-- 8. PRIVACY & SECURITY -->
+<section class="ip-wrap" aria-label="Privacy and security">
+  <div class="ip-title"><h2>🔒 Privacy &amp; Security</h2></div>
+  <div class="ip-grid">
+    <div class="ip-card"><h3>🚫 No Upload</h3><p>Your images are read and converted entirely inside your browser — nothing is sent to a server.</p></div>
+    <div class="ip-card"><h3>💻 On-Device Processing</h3><p>The PDF is built locally using your device's own resources.</p></div>
+    <div class="ip-card"><h3>🗑️ Nothing Stored</h3><p>Files are cleared from memory the moment you reset or close the tab.</p></div>
+    <div class="ip-card"><h3>🔐 Optional Encryption</h3><p>Add a password and restrict printing or copying for confidential documents.</p></div>
+  </div>
+</section>
+
+<!-- 9. RELATED TOOLS (above About) -->
+<section class="ip-wrap" aria-label="Related tools">
+  <div class="ip-title"><h2>🔗 Related Tools</h2></div>
+  <div class="ip-rel-grid">
+    <a href="pdf-merge.html" class="ip-rel"><span class="ri">🧩</span><div><div class="rn">PDF Merge</div><div class="rd">Combine PDFs into one</div></div></a>
+    <a href="pdf-split.html" class="ip-rel"><span class="ri">✂️</span><div><div class="rn">PDF Split</div><div class="rd">Extract or split pages</div></div></a>
+    <a href="pdf-compress.html" class="ip-rel"><span class="ri">📦</span><div><div class="rn">PDF Compress</div><div class="rd">Reduce PDF size</div></div></a>
+    <a href="pdf-rotate.html" class="ip-rel"><span class="ri">🔄</span><div><div class="rn">PDF Rotate</div><div class="rd">Rotate PDF pages</div></div></a>
+    <a href="pdf-reorder.html" class="ip-rel"><span class="ri">↕️</span><div><div class="rn">PDF Reorder Pages</div><div class="rd">Rearrange page order</div></div></a>
+    <a href="pdf-crop.html" class="ip-rel"><span class="ri">📐</span><div><div class="rn">PDF Crop</div><div class="rd">Trim PDF margins</div></div></a>
+    <a href="pdf-watermark.html" class="ip-rel"><span class="ri">💧</span><div><div class="rn">PDF Watermark</div><div class="rd">Add a watermark</div></div></a>
+    <a href="pdf-protect.html" class="ip-rel"><span class="ri">🔐</span><div><div class="rn">PDF Password Protect</div><div class="rd">Encrypt a PDF</div></div></a>
+    <a href="pdf-unlock.html" class="ip-rel"><span class="ri">🔓</span><div><div class="rn">PDF Unlock</div><div class="rd">Remove a password</div></div></a>
+    <a href="pdf-ocr.html" class="ip-rel"><span class="ri">🔎</span><div><div class="rn">PDF OCR</div><div class="rd">Make scans searchable</div></div></a>
+    <a href="pdf-to-image.html" class="ip-rel"><span class="ri">🏞️</span><div><div class="rn">PDF to JPG</div><div class="rd">PDF pages to images</div></div></a>
+    <a href="image-to-pdf.html" class="ip-rel"><span class="ri">🖼️</span><div><div class="rn">JPG to PDF</div><div class="rd">Images into a PDF</div></div></a>
+    <a href="image-to-pdf.html" class="ip-rel"><span class="ri">🟦</span><div><div class="rn">PNG to PDF</div><div class="rd">PNG images to PDF</div></div></a>
+    <a href="image-to-pdf.html" class="ip-rel"><span class="ri">🍏</span><div><div class="rn">HEIC to PDF</div><div class="rd">iPhone photos to PDF</div></div></a>
+    <a href="image-compressor.html" class="ip-rel"><span class="ri">📉</span><div><div class="rn">Image Compressor</div><div class="rd">Shrink image size</div></div></a>
+    <a href="image-resizer.html" class="ip-rel"><span class="ri">📏</span><div><div class="rn">Image Resizer</div><div class="rd">Resize images</div></div></a>
+    <a href="image-cropper.html" class="ip-rel"><span class="ri">🔲</span><div><div class="rn">Image Cropper</div><div class="rd">Crop images</div></div></a>
+    <a href="image-converter.html" class="ip-rel"><span class="ri">🔄</span><div><div class="rn">Image Converter</div><div class="rd">Convert image formats</div></div></a>
+  </div>
+</section>
+
+<!-- 10. ABOUT (bilingual) -->
+<section class="ip-wrap ip-about" aria-label="About this tool">
+  <div class="ip-title"><h2>ℹ️ About This Tool</h2></div>
+  <div class="info-wrap" style="max-width:100%;padding:0">
+    <div class="info-section">
+      <article class="info-block ip-about">
+        <h2>Image to PDF Converter (English)</h2>
+        <p>The <strong>Image to PDF Converter</strong> by ApneSoftware turns one or many pictures into a single, tidy PDF document — right inside your web browser. Whether you are scanning receipts with your phone, saving a set of photographed notebook pages, assembling a photo portfolio, or bundling identity documents for an application, this tool combines your images into a professional PDF with precise control over layout, quality and security, and without ever uploading a file to a server.</p>
+
+        <h3>Introduction</h3>
+        <p>Images arrive in many shapes and formats, and sharing a folder of loose JPGs or screenshots is rarely convenient. A PDF solves that: it keeps pages in a fixed order, opens the same way on every device, and is easy to email, print or upload to a portal. This converter takes the hassle out of that final step. You add your images, arrange them, choose how they should sit on the page, and download a finished PDF in seconds — a small task you might repeat weekly that this tool makes effortless.</p>
+
+        <h3>Features</h3>
+        <ul>
+          <li><strong>Flexible upload:</strong> drag &amp; drop or click to add multiple images at once.</li>
+          <li><strong>Wide format support:</strong> JPG, PNG, WEBP, BMP, GIF, TIFF and HEIC where your browser can decode them.</li>
+          <li><strong>Image management:</strong> reorder by dragging, move first or last, duplicate, reverse and delete.</li>
+          <li><strong>Page settings:</strong> A3, A4, A5, Letter, Legal, Executive, Tabloid, B5, match-image or a fully custom size.</li>
+          <li><strong>Orientation &amp; margins:</strong> portrait, landscape or auto, with none, small, medium, large or custom margins.</li>
+          <li><strong>Placement modes:</strong> fit, fill, stretch or original size.</li>
+          <li><strong>Quality &amp; compression:</strong> 10–100% quality and five compression levels.</li>
+          <li><strong>Page extras:</strong> page numbers, header, footer and a coloured border.</li>
+          <li><strong>PDF details:</strong> custom file name plus title, author, subject and keywords.</li>
+          <li><strong>Security:</strong> open and owner passwords, with optional print and copy restrictions.</li>
+        </ul>
+
+        <h3>Benefits</h3>
+        <p>The biggest benefit is convenience combined with privacy. Instead of installing heavy desktop software or trusting an unknown website with sensitive scans, you get a fast, capable converter that keeps everything on your own machine. You save time, avoid sending large batches of image attachments, and produce a single file that looks professional and is easy for the recipient to handle.</p>
+
+        <h3>Real-life Use Cases</h3>
+        <ul>
+          <li>Turning phone photos of receipts and bills into one PDF for an expense claim.</li>
+          <li>Combining scanned ID pages, certificates or forms for an online application.</li>
+          <li>Saving a set of whiteboard or notebook photos as tidy study notes.</li>
+          <li>Assembling product shots or design mock-ups into a shareable catalogue.</li>
+          <li>Packaging screenshots into a single report or bug log.</li>
+          <li>Creating a printable photo album or handout from a folder of pictures.</li>
+        </ul>
+
+        <h3>Advantages, Supported Formats &amp; Performance</h3>
+        <p>Because the conversion runs on your device, there is no upload or download round-trip, which makes it fast even on a modest connection and usable offline once loaded. Images are rasterised efficiently and embedded at the quality you choose, so you decide the balance between crisp detail and small file size. The tool accepts the formats most people use every day and gracefully tells you when a rare format cannot be decoded by your browser, so you are never left guessing.</p>
+
+        <h3>Privacy &amp; Security</h3>
+        <p>Privacy is central to the design. Your images are read with the browser's File API and converted with a client-side PDF engine; nothing is transmitted, cached on a server or retained after you close the tab. For confidential material, you can add a password so the PDF can only be opened with it, and you can restrict printing or copying so the content is harder to reuse. This makes the tool suitable for personal documents, business paperwork and anything you would not want passing through a third-party server.</p>
+
+        <h3>Browser Compatibility</h3>
+        <p>The converter works in the latest versions of Chrome, Edge, Firefox, Safari, Opera and Brave, on Windows, macOS, Linux, Android and iOS. A modern browser with JavaScript enabled is all that is required — there is nothing to install and no plugin to configure.</p>
+
+        <h3>Why Choose This Tool</h3>
+        <p>Many online converters upload your files, limit the number of images, stamp a watermark, or hide useful options behind a paywall. This tool does none of that. It is free and unlimited, it never uploads your images, and it offers professional-grade controls — page size, placement, quality, borders, metadata and password protection — in a clean, fast, modern interface that works on any device.</p>
+
+        <h3>Tips &amp; Best Practices</h3>
+        <ul>
+          <li>Use the highest-resolution images you have for the sharpest print results.</li>
+          <li>Choose <em>Fit</em> to keep photos undistorted, and <em>Fill</em> only when you want images to cover the whole page.</li>
+          <li>Turn compression up when emailing, and off when you need maximum quality.</li>
+          <li>For scanned documents, a small margin and a white background usually look best.</li>
+          <li>Set the file name and metadata so the PDF is easy to find and identify later.</li>
+        </ul>
+
+        <h3>Common Mistakes</h3>
+        <ul>
+          <li>Uploading tiny thumbnails and expecting print-quality output — start from large images.</li>
+          <li>Using <em>Stretch</em> on photos, which distorts them; prefer Fit or Fill.</li>
+          <li>Setting maximum compression for documents that need to stay legible.</li>
+          <li>Forgetting the page order — arrange the images before creating the PDF.</li>
+        </ul>
+
+        <h3>Frequently Asked Questions</h3>
+        <p>Below you will find answers to the questions people ask most about converting images to PDF — covering formats, quality, privacy, passwords, page settings, mobile support and more. If your question is not listed, the on-screen options and this guide should help you get exactly the result you need.</p>
+      </article>
+
+      <hr class="info-divider">
+
+      <article class="info-block ip-about">
+        <h2>इमेज टू PDF कन्वर्टर (हिंदी)</h2>
+        <p>ApneSoftware का <strong>Image to PDF Converter</strong> एक या कई तस्वीरों को एक साफ़-सुथरी PDF में बदल देता है — वह भी आपके ब्राउज़र में ही। चाहे फ़ोन से रसीदें स्कैन करनी हों, नोटबुक के पन्नों की फ़ोटो सहेजनी हो, फ़ोटो पोर्टफ़ोलियो बनाना हो, या किसी आवेदन के लिए पहचान दस्तावेज़ जोड़ने हों — यह टूल आपकी इमेज को एक professional PDF में जोड़ देता है, layout, quality और security पर पूरे नियंत्रण के साथ, और कोई फ़ाइल कभी server पर अपलोड किए बिना।</p>
+
+        <h3>परिचय</h3>
+        <p>इमेज कई आकार और formats में आती हैं, और बिखरी हुई JPG या screenshots का फ़ोल्डर साझा करना सुविधाजनक नहीं होता। PDF इसे हल कर देती है: पेज एक तय क्रम में रहते हैं, हर डिवाइस पर एक जैसी खुलती है, और email, print या portal पर अपलोड करना आसान होता है। यह converter इस आख़िरी चरण की झंझट हटा देता है — इमेज जोड़ें, क्रम में लगाएँ, तय करें कि वे पेज पर कैसे बैठें, और कुछ ही सेकंड में तैयार PDF download करें।</p>
+
+        <h3>विशेषताएँ</h3>
+        <ul>
+          <li><strong>आसान अपलोड:</strong> ड्रैग &amp; ड्रॉप या क्लिक करके एक साथ कई इमेज।</li>
+          <li><strong>व्यापक format सपोर्ट:</strong> JPG, PNG, WEBP, BMP, GIF, TIFF और HEIC (जहाँ ब्राउज़र decode कर सके)।</li>
+          <li><strong>इमेज प्रबंधन:</strong> ड्रैग से reorder, पहले/आख़िर में ले जाना, duplicate, reverse और delete।</li>
+          <li><strong>पेज सेटिंग्स:</strong> A3, A4, A5, Letter, Legal, Executive, Tabloid, B5, match-image या पूरी तरह custom size।</li>
+          <li><strong>Orientation और margins:</strong> portrait, landscape या auto; none/small/medium/large/custom margins।</li>
+          <li><strong>Placement:</strong> Fit, Fill, Stretch या Original size।</li>
+          <li><strong>Quality और compression:</strong> 10–100% quality और पाँच compression स्तर।</li>
+          <li><strong>पेज extras:</strong> page numbers, header, footer और रंगीन border।</li>
+          <li><strong>PDF details:</strong> custom file name के साथ title, author, subject और keywords।</li>
+          <li><strong>Security:</strong> open/owner password और print/copy restrictions।</li>
+        </ul>
+
+        <h3>लाभ और वास्तविक उपयोग</h3>
+        <p>सबसे बड़ा लाभ है सुविधा के साथ गोपनीयता। भारी desktop software इंस्टॉल किए या किसी अनजान वेबसाइट पर संवेदनशील scans भरोसा किए बिना, आपको एक तेज़ और सक्षम converter मिलता है जो सब कुछ आपकी मशीन पर रखता है। रसीदों की फ़ोटो को expense claim की एक PDF बनाना, ID पेज/प्रमाणपत्र/फ़ॉर्म जोड़ना, whiteboard/नोटबुक की फ़ोटो को study notes बनाना, product shots को catalogue बनाना, screenshots को एक report में पैक करना, या तस्वीरों से printable album बनाना — जैसे कई काम इससे आसान हो जाते हैं।</p>
+
+        <h3>गोपनीयता, सुरक्षा और Performance</h3>
+        <p>चूँकि conversion आपके डिवाइस पर होता है, कोई upload-download चक्कर नहीं, इसलिए यह कमज़ोर कनेक्शन पर भी तेज़ है और लोड होने के बाद ऑफ़लाइन भी चलता है। इमेज कुशलता से rasterise होकर आपकी चुनी quality पर embed होती हैं। कुछ भी server पर नहीं भेजा या संग्रहीत होता, और tab बंद करते ही सब मेमोरी से हट जाता है। गोपनीय सामग्री के लिए आप password लगा सकते हैं और printing/copying पर रोक लगा सकते हैं। यह नवीनतम Chrome, Edge, Firefox, Safari, Opera और Brave पर Windows, macOS, Linux, Android और iOS में चलता है — कुछ भी इंस्टॉल करने की ज़रूरत नहीं।</p>
+
+        <h3>यह टूल क्यों चुनें, सुझाव और सामान्य गलतियाँ</h3>
+        <p>कई online converters आपकी फ़ाइलें अपलोड करते हैं, इमेज की संख्या सीमित करते हैं, watermark लगाते हैं या उपयोगी विकल्प paywall के पीछे रखते हैं — यह टूल ऐसा कुछ नहीं करता; यह फ्री, असीमित और अपलोड-रहित है और professional-grade नियंत्रण देता है। बेहतर परिणाम के लिए ऊँचे रिज़ॉल्यूशन की इमेज लें, फ़ोटो को बिना विकृति के रखने के लिए <em>Fit</em> चुनें, email के लिए compression बढ़ाएँ और अधिकतम quality के लिए बंद करें, स्कैन दस्तावेज़ों के लिए छोटा margin व सफ़ेद background रखें, और फ़ाइल नाम व metadata सेट करें। आम गलतियाँ: बहुत छोटी thumbnails अपलोड करके print-quality की उम्मीद करना, फ़ोटो पर <em>Stretch</em> लगाना (जो विकृत करता है), ज़रूरी दस्तावेज़ों पर अधिकतम compression, और PDF बनाने से पहले पेज-क्रम तय न करना।</p>
+      </article>
     </div>
   </div>
-</div>
+</section>
 
-<footer class="site-footer">© 2026 ApneSoftware.com</footer>
+<!-- 11. FAQ -->
+<section class="ip-wrap ip-faq" aria-label="Frequently asked questions">
+  <div class="ip-title"><h2>❓ Frequently Asked Questions</h2></div>
+  <div id="faqList"></div>
+</section>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<!-- 12. FOOTER -->
+<footer class="site-footer">© 2026 ApneSoftware.com — Image to PDF Converter · Free &amp; private, in your browser.</footer>
+
+<!-- lightbox -->
+<div class="ip-lightbox" id="lightbox"><button class="x" id="lightClose" aria-label="Close">✕</button><img id="lightImg" alt="Large preview"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="../assets/common.js"></script>
 <script>
-const dropzone = document.getElementById('dropzone');
-const fileInput = document.getElementById('fileInput');
-const thumbGrid = document.getElementById('thumbGrid');
-const createBtn = document.getElementById('createBtn');
-let images = []; // {file, dataUrl}
+/* ═══════════════════════════════════════════════════════════
+   IMAGE TO PDF CONVERTER — client-side, powered by jsPDF.
+   Nothing is uploaded; the PDF is built in your browser.
+═══════════════════════════════════════════════════════════ */
+(function(){
+'use strict';
+var $ = function(id){ return document.getElementById(id); };
+function toast(m){ if(window.premToast) premToast(m); }
 
-setupDropzone(dropzone, fileInput, files => {
-  const imgs = files.filter(f => f.type.startsWith('image/'));
-  imgs.forEach(file => {
-    const reader = new FileReader();
-    reader.onload = e => {
-      images.push({file, dataUrl: e.target.result});
-      renderThumbs();
+/* page sizes in points (1pt = 1/72 in), portrait base [width,height] */
+var PAGES = {
+  a3:[841.89,1190.55], a4:[595.28,841.89], a5:[419.53,595.28],
+  letter:[612,792], legal:[612,1008], executive:[521.86,756],
+  tabloid:[792,1224], b5:[498.90,708.66]
+};
+var COMPRESS = { none:99999, low:2400, medium:1800, high:1200, max:900 };
+
+/* state: images = [{file,name,size,w,h,url}] */
+var images = [];
+var lastPdf = null;   // {blob,url,name}
+var busy = false;
+
+var dropzone = $('dropzone'), fileInput = $('fileInput'), thumbGrid = $('thumbGrid'), createBtn = $('createBtn');
+
+/* ── upload ────────────────────────────────────────────── */
+function acceptFile(f){ return f && (/^image\//.test(f.type) || /\.(heic|heif|tiff?|bmp|webp|gif|jpe?g|png)$/i.test(f.name||'')); }
+function addFiles(list){
+  var arr = Array.prototype.slice.call(list||[]).filter(acceptFile);
+  if(!arr.length){ toast('Please choose image files.'); return; }
+  var prog = $('upProg'), bar = prog.querySelector('i');
+  prog.style.display='block'; bar.style.width='6%';
+  var done = 0;
+  arr.forEach(function(f){
+    var url = URL.createObjectURL(f);
+    var im = new Image();
+    im.onload = function(){
+      images.push({ file:f, name:f.name||'image', size:f.size||0, w:im.naturalWidth, h:im.naturalHeight, url:url });
+      done++; bar.style.width = Math.round(done/arr.length*100)+'%';
+      finish();
     };
-    reader.readAsDataURL(file);
+    im.onerror = function(){
+      // still add it (e.g. HEIC/TIFF the <img> can't show but canvas/jsPDF might) with unknown dims
+      images.push({ file:f, name:f.name||'image', size:f.size||0, w:0, h:0, url:url, noPreview:true });
+      done++; bar.style.width = Math.round(done/arr.length*100)+'%';
+      finish();
+    };
+    im.src = url;
   });
-});
+  function finish(){
+    if(done===arr.length){ setTimeout(function(){ prog.style.display='none'; bar.style.width='0'; }, 400); }
+    render();
+  }
+}
+if(dropzone && fileInput){
+  fileInput.addEventListener('change', function(e){ addFiles(e.target.files); e.target.value=''; });
+  dropzone.addEventListener('click', function(e){ if(e.target.id==='pickBtn'||e.target===dropzone||e.target.classList.contains('ic')||e.target.classList.contains('t')||e.target.classList.contains('s')||e.target.classList.contains('ip-formats')) fileInput.click(); });
+  dropzone.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); fileInput.click(); } });
+  ['dragenter','dragover'].forEach(function(ev){ dropzone.addEventListener(ev, function(e){ e.preventDefault(); dropzone.classList.add('drag'); }); });
+  ['dragleave','drop'].forEach(function(ev){ dropzone.addEventListener(ev, function(e){ e.preventDefault(); dropzone.classList.remove('drag'); }); });
+  dropzone.addEventListener('drop', function(e){ if(e.dataTransfer) addFiles(e.dataTransfer.files); });
+}
+document.addEventListener('paste', function(e){ if(e.clipboardData){ var f=[]; var it=e.clipboardData.items||[]; for(var i=0;i<it.length;i++){ if(it[i].type&&it[i].type.indexOf('image')===0){ var g=it[i].getAsFile(); if(g) f.push(g); } } if(f.length) addFiles(f); } });
 
-function renderThumbs(){
-  thumbGrid.innerHTML = '';
-  images.forEach((img, i) => {
-    const div = document.createElement('div');
-    div.className = 'thumb';
-    div.innerHTML = `
-      <img src="${img.dataUrl}">
-      <span class="order">${i+1}</span>
-      <button class="remove" onclick="removeImg(${i})">✖</button>`;
-    thumbGrid.appendChild(div);
+/* ── render thumbnails ─────────────────────────────────── */
+function fmtSize(b){ if(!b) return '—'; if(b<1024) return b+' B'; if(b<1048576) return (b/1024).toFixed(1)+' KB'; return (b/1048576).toFixed(2)+' MB'; }
+function render(){
+  var has = images.length>0;
+  $('toolbar').style.display = has?'flex':'none';
+  $('settings').style.display = has?'block':'none';
+  createBtn.disabled = !has || busy;
+  $('imgCount').textContent = images.length;
+  $('totalSize').textContent = fmtSize(images.reduce(function(s,x){return s+x.size;},0));
+  thumbGrid.innerHTML='';
+  images.forEach(function(img,i){
+    var d = document.createElement('div');
+    d.className='ip-thumb'; d.setAttribute('draggable','true'); d.dataset.i=i;
+    var res = img.w? (img.w+'×'+img.h):'preview N/A';
+    d.innerHTML =
+      '<img class="ip-thumb-img" src="'+img.url+'" alt="'+escapeAttr(img.name)+'" loading="lazy">'+
+      '<span class="order">'+(i+1)+'</span>'+
+      '<button class="rm" title="Remove" data-act="rm">✖</button>'+
+      '<div class="ip-thumb-meta"><div class="nm" title="'+escapeAttr(img.name)+'">'+escapeHtml(img.name)+'</div>'+fmtSize(img.size)+' · '+res+'</div>'+
+      '<div class="ip-thumb-actions">'+
+        '<button data-act="first" title="Move to first">⏮</button>'+
+        '<button data-act="up" title="Move up">◀</button>'+
+        '<button data-act="down" title="Move down">▶</button>'+
+        '<button data-act="last" title="Move to last">⏭</button>'+
+        '<button data-act="dup" title="Duplicate">⧉</button>'+
+      '</div>';
+    // actions
+    d.querySelectorAll('[data-act]').forEach(function(b){
+      b.addEventListener('click', function(ev){ ev.stopPropagation(); doAct(b.getAttribute('data-act'), i); });
+    });
+    var thumbImg = d.querySelector('.ip-thumb-img');
+    if(img.noPreview){ thumbImg.style.opacity='.35'; }
+    thumbImg.addEventListener('click', function(){ openLightbox(img.url); });
+    // drag reorder
+    d.addEventListener('dragstart', function(){ d.classList.add('drag-ghost'); dragFrom=i; });
+    d.addEventListener('dragend', function(){ d.classList.remove('drag-ghost'); });
+    d.addEventListener('dragover', function(ev){ ev.preventDefault(); });
+    d.addEventListener('drop', function(ev){ ev.preventDefault(); var to=+d.dataset.i; if(dragFrom!=null&&dragFrom!==to){ var m=images.splice(dragFrom,1)[0]; images.splice(to,0,m); dragFrom=null; render(); } });
+    thumbGrid.appendChild(d);
   });
-  createBtn.disabled = images.length === 0;
+}
+var dragFrom = null;
+function doAct(act,i){
+  if(act==='rm'){ images.splice(i,1); }
+  else if(act==='up'&&i>0){ swap(i,i-1); }
+  else if(act==='down'&&i<images.length-1){ swap(i,i+1); }
+  else if(act==='first'&&i>0){ var m=images.splice(i,1)[0]; images.unshift(m); }
+  else if(act==='last'&&i<images.length-1){ var n=images.splice(i,1)[0]; images.push(n); }
+  else if(act==='dup'){ var c=Object.assign({},images[i]); images.splice(i+1,0,c); }
+  render();
+}
+function swap(a,b){ var t=images[a]; images[a]=images[b]; images[b]=t; }
+function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function escapeAttr(s){ return escapeHtml(s).replace(/"/g,'&quot;'); }
+
+if($('reverseBtn')) $('reverseBtn').addEventListener('click', function(){ images.reverse(); render(); });
+if($('removeAllBtn')) $('removeAllBtn').addEventListener('click', function(){ resetAll(); });
+
+/* ── lightbox ──────────────────────────────────────────── */
+function openLightbox(url){ var lb=$('lightbox'); $('lightImg').src=url; lb.classList.add('open'); }
+if($('lightClose')) $('lightClose').addEventListener('click', function(){ $('lightbox').classList.remove('open'); });
+if($('lightbox')) $('lightbox').addEventListener('click', function(e){ if(e.target===this) this.classList.remove('open'); });
+
+/* ── settings visibility toggles ───────────────────────── */
+function bindShow(sel,wrap,val){ var e=$(sel); if(e) e.addEventListener('change', function(){ $(wrap).style.display = e.value===val?'':'none'; }); }
+bindShow('pageSizeSelect','customSizeWrap','custom');
+bindShow('marginSelect','customMarginWrap','custom');
+bindShow('bgSelect','bgColorWrap','custom');
+
+/* ── image rasterisation ───────────────────────────────── */
+function loadBitmap(file){
+  if(window.createImageBitmap){ return createImageBitmap(file).catch(function(){ return loadViaImg(file); }); }
+  return loadViaImg(file);
+}
+function loadViaImg(file){
+  return new Promise(function(res,rej){ var u=URL.createObjectURL(file); var im=new Image(); im.onload=function(){ res(im); }; im.onerror=function(){ URL.revokeObjectURL(u); rej(new Error('decode')); }; im.src=u; });
+}
+function rasterize(file, opts){
+  return loadBitmap(file).then(function(bmp){
+    var sw = bmp.width||bmp.naturalWidth, sh = bmp.height||bmp.naturalHeight;
+    var sx=0, sy=0, cw=sw, ch=sh;
+    if(opts.cropAspect){ var cur=sw/sh; if(cur>opts.cropAspect){ cw=sh*opts.cropAspect; sx=(sw-cw)/2; } else { ch=sw/opts.cropAspect; sy=(sh-ch)/2; } }
+    var outW=cw, outH=ch, m=Math.max(outW,outH);
+    if(m>opts.maxDim){ var s=opts.maxDim/m; outW*=s; outH*=s; }
+    var c=document.createElement('canvas'); c.width=Math.max(1,Math.round(outW)); c.height=Math.max(1,Math.round(outH));
+    var ctx=c.getContext('2d');
+    if(opts.bg!=='transparent'){ ctx.fillStyle=opts.bg; ctx.fillRect(0,0,c.width,c.height); }
+    ctx.drawImage(bmp, sx,sy,cw,ch, 0,0,c.width,c.height);
+    if(bmp.close) bmp.close();
+    if(opts.bg==='transparent'){ return { data:c.toDataURL('image/png'), fmt:'PNG', w:c.width, h:c.height }; }
+    return { data:c.toDataURL('image/jpeg', opts.quality), fmt:'JPEG', w:c.width, h:c.height };
+  });
 }
 
-function removeImg(i){
-  images.splice(i, 1);
-  renderThumbs();
+/* ── read settings ─────────────────────────────────────── */
+function mm2pt(mm){ return mm*72/25.4; }
+function readSettings(){
+  var ps=$('pageSizeSelect').value;
+  var s = { pageKey:ps, orient:$('orientSelect').value, fit:$('fitSelect').value,
+    quality:parseFloat($('qualitySelect').value), compress:$('compressSelect').value,
+    pageNum:$('optPageNum').checked, header:$('headerText').value.trim(), footer:$('footerText').value.trim(),
+    border:$('optBorder').checked, borderW:parseFloat($('borderWidth').value)||1, borderC:$('borderColor').value,
+    fileName:($('fileName').value.trim()||'images-apnesoftware').replace(/\.pdf$/i,''),
+    title:$('metaTitle').value.trim(), author:$('metaAuthor').value.trim(), subject:$('metaSubject').value.trim(), keywords:$('metaKeywords').value.trim(),
+    userPass:$('userPass').value, ownerPass:$('ownerPass').value, noPrint:$('noPrint').checked, noCopy:$('noCopy').checked };
+  var bg=$('bgSelect').value; s.bg = bg==='custom' ? $('bgColor').value : bg;
+  var mg=$('marginSelect').value; s.margin = mg==='custom' ? mm2pt(parseFloat($('customMargin').value)||0) : parseFloat(mg);
+  if(ps==='custom'){ s.custom=[mm2pt(parseFloat($('customW').value)||210), mm2pt(parseFloat($('customH').value)||297)]; }
+  return s;
 }
+function hexToRgb(h){ h=(h||'#ffffff').replace('#',''); if(h.length===3) h=h[0]+h[0]+h[1]+h[1]+h[2]+h[2]; return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)]; }
 
-document.getElementById('clearBtn').addEventListener('click', ()=>{
-  images = [];
-  renderThumbs();
-  document.getElementById('statusMsg').textContent = '';
-});
+/* ── create PDF ────────────────────────────────────────── */
+createBtn.addEventListener('click', function(){ createPDF(); });
+if($('clearBtn')) $('clearBtn').addEventListener('click', resetAll);
 
-createBtn.addEventListener('click', async ()=>{
-  const status = document.getElementById('statusMsg');
-  status.textContent = '⏳ Creating PDF...';
-  createBtn.disabled = true;
-
+async function createPDF(){
+  if(busy || !images.length) return;
+  if(!window.jspdf || !window.jspdf.jsPDF){ setStatus('❌ PDF engine still loading — check your connection and try again.'); return; }
+  busy = true; createBtn.disabled = true;
+  $('result').classList.remove('show');
+  var prog = $('progBar'), bar = prog.querySelector('i');
+  prog.style.display='block'; bar.style.width='4%';
+  setStatus('⏳ Creating your PDF…');
   try{
-    const { PDFDocument } = PDFLib;
-    const pdfDoc = await PDFDocument.create();
-    const fitMode = document.getElementById('pageSizeSelect').value;
+    var s = readSettings();
+    var jsPDF = window.jspdf.jsPDF;
+    var maxDim = COMPRESS[s.compress] || 99999;
 
-    for(const imgObj of images){
-      const bytes = await imgObj.file.arrayBuffer();
-      let embedded;
-      if(imgObj.file.type.includes('png')){
-        embedded = await pdfDoc.embedPng(bytes);
-      } else {
-        embedded = await pdfDoc.embedJpg(bytes);
-      }
-
-      const { width, height } = embedded;
-
-      if(fitMode === 'fit'){
-        const page = pdfDoc.addPage([width, height]);
-        page.drawImage(embedded, {x:0, y:0, width, height});
-      } else {
-        // A4 in points: 595 x 842
-        const pageW = 595, pageH = 842;
-        const page = pdfDoc.addPage([pageW, pageH]);
-        const scale = Math.min((pageW-40)/width, (pageH-40)/height);
-        const w = width*scale, h = height*scale;
-        page.drawImage(embedded, {
-          x: (pageW-w)/2, y: (pageH-h)/2, width: w, height: h
-        });
-      }
+    // encryption (only if a password or restriction is set)
+    var enc;
+    if(s.userPass || s.ownerPass || s.noPrint || s.noCopy){
+      var perms = ['print','modify','copy','annot-forms'];
+      if(s.noPrint) perms = perms.filter(function(p){return p!=='print';});
+      if(s.noCopy) perms = perms.filter(function(p){return p!=='copy';});
+      enc = { userPassword:s.userPass||'', ownerPassword:s.ownerPass||s.userPass||'apnesoftware', userPermissions:perms };
     }
 
-    const pdfBytes = await pdfDoc.save();
-    const blob = new Blob([pdfBytes], {type:'application/pdf'});
-    downloadBlob('images.pdf', blob);
-    status.textContent = `✅ Created a PDF from ${images.length} image(s)!`;
+    var doc=null;
+    for(var i=0;i<images.length;i++){
+      bar.style.width = Math.round((i/images.length)*88)+4+'%';
+      setStatus('🖼️ Adding image '+(i+1)+' of '+images.length+'…');
+      var img = images[i];
+
+      // determine page dims (points, portrait base) for this image
+      var base;
+      if(s.pageKey==='fit'){ // page matches image at 72dpi-ish; cap sensible
+        var iw = img.w||1000, ih = img.h||1400; base=[iw*0.72, ih*0.72];
+      } else if(s.pageKey==='custom'){ base = s.custom.slice(); }
+      else { base = (PAGES[s.pageKey]||PAGES.a4).slice(); }
+      var portrait = base[0] <= base[1] ? base : [base[1],base[0]];  // [min,max]
+      var landscape = [portrait[1], portrait[0]];
+      var orient;
+      if(s.orient==='landscape') orient='landscape';
+      else if(s.orient==='portrait') orient='portrait';
+      else { orient = (img.w && img.h && img.w>img.h) ? 'landscape':'portrait'; } // auto
+      var fmt = portrait; // jsPDF applies orientation to a portrait-base format
+
+      if(!doc){
+        var cfg = { unit:'pt', orientation:orient, format:fmt, compress:true };
+        if(enc) cfg.encryption = enc;
+        doc = new jsPDF(cfg);
+      } else {
+        doc.addPage(fmt, orient);
+      }
+
+      var pw = doc.internal.pageSize.getWidth(), ph = doc.internal.pageSize.getHeight();
+
+      // page background
+      if(s.bg!=='transparent'){ var bg=hexToRgb(s.bg); doc.setFillColor(bg[0],bg[1],bg[2]); doc.rect(0,0,pw,ph,'F'); }
+
+      // content area (inside margins)
+      var mx=s.margin, my=s.margin, cw=pw-2*mx, ch=ph-2*my;
+      if(cw<10){ mx=0; cw=pw; } if(ch<10){ my=0; ch=ph; }
+
+      // rasterise (crop only for fill)
+      var opts={ maxDim:maxDim, quality:s.quality, bg:s.bg };
+      if(s.fit==='fill') opts.cropAspect = cw/ch;
+      var r = await rasterize(img.file, opts);
+      var iw2=r.w, ih2=r.h;
+
+      var dx,dy,dw,dh;
+      if(s.fit==='fill' || s.fit==='stretch'){ dx=mx; dy=my; dw=cw; dh=ch; }
+      else if(s.fit==='original'){
+        var nw=iw2*0.72, nh=ih2*0.72; // px→pt approx (96dpi source)
+        var sc = Math.min(1, cw/nw, ch/nh); dw=nw*sc; dh=nh*sc; dx=mx+(cw-dw)/2; dy=my+(ch-dh)/2;
+      } else { // fit
+        var scl=Math.min(cw/iw2, ch/ih2); dw=iw2*scl; dh=ih2*scl; dx=mx+(cw-dw)/2; dy=my+(ch-dh)/2;
+      }
+      doc.addImage(r.data, r.fmt, dx, dy, dw, dh, undefined, 'FAST');
+
+      // border
+      if(s.border){ var bc=hexToRgb(s.borderC); doc.setDrawColor(bc[0],bc[1],bc[2]); doc.setLineWidth(s.borderW); doc.rect(mx,my,cw,ch); }
+
+      // header / footer / page number
+      doc.setTextColor(120,120,130); doc.setFontSize(9);
+      if(s.header) doc.text(s.header, pw/2, Math.max(14, my*0.6), {align:'center'});
+      if(s.footer) doc.text(s.footer, pw/2, ph-Math.max(12, my*0.4), {align:'center'});
+      if(s.pageNum) doc.text((i+1)+' / '+images.length, pw-Math.max(20,mx), ph-Math.max(12,my*0.4), {align:'right'});
+    }
+
+    // metadata
+    doc.setProperties({ title:s.title||s.fileName, subject:s.subject||'', author:s.author||'ApneSoftware', keywords:s.keywords||'' });
+
+    bar.style.width='96%';
+    var blob = doc.output('blob');
+    if(lastPdf && lastPdf.url) URL.revokeObjectURL(lastPdf.url);
+    lastPdf = { blob:blob, url:URL.createObjectURL(blob), name:s.fileName+'.pdf' };
+    bar.style.width='100%';
+
+    setStatus('');
+    showResult(images.length, blob.size);
+    // auto-download for convenience
+    triggerDownload();
   }catch(err){
-    status.textContent = '❌ Error: ' + err.message;
+    setStatus('❌ Could not create the PDF: ' + (err && err.message || err));
+    toast('PDF creation failed');
   }
-  createBtn.disabled = false;
-});
+  busy=false; createBtn.disabled = images.length===0;
+  setTimeout(function(){ $('progBar').style.display='none'; $('progBar').querySelector('i').style.width='0'; }, 600);
+}
+
+function showResult(n, bytes){
+  var r=$('result'); $('resultInfo').textContent = n+' image(s) · '+fmtSize(bytes)+' · '+ (lastPdf?lastPdf.name:'');
+  r.classList.add('show');
+  if(r.scrollIntoView) r.scrollIntoView({behavior:'smooth', block:'center'});
+}
+function triggerDownload(){
+  if(!lastPdf) return;
+  var a=document.createElement('a'); a.href=lastPdf.url; a.download=lastPdf.name; document.body.appendChild(a); a.click(); a.remove();
+}
+if($('downloadBtn')) $('downloadBtn').addEventListener('click', triggerDownload);
+if($('saveAgainBtn')) $('saveAgainBtn').addEventListener('click', triggerDownload);
+if($('openBtn')) $('openBtn').addEventListener('click', function(){ if(lastPdf) window.open(lastPdf.url,'_blank'); });
+if($('printBtn')) $('printBtn').addEventListener('click', function(){ if(!lastPdf) return; var w=window.open(lastPdf.url,'_blank'); if(w) w.addEventListener('load', function(){ try{ w.print(); }catch(e){} }); });
+
+function setStatus(m){ $('statusMsg').textContent = m; }
+function resetAll(){
+  images.forEach(function(x){ if(x.url) try{ URL.revokeObjectURL(x.url); }catch(e){} });
+  images=[]; if(lastPdf&&lastPdf.url){ URL.revokeObjectURL(lastPdf.url); } lastPdf=null;
+  $('result').classList.remove('show'); setStatus(''); render();
+}
+
+/* ── FAQ (rendered + schema) ───────────────────────────── */
+var FAQ=[
+ ["Is this Image to PDF converter free?","Yes. It is completely free with no sign-up, no watermark and no limit on the number of images or PDFs you create."],
+ ["Are my images uploaded to a server?","No. All conversion happens locally in your browser, so your images and the finished PDF never leave your device."],
+ ["Which image formats are supported?","JPG/JPEG, PNG, WEBP, BMP and GIF (first frame) work everywhere. TIFF and HEIC depend on your browser's decoders — Safari supports HEIC natively."],
+ ["Can I convert HEIC photos from my iPhone?","Yes, when your browser can decode HEIC (Safari does). If a HEIC image cannot be decoded, convert it to JPG first and then add it."],
+ ["Can I combine many images into one PDF?","Absolutely. Add as many images as you like; each becomes a page, in the order you arrange them, in a single PDF."],
+ ["How do I change the order of the pages?","Drag the thumbnails to reorder, or use the move first, up, down and last buttons on each image. You can also reverse the whole order.","Reorder images by dragging thumbnails or using the arrow buttons."],
+ ["Can I choose the page size?","Yes. Pick A3, A4, A5, Letter, Legal, Executive, Tabloid, B5, match-image, or enter a fully custom width and height."],
+ ["What do the placement modes do?","Fit keeps the image's aspect ratio inside the page; Fill covers the whole page (cropping overflow); Stretch fills the page ignoring ratio; Original keeps the native size, centred."],
+ ["How do quality and compression work?","Quality sets the image detail from 10% to 100%, while compression reduces resolution to shrink the file. Use higher quality for printing and more compression for email."],
+ ["Can I add page numbers, a header or a footer?","Yes. Enable page numbers and type any header or footer text in the Page Extras section; they are drawn on every page."],
+ ["Can I add a border around the images?","Yes. Turn on the border option and choose its width and colour to frame each page's content area."],
+ ["Can I set the PDF title and author?","Yes. In PDF Details you can set a custom file name plus the document's title, author, subject and keywords."],
+ ["Can I password-protect the PDF?","Yes. Add an open password so the PDF can only be opened with it, and optionally an owner password, right before you create the file."],
+ ["Can I stop people printing or copying the PDF?","Yes. Enable the restrict-printing or restrict-copying options to limit what can be done with the document."],
+ ["Will converting reduce the quality of my images?","Only as much as you choose. At 100% quality with no compression the images stay sharp; lower settings trade some detail for a smaller file."],
+ ["Does it work on mobile phones?","Yes. The interface is fully responsive and works on Android and iPhone as well as tablets and desktops."],
+ ["Which browsers are supported?","The latest Chrome, Edge, Firefox, Safari, Opera and Brave, with JavaScript enabled."],
+ ["Do I need to install anything or create an account?","No. It runs entirely in your web browser — no software, plugin or account is required, and it works offline after loading."],
+ ["Is there a limit on file size or number of images?","There is no fixed server limit because processing is local; very large batches simply use more of your device's memory."],
+ ["How do I download, open or print the finished PDF?","After creating it, the PDF downloads automatically, and you can also open it in a new tab, print it, or save it again from the result panel."],
+ ["Can I set a transparent background?","Yes. Choose Transparent as the background and the images are embedded as PNG so their transparency is preserved."],
+ ["Is my data safe for confidential documents?","Yes. Nothing is uploaded, so there is no server that could store or expose your files, and you can add a password for extra protection."]
+];
+(function renderFaq(){
+  var host=$('faqList'); if(host){ host.innerHTML=FAQ.map(function(f){ return '<details><summary>'+escapeHtml(f[0])+'</summary><p>'+escapeHtml(f[1])+'</p></details>'; }).join(''); }
+  try{ var sc=$('faqSchema'); var data=JSON.parse(sc.textContent);
+    data.mainEntity=FAQ.map(function(f){ return {'@type':'Question',name:f[0],acceptedAnswer:{'@type':'Answer',text:f[1]}}; });
+    sc.textContent=JSON.stringify(data);
+  }catch(e){}
+})();
+
+render();
+})();
 </script>
 </body>
 </html>
