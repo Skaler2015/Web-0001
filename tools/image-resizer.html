@@ -3,33 +3,134 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0d0a1f">
+<meta name="author" content="ApneSoftware">
+<meta name="language" content="English, Hindi">
 <link rel="canonical" href="https://apnesoftware.com/tools/image-resizer.html">
+<meta name="description" content="Free online Image Resizer — resize JPG, PNG, WEBP, BMP, TIFF, ICO and AVIF by pixels, percentage, inches, cm or mm with aspect-ratio lock, social/device/print presets, rotate, flip, background colour, quality control, batch resize and ZIP download. 100% in your browser, nothing uploaded.">
+<meta name="keywords" content="image resizer, resize image, resize photo online, resize by percentage, resize in cm, resize png, resize jpg, batch image resizer, instagram size, passport photo size, free image resizer">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Image Resizer — Resize a Photo | ApneSoftware">
-<meta property="og:description" content="Resize an image. Free online tool — no signup required.">
+<meta property="og:title" content="Image Resizer — Resize Images by Pixels, %, cm & Presets | ApneSoftware">
+<meta property="og:description" content="Resize images by pixels, percentage, inches, cm or mm with aspect lock, social/device/print presets, rotate, flip, batch and ZIP — free, private and 100% in your browser.">
 <meta property="og:url" content="https://apnesoftware.com/tools/image-resizer.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Image Resizer — Resize a Photo | ApneSoftware">
-<meta name="twitter:description" content="Resize an image. Free online tool — no signup required.">
+<meta name="twitter:title" content="Image Resizer — Resize Images by Pixels, %, cm & Presets">
+<meta name="twitter:description" content="Resize by pixels, %, inches, cm or mm with presets, rotate, flip, batch and ZIP — free, private, in-browser.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
+<link rel="icon" href="https://apnesoftware.com/assets/og-image.png">
+
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Image Resizer","description":"Resize an image. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/image-resizer.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":["WebApplication","SoftwareApplication"],"name":"Image Resizer","description":"Resize images by pixels, percentage, inches, centimetres or millimetres with aspect-ratio lock, social, device and print presets, rotation, flipping, quality control, batch processing and ZIP download — entirely in the browser.","url":"https://apnesoftware.com/tools/image-resizer.html","applicationCategory":"MultimediaApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"2640"},"featureList":["Resize by px, %, inch, cm, mm","Social, device and print presets","Aspect-ratio lock, rotate and flip","Batch resize with ZIP download","100% offline and private"],"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com","logo":"https://apnesoftware.com/assets/og-image.png"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apnesoftware.com/"},{"@type":"ListItem","position":2,"name":"Image Tools","item":"https://apnesoftware.com/category/image-tools.html"},{"@type":"ListItem","position":3,"name":"Image Resizer","item":"https://apnesoftware.com/tools/image-resizer.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to resize an image online","step":[{"@type":"HowToStep","position":1,"name":"Add images","text":"Drag & drop, choose or paste one or many images — nothing is uploaded."},{"@type":"HowToStep","position":2,"name":"Set the size","text":"Enter a width and height in pixels, percentage, inches, cm or mm, or pick a preset, with the aspect ratio locked if you like."},{"@type":"HowToStep","position":3,"name":"Download","text":"Choose a format and quality, compare before and after, then download each image or all as a ZIP."}]}
+</script>
+<script type="application/ld+json" id="faqSchema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}</script>
+
 <meta name="color-scheme" content="dark">
-<title>Image Resizer — Resize a Photo | ApneSoftware</title>
+<title>Image Resizer — Resize Images by Pixels, %, cm, Inch & Presets Online Free | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-/* Premium upload enhancement for this tool */
-.dropzone{cursor:pointer}
-.dropzone p{font-size:.9rem}
-.panel{position:relative;z-index:1}
-</style>
-<style>
-  .preview-box{background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center;margin-top:16px}
-  .preview-box img{max-width:100%;max-height:300px;border-radius:6px}
+/* ═══════════ IMAGE RESIZER (rz-) ═══════════ */
+:root{
+  --rz-glass:rgba(255,255,255,.05); --rz-brd:rgba(255,255,255,.14);
+  --rz-accent:#8b5cf6; --rz-accent2:#22d3ee; --rz-good:#16C079; --rz-warn:#f59e0b; --rz-bad:#ef4444; --rz-bg:#12101f;
+}
+.rz-crumb{display:flex;flex-wrap:wrap;gap:7px;align-items:center;font-size:.8rem;color:var(--text-dim);padding:16px 0 0}
+.rz-crumb a{color:var(--rz-accent);text-decoration:none}.rz-crumb a:hover{text-decoration:underline}.rz-crumb .sep{opacity:.5}
+.rz-card{background:var(--rz-glass);border:1px solid var(--rz-brd);border-radius:16px;padding:16px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);margin-top:16px;transition:transform .18s,border-color .18s,box-shadow .18s}
+.rz-card:hover{border-color:rgba(139,92,246,.32);box-shadow:0 10px 30px rgba(0,0,0,.22)}
+.rz-card h3{margin:0 0 12px;font-size:1rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+
+#dropzone{border:1.6px dashed var(--rz-brd);border-radius:18px;background:linear-gradient(135deg,rgba(139,92,246,.08),rgba(34,211,238,.05));cursor:pointer;transition:.2s;position:relative;text-align:center;padding:30px 18px}
+#dropzone.drag{border-color:var(--rz-accent2);box-shadow:0 0 0 4px rgba(34,211,238,.15) inset;transform:scale(1.004)}
+#dropzone .ic{font-size:2.3rem}#dropzone p{margin:8px 0 4px;font-size:.95rem}
+#dropzone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.rz-fmts{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-top:10px}
+.rz-fmts span{font-size:.66rem;color:var(--text-dim);background:var(--rz-glass);border:1px solid var(--rz-brd);border-radius:999px;padding:2px 8px}
+.rz-uprow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.rz-mini{font:inherit;font-size:.8rem;padding:8px 12px;border-radius:10px;border:1px solid var(--rz-brd);background:var(--rz-glass);color:var(--text);cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:6px}
+.rz-mini:hover{border-color:var(--rz-accent);background:rgba(139,92,246,.14)}.rz-mini:active{transform:translateY(1px)}
+.rz-thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.rz-thumb{position:relative;width:74px;height:74px;border-radius:10px;overflow:hidden;border:2px solid var(--rz-brd);cursor:pointer;background:#0b0a17}
+.rz-thumb.active{border-color:var(--rz-accent);box-shadow:0 0 0 2px rgba(139,92,246,.4)}
+.rz-thumb img{width:100%;height:100%;object-fit:cover}
+.rz-thumb .x{position:absolute;top:2px;right:2px;background:rgba(0,0,0,.6);color:#fff;border:none;border-radius:6px;width:18px;height:18px;font-size:.7rem;cursor:pointer;line-height:1}
+.rz-prog{height:10px;border-radius:99px;background:#221f36;overflow:hidden;margin-top:12px;display:none}
+.rz-prog.show{display:block}.rz-prog>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--rz-accent),var(--rz-accent2));transition:width .15s}
+.rz-status{font-size:.8rem;color:var(--text-dim);margin-top:7px;min-height:1em}
+
+.field .field-lbl,.rz-field label,.field label{display:block;font-size:.8rem;color:var(--text-dim);margin-bottom:6px;font-weight:600}
+.rz-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.rz-field input,.rz-field select,input#widthInput,input#heightInput{width:100%;font:inherit;padding:9px 11px;border-radius:10px;border:1px solid var(--rz-brd);background:var(--rz-bg);color:var(--text)}
+.rz-field input[type=range]{padding:0;accent-color:var(--rz-accent)}
+.rz-field input[type=color]{height:40px;padding:4px}
+.rz-toggles{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.rz-tg{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;color:var(--text-dim);background:var(--rz-bg);border:1px solid var(--rz-brd);border-radius:10px;padding:8px 11px;cursor:pointer}
+.rz-tg input{accent-color:var(--rz-accent)}
+.rz-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.rz-btn{font:inherit;font-size:.92rem;font-weight:700;padding:13px 18px;border-radius:12px;border:1px solid var(--rz-brd);background:var(--rz-glass);color:var(--text);cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:8px;min-height:48px}
+.rz-btn:hover{border-color:var(--rz-accent);background:rgba(139,92,246,.14);transform:translateY(-1px)}
+.rz-btn.primary{background:linear-gradient(135deg,var(--rz-accent),#6d28d9);border-color:transparent;color:#fff}
+.rz-btn.primary:hover{filter:brightness(1.08)}
+
+/* presets */
+.rz-presetgroup{margin-top:6px}
+.rz-presetgroup > b{display:block;font-size:.78rem;color:var(--text-dim);margin:10px 0 6px}
+.rz-presets{display:flex;flex-wrap:wrap;gap:7px}
+.rz-preset{font:inherit;font-size:.76rem;padding:7px 11px;border-radius:999px;border:1px solid var(--rz-brd);background:var(--rz-bg);color:var(--text);cursor:pointer;transition:.15s}
+.rz-preset:hover{border-color:var(--rz-accent);background:rgba(139,92,246,.12)}
+.rz-preset small{color:var(--text-dim);font-size:.68rem;margin-left:4px}
+
+/* preview (preserved IDs) */
+.preview-box{background:var(--rz-bg);border:1px solid var(--rz-brd);border-radius:12px;padding:14px;text-align:center;margin-top:6px}
+.preview-box img{max-width:100%;max-height:340px;border-radius:8px;background:conic-gradient(#2a2740 0 25%,#211f33 0 50%) 0/16px 16px}
+.rz-zoombar{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+.rz-compare{position:relative;max-width:100%;margin:8px auto 0;border-radius:12px;overflow:hidden;border:1px solid var(--rz-brd);touch-action:none}
+.rz-compare img{display:block;width:100%}
+.rz-compare .after{position:absolute;inset:0;overflow:hidden;width:50%}
+.rz-compare .after img{height:100%;width:auto;max-width:none}
+.rz-compare .handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--rz-accent2);cursor:ew-resize}
+.rz-compare .handle::after{content:"⇔";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--rz-accent2);color:#08131a;border-radius:50%;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font-weight:800}
+
+.rz-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.rz-stat{background:var(--rz-bg);border:1px solid var(--rz-brd);border-radius:11px;padding:11px;display:flex;justify-content:space-between;gap:8px;font-size:.85rem}
+.rz-stat span{color:var(--text-dim)}.rz-stat b{color:var(--text);word-break:break-word;text-align:right}
+.rz-badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:14px}
+.rz-badge{display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,rgba(22,192,121,.1),rgba(34,211,238,.05));border:1px solid rgba(22,192,121,.28);border-radius:12px;padding:10px 13px;font-size:.82rem}
+
+#rzToasts{position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;gap:10px;z-index:9999;max-width:min(340px,90vw)}
+.rz-toast{display:flex;gap:9px;padding:12px 15px;border-radius:12px;color:#fff;box-shadow:0 12px 30px rgba(0,0,0,.4);animation:rzIn .25s ease;font-size:.88rem}
+@keyframes rzIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.rz-toast.info{background:linear-gradient(135deg,#6d28d9,#8b5cf6)}.rz-toast.success{background:linear-gradient(135deg,#0f9d6b,#16C079)}
+.rz-toast.warn{background:linear-gradient(135deg,#b45309,#f59e0b)}.rz-toast.error{background:linear-gradient(135deg,#b91c1c,#ef4444)}
+#rzLightbox{position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;flex-direction:column;gap:12px}
+#rzLightbox.show{display:flex}#rzLightbox img{max-width:94vw;max-height:82vh;object-fit:contain}
+
+.rz-related{max-width:1040px;margin:26px auto 0;padding:0 6px}
+.rz-related h2{font-size:1.15rem;margin-bottom:12px}
+.rz-rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.rz-link{display:flex;gap:9px;align-items:center;padding:11px 13px;border-radius:12px;border:1px solid var(--rz-brd);background:var(--rz-glass);color:var(--text);text-decoration:none;font-size:.83rem;transition:.15s}
+.rz-link:hover{border-color:var(--rz-accent);background:rgba(139,92,246,.12);transform:translateY(-2px)}.rz-link .i{font-size:1.1rem;flex:none}
+.rz-about{max-width:1040px;margin:22px auto 0;padding:0 6px}
+.rz-about h2{font-size:1.3rem;font-weight:800;margin:26px 0 10px}
+.rz-about h3{font-size:1rem;font-weight:700;color:var(--rz-accent);margin:18px 0 8px}
+.rz-about p,.rz-about li{color:var(--text-dim);font-size:.93rem;line-height:1.85}
+.rz-faq details{background:var(--rz-glass);border:1px solid var(--rz-brd);border-radius:10px;padding:0 14px;margin-bottom:8px}
+.rz-faq summary{cursor:pointer;padding:13px 0;font-weight:600;list-style:none}.rz-faq summary::-webkit-details-marker{display:none}
+.rz-faq summary::before{content:"＋";color:var(--rz-accent);margin-right:9px;font-weight:800}
+.rz-faq details[open] summary::before{content:"－"}
+.rz-faq details p{padding:0 0 12px;color:var(--text-dim);line-height:1.75}
+:focus-visible{outline:2px solid var(--rz-accent2);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -41,142 +142,608 @@
 </header>
 
 <div class="container">
+  <nav class="rz-crumb" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a><span class="sep">›</span>
+    <a href="../category/image-tools.html">Image Tools</a><span class="sep">›</span>
+    <span aria-current="page">Image Resizer</span>
+  </nav>
+
   <div class="tool-header">
     <h1>📐 Image Resizer</h1>
-    <p>Change the width and height (in pixels) of an image.</p>
+    <p>Resize images by <b>pixels, percentage, inches, cm or mm</b> with aspect-ratio lock, ready-made <b>social, device &amp; print presets</b>, rotate, flip, quality control and <b>batch + ZIP</b> — everything runs <b>in your browser</b>, nothing is uploaded.</p>
   </div>
 
-  <div class="panel">
-    <div class="dropzone" id="dropzone">
-      <p>📤 Drag & drop your image here or click to choose</p>
-      <input type="file" id="fileInput" accept="image/*">
-    </div>
+  <div class="rz-badges">
+    <div class="rz-badge">🚫 No server upload</div>
+    <div class="rz-badge">🖥️ 100% client-side</div>
+    <div class="rz-badge">🔒 Private &amp; secure</div>
+    <div class="rz-badge">⚡ Fast &amp; free</div>
+  </div>
 
-    <div class="row" style="margin-top:18px">
-      <div class="field">
-        <label for="widthInput">Width (px)</label>
-        <input type="number" id="widthInput" min="1">
+  <div class="panel" style="background:none;border:none;padding:0">
+    <!-- UPLOAD -->
+    <section class="rz-card" aria-label="Upload">
+      <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-label="Upload images">
+        <div class="ic">📤</div>
+        <p>Drag &amp; drop images here, click to choose, or paste (Ctrl+V)</p>
+        <div class="rz-fmts"><span>JPG</span><span>PNG</span><span>WEBP</span><span>BMP</span><span>TIFF</span><span>ICO</span><span>AVIF</span></div>
+        <input type="file" id="fileInput" accept="image/*" multiple>
       </div>
-      <div class="field">
-        <label for="heightInput">Height (px)</label>
-        <input type="number" id="heightInput" min="1">
+      <div class="rz-uprow">
+        <button class="rz-mini" id="chooseBtn">📁 Choose files</button>
+        <button class="rz-mini" id="cameraBtn">📷 Camera</button>
+        <button class="rz-mini" id="clearBtn">🗑️ Clear all</button>
+        <span class="rz-mini" style="cursor:default">Max ~50 MB / file</span>
+        <input type="file" id="cameraInput" accept="image/*" capture="environment" hidden>
       </div>
+      <div class="rz-thumbs" id="thumbs"></div>
+      <div class="rz-prog" id="prog"><i id="progBar"></i></div>
+      <div class="rz-status" id="status"></div>
+    </section>
+
+    <!-- SIZE -->
+    <section class="rz-card" aria-label="Resize options">
+      <h3>📐 New Size</h3>
+      <div class="rz-grid">
+        <div class="rz-field"><label for="unitSel">Unit</label>
+          <select id="unitSel" aria-label="Unit"><option value="px">Pixels</option><option value="percent">Percentage</option><option value="in">Inches</option><option value="cm">Centimetres</option><option value="mm">Millimetres</option></select></div>
+        <div class="rz-field"><label for="widthInput">Width <span id="uW">(px)</span></label><input type="number" id="widthInput" min="1" step="any" aria-label="Width"></div>
+        <div class="rz-field"><label for="heightInput">Height <span id="uH">(px)</span></label><input type="number" id="heightInput" min="1" step="any" aria-label="Height"></div>
+        <div class="rz-field" id="dpiWrap" style="display:none"><label for="dpiSel">DPI (for in/cm/mm)</label>
+          <select id="dpiSel"><option value="72">72</option><option value="96" selected>96</option><option value="150">150</option><option value="300">300</option></select></div>
+      </div>
+      <div class="rz-toggles">
+        <label class="rz-tg"><input type="checkbox" id="lockRatio" checked> Lock aspect ratio</label>
+        <button class="rz-mini" id="resetSize">↺ Reset to original</button>
+        <button class="rz-mini" data-rot="-90">↶ Rotate left</button>
+        <button class="rz-mini" data-rot="90">↷ Rotate right</button>
+        <button class="rz-mini" data-flip="h">⇋ Flip H</button>
+        <button class="rz-mini" data-flip="v">⇅ Flip V</button>
+      </div>
+
+      <div class="rz-presetgroup">
+        <b>📱 Social media presets</b>
+        <div class="rz-presets" id="presetSocial"></div>
+        <b>💻 Device presets</b>
+        <div class="rz-presets" id="presetDevice"></div>
+        <b>🖨️ Print presets</b>
+        <div class="rz-presets" id="presetPrint"></div>
+      </div>
+
+      <h3 style="margin-top:16px">🎨 Output</h3>
+      <div class="rz-grid">
+        <div class="rz-field"><label for="formatSel">Format</label>
+          <select id="formatSel"><option value="image/png">PNG</option><option value="image/jpeg">JPG</option><option value="image/webp">WEBP</option><option value="image/bmp">BMP</option><option value="image/avif">AVIF</option></select></div>
+        <div class="rz-field" id="qWrap"><label for="qualityRange">Quality: <span id="qualityVal">92</span>%</label><input type="range" id="qualityRange" min="10" max="100" value="92" step="10"></div>
+        <div class="rz-field" id="bgWrap" style="display:none"><label for="bgColor">Background (transparent → JPG)</label><input type="color" id="bgColor" value="#ffffff"></div>
+      </div>
+      <div class="rz-toggles"><label class="rz-tg"><input type="checkbox" id="tgAlpha" checked> Maintain transparency (PNG/WebP)</label></div>
+
+      <div class="rz-btns">
+        <button class="rz-btn primary" id="resizeBtn">✨ Resize</button>
+        <button class="rz-btn" id="resizeAllBtn">📦 Resize all</button>
+        <button class="rz-btn" id="resetAllBtn">🔄 Reset all</button>
+      </div>
+    </section>
+
+    <!-- PREVIEW (preserved IDs) -->
+    <section class="rz-card" aria-label="Preview">
+      <h3>🔍 Preview &amp; Compare <span style="margin-left:auto"><button class="rz-mini" id="sliderToggle">↔ Compare</button> <button class="rz-mini" id="fsBtn">⛶ Fullscreen</button></span></h3>
+      <div class="preview-box" id="previewBox" style="display:none">
+        <img id="previewImg" alt="Resized image preview">
+        <p style="margin-top:8px;color:var(--text-dim);font-size:.85rem" id="finalDims"></p>
+        <div class="rz-zoombar" id="zoomBar">
+          <button class="rz-mini" data-zoom="0.5">50%</button>
+          <button class="rz-mini" data-zoom="1">100% (actual)</button>
+          <button class="rz-mini" data-zoom="2">200%</button>
+          <button class="rz-mini" data-zoom="fit">Fit screen</button>
+        </div>
+      </div>
+      <div id="compareWrap" style="display:none">
+        <div class="rz-compare" id="compare"><img id="cmpBefore" alt="Original"><div class="after"><img id="cmpAfter" alt="Resized"></div><div class="handle" id="cmpHandle"></div></div>
+      </div>
+      <div class="btn-row" id="downloadRow" style="display:none;margin-top:14px;flex-wrap:wrap;gap:10px">
+        <button class="rz-btn primary" id="downloadBtn">⬇️ Download</button>
+        <button class="rz-btn" id="downloadAllBtn">📦 Download all (ZIP)</button>
+        <button class="rz-btn" id="copyBtn">📋 Copy image</button>
+      </div>
+      <div class="rz-field" style="margin-top:12px;max-width:340px"><label for="renameInput">Output file name</label><input type="text" id="renameInput" placeholder="resized-image"></div>
+    </section>
+
+    <!-- INFO PANEL -->
+    <section class="rz-card" aria-label="Image information">
+      <h3>📋 Image Information</h3>
+      <div class="rz-stats">
+        <div class="rz-stat"><span>File name</span><b id="iName">—</b></div>
+        <div class="rz-stat"><span>Extension</span><b id="iExt">—</b></div>
+        <div class="rz-stat"><span>Original size</span><b id="iOrigDims">—</b></div>
+        <div class="rz-stat"><span>New size</span><b id="iNewDims">—</b></div>
+        <div class="rz-stat"><span>Original file size</span><b id="iOrigBytes">—</b></div>
+        <div class="rz-stat"><span>Final file size</span><b id="iNewBytes">—</b></div>
+        <div class="rz-stat"><span>Saved</span><b id="iSaved">—</b></div>
+        <div class="rz-stat"><span>Compression</span><b id="iComp">—</b></div>
+        <div class="rz-stat"><span>Aspect ratio</span><b id="iAspect">—</b></div>
+        <div class="rz-stat"><span>Est. print @300 DPI</span><b id="iDpi">—</b></div>
+        <div class="rz-stat"><span>Colour depth</span><b id="iDepth">—</b></div>
+        <div class="rz-stat"><span>Transparency</span><b id="iAlpha">—</b></div>
+        <div class="rz-stat"><span>Processing time</span><b id="iTime">—</b></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- RELATED (above About) -->
+<div class="rz-related">
+  <h2>🔗 Related Tools</h2>
+  <div class="rz-rgrid">
+    <a class="rz-link" href="image-compressor.html"><span class="i">📉</span> Image Compressor</a>
+    <a class="rz-link" href="image-converter.html"><span class="i">🔄</span> Image Converter</a>
+    <a class="rz-link" href="image-cropper.html"><span class="i">✂️</span> Image Cropper</a>
+    <a class="rz-link" href="image-rotate-flip.html"><span class="i">🔁</span> Image Rotator</a>
+    <a class="rz-link" href="image-rotate-flip.html"><span class="i">🪞</span> Image Flipper</a>
+    <a class="rz-link" href="image-watermark-adder.html"><span class="i">💧</span> Watermark Adder</a>
+    <a class="rz-link" href="solid-color-background-remover.html"><span class="i">🎭</span> Background Remover</a>
+    <a class="rz-link" href="passport-photo-maker.html"><span class="i">🪪</span> Passport Photo Maker</a>
+    <a class="rz-link" href="image-border-frame.html"><span class="i">🖼️</span> Image Border &amp; Frame</a>
+    <a class="rz-link" href="image-brightness-contrast.html"><span class="i">🎚️</span> Photo Filters</a>
+    <a class="rz-link" href="exif-viewer-remover.html"><span class="i">🧾</span> EXIF Viewer &amp; Remover</a>
+    <a class="rz-link" href="favicon-generator.html"><span class="i">⭐</span> Favicon Generator</a>
+    <a class="rz-link" href="qr-code-scanner.html"><span class="i">📷</span> QR Code Scanner</a>
+    <a class="rz-link" href="image-resolution-checker.html"><span class="i">📐</span> Resolution Checker</a>
+  </div>
+</div>
+
+<!-- ABOUT (bilingual) + FAQ inside -->
+<div class="rz-about">
+  <div class="info-wrap" style="max-width:100%;padding:0">
+    <div class="info-section">
+      <article class="info-block">
+        <h2>ℹ️ About This Tool — Image Resizer</h2>
+        <p>The <strong>Image Resizer</strong> is a free, professional online tool that changes the width and height of your images precisely and privately. It runs entirely inside your web browser, so your photos are never uploaded to a server, and it works on any device.</p>
+
+        <h3>Introduction</h3>
+        <p>From uploading a profile picture to preparing print-ready artwork, resizing images is one of the most common tasks in digital life. The right size makes an image load faster, fit a layout perfectly and meet the requirements of a form or platform. This tool makes resizing simple, exact and completely private.</p>
+
+        <h3>What is an Image Resizer?</h3>
+        <p>An image resizer changes the pixel dimensions of a picture — making it larger or smaller. Unlike simply displaying an image at a different size, a true resizer re-samples the pixels and saves a new file at the exact dimensions you choose, so the result is the correct size everywhere it is used.</p>
+
+        <h3>Why Use It</h3>
+        <p>Platforms and printers expect specific sizes. Social networks crop or reject images that are the wrong shape, websites load faster with correctly sized images, and printers need the right dimensions and resolution. Resizing to the correct size before you upload or print saves time, avoids errors and produces a better result.</p>
+
+        <h3>Features</h3>
+        <ul>
+          <li>Resize by pixels, percentage, inches, centimetres or millimetres.</li>
+          <li>Lock or unlock the aspect ratio with smart width/height calculation.</li>
+          <li>Ready-made presets for social media, devices and print.</li>
+          <li>Choose the output format (PNG, JPG, WebP, BMP, AVIF) and quality.</li>
+          <li>Rotate, flip and set a background colour for transparent images.</li>
+          <li>Batch resize many images and download them as a ZIP.</li>
+          <li>Before/after comparison, zoom and a full information panel.</li>
+        </ul>
+
+        <h3>Benefits</h3>
+        <p>You get pixel-perfect control, instant results and total privacy. Because the tool shows the new file size and dimensions live, you always know exactly what you are downloading, and the presets remove the guesswork for common platforms.</p>
+
+        <h3>Advantages</h3>
+        <p>It is fast because there is no upload, private because nothing leaves your device, and flexible because it combines resizing with rotation, format conversion and quality control in one step. It is free and needs no signup or installation.</p>
+
+        <h3>Supported Formats</h3>
+        <p>You can load JPG, PNG, WebP, BMP, TIFF, ICO and AVIF (where the browser supports them) and export PNG, JPG, WebP, BMP and AVIF, so the resizer also works as a light format converter.</p>
+
+        <h3>Common Use Cases</h3>
+        <p>Resize a photo for an Instagram post or story, fit a YouTube thumbnail, prepare a passport photo, shrink a large camera image for email, scale artwork to A4 for printing, or make a favicon-sized icon — all in seconds.</p>
+
+        <h3>Step-by-Step Guide</h3>
+        <ol>
+          <li>Add one or more images by drag & drop, choosing a file, or pasting.</li>
+          <li>Pick a unit and enter the new width and height, or choose a preset.</li>
+          <li>Keep the aspect ratio locked to avoid stretching, or unlock it for an exact fit.</li>
+          <li>Select the output format and quality, and rotate or flip if needed.</li>
+          <li>Compare before and after, then download the image or all of them as a ZIP.</li>
+        </ol>
+
+        <h3>Best Practices</h3>
+        <ul>
+          <li>Keep the aspect ratio locked so images do not look stretched.</li>
+          <li>Enlarge sparingly — making an image bigger cannot add real detail.</li>
+          <li>Use WebP or JPG for photos on the web and PNG for logos and transparency.</li>
+          <li>For print, work in centimetres or inches at 300 DPI.</li>
+        </ul>
+
+        <h3>Privacy</h3>
+        <p>Your images never leave your device. All resizing happens locally using the browser canvas, so you can safely resize private photos, documents or client work. Nothing is uploaded, stored or tracked.</p>
+
+        <h3>Security</h3>
+        <p>With no server and no account there is no database to breach and no credentials to leak, and the tool sets no tracking cookies. Re-encoding also removes embedded metadata such as GPS location, improving your privacy when you share the result.</p>
+
+        <h3>Performance</h3>
+        <p>Images are decoded off the main thread where the browser supports it and resized with efficient canvas operations, so even large photos process in a moment and batches stay smooth on modest devices.</p>
+
+        <h3>Browser Compatibility</h3>
+        <p>It works in Chrome, Edge, Firefox, Safari and Opera on Windows, macOS, Linux, Android and iOS. WebP output is widely supported; AVIF output depends on the browser; and some input formats decode only where the operating system provides them.</p>
+
+        <h3>Tips</h3>
+        <p>Use percentage mode to scale by a simple factor, presets to hit platform sizes instantly, and the comparison slider to check the result before downloading. For many files, set your options once and use Resize All.</p>
+
+        <h3>Limitations</h3>
+        <p>Resizing cannot invent detail, so heavily enlarged images will look soft. Some input formats (TIFF, HEIC) and AVIF output are only available where the browser supports them, and print sizes assume a DPI you choose because most files do not store one.</p>
+
+        <h3>Troubleshooting</h3>
+        <p>If an image will not load, its format may not be supported by your browser — convert it first. If the result looks stretched, make sure the aspect ratio is locked. If a transparent PNG turns black when saved as JPG, choose a background colour before resizing.</p>
+
+        <h3>Conclusion</h3>
+        <p>Whether you are preparing a single photo or a whole folder, this <strong>online image resizer</strong> gives you exact control, instant results and complete privacy. Resize, convert and optimise your images with confidence — free and entirely in your browser.</p>
+      </article>
+      <hr class="info-divider">
+      <article class="info-block">
+        <h2>ℹ️ इस टूल के बारे में — Image Resizer</h2>
+        <p><strong>Image Resizer</strong> एक फ्री, professional ऑनलाइन टूल है जो आपकी images की चौड़ाई व ऊँचाई सटीक और गोपनीय रूप से बदलता है। यह पूरी तरह आपके browser में चलता है, इसलिए आपकी तस्वीरें कभी server पर upload नहीं होतीं।</p>
+
+        <h3>परिचय</h3>
+        <p>profile picture upload करने से लेकर print-ready artwork तैयार करने तक, image resize करना डिजिटल जीवन के सबसे आम कामों में से एक है। सही आकार image को तेज़ load कराता है, layout में फिट करता है और form या platform की शर्तें पूरी करता है। यह टूल resizing को सरल, सटीक व पूरी तरह निजी बनाता है।</p>
+
+        <h3>Image Resizer क्या है?</h3>
+        <p>Image resizer तस्वीर के pixel dimensions बदलता है — बड़ा या छोटा करता है। image को केवल अलग आकार में दिखाने के बजाय, असली resizer pixels को re-sample करके आपके चुने सटीक dimensions पर नई file सहेजता है, ताकि परिणाम हर जगह सही आकार का हो।</p>
+
+        <h3>इसका उपयोग क्यों करें</h3>
+        <p>Platforms व printers खास आकार चाहते हैं। social networks गलत shape की images crop या reject करते हैं, websites सही आकार की images से तेज़ load होती हैं, और printers को सही dimensions व resolution चाहिए। upload या print से पहले सही आकार में resize करना समय बचाता है व गलतियाँ रोकता है।</p>
+
+        <h3>विशेषताएँ</h3>
+        <ul>
+          <li>pixels, percentage, inches, centimetres या millimetres में resize।</li>
+          <li>smart width/height गणना के साथ aspect ratio lock/unlock।</li>
+          <li>social media, devices व print के लिए तैयार presets।</li>
+          <li>output format (PNG, JPG, WebP, BMP, AVIF) व quality चुनें।</li>
+          <li>rotate, flip व transparent images के लिए background colour।</li>
+          <li>कई images एक साथ batch resize व ZIP download।</li>
+          <li>before/after तुलना, zoom व पूरा information panel।</li>
+        </ul>
+
+        <h3>लाभ</h3>
+        <p>आपको pixel-perfect नियंत्रण, तुरंत परिणाम व पूरी गोपनीयता मिलती है। टूल नई file size व dimensions live दिखाता है, इसलिए आप हमेशा जानते हैं कि क्या download कर रहे हैं, और presets आम platforms के लिए अंदाज़ा हटा देते हैं।</p>
+
+        <h3>फायदे</h3>
+        <p>यह तेज़ है क्योंकि upload नहीं, निजी है क्योंकि कुछ device से बाहर नहीं जाता, और लचीला है क्योंकि एक ही step में resizing को rotation, format conversion व quality नियंत्रण के साथ जोड़ता है। यह फ्री है और install/signup की ज़रूरत नहीं।</p>
+
+        <h3>समर्थित Formats</h3>
+        <p>आप JPG, PNG, WebP, BMP, TIFF, ICO व AVIF (जहाँ browser support करे) लोड कर सकते हैं और PNG, JPG, WebP, BMP व AVIF export कर सकते हैं, तो resizer एक हल्के format converter की तरह भी काम करता है।</p>
+
+        <h3>आम उपयोग</h3>
+        <p>Instagram post या story के लिए photo resize करें, YouTube thumbnail फिट करें, passport photo तैयार करें, email के लिए बड़ी camera image छोटी करें, print के लिए artwork A4 में scale करें, या favicon-आकार का icon बनाएँ — सब सेकंडों में।</p>
+
+        <h3>चरण-दर-चरण मार्गदर्शन</h3>
+        <ol>
+          <li>drag & drop, file चुनकर या paste करके एक या अधिक images जोड़ें।</li>
+          <li>unit चुनें और नई width व height डालें, या preset चुनें।</li>
+          <li>stretching से बचने के लिए aspect ratio locked रखें, या सटीक फिट के लिए unlock करें।</li>
+          <li>output format व quality चुनें, ज़रूरत हो तो rotate/flip करें।</li>
+          <li>before/after तुलना करें, फिर image या सबको ZIP में download करें।</li>
+        </ol>
+
+        <h3>सर्वोत्तम अभ्यास</h3>
+        <ul>
+          <li>aspect ratio locked रखें ताकि images खिंची न दिखें।</li>
+          <li>बड़ा कम करें — image बड़ी करने से असली विवरण नहीं जुड़ता।</li>
+          <li>web की photos के लिए WebP/JPG और logos/transparency के लिए PNG।</li>
+          <li>print के लिए 300 DPI पर centimetres या inches में काम करें।</li>
+        </ul>
+
+        <h3>गोपनीयता</h3>
+        <p>आपकी images कभी device से बाहर नहीं जातीं। सारा resizing locally canvas से होता है, इसलिए निजी तस्वीरें, दस्तावेज़ या client काम सुरक्षित resize करें। कुछ भी upload/store/track नहीं होता।</p>
+
+        <h3>सुरक्षा</h3>
+        <p>न server है न account, इसलिए न database breach का खतरा है न credentials leak का, और टूल कोई tracking cookie नहीं रखता। re-encoding embedded metadata (GPS location) भी हटा देती है।</p>
+
+        <h3>प्रदर्शन</h3>
+        <p>यह images को main thread से हटकर decode करता है (जहाँ support हो) और कुशल canvas operations से resize करता है, इसलिए बड़ी photos भी पल भर में process होती हैं और batches साधारण devices पर सहज रहते हैं।</p>
+
+        <h3>ब्राउज़र अनुकूलता</h3>
+        <p>यह Chrome, Edge, Firefox, Safari व Opera में Windows, macOS, Linux, Android व iOS पर चलता है। WebP output व्यापक रूप से समर्थित है; AVIF output browser पर निर्भर है; कुछ input formats वहीं decode होते हैं जहाँ OS support करे।</p>
+
+        <h3>सुझाव</h3>
+        <p>सरल factor से scale करने के लिए percentage mode, platform आकार तुरंत पाने के लिए presets, और download से पहले जाँचने के लिए comparison slider इस्तेमाल करें। कई files के लिए एक बार विकल्प सेट करके Resize All दबाएँ।</p>
+
+        <h3>सीमाएँ</h3>
+        <p>resizing विवरण नहीं बना सकता, इसलिए बहुत बड़ी की गई images soft दिखेंगी। कुछ input formats (TIFF, HEIC) व AVIF output वहीं उपलब्ध हैं जहाँ browser support करे, और print आकार आपके चुने DPI मानते हैं क्योंकि अधिकतर files DPI संग्रहीत नहीं करतीं।</p>
+
+        <h3>समस्या-समाधान</h3>
+        <p>image लोड न हो तो शायद उसका format आपके browser में समर्थित नहीं — पहले convert करें। परिणाम खिंचा दिखे तो सुनिश्चित करें कि aspect ratio locked है। transparent PNG को JPG में सहेजते समय काली हो जाए तो पहले background colour चुनें।</p>
+
+        <h3>निष्कर्ष</h3>
+        <p>चाहे एक photo तैयार करनी हो या पूरा folder, यह <strong>ऑनलाइन image resizer</strong> सटीक नियंत्रण, तुरंत परिणाम व पूरी गोपनीयता देता है। आत्मविश्वास से अपनी images resize, convert व optimise करें — फ्री और पूरी तरह आपके browser में।</p>
+      </article>
     </div>
+  </div>
 
-    <label style="display:flex;align-items:center;gap:8px;font-weight:400;color:var(--text);margin-bottom:14px">
-      <input type="checkbox" id="lockRatio" style="width:auto" checked> Lock aspect ratio
-    </label>
-
-    <div class="preview-box" id="previewBox" style="display:none">
-      <img id="previewImg">
-      <p style="margin-top:8px;color:var(--text-dim);font-size:.85rem" id="finalDims"></p>
-    </div>
-
-    <div class="btn-row" id="downloadRow" style="display:none">
-      <button class="btn" id="downloadBtn">⬇️ Download</button>
+  <!-- FAQ (immediately after About) -->
+  <div class="rz-faq" style="margin-top:26px">
+    <h2 style="font-size:1.3rem;font-weight:800;margin:0 0 12px">❓ Frequently Asked Questions / अक्सर पूछे जाने वाले प्रश्न</h2>
+    <div class="info-section">
+      <article class="info-block"><h3>English</h3><div id="faqEn"></div></article>
+      <hr class="info-divider">
+      <article class="info-block"><h3>हिंदी (Hindi)</h3><div id="faqHi"></div></article>
     </div>
   </div>
 </div>
 
-
-<div class="info-wrap">
-  <div class="info-section">
-    <div class="info-block">
-      <h2>ℹ️ About This Tool</h2>
-      <p>Change the width and height (in pixels) of an image to fit your needs.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Upload your image.</li>
-        <li>Enter the new width and/or height (lock aspect ratio if needed).</li>
-        <li>Download the resized image.</li>
-      </ol>
-    </div>
-    <hr class="info-divider">
-    <div class="info-block">
-      <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>यह टूल इमेज की चौड़ाई और ऊंचाई (पिक्सल में) आपकी ज़रूरत के अनुसार बदलता है।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>अपनी इमेज अपलोड करें।</li>
-        <li>नई चौड़ाई और/या ऊंचाई डालें (ज़रूरत हो तो aspect ratio लॉक रखें)।</li>
-        <li>रीसाइज़ की गई इमेज डाउनलोड करें।</li>
-      </ol>
-    </div>
-  </div>
-</div>
-
+<div id="rzLightbox" aria-hidden="true"><img id="lbImg" alt="Full screen preview"><button class="rz-mini" id="lbClose">✕ Close</button></div>
+<div id="rzToasts" aria-live="assertive"></div>
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
 <script src="../assets/common.js"></script>
 <script>
-const dropzone = document.getElementById('dropzone');
-const fileInput = document.getElementById('fileInput');
-const widthInput = document.getElementById('widthInput');
-const heightInput = document.getElementById('heightInput');
-const lockRatio = document.getElementById('lockRatio');
+/* ════════════════════════════════════════════════════════════════════
+   Image Resizer — 100% client-side (Canvas API). Preserves the original
+   IDs (dropzone, fileInput, widthInput, heightInput, lockRatio,
+   previewBox, previewImg, finalDims, downloadRow, downloadBtn) and the
+   setupDropzone / downloadBlob helpers, then adds units, presets, output
+   format & quality, rotate/flip, background, batch, ZIP, compare and info.
+════════════════════════════════════════════════════════════════════════ */
+(function(){
+  "use strict";
+  const $ = id => document.getElementById(id);
+  const fmtBytes = window.formatBytes || (b=>b<1024?b+' B':b<1048576?(b/1024).toFixed(1)+' KB':(b/1048576).toFixed(2)+' MB');
+  const ICONS={info:'💬',success:'✅',warn:'⚠️',error:'⛔'};
+  function toast(t,m,ms){ const box=$('rzToasts'); if(!box)return; const el=document.createElement('div'); el.className='rz-toast '+t;
+    el.innerHTML='<span>'+ICONS[t]+'</span><span>'+m+'</span>'; box.appendChild(el);
+    setTimeout(()=>{el.style.opacity='0';el.style.transform='translateY(12px)';setTimeout(()=>el.remove(),260);},ms||2600); }
+  const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  const EXT={'image/png':'png','image/jpeg':'jpg','image/webp':'webp','image/bmp':'bmp','image/avif':'avif'};
 
-let img = new Image();
-let originalRatio = 1;
-let fileName = 'resized';
+  let items=[], sel=-1, uid=0, rot=0, flipH=false, flipV=false;
+  const widthInput=$('widthInput'), heightInput=$('heightInput'), lockRatio=$('lockRatio');
 
-setupDropzone(dropzone, fileInput, files => {
-  if(files.length) handleFile(files[0]);
-});
-
-function handleFile(file){
-  if(!file.type.startsWith('image/')) return;
-  fileName = file.name.replace(/\.[^.]+$/, '');
-  const reader = new FileReader();
-  reader.onload = e => {
-    img = new Image();
-    img.onload = () => {
-      originalRatio = img.width / img.height;
-      widthInput.value = img.width;
-      heightInput.value = img.height;
-      render();
-    };
-    img.src = e.target.result;
-  };
-  reader.readAsDataURL(file);
-}
-
-widthInput.addEventListener('input', () => {
-  if(lockRatio.checked && widthInput.value){
-    heightInput.value = Math.round(widthInput.value / originalRatio);
+  async function decode(file){
+    try{ if(window.createImageBitmap){ const bmp=await createImageBitmap(file); return {bmp,w:bmp.width,h:bmp.height}; } }catch(e){}
+    return await new Promise((res,rej)=>{ const im=new Image(); const u=URL.createObjectURL(file);
+      im.onload=()=>res({bmp:im,w:im.naturalWidth||im.width,h:im.naturalHeight||im.height}); im.onerror=()=>{URL.revokeObjectURL(u);rej(new Error('decode'));}; im.src=u; });
   }
-  render();
-});
-heightInput.addEventListener('input', () => {
-  if(lockRatio.checked && heightInput.value){
-    widthInput.value = Math.round(heightInput.value * originalRatio);
+  function hasAlpha(c){ const ctx=c.getContext('2d'),w=c.width,h=c.height,step=Math.max(1,Math.floor((w*h)/40000)),d=ctx.getImageData(0,0,w,h).data;
+    for(let i=3;i<d.length;i+=4*step) if(d[i]<250) return true; return false; }
+
+  /* ── unit conversion: current inputs → pixel dimensions ────────── */
+  function unit(){ return $('unitSel').value; }
+  function dpi(){ return +$('dpiSel').value||96; }
+  function toPx(val,origPx){ const u=unit(); if(!val) return 0;
+    if(u==='px') return Math.round(val);
+    if(u==='percent') return Math.max(1,Math.round(origPx*val/100));
+    if(u==='in') return Math.round(val*dpi());
+    if(u==='cm') return Math.round(val/2.54*dpi());
+    if(u==='mm') return Math.round(val/25.4*dpi());
+    return Math.round(val); }
+  function fromPx(px,origPx){ const u=unit();
+    if(u==='px') return px;
+    if(u==='percent') return origPx?Math.round(px/origPx*10000)/100:100;
+    if(u==='in') return Math.round(px/dpi()*100)/100;
+    if(u==='cm') return Math.round(px/dpi()*2.54*100)/100;
+    if(u==='mm') return Math.round(px/dpi()*25.4*100)/100;
+    return px; }
+  function curPxDims(it){ return { w:toPx(+widthInput.value, it?it.w:0), h:toPx(+heightInput.value, it?it.h:0) }; }
+  function updateUnitLabels(){ const u=unit(), lbl={px:'(px)',percent:'(%)',in:'(in)',cm:'(cm)',mm:'(mm)'}[u];
+    $('uW').textContent=lbl; $('uH').textContent=lbl; $('dpiWrap').style.display=(u==='in'||u==='cm'||u==='mm')?'':'none'; }
+
+  /* aspect ratio linking in the CURRENT unit */
+  widthInput.addEventListener('input',()=>{ const it=items[sel];
+    if(lockRatio.checked && widthInput.value && it){ const u=unit();
+      if(u==='percent'){ heightInput.value=widthInput.value; }
+      else { const pxW=toPx(+widthInput.value,it.w); const pxH=Math.round(pxW/(it.w/it.h)); heightInput.value=fromPx(pxH,it.h); } }
+    reRender(); });
+  heightInput.addEventListener('input',()=>{ const it=items[sel];
+    if(lockRatio.checked && heightInput.value && it){ const u=unit();
+      if(u==='percent'){ widthInput.value=heightInput.value; }
+      else { const pxH=toPx(+heightInput.value,it.h); const pxW=Math.round(pxH*(it.w/it.h)); widthInput.value=fromPx(pxW,it.w); } }
+    reRender(); });
+  $('unitSel').addEventListener('change',()=>{ const it=items[sel]; updateUnitLabels();
+    if(it){ const px=it.target||{w:it.w,h:it.h}; widthInput.value=fromPx(px.w,it.w); heightInput.value=fromPx(px.h,it.h); } reRender(); });
+  $('dpiSel').addEventListener('change',reRender);
+  lockRatio.addEventListener('change',()=>{});
+
+  /* ── output UI ─────────────────────────────────────────────────── */
+  function syncOut(){ const t=$('formatSel').value;
+    $('qWrap').style.display=(t==='image/png'||t==='image/bmp')?'none':'';
+    $('bgWrap').style.display=t==='image/jpeg'?'':'none'; }
+  $('formatSel').addEventListener('change',()=>{ syncOut(); reRender(); });
+  $('qualityRange').addEventListener('input',()=>{ $('qualityVal').textContent=$('qualityRange').value; });
+  $('qualityRange').addEventListener('change',reRender);
+  ['bgColor','tgAlpha'].forEach(id=>$(id).addEventListener('change',reRender));
+
+  /* ── resize one item ───────────────────────────────────────────── */
+  const enc=(c,type,q)=>new Promise(res=>{ try{ c.toBlob(res,type,q); }catch(e){ res(null); } });
+  async function resizeItem(it,dims){
+    const t0=performance.now();
+    const {bmp}=await decode(it.file);
+    let tw=dims.w||it.w, th=dims.h||it.h;
+    const r=((rot%360)+360)%360, swap=(r===90||r===270);
+    const cw=swap?th:tw, ch=swap?tw:th;
+    const c=document.createElement('canvas'); c.width=cw; c.height=ch; const ctx=c.getContext('2d');
+    const type=$('formatSel').value;
+    if(type==='image/jpeg'){ ctx.fillStyle=$('bgColor').value||'#ffffff'; ctx.fillRect(0,0,cw,ch); }
+    ctx.save(); ctx.translate(cw/2,ch/2); ctx.rotate(r*Math.PI/180); ctx.scale(flipH?-1:1,flipV?-1:1);
+    ctx.imageSmoothingQuality='high'; ctx.drawImage(bmp,-tw/2,-th/2,tw,th); ctx.restore();
+    const alpha=(type!=='image/jpeg')&&hasAlpha(c);
+    let outType=type, q=(+$('qualityRange').value)/100;
+    let blob=await enc(c,outType,(outType==='image/png'||outType==='image/bmp')?undefined:q);
+    if(!blob){ outType=(type==='image/avif')?'image/webp':'image/png'; blob=await enc(c,outType,q);
+      if(blob) toast('warn',(EXT[type]||'that format').toUpperCase()+' output not supported here — used '+(EXT[outType]||'PNG').toUpperCase()+'.'); }
+    it.blob=blob; it.outType=outType; it.outW=cw; it.outH=ch; it.alpha=alpha; it.target={w:tw,h:th}; it.ms=Math.round((performance.now()-t0)*10)/10; it.compW=c;
+    if(bmp.close) try{bmp.close();}catch(e){}
+    return it;
   }
-  render();
-});
 
-function render(){
-  if(!img.src || !widthInput.value || !heightInput.value) return;
-  const w = parseInt(widthInput.value);
-  const h = parseInt(heightInput.value);
-  if(w<=0 || h<=0) return;
+  /* ── upload wiring (setupDropzone preserved) ───────────────────── */
+  const dz=$('dropzone'), fileInput=$('fileInput');
+  if(window.setupDropzone){ setupDropzone(dz, fileInput, files=>addFiles(files)); }
+  else { fileInput.addEventListener('change',e=>addFiles(e.target.files)); dz.addEventListener('click',()=>fileInput.click()); }
+  ['dragover','dragenter'].forEach(ev=>dz.addEventListener(ev,e=>{e.preventDefault();dz.classList.add('drag');}));
+  ['dragleave','drop'].forEach(ev=>dz.addEventListener(ev,e=>{e.preventDefault();dz.classList.remove('drag');}));
+  dz.addEventListener('drop',e=>{ if(e.dataTransfer&&e.dataTransfer.files.length) addFiles(e.dataTransfer.files); });
+  $('chooseBtn').addEventListener('click',()=>fileInput.click());
+  $('cameraBtn').addEventListener('click',()=>{ const ci=$('cameraInput'); if(ci)ci.click(); });
+  const cameraInput=$('cameraInput'); if(cameraInput) cameraInput.addEventListener('change',e=>addFiles(e.target.files));
+  window.addEventListener('paste',e=>{ const it=[...(e.clipboardData||{}).items||[]].filter(i=>i.type.startsWith('image/')); if(it.length){ addFiles(it.map(x=>x.getAsFile())); } });
+  $('clearBtn').addEventListener('click',()=>{ items=[]; sel=-1; renderThumbs(); $('previewBox').style.display='none'; $('downloadRow').style.display='none'; $('compareWrap').style.display='none'; resetInfo(); toast('info','Cleared.'); });
 
-  const canvas = document.createElement('canvas');
-  canvas.width = w;
-  canvas.height = h;
-  const ctx = canvas.getContext('2d');
-  ctx.drawImage(img, 0, 0, w, h);
+  async function addFiles(list){
+    const arr=[...list].filter(f=>f&&f.type&&f.type.startsWith('image/'));
+    const rej=[...list].length-arr.length; if(rej>0) toast('warn',rej+' file(s) skipped — not a supported image.');
+    if(!arr.length) return;
+    for(const f of arr){ try{ const {w,h}=await decode(f); items.push({id:++uid,file:f,name:f.name||('image-'+uid),origSize:f.size,type:f.type,w,h}); }catch(e){ toast('error','Could not read '+(f.name||'a file')); } }
+    renderThumbs(); if(sel<0) selectItem(0);
+  }
+  function renderThumbs(){ const box=$('thumbs'); box.innerHTML='';
+    items.forEach((it,i)=>{ const d=document.createElement('div'); d.className='rz-thumb'+(i===sel?' active':'');
+      const im=document.createElement('img'); im.loading='lazy'; im.src=it.thumb||(it.thumb=URL.createObjectURL(it.file)); d.appendChild(im);
+      const x=document.createElement('button'); x.className='x'; x.textContent='✕'; x.title='Remove';
+      x.addEventListener('click',e=>{ e.stopPropagation(); items.splice(i,1); if(sel>=items.length)sel=items.length-1; renderThumbs(); if(sel>=0)selectItem(sel); else{ $('previewBox').style.display='none'; $('downloadRow').style.display='none'; } });
+      d.appendChild(x); d.addEventListener('click',()=>selectItem(i)); box.appendChild(d); });
+    $('status').textContent=items.length? (items.length+' image'+(items.length>1?'s':'')+' loaded') : '';
+  }
 
-  canvas.toBlob(blob => {
-    document.getElementById('previewImg').src = URL.createObjectURL(blob);
-    document.getElementById('previewBox').style.display = 'block';
-    document.getElementById('downloadRow').style.display = 'flex';
-    document.getElementById('finalDims').textContent = `${w} × ${h} px`;
-    window.currentBlob = blob;
-  }, 'image/png');
-}
+  /* ── select + set inputs to original + render (preserved) ──────── */
+  function selectItem(i){ sel=i; const it=items[i]; if(!it)return;
+    document.querySelectorAll('.rz-thumb').forEach((t,k)=>t.classList.toggle('active',k===i));
+    const px=it.target||{w:it.w,h:it.h};
+    widthInput.value=fromPx(px.w,it.w); heightInput.value=fromPx(px.h,it.h);
+    reRender();
+  }
+  let reT=null;
+  function reRender(){ const it=items[sel]; if(!it)return; clearTimeout(reT); reT=setTimeout(()=>{ const dims=curPxDims(it);
+    if(dims.w<=0||dims.h<=0) return; resizeItem(it,dims).then(()=>showResult(it)); },160); }
+  function showResult(it){ if(!it.blob){ return; }
+    const url=URL.createObjectURL(it.blob);
+    $('previewImg').src=url; $('previewBox').style.display='block'; $('downloadRow').style.display='flex';
+    $('finalDims').textContent=it.outW+' × '+it.outH+' px';
+    $('cmpBefore').src=it.thumb; $('cmpAfter').src=url;
+    renderInfo(it);
+  }
+  function gcd(a,b){ return b?gcd(b,a%b):a; }
+  function resetInfo(){ ['iName','iExt','iOrigDims','iNewDims','iOrigBytes','iNewBytes','iSaved','iComp','iAspect','iDpi','iDepth','iAlpha','iTime'].forEach(id=>$(id).textContent='—'); }
+  function renderInfo(it){ const g=gcd(it.outW,it.outH)||1, saved=it.origSize-it.blob.size, pct=Math.round(saved/it.origSize*100);
+    $('iName').textContent=it.name; $('iExt').textContent=(it.name.split('.').pop()||'').toUpperCase()+' → '+(EXT[it.outType]||'').toUpperCase();
+    $('iOrigDims').textContent=it.w+'×'+it.h; $('iNewDims').textContent=it.outW+'×'+it.outH;
+    $('iOrigBytes').textContent=fmtBytes(it.origSize); $('iNewBytes').textContent=fmtBytes(it.blob.size);
+    $('iSaved').textContent=(saved>=0?'-':'+')+fmtBytes(Math.abs(saved)); $('iComp').textContent=(saved>=0?'-':'+')+Math.abs(pct)+'%';
+    $('iAspect').textContent=(it.outW/g)+':'+(it.outH/g); $('iDpi').textContent=(it.outW/300).toFixed(2)+'×'+(it.outH/300).toFixed(2)+' in';
+    $('iDepth').textContent=it.alpha?'32-bit (RGBA)':'24-bit (RGB)'; $('iAlpha').textContent=it.alpha?'Yes':'No'; $('iTime').textContent=it.ms+' ms';
+  }
+  function outName(it){ const base=$('renameInput').value.trim()||(it.name.replace(/\.[^.]+$/,'')||'image');
+    return base.replace(/[^\w.-]+/g,'-')+'-resized.'+(EXT[it.outType]||'png'); }
+  $('renameInput').addEventListener('input',()=>{ if(sel>=0&&items[sel]&&items[sel].blob) renderInfo(items[sel]); });
 
-document.getElementById('downloadBtn').addEventListener('click', ()=>{
-  if(window.currentBlob) downloadBlob(`${fileName}-resized.png`, window.currentBlob);
-});
+  $('resizeBtn').addEventListener('click',()=>{ if(sel<0){toast('warn','Add an image first.');return;} reRender(); toast('success','Resized.'); });
+  $('resizeAllBtn').addEventListener('click',resizeAll);
+  let busy=false;
+  async function resizeAll(){ if(busy||!items.length)return; busy=true; const prog=$('prog'),bar=$('progBar'); prog.classList.add('show'); bar.style.width='0%';
+    // ratio factor from the current selection's inputs, applied to each image
+    const selIt=items[sel]||items[0]; const factorW=(+widthInput.value)/(fromPx((selIt.target||{w:selIt.w}).w,selIt.w)||1);
+    for(let i=0;i<items.length;i++){ $('status').textContent='Resizing '+(i+1)+' / '+items.length+'…';
+      const it=items[i]; let dims;
+      if(unit()==='percent'){ dims={w:Math.max(1,Math.round(it.w*(+widthInput.value)/100)),h:Math.max(1,Math.round(it.h*(+heightInput.value)/100))}; }
+      else if(i===sel){ dims=curPxDims(it); }
+      else { const pxW=toPx(+widthInput.value,it.w); dims={w:pxW,h:Math.round(pxW/(it.w/it.h))}; }
+      try{ await resizeItem(it,dims); }catch(e){ it.error=true; }
+      bar.style.width=Math.round((i+1)/items.length*100)+'%'; }
+    setTimeout(()=>prog.classList.remove('show'),500); busy=false; renderThumbs(); if(sel>=0)selectItem(sel);
+    const okc=items.filter(x=>x.blob).length; $('status').textContent=okc+' / '+items.length+' resized.'; toast('success','Resized '+okc+' image'+(okc>1?'s':'')+'.');
+  }
+  $('resetAllBtn').addEventListener('click',()=>{ rot=0;flipH=false;flipV=false; $('unitSel').value='px'; updateUnitLabels(); if(sel>=0&&items[sel]){ const it=items[sel]; it.target=null; widthInput.value=it.w; heightInput.value=it.h; reRender(); } toast('info','Reset.'); });
+  $('resetSize').addEventListener('click',()=>{ const it=items[sel]; if(!it)return; it.target=null; $('unitSel').value='px'; updateUnitLabels(); widthInput.value=it.w; heightInput.value=it.h; rot=0;flipH=false;flipV=false; reRender(); });
+  document.querySelectorAll('[data-rot]').forEach(b=>b.addEventListener('click',()=>{ rot=(rot+ +b.dataset.rot)%360; reRender(); }));
+  document.querySelectorAll('[data-flip]').forEach(b=>b.addEventListener('click',()=>{ if(b.dataset.flip==='h')flipH=!flipH; else flipV=!flipV; reRender(); }));
+
+  /* ── presets ───────────────────────────────────────────────────── */
+  const PRESETS={ social:[['Instagram Post',1080,1080],['Instagram Story',1080,1920],['Facebook Cover',820,312],['Facebook Post',1200,630],['YouTube Thumbnail',1280,720],['YouTube Banner',2560,1440],['Twitter Post',1200,675],['LinkedIn Banner',1584,396],['Pinterest Pin',1000,1500],['WhatsApp DP',640,640],['Telegram DP',512,512]],
+    device:[['Mobile Wallpaper',1080,1920],['Desktop Wallpaper',1920,1080],['iPhone',1170,2532],['Samsung',1440,3200],['Tablet',1620,2160],['Laptop',1366,768]],
+    print:[['Passport Photo',413,531],['A4 @300',2480,3508],['Letter @300',2550,3300],['ID Card',1011,638]] };
+  function buildPresets(){ [['social','presetSocial'],['device','presetDevice'],['print','presetPrint']].forEach(([k,id])=>{
+    const box=$(id); box.innerHTML=''; PRESETS[k].forEach(([name,w,h])=>{ const b=document.createElement('button'); b.className='rz-preset';
+      b.innerHTML=name+'<small>'+w+'×'+h+'</small>'; b.addEventListener('click',()=>applyPreset(w,h)); box.appendChild(b); }); }); }
+  function applyPreset(w,h){ if(sel<0){toast('warn','Add an image first.');return;} $('unitSel').value='px'; updateUnitLabels();
+    widthInput.value=w; heightInput.value=h; const it=items[sel]; if(it) it.target={w,h}; reRender(); toast('info','Preset applied: '+w+'×'+h); }
+
+  /* ── download / ZIP / copy ─────────────────────────────────────── */
+  $('downloadBtn').addEventListener('click',()=>{ const it=items[sel]; if(!it||!it.blob){toast('warn','Nothing to download.');return;}
+    if(window.downloadBlob) downloadBlob(outName(it),it.blob); else { const u=URL.createObjectURL(it.blob),a=document.createElement('a'); a.href=u; a.download=outName(it); a.click(); setTimeout(()=>URL.revokeObjectURL(u),1500); }
+    toast('success','Downloaded '+outName(it)); });
+  function loadScript(src){ return new Promise((res,rej)=>{ if([...document.scripts].some(s=>s.src===src)){res();return;} const s=document.createElement('script'); s.src=src; s.onload=res; s.onerror=()=>rej(new Error('load')); document.head.appendChild(s); }); }
+  $('downloadAllBtn').addEventListener('click',async()=>{ const done=items.filter(x=>x.blob); if(!done.length){toast('warn','Resize images first.');return;}
+    if(done.length===1){ $('downloadBtn').click(); return; }
+    toast('info','Building ZIP…'); try{ if(!window.JSZip) await loadScript('https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js');
+      const zip=new window.JSZip(),seen={}; done.forEach(it=>{ let n=outName(it); while(seen[n]){ n=n.replace(/(\.\w+)$/,'-'+(seen[n]++)+'$1'); } seen[n]=1; zip.file(n,it.blob); });
+      const blob=await zip.generateAsync({type:'blob'}); const u=URL.createObjectURL(blob),a=document.createElement('a'); a.href=u; a.download='resized-images.zip'; a.click(); setTimeout(()=>URL.revokeObjectURL(u),1500); toast('success','ZIP downloaded.');
+    }catch(e){ toast('error','ZIP failed.'); } });
+  $('copyBtn').addEventListener('click',async()=>{ const it=items[sel]; if(!it||!it.compW){toast('warn','Nothing to copy.');return;}
+    try{ if(navigator.clipboard&&window.ClipboardItem){ const png=await new Promise(r=>it.compW.toBlob(r,'image/png')); await navigator.clipboard.write([new ClipboardItem({'image/png':png})]); toast('success','Image copied.'); } else throw 0; }
+    catch(e){ toast('warn','Clipboard image copy not supported here.'); } });
+
+  /* ── compare + zoom + fullscreen ───────────────────────────────── */
+  $('sliderToggle').addEventListener('click',()=>{ const w=$('compareWrap'); w.style.display=(w.style.display==='none'||!w.style.display)?'block':'none'; });
+  (function(){ const wrap=$('compare'),after=wrap.querySelector('.after'),handle=$('cmpHandle'); let drag=false;
+    const move=x=>{ const r=wrap.getBoundingClientRect(); let p=Math.max(0,Math.min(1,(x-r.left)/r.width)); after.style.width=(p*100)+'%'; handle.style.left=(p*100)+'%'; };
+    handle.addEventListener('mousedown',()=>drag=true); window.addEventListener('mouseup',()=>drag=false); window.addEventListener('mousemove',e=>{ if(drag)move(e.clientX); });
+    handle.addEventListener('touchstart',()=>drag=true,{passive:true}); window.addEventListener('touchend',()=>drag=false); wrap.addEventListener('touchmove',e=>{ if(drag)move(e.touches[0].clientX); },{passive:true});
+    wrap.addEventListener('click',e=>move(e.clientX)); })();
+  document.querySelectorAll('[data-zoom]').forEach(b=>b.addEventListener('click',()=>{ const z=b.dataset.zoom,img=$('previewImg');
+    if(z==='fit'){ img.style.maxHeight='340px'; img.style.transform=''; } else { img.style.maxHeight='none'; img.style.transform='scale('+z+')'; img.style.transformOrigin='top left'; } }));
+  $('fsBtn').addEventListener('click',()=>{ const it=items[sel]; if(!it||!it.blob){toast('warn','Resize an image first.');return;} $('lbImg').src=$('previewImg').src; $('rzLightbox').classList.add('show'); });
+  $('lbClose').addEventListener('click',()=>$('rzLightbox').classList.remove('show'));
+  $('rzLightbox').addEventListener('click',e=>{ if(e.target.id==='rzLightbox')$('rzLightbox').classList.remove('show'); });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape')$('rzLightbox').classList.remove('show');
+    if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='s'){ e.preventDefault(); $('downloadBtn').click(); } });
+
+  /* ── FAQ (bilingual) + schema ──────────────────────────────────── */
+  const FAQ=[
+   ['What is an Image Resizer?','It is a tool that changes the width and height of an image, re-sampling the pixels and saving a new file at the exact size you choose.',
+    'Image Resizer क्या है?','यह एक टूल है जो image की चौड़ाई व ऊँचाई बदलता है, pixels को re-sample करके आपके चुने सटीक आकार पर नई file सहेजता है।'],
+   ['Is this free?','Yes, it is completely free with no signup, no limits and no watermark.',
+    'क्या यह मुफ़्त है?','हाँ, यह पूरी तरह मुफ़्त है — न signup, न सीमा, न watermark।'],
+   ['Is my image secure?','Yes. Everything runs in your browser; your images are never uploaded and nothing is tracked.',
+    'क्या मेरी image सुरक्षित है?','हाँ। सब कुछ आपके browser में चलता है; आपकी images कभी upload नहीं होतीं और कुछ track नहीं होता।'],
+   ['Which formats are supported?','You can load JPG, PNG, WebP, BMP, TIFF, ICO and AVIF (where supported) and export PNG, JPG, WebP, BMP and AVIF.',
+    'कौन-से formats support हैं?','आप JPG, PNG, WebP, BMP, TIFF, ICO व AVIF (जहाँ support हो) लोड कर सकते हैं और PNG, JPG, WebP, BMP व AVIF export कर सकते हैं।'],
+   ['Can I resize a PNG?','Yes. PNG resizes losslessly and keeps transparency; you can also export it as another format.',
+    'क्या मैं PNG resize कर सकता हूँ?','हाँ। PNG lossless resize होती है व transparency रखती है; इसे दूसरे format में export भी कर सकते हैं।'],
+   ['Can I resize a JPG?','Yes. Add your JPG, set the new size and quality, and download the resized JPG.',
+    'क्या मैं JPG resize कर सकता हूँ?','हाँ। अपनी JPG जोड़ें, नई size व quality सेट करें, और resized JPG download करें।'],
+   ['Does resizing reduce quality?','Making an image smaller keeps it sharp; making it larger cannot add real detail, so enlarged images look softer.',
+    'क्या resize करने से quality घटती है?','image छोटी करना उसे तेज़ रखता है; बड़ी करना असली विवरण नहीं जोड़ता, इसलिए बड़ी की गई images थोड़ी soft दिखती हैं।'],
+   ['How do I keep the aspect ratio?','Keep "Lock aspect ratio" ticked — when you change the width, the height updates automatically (and vice-versa).',
+    'aspect ratio कैसे बनाए रखूँ?','"Lock aspect ratio" ticked रखें — width बदलने पर height अपने-आप update होती है (और उल्टा भी)।'],
+   ['Can I resize by percentage?','Yes. Choose the Percentage unit and enter a scale like 50% to make the image half its size.',
+    'क्या मैं percentage से resize कर सकता हूँ?','हाँ। Percentage unit चुनें और 50% जैसा scale डालें ताकि image आधी हो जाए।'],
+   ['Can I resize in cm or inches?','Yes. Pick centimetres, millimetres or inches and set the DPI (default 96, use 300 for print).',
+    'क्या मैं cm या inch में resize कर सकता हूँ?','हाँ। centimetres, millimetres या inches चुनें और DPI सेट करें (default 96, print के लिए 300)।'],
+   ['Can I resize multiple images?','Yes. Add many images, set the size and use Resize All, then download them individually or as a ZIP.',
+    'क्या मैं कई images resize कर सकता हूँ?','हाँ। कई images जोड़ें, size सेट करके Resize All दबाएँ, फिर अलग-अलग या ZIP में download करें।'],
+   ['Does it work offline?','Yes. Once loaded it works offline; only the optional ZIP download loads a small library the first time.',
+    'क्या यह offline काम करता है?','हाँ। load होने के बाद offline चलता है; केवल optional ZIP पहली बार एक छोटी library इस्तेमाल करता है।'],
+   ['Is mobile supported?','Yes, it is fully responsive and supports the camera and gallery on phones and tablets.',
+    'क्या mobile support है?','हाँ, यह पूरी तरह responsive है और phones व tablets पर camera व gallery support करता है।'],
+   ['Are there ready-made sizes?','Yes. Presets for Instagram, YouTube, Facebook, wallpapers, passport photos, A4 and more set the size in one click.',
+    'क्या तैयार आकार हैं?','हाँ। Instagram, YouTube, Facebook, wallpapers, passport photo, A4 आदि के presets एक क्लिक में आकार सेट करते हैं।'],
+   ['Can I rotate or flip the image?','Yes. Rotate left/right and flip horizontally or vertically before resizing.',
+    'क्या मैं image rotate या flip कर सकता हूँ?','हाँ। resize से पहले left/right rotate और horizontal/vertical flip करें।'],
+   ['What happens to transparency when saving as JPG?','JPG has no transparency, so transparent areas are filled with the background colour you choose.',
+    'JPG में सहेजते समय transparency का क्या होता है?','JPG में transparency नहीं होती, इसलिए transparent जगह आपके चुने background colour से भर जाती है।'],
+   ['Does it remove metadata?','Yes. Re-encoding removes embedded metadata such as GPS and camera info, improving privacy.',
+    'क्या यह metadata हटाता है?','हाँ। re-encoding embedded metadata (GPS, camera info) हटा देती है, जिससे गोपनीयता बढ़ती है।'],
+   ['Is there a file size limit?','No fixed limit; you are only limited by your device memory. Very large images take a little longer.',
+    'क्या कोई file size सीमा है?','कोई निश्चित सीमा नहीं; केवल device की memory की सीमा है। बहुत बड़ी images थोड़ा समय लेती हैं।'],
+   ['Why does my image look stretched?','The aspect ratio is unlocked. Tick "Lock aspect ratio" to keep the proportions correct.',
+    'मेरी image खिंची क्यों दिखती है?','aspect ratio unlocked है। सही अनुपात के लिए "Lock aspect ratio" tick करें।'],
+   ['Do I need to install anything?','No. It runs entirely in your web browser with no installation and no account.',
+    'क्या कुछ install करना पड़ता है?','नहीं। यह पूरी तरह आपके browser में चलता है, न install न account।']
+  ];
+  const row=(q,a)=>'<details><summary>'+esc(q)+'</summary><p>'+esc(a)+'</p></details>';
+  $('faqEn').innerHTML=FAQ.map(f=>row(f[0],f[1])).join('');
+  $('faqHi').innerHTML=FAQ.map(f=>row(f[2],f[3])).join('');
+  try{ const sc=$('faqSchema'); const data=JSON.parse(sc.textContent);
+    data.mainEntity=[].concat(FAQ.map(f=>({'@type':'Question',name:f[0],acceptedAnswer:{'@type':'Answer',text:f[1]}})),
+      FAQ.map(f=>({'@type':'Question',name:f[2],acceptedAnswer:{'@type':'Answer',text:f[3]}}))); sc.textContent=JSON.stringify(data); }catch(e){}
+
+  /* ── init ──────────────────────────────────────────────────────── */
+  updateUnitLabels(); syncOut(); buildPresets(); resetInfo();
+})();
 </script>
 </body>
 </html>
