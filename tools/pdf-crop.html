@@ -4,34 +4,112 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
+<meta name="description" content="Crop PDF pages free online — drag the crop box or enter exact dimensions, use aspect-ratio presets (A4, Letter, 1:1, 16:9), auto-crop white margins, and apply to any pages. 100% private, runs in your browser, no upload, no signup.">
 <link rel="canonical" href="https://apnesoftware.com/tools/pdf-crop.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="PDF Crop | ApneSoftware">
-<meta property="og:description" content="Crop PDF pages. Free online tool — no signup required.">
+<meta property="og:title" content="PDF Crop — Crop &amp; Trim PDF Pages Free &amp; Private | ApneSoftware">
+<meta property="og:description" content="Crop or trim PDF page margins with a visual crop box, aspect-ratio presets, auto-crop and precise controls. Runs entirely in your browser — your file never leaves your device.">
 <meta property="og:url" content="https://apnesoftware.com/tools/pdf-crop.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PDF Crop | ApneSoftware">
-<meta name="twitter:description" content="Crop PDF pages. Free online tool — no signup required.">
+<meta name="twitter:title" content="PDF Crop — Crop &amp; Trim PDF Pages Free &amp; Private">
+<meta name="twitter:description" content="Crop PDF pages with a visual box, presets and auto-crop. 100% client-side and private.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
+
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PDF Crop","description":"Crop PDF pages. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/pdf-crop.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PDF Crop","operatingSystem":"Any (web browser)","applicationCategory":"UtilitiesApplication","description":"Crop and trim PDF pages online with a visual crop box, aspect-ratio presets, auto-crop of white margins, precise dimension controls and page targeting. Fully client-side and private.","url":"https://apnesoftware.com/tools/pdf-crop.html","browserRequirements":"Requires JavaScript. Works in Chrome, Edge, Firefox, Safari.","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
 </script>
-<meta name="color-scheme" content="dark">
-<title>PDF Crop | ApneSoftware</title>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"PDF Crop Tool","url":"https://apnesoftware.com/tools/pdf-crop.html","description":"Free online tool to crop and trim PDF page margins with visual and precise controls, entirely in your browser.","isPartOf":{"@type":"WebSite","name":"ApneSoftware","url":"https://apnesoftware.com"},"inLanguage":"en"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apnesoftware.com/index.html"},{"@type":"ListItem","position":2,"name":"PDF Tools","item":"https://apnesoftware.com/index.html#pdf"},{"@type":"ListItem","position":3,"name":"PDF Crop","item":"https://apnesoftware.com/tools/pdf-crop.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to crop a PDF","description":"Crop or trim the margins of a PDF for free in your browser.","step":[{"@type":"HowToStep","name":"Upload PDF","text":"Drag and drop your PDF onto the upload area or click to browse and select it."},{"@type":"HowToStep","name":"Set the crop area","text":"Drag the crop box and its handles, choose an aspect-ratio preset, enter exact dimensions, or click Auto-crop to trim white margins."},{"@type":"HowToStep","name":"Choose pages","text":"Select which pages to crop — all, first, last, odd, even or a custom range."},{"@type":"HowToStep","name":"Preview","text":"Check the live preview and navigate pages to confirm the crop looks right."},{"@type":"HowToStep","name":"Download","text":"Click Apply & Download to save the cropped PDF, or print it directly."}]}
+</script>
+<!-- FAQ schema (populated at runtime) -->
+<script type="application/ld+json" id="faqSchema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}</script>
+
+<meta name="color-scheme" content="dark light">
+<title>PDF Crop — Crop &amp; Trim PDF Pages Free &amp; Private | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-/* Premium upload enhancement for this tool */
-.dropzone{cursor:pointer}
-.dropzone p{font-size:.9rem}
-.panel{position:relative;z-index:1}
-</style>
-<style>
-  .crop-wrap{position:relative;display:inline-block;margin-top:16px;max-width:100%}
-  .crop-wrap canvas{display:block;max-width:100%;border:1px solid var(--border);border-radius:6px}
-  .crop-box{position:absolute;border:2px dashed var(--accent);background:rgba(124,92,252,.15);cursor:move}
-  .crop-handle{position:absolute;width:14px;height:14px;background:var(--accent);border-radius:50%;right:-7px;bottom:-7px;cursor:nwse-resize}
+/* ── PDF Crop tool — scoped styles (cr-) ─────────────────────── */
+.cr-scope{--cr-accent:#A78BFA;--cr-accent2:#7C3AED;}
+.cr-hide{display:none !important;}
+.cr-drop{cursor:pointer;transition:border-color .2s,background .2s;}
+.cr-drop.drag{border-color:var(--cr-accent);background:rgba(167,139,250,.08);}
+.cr-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:18px;margin-top:18px;}
+@media(max-width:860px){.cr-layout{grid-template-columns:1fr;}}
+.cr-card{background:var(--surface-2,rgba(255,255,255,.03));border:1px solid var(--border,rgba(255,255,255,.1));border-radius:12px;padding:14px;}
+.cr-card h3{margin:0 0 10px;font-size:.95rem;}
+.cr-fileinfo{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:.83rem;}
+.cr-fileinfo .k{color:var(--text-dim);}
+.cr-fileinfo .v{word-break:break-all;}
+.cr-field{margin:0 0 10px;}
+.cr-field>label{display:block;font-size:.8rem;color:var(--text-dim);margin:0 0 5px;}
+.cr-field input[type=text],.cr-field input[type=number],.cr-field select{width:100%;box-sizing:border-box;background:var(--surface,rgba(0,0,0,.25));color:var(--text);border:1px solid var(--border);border-radius:8px;padding:7px 9px;font-family:var(--font);font-size:.88rem;outline:none;}
+.cr-field input:focus,.cr-field select:focus{border-color:var(--cr-accent);}
+.cr-row{display:flex;gap:10px;flex-wrap:wrap;}
+.cr-row .cr-field{flex:1;min-width:80px;}
+.cr-seg{display:inline-flex;border:1px solid var(--border);border-radius:8px;overflow:hidden;flex-wrap:wrap;}
+.cr-seg button{background:transparent;color:var(--text-dim);border:0;padding:6px 10px;font:inherit;font-size:.8rem;cursor:pointer;}
+.cr-seg button.on{background:var(--cr-accent);color:#160c2e;font-weight:600;}
+.cr-check{display:inline-flex;align-items:center;gap:7px;font-size:.84rem;cursor:pointer;margin:0 12px 8px 0;}
+.cr-check input{accent-color:var(--cr-accent);}
+.cr-btn{background:linear-gradient(135deg,var(--cr-accent),var(--cr-accent2));color:#fff;border:0;border-radius:9px;padding:10px 15px;font:inherit;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:7px;}
+.cr-btn:disabled{opacity:.5;cursor:not-allowed;}
+.cr-btn.ghost{background:transparent;border:1px solid var(--border);color:var(--text);font-weight:500;}
+.cr-btn.sm{padding:7px 11px;font-size:.82rem;}
+.cr-tools{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0;}
+.cr-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+/* preview + crop box */
+.cr-stage{position:relative;background:#0d0d14;border:1px solid var(--border);border-radius:12px;padding:12px;display:flex;flex-direction:column;align-items:center;gap:10px;min-height:240px;}
+.cr-wrap{position:relative;line-height:0;max-width:100%;touch-action:none;}
+#previewCanvas{display:block;max-width:100%;height:auto;background:#fff;border-radius:2px;}
+#cropBox{position:absolute;box-sizing:border-box;border:1.5px solid var(--cr-accent);box-shadow:0 0 0 9999px rgba(0,0,0,.55);cursor:move;}
+#cropBox.grid{background-image:linear-gradient(rgba(167,139,250,.35) 1px,transparent 1px),linear-gradient(90deg,rgba(167,139,250,.35) 1px,transparent 1px);background-size:33.33% 33.33%;}
+.cr-handle{position:absolute;width:12px;height:12px;background:var(--cr-accent);border:1px solid #fff;border-radius:2px;}
+.cr-handle[data-h=nw]{left:-6px;top:-6px;cursor:nwse-resize;}
+.cr-handle[data-h=n]{left:calc(50% - 6px);top:-6px;cursor:ns-resize;}
+.cr-handle[data-h=ne]{right:-6px;top:-6px;cursor:nesw-resize;}
+.cr-handle[data-h=e]{right:-6px;top:calc(50% - 6px);cursor:ew-resize;}
+.cr-handle[data-h=se]{right:-6px;bottom:-6px;cursor:nwse-resize;}
+.cr-handle[data-h=s]{left:calc(50% - 6px);bottom:-6px;cursor:ns-resize;}
+.cr-handle[data-h=sw]{left:-6px;bottom:-6px;cursor:nesw-resize;}
+.cr-handle[data-h=w]{left:-6px;top:calc(50% - 6px);cursor:ew-resize;}
+.cr-nav{display:flex;align-items:center;gap:8px;font-size:.85rem;flex-wrap:wrap;justify-content:center;}
+.cr-nav button{background:var(--surface-2);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:5px 10px;cursor:pointer;}
+.cr-nav button:disabled{opacity:.4;cursor:not-allowed;}
+.cr-prog{height:8px;background:var(--surface,rgba(0,0,0,.3));border-radius:6px;overflow:hidden;margin-top:12px;}
+.cr-prog>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cr-accent),var(--cr-accent2));transition:width .2s;}
+.cr-status{margin-top:10px;font-size:.9rem;color:var(--text-dim);min-height:1.2em;}
+.cr-note{font-size:.78rem;color:var(--text-dim);text-align:center;}
+/* below-tool content */
+.cr-wrapc{max-width:1040px;margin:26px auto 0;padding:0 6px;}
+.cr-title{display:flex;align-items:center;gap:12px;margin:26px 0 14px;}
+.cr-title h2{font-size:1.25rem;font-weight:800;margin:0;white-space:nowrap;}
+.cr-title::before,.cr-title::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.10);}
+.cr-lead{color:var(--text-dim);font-size:.95rem;line-height:1.8;margin:0 6px;}
+.cr-feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;}
+.cr-fcard{border:1px solid var(--border);background:var(--surface-2,rgba(255,255,255,.03));border-radius:14px;padding:16px;transition:.2s;}
+.cr-fcard:hover{border-color:var(--cr-accent);transform:translateY(-2px);box-shadow:0 10px 26px rgba(124,92,252,.14);}
+.cr-fcard h3{font-size:.92rem;font-weight:700;margin:0 0 6px;display:flex;align-items:center;gap:8px;}
+.cr-fcard p{font-size:.84rem;color:var(--text-dim);line-height:1.65;margin:0;}
+.cr-about ol,.cr-about > p{color:var(--text-dim);font-size:.92rem;line-height:1.8;padding-left:6px;}
+.cr-about ol{padding-left:24px;}
+.cr-related{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:10px 0 4px;}
+.cr-related a{display:block;background:var(--surface-2,rgba(255,255,255,.03));border:1px solid var(--border);border-radius:10px;padding:12px 14px;text-decoration:none;color:var(--text);transition:border-color .2s,transform .15s;}
+.cr-related a:hover{border-color:var(--cr-accent);transform:translateY(-2px);}
+.cr-related b{display:block;font-size:.92rem;margin-bottom:3px;}
+.cr-related span{font-size:.78rem;color:var(--text-dim);}
+#faqList details{border:1px solid var(--border);border-radius:10px;padding:0 14px;margin:8px 0;background:var(--surface-2,rgba(255,255,255,.02));}
+#faqList summary{cursor:pointer;padding:13px 0;font-weight:600;font-size:.95rem;}
+#faqList details[open]{padding-bottom:6px;}
+#faqList p{margin:0 0 12px;line-height:1.65;color:var(--text-dim);}
+:focus-visible{outline:2px solid var(--cr-accent);outline-offset:2px;}
 </style>
 </head>
 <body>
@@ -43,59 +121,264 @@
 </header>
 
 <div class="container">
+  <div class="cr-scope" id="crScope">
   <div class="tool-header">
     <h1>✂️ PDF Crop</h1>
-    <p>Drag the blue box to select the area to keep — the crop applies the same way to every page.</p>
+    <p>Trim the margins of your PDF — drag the crop box or enter exact dimensions, use aspect presets, or auto-crop white space. Everything runs in your browser; your file is never uploaded.</p>
   </div>
 
   <div class="panel">
-    <div class="dropzone" id="dropzone">
-      <p>📤 Drag & drop your PDF file here or click to choose</p>
-      <input type="file" id="fileInput" accept="application/pdf">
+    <div class="dropzone cr-drop" id="dropzone" role="button" tabindex="0" aria-label="Upload PDF file">
+      <p>📤 Drag &amp; drop your PDF here, or click to choose</p>
+      <input type="file" id="fileInput" accept="application/pdf" hidden>
     </div>
 
-    <div id="afterUpload" style="display:none">
-      <p class="muted" style="color:var(--text-dim);font-size:.85rem;margin-top:10px">Preview of the first page — drag the box to adjust</p>
-      <div class="crop-wrap" id="cropWrap">
-        <canvas id="previewCanvas"></canvas>
-        <div class="crop-box" id="cropBox"><div class="crop-handle" id="cropHandle"></div></div>
-      </div>
+    <div id="workspace" class="cr-hide">
+      <div class="cr-layout">
+        <!-- Preview column -->
+        <div class="cr-stage">
+          <div class="cr-wrap" id="cropWrap">
+            <canvas id="previewCanvas" aria-label="PDF crop preview"></canvas>
+            <div id="cropBox">
+              <div class="cr-handle" data-h="nw"></div><div class="cr-handle" data-h="n"></div><div class="cr-handle" data-h="ne"></div>
+              <div class="cr-handle" data-h="e"></div>
+              <div class="cr-handle" data-h="se" id="cropHandle"></div><div class="cr-handle" data-h="s"></div><div class="cr-handle" data-h="sw"></div>
+              <div class="cr-handle" data-h="w"></div>
+            </div>
+          </div>
+          <div class="cr-nav">
+            <button id="pvPrev" aria-label="Previous page">‹</button>
+            <span>Page <b id="pvPage">1</b> / <span id="pvTotal">1</span></span>
+            <button id="pvNext" aria-label="Next page">›</button>
+            <button id="pvZoomOut" aria-label="Zoom out">−</button>
+            <span id="zoomLabel">Fit</span>
+            <button id="pvZoomIn" aria-label="Zoom in">+</button>
+          </div>
+          <p class="cr-note">Drag the box or its handles. The shaded area will be removed.</p>
+        </div>
 
-      <div class="btn-row">
-        <button class="btn" id="applyBtn">✂️ Crop and Download</button>
-      </div>
+        <!-- Controls column -->
+        <div>
+          <div class="cr-card">
+            <h3>📄 File</h3>
+            <div class="cr-fileinfo">
+              <span class="k">Name</span><span class="v" id="fiName">—</span>
+              <span class="k">Size</span><span class="v" id="fiSize">—</span>
+              <span class="k">Pages</span><span class="v" id="fiPages">—</span>
+              <span class="k">Page size</span><span class="v" id="fiDim">—</span>
+            </div>
+          </div>
 
-      <p id="statusMsg" style="margin-top:12px;color:var(--text-dim);font-size:.9rem"></p>
+          <div class="cr-card" style="margin-top:14px">
+            <h3>✂️ Crop area</h3>
+            <div class="cr-field">
+              <label for="aspectSelect">Aspect ratio</label>
+              <select id="aspectSelect">
+                <option value="free">Free</option>
+                <option value="1:1">Square (1:1)</option>
+                <option value="4:3">4:3</option>
+                <option value="3:2">3:2</option>
+                <option value="16:9">16:9</option>
+                <option value="210:297">A4 (portrait)</option>
+                <option value="297:210">A4 (landscape)</option>
+                <option value="216:279">Letter (portrait)</option>
+                <option value="216:356">Legal (portrait)</option>
+                <option value="custom">Custom…</option>
+              </select>
+            </div>
+            <div class="cr-row cr-hide" id="customAspectRow">
+              <div class="cr-field"><label for="aspW">Ratio W</label><input type="number" id="aspW" value="1" min="1"></div>
+              <div class="cr-field"><label for="aspH">Ratio H</label><input type="number" id="aspH" value="1" min="1"></div>
+            </div>
+            <div class="cr-row">
+              <div class="cr-field"><label for="inX">X (pt)</label><input type="number" id="inX" value="0"></div>
+              <div class="cr-field"><label for="inY">Y (pt)</label><input type="number" id="inY" value="0"></div>
+            </div>
+            <div class="cr-row">
+              <div class="cr-field"><label for="inW">Width (pt)</label><input type="number" id="inW" value="0"></div>
+              <div class="cr-field"><label for="inH">Height (pt)</label><input type="number" id="inH" value="0"></div>
+            </div>
+            <div class="cr-tools">
+              <button class="cr-btn ghost sm" id="autoCropBtn" title="Trim surrounding white space">✨ Auto-crop margins</button>
+              <button class="cr-btn ghost sm" id="centerBtn">⊹ Centre</button>
+            </div>
+          </div>
+
+          <div class="cr-card" style="margin-top:14px">
+            <h3>📏 Margins to remove (pt)</h3>
+            <div class="cr-row">
+              <div class="cr-field"><label for="mL">Left</label><input type="number" id="mL" value="0" min="0"></div>
+              <div class="cr-field"><label for="mR">Right</label><input type="number" id="mR" value="0" min="0"></div>
+            </div>
+            <div class="cr-row">
+              <div class="cr-field"><label for="mT">Top</label><input type="number" id="mT" value="0" min="0"></div>
+              <div class="cr-field"><label for="mB">Bottom</label><input type="number" id="mB" value="0" min="0"></div>
+            </div>
+            <div class="cr-row" style="align-items:flex-end">
+              <div class="cr-field"><label for="mEqual">Equal margin</label><input type="number" id="mEqual" value="0" min="0"></div>
+              <button class="cr-btn ghost sm" id="applyEqualBtn" style="margin-bottom:10px">Remove equal</button>
+            </div>
+          </div>
+
+          <div class="cr-card" style="margin-top:14px">
+            <h3>🎯 Pages &amp; output</h3>
+            <div class="cr-field">
+              <label>Crop which pages</label>
+              <div class="cr-seg" id="scopeSeg" aria-label="Pages to crop">
+                <button type="button" class="cr-scope-btn on" data-scope="all">All</button>
+                <button type="button" class="cr-scope-btn" data-scope="first">First</button>
+                <button type="button" class="cr-scope-btn" data-scope="last">Last</button>
+                <button type="button" class="cr-scope-btn" data-scope="odd">Odd</button>
+                <button type="button" class="cr-scope-btn" data-scope="even">Even</button>
+                <button type="button" class="cr-scope-btn" data-scope="range">Range</button>
+              </div>
+              <input type="text" id="rangeInput" placeholder="e.g. 1-3, 5, 8-10" class="cr-hide" style="margin-top:8px" aria-label="Custom page range">
+            </div>
+            <div style="margin:2px 0 8px">
+              <label class="cr-check"><input type="checkbox" id="optGrid"> Grid lines</label>
+              <label class="cr-check"><input type="checkbox" id="optSnap" checked> Snap to edges</label>
+            </div>
+            <div class="cr-field"><label for="outName">Output file name</label><input type="text" id="outName" value="cropped" placeholder="cropped"></div>
+            <div style="margin:2px 0 4px">
+              <label class="cr-check"><input type="checkbox" id="optMeta" checked> Preserve metadata</label>
+              <label class="cr-check"><input type="checkbox" id="optCompress"> Compress output</label>
+            </div>
+          </div>
+
+          <div class="cr-tools" style="margin-top:12px">
+            <button class="cr-btn ghost sm" id="undoBtn" disabled>↶ Undo</button>
+            <button class="cr-btn ghost sm" id="redoBtn" disabled>↷ Redo</button>
+            <button class="cr-btn ghost sm" id="resetBtn">♻️ Reset crop</button>
+          </div>
+          <div class="cr-actions">
+            <button class="cr-btn" id="applyBtn">✂️ Apply &amp; Download</button>
+            <button class="cr-btn ghost" id="printBtn">🖨️ Print</button>
+            <button class="cr-btn ghost" id="clearBtn">🗑️ New file</button>
+          </div>
+          <div class="cr-prog cr-hide" id="progWrap"><i id="progFill"></i></div>
+          <p class="cr-status" id="statusMsg" role="status" aria-live="polite"></p>
+        </div>
+      </div>
     </div>
+  </div>
   </div>
 </div>
 
+<!-- ── Below-tool content ─────────────────────────────────────── -->
+<section class="cr-wrapc" aria-labelledby="introH">
+  <div class="cr-title"><h2 id="introH">✂️ PDF Crop Tool — Trim Margins &amp; Reframe Pages</h2></div>
+  <p class="cr-lead">The <strong>ApneSoftware PDF Crop</strong> tool lets you trim the margins of a PDF or reframe its pages to a new size — by dragging a visual crop box, entering exact dimensions, choosing an aspect-ratio preset, or auto-cropping surrounding white space — all directly inside your web browser. You preview each page, choose which pages to crop, and download a clean, tightly framed PDF without ever uploading your file to a server.</p>
 
-<div class="info-wrap">
-  <div class="info-section">
-    <div class="info-block">
-      <h2>ℹ️ About This Tool</h2>
-      <p>Trim the margins or unwanted areas of every page in a PDF.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Upload your PDF.</li>
-        <li>Drag the blue box on the preview to select the area to keep.</li>
-        <li>Click crop and download the trimmed PDF.</li>
-      </ol>
-    </div>
-    <hr class="info-divider">
-    <div class="info-block">
-      <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>यह टूल PDF के हर पेज के किनारे या बिना ज़रूरत वाला हिस्सा काट देता है।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>अपनी PDF अपलोड करें।</li>
-        <li>प्रीव्यू पर नीला बॉक्स खींचकर रखने वाला हिस्सा चुनें।</li>
-        <li>क्रॉप बटन दबाएं और कटी हुई PDF डाउनलोड करें।</li>
-      </ol>
+  <div class="cr-title"><h2>✨ Key Features</h2></div>
+  <div class="cr-feature-grid">
+    <div class="cr-fcard"><h3>🖱️ Visual Crop Box</h3><p>Drag the box and eight resize handles on a live page preview; mouse and touch supported.</p></div>
+    <div class="cr-fcard"><h3>📐 Precise Controls</h3><p>Type exact X, Y, width and height in points, or set left/right/top/bottom margins to remove.</p></div>
+    <div class="cr-fcard"><h3>🔒 Aspect Presets</h3><p>Free, 1:1, 4:3, 3:2, 16:9, A4, Letter, Legal, or a custom ratio with locked resizing.</p></div>
+    <div class="cr-fcard"><h3>✨ Auto-crop</h3><p>Automatically detect and trim the white margins around the page content.</p></div>
+    <div class="cr-fcard"><h3>🔍 Zoom &amp; Navigate</h3><p>Zoom in/out and page through the whole document to check the crop everywhere.</p></div>
+    <div class="cr-fcard"><h3>🎯 Page Targeting</h3><p>Crop all pages, first, last, odd, even, or a custom range such as 1-3, 5, 8-10.</p></div>
+    <div class="cr-fcard"><h3>↩️ Undo / Redo</h3><p>Step back and forward through crop changes, reset, and grid + snap guides.</p></div>
+    <div class="cr-fcard"><h3>🔒 100% Private</h3><p>Everything runs in your browser; your file is never uploaded.</p></div>
+  </div>
+
+  <div class="cr-title"><h2>🎁 Benefits</h2></div>
+  <div class="cr-feature-grid">
+    <div class="cr-fcard"><h3>🖨️ Better Printing</h3><p>Remove wide scan margins so content fills the page and prints larger.</p></div>
+    <div class="cr-fcard"><h3>📱 Read on Mobile</h3><p>Trim margins so text is bigger and easier to read on phones and e-readers.</p></div>
+    <div class="cr-fcard"><h3>🎯 Reframe Content</h3><p>Crop to a diagram, table or region and keep only what matters.</p></div>
+    <div class="cr-fcard"><h3>🔐 Private</h3><p>Sensitive documents stay on your own device from start to finish.</p></div>
+    <div class="cr-fcard"><h3>🆓 Free &amp; Unlimited</h3><p>No installs, no accounts, and no watermark added by us.</p></div>
+  </div>
+</section>
+
+<section class="cr-wrapc" aria-labelledby="relatedH">
+  <div class="cr-title"><h2 id="relatedH">🔗 Related Tools</h2></div>
+  <div class="cr-related">
+    <a href="pdf-merge.html"><b>Merge PDF</b><span>Combine multiple PDFs</span></a>
+    <a href="pdf-split.html"><b>Split PDF</b><span>Split into separate files</span></a>
+    <a href="pdf-rotate.html"><b>Rotate PDF</b><span>Rotate PDF pages</span></a>
+    <a href="pdf-reorder.html"><b>Reorder PDF Pages</b><span>Rearrange page order</span></a>
+    <a href="pdf-delete-pages.html"><b>Delete PDF Pages</b><span>Remove unwanted pages</span></a>
+    <a href="pdf-compress.html"><b>Compress PDF</b><span>Reduce PDF file size</span></a>
+    <a href="pdf-watermark.html"><b>PDF Watermark</b><span>Add a watermark</span></a>
+    <a href="pdf-page-numbers.html"><b>PDF Page Numbers</b><span>Add page numbers</span></a>
+    <a href="pdf-to-image.html"><b>PDF to JPG</b><span>PDF pages to images</span></a>
+    <a href="pdf-grayscale.html"><b>PDF Grayscale</b><span>Convert to grayscale</span></a>
+  </div>
+</section>
+
+<section class="cr-wrapc" aria-labelledby="aboutH">
+  <div class="cr-title"><h2 id="aboutH">ℹ️ About This Tool</h2></div>
+  <div class="info-wrap" style="max-width:100%;padding:0">
+    <div class="info-section">
+      <article class="info-block cr-about">
+        <h2>About the PDF Crop Tool (English)</h2>
+        <p>Cropping a PDF means changing the visible area of its pages — trimming away the parts you do not want and keeping the region that matters. Scanned documents often carry wide, uneven borders; slide decks exported to PDF can have empty margins; and a report or diagram may only need a small portion of a large page. The ApneSoftware PDF Crop tool lets you reframe every page precisely, either by eye with a visual crop box or by exact numbers, all inside your browser and without uploading anything.</p>
+
+        <p>The centre of the tool is a <strong>visual crop box</strong> drawn over a live preview of your page. You can drag the whole box to reposition it and use its eight handles — four corners and four edges — to resize it, with the area outside the box shaded so you can clearly see what will be removed. The interaction works with both a mouse and touch, so you can crop just as easily on a tablet as on a desktop. Optional <strong>grid lines</strong> (rule-of-thirds) help you compose the crop, and a <strong>snap-to-edges</strong> option makes it easy to align the box exactly to the page boundary when you want to trim only one or two sides.</p>
+
+        <p>For pixel-accurate work you are not limited to dragging. The tool exposes <strong>precise numeric controls</strong>: enter the exact X and Y position and the width and height of the crop in PDF points, and the box updates instantly. Alternatively, think in terms of <strong>margins to remove</strong> — type how many points to trim from the left, right, top and bottom, or set a single value and remove an <strong>equal margin</strong> from all four sides at once. This is the fastest way to shave a consistent border off a scanned book or to square up a document with slightly different edges.</p>
+
+        <p><strong>Aspect-ratio presets</strong> make it simple to crop to a standard shape. Choose Free to crop to any shape, or lock the box to Square (1:1), 4:3, 3:2, 16:9, A4, Letter or Legal proportions — or enter your own custom ratio. When a ratio is locked, resizing keeps that proportion automatically, which is ideal when you need every page cropped to the same shape for a slideshow, a print layout or a consistent set of figures. The <strong>Auto-crop</strong> button goes a step further: it scans the page, finds the bounding box of the actual content, and sets the crop to trim the surrounding white space automatically, with a small safety padding so nothing important is clipped.</p>
+
+        <p>Because different pages sometimes need different treatment, the tool includes flexible <strong>page targeting</strong>. Apply your crop to all pages, only the first page, only the last, all odd or all even pages, or a precise custom range such as <em>1-3, 5, 8-10</em>. A <strong>live preview with page navigation and zoom</strong> lets you move through the document and confirm the crop looks right on every page before you commit, and <strong>undo, redo and reset</strong> mean you can experiment freely and step back if a change is not quite right.</p>
+
+        <p>It is worth understanding how cropping works technically, because it affects what you can expect. This tool sets each page's <em>crop box</em> — the region a viewer displays and a printer prints — rather than deleting the underlying content. That means cropping is lossless and fully reversible in principle: the trimmed content is hidden, not destroyed, so quality is never reduced and the operation is fast even on large files. It also means most PDF readers will honour the crop and show only the region you kept, which is exactly what you want for reading, printing and sharing.</p>
+
+        <p>When you are happy with the result, the <strong>output options</strong> let you rename the downloaded file, choose whether to <strong>preserve or remove the document metadata</strong> (title, author and similar fields), and optionally <strong>compress</strong> the output. You can download the cropped PDF immediately or send it straight to your printer. <strong>Password-protected PDFs</strong> that you are authorised to open are handled locally, and large multi-hundred-page documents are supported, processed on your own machine.</p>
+
+        <p>Everything about the tool is built around <strong>privacy and convenience</strong>. Your document never leaves your device: it is read, previewed, cropped and saved entirely in the browser using JavaScript, with nothing uploaded, stored or logged. There is no account to create and no software to install, and we never add our own watermark to your file. Whether you are a student trimming lecture scans, a designer reframing artwork, an office worker squaring up merged documents, or anyone who simply wants tighter, cleaner pages, the PDF Crop tool produces a precise, professional result in seconds.</p>
+      </article>
+
+      <article class="info-block cr-about">
+        <h2>इस टूल के बारे में (Hindi)</h2>
+        <p>PDF को crop करने का मतलब है उसके पन्नों का दिखने वाला क्षेत्र बदलना — जो हिस्सा नहीं चाहिए उसे काटकर हटाना और ज़रूरी क्षेत्र रखना। Scanned documents में अक्सर चौड़े, असमान किनारे होते हैं; PDF में export की गई slides में खाली margins हो सकते हैं; और किसी report या diagram को बड़े पन्ने के केवल छोटे हिस्से की ज़रूरत हो सकती है। ApneSoftware PDF Crop टूल आपको हर पन्ने को सटीक रूप से reframe करने देता है — या तो visual crop box से आँख के अनुमान से, या सटीक संख्याओं से — सब कुछ आपके browser के अंदर और बिना कुछ upload किए।</p>
+
+        <p>टूल का केंद्र आपके पन्ने के live preview पर बना एक <strong>visual crop box</strong> है। आप पूरे box को खींचकर उसकी जगह बदल सकते हैं और उसके आठ handles — चार कोने और चार किनारे — से उसका आकार बदल सकते हैं, और box के बाहर का क्षेत्र धुंधला दिखता है ताकि आप साफ़ देख सकें कि क्या हटेगा। यह mouse और touch दोनों से काम करता है, इसलिए tablet पर उतनी ही आसानी से crop कर सकते हैं जितना desktop पर। वैकल्पिक <strong>grid lines</strong> (rule-of-thirds) crop को व्यवस्थित करने में मदद करती हैं, और <strong>snap-to-edges</strong> विकल्प box को पन्ने की सीमा से ठीक align करना आसान बनाता है जब आप केवल एक-दो किनारे काटना चाहें।</p>
+
+        <p>सटीक काम के लिए आप केवल खींचने तक सीमित नहीं हैं। टूल <strong>सटीक numeric नियंत्रण</strong> देता है: crop की ठीक X और Y स्थिति तथा width और height PDF points में लिखें, और box तुरंत बदल जाता है। वैकल्पिक रूप से <strong>हटाने वाले margins</strong> के रूप में सोचें — बाएँ, दाएँ, ऊपर और नीचे से कितने points काटने हैं लिखें, या एक ही मान सेट करके चारों तरफ से एक-समान <strong>equal margin</strong> एक साथ हटाएँ। किसी scanned किताब से एक-जैसा border छाँटने या थोड़े अलग किनारों वाले document को square करने का यह सबसे तेज़ तरीका है।</p>
+
+        <p><strong>Aspect-ratio presets</strong> किसी मानक आकार में crop करना सरल बनाते हैं। किसी भी आकार के लिए Free चुनें, या box को Square (1:1), 4:3, 3:2, 16:9, A4, Letter या Legal अनुपात में lock करें — या अपना custom अनुपात डालें। जब कोई ratio locked हो, तो resizing अपने-आप वही अनुपात बनाए रखती है, जो तब आदर्श है जब आपको slideshow, print layout या figures के एक-जैसे सेट के लिए हर पन्ना एक ही आकार में चाहिए। <strong>Auto-crop</strong> बटन एक कदम आगे जाता है: यह पन्ने को scan करता है, असली content की सीमा ढूँढता है, और आसपास की सफ़ेद जगह अपने-आप काटने के लिए crop सेट कर देता है, थोड़ी सुरक्षित padding के साथ ताकि कुछ ज़रूरी न कटे।</p>
+
+        <p>चूँकि अलग-अलग पन्नों को कभी-कभी अलग व्यवहार चाहिए, टूल में लचीला <strong>page targeting</strong> है। अपना crop सभी पन्नों पर, केवल पहले पन्ने पर, केवल आखिरी पर, सभी विषम या सभी सम पन्नों पर, या <em>1-3, 5, 8-10</em> जैसी सटीक custom range पर लगाएँ। <strong>page navigation और zoom के साथ live preview</strong> आपको document में घूमकर हर पन्ने पर crop जाँचने देता है, और <strong>undo, redo और reset</strong> से आप बेझिझक प्रयोग कर सकते हैं और कोई बदलाव ठीक न लगे तो पीछे लौट सकते हैं।</p>
+
+        <p>यह समझना उपयोगी है कि cropping तकनीकी रूप से कैसे काम करता है। यह टूल हर पन्ने का <em>crop box</em> सेट करता है — वह क्षेत्र जो viewer दिखाता है और printer छापता है — न कि नीचे की सामग्री मिटाता है। इसका मतलब है cropping lossless और सैद्धांतिक रूप से पूरी तरह उलटी-जा-सकने वाली है: कटी सामग्री छिपती है, नष्ट नहीं होती, इसलिए quality कभी कम नहीं होती और बड़ी files पर भी operation तेज़ रहता है। इसका यह भी अर्थ है कि अधिकांश PDF readers crop का सम्मान करेंगे और केवल वही क्षेत्र दिखाएँगे जो आपने रखा — पढ़ने, छापने और साझा करने के लिए यही सही है।</p>
+
+        <p>संतुष्ट होने पर <strong>output विकल्प</strong> आपको download की गई file का नाम बदलने, document का <strong>metadata रखने या हटाने</strong> (title, author आदि), और वैकल्पिक रूप से output को <strong>compress</strong> करने देते हैं। आप cropped PDF तुरंत download कर सकते हैं या सीधे printer पर भेज सकते हैं। जिन <strong>password-protected PDF</strong> को खोलने का आपको अधिकार है वे locally संभाले जाते हैं, और सैकड़ों पन्नों वाले बड़े documents समर्थित हैं, आपकी अपनी मशीन पर process होते हैं।</p>
+
+        <p>टूल की हर चीज़ <strong>privacy और सुविधा</strong> के इर्द-गिर्द बनी है। आपका document कभी device से बाहर नहीं जाता: यह browser में JavaScript से पढ़ा, preview किया, crop किया और सहेजा जाता है, कुछ भी upload, store या log नहीं होता। कोई account बनाना नहीं, कोई software install करना नहीं, और हम आपकी file पर अपनी कोई watermark नहीं जोड़ते। चाहे आप lecture scans छाँटने वाले student हों, artwork reframe करने वाले designer, merged documents square करने वाले office worker, या कोई भी जो बस साफ़-सुथरे, कसे हुए पन्ने चाहता हो — PDF Crop टूल कुछ ही सेकंड में सटीक, professional परिणाम देता है।</p>
+      </article>
     </div>
   </div>
-</div>
+</section>
+
+<section class="cr-wrapc cr-about" aria-labelledby="howH">
+  <div class="cr-title"><h2 id="howH">📝 How To Use</h2></div>
+  <ol>
+    <li>Drag &amp; drop your PDF onto the upload area, or click to browse.</li>
+    <li>Drag the <strong>crop box</strong> and its handles, or enter exact <strong>X/Y/width/height</strong> or margins.</li>
+    <li>Optionally choose an <strong>aspect-ratio preset</strong> or click <strong>Auto-crop</strong> to trim white space.</li>
+    <li>Select <strong>which pages</strong> to crop — all, first/last, odd/even or a custom range.</li>
+    <li>Navigate pages and zoom to confirm the crop looks right everywhere.</li>
+    <li>Rename the file if you like, then click <strong>Apply &amp; Download</strong> — or print directly.</li>
+  </ol>
+</section>
+
+<section class="cr-wrapc cr-faq" aria-labelledby="faqH">
+  <div class="cr-title"><h2 id="faqH">❓ Frequently Asked Questions</h2></div>
+  <div id="faqList"></div>
+</section>
+
+<section class="cr-wrapc cr-about" aria-labelledby="privacyH">
+  <div class="cr-title"><h2 id="privacyH">🔒 Privacy</h2></div>
+  <p>This tool is 100% client-side. Your PDF is read and processed entirely in your browser using JavaScript — it is never sent to ApneSoftware or any third party. Nothing is stored, logged or transmitted. When you close or refresh the page, the file is cleared from memory. Because there is no upload, you can safely crop confidential, legal, medical and financial documents.</p>
+
+  <div class="cr-title"><h2 id="compatH">🌐 Browser Compatibility</h2></div>
+  <p>Works in all modern browsers including Google Chrome, Microsoft Edge, Mozilla Firefox, Safari, Brave and Opera, on Windows, macOS, Linux, Android and iOS. It relies on standard web technologies (Canvas, File API and JavaScript PDF libraries), so no plugins or extensions are required. For very large PDFs a desktop browser with more available memory gives the smoothest experience.</p>
+
+  <div class="cr-title"><h2 id="formatsH">📁 Supported Formats</h2></div>
+  <p><strong>Input:</strong> PDF (.pdf), including password-protected PDFs you are authorised to open. <strong>Output:</strong> a standard PDF (.pdf) with the crop box applied to your chosen pages, ready to download or print. Cropping sets each page's crop box, so the operation is lossless and the original content is preserved (hidden, not deleted).</p>
+</section>
 
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
@@ -103,149 +386,335 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="../assets/common.js"></script>
 <script>
-pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+/* ══════════════════════════════════════════════════════════════
+   PDF CROP — premium client-side tool (pdf-lib + pdf.js)
+   ══════════════════════════════════════════════════════════════ */
+(function(){
+  "use strict";
+  if(window.pdfjsLib) pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  var $ = function(id){ return document.getElementById(id); };
 
-const dropzone = document.getElementById('dropzone');
-const fileInput = document.getElementById('fileInput');
-const cropBox = document.getElementById('cropBox');
-const cropHandle = document.getElementById('cropHandle');
-const cropWrap = document.getElementById('cropWrap');
-let currentFile = null;
-let renderScale = 1;
-let pdfPageWidth = 0, pdfPageHeight = 0;
+  var FAQ = [
+    ["Is my PDF uploaded to a server?","No. The entire cropping process runs locally in your browser using JavaScript. Your PDF never leaves your device, so it is safe for confidential and sensitive documents."],
+    ["Does cropping delete the trimmed content?","No. Cropping sets each page's crop box — the region shown and printed. The content outside is hidden, not deleted, so the operation is lossless and does not reduce quality."],
+    ["Can I enter exact crop dimensions?","Yes. You can type the exact X, Y, width and height in PDF points, or specify how many points to remove from the left, right, top and bottom margins."],
+    ["What is a PDF point?","A point is 1/72 of an inch, the standard PDF unit. An A4 page is about 595 × 842 points and a US Letter page is 612 × 792 points."],
+    ["Can I crop to a specific aspect ratio?","Yes. Choose a preset such as 1:1, 4:3, 16:9, A4, Letter or Legal, or enter a custom ratio. Resizing then keeps that proportion automatically."],
+    ["What does Auto-crop do?","Auto-crop scans the current page, finds the bounding box of the actual content and sets the crop to remove the surrounding white margins, leaving a small safety padding."],
+    ["Can I crop only some pages?","Yes. Apply the crop to all pages, only the first or last page, only odd or only even pages, or a custom range such as 1-3, 5, 8-10."],
+    ["Can I crop each page differently?","The crop box you set is applied to the pages you select. To crop different regions, run the tool more than once, choosing a different page range and crop each time."],
+    ["Will the live preview match the output?","Yes. The shaded area in the preview is exactly what will be trimmed. You can navigate pages and zoom in to confirm before applying."],
+    ["Does it work on phones and tablets?","Yes. The crop box responds to touch, the layout is responsive, and you can zoom the preview. A desktop browser is smoother for very large PDFs."],
+    ["Can I undo a crop change?","Yes. Undo and redo step through your crop adjustments, and Reset returns the box to the full page. Restore is as simple as choosing a new crop or reloading the file."],
+    ["Can I remove an equal margin from all sides?","Yes. Enter a value in the equal-margin field and click “Remove equal” to trim the same amount from the left, right, top and bottom at once."],
+    ["Will cropping change my document's text or images?","No. The page content is untouched; only the visible crop region changes. Text stays selectable and images keep their quality."],
+    ["Can I keep or remove the PDF's metadata?","Yes. “Preserve metadata” keeps the original title, author and similar fields; turn it off to strip that information from the output."],
+    ["Does the compress option reduce quality?","It uses object streams to shrink the file structure and does not re-encode page content, so visible quality is unchanged. Savings vary by document."],
+    ["Can I crop a password-protected PDF?","If you are authorised to open the file, the tool loads it locally and can apply a crop. Everything still happens on your device."],
+    ["Is there a file-size or page limit?","There is no fixed limit — it depends on your device's memory. The crop is applied efficiently to each page, so large documents work well."],
+    ["My reader still shows the old margins — why?","A few readers ignore the crop box and show the full media box. Most viewers honour the crop; if you need the extra area physically removed, that requires rasterising, which this lossless tool avoids."],
+    ["Can I print the cropped PDF directly?","Yes. The Print button opens the cropped result in your browser's print dialog so you can print or save as PDF."],
+    ["Is the tool free? Do I need an account?","It is completely free with no signup, no watermark added by us, and no usage limits."],
+    ["Which browsers are supported?","All modern browsers — Chrome, Edge, Firefox, Safari, Brave and Opera — on desktop and mobile. No plugins are required."]
+  ];
 
-setupDropzone(dropzone, fileInput, files => {
-  if(files.length && files[0].type === 'application/pdf') handleFile(files[0]);
-});
+  // ── State ──────────────────────────────────────────────────
+  var srcBytes=null, srcName="", pageCount=0, pdfjsDoc=null, meta={};
+  var pageW=0, pageH=0;            // current preview page size in points
+  var crop={x:0,y:0,w:0,h:0};      // in points, y from TOP of page
+  var scope="all", aspect=null;    // aspect = w/h or null
+  var pvPage=1, pvZoom=1, dispScale=1, renderToken=0, pvRenderTask=null;
+  var history=[], histIdx=-1;
+  var PDFLibRef=window.PDFLib;
 
-async function handleFile(file){
-  currentFile = file;
-  const arrayBuf = await file.arrayBuffer();
-  const pdf = await pdfjsLib.getDocument({data: arrayBuf}).promise;
-  const page = await pdf.getPage(1);
-  const viewport = page.getViewport({ scale: 1 });
-  pdfPageWidth = viewport.width;
-  pdfPageHeight = viewport.height;
+  function setProg(p){ var w=$('progWrap'); if(p<0){w.classList.add('cr-hide');return;} w.classList.remove('cr-hide'); $('progFill').style.width=Math.round(p*100)+'%'; }
+  function status(m){ $('statusMsg').textContent=m||''; }
+  function clamp(v,a,b){ return Math.max(a,Math.min(b,v)); }
 
-  // fit to max 500 width for display
-  renderScale = Math.min(500 / viewport.width, 1.5);
-  const dispViewport = page.getViewport({ scale: renderScale });
-
-  const canvas = document.getElementById('previewCanvas');
-  canvas.width = dispViewport.width;
-  canvas.height = dispViewport.height;
-  const ctx = canvas.getContext('2d');
-  await page.render({ canvasContext: ctx, viewport: dispViewport }).promise;
-
-  // init crop box to 80% centered
-  const boxW = dispViewport.width * 0.8;
-  const boxH = dispViewport.height * 0.8;
-  cropBox.style.left = (dispViewport.width*0.1) + 'px';
-  cropBox.style.top = (dispViewport.height*0.1) + 'px';
-  cropBox.style.width = boxW + 'px';
-  cropBox.style.height = boxH + 'px';
-
-  document.getElementById('afterUpload').style.display = 'block';
-}
-
-// drag to move
-let dragging = false, dragOffsetX = 0, dragOffsetY = 0;
-cropBox.addEventListener('mousedown', e => {
-  if(e.target === cropHandle) return;
-  dragging = true;
-  dragOffsetX = e.clientX - cropBox.offsetLeft;
-  dragOffsetY = e.clientY - cropBox.offsetTop;
-  e.preventDefault();
-});
-
-// resize via handle
-let resizing = false;
-cropHandle.addEventListener('mousedown', e => {
-  resizing = true;
-  e.preventDefault();
-  e.stopPropagation();
-});
-
-document.addEventListener('mousemove', e => {
-  const wrapRect = cropWrap.getBoundingClientRect();
-  if(dragging){
-    let newLeft = e.clientX - dragOffsetX;
-    let newTop = e.clientY - dragOffsetY;
-    newLeft = Math.max(0, Math.min(newLeft, wrapRect.width - cropBox.offsetWidth));
-    newTop = Math.max(0, Math.min(newTop, wrapRect.height - cropBox.offsetHeight));
-    cropBox.style.left = newLeft + 'px';
-    cropBox.style.top = newTop + 'px';
+  // ── History ────────────────────────────────────────────────
+  function pushHistory(){
+    history=history.slice(0,histIdx+1);
+    history.push({x:crop.x,y:crop.y,w:crop.w,h:crop.h});
+    histIdx=history.length-1;
+    updateHistBtns();
   }
-  if(resizing){
-    let newW = e.clientX - wrapRect.left - cropBox.offsetLeft;
-    let newH = e.clientY - wrapRect.top - cropBox.offsetTop;
-    newW = Math.max(30, Math.min(newW, wrapRect.width - cropBox.offsetLeft));
-    newH = Math.max(30, Math.min(newH, wrapRect.height - cropBox.offsetTop));
-    cropBox.style.width = newW + 'px';
-    cropBox.style.height = newH + 'px';
+  function updateHistBtns(){ $('undoBtn').disabled=histIdx<=0; $('redoBtn').disabled=histIdx>=history.length-1; }
+  function applyHist(){ var s=history[histIdx]; crop={x:s.x,y:s.y,w:s.w,h:s.h}; syncInputs(); positionBox(); updateHistBtns(); }
+
+  // ── Range / scope ──────────────────────────────────────────
+  function parseRange(str,max){ var set={}; (str||"").split(',').forEach(function(part){ part=part.trim(); if(!part)return; var m=part.match(/^(\d+)\s*-\s*(\d+)$/); if(m){var a=+m[1],b=+m[2]; if(a>b){var t=a;a=b;b=t;} for(var i=a;i<=b;i++) if(i>=1&&i<=max)set[i]=1;} else if(/^\d+$/.test(part)){var n=+part; if(n>=1&&n<=max)set[n]=1;} }); return set; }
+  function pageTargeter(){
+    if(scope==='all') return function(){return true;};
+    if(scope==='first') return function(n){return n===1;};
+    if(scope==='last') return function(n){return n===pageCount;};
+    if(scope==='odd') return function(n){return n%2===1;};
+    if(scope==='even') return function(n){return n%2===0;};
+    if(scope==='range'){ var set=parseRange($('rangeInput').value,pageCount); return function(n){return !!set[n];}; }
+    return function(){return true;};
   }
-});
-document.addEventListener('mouseup', ()=>{ dragging = false; resizing = false; });
 
-// touch support
-cropBox.addEventListener('touchstart', e => {
-  if(e.target === cropHandle) return;
-  const t = e.touches[0];
-  dragging = true;
-  dragOffsetX = t.clientX - cropBox.offsetLeft;
-  dragOffsetY = t.clientY - cropBox.offsetTop;
-});
-cropHandle.addEventListener('touchstart', e => { resizing = true; e.stopPropagation(); });
-document.addEventListener('touchmove', e => {
-  if(!dragging && !resizing) return;
-  const t = e.touches[0];
-  const wrapRect = cropWrap.getBoundingClientRect();
-  if(dragging){
-    let newLeft = t.clientX - dragOffsetX;
-    let newTop = t.clientY - dragOffsetY;
-    newLeft = Math.max(0, Math.min(newLeft, wrapRect.width - cropBox.offsetWidth));
-    newTop = Math.max(0, Math.min(newTop, wrapRect.height - cropBox.offsetHeight));
-    cropBox.style.left = newLeft + 'px';
-    cropBox.style.top = newTop + 'px';
+  // ── Crop box positioning (points -> display px) ────────────
+  function positionBox(){
+    var box=$('cropBox');
+    box.style.left=(crop.x*dispScale)+'px';
+    box.style.top=(crop.y*dispScale)+'px';
+    box.style.width=(crop.w*dispScale)+'px';
+    box.style.height=(crop.h*dispScale)+'px';
+    box.classList.toggle('grid',$('optGrid').checked);
   }
-  if(resizing){
-    let newW = t.clientX - wrapRect.left - cropBox.offsetLeft;
-    let newH = t.clientY - wrapRect.top - cropBox.offsetTop;
-    cropBox.style.width = Math.max(30,newW) + 'px';
-    cropBox.style.height = Math.max(30,newH) + 'px';
+  function syncInputs(){
+    $('inX').value=Math.round(crop.x); $('inY').value=Math.round(crop.y);
+    $('inW').value=Math.round(crop.w); $('inH').value=Math.round(crop.h);
+    $('mL').value=Math.round(crop.x); $('mT').value=Math.round(crop.y);
+    $('mR').value=Math.round(pageW-crop.x-crop.w); $('mB').value=Math.round(pageH-crop.y-crop.h);
   }
-});
-document.addEventListener('touchend', ()=>{ dragging = false; resizing = false; });
+  function clampCrop(){
+    crop.w=clamp(crop.w,10,pageW); crop.h=clamp(crop.h,10,pageH);
+    crop.x=clamp(crop.x,0,pageW-crop.w); crop.y=clamp(crop.y,0,pageH-crop.h);
+  }
 
-document.getElementById('applyBtn').addEventListener('click', async ()=>{
-  const status = document.getElementById('statusMsg');
-  status.textContent = '⏳ Cropping...';
-  try{
-    // convert display box -> pdf coordinates (pdf-lib y-axis is bottom-up)
-    const left = cropBox.offsetLeft / renderScale;
-    const top = cropBox.offsetTop / renderScale;
-    const w = cropBox.offsetWidth / renderScale;
-    const h = cropBox.offsetHeight / renderScale;
-
-    const { PDFDocument } = PDFLib;
-    const bytes = await currentFile.arrayBuffer();
-    const pdfDoc = await PDFDocument.load(bytes);
-    const pages = pdfDoc.getPages();
-
-    pages.forEach(page => {
-      const pageHeight = page.getHeight();
-      const cropY = pageHeight - top - h; // flip y
-      page.setCropBox(left, cropY, w, h);
+  // ── Preview render ─────────────────────────────────────────
+  function renderPreview(keepCrop){
+    if(!pdfjsDoc) return;
+    var token=++renderToken;
+    if(pvRenderTask){ try{pvRenderTask.cancel();}catch(e){} pvRenderTask=null; }
+    pdfjsDoc.getPage(pvPage).then(function(page){
+      if(token!==renderToken) return;
+      var base=page.getViewport({scale:1});
+      pageW=base.width; pageH=base.height;
+      var wrapW=Math.min(($('cropWrap').parentElement.clientWidth||560),560);
+      dispScale=(wrapW/base.width)*pvZoom;
+      var vp=page.getViewport({scale:dispScale});
+      var canvas=$('previewCanvas'), ctx=canvas.getContext('2d');
+      canvas.width=vp.width; canvas.height=vp.height;
+      $('cropWrap').style.width=vp.width+'px';
+      var task=page.render({canvasContext:ctx,viewport:vp}); pvRenderTask=task;
+      task.promise.then(function(){
+        if(token!==renderToken) return; pvRenderTask=null;
+        if(!keepCrop || crop.w===0){ crop={x:0,y:0,w:pageW,h:pageH}; }
+        clampCrop(); positionBox(); syncInputs();
+      }).catch(function(){});
+      $('fiDim').textContent=Math.round(base.width)+' × '+Math.round(base.height)+' pt';
     });
-
-    const newBytes = await pdfDoc.save();
-    const blob = new Blob([newBytes], {type:'application/pdf'});
-    downloadBlob('cropped.pdf', blob);
-    status.textContent = '✅ Cropped and downloaded!';
-  }catch(err){
-    status.textContent = '❌ Error: ' + err.message;
+    $('pvPage').textContent=pvPage; $('pvTotal').textContent=pageCount;
+    $('pvPrev').disabled=(pvPage<=1); $('pvNext').disabled=(pvPage>=pageCount);
+    $('zoomLabel').textContent=Math.round(pvZoom*100)+'%';
   }
-});
+
+  // ── Auto-crop (detect content bounds) ──────────────────────
+  function autoCrop(){
+    if(!pdfjsDoc) return;
+    pdfjsDoc.getPage(pvPage).then(function(page){
+      var scale=Math.min(2, 1000/Math.max(pageW,pageH));
+      var vp=page.getViewport({scale:scale});
+      var c=document.createElement('canvas'); c.width=vp.width; c.height=vp.height;
+      var ctx=c.getContext('2d');
+      page.render({canvasContext:ctx,viewport:vp}).promise.then(function(){
+        var img=ctx.getImageData(0,0,c.width,c.height).data;
+        var minX=c.width,minY=c.height,maxX=0,maxY=0,found=false;
+        var TH=245;
+        for(var y=0;y<c.height;y++){ for(var x=0;x<c.width;x++){ var i=(y*c.width+x)*4;
+          if(img[i]<TH||img[i+1]<TH||img[i+2]<TH){ found=true; if(x<minX)minX=x; if(x>maxX)maxX=x; if(y<minY)minY=y; if(y>maxY)maxY=y; } } }
+        if(!found){ status('Auto-crop: page looks blank.'); return; }
+        var pad=6; // px padding
+        minX=clamp(minX-pad,0,c.width); minY=clamp(minY-pad,0,c.height);
+        maxX=clamp(maxX+pad,0,c.width); maxY=clamp(maxY+pad,0,c.height);
+        crop.x=minX/scale; crop.y=minY/scale; crop.w=(maxX-minX)/scale; crop.h=(maxY-minY)/scale;
+        aspect=null; $('aspectSelect').value='free'; clampCrop(); positionBox(); syncInputs(); pushHistory();
+        status('✅ Auto-cropped to page content.');
+      });
+    });
+  }
+
+  // ── Aspect handling ────────────────────────────────────────
+  function applyAspect(){
+    if(!aspect){ return; }
+    // fit a centred box of ratio `aspect` inside current crop's bounds (keep area-ish)
+    var cx=crop.x+crop.w/2, cy=crop.y+crop.h/2;
+    var w=crop.w, h=w/aspect;
+    if(h>pageH){ h=pageH; w=h*aspect; }
+    if(w>pageW){ w=pageW; h=w/aspect; }
+    crop.w=w; crop.h=h; crop.x=cx-w/2; crop.y=cy-h/2; clampCrop(); positionBox(); syncInputs();
+  }
+
+  // ── Pointer drag / resize ──────────────────────────────────
+  var active=null, startPt=null, startCrop=null;
+  function ptFromEvent(e){ var r=$('cropWrap').getBoundingClientRect(); return { x:(e.clientX-r.left)/dispScale, y:(e.clientY-r.top)/dispScale }; }
+  function onDown(e){
+    var h=e.target.getAttribute && e.target.getAttribute('data-h');
+    active = h ? {mode:'resize',h:h} : {mode:'move'};
+    startPt=ptFromEvent(e); startCrop={x:crop.x,y:crop.y,w:crop.w,h:crop.h};
+    try{ e.target.setPointerCapture&&e.target.setPointerCapture(e.pointerId); }catch(_){}
+    e.preventDefault();
+  }
+  function onMove(e){
+    if(!active) return;
+    var p=ptFromEvent(e); var dx=p.x-startPt.x, dy=p.y-startPt.y;
+    var snap=$('optSnap').checked, SN=6/dispScale;
+    if(active.mode==='move'){
+      crop.x=clamp(startCrop.x+dx,0,pageW-crop.w);
+      crop.y=clamp(startCrop.y+dy,0,pageH-crop.h);
+      if(snap){ if(crop.x<SN)crop.x=0; if(crop.y<SN)crop.y=0; if(pageW-crop.x-crop.w<SN)crop.x=pageW-crop.w; if(pageH-crop.y-crop.h<SN)crop.y=pageH-crop.h; }
+    } else {
+      var x1=startCrop.x, y1=startCrop.y, x2=startCrop.x+startCrop.w, y2=startCrop.y+startCrop.h;
+      var hh=active.h;
+      if(hh.indexOf('w')>=0) x1=clamp(startCrop.x+dx,0,x2-10);
+      if(hh.indexOf('e')>=0) x2=clamp(x2+dx,x1+10,pageW);
+      if(hh.indexOf('n')>=0) y1=clamp(startCrop.y+dy,0,y2-10);
+      if(hh.indexOf('s')>=0) y2=clamp(y2+dy,y1+10,pageH);
+      crop.x=x1; crop.y=y1; crop.w=x2-x1; crop.h=y2-y1;
+      if(aspect){
+        // maintain ratio anchored to the moving corner/edge
+        var horiz=(hh.indexOf('w')>=0||hh.indexOf('e')>=0);
+        if(hh==='n'||hh==='s'){ var nw=crop.h*aspect; crop.x=clamp(crop.x+ (crop.w-nw)/2,0,pageW-nw); crop.w=nw; }
+        else if(hh==='e'||hh==='w'){ var nh=crop.w/aspect; crop.y=clamp(crop.y+(crop.h-nh)/2,0,pageH-nh); crop.h=nh; }
+        else { // corners: derive height from width
+          var nh2=crop.w/aspect;
+          if(hh.indexOf('n')>=0){ crop.y=y2-nh2; } crop.h=nh2;
+          if(crop.y<0){ crop.y=0; } if(crop.y+crop.h>pageH){ crop.h=pageH-crop.y; crop.w=crop.h*aspect; }
+        }
+      }
+    }
+    clampCrop(); positionBox(); syncInputs();
+  }
+  function onUp(){ if(active){ active=null; pushHistory(); } }
+
+  // ── Load ───────────────────────────────────────────────────
+  function loadFile(file){
+    if(!file || file.type!=='application/pdf'){ status('⚠️ Please choose a PDF file.'); return; }
+    srcName=file.name; status('⏳ Loading…'); setProg(0.2);
+    file.arrayBuffer().then(function(buf){
+      srcBytes=buf.slice(0);
+      pdfjsLib.getDocument({data:buf.slice(0)}).promise.then(function(doc){ ready(doc,file); })
+      .catch(function(err){
+        if(err&&err.name==='PasswordException'){ var pw=prompt('This PDF is password protected. Enter the password:'); if(pw!=null){ pdfjsLib.getDocument({data:buf.slice(0),password:pw}).promise.then(function(d){ ready(d,file,true); }).catch(function(){ setProg(-1); status('❌ Wrong password or unreadable PDF.'); }); return; } }
+        setProg(-1); status('❌ Could not read this PDF: '+(err&&err.message||err));
+      });
+    });
+  }
+  function ready(doc,file,protectedFlag){
+    pdfjsDoc=doc; pageCount=doc.numPages;
+    if(!protectedFlag){ doc.getMetadata().then(function(md){ meta=(md&&md.info)||{}; }).catch(function(){ meta={}; }); }
+    $('fiName').textContent=srcName; $('fiSize').textContent=formatBytes(file.size); $('fiPages').textContent=pageCount;
+    pvPage=1; pvZoom=1; crop={x:0,y:0,w:0,h:0}; history=[]; histIdx=-1;
+    $('workspace').classList.remove('cr-hide'); $('dropzone').classList.add('cr-hide');
+    setProg(-1); status('');
+    renderPreview(false);
+    setTimeout(function(){ pushHistory(); },300);
+  }
+
+  // ── Build cropped PDF ──────────────────────────────────────
+  function build(){
+    return (async function(){
+      var PDFLib=PDFLibRef;
+      var doc=await PDFLib.PDFDocument.load(srcBytes.slice(0),{ignoreEncryption:true});
+      var pages=doc.getPages(), tgt=pageTargeter();
+      for(var i=0;i<pages.length;i++){
+        if(tgt(i+1)){
+          var page=pages[i];
+          var mb=page.getMediaBox ? page.getMediaBox() : {x:0,y:0,width:page.getWidth(),height:page.getHeight()};
+          var pw=page.getWidth(), ph=page.getHeight();
+          // clamp crop rect to this page
+          var cw=Math.min(crop.w,pw), ch=Math.min(crop.h,ph);
+          var cx=clamp(crop.x,0,pw-cw), cyTop=clamp(crop.y,0,ph-ch);
+          var yBottom=ph-cyTop-ch; // flip to bottom-left origin
+          page.setCropBox((mb.x||0)+cx, (mb.y||0)+yBottom, cw, ch);
+        }
+        setProg((i+1)/pages.length);
+      }
+      if($('optMeta').checked){ try{ if(meta.Title)doc.setTitle(meta.Title); if(meta.Author)doc.setAuthor(meta.Author); if(meta.Subject)doc.setSubject(meta.Subject); }catch(e){} }
+      else { try{ doc.setTitle('');doc.setAuthor('');doc.setSubject('');doc.setKeywords([]);doc.setProducer('');doc.setCreator(''); }catch(e){} }
+      var out=await doc.save({useObjectStreams:$('optCompress').checked});
+      return new Blob([out],{type:'application/pdf'});
+    })();
+  }
+  function apply(download){
+    status('⏳ Cropping…'); setProg(0.05);
+    build().then(function(blob){
+      setProg(1);
+      var name=($('outName').value.trim()||'cropped').replace(/\.pdf$/i,'')+'.pdf';
+      if(download){ if(window.downloadBlob)downloadBlob(name,blob); else { var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; a.click(); } status('✅ Cropped and downloaded.'); if(window.premToast)premToast('Cropped PDF downloaded'); }
+      else { var url=URL.createObjectURL(blob), w=window.open(url); if(w){ w.addEventListener('load',function(){ try{w.print();}catch(e){} }); } status('🖨️ Opened print view.'); }
+      setTimeout(function(){setProg(-1);},700);
+    }).catch(function(err){ setProg(-1); status('❌ '+(err&&err.message||err)); });
+  }
+
+  // ── UI ─────────────────────────────────────────────────────
+  function setScope(sc){ scope=sc; Array.prototype.forEach.call(document.querySelectorAll('.cr-scope-btn'),function(b){ b.classList.toggle('on',b.getAttribute('data-scope')===sc); }); $('rangeInput').classList.toggle('cr-hide',sc!=='range'); }
+
+  function fromRect(){ // numeric X/Y/W/H changed
+    crop.x=parseFloat($('inX').value)||0; crop.y=parseFloat($('inY').value)||0;
+    crop.w=parseFloat($('inW').value)||10; crop.h=parseFloat($('inH').value)||10;
+    if(aspect){ crop.h=crop.w/aspect; }
+    clampCrop(); positionBox(); syncInputs(); pushHistory();
+  }
+  function fromMargins(){
+    var l=parseFloat($('mL').value)||0, r=parseFloat($('mR').value)||0, t=parseFloat($('mT').value)||0, b=parseFloat($('mB').value)||0;
+    crop.x=l; crop.y=t; crop.w=pageW-l-r; crop.h=pageH-t-b;
+    clampCrop(); positionBox(); syncInputs(); pushHistory();
+  }
+
+  function wire(){
+    setupDropzone($('dropzone'),$('fileInput'),function(files){ if(files&&files.length) loadFile(files[0]); });
+    $('dropzone').addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); $('fileInput').click(); }});
+
+    var box=$('cropBox');
+    box.addEventListener('pointerdown',onDown);
+    window.addEventListener('pointermove',onMove);
+    window.addEventListener('pointerup',onUp);
+
+    $('aspectSelect').addEventListener('change',function(){
+      var v=this.value;
+      $('customAspectRow').classList.toggle('cr-hide',v!=='custom');
+      if(v==='free'){ aspect=null; }
+      else if(v==='custom'){ aspect=(parseFloat($('aspW').value)||1)/(parseFloat($('aspH').value)||1); applyAspect(); pushHistory(); }
+      else { var p=v.split(':'); aspect=(+p[0])/(+p[1]); applyAspect(); pushHistory(); }
+    });
+    ['aspW','aspH'].forEach(function(id){ $(id).addEventListener('input',function(){ if($('aspectSelect').value==='custom'){ aspect=(parseFloat($('aspW').value)||1)/(parseFloat($('aspH').value)||1); applyAspect(); } }); });
+
+    ['inX','inY','inW','inH'].forEach(function(id){ $(id).addEventListener('change',fromRect); });
+    ['mL','mR','mT','mB'].forEach(function(id){ $(id).addEventListener('change',fromMargins); });
+    $('applyEqualBtn').addEventListener('click',function(){ var m=parseFloat($('mEqual').value)||0; crop.x=m; crop.y=m; crop.w=pageW-2*m; crop.h=pageH-2*m; clampCrop(); positionBox(); syncInputs(); pushHistory(); });
+    $('autoCropBtn').addEventListener('click',autoCrop);
+    $('centerBtn').addEventListener('click',function(){ crop.x=(pageW-crop.w)/2; crop.y=(pageH-crop.h)/2; clampCrop(); positionBox(); syncInputs(); pushHistory(); });
+    $('optGrid').addEventListener('change',positionBox);
+
+    Array.prototype.forEach.call(document.querySelectorAll('.cr-scope-btn'),function(b){ b.addEventListener('click',function(){ setScope(this.getAttribute('data-scope')); }); });
+    $('rangeInput').addEventListener('input',function(){});
+
+    $('pvPrev').addEventListener('click',function(){ if(pvPage>1){pvPage--;renderPreview(false);} });
+    $('pvNext').addEventListener('click',function(){ if(pvPage<pageCount){pvPage++;renderPreview(false);} });
+    $('pvZoomIn').addEventListener('click',function(){ pvZoom=Math.min(3,pvZoom+0.25); renderPreview(true); });
+    $('pvZoomOut').addEventListener('click',function(){ pvZoom=Math.max(0.5,pvZoom-0.25); renderPreview(true); });
+
+    $('undoBtn').addEventListener('click',function(){ if(histIdx>0){ histIdx--; applyHist(); } });
+    $('redoBtn').addEventListener('click',function(){ if(histIdx<history.length-1){ histIdx++; applyHist(); } });
+    $('resetBtn').addEventListener('click',function(){ crop={x:0,y:0,w:pageW,h:pageH}; aspect=null; $('aspectSelect').value='free'; positionBox(); syncInputs(); pushHistory(); status('Crop reset to full page.'); });
+
+    $('applyBtn').addEventListener('click',function(){ apply(true); });
+    $('printBtn').addEventListener('click',function(){ apply(false); });
+    $('clearBtn').addEventListener('click',function(){ srcBytes=null; pdfjsDoc=null; pageCount=0; $('workspace').classList.add('cr-hide'); $('dropzone').classList.remove('cr-hide'); $('fileInput').value=''; status(''); });
+
+    document.addEventListener('keydown',function(e){
+      if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='s'){ if(srcBytes){ e.preventDefault(); apply(true); } }
+      if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'){ if(srcBytes){ e.preventDefault(); if(histIdx>0){histIdx--;applyHist();} } }
+      if((e.ctrlKey||e.metaKey)&&(e.key.toLowerCase()==='y'||(e.shiftKey&&e.key.toLowerCase()==='z'))){ if(srcBytes){ e.preventDefault(); if(histIdx<history.length-1){histIdx++;applyHist();} } }
+    });
+    window.addEventListener('resize',function(){ if(pdfjsDoc) renderPreview(true); });
+  }
+
+  function buildFaq(){
+    var list=$('faqList'); if(!list) return;
+    list.innerHTML=FAQ.map(function(f){ return '<details><summary>'+f[0]+'</summary><p>'+f[1]+'</p></details>'; }).join('');
+    try{ var sc=$('faqSchema'); var data=JSON.parse(sc.textContent);
+      data.mainEntity=FAQ.map(function(f){ return {'@type':'Question','name':f[0],'acceptedAnswer':{'@type':'Answer','text':f[1]}}; });
+      sc.textContent=JSON.stringify(data);
+    }catch(e){}
+  }
+
+  function init(){ PDFLibRef=window.PDFLib; wire(); buildFaq(); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();
 </script>
 </body>
 </html>
