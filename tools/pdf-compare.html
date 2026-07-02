@@ -4,44 +4,141 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
+<meta name="description" content="Free online PDF compare tool. Find exactly what text was added, removed or changed between two PDF versions — word, character, line or sentence level, with side-by-side and inline views, difference navigation and TXT/HTML/CSV reports. 100% private, in your browser, no uploads.">
+<meta name="keywords" content="pdf compare, compare two pdfs, pdf diff, find pdf differences, compare pdf online, pdf text comparison, diff pdf, document comparison">
 <link rel="canonical" href="https://apnesoftware.com/tools/pdf-compare.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="PDF Compare — Find Differences Between Two PDFs | ApneSoftware">
-<meta property="og:description" content="Find differences between two PDFs. Free online tool — no signup required.">
+<meta property="og:description" content="Compare two PDF versions and see exactly what text was added, removed or changed. Side-by-side &amp; inline views, difference navigation, export reports. 100% private — no uploads.">
 <meta property="og:url" content="https://apnesoftware.com/tools/pdf-compare.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="PDF Compare — Find Differences Between Two PDFs | ApneSoftware">
-<meta name="twitter:description" content="Find differences between two PDFs. Free online tool — no signup required.">
+<meta name="twitter:description" content="Compare two PDF versions and see exactly what text was added, removed or changed. Side-by-side &amp; inline views, export reports. 100% private.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PDF Compare","description":"Find differences between two PDFs. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/pdf-compare.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PDF Compare","description":"Compare two PDF documents entirely in your browser and highlight exactly what text was added, removed or changed. Word, character, line and sentence granularity, ignore case/whitespace/punctuation, side-by-side and inline views, difference navigation and TXT/HTML/CSV report export. No uploads, no signup.","url":"https://apnesoftware.com/tools/pdf-compare.html","applicationCategory":"BusinessApplication","operatingSystem":"Any","browserRequirements":"Requires a modern web browser with JavaScript enabled","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"featureList":["Word, character, line and sentence comparison","Ignore case, whitespace and punctuation","Side-by-side and inline diff views","Difference navigation and filters","PDF information panels","Export TXT, HTML and CSV reports"],"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"PDF Compare Tool","url":"https://apnesoftware.com/tools/pdf-compare.html","description":"Free browser-based tool to compare two PDF files and highlight text differences.","isPartOf":{"@type":"WebSite","name":"ApneSoftware","url":"https://apnesoftware.com"},"inLanguage":["en","hi"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apnesoftware.com/index.html"},{"@type":"ListItem","position":2,"name":"PDF Compare","item":"https://apnesoftware.com/tools/pdf-compare.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to compare two PDF files","description":"Compare two versions of a PDF in your browser and see what text changed.","step":[{"@type":"HowToStep","name":"Upload both PDFs","text":"Add the original PDF on the left and the updated PDF on the right. Their details load automatically."},{"@type":"HowToStep","name":"Choose comparison options","text":"Pick the granularity — word, character, line or sentence — and toggle ignore case, whitespace or punctuation."},{"@type":"HowToStep","name":"Compare","text":"Click Compare Documents. Added text is highlighted green, removed text red, in inline or side-by-side view."},{"@type":"HowToStep","name":"Review and export","text":"Jump between differences, filter what you see, then export a TXT, HTML or CSV report."}]}
+</script>
+<script type="application/ld+json" id="faqSchema">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}
 </script>
 <meta name="color-scheme" content="dark">
 <title>PDF Compare — Find Differences Between Two PDFs | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-/* Premium upload enhancement for this tool */
+/* ===== PDF Compare — scoped cmp- styles ===== */
 .dropzone{cursor:pointer}
 .dropzone p{font-size:.9rem}
 .panel{position:relative;z-index:1}
-</style>
-<style>
-  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  @media(max-width:560px){ .compare-grid{grid-template-columns:1fr} }
-  .compare-grid .dropzone{padding:24px 14px}
-  .compare-grid .file-name{font-size:.8rem;color:var(--accent);margin-top:8px;text-align:center;word-break:break-all}
-  .diff-result{
-    margin-top:18px;background:var(--surface-2);border:1px solid var(--border);
-    border-radius:8px;padding:18px;font-size:.92rem;line-height:1.9;
-    white-space:pre-wrap;word-break:break-word;max-height:500px;overflow-y:auto;
-  }
-  .diff-result ins{background:rgba(34,197,94,.25);color:#86efac;text-decoration:none;border-radius:3px;padding:0 2px}
-  .diff-result del{background:rgba(239,68,68,.25);color:#fca5a5;text-decoration:line-through;border-radius:3px;padding:0 2px}
-  .diff-legend{display:flex;gap:18px;margin-top:10px;font-size:.82rem;color:var(--text-dim)}
-  .diff-legend span{display:inline-flex;align-items:center;gap:6px}
-  .legend-swatch{width:14px;height:14px;border-radius:3px;display:inline-block}
+
+.compare-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:start}
+@media(max-width:640px){.compare-grid{grid-template-columns:1fr}}
+.compare-grid .dropzone{padding:24px 14px;transition:border-color .2s,background .2s}
+.cmp-side .file-name{font-size:.8rem;color:var(--accent,#a78bfa);margin-top:8px;text-align:center;word-break:break-all}
+.cmp-badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:8px;font-size:.72rem;color:var(--text-dim)}
+.cmp-swapwrap{display:flex;align-items:center;justify-content:center;padding-top:60px}
+@media(max-width:640px){.cmp-swapwrap{padding-top:0}}
+.cmp-swap{background:rgba(167,139,250,.15);border:1px solid rgba(167,139,250,.35);color:#c4b5fd;border-radius:50%;width:44px;height:44px;cursor:pointer;font-size:1.1rem;transition:.15s}
+.cmp-swap:hover{background:rgba(167,139,250,.3);transform:rotate(180deg)}
+
+/* pdf info mini panels */
+.cmp-info{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+@media(max-width:640px){.cmp-info{grid-template-columns:1fr}}
+.cmp-card{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:12px 14px;font-size:.8rem}
+.cmp-card h4{margin:0 0 8px;font-size:.82rem;display:flex;align-items:center;gap:6px;color:var(--text)}
+.cmp-card dl{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:0}
+.cmp-card dt{color:var(--text-dim)}
+.cmp-card dd{margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right}
+
+/* settings */
+.cmp-settings{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;margin-top:16px;padding:14px;background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px}
+.cmp-settings .field{margin:0}
+.cmp-settings label{font-size:.78rem;color:var(--text-dim);display:block;margin-bottom:4px}
+.cmp-checks{display:flex;flex-wrap:wrap;gap:14px}
+.cmp-checks label{display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--text)}
+.cmp-checks input{width:auto}
+
+/* summary + stats */
+.cmp-exec{margin-top:18px;background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.25);border-radius:12px;padding:12px 16px;font-size:.85rem}
+.cmp-exec b{color:var(--text)}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+@media(max-width:560px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
+.stat-box{background:rgba(255,255,255,.04);border:1px solid var(--border,rgba(255,255,255,.1));border-radius:12px;padding:10px;text-align:center}
+.stat-box .num{font-size:1.4rem;font-weight:700}
+.stat-box .lbl{font-size:.72rem;color:var(--text-dim)}
+
+/* toolbar */
+.cmp-toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:16px}
+.cmp-toolbar .cmp-seg{display:inline-flex;border:1px solid var(--border,rgba(255,255,255,.14));border-radius:9px;overflow:hidden}
+.cmp-toolbar .cmp-seg button{background:transparent;border:none;color:var(--text-dim);padding:7px 12px;cursor:pointer;font-size:.82rem}
+.cmp-toolbar .cmp-seg button.active{background:rgba(167,139,250,.25);color:#e9e2ff}
+.cmp-navbtn,.cmp-tool{background:rgba(255,255,255,.06);border:1px solid var(--border,rgba(255,255,255,.12));color:var(--text);border-radius:8px;padding:7px 11px;cursor:pointer;font-size:.82rem}
+.cmp-navbtn:hover,.cmp-tool:hover{background:rgba(167,139,250,.25)}
+.cmp-diffpos{font-size:.8rem;color:var(--text-dim);min-width:70px;text-align:center}
+.cmp-filters{display:flex;gap:12px;flex-wrap:wrap;margin-left:auto}
+.cmp-filters label{display:flex;align-items:center;gap:5px;font-size:.8rem;color:var(--text)}
+.cmp-filters input{width:auto}
+
+.diff-legend{display:flex;gap:18px;margin-top:12px;font-size:.82rem;color:var(--text-dim);flex-wrap:wrap}
+.diff-legend span{display:inline-flex;align-items:center;gap:6px}
+.legend-swatch{width:14px;height:14px;border-radius:3px;display:inline-block}
+
+/* result views */
+.diff-result{margin-top:12px;background:var(--surface-2,rgba(255,255,255,.03));border:1px solid var(--border,rgba(255,255,255,.1));border-radius:10px;padding:18px;font-size:.92rem;line-height:1.9;white-space:pre-wrap;word-break:break-word;max-height:560px;overflow-y:auto}
+.diff-result ins,.diff-side ins{background:rgba(34,197,94,.25);color:#86efac;text-decoration:none;border-radius:3px;padding:0 2px}
+.diff-result del,.diff-side del{background:rgba(239,68,68,.25);color:#fca5a5;text-decoration:line-through;border-radius:3px;padding:0 2px}
+.diff-result ins.cmp-active,.diff-result del.cmp-active,.diff-side ins.cmp-active,.diff-side del.cmp-active{outline:2px solid #a78bfa;outline-offset:1px;background:rgba(167,139,250,.35)}
+.diff-result.hide-add ins,.diff-side.hide-add ins{display:none}
+.diff-result.hide-del del,.diff-side.hide-del del{display:none}
+.diff-result.hide-eq .cmp-eq,.diff-side.hide-eq .cmp-eq{display:none}
+
+.diff-sidewrap{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+@media(max-width:640px){.diff-sidewrap{grid-template-columns:1fr}}
+.diff-side{background:var(--surface-2,rgba(255,255,255,.03));border:1px solid var(--border,rgba(255,255,255,.1));border-radius:10px;padding:16px;font-size:.9rem;line-height:1.85;white-space:pre-wrap;word-break:break-word;max-height:560px;overflow-y:auto}
+.diff-side h4{margin:0 0 10px;font-size:.82rem;color:var(--text-dim);position:sticky;top:-16px;background:var(--surface-2,#1a1a24);padding:6px 0}
+
+.cmp-difflist{margin-top:12px;max-height:220px;overflow-y:auto;border:1px solid var(--border,rgba(255,255,255,.1));border-radius:10px}
+.cmp-difflist .cmp-di{display:flex;gap:8px;padding:8px 12px;border-bottom:1px solid var(--border,rgba(255,255,255,.06));cursor:pointer;font-size:.82rem}
+.cmp-difflist .cmp-di:hover{background:rgba(167,139,250,.1)}
+.cmp-di .tag{flex:0 0 auto;font-weight:700;width:64px}
+.cmp-di .tag.add{color:#86efac}.cmp-di .tag.del{color:#fca5a5}
+.cmp-di .txt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text-dim)}
+
+/* ===== Below-tool content ===== */
+.cmp-wrap{margin:26px 0}
+.cmp-title{font-size:1.35rem;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+.cmp-sub{color:var(--text-dim);font-size:.92rem;margin:0 0 18px;line-height:1.6}
+.cmp-feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.cmp-fcard{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:14px;padding:16px}
+.cmp-fcard h4{margin:0 0 6px;font-size:.98rem;display:flex;align-items:center;gap:8px}
+.cmp-fcard p{margin:0;font-size:.86rem;color:var(--text-dim);line-height:1.55}
+.cmp-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.cmp-rel{display:block;text-decoration:none;background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:14px;transition:.15s;color:var(--text)}
+.cmp-rel:hover{border-color:#a78bfa;background:rgba(167,139,250,.1);transform:translateY(-2px)}
+.cmp-rel b{display:block;font-size:.92rem;margin-bottom:3px}
+.cmp-rel span{font-size:.8rem;color:var(--text-dim);line-height:1.45}
+.cmp-faq details{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:0 16px;margin-bottom:10px}
+.cmp-faq summary{cursor:pointer;padding:14px 0;font-weight:600;font-size:.92rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.cmp-faq summary::-webkit-details-marker{display:none}
+.cmp-faq summary::after{content:'+';font-size:1.3rem;color:#a78bfa;flex:0 0 auto}
+.cmp-faq details[open] summary::after{content:'−'}
+.cmp-faq details p{margin:0 0 14px;font-size:.87rem;color:var(--text-dim);line-height:1.65}
+.cmp-steps{list-style:none;counter-reset:s;padding:0;margin:0;display:grid;gap:12px}
+.cmp-steps li{counter-increment:s;position:relative;padding-left:46px;font-size:.9rem;color:var(--text-dim);line-height:1.6}
+.cmp-steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:32px;height:32px;border-radius:9px;background:rgba(167,139,250,.18);color:#c4b5fd;font-weight:700;display:grid;place-items:center}
+.cmp-steps li b{color:var(--text)}
+.cmp-pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.cmp-pill{background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.3);color:#d6cbff;border-radius:999px;padding:5px 12px;font-size:.8rem}
 </style>
 </head>
 <body>
@@ -55,24 +152,55 @@
 <div class="container">
   <div class="tool-header">
     <h1>🔍 PDF Compare</h1>
-    <p>Compare two versions of a PDF and see exactly what text was added, removed, or changed.</p>
+    <p>Compare two versions of a PDF and see exactly what text was added, removed or changed — at word, character, line or sentence level, in side‑by‑side or inline view. Everything runs privately in your browser; your files are never uploaded.</p>
   </div>
 
   <div class="panel">
     <div class="compare-grid">
-      <div>
+      <div class="cmp-side">
         <div class="dropzone" id="dropzoneA">
           <p>📤 Original PDF</p>
           <input type="file" id="fileInputA" accept="application/pdf">
+          <div class="cmp-badges"><span>📄 PDF only</span><span>🔒 No upload</span></div>
         </div>
         <div class="file-name" id="fileNameA"></div>
       </div>
-      <div>
+
+      <div class="cmp-swapwrap">
+        <button class="cmp-swap" id="swapBtn" type="button" title="Swap the two PDFs" aria-label="Swap original and updated PDFs">⇄</button>
+      </div>
+
+      <div class="cmp-side">
         <div class="dropzone" id="dropzoneB">
           <p>📤 Updated PDF</p>
           <input type="file" id="fileInputB" accept="application/pdf">
+          <div class="cmp-badges"><span>📄 PDF only</span><span>🔒 No upload</span></div>
         </div>
         <div class="file-name" id="fileNameB"></div>
+      </div>
+    </div>
+
+    <!-- PDF info panels -->
+    <div class="cmp-info" id="infoArea" style="display:none">
+      <div class="cmp-card"><h4>📄 Original</h4><dl id="metaA"></dl></div>
+      <div class="cmp-card"><h4>📄 Updated</h4><dl id="metaB"></dl></div>
+    </div>
+
+    <!-- Compare settings -->
+    <div class="cmp-settings">
+      <div class="field">
+        <label for="granSelect">Comparison level</label>
+        <select id="granSelect">
+          <option value="words">Word by word</option>
+          <option value="chars">Character by character</option>
+          <option value="lines">Line by line</option>
+          <option value="sentences">Sentence by sentence</option>
+        </select>
+      </div>
+      <div class="cmp-checks">
+        <label><input type="checkbox" id="ignoreCase"> Ignore case</label>
+        <label><input type="checkbox" id="ignoreSpace" checked> Ignore extra spaces</label>
+        <label><input type="checkbox" id="ignorePunct"> Ignore punctuation</label>
       </div>
     </div>
 
@@ -80,124 +208,463 @@
       <button class="btn" id="compareBtn" disabled>🔍 Compare Documents</button>
     </div>
 
-    <p id="statusMsg" style="margin-top:12px;color:var(--text-dim);font-size:.9rem"></p>
+    <p id="statusMsg" style="margin-top:12px;color:var(--text-dim);font-size:.9rem" role="status" aria-live="polite"></p>
 
     <div id="resultArea" style="display:none">
+      <!-- executive summary -->
+      <div class="cmp-exec" id="execSummary"></div>
+
       <div class="stat-grid">
         <div class="stat-box"><div class="num" id="addedCount" style="color:#22c55e">0</div><div class="lbl">Words Added</div></div>
         <div class="stat-box"><div class="num" id="removedCount" style="color:#ef4444">0</div><div class="lbl">Words Removed</div></div>
+        <div class="stat-box"><div class="num" id="changedCount" style="color:#fbbf24">0</div><div class="lbl">Sections Changed</div></div>
+        <div class="stat-box"><div class="num" id="similarity" style="color:#a78bfa">0%</div><div class="lbl">Similarity</div></div>
       </div>
+
+      <!-- toolbar -->
+      <div class="cmp-toolbar">
+        <div class="cmp-seg" role="group" aria-label="View mode">
+          <button id="viewInline" class="active" type="button">Inline</button>
+          <button id="viewSide" type="button">Side by side</button>
+          <button id="viewList" type="button">Change list</button>
+        </div>
+        <button class="cmp-navbtn" id="prevDiff" type="button" title="Previous difference" aria-label="Previous difference">‹ Prev</button>
+        <span class="cmp-diffpos" id="diffPos">0 / 0</span>
+        <button class="cmp-navbtn" id="nextDiff" type="button" title="Next difference" aria-label="Next difference">Next ›</button>
+        <div class="cmp-filters">
+          <label><input type="checkbox" id="fltAdd" checked> Added</label>
+          <label><input type="checkbox" id="fltDel" checked> Removed</label>
+          <label><input type="checkbox" id="fltEq" checked> Unchanged</label>
+        </div>
+      </div>
+
       <div class="diff-legend">
         <span><span class="legend-swatch" style="background:rgba(34,197,94,.4)"></span> Added</span>
         <span><span class="legend-swatch" style="background:rgba(239,68,68,.4)"></span> Removed</span>
       </div>
+
+      <!-- views -->
       <div class="diff-result" id="diffResult"></div>
+      <div class="diff-sidewrap" id="diffSide" style="display:none">
+        <div class="diff-side" id="diffSideL"><h4>Original</h4><div id="sideLBody"></div></div>
+        <div class="diff-side" id="diffSideR"><h4>Updated</h4><div id="sideRBody"></div></div>
+      </div>
+      <div class="cmp-difflist" id="diffListView" style="display:none"></div>
+
+      <!-- export -->
+      <div class="cmp-toolbar" style="margin-top:16px">
+        <button class="cmp-tool" id="exportTxt" type="button">⬇ TXT report</button>
+        <button class="cmp-tool" id="exportHtml" type="button">⬇ HTML report</button>
+        <button class="cmp-tool" id="exportCsv" type="button">⬇ CSV report</button>
+        <button class="cmp-tool" id="copyResult" type="button">📋 Copy changes</button>
+      </div>
     </div>
   </div>
 </div>
 
+<!-- ===================== BELOW-TOOL CONTENT ===================== -->
 
+<!-- Key features -->
+<div class="cmp-wrap">
+  <h2 class="cmp-title">✨ Key Features</h2>
+  <div class="cmp-feat-grid">
+    <div class="cmp-fcard"><h4>🔤 Four comparison levels</h4><p>Diff by word, character, line or sentence — from a fine character‑level view of a single edit to a broad line‑by‑line overview of a whole document.</p></div>
+    <div class="cmp-fcard"><h4>🎚️ Smart ignore options</h4><p>Ignore case, collapse extra whitespace and strip punctuation so you see meaningful content changes instead of cosmetic noise.</p></div>
+    <div class="cmp-fcard"><h4>🟩🟥 Clear highlighting</h4><p>Added text is green, removed text is red. The counts of words added, removed and sections changed are shown at a glance.</p></div>
+    <div class="cmp-fcard"><h4>↔️ Side‑by‑side &amp; inline</h4><p>Switch between a unified inline diff and a two‑column original‑versus‑updated view, or open a compact list of every change.</p></div>
+    <div class="cmp-fcard"><h4>🧭 Difference navigation</h4><p>Jump straight to the next or previous change with one click — no more scrolling through pages to find what moved.</p></div>
+    <div class="cmp-fcard"><h4>🔎 Filter the view</h4><p>Show only additions, only removals, or hide unchanged text to focus purely on what actually changed between versions.</p></div>
+    <div class="cmp-fcard"><h4>🧾 PDF information panels</h4><p>See each file’s name, size, pages, PDF version, author, creator and dates so you always know which versions you are comparing.</p></div>
+    <div class="cmp-fcard"><h4>📤 Export reports</h4><p>Download the differences as a TXT, HTML or CSV report — perfect for change logs, audits and sharing with reviewers.</p></div>
+    <div class="cmp-fcard"><h4>🔒 100% private</h4><p>Text is extracted and compared locally with pdf.js and jsdiff. Your files are never uploaded — no server, no account, no tracking.</p></div>
+  </div>
+</div>
+
+<!-- Benefits -->
+<div class="cmp-wrap">
+  <h2 class="cmp-title">🎁 Why use it</h2>
+  <div class="cmp-pill-row">
+    <span class="cmp-pill">Contract revisions</span>
+    <span class="cmp-pill">Report &amp; policy edits</span>
+    <span class="cmp-pill">Legal redlining</span>
+    <span class="cmp-pill">Tender &amp; proposal versions</span>
+    <span class="cmp-pill">Manuscript proofreading</span>
+    <span class="cmp-pill">No watermark</span>
+    <span class="cmp-pill">Works offline</span>
+    <span class="cmp-pill">Free forever</span>
+  </div>
+</div>
+
+<!-- Related tools (ABOVE About) -->
+<div class="cmp-wrap">
+  <h2 class="cmp-title">🧰 Related Tools</h2>
+  <div class="cmp-rel-grid">
+    <a class="cmp-rel" href="pdf-extract-text.html"><b>Extract Text</b><span>Pull all selectable text out of a PDF.</span></a>
+    <a class="cmp-rel" href="pdf-info.html"><b>PDF Info</b><span>Inspect metadata, pages and document details.</span></a>
+    <a class="cmp-rel" href="pdf-merge.html"><b>Merge PDF</b><span>Combine several PDFs into one document.</span></a>
+    <a class="cmp-rel" href="pdf-split.html"><b>Split PDF</b><span>Break a PDF into separate files or ranges.</span></a>
+    <a class="cmp-rel" href="pdf-edit.html"><b>Edit PDF</b><span>Add text, shapes and images anywhere on a page.</span></a>
+    <a class="cmp-rel" href="pdf-viewer.html"><b>PDF Viewer</b><span>Open and read PDFs right in your browser.</span></a>
+  </div>
+</div>
+
+<!-- About (bilingual) -->
 <div class="info-wrap">
   <div class="info-section">
     <div class="info-block">
       <h2>ℹ️ About This Tool</h2>
-      <p>This tool extracts the text from two PDF files and highlights exactly what was added, removed, or changed between them — useful for checking edits between two versions of a contract, report, or any document.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Upload the original PDF on the left.</li>
-        <li>Upload the updated PDF on the right.</li>
-        <li>Click Compare — added text shows in green, removed text in red.</li>
-      </ol>
+      <p>The <b>ApneSoftware PDF Compare</b> tool lets you place two versions of a PDF side by side and see, in an instant, exactly what text was <b>added, removed or changed</b> between them. Whenever a document goes through revisions — a contract that has been renegotiated, a policy that has been updated, a report edited by several people, a manuscript returned by a proofreader — the hardest and most error‑prone job is spotting every small change. Reading both files line by line is slow and unreliable, and a single altered figure, deleted clause or reworded sentence is easy to miss. This tool does that comparison automatically and shows the result in clear colour: green for what is new, red for what is gone.</p>
+      <p>Under the hood it uses two trusted open‑source libraries. <b>pdf.js</b>, the same rendering engine that powers Firefox’s built‑in PDF viewer, extracts the selectable text from every page of each document. Then <b>jsdiff</b>, a mature and widely‑used difference engine, computes precisely how the two texts differ. Because both run inside your browser, comparison is fast and — crucially — completely private: your documents are never sent to a server. The result is a professional‑grade text comparison of the kind normally found only in paid desktop software such as Adobe Acrobat Pro, Foxit, PDF‑XChange Editor or the classic DiffPDF utility, available here free and with nothing to install.</p>
+      <p>You are in full control of how the comparison is performed. A <b>comparison‑level</b> selector lets you diff <b>word by word</b> (the default and most readable), <b>character by character</b> for the finest possible detail, <b>line by line</b> for a structural overview, or <b>sentence by sentence</b> for prose. Three <b>ignore options</b> further refine the result: <b>ignore case</b> treats “Total” and “total” as identical, <b>ignore extra spaces</b> collapses differences in indentation and spacing that don’t affect meaning, and <b>ignore punctuation</b> hides changes to commas, full stops and brackets. Together these let you filter out cosmetic noise and concentrate on genuine content changes.</p>
+      <p>The results are presented in three complementary <b>views</b>. The <b>inline</b> view weaves additions and deletions into a single flowing document, which is ideal for reading the change in context. The <b>side‑by‑side</b> view places the original on the left and the updated version on the right, each with its own highlighting, mirroring the classic two‑pane redline layout that lawyers and editors expect. The <b>change list</b> view distills everything down to a compact, scrollable list of just the differences, so you can audit them one by one. A statistics strip reports the number of <b>words added</b>, <b>words removed</b>, <b>sections changed</b> and an overall <b>similarity</b> percentage, giving you an immediate sense of how much the document really moved.</p>
+      <p>Navigating a long comparison is effortless. <b>Next</b> and <b>previous</b> buttons jump straight from one change to the next, highlighting the current difference so you never lose your place, while <b>filters</b> let you show only additions, only removals, or hide unchanged text entirely to focus on what matters. Two small <b>PDF information panels</b> summarise each file — name, size, page count, PDF version, author, creator and creation and modification dates — so you always know exactly which two versions are on screen. When you are done, you can <b>export the differences</b> as a plain‑text report for a quick change log, a self‑contained HTML report that preserves the colour highlighting for sharing, or a CSV file that opens neatly in Excel for formal review and record‑keeping — each report also records the two file names and a timestamp as an executive summary.</p>
+      <p>The tool fits naturally into the everyday work of many roles. <b>Lawyers and paralegals</b> use it to redline successive drafts of contracts, NDAs and settlement agreements, catching a quietly altered clause or a changed number before signing. <b>Editors, authors and academics</b> compare manuscript drafts, tracking a proofreader’s revisions and confirming that requested corrections were actually applied. <b>Procurement and finance teams</b> compare tender responses, invoices and financial statements between revisions to verify figures. <b>Compliance and quality officers</b> confirm that a published policy, standard operating procedure or datasheet matches the approved version and that no unauthorised edits crept in. Even for everyday tasks — checking which copy of a résumé, application form or price list is the newest — it removes the guesswork. Because the comparison is text‑based and language‑agnostic, it works equally well on English, Hindi and mixed‑script documents, so long as the PDF contains a genuine, selectable text layer rather than a flat scanned image.</p>
+      <p>Above all, PDF Compare is <b>private by design</b>. Every step — reading the PDFs, extracting their text and computing the differences — happens on your own device. Nothing is uploaded, nothing is stored, and no account or email is required; once the page has loaded you can even work offline. That matters enormously for the documents people most often need to compare, because contracts, tenders, financial statements, legal filings and internal reports are precisely the material that must never be exposed to a third‑party server. Whether you are a lawyer redlining an agreement, an editor tracking manuscript changes, a compliance officer verifying that only approved edits were made, or simply someone checking which version of a form is the latest, this tool turns a tedious, error‑prone manual check into a fast, reliable and confidential one.</p>
     </div>
     <hr class="info-divider">
     <div class="info-block">
       <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>यह टूल दो PDF फाइलों का टेक्स्ट निकालकर साफ-साफ दिखाता है कि दोनों के बीच क्या जोड़ा गया, क्या हटाया गया या क्या बदला गया — किसी कॉन्ट्रैक्ट, रिपोर्ट या डॉक्यूमेंट के दो वर्ज़न के बीच के बदलाव चेक करने के लिए उपयोगी।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>बाईं तरफ ओरिजिनल PDF अपलोड करें।</li>
-        <li>दाईं तरफ अपडेटेड PDF अपलोड करें।</li>
-        <li>Compare बटन दबाएं — जोड़ा गया टेक्स्ट हरे रंग में, हटाया गया टेक्स्ट लाल रंग में दिखेगा।</li>
-      </ol>
+      <p><b>ApneSoftware PDF Compare</b> टूल आपको किसी PDF के दो वर्ज़न को आमने‑सामने रखकर पल भर में यह देखने देता है कि उनके बीच कौन‑सा टेक्स्ट <b>जोड़ा गया, हटाया गया या बदला गया</b>। जब भी कोई दस्तावेज़ संशोधनों से गुज़रता है — कोई अनुबंध जिस पर फिर से बातचीत हुई हो, कोई नीति जो अपडेट हुई हो, कई लोगों द्वारा संपादित रिपोर्ट, या प्रूफ़रीडर से लौटी पांडुलिपि — तो सबसे कठिन और गलती‑भरा काम हर छोटे बदलाव को पकड़ना होता है। दोनों फ़ाइलें पंक्ति‑दर‑पंक्ति पढ़ना धीमा और अविश्वसनीय है, और एक बदला हुआ आँकड़ा, हटाया गया खंड या दोबारा लिखा वाक्य आसानी से छूट सकता है। यह टूल वह तुलना अपने‑आप करता है और परिणाम साफ़ रंगों में दिखाता है: नया जो है वह हरा, और जो हट गया वह लाल।</p>
+      <p>अंदरूनी तौर पर यह दो भरोसेमंद ओपन‑सोर्स लाइब्रेरी का उपयोग करता है। <b>pdf.js</b> — वही इंजन जो Firefox के अंतर्निर्मित PDF व्यूअर को चलाता है — हर पेज से चयन‑योग्य टेक्स्ट निकालता है। फिर <b>jsdiff</b>, एक परिपक्व और व्यापक रूप से उपयोग किया जाने वाला डिफ़रेंस इंजन, सटीक रूप से गणना करता है कि दोनों टेक्स्ट कैसे भिन्न हैं। चूँकि दोनों आपके ब्राउज़र के अंदर चलते हैं, तुलना तेज़ और पूरी तरह निजी होती है: आपके दस्तावेज़ कभी सर्वर पर नहीं भेजे जाते। परिणाम पेशेवर‑स्तर की टेक्स्ट तुलना है, जो सामान्यतः Adobe Acrobat Pro, Foxit या DiffPDF जैसे भुगतान वाले सॉफ़्टवेयर में ही मिलती है — यहाँ मुफ़्त और बिना कुछ इंस्टॉल किए।</p>
+      <p>तुलना कैसे हो, इस पर आपका पूरा नियंत्रण है। एक <b>तुलना‑स्तर</b> चयनकर्ता आपको <b>शब्द‑दर‑शब्द</b> (डिफ़ॉल्ट और सबसे पठनीय), <b>अक्षर‑दर‑अक्षर</b> बारीकी के लिए, <b>पंक्ति‑दर‑पंक्ति</b> संरचनात्मक अवलोकन के लिए, या <b>वाक्य‑दर‑वाक्य</b> गद्य के लिए तुलना करने देता है। तीन <b>ignore विकल्प</b> परिणाम को और परिष्कृत करते हैं: <b>ignore case</b> “Total” और “total” को समान मानता है, <b>ignore extra spaces</b> इंडेंटेशन और रिक्ति के अंतर को मिटाता है, और <b>ignore punctuation</b> अल्पविराम, पूर्णविराम और कोष्ठकों के बदलावों को छिपाता है। ये मिलकर आपको केवल असली सामग्री बदलावों पर ध्यान देने देते हैं।</p>
+      <p>परिणाम तीन पूरक <b>व्यू</b> में दिखते हैं। <b>Inline</b> व्यू जोड़ और हटाव को एक बहते दस्तावेज़ में बुनता है, जो बदलाव को संदर्भ में पढ़ने के लिए आदर्श है। <b>Side‑by‑side</b> व्यू मूल को बाईं ओर और अपडेटेड को दाईं ओर रखता है, हर एक की अपनी हाइलाइटिंग के साथ — वही क्लासिक दो‑पैनल रेडलाइन लेआउट जिसकी वकील और संपादक अपेक्षा करते हैं। <b>Change list</b> व्यू सब कुछ केवल बदलावों की एक संक्षिप्त सूची में समेट देता है। एक आँकड़ा पट्टी <b>जोड़े गए शब्द</b>, <b>हटाए गए शब्द</b>, <b>बदले गए खंड</b> और कुल <b>समानता</b> प्रतिशत बताती है।</p>
+      <p>लंबी तुलना में नेविगेट करना आसान है। <b>Next</b> और <b>Previous</b> बटन सीधे एक बदलाव से अगले तक ले जाते हैं और वर्तमान अंतर को हाइलाइट करते हैं, जबकि <b>फ़िल्टर</b> आपको केवल जोड़, केवल हटाव दिखाने, या अपरिवर्तित टेक्स्ट पूरी तरह छिपाने देते हैं। दो छोटे <b>PDF जानकारी पैनल</b> हर फ़ाइल का सार देते हैं — नाम, आकार, पेज संख्या, PDF वर्शन, लेखक, निर्माता और तिथियाँ। काम पूरा होने पर आप अंतरों को एक सादा‑टेक्स्ट रिपोर्ट, रंग‑हाइलाइटिंग सुरक्षित रखने वाली स्वतंत्र HTML रिपोर्ट, या Excel में साफ़ खुलने वाली CSV फ़ाइल के रूप में <b>निर्यात</b> कर सकते हैं — हर रिपोर्ट में दोनों फ़ाइल नाम और टाइमस्टैम्प भी दर्ज होता है।</p>
+      <p>यह टूल कई भूमिकाओं के रोज़मर्रा के काम में स्वाभाविक रूप से फिट होता है। <b>वकील और पैरालीगल</b> अनुबंधों, NDA और समझौतों के क्रमिक ड्राफ़्ट को रेडलाइन करने के लिए इसका उपयोग करते हैं, हस्ताक्षर से पहले किसी चुपचाप बदले गए खंड या बदले हुए आँकड़े को पकड़ लेते हैं। <b>संपादक, लेखक और शिक्षाविद</b> पांडुलिपि ड्राफ़्ट की तुलना करते हैं और पुष्टि करते हैं कि माँगे गए सुधार सचमुच लागू हुए। <b>खरीद और वित्त टीमें</b> टेंडर उत्तरों, चालानों और वित्तीय विवरणों की तुलना करके आँकड़े सत्यापित करती हैं। <b>अनुपालन और गुणवत्ता अधिकारी</b> पुष्टि करते हैं कि कोई प्रकाशित नीति या मानक प्रक्रिया स्वीकृत वर्शन से मेल खाती है और कोई अनधिकृत बदलाव नहीं हुआ। रोज़मर्रा के कामों — यह जाँचना कि रिज़्यूमे, आवेदन फ़ॉर्म या मूल्य सूची की कौन‑सी प्रति नवीनतम है — के लिए भी यह अनुमान लगाना समाप्त कर देता है। चूँकि तुलना टेक्स्ट‑आधारित और भाषा‑निरपेक्ष है, यह अंग्रेज़ी, हिंदी और मिश्रित‑लिपि दस्तावेज़ों पर समान रूप से काम करती है, बशर्ते PDF में स्कैन की गई सपाट छवि के बजाय असली, चयन‑योग्य टेक्स्ट परत हो।</p>
+      <p>सबसे बढ़कर, PDF Compare <b>डिज़ाइन से ही निजी</b> है। हर चरण — PDF पढ़ना, टेक्स्ट निकालना और अंतर गणना करना — आपके अपने डिवाइस पर होता है। कुछ भी अपलोड नहीं होता, कुछ भी सेव नहीं होता, और किसी अकाउंट की ज़रूरत नहीं; पेज लोड होने के बाद आप ऑफ़लाइन भी काम कर सकते हैं। यह उन दस्तावेज़ों के लिए बेहद ज़रूरी है जिन्हें लोग सबसे अधिक तुलना करते हैं, क्योंकि अनुबंध, टेंडर, वित्तीय विवरण और आंतरिक रिपोर्ट ठीक वही सामग्री हैं जो कभी किसी तीसरे‑पक्ष सर्वर पर नहीं जानी चाहिए।</p>
     </div>
   </div>
+</div>
+
+<!-- How to use -->
+<div class="cmp-wrap">
+  <h2 class="cmp-title">📖 How To Use</h2>
+  <ol class="cmp-steps">
+    <li><b>Upload both PDFs.</b> Add the original on the left and the updated version on the right. Each file’s details load automatically; use ⇄ to swap them.</li>
+    <li><b>Choose options.</b> Pick the comparison level — word, character, line or sentence — and toggle ignore case, extra spaces or punctuation.</li>
+    <li><b>Compare.</b> Click <b>Compare Documents</b>. Added text appears green, removed text red, with counts and a similarity score.</li>
+    <li><b>Review.</b> Switch between inline, side‑by‑side and change‑list views, jump between differences, and filter to show only what changed.</li>
+    <li><b>Export.</b> Download a TXT, HTML or CSV report, or copy the changes to share with your team.</li>
+  </ol>
+</div>
+
+<!-- FAQ -->
+<div class="cmp-wrap cmp-faq">
+  <h2 class="cmp-title">❓ Frequently Asked Questions</h2>
+  <div id="faqList"></div>
+</div>
+
+<!-- Privacy -->
+<div class="cmp-wrap">
+  <h2 class="cmp-title">🔒 Privacy</h2>
+  <p class="cmp-sub">This tool compares your documents entirely inside your browser using the pdf.js and jsdiff libraries. Your PDF files are <b>never uploaded</b> to any server, never stored, and never transmitted anywhere. No account, email or signup is required, and once the page has loaded you can even work offline. Because the documents people compare — contracts, tenders, financial statements and legal filings — contain highly sensitive information, this local‑only design keeps both versions under your sole control at all times.</p>
+</div>
+
+<!-- Browser compatibility -->
+<div class="cmp-wrap">
+  <h2 class="cmp-title">🌐 Browser Compatibility</h2>
+  <p class="cmp-sub">Works in all modern browsers — Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, Brave and Opera — on Windows, macOS, Linux, Android and iOS. It relies only on JavaScript and the standard File and Blob APIs plus pdf.js, which are widely supported. On phones and tablets the layout stacks into a single column and the side‑by‑side panes scroll independently for comfortable review on smaller screens.</p>
+</div>
+
+<!-- Supported formats -->
+<div class="cmp-wrap">
+  <h2 class="cmp-title">📄 Supported Formats</h2>
+  <p class="cmp-sub"><b>Input:</b> two standard PDF files (.pdf) that contain selectable, machine‑readable text. Purely scanned or image‑only PDFs have no extractable text, so run them through an OCR tool first. <b>Output:</b> an on‑screen colour comparison plus optional TXT, HTML and CSV difference reports. This tool compares the <b>text</b> of two PDFs; it does not alter either original file.</p>
 </div>
 
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jsdiff/8.0.2/diff.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 <script src="../assets/common.js"></script>
 <script>
-pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+(function(){
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  const $ = id => document.getElementById(id);
 
-let fileA = null, fileB = null;
+  let fileA = null, fileB = null;
+  let textA = '', textB = '';
+  let lastDiff = null;         // jsdiff parts array
+  let diffMarks = [];          // DOM nodes for navigation
+  let curDiff = -1;
+  let viewMode = 'inline';
 
-setupDropzone(document.getElementById('dropzoneA'), document.getElementById('fileInputA'), files => {
-  if(files.length && files[0].type === 'application/pdf'){
-    fileA = files[0];
-    document.getElementById('fileNameA').textContent = fileA.name;
+  function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+  setupDropzone($('dropzoneA'), $('fileInputA'), files => onFile('A', files));
+  setupDropzone($('dropzoneB'), $('fileInputB'), files => onFile('B', files));
+
+  async function onFile(which, files){
+    if(!files.length || files[0].type !== 'application/pdf') return;
+    if(which==='A'){ fileA = files[0]; $('fileNameA').textContent = fileA.name; }
+    else { fileB = files[0]; $('fileNameB').textContent = fileB.name; }
+    await showMeta();
     checkReady();
   }
-});
-setupDropzone(document.getElementById('dropzoneB'), document.getElementById('fileInputB'), files => {
-  if(files.length && files[0].type === 'application/pdf'){
-    fileB = files[0];
-    document.getElementById('fileNameB').textContent = fileB.name;
+
+  function checkReady(){ $('compareBtn').disabled = !(fileA && fileB); }
+
+  $('swapBtn').addEventListener('click', async ()=>{
+    [fileA, fileB] = [fileB, fileA];
+    $('fileNameA').textContent = fileA ? fileA.name : '';
+    $('fileNameB').textContent = fileB ? fileB.name : '';
+    await showMeta();
     checkReady();
+  });
+
+  async function showMeta(){
+    const any = fileA || fileB;
+    if(!any){ $('infoArea').style.display='none'; return; }
+    $('infoArea').style.display='grid';
+    await Promise.all([ fillMeta('A', fileA, $('metaA')), fillMeta('B', fileB, $('metaB')) ]);
   }
-});
 
-function checkReady(){
-  document.getElementById('compareBtn').disabled = !(fileA && fileB);
-}
-
-async function extractText(file){
-  const arrayBuf = await file.arrayBuffer();
-  const pdf = await pdfjsLib.getDocument({data: arrayBuf}).promise;
-  let fullText = '';
-  for(let i=1; i<=pdf.numPages; i++){
-    const page = await pdf.getPage(i);
-    const content = await page.getTextContent();
-    fullText += content.items.map(item => item.str).join(' ') + '\n';
+  async function fillMeta(which, file, dl){
+    if(!file){ dl.innerHTML = '<dt>—</dt><dd>not selected</dd>'; return; }
+    const rows = [['Name', escapeHtml(file.name)], ['Size', formatBytes(file.size)]];
+    try{
+      const bytes = new Uint8Array(await file.arrayBuffer());
+      let ver='—'; try{ const h=new TextDecoder().decode(bytes.slice(0,16)); const m=/%PDF-(\d\.\d)/.exec(h); if(m) ver=m[1]; }catch(e){}
+      try{
+        const doc = await PDFLib.PDFDocument.load(bytes.slice(0), {updateMetadata:false});
+        const fmt = d=>{ try{ return d? new Date(d).toLocaleDateString():'—'; }catch(e){ return '—'; } };
+        rows.push(['Pages', doc.getPageCount()]);
+        rows.push(['PDF ver', ver]);
+        rows.push(['Author', escapeHtml(safe(()=>doc.getAuthor()))||'—']);
+        rows.push(['Creator', escapeHtml(safe(()=>doc.getCreator()))||'—']);
+        rows.push(['Created', fmt(safe(()=>doc.getCreationDate()))]);
+        rows.push(['Modified', fmt(safe(()=>doc.getModificationDate()))]);
+      }catch(e){ rows.push(['Status', 'unreadable / protected']); }
+      dl.innerHTML = rows.map(([k,v])=>`<dt>${k}</dt><dd>${v||'—'}</dd>`).join('');
+    }catch(e){ dl.innerHTML = rows.map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join(''); }
   }
-  return fullText.trim();
-}
+  function safe(fn){ try{ const v=fn(); return v==null?'':v; }catch(e){ return ''; } }
 
-document.getElementById('compareBtn').addEventListener('click', async ()=>{
-  const status = document.getElementById('statusMsg');
-  status.textContent = '⏳ Reading both PDFs...';
-  document.getElementById('resultArea').style.display = 'none';
+  async function extractText(file){
+    const arrayBuf = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({data: arrayBuf}).promise;
+    let full = '';
+    for(let i=1; i<=pdf.numPages; i++){
+      const page = await pdf.getPage(i);
+      const content = await page.getTextContent();
+      full += content.items.map(it=>it.str).join(' ') + '\n';
+    }
+    return full.trim();
+  }
 
-  try{
-    const [textA, textB] = await Promise.all([extractText(fileA), extractText(fileB)]);
+  function preprocess(t){
+    let s = t;
+    if($('ignorePunct').checked) s = s.replace(/[.,;:!?()"'`\[\]{}<>\/\\|@#$%^&*_~+=-]/g,' ');
+    if($('ignoreSpace').checked) s = s.replace(/[ \t]+/g,' ').replace(/ *\n */g,'\n');
+    return s;
+  }
 
-    status.textContent = '⏳ Comparing...';
-    const diff = Diff.diffWords(textA, textB);
+  function runDiff(a, b){
+    const opts = { ignoreCase: $('ignoreCase').checked };
+    const g = $('granSelect').value;
+    if(g==='chars') return Diff.diffChars(a, b, opts);
+    if(g==='lines') return Diff.diffLines(a, b, {ignoreCase:opts.ignoreCase, newlineIsToken:true});
+    if(g==='sentences') return Diff.diffSentences(a, b, opts);
+    return Diff.diffWords(a, b, opts);
+  }
 
-    let added = 0, removed = 0;
-    const html = diff.map(part => {
-      const escaped = part.value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-      if(part.added){
-        added += part.value.trim().split(/\s+/).filter(Boolean).length;
-        return `<ins>${escaped}</ins>`;
-      }
-      if(part.removed){
-        removed += part.value.trim().split(/\s+/).filter(Boolean).length;
-        return `<del>${escaped}</del>`;
-      }
-      return escaped;
+  function wc(s){ return s.trim().split(/\s+/).filter(Boolean).length; }
+
+  $('compareBtn').addEventListener('click', async ()=>{
+    const status = $('statusMsg');
+    status.textContent = '⏳ Reading both PDFs…';
+    $('resultArea').style.display = 'none';
+    try{
+      [textA, textB] = await Promise.all([extractText(fileA), extractText(fileB)]);
+      status.textContent = '⏳ Comparing…';
+      const a = preprocess(textA), b = preprocess(textB);
+      lastDiff = runDiff(a, b);
+      renderAll();
+      status.textContent = '✅ Comparison complete';
+      $('resultArea').style.display = 'block';
+      $('resultArea').scrollIntoView({behavior:'smooth', block:'nearest'});
+    }catch(err){
+      status.textContent = '❌ Error: ' + err.message + ' — a file may be scanned (no text), corrupted or password‑protected.';
+    }
+  });
+
+  function renderAll(){
+    let added=0, removed=0, changed=0, eqLen=0, totLen=0;
+    // inline HTML
+    const inline = lastDiff.map(part=>{
+      const esc = escapeHtml(part.value);
+      totLen += part.value.length;
+      if(part.added){ added += wc(part.value); changed++; return `<ins>${esc}</ins>`; }
+      if(part.removed){ removed += wc(part.value); changed++; return `<del>${esc}</del>`; }
+      eqLen += part.value.length;
+      return `<span class="cmp-eq">${esc}</span>`;
     }).join('');
+    $('diffResult').innerHTML = inline || 'No differences found — the documents have identical text.';
 
-    document.getElementById('diffResult').innerHTML = html || 'No differences found — the documents have identical text.';
-    document.getElementById('addedCount').textContent = added;
-    document.getElementById('removedCount').textContent = removed;
-    document.getElementById('resultArea').style.display = 'block';
-    status.textContent = '✅ Comparison complete';
-  }catch(err){
-    status.textContent = '❌ Error: ' + err.message;
+    // side-by-side
+    let left='', right='';
+    lastDiff.forEach(part=>{
+      const esc = escapeHtml(part.value);
+      if(part.added){ right += `<ins>${esc}</ins>`; }
+      else if(part.removed){ left += `<del>${esc}</del>`; }
+      else { left += `<span class="cmp-eq">${esc}</span>`; right += `<span class="cmp-eq">${esc}</span>`; }
+    });
+    $('sideLBody').innerHTML = left || '—';
+    $('sideRBody').innerHTML = right || '—';
+
+    // change list
+    const items = lastDiff.filter(p=>p.added||p.removed).map(p=>{
+      const t = p.added?'add':'del'; const tag = p.added?'+ Added':'− Removed';
+      return `<div class="cmp-di" data-jump><span class="tag ${t}">${tag}</span><span class="txt">${escapeHtml(p.value.replace(/\s+/g,' ').trim())}</span></div>`;
+    }).join('');
+    $('diffListView').innerHTML = items || '<div class="cmp-di"><span class="txt">No differences.</span></div>';
+
+    // stats
+    $('addedCount').textContent = added;
+    $('removedCount').textContent = removed;
+    $('changedCount').textContent = changed;
+    const sim = totLen? Math.round((eqLen/totLen)*100) : 100;
+    $('similarity').textContent = sim + '%';
+
+    // executive summary
+    const now = new Date().toLocaleString();
+    $('execSummary').innerHTML = `<b>Original:</b> ${escapeHtml(fileA?fileA.name:'—')} &nbsp; <b>Updated:</b> ${escapeHtml(fileB?fileB.name:'—')}<br>`+
+      `<b>${added}</b> words added · <b>${removed}</b> words removed · <b>${changed}</b> sections changed · <b>${sim}%</b> similar &nbsp;·&nbsp; <span style="color:var(--text-dim)">${now}</span>`;
+
+    collectMarks();
+    applyFilters();
+    setView(viewMode);
   }
-});
+
+  function collectMarks(){
+    const container = viewMode==='side'? $('diffSide') : $('diffResult');
+    diffMarks = Array.from(container.querySelectorAll('ins,del'));
+    curDiff = -1;
+    $('diffPos').textContent = `0 / ${countChanges()}`;
+  }
+  function countChanges(){ return lastDiff? lastDiff.filter(p=>p.added||p.removed).length : 0; }
+
+  function gotoDiff(dir){
+    const container = viewMode==='side'? $('diffSideL') : $('diffResult');
+    // rebuild marks for current view
+    let marks;
+    if(viewMode==='side'){ marks = Array.from($('diffSide').querySelectorAll('ins,del')); }
+    else if(viewMode==='list'){ marks = Array.from($('diffListView').querySelectorAll('.cmp-di[data-jump]')); }
+    else { marks = Array.from($('diffResult').querySelectorAll('ins,del')); }
+    if(!marks.length) return;
+    marks.forEach(m=>m.classList.remove('cmp-active'));
+    curDiff += dir;
+    if(curDiff<0) curDiff = marks.length-1;
+    if(curDiff>=marks.length) curDiff = 0;
+    const el = marks[curDiff];
+    el.classList.add('cmp-active');
+    el.scrollIntoView({behavior:'smooth', block:'center'});
+    $('diffPos').textContent = `${curDiff+1} / ${marks.length}`;
+  }
+  $('nextDiff').addEventListener('click', ()=>gotoDiff(1));
+  $('prevDiff').addEventListener('click', ()=>gotoDiff(-1));
+
+  // change-list jump
+  $('diffListView').addEventListener('click', e=>{
+    const row = e.target.closest('.cmp-di[data-jump]'); if(!row) return;
+    const rows = Array.from($('diffListView').querySelectorAll('.cmp-di[data-jump]'));
+    curDiff = rows.indexOf(row);
+    rows.forEach(r=>r.style.background=''); row.style.background='rgba(167,139,250,.2)';
+    $('diffPos').textContent = `${curDiff+1} / ${rows.length}`;
+  });
+
+  // views
+  function setView(mode){
+    viewMode = mode;
+    $('diffResult').style.display = mode==='inline'?'block':'none';
+    $('diffSide').style.display = mode==='side'?'grid':'none';
+    $('diffListView').style.display = mode==='list'?'block':'none';
+    $('viewInline').classList.toggle('active', mode==='inline');
+    $('viewSide').classList.toggle('active', mode==='side');
+    $('viewList').classList.toggle('active', mode==='list');
+    curDiff=-1; $('diffPos').textContent = `0 / ${countChanges()}`;
+  }
+  $('viewInline').addEventListener('click', ()=>setView('inline'));
+  $('viewSide').addEventListener('click', ()=>setView('side'));
+  $('viewList').addEventListener('click', ()=>setView('list'));
+
+  // filters
+  function applyFilters(){
+    [$('diffResult'), $('diffSide')].forEach(c=>{
+      c.classList.toggle('hide-add', !$('fltAdd').checked);
+      c.classList.toggle('hide-del', !$('fltDel').checked);
+      c.classList.toggle('hide-eq', !$('fltEq').checked);
+    });
+  }
+  ['fltAdd','fltDel','fltEq'].forEach(id=>$(id).addEventListener('change', applyFilters));
+
+  // ============ EXPORT ============
+  function changeLines(){
+    return lastDiff.filter(p=>p.added||p.removed)
+      .map(p=>(p.added?'+ ':'- ') + p.value.replace(/\s+/g,' ').trim());
+  }
+  function stamp(){ return `Original: ${fileA?fileA.name:'-'}\nUpdated: ${fileB?fileB.name:'-'}\nGenerated: ${new Date().toLocaleString()}\n`; }
+
+  $('exportTxt').addEventListener('click', ()=>{
+    const body = '=== PDF Compare Report ===\n'+stamp()+'\n'+changeLines().join('\n')+'\n';
+    downloadText('pdf-compare-report.txt', body);
+  });
+  $('exportCsv').addEventListener('click', ()=>{
+    const esc = s=>'"'+String(s).replace(/"/g,'""')+'"';
+    let csv = 'Type,Text\n';
+    lastDiff.filter(p=>p.added||p.removed).forEach(p=>{
+      csv += esc(p.added?'Added':'Removed')+','+esc(p.value.replace(/\s+/g,' ').trim())+'\n';
+    });
+    downloadText('pdf-compare-report.csv', csv);
+  });
+  $('exportHtml').addEventListener('click', ()=>{
+    const html = `<!doctype html><html><head><meta charset="utf-8"><title>PDF Compare Report</title>`+
+      `<style>body{font-family:system-ui,Arial,sans-serif;line-height:1.8;max-width:820px;margin:24px auto;padding:0 16px;color:#111}`+
+      `ins{background:#c6f6d5;text-decoration:none}del{background:#fed7d7}h1{font-size:1.3rem}small{color:#666}</style></head><body>`+
+      `<h1>PDF Compare Report</h1><p><b>Original:</b> ${escapeHtml(fileA?fileA.name:'-')}<br><b>Updated:</b> ${escapeHtml(fileB?fileB.name:'-')}<br>`+
+      `<small>Generated ${new Date().toLocaleString()}</small></p><hr>`+
+      `<div>${$('diffResult').innerHTML}</div></body></html>`;
+    downloadBlob('pdf-compare-report.html', new Blob([html], {type:'text/html'}));
+  });
+  $('copyResult').addEventListener('click', ()=>{
+    copyText(changeLines().join('\n'));
+    if(window.premToast) premToast('Changes copied ✔');
+  });
+
+  // ============ FAQ ============
+  const FAQ = [
+    ['How does PDF Compare find differences?','It extracts the selectable text from both PDFs with pdf.js, then uses the jsdiff engine to compute exactly which words, characters, lines or sentences were added or removed, and highlights them in green and red.'],
+    ['Are my documents uploaded to a server?','No. Everything runs locally in your browser using pdf.js and jsdiff. Your files never leave your device, nothing is stored, and no signup is needed.'],
+    ['What comparison levels are available?','Four: word by word (default), character by character (finest detail), line by line (structural overview) and sentence by sentence (best for prose).'],
+    ['What do the ignore options do?','Ignore case treats upper and lower case as the same; ignore extra spaces collapses differences in spacing and indentation; ignore punctuation hides changes to commas, periods and brackets so you focus on real content.'],
+    ['What is the difference between inline and side‑by‑side view?','Inline weaves additions and deletions into one flowing document; side‑by‑side shows the original on the left and the updated version on the right, each highlighted separately, like a classic redline.'],
+    ['Can it compare scanned PDFs?','Only if they contain a real text layer. Purely scanned or image‑only PDFs have no extractable text, so run them through an OCR tool first, then compare.'],
+    ['Does it compare images, fonts or layout?','This tool compares the extracted text, which is what matters for most document revisions. It does not diff images, embedded fonts or exact pixel layout.'],
+    ['How is the similarity percentage calculated?','It is the proportion of unchanged text relative to the total text across both versions — a quick gauge of how much the document moved.'],
+    ['Can I export the results?','Yes. You can download a TXT report, a self‑contained HTML report that keeps the colour highlighting, or a CSV file for spreadsheets, and copy the change list to the clipboard.'],
+    ['Can I jump between changes?','Yes. Use the Next and Previous buttons to move from one difference to the next; the current change is highlighted and the counter shows your position.'],
+    ['Can I hide unchanged text?','Yes. The Added, Removed and Unchanged filters let you show only what you care about — for example, only additions, or only the changes with no surrounding context.'],
+    ['Can I swap the two files?','Yes. The ⇄ button swaps the original and updated documents so you can flip the direction of the comparison instantly.'],
+    ['Is there a file size limit?','There is no fixed limit; it depends on your device memory. Very large documents take longer to extract and compare because everything runs locally.'],
+    ['Does it work with password‑protected PDFs?','Encrypted PDFs usually cannot be read for text extraction. Remove the password in your PDF viewer first, then upload the unlocked files.'],
+    ['Will it change my original PDFs?','No. PDF Compare only reads the two files to extract and compare their text. Your original documents are never modified.'],
+    ['Does it work on mobile?','Yes. The layout stacks into a single column on phones and tablets, and the side‑by‑side panes scroll independently for comfortable review.'],
+    ['Why do I see spacing differences?','PDF text extraction can introduce minor spacing artefacts. Keeping “ignore extra spaces” enabled (the default) removes most of this noise.'],
+    ['Can I compare more than two PDFs at once?','This tool compares two documents at a time. To compare several versions, run the comparisons in pairs.'],
+    ['Does the tool need the internet?','Only to load the page once. After that it runs entirely offline, which is ideal for comparing confidential documents on a private machine.'],
+    ['Is this tool really free?','Yes. It is completely free with no watermark, no page limits, no account and no hidden charges.'],
+    ['Is my data safe?','Completely. Because nothing is uploaded, the sensitive contracts, reports and filings you compare never leave your browser and are discarded when you close the tab.']
+  ];
+  const faqList = $('faqList');
+  FAQ.forEach(([q,a])=>{ const d=document.createElement('details'); d.innerHTML='<summary>'+q+'</summary><p>'+a+'</p>'; faqList.appendChild(d); });
+  try{
+    const schema={'@context':'https://schema.org','@type':'FAQPage',mainEntity:FAQ.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))};
+    $('faqSchema').textContent = JSON.stringify(schema);
+  }catch(e){}
+
+  // test hook
+  window.__cmpHooks = { runDiff:()=>lastDiff, stats:()=>({added:$('addedCount').textContent,removed:$('removedCount').textContent,changed:$('changedCount').textContent,sim:$('similarity').textContent}), setView };
+})();
 </script>
 </body>
 </html>
