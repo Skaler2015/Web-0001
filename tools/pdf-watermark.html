@@ -79,6 +79,18 @@
 .wm-note{font-size:.78rem;color:var(--text-dim);}
 .wm-swatch{width:46px;height:38px;padding:2px;border:1px solid var(--border);border-radius:8px;background:var(--surface);cursor:pointer;}
 /* below-tool content */
+.wm-wrap{max-width:1040px;margin:26px auto 0;padding:0 6px;}
+.wm-title{display:flex;align-items:center;gap:12px;margin:26px 0 14px;}
+.wm-title h2{font-size:1.25rem;font-weight:800;margin:0;white-space:nowrap;}
+.wm-title::before,.wm-title::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.10);}
+.wm-lead{color:var(--text-dim);font-size:.95rem;line-height:1.8;margin:0 6px;}
+.wm-feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;}
+.wm-card{border:1px solid var(--border);background:var(--surface-2,rgba(255,255,255,.03));border-radius:14px;padding:16px;transition:.2s;}
+.wm-card:hover{border-color:var(--wm-accent);transform:translateY(-2px);box-shadow:0 10px 26px rgba(124,92,252,.14);}
+.wm-card h3{font-size:.92rem;font-weight:700;margin:0 0 6px;display:flex;align-items:center;gap:8px;}
+.wm-card p{font-size:.84rem;color:var(--text-dim);line-height:1.65;margin:0;}
+.wm-about ol,.wm-about > p{color:var(--text-dim);font-size:.92rem;line-height:1.8;padding-left:6px;}
+.wm-about ol{padding-left:24px;}
 .wm-related{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:10px 0 4px;}
 .wm-related a{display:block;background:var(--surface-2,rgba(255,255,255,.03));border:1px solid var(--border);border-radius:10px;padding:12px 14px;text-decoration:none;color:var(--text);transition:border-color .2s,transform .15s;}
 .wm-related a:hover{border-color:var(--wm-accent);transform:translateY(-2px);}
@@ -291,61 +303,56 @@
   </div>
 </div>
 
-<!-- ── Below-tool content: Related → About → FAQ ─────────────── -->
-<section class="info-wrap" aria-labelledby="introH">
-  <div class="info-section wm-about">
-    <h2 id="introH">🖊️ PDF Watermark Tool — Protect &amp; Brand Your Documents</h2>
-    <p>The <strong>ApneSoftware PDF Watermark</strong> tool lets you stamp a text or image watermark across the pages of any PDF — a diagonal “CONFIDENTIAL” banner, a “DRAFT” marker, your name, or a company logo — directly inside your web browser. You control the exact position, opacity, rotation, colour, font and which pages are stamped, see the result in a live page-by-page preview, and download a clean watermarked PDF without ever uploading your file to a server.</p>
+<!-- ── Below-tool content: Intro/Features/Benefits → Related → About → How To → FAQ → Privacy ── -->
+<section class="wm-wrap" aria-labelledby="introH">
+  <div class="wm-title"><h2 id="introH">🖊️ PDF Watermark Tool — Protect &amp; Brand Your Documents</h2></div>
+  <p class="wm-lead">The <strong>ApneSoftware PDF Watermark</strong> tool lets you stamp a text or image watermark across the pages of any PDF — a diagonal “CONFIDENTIAL” banner, a “DRAFT” marker, your name, or a company logo — directly inside your web browser. You control the exact position, opacity, rotation, colour, font and which pages are stamped, see the result in a live page-by-page preview, and download a clean watermarked PDF without ever uploading your file to a server.</p>
 
-    <h3>Key Features</h3>
-    <ul>
-      <li><strong>Text or image/logo watermark</strong> — type any text or upload a PNG, JPG or SVG logo (transparency preserved).</li>
-      <li><strong>Full styling</strong> — font family, bold, italic, underline, shadow, size, colour (picker or hex) and opacity.</li>
-      <li><strong>9-point position grid</strong> plus adjustable margin, rotation presets and any custom angle from 0–360°.</li>
-      <li><strong>Tile / repeat</strong> mode to blanket the whole page with a light watermark.</li>
-      <li><strong>Above or behind content</strong> layering, so the watermark can sit under text like a true background stamp.</li>
-      <li><strong>Page targeting</strong> — all, first, last, odd, even or a custom range such as <em>1-3, 5, 8-10</em>.</li>
-      <li><strong>Live preview</strong> with page navigation and zoom before you commit.</li>
-      <li><strong>Output options</strong> — rename the file, preserve or drop metadata, compress, download or print.</li>
-      <li><strong>Password-protected PDFs</strong> handled locally, and large files supported.</li>
-      <li><strong>100% private</strong> — all processing happens in your browser; nothing is uploaded.</li>
-    </ul>
+  <div class="wm-title"><h2>✨ Key Features</h2></div>
+  <div class="wm-feature-grid">
+    <div class="wm-card"><h3>🔤 Text or Logo</h3><p>Type any text or upload a PNG, JPG or SVG logo — transparency is preserved.</p></div>
+    <div class="wm-card"><h3>🎨 Full Styling</h3><p>Font family, bold, italic, underline, shadow, size, colour (picker or hex) and opacity.</p></div>
+    <div class="wm-card"><h3>📐 Precise Position</h3><p>9-point grid, adjustable margin, rotation presets and any custom angle from 0–360°.</p></div>
+    <div class="wm-card"><h3>🔁 Tile / Repeat</h3><p>Blanket the whole page with a light, evenly spaced watermark.</p></div>
+    <div class="wm-card"><h3>🧱 Above or Behind</h3><p>Layer the watermark over content or behind it like a true background stamp.</p></div>
+    <div class="wm-card"><h3>🎯 Page Targeting</h3><p>Apply to all, first, last, odd, even or a custom range such as <em>1-3, 5, 8-10</em>.</p></div>
+    <div class="wm-card"><h3>👁️ Live Preview</h3><p>See the exact result with page navigation and zoom before you commit.</p></div>
+    <div class="wm-card"><h3>⚙️ Output Options</h3><p>Rename, preserve or drop metadata, compress, download or print.</p></div>
+    <div class="wm-card"><h3>🔒 100% Private</h3><p>Everything runs in your browser; your file is never uploaded.</p></div>
+  </div>
 
-    <h3>Benefits</h3>
-    <ul>
-      <li>Mark drafts and confidential documents in seconds instead of editing every page by hand.</li>
-      <li>Protect sample work and shared files with a visible ownership or copyright stamp.</li>
-      <li>Reinforce branding on proposals, reports and invoices with a consistent logo.</li>
-      <li>Keep sensitive content on your own device — ideal for legal, medical and financial files.</li>
-      <li>No installs, no accounts, no watermark added by us to your output.</li>
-    </ul>
+  <div class="wm-title"><h2>🎁 Benefits</h2></div>
+  <div class="wm-feature-grid">
+    <div class="wm-card"><h3>⏱️ Save Time</h3><p>Mark drafts and confidential documents in seconds instead of editing every page by hand.</p></div>
+    <div class="wm-card"><h3>🛡️ Protect Work</h3><p>Add a visible ownership or copyright stamp to samples and shared files.</p></div>
+    <div class="wm-card"><h3>🏷️ Consistent Branding</h3><p>Reinforce branding on proposals, reports and invoices with a logo.</p></div>
+    <div class="wm-card"><h3>🔐 Stay Private</h3><p>Keep sensitive content on your own device — ideal for legal, medical and financial files.</p></div>
+    <div class="wm-card"><h3>🆓 Free &amp; Unlimited</h3><p>No installs, no accounts, and no watermark added by us to your output.</p></div>
   </div>
 </section>
 
-<section class="info-wrap" aria-labelledby="relatedH">
-  <div class="info-section">
-    <h2 id="relatedH">🔗 Related Tools</h2>
-    <div class="wm-related">
-      <a href="pdf-page-numbers.html"><b>PDF Page Numbers</b><span>Add page numbers to a PDF</span></a>
-      <a href="pdf-header-footer.html"><b>PDF Header &amp; Footer</b><span>Add headers and footers</span></a>
-      <a href="pdf-merge.html"><b>Merge PDF</b><span>Combine multiple PDFs</span></a>
-      <a href="pdf-split.html"><b>Split PDF</b><span>Split into separate files</span></a>
-      <a href="pdf-rotate.html"><b>Rotate PDF</b><span>Rotate PDF pages</span></a>
-      <a href="pdf-reorder.html"><b>Reorder PDF Pages</b><span>Rearrange page order</span></a>
-      <a href="pdf-delete-pages.html"><b>Delete PDF Pages</b><span>Remove unwanted pages</span></a>
-      <a href="pdf-compress.html"><b>Compress PDF</b><span>Reduce PDF file size</span></a>
-      <a href="pdf-protect.html"><b>Protect PDF</b><span>Add a password</span></a>
-      <a href="image-watermark.html"><b>Image Watermark</b><span>Watermark images</span></a>
-    </div>
+<section class="wm-wrap" aria-labelledby="relatedH">
+  <div class="wm-title"><h2 id="relatedH">🔗 Related Tools</h2></div>
+  <div class="wm-related">
+    <a href="pdf-page-numbers.html"><b>PDF Page Numbers</b><span>Add page numbers to a PDF</span></a>
+    <a href="pdf-header-footer.html"><b>PDF Header &amp; Footer</b><span>Add headers and footers</span></a>
+    <a href="pdf-merge.html"><b>Merge PDF</b><span>Combine multiple PDFs</span></a>
+    <a href="pdf-split.html"><b>Split PDF</b><span>Split into separate files</span></a>
+    <a href="pdf-rotate.html"><b>Rotate PDF</b><span>Rotate PDF pages</span></a>
+    <a href="pdf-reorder.html"><b>Reorder PDF Pages</b><span>Rearrange page order</span></a>
+    <a href="pdf-delete-pages.html"><b>Delete PDF Pages</b><span>Remove unwanted pages</span></a>
+    <a href="pdf-compress.html"><b>Compress PDF</b><span>Reduce PDF file size</span></a>
+    <a href="pdf-protect.html"><b>Protect PDF</b><span>Add a password</span></a>
+    <a href="image-watermark.html"><b>Image Watermark</b><span>Watermark images</span></a>
   </div>
 </section>
 
-<section class="info-wrap" aria-labelledby="aboutH">
-  <div class="info-section wm-about">
-    <h2 id="aboutH">ℹ️ About This Tool</h2>
-
-    <article>
-      <h3>About the PDF Watermark Tool (English)</h3>
+<section class="wm-wrap" aria-labelledby="aboutH">
+  <div class="wm-title"><h2 id="aboutH">ℹ️ About This Tool</h2></div>
+  <div class="info-wrap" style="max-width:100%;padding:0">
+    <div class="info-section">
+      <article class="info-block wm-about">
+        <h2>About the PDF Watermark Tool (English)</h2>
       <p>A watermark stamped across the pages of a PDF does real work. It marks a document as a draft so nobody mistakes it for the final version; it flags a file as confidential or internal-only before it is shared more widely than intended; and it places a name or logo across the page to discourage unauthorised copying or to reinforce branding on a proposal, quotation, invoice or report. Applying that mark by hand to every page of a long document would be slow and error-prone — and it is exactly the repetitive job this tool automates in a few clicks, entirely inside your browser.</p>
 
       <p>With the ApneSoftware PDF Watermark tool you can add either a <strong>text watermark</strong> — such as “CONFIDENTIAL”, “DRAFT”, “SAMPLE”, “PAID”, or a company name — or an <strong>image watermark</strong> like a logo saved as a PNG, JPG or SVG. Text watermarks can use a sans-serif, serif or monospace font, be made bold, italic or underlined, carry a soft drop shadow, and take any colour you choose through a colour picker or a precise hex code. Image watermarks keep their transparency, so a logo with a see-through background sits cleanly over your pages without an ugly white box around it. Whichever type you pick, you control the opacity so the mark can be a faint tint that never obscures the text underneath or a bold statement that dominates the page.</p>
@@ -363,10 +370,8 @@
       <p>Typical users include legal and accounting firms marking drafts before a document is finalised, photographers and designers protecting proofs shared with clients before payment, businesses stamping internal reports as confidential before circulating them, educators and students distinguishing working drafts from final submissions, and small businesses adding a logo to quotations and invoices for a professional finish. Because it runs offline once loaded, it is equally at home on a laptop with a patchy connection or on a shared computer where installing software is not an option.</p>
     </article>
 
-    <hr class="info-divider">
-
-    <article>
-      <h3>इस टूल के बारे में (Hindi)</h3>
+      <article class="info-block wm-about">
+        <h2>इस टूल के बारे में (Hindi)</h2>
       <p>PDF के पन्नों पर लगा watermark एक असली काम करता है। यह किसी document को draft के रूप में चिह्नित करता है ताकि कोई उसे final समझने की गलती न करे; यह किसी file को इरादे से ज़्यादा फैलने से पहले confidential या केवल internal के रूप में पहचानता है; और unauthorized copying रोकने या proposal, quotation, invoice या report पर branding मज़बूत करने के लिए पन्ने पर नाम या logo रखता है। किसी लंबे document के हर पन्ने पर यह निशान हाथ से लगाना धीमा और गलती-प्रवण होगा — और यही दोहराव वाला काम यह टूल कुछ ही क्लिक में, पूरी तरह आपके browser के अंदर, स्वचालित कर देता है।</p>
 
       <p>ApneSoftware PDF Watermark टूल से आप या तो <strong>text watermark</strong> जोड़ सकते हैं — जैसे “CONFIDENTIAL”, “DRAFT”, “SAMPLE”, “PAID” या कंपनी का नाम — या PNG, JPG या SVG के रूप में सहेजा गया <strong>image watermark</strong> यानी logo। Text watermark में sans-serif, serif या monospace font चुना जा सकता है, उसे bold, italic या underline किया जा सकता है, हल्की drop shadow दी जा सकती है, और colour picker या सटीक hex code से कोई भी रंग दिया जा सकता है। Image watermark अपनी transparency बनाए रखते हैं, इसलिए पारदर्शी पृष्ठभूमि वाला logo आपके पन्नों पर साफ-सुथरे ढंग से बैठता है, बिना किसी सफेद box के। आप जो भी प्रकार चुनें, opacity आपके नियंत्रण में रहती है — मार्क एक हल्की छाया हो सकती है जो नीचे के text को कभी न ढके, या एक गहरा निशान जो पूरे पन्ने पर हावी हो।</p>
@@ -380,39 +385,38 @@
       <p>संतुष्ट होने पर output विकल्प अंतिम निखार देते हैं। download की गई file का नाम बदलें, चुनें कि document का <strong>metadata (title, author आदि) रखना है या हटाना</strong>, और वैकल्पिक रूप से object streams से output को <strong>compress</strong> करें ताकि file का आकार कम रहे। आप watermarked PDF तुरंत download कर सकते हैं या सीधे printer पर भेज सकते हैं। Password-protected PDF locally संभाले जाते हैं ताकि जिस document को खोलने का आपको अधिकार है उस पर आप watermark लगा सकें, और सैकड़ों पन्नों वाली बड़ी files पन्ना-दर-पन्ना process होती हैं ताकि memory का उपयोग उचित रहे।</p>
 
       <p>सबसे बढ़कर, टूल <strong>privacy</strong> के इर्द-गिर्द बना है। हर कदम — PDF पढ़ना, preview बनाना, watermark खींचना और परिणाम सहेजना — आपके अपने device पर browser में JavaScript से होता है। आपका document कभी किसी server पर नहीं भेजा जाता, जो तब मायने रखता है जब watermark जोड़ने से पहले भी सामग्री sensitive हो: contracts, medical records, financial statements, अनरिलीज़ designs, exam papers और internal reports — सभी बिना आपके कंप्यूटर से बाहर गए मार्क किए जा सकते हैं। कुछ भी install करने की ज़रूरत नहीं, कोई account नहीं, और हम आपकी file पर अपनी कोई branding नहीं जोड़ते। आपकी PDF में एकमात्र बदलाव वही watermark है जो आपने लगाना चुना; बाकी हर byte जस का तस रहता है।</p>
-    </article>
-
-    <h3>How To Use</h3>
-    <ol>
-      <li>Drag &amp; drop your PDF onto the upload area, or click to browse.</li>
-      <li>Choose <strong>Text</strong> or <strong>Image / Logo</strong> as the watermark type.</li>
-      <li>Enter your text (and set font, colour, style) or upload a logo and set its width.</li>
-      <li>Adjust size, opacity and rotation, then pick a position on the grid and a margin.</li>
-      <li>Choose <strong>above</strong> or <strong>behind</strong> content, and select which pages to stamp.</li>
-      <li>Check the live preview, navigating pages and zooming as needed.</li>
-      <li>Rename the file if you like, then click <strong>Apply &amp; Download</strong> — or print directly.</li>
-    </ol>
+      </article>
+    </div>
   </div>
 </section>
 
-<section class="info-wrap" aria-labelledby="faqH">
-  <div class="info-section wm-about">
-    <h2 id="faqH">❓ Frequently Asked Questions</h2>
-    <div id="faqList"></div>
-  </div>
+<section class="wm-wrap wm-about" aria-labelledby="howH">
+  <div class="wm-title"><h2 id="howH">📝 How To Use</h2></div>
+  <ol>
+    <li>Drag &amp; drop your PDF onto the upload area, or click to browse.</li>
+    <li>Choose <strong>Text</strong> or <strong>Image / Logo</strong> as the watermark type.</li>
+    <li>Enter your text (and set font, colour, style) or upload a logo and set its width.</li>
+    <li>Adjust size, opacity and rotation, then pick a position on the grid and a margin.</li>
+    <li>Choose <strong>above</strong> or <strong>behind</strong> content, and select which pages to stamp.</li>
+    <li>Check the live preview, navigating pages and zooming as needed.</li>
+    <li>Rename the file if you like, then click <strong>Apply &amp; Download</strong> — or print directly.</li>
+  </ol>
 </section>
 
-<section class="info-wrap" aria-labelledby="privacyH">
-  <div class="info-section wm-about">
-    <h2 id="privacyH">🔒 Privacy</h2>
-    <p>This tool is 100% client-side. Your PDF and any logo you upload are read and processed entirely in your browser using JavaScript — they are never sent to ApneSoftware or any third party. Nothing is stored, logged or transmitted. When you close or refresh the page, the file is cleared from memory. Because there is no upload, you can safely watermark confidential, legal, medical and financial documents.</p>
+<section class="wm-wrap wm-faq" aria-labelledby="faqH">
+  <div class="wm-title"><h2 id="faqH">❓ Frequently Asked Questions</h2></div>
+  <div id="faqList"></div>
+</section>
 
-    <h2 id="compatH">🌐 Browser Compatibility</h2>
-    <p>Works in all modern browsers including Google Chrome, Microsoft Edge, Mozilla Firefox, Safari, Brave and Opera, on Windows, macOS, Linux, Android and iOS. It relies on standard web technologies (Canvas, File API and WebAssembly-free JavaScript PDF libraries), so no plugins or extensions are required. For very large PDFs a desktop browser with more available memory gives the smoothest experience.</p>
+<section class="wm-wrap wm-about" aria-labelledby="privacyH">
+  <div class="wm-title"><h2 id="privacyH">🔒 Privacy</h2></div>
+  <p>This tool is 100% client-side. Your PDF and any logo you upload are read and processed entirely in your browser using JavaScript — they are never sent to ApneSoftware or any third party. Nothing is stored, logged or transmitted. When you close or refresh the page, the file is cleared from memory. Because there is no upload, you can safely watermark confidential, legal, medical and financial documents.</p>
 
-    <h2 id="formatsH">📁 Supported Formats</h2>
-    <p><strong>Input document:</strong> PDF (.pdf), including password-protected PDFs you are authorised to open. <strong>Logo / image watermark:</strong> PNG (with transparency), JPG/JPEG and SVG (rasterised for embedding). <strong>Output:</strong> a standard PDF (.pdf) with your watermark applied, ready to download or print.</p>
-  </div>
+  <div class="wm-title"><h2 id="compatH">🌐 Browser Compatibility</h2></div>
+  <p>Works in all modern browsers including Google Chrome, Microsoft Edge, Mozilla Firefox, Safari, Brave and Opera, on Windows, macOS, Linux, Android and iOS. It relies on standard web technologies (Canvas, File API and WebAssembly-free JavaScript PDF libraries), so no plugins or extensions are required. For very large PDFs a desktop browser with more available memory gives the smoothest experience.</p>
+
+  <div class="wm-title"><h2 id="formatsH">📁 Supported Formats</h2></div>
+  <p><strong>Input document:</strong> PDF (.pdf), including password-protected PDFs you are authorised to open. <strong>Logo / image watermark:</strong> PNG (with transparency), JPG/JPEG and SVG (rasterised for embedding). <strong>Output:</strong> a standard PDF (.pdf) with your watermark applied, ready to download or print.</p>
 </section>
 
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
