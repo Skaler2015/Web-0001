@@ -4,34 +4,93 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
+<meta name="description" content="Add text or image/logo watermarks to PDF files free online. Choose position, opacity, rotation, colour, font and pages — above or behind content. 100% private, works in your browser, no upload, no signup.">
 <link rel="canonical" href="https://apnesoftware.com/tools/pdf-watermark.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="PDF Watermark | ApneSoftware">
-<meta property="og:description" content="Add a text watermark. Free online tool — no signup required.">
+<meta property="og:title" content="PDF Watermark — Add Text or Logo Watermark to PDF Free &amp; Private | ApneSoftware">
+<meta property="og:description" content="Stamp text or image watermarks across your PDF with full control over position, opacity, rotation and pages. Runs entirely in your browser — your file never leaves your device.">
 <meta property="og:url" content="https://apnesoftware.com/tools/pdf-watermark.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PDF Watermark | ApneSoftware">
-<meta name="twitter:description" content="Add a text watermark. Free online tool — no signup required.">
+<meta name="twitter:title" content="PDF Watermark — Add Text or Logo Watermark to PDF Free &amp; Private">
+<meta name="twitter:description" content="Add text or logo watermarks to PDF with position, opacity, rotation and page controls. 100% client-side and private.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
+
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PDF Watermark","description":"Add a text watermark. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/pdf-watermark.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PDF Watermark","operatingSystem":"Any (web browser)","applicationCategory":"UtilitiesApplication","description":"Add text or image/logo watermarks to PDF documents online with control over position, opacity, rotation, colour, font, layering and page range. Fully client-side and private.","url":"https://apnesoftware.com/tools/pdf-watermark.html","browserRequirements":"Requires JavaScript. Works in Chrome, Edge, Firefox, Safari.","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
 </script>
-<meta name="color-scheme" content="dark">
-<title>PDF Watermark | ApneSoftware</title>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"PDF Watermark Tool","url":"https://apnesoftware.com/tools/pdf-watermark.html","description":"Free online PDF watermark tool to add text or logo watermarks with full styling and positioning control, entirely in your browser.","isPartOf":{"@type":"WebSite","name":"ApneSoftware","url":"https://apnesoftware.com"},"inLanguage":"en"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apnesoftware.com/index.html"},{"@type":"ListItem","position":2,"name":"PDF Tools","item":"https://apnesoftware.com/index.html#pdf"},{"@type":"ListItem","position":3,"name":"PDF Watermark","item":"https://apnesoftware.com/tools/pdf-watermark.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to add a watermark to a PDF","description":"Add a text or image watermark to every page of a PDF for free in your browser.","step":[{"@type":"HowToStep","name":"Upload PDF","text":"Drag and drop your PDF onto the upload area or click to browse and select it."},{"@type":"HowToStep","name":"Choose watermark","text":"Enter watermark text or upload a logo image, then set colour, font, size, opacity and rotation."},{"@type":"HowToStep","name":"Position and target pages","text":"Pick a position on the 9-point grid, choose above or behind content, and select which pages to stamp."},{"@type":"HowToStep","name":"Preview","text":"Check the live preview and navigate pages to confirm the watermark looks right."},{"@type":"HowToStep","name":"Download","text":"Click Apply & Download to save the watermarked PDF, or print it directly."}]}
+</script>
+<!-- FAQ schema (populated at runtime) -->
+<script type="application/ld+json" id="faqSchema">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}</script>
+
+<meta name="color-scheme" content="dark light">
+<title>PDF Watermark — Add Text or Logo Watermark to PDF Free &amp; Private | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-/* Premium upload enhancement for this tool */
-.dropzone{cursor:pointer}
-.dropzone p{font-size:.9rem}
-.panel{position:relative;z-index:1}
-</style>
-<style>
-  .file-preview-card{display:flex;align-items:center;gap:14px;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:12px;margin-top:14px}
-  .file-preview-card img{width:54px;height:auto;border-radius:4px;border:1px solid var(--border);background:#fff}
-  .file-preview-card .meta b{display:block;font-size:.88rem;word-break:break-all}
-  .file-preview-card .meta span{font-size:.78rem;color:var(--text-dim)}
+/* ── PDF Watermark tool — scoped styles (wm-) ─────────────────── */
+.wm-scope{--wm-accent:#A78BFA;--wm-accent2:#7C3AED;}
+.wm-hide{display:none !important;}
+.wm-drop{cursor:pointer;transition:border-color .2s,background .2s;}
+.wm-drop.drag{border-color:var(--wm-accent);background:rgba(167,139,250,.08);}
+.wm-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:18px;margin-top:18px;}
+@media(max-width:860px){.wm-layout{grid-template-columns:1fr;}}
+.wm-card{background:var(--surface-2,rgba(255,255,255,.03));border:1px solid var(--border,rgba(255,255,255,.1));border-radius:12px;padding:14px;}
+.wm-card h3{margin:0 0 10px;font-size:.95rem;letter-spacing:.02em;}
+.wm-fileinfo{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:.83rem;}
+.wm-fileinfo .k{color:var(--text-dim);}
+.wm-fileinfo .v{word-break:break-all;}
+.wm-field{margin:0 0 12px;}
+.wm-field>label{display:block;font-size:.82rem;color:var(--text-dim);margin:0 0 5px;}
+.wm-field input[type=text],.wm-field input[type=number],.wm-field select{width:100%;box-sizing:border-box;background:var(--surface,rgba(0,0,0,.25));color:var(--text);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-family:var(--font);font-size:.9rem;outline:none;}
+.wm-field input:focus,.wm-field select:focus{border-color:var(--wm-accent);}
+.wm-row{display:flex;gap:12px;flex-wrap:wrap;}
+.wm-row .wm-field{flex:1;min-width:120px;}
+.wm-range{width:100%;accent-color:var(--wm-accent);}
+.wm-seg{display:inline-flex;border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.wm-seg button{background:transparent;color:var(--text-dim);border:0;padding:7px 12px;font:inherit;font-size:.82rem;cursor:pointer;}
+.wm-seg button.on{background:var(--wm-accent);color:#160c2e;font-weight:600;}
+.wm-check{display:inline-flex;align-items:center;gap:7px;font-size:.85rem;cursor:pointer;margin:0 12px 8px 0;}
+.wm-check input{accent-color:var(--wm-accent);}
+.wm-grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;max-width:170px;}
+.wm-grid9 button{aspect-ratio:1;border:1px solid var(--border);background:var(--surface,rgba(0,0,0,.25));border-radius:6px;cursor:pointer;color:var(--text-dim);font-size:1rem;line-height:1;}
+.wm-grid9 button.on{background:var(--wm-accent);border-color:var(--wm-accent);color:#160c2e;}
+.wm-btn{background:linear-gradient(135deg,var(--wm-accent),var(--wm-accent2));color:#fff;border:0;border-radius:9px;padding:11px 16px;font:inherit;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:8px;}
+.wm-btn:disabled{opacity:.5;cursor:not-allowed;}
+.wm-btn.ghost{background:transparent;border:1px solid var(--border);color:var(--text);font-weight:500;}
+.wm-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+.wm-preview{position:relative;background:#0d0d14;border:1px solid var(--border);border-radius:12px;padding:12px;display:flex;flex-direction:column;align-items:center;gap:10px;min-height:200px;}
+.wm-canvas-wrap{position:relative;max-width:100%;overflow:auto;display:flex;justify-content:center;}
+#wmCanvas{max-width:100%;height:auto;box-shadow:0 6px 22px rgba(0,0,0,.5);border-radius:4px;background:#fff;}
+.wm-nav{display:flex;align-items:center;gap:8px;font-size:.85rem;}
+.wm-nav button{background:var(--surface-2);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:5px 10px;cursor:pointer;}
+.wm-nav button:disabled{opacity:.4;cursor:not-allowed;}
+.wm-prog{height:8px;background:var(--surface,rgba(0,0,0,.3));border-radius:6px;overflow:hidden;margin-top:12px;}
+.wm-prog>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--wm-accent),var(--wm-accent2));transition:width .2s;}
+.wm-status{margin-top:10px;font-size:.9rem;color:var(--text-dim);min-height:1.2em;}
+.wm-note{font-size:.78rem;color:var(--text-dim);}
+.wm-swatch{width:46px;height:38px;padding:2px;border:1px solid var(--border);border-radius:8px;background:var(--surface);cursor:pointer;}
+/* below-tool content */
+.wm-related{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:10px 0 4px;}
+.wm-related a{display:block;background:var(--surface-2,rgba(255,255,255,.03));border:1px solid var(--border);border-radius:10px;padding:12px 14px;text-decoration:none;color:var(--text);transition:border-color .2s,transform .15s;}
+.wm-related a:hover{border-color:var(--wm-accent);transform:translateY(-2px);}
+.wm-related b{display:block;font-size:.92rem;margin-bottom:3px;}
+.wm-related span{font-size:.78rem;color:var(--text-dim);}
+.wm-about h2,.wm-about h3{margin-top:1.2em;}
+.wm-about p,.wm-about li{line-height:1.7;}
+#faqList details{border:1px solid var(--border);border-radius:10px;padding:0 14px;margin:8px 0;background:var(--surface-2,rgba(255,255,255,.02));}
+#faqList summary{cursor:pointer;padding:13px 0;font-weight:600;font-size:.95rem;}
+#faqList details[open]{padding-bottom:6px;}
+#faqList p{margin:0 0 12px;line-height:1.65;color:var(--text-dim);}
+:focus-visible{outline:2px solid var(--wm-accent);outline-offset:2px;}
 </style>
 </head>
 <body>
@@ -43,92 +102,318 @@
 </header>
 
 <div class="container">
+  <div class="wm-scope" id="wmScope">
   <div class="tool-header">
     <h1>💧 PDF Watermark</h1>
-    <p>Add a text watermark (like "CONFIDENTIAL" or your name) to every page.</p>
+    <p>Add a text or logo watermark to your PDF — control position, opacity, rotation, colour, font and which pages. Everything runs in your browser; your file is never uploaded.</p>
   </div>
 
   <div class="panel">
-    <div class="dropzone" id="dropzone">
-      <p>📤 Drag & drop your PDF file here or click to choose</p>
-      <input type="file" id="fileInput" accept="application/pdf">
+    <div class="dropzone wm-drop" id="dropzone" role="button" tabindex="0" aria-label="Upload PDF file">
+      <p>📤 Drag &amp; drop your PDF here, or click to choose</p>
+      <input type="file" id="fileInput" accept="application/pdf" hidden>
     </div>
 
-    <div id="afterUpload" style="display:none;margin-top:18px">
-      <div class="file-preview-card">
-        <img id="previewThumb" src="" alt="">
-        <div class="meta">
-          <b id="previewName"></b>
-          <span id="previewMeta"></span>
+    <div id="workspace" class="wm-hide">
+      <div class="wm-layout">
+        <!-- Controls column -->
+        <div>
+          <div class="wm-card">
+            <h3>📄 File</h3>
+            <div class="wm-fileinfo">
+              <span class="k">Name</span><span class="v" id="fiName">—</span>
+              <span class="k">Size</span><span class="v" id="fiSize">—</span>
+              <span class="k">Pages</span><span class="v" id="fiPages">—</span>
+              <span class="k">Title</span><span class="v" id="fiTitle">—</span>
+            </div>
+          </div>
+
+          <div class="wm-card" style="margin-top:14px">
+            <h3>💧 Watermark</h3>
+            <div class="wm-field">
+              <label>Type</label>
+              <div class="wm-seg" role="tablist" aria-label="Watermark type">
+                <button type="button" id="typeText" class="on" aria-pressed="true">Text</button>
+                <button type="button" id="typeImage" aria-pressed="false">Image / Logo</button>
+              </div>
+            </div>
+
+            <div id="textPanel">
+              <div class="wm-field">
+                <label for="watermarkText">Watermark text</label>
+                <input type="text" id="watermarkText" value="CONFIDENTIAL" placeholder="e.g. DRAFT, SAMPLE, Company Name">
+              </div>
+              <div class="wm-row">
+                <div class="wm-field">
+                  <label for="fontFamily">Font</label>
+                  <select id="fontFamily">
+                    <option value="Helvetica">Helvetica (Sans)</option>
+                    <option value="TimesRoman">Times (Serif)</option>
+                    <option value="Courier">Courier (Mono)</option>
+                  </select>
+                </div>
+                <div class="wm-field">
+                  <label for="colorInput">Colour</label>
+                  <div style="display:flex;gap:8px;align-items:center">
+                    <input type="color" id="colorInput" value="#ff0000" class="wm-swatch" aria-label="Watermark colour">
+                    <input type="text" id="hexInput" value="#ff0000" aria-label="Hex colour" style="max-width:100px">
+                  </div>
+                </div>
+              </div>
+              <div style="margin:2px 0 10px">
+                <label class="wm-check"><input type="checkbox" id="optBold" checked> Bold</label>
+                <label class="wm-check"><input type="checkbox" id="optItalic"> Italic</label>
+                <label class="wm-check"><input type="checkbox" id="optUnderline"> Underline</label>
+                <label class="wm-check"><input type="checkbox" id="optShadow"> Shadow</label>
+              </div>
+            </div>
+
+            <div id="imagePanel" class="wm-hide">
+              <div class="wm-field">
+                <label for="logoInput">Logo image (PNG, JPG or SVG — transparency supported)</label>
+                <input type="file" id="logoInput" accept="image/png,image/jpeg,image/svg+xml">
+                <p class="wm-note" id="logoInfo" style="margin-top:6px"></p>
+              </div>
+              <div class="wm-field">
+                <label for="imgScale">Logo width: <span id="imgScaleVal">30</span>% of page</label>
+                <input type="range" id="imgScale" class="wm-range" min="5" max="90" value="30">
+              </div>
+            </div>
+
+            <div class="wm-row">
+              <div class="wm-field">
+                <label for="fontSize">Text size: <span id="fontSizeVal">50</span></label>
+                <input type="range" id="fontSize" class="wm-range" min="10" max="160" value="50">
+              </div>
+              <div class="wm-field">
+                <label for="opacityRange">Opacity: <span id="opacityVal">0.30</span></label>
+                <input type="range" id="opacityRange" class="wm-range" min="0.05" max="1" step="0.05" value="0.3">
+              </div>
+            </div>
+            <div class="wm-row">
+              <div class="wm-field">
+                <label for="rotationRange">Rotation: <span id="rotationVal">45</span>°</label>
+                <input type="range" id="rotationRange" class="wm-range" min="0" max="360" value="45">
+              </div>
+              <div class="wm-field">
+                <label>Presets</label>
+                <div class="wm-seg" aria-label="Rotation presets">
+                  <button type="button" class="wm-rot" data-r="0">0°</button>
+                  <button type="button" class="wm-rot" data-r="45">45°</button>
+                  <button type="button" class="wm-rot" data-r="90">90°</button>
+                  <button type="button" class="wm-rot" data-r="315">-45°</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wm-card" style="margin-top:14px">
+            <h3>📐 Position &amp; layering</h3>
+            <div class="wm-row" style="align-items:flex-start">
+              <div class="wm-field">
+                <label>Anchor</label>
+                <div class="wm-grid9" id="posGrid" role="group" aria-label="Watermark position">
+                  <button type="button" data-pos="tl" aria-label="Top left">↖</button>
+                  <button type="button" data-pos="tc" aria-label="Top centre">↑</button>
+                  <button type="button" data-pos="tr" aria-label="Top right">↗</button>
+                  <button type="button" data-pos="ml" aria-label="Middle left">←</button>
+                  <button type="button" data-pos="c" class="on" aria-label="Centre">●</button>
+                  <button type="button" data-pos="mr" aria-label="Middle right">→</button>
+                  <button type="button" data-pos="bl" aria-label="Bottom left">↙</button>
+                  <button type="button" data-pos="bc" aria-label="Bottom centre">↓</button>
+                  <button type="button" data-pos="br" aria-label="Bottom right">↘</button>
+                </div>
+              </div>
+              <div class="wm-field">
+                <label>Layer</label>
+                <div class="wm-seg" aria-label="Layer">
+                  <button type="button" id="layerAbove" class="on">Above content</button>
+                  <button type="button" id="layerBehind">Behind content</button>
+                </div>
+                <label style="margin-top:12px" for="marginRange">Margin: <span id="marginVal">36</span> pt</label>
+                <input type="range" id="marginRange" class="wm-range" min="0" max="120" value="36">
+                <label class="wm-check" style="margin-top:8px"><input type="checkbox" id="optTile"> Tile / repeat across page</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="wm-card" style="margin-top:14px">
+            <h3>🎯 Pages &amp; output</h3>
+            <div class="wm-field">
+              <label>Apply to</label>
+              <div class="wm-seg" id="scopeSeg" aria-label="Pages to watermark">
+                <button type="button" class="wm-scope-btn on" data-scope="all">All</button>
+                <button type="button" class="wm-scope-btn" data-scope="first">First</button>
+                <button type="button" class="wm-scope-btn" data-scope="last">Last</button>
+                <button type="button" class="wm-scope-btn" data-scope="odd">Odd</button>
+                <button type="button" class="wm-scope-btn" data-scope="even">Even</button>
+                <button type="button" class="wm-scope-btn" data-scope="range">Range</button>
+              </div>
+              <input type="text" id="rangeInput" placeholder="e.g. 1-3, 5, 8-10" class="wm-hide" style="margin-top:8px" aria-label="Custom page range">
+            </div>
+            <div class="wm-row">
+              <div class="wm-field">
+                <label for="outName">Output file name</label>
+                <input type="text" id="outName" value="watermarked" placeholder="watermarked">
+              </div>
+            </div>
+            <div style="margin:2px 0 4px">
+              <label class="wm-check"><input type="checkbox" id="optMeta" checked> Preserve metadata</label>
+              <label class="wm-check"><input type="checkbox" id="optCompress"> Compress output</label>
+            </div>
+          </div>
+
+          <div class="wm-actions">
+            <button class="wm-btn" id="applyBtn">💧 Apply &amp; Download</button>
+            <button class="wm-btn ghost" id="printBtn">🖨️ Print</button>
+            <button class="wm-btn ghost" id="resetBtn">♻️ Reset</button>
+            <button class="wm-btn ghost" id="clearBtn">🗑️ New file</button>
+          </div>
+          <div class="wm-prog wm-hide" id="progWrap"><i id="progFill"></i></div>
+          <p class="wm-status" id="statusMsg" role="status" aria-live="polite"></p>
+        </div>
+
+        <!-- Preview column -->
+        <div class="wm-preview">
+          <div class="wm-canvas-wrap"><canvas id="wmCanvas" aria-label="Watermark preview"></canvas></div>
+          <div class="wm-nav">
+            <button id="pvPrev" aria-label="Previous page">‹</button>
+            <span>Page <b id="pvPage">1</b> / <span id="pvTotal">1</span></span>
+            <button id="pvNext" aria-label="Next page">›</button>
+            <button id="pvZoomOut" aria-label="Zoom out">−</button>
+            <button id="pvZoomIn" aria-label="Zoom in">+</button>
+          </div>
+          <p class="wm-note">Live preview — the watermark is drawn exactly where it will appear.</p>
         </div>
       </div>
-
-      <div class="field">
-        <label for="watermarkText">Watermark text</label>
-        <input type="text" id="watermarkText" value="CONFIDENTIAL" placeholder="e.g. SAMPLE">
-      </div>
-
-      <div class="row">
-        <div class="field">
-          <label for="fontSize">Size: <span id="fontSizeVal">50</span></label>
-          <input type="range" id="fontSize" min="20" max="100" value="50">
-        </div>
-        <div class="field">
-          <label for="opacityRange">Opacity: <span id="opacityVal">0.3</span></label>
-          <input type="range" id="opacityRange" min="0.1" max="0.8" step="0.05" value="0.3">
-        </div>
-        <div class="field">
-          <label for="rotationRange">Rotation: <span id="rotationVal">45</span>°</label>
-          <input type="range" id="rotationRange" min="0" max="90" value="45">
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="colorInput">Color</label>
-        <input type="color" id="colorInput" value="#ff0000" style="width:60px;height:40px;padding:2px">
-      </div>
-
-      <div class="btn-row">
-        <button class="btn" id="applyBtn">💧 Apply Watermark and Download</button>
-      </div>
-
-      <p id="statusMsg" style="margin-top:12px;color:var(--text-dim);font-size:.9rem"></p>
     </div>
+  </div>
   </div>
 </div>
 
+<!-- ── Below-tool content: Related → About → FAQ ─────────────── -->
+<section class="info-wrap" aria-labelledby="introH">
+  <div class="info-section wm-about">
+    <h2 id="introH">🖊️ PDF Watermark Tool — Protect &amp; Brand Your Documents</h2>
+    <p>The <strong>ApneSoftware PDF Watermark</strong> tool lets you stamp a text or image watermark across the pages of any PDF — a diagonal “CONFIDENTIAL” banner, a “DRAFT” marker, your name, or a company logo — directly inside your web browser. You control the exact position, opacity, rotation, colour, font and which pages are stamped, see the result in a live page-by-page preview, and download a clean watermarked PDF without ever uploading your file to a server.</p>
 
-<div class="info-wrap">
+    <h3>Key Features</h3>
+    <ul>
+      <li><strong>Text or image/logo watermark</strong> — type any text or upload a PNG, JPG or SVG logo (transparency preserved).</li>
+      <li><strong>Full styling</strong> — font family, bold, italic, underline, shadow, size, colour (picker or hex) and opacity.</li>
+      <li><strong>9-point position grid</strong> plus adjustable margin, rotation presets and any custom angle from 0–360°.</li>
+      <li><strong>Tile / repeat</strong> mode to blanket the whole page with a light watermark.</li>
+      <li><strong>Above or behind content</strong> layering, so the watermark can sit under text like a true background stamp.</li>
+      <li><strong>Page targeting</strong> — all, first, last, odd, even or a custom range such as <em>1-3, 5, 8-10</em>.</li>
+      <li><strong>Live preview</strong> with page navigation and zoom before you commit.</li>
+      <li><strong>Output options</strong> — rename the file, preserve or drop metadata, compress, download or print.</li>
+      <li><strong>Password-protected PDFs</strong> handled locally, and large files supported.</li>
+      <li><strong>100% private</strong> — all processing happens in your browser; nothing is uploaded.</li>
+    </ul>
+
+    <h3>Benefits</h3>
+    <ul>
+      <li>Mark drafts and confidential documents in seconds instead of editing every page by hand.</li>
+      <li>Protect sample work and shared files with a visible ownership or copyright stamp.</li>
+      <li>Reinforce branding on proposals, reports and invoices with a consistent logo.</li>
+      <li>Keep sensitive content on your own device — ideal for legal, medical and financial files.</li>
+      <li>No installs, no accounts, no watermark added by us to your output.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="info-wrap" aria-labelledby="relatedH">
   <div class="info-section">
-    <div class="info-block">
-      <h2>ℹ️ About This Tool</h2>
-      <p>A watermark stamped across every page of a PDF serves a real purpose: it marks a document as a draft so nobody mistakes it for the final version, it identifies a file as confidential or internal-only before it gets shared further than intended, or it adds a company name or logo across pages to discourage unauthorized copying or to reinforce branding on something like a proposal or report. Adding this by hand to every single page of a long document would be tedious and error-prone, which is exactly the repetitive task this tool automates in a few clicks.</p>
-      <p>You can add either a text watermark, such as "CONFIDENTIAL", "DRAFT", or a company name, or an image watermark like a logo, and control its opacity, rotation angle, size, and position on the page — diagonal across the center is the classic look for a draft stamp, but you can just as easily place a smaller, more subtle mark in a corner if you want something less intrusive. A live preview shows exactly how the watermark will look on the page before you apply it to the entire document, so there's no surprise after processing every page.</p>
-      <p>This is genuinely useful across a wide range of situations: legal and financial firms marking drafts before a document is finalized, photographers and designers protecting sample work shared with clients before payment, businesses stamping internal reports as confidential before circulating them more broadly, and students or researchers marking up working drafts of papers to distinguish them clearly from a final submission. Once applied, the watermark appears on every page consistently, so there's no risk of missing a page in a long document.</p>
-      <p>The entire process runs locally in your browser; your document is never uploaded to a server to have a watermark applied to it, which matters if the underlying content is sensitive even before the watermark is added. Once you're happy with how it looks in the preview, one click generates the watermarked PDF, ready to download immediately, with the original document otherwise completely unchanged apart from the mark you've chosen to add.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Upload your PDF.</li>
-        <li>Type your watermark text and adjust size, color, opacity, rotation.</li>
-        <li>Apply and download the watermarked PDF.</li>
-      </ol>
-    </div>
-    <hr class="info-divider">
-    <div class="info-block">
-      <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>PDF के हर पन्ने पर लगा कोई watermark एक असली मकसद पूरा करता है: यह किसी document को draft के तौर पर चिह्नित करता है ताकि कोई उसे final version समझने की गलती न करे, यह किसी file को इरादे से ज़्यादा आगे शेयर होने से पहले confidential या सिर्फ internal के तौर पर पहचानता है, या unauthorized copying को हतोत्साहित करने या किसी proposal या report जैसी चीज़ पर branding मज़बूत करने के लिए पन्नों पर कंपनी का नाम या logo जोड़ता है। किसी लंबे document के हर अकेले पन्ने पर यह हाथ से जोड़ना थकाऊ और गलती-प्रवण होगा, और यही वह दोहराव वाला काम है जिसे यह टूल कुछ ही क्लिक में automate कर देता है।</p>
-      <p>आप या तो एक text watermark जोड़ सकते हैं, जैसे "CONFIDENTIAL", "DRAFT", या कंपनी का नाम, या किसी logo जैसा एक image watermark, और उसकी opacity, rotation angle, size, और पन्ने पर position control कर सकते हैं — center के आर-पार diagonal draft stamp का classic लुक है, पर अगर आपको कुछ कम intrusive चाहिए तो आप उतनी ही आसानी से किसी कोने में एक छोटा, ज़्यादा subtle निशान भी रख सकते हैं। इसे पूरे document पर apply करने से पहले एक live preview दिखाता है कि पन्ने पर watermark बिल्कुल कैसा दिखेगा, तो हर पन्ना process होने के बाद कोई हैरानी नहीं।</p>
-      <p>यह कई तरह की situations में सच में उपयोगी है: कोई document finalize होने से पहले drafts मार्क करने वाली legal और financial firms, payment से पहले clients के साथ शेयर किए गए sample काम की सुरक्षा करने वाले photographers और designers, internal reports को ज़्यादा व्यापक रूप से circulate करने से पहले confidential के तौर पर stamp करने वाले businesses, और papers के working drafts को final submission से साफ अलग दिखाने के लिए mark करने वाले students या researchers। एक बार apply होने के बाद, watermark हर पन्ने पर एक जैसा दिखता है, तो किसी लंबे document में कोई पन्ना छूट जाने का खतरा नहीं।</p>
-      <p>पूरी process आपके browser में locally चलती है; watermark लगाने के लिए आपका document कभी किसी server पर अपलोड नहीं होता, जो तब मायने रखता है जब watermark जोड़ने से पहले भी underlying content sensitive हो। Preview में दिखने वाले लुक से संतुष्ट होने के बाद, एक क्लिक watermarked PDF बना देता है, तुरंत download के लिए तैयार, जोड़े गए निशान के अलावा original document बाकी हर तरह से पूरी तरह अपरिवर्तित।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>अपनी PDF अपलोड करें।</li>
-        <li>वॉटरमार्क टेक्स्ट लिखें और साइज़, रंग, पारदर्शिता, घुमाव सेट करें।</li>
-        <li>लगाएं बटन दबाएं और वॉटरमार्क वाली PDF डाउनलोड करें।</li>
-      </ol>
+    <h2 id="relatedH">🔗 Related Tools</h2>
+    <div class="wm-related">
+      <a href="pdf-page-numbers.html"><b>PDF Page Numbers</b><span>Add page numbers to a PDF</span></a>
+      <a href="pdf-header-footer.html"><b>PDF Header &amp; Footer</b><span>Add headers and footers</span></a>
+      <a href="pdf-merge.html"><b>Merge PDF</b><span>Combine multiple PDFs</span></a>
+      <a href="pdf-split.html"><b>Split PDF</b><span>Split into separate files</span></a>
+      <a href="pdf-rotate.html"><b>Rotate PDF</b><span>Rotate PDF pages</span></a>
+      <a href="pdf-reorder.html"><b>Reorder PDF Pages</b><span>Rearrange page order</span></a>
+      <a href="pdf-delete-pages.html"><b>Delete PDF Pages</b><span>Remove unwanted pages</span></a>
+      <a href="pdf-compress.html"><b>Compress PDF</b><span>Reduce PDF file size</span></a>
+      <a href="pdf-protect.html"><b>Protect PDF</b><span>Add a password</span></a>
+      <a href="image-watermark.html"><b>Image Watermark</b><span>Watermark images</span></a>
     </div>
   </div>
-</div>
+</section>
+
+<section class="info-wrap" aria-labelledby="aboutH">
+  <div class="info-section wm-about">
+    <h2 id="aboutH">ℹ️ About This Tool</h2>
+
+    <article>
+      <h3>About the PDF Watermark Tool (English)</h3>
+      <p>A watermark stamped across the pages of a PDF does real work. It marks a document as a draft so nobody mistakes it for the final version; it flags a file as confidential or internal-only before it is shared more widely than intended; and it places a name or logo across the page to discourage unauthorised copying or to reinforce branding on a proposal, quotation, invoice or report. Applying that mark by hand to every page of a long document would be slow and error-prone — and it is exactly the repetitive job this tool automates in a few clicks, entirely inside your browser.</p>
+
+      <p>With the ApneSoftware PDF Watermark tool you can add either a <strong>text watermark</strong> — such as “CONFIDENTIAL”, “DRAFT”, “SAMPLE”, “PAID”, or a company name — or an <strong>image watermark</strong> like a logo saved as a PNG, JPG or SVG. Text watermarks can use a sans-serif, serif or monospace font, be made bold, italic or underlined, carry a soft drop shadow, and take any colour you choose through a colour picker or a precise hex code. Image watermarks keep their transparency, so a logo with a see-through background sits cleanly over your pages without an ugly white box around it. Whichever type you pick, you control the opacity so the mark can be a faint tint that never obscures the text underneath or a bold statement that dominates the page.</p>
+
+      <p><strong>Positioning</strong> is handled by a simple nine-point grid: top-left, top-centre, top-right, the three middle positions, and the three along the bottom. A margin slider nudges the mark away from the very edge of the page, and a rotation control — with quick presets at 0°, 45°, 90° and −45° plus a full 0–360° slider — lets you set the classic diagonal draft angle or lay the text flat. If you want the watermark to blanket the whole page rather than sit in one spot, a <strong>tile / repeat</strong> option stamps it in a light, evenly spaced grid, which is a popular look for protecting sample documents and photographs shared as PDFs.</p>
+
+      <p>One feature that sets a professional watermark apart is <strong>layering</strong>. By default the watermark is drawn <em>above</em> the page content, which is right for a bold stamp. But you can also place it <em>behind</em> the content, so existing text and images sit on top of the mark exactly like a printed letterhead or a background seal. The tool achieves this by rebuilding each targeted page with the watermark drawn first and the original page content layered over it, giving a genuine background watermark rather than a translucent overlay.</p>
+
+      <p>You rarely want the same treatment on every single page, so the tool includes flexible <strong>page targeting</strong>. Apply the watermark to all pages, only the first page (handy for a cover stamp), only the last page, all odd or all even pages, or a precise custom range typed as <em>1-3, 5, 8-10</em>. A <strong>live preview</strong> renders the actual page with the watermark drawn exactly where it will land, and you can page through the document and zoom in to check the result before committing — no guessing, and no need to process the whole file just to see whether the size and angle look right.</p>
+
+      <p>When you are happy, the output options give you the final polish. Rename the downloaded file, choose whether to <strong>preserve or remove the document metadata</strong> (title, author and similar fields), and optionally <strong>compress</strong> the output using object streams to keep the file size down. You can download the watermarked PDF instantly or send it straight to your printer. Password-protected PDFs are handled locally so you can still add a watermark to a document you have the right to open, and large multi-hundred-page files are processed page by page to keep memory use reasonable.</p>
+
+      <p>Above all, the tool is built around <strong>privacy</strong>. Every step — reading the PDF, rendering previews, drawing the watermark and saving the result — happens on your own device using JavaScript in the browser. Your document is never transmitted to any server, which matters when the underlying content is sensitive even before a watermark is added: contracts, medical records, financial statements, unreleased designs, exam papers and internal reports can all be marked without leaving your computer. There is nothing to install, no account to create, and we never add our own branding to your file. The only change to your PDF is the watermark you chose to apply; every other byte of your document stays exactly as it was.</p>
+
+      <p>Typical users include legal and accounting firms marking drafts before a document is finalised, photographers and designers protecting proofs shared with clients before payment, businesses stamping internal reports as confidential before circulating them, educators and students distinguishing working drafts from final submissions, and small businesses adding a logo to quotations and invoices for a professional finish. Because it runs offline once loaded, it is equally at home on a laptop with a patchy connection or on a shared computer where installing software is not an option.</p>
+    </article>
+
+    <hr class="info-divider">
+
+    <article>
+      <h3>इस टूल के बारे में (Hindi)</h3>
+      <p>PDF के पन्नों पर लगा watermark एक असली काम करता है। यह किसी document को draft के रूप में चिह्नित करता है ताकि कोई उसे final समझने की गलती न करे; यह किसी file को इरादे से ज़्यादा फैलने से पहले confidential या केवल internal के रूप में पहचानता है; और unauthorized copying रोकने या proposal, quotation, invoice या report पर branding मज़बूत करने के लिए पन्ने पर नाम या logo रखता है। किसी लंबे document के हर पन्ने पर यह निशान हाथ से लगाना धीमा और गलती-प्रवण होगा — और यही दोहराव वाला काम यह टूल कुछ ही क्लिक में, पूरी तरह आपके browser के अंदर, स्वचालित कर देता है।</p>
+
+      <p>ApneSoftware PDF Watermark टूल से आप या तो <strong>text watermark</strong> जोड़ सकते हैं — जैसे “CONFIDENTIAL”, “DRAFT”, “SAMPLE”, “PAID” या कंपनी का नाम — या PNG, JPG या SVG के रूप में सहेजा गया <strong>image watermark</strong> यानी logo। Text watermark में sans-serif, serif या monospace font चुना जा सकता है, उसे bold, italic या underline किया जा सकता है, हल्की drop shadow दी जा सकती है, और colour picker या सटीक hex code से कोई भी रंग दिया जा सकता है। Image watermark अपनी transparency बनाए रखते हैं, इसलिए पारदर्शी पृष्ठभूमि वाला logo आपके पन्नों पर साफ-सुथरे ढंग से बैठता है, बिना किसी सफेद box के। आप जो भी प्रकार चुनें, opacity आपके नियंत्रण में रहती है — मार्क एक हल्की छाया हो सकती है जो नीचे के text को कभी न ढके, या एक गहरा निशान जो पूरे पन्ने पर हावी हो।</p>
+
+      <p><strong>Position</strong> एक सरल नौ-बिंदु grid से तय होती है: ऊपर-बाएँ, ऊपर-बीच, ऊपर-दाएँ, तीन मध्य स्थान, और नीचे के तीन स्थान। एक margin slider निशान को पन्ने के बिल्कुल किनारे से हटाता है, और rotation नियंत्रण — 0°, 45°, 90° और −45° के त्वरित presets तथा पूरे 0–360° slider के साथ — आपको classic diagonal draft कोण सेट करने या text को सीधा रखने देता है। यदि आप चाहते हैं कि watermark एक जगह के बजाय पूरे पन्ने को ढके, तो <strong>tile / repeat</strong> विकल्प उसे हल्के, समान दूरी वाले grid में छापता है, जो sample documents और PDF के रूप में साझा की गई तस्वीरों की सुरक्षा के लिए लोकप्रिय रूप है।</p>
+
+      <p>एक विशेषता जो professional watermark को अलग बनाती है वह है <strong>layering</strong>। डिफ़ॉल्ट रूप से watermark पन्ने की सामग्री के <em>ऊपर</em> खींचा जाता है, जो गहरे stamp के लिए सही है। पर आप इसे सामग्री के <em>पीछे</em> भी रख सकते हैं, ताकि मौजूदा text और images ठीक किसी छपे हुए letterhead या background seal की तरह इसके ऊपर बैठें। टूल यह हर लक्षित पन्ने को दोबारा बनाकर करता है — पहले watermark खींचकर और फिर उसके ऊपर मूल पन्ने की सामग्री रखकर — जिससे एक असली background watermark मिलता है, न कि केवल एक पारदर्शी overlay।</p>
+
+      <p>आप शायद ही हर पन्ने पर एक जैसा व्यवहार चाहते हैं, इसलिए टूल में लचीला <strong>page targeting</strong> शामिल है। watermark को सभी पन्नों पर, केवल पहले पन्ने पर (cover stamp के लिए उपयोगी), केवल आखिरी पन्ने पर, सभी विषम या सभी सम पन्नों पर, या <em>1-3, 5, 8-10</em> के रूप में टाइप की गई सटीक custom range पर लगाएँ। एक <strong>live preview</strong> असली पन्ने को उसी जगह watermark के साथ दिखाता है जहाँ वह पड़ेगा, और आप document के पन्ने पलट सकते हैं तथा zoom करके परिणाम जाँच सकते हैं — कोई अंदाज़ा नहीं, और यह देखने के लिए पूरी file process करने की ज़रूरत नहीं कि आकार और कोण सही दिख रहे हैं या नहीं।</p>
+
+      <p>संतुष्ट होने पर output विकल्प अंतिम निखार देते हैं। download की गई file का नाम बदलें, चुनें कि document का <strong>metadata (title, author आदि) रखना है या हटाना</strong>, और वैकल्पिक रूप से object streams से output को <strong>compress</strong> करें ताकि file का आकार कम रहे। आप watermarked PDF तुरंत download कर सकते हैं या सीधे printer पर भेज सकते हैं। Password-protected PDF locally संभाले जाते हैं ताकि जिस document को खोलने का आपको अधिकार है उस पर आप watermark लगा सकें, और सैकड़ों पन्नों वाली बड़ी files पन्ना-दर-पन्ना process होती हैं ताकि memory का उपयोग उचित रहे।</p>
+
+      <p>सबसे बढ़कर, टूल <strong>privacy</strong> के इर्द-गिर्द बना है। हर कदम — PDF पढ़ना, preview बनाना, watermark खींचना और परिणाम सहेजना — आपके अपने device पर browser में JavaScript से होता है। आपका document कभी किसी server पर नहीं भेजा जाता, जो तब मायने रखता है जब watermark जोड़ने से पहले भी सामग्री sensitive हो: contracts, medical records, financial statements, अनरिलीज़ designs, exam papers और internal reports — सभी बिना आपके कंप्यूटर से बाहर गए मार्क किए जा सकते हैं। कुछ भी install करने की ज़रूरत नहीं, कोई account नहीं, और हम आपकी file पर अपनी कोई branding नहीं जोड़ते। आपकी PDF में एकमात्र बदलाव वही watermark है जो आपने लगाना चुना; बाकी हर byte जस का तस रहता है।</p>
+    </article>
+
+    <h3>How To Use</h3>
+    <ol>
+      <li>Drag &amp; drop your PDF onto the upload area, or click to browse.</li>
+      <li>Choose <strong>Text</strong> or <strong>Image / Logo</strong> as the watermark type.</li>
+      <li>Enter your text (and set font, colour, style) or upload a logo and set its width.</li>
+      <li>Adjust size, opacity and rotation, then pick a position on the grid and a margin.</li>
+      <li>Choose <strong>above</strong> or <strong>behind</strong> content, and select which pages to stamp.</li>
+      <li>Check the live preview, navigating pages and zooming as needed.</li>
+      <li>Rename the file if you like, then click <strong>Apply &amp; Download</strong> — or print directly.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="info-wrap" aria-labelledby="faqH">
+  <div class="info-section wm-about">
+    <h2 id="faqH">❓ Frequently Asked Questions</h2>
+    <div id="faqList"></div>
+  </div>
+</section>
+
+<section class="info-wrap" aria-labelledby="privacyH">
+  <div class="info-section wm-about">
+    <h2 id="privacyH">🔒 Privacy</h2>
+    <p>This tool is 100% client-side. Your PDF and any logo you upload are read and processed entirely in your browser using JavaScript — they are never sent to ApneSoftware or any third party. Nothing is stored, logged or transmitted. When you close or refresh the page, the file is cleared from memory. Because there is no upload, you can safely watermark confidential, legal, medical and financial documents.</p>
+
+    <h2 id="compatH">🌐 Browser Compatibility</h2>
+    <p>Works in all modern browsers including Google Chrome, Microsoft Edge, Mozilla Firefox, Safari, Brave and Opera, on Windows, macOS, Linux, Android and iOS. It relies on standard web technologies (Canvas, File API and WebAssembly-free JavaScript PDF libraries), so no plugins or extensions are required. For very large PDFs a desktop browser with more available memory gives the smoothest experience.</p>
+
+    <h2 id="formatsH">📁 Supported Formats</h2>
+    <p><strong>Input document:</strong> PDF (.pdf), including password-protected PDFs you are authorised to open. <strong>Logo / image watermark:</strong> PNG (with transparency), JPG/JPEG and SVG (rasterised for embedding). <strong>Output:</strong> a standard PDF (.pdf) with your watermark applied, ready to download or print.</p>
+  </div>
+</section>
 
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
@@ -136,81 +421,474 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="../assets/common.js"></script>
 <script>
-pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+/* ══════════════════════════════════════════════════════════════
+   PDF WATERMARK — premium client-side tool (pdf-lib + pdf.js)
+   ══════════════════════════════════════════════════════════════ */
+(function(){
+  "use strict";
+  if(window.pdfjsLib) pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  var $ = function(id){ return document.getElementById(id); };
 
-const dropzone = document.getElementById('dropzone');
-const fileInput = document.getElementById('fileInput');
-let currentFile = null;
+  var FAQ = [
+    ["Is my PDF uploaded to a server?","No. The entire watermarking process runs locally in your browser using JavaScript. Your PDF and any logo image never leave your device, so it is safe for confidential and sensitive documents."],
+    ["Can I add an image or logo watermark, not just text?","Yes. Switch the type to “Image / Logo” and upload a PNG, JPG or SVG. Transparent PNGs and SVGs keep their transparency, so a logo overlays cleanly without a white background box."],
+    ["Does it support transparent logos?","Yes. Transparency in PNG and SVG files is preserved when the logo is embedded, so only the visible parts of your logo appear over the page."],
+    ["Can I place the watermark behind the text instead of on top?","Yes. Choose “Behind content” and the tool rebuilds each page with the watermark drawn first and your original content layered on top, giving a genuine background watermark like a letterhead or seal."],
+    ["Which pages can I watermark?","You can apply the watermark to all pages, only the first, only the last, all odd or all even pages, or a custom range typed like 1-3, 5, 8-10."],
+    ["Can I control the opacity so it doesn't hide my text?","Yes. The opacity slider ranges from a very faint tint to fully opaque, so you can make the watermark subtle enough to read the content underneath or bold enough to dominate."],
+    ["What rotation angles are available?","Quick presets for 0°, 45°, 90° and −45°, plus a slider for any custom angle from 0 to 360°. The classic diagonal draft look is 45°."],
+    ["Can I repeat the watermark across the whole page?","Yes. Enable “Tile / repeat” to stamp the watermark in a light, evenly spaced grid that covers the entire page — popular for protecting samples and photos."],
+    ["Will the live preview match the final PDF?","The preview renders the real page with the watermark drawn where it will appear, so size, position, rotation and colour match the output closely. Very fine sub-pixel differences can occur but the result is faithful."],
+    ["Can I choose the font and make the text bold or italic?","Yes. Choose Helvetica (sans-serif), Times (serif) or Courier (monospace), and toggle bold, italic and underline. A soft drop-shadow is also available."],
+    ["How do I set an exact colour?","Use the colour picker for a visual choice, or type a precise hex code such as #ff0000 in the hex field. The two stay in sync."],
+    ["Does it work on mobile phones and tablets?","Yes. The layout is responsive, controls are touch-friendly, and the preview scales to your screen. A desktop browser is smoother for very large PDFs."],
+    ["Can I watermark a password-protected PDF?","If you are authorised to open the file, the tool can load it locally and add a watermark. Everything still happens on your device with no upload."],
+    ["Will watermarking change my document's text or layout?","No. Apart from the watermark you add, the original page content, text, images and layout are preserved. Nothing else in the document is altered."],
+    ["Can I keep or remove the PDF's metadata?","Yes. “Preserve metadata” keeps the original title, author and similar fields. Turn it off to strip that information from the output."],
+    ["Does compressing the output reduce quality?","The compress option uses object streams to shrink the file structure. It does not re-encode your page content, so visible quality is unchanged; savings vary by document."],
+    ["Is there a file size or page limit?","There is no fixed limit — it depends on your device's available memory. Pages are processed one at a time to keep memory use reasonable, so large documents work but may take longer."],
+    ["Can I print the watermarked PDF directly?","Yes. The Print button opens the watermarked result in your browser's print dialog so you can print or save as PDF without a separate download."],
+    ["Is the tool free? Do I need an account?","It is completely free with no signup, no watermark added by us, and no usage limits. Just open the page and use it."],
+    ["Which formats can I use for the logo watermark?","PNG (including transparent), JPG/JPEG and SVG. SVGs are rasterised to a high-resolution image before being embedded so they render reliably in the PDF."],
+    ["Why does my watermark look cut off when rotated near an edge?","Rotation happens around the watermark's centre at the chosen anchor. Move the anchor toward the middle or increase the margin so a rotated mark has room to fit on the page."]
+  ];
 
-setupDropzone(dropzone, fileInput, async files => {
-  if(files.length && files[0].type === 'application/pdf'){
-    currentFile = files[0];
-    const arrayBuf = await currentFile.arrayBuffer();
-    const pdf = await pdfjsLib.getDocument({data: arrayBuf}).promise;
-    const page = await pdf.getPage(1);
-    const viewport = page.getViewport({ scale: 0.3 });
-    const canvas = document.createElement('canvas');
-    canvas.width = viewport.width;
-    canvas.height = viewport.height;
-    const ctx = canvas.getContext('2d');
-    await page.render({ canvasContext: ctx, viewport }).promise;
-    document.getElementById('previewThumb').src = canvas.toDataURL();
-    document.getElementById('previewName').textContent = currentFile.name;
-    document.getElementById('previewMeta').textContent = `${pdf.numPages} pages • ${formatBytes(currentFile.size)}`;
-    document.getElementById('afterUpload').style.display = 'block';
+  // ── State ──────────────────────────────────────────────────
+  var srcBytes=null, srcName="", pageCount=0, pdfjsDoc=null, meta={};
+  var logoDataURL=null, logoNaturalW=0, logoNaturalH=0, logoMime="";
+  var wmType="text", position="c", layer="above", scope="all", rotDeg=45;
+  var pvPage=1, pvScale=1;
+  var renderToken=0, pvRenderTask=null;
+
+  var PDFLibRef = window.PDFLib;
+
+  // ── Helpers ────────────────────────────────────────────────
+  function hexToRgb01(hex){
+    hex=(hex||"").replace('#','');
+    if(hex.length===3) hex=hex.split('').map(function(c){return c+c;}).join('');
+    var n=parseInt(hex,16); if(isNaN(n)) return {r:1,g:0,b:0};
+    return {r:((n>>16)&255)/255, g:((n>>8)&255)/255, b:(n&255)/255};
   }
-});
+  function setProg(p){ var w=$('progWrap'); if(p<0){w.classList.add('wm-hide');return;} w.classList.remove('wm-hide'); $('progFill').style.width=Math.round(p*100)+'%'; }
+  function status(msg){ $('statusMsg').textContent=msg||''; }
 
-document.getElementById('fontSize').addEventListener('input', e=> document.getElementById('fontSizeVal').textContent = e.target.value);
-document.getElementById('opacityRange').addEventListener('input', e=> document.getElementById('opacityVal').textContent = e.target.value);
-document.getElementById('rotationRange').addEventListener('input', e=> document.getElementById('rotationVal').textContent = e.target.value);
+  // parse "1-3,5,8-10" -> set of 1-based page numbers
+  function parseRange(str,max){
+    var set={};
+    (str||"").split(',').forEach(function(part){
+      part=part.trim(); if(!part) return;
+      var m=part.match(/^(\d+)\s*-\s*(\d+)$/);
+      if(m){ var a=+m[1],b=+m[2]; if(a>b){var t=a;a=b;b=t;} for(var i=a;i<=b;i++) if(i>=1&&i<=max) set[i]=1; }
+      else if(/^\d+$/.test(part)){ var n=+part; if(n>=1&&n<=max) set[n]=1; }
+    });
+    return set;
+  }
+  // returns predicate(pageNumber 1-based) -> boolean
+  function pageTargeter(){
+    if(scope==='all') return function(){return true;};
+    if(scope==='first') return function(n){return n===1;};
+    if(scope==='last') return function(n){return n===pageCount;};
+    if(scope==='odd') return function(n){return n%2===1;};
+    if(scope==='even') return function(n){return n%2===0;};
+    if(scope==='range'){ var set=parseRange($('rangeInput').value,pageCount); return function(n){return !!set[n];}; }
+    return function(){return true;};
+  }
 
-function hexToRgb01(hex){
-  hex = hex.replace('#','');
-  const bigint = parseInt(hex, 16);
-  return { r: ((bigint>>16)&255)/255, g: ((bigint>>8)&255)/255, b: (bigint&255)/255 };
-}
+  function currentSettings(){
+    return {
+      type:wmType,
+      text:$('watermarkText').value,
+      font:$('fontFamily').value,
+      bold:$('optBold').checked, italic:$('optItalic').checked,
+      underline:$('optUnderline').checked, shadow:$('optShadow').checked,
+      size:parseInt($('fontSize').value,10),
+      opacity:parseFloat($('opacityRange').value),
+      rot:rotDeg,
+      color:hexToRgb01($('hexInput').value),
+      hex:$('hexInput').value,
+      position:position, layer:layer,
+      margin:parseInt($('marginRange').value,10),
+      tile:$('optTile').checked,
+      imgScale:parseInt($('imgScale').value,10)/100
+    };
+  }
 
-document.getElementById('applyBtn').addEventListener('click', async ()=>{
-  const status = document.getElementById('statusMsg');
-  const text = document.getElementById('watermarkText').value.trim();
-  if(!text){ status.textContent = '⚠️ Please enter watermark text'; return; }
+  // Given page W,H and settings -> anchor centre point (PDF coords, y from bottom)
+  function anchorCentre(W,H,s,mkW,mkH){
+    var m=s.margin, cx, cy;
+    var hw=mkW/2, hh=mkH/2;
+    // horizontal
+    if(position[1]==='l'||position==='ml'||position==='tl'||position==='bl'){ cx=m+hw; }
+    else if(position[1]==='r'||position==='mr'||position==='tr'||position==='br'){ cx=W-m-hw; }
+    else { cx=W/2; }
+    // vertical (t=top,b=bottom,m/c=middle)
+    if(position[0]==='t'){ cy=H-m-hh; }
+    else if(position[0]==='b'){ cy=m+hh; }
+    else { cy=H/2; }
+    return {cx:cx, cy:cy};
+  }
 
-  status.textContent = '⏳ Applying...';
-  try{
-    const { PDFDocument, rgb, degrees, StandardFonts } = PDFLib;
-    const bytes = await currentFile.arrayBuffer();
-    const pdfDoc = await PDFDocument.load(bytes);
-    const font = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+  // ── Live preview (canvas) ──────────────────────────────────
+  function drawPreviewOverlay(ctx, cw, ch, pageW, pageH, s){
+    var sx=cw/pageW, sy=ch/pageH; // canvas px per pdf pt
+    ctx.save();
+    ctx.globalAlpha=s.opacity;
+    var draw = function(cxPt,cyPt){
+      // convert PDF (y from bottom) -> canvas (y from top)
+      var x=cxPt*sx, y=(pageH-cyPt)*sy;
+      ctx.save();
+      ctx.translate(x,y);
+      ctx.rotate(-s.rot*Math.PI/180);
+      if(s.type==='image' && logoDataURL && window.__logoImg){
+        var iw=pageW*s.imgScale*sx;
+        var ih=iw*(logoNaturalH/logoNaturalW);
+        ctx.drawImage(window.__logoImg, -iw/2, -ih/2, iw, ih);
+      } else {
+        var fs=s.size*sx;
+        var fam=s.font==='TimesRoman'?'Georgia,serif':(s.font==='Courier'?'monospace':'Helvetica,Arial,sans-serif');
+        ctx.font=(s.italic?'italic ':'')+(s.bold?'bold ':'')+fs+'px '+fam;
+        ctx.textAlign='center'; ctx.textBaseline='middle';
+        ctx.fillStyle='rgb('+Math.round(s.color.r*255)+','+Math.round(s.color.g*255)+','+Math.round(s.color.b*255)+')';
+        if(s.shadow){ ctx.shadowColor='rgba(0,0,0,.55)'; ctx.shadowBlur=fs*0.06; ctx.shadowOffsetX=fs*0.04; ctx.shadowOffsetY=fs*0.04; }
+        ctx.fillText(s.text||'', 0, 0);
+        if(s.underline){ var tw=ctx.measureText(s.text||'').width; ctx.strokeStyle=ctx.fillStyle; ctx.lineWidth=Math.max(1,fs*0.06); ctx.beginPath(); ctx.moveTo(-tw/2, fs*0.42); ctx.lineTo(tw/2, fs*0.42); ctx.stroke(); }
+      }
+      ctx.restore();
+    };
+    // measure mark size in pt for anchoring
+    var mkW, mkH;
+    if(s.type==='image' && logoNaturalW){ mkW=pageW*s.imgScale; mkH=mkW*(logoNaturalH/logoNaturalW); }
+    else { mkW=Math.max(1,(s.text||'').length*s.size*0.5); mkH=s.size; }
+    if(s.tile){
+      var stepX=Math.max(mkW*1.6, pageW/3), stepY=Math.max(mkH*3, pageH/4);
+      for(var gx=stepX/2; gx<pageW; gx+=stepX){ for(var gy=stepY/2; gy<pageH; gy+=stepY){ draw(gx,gy); } }
+    } else {
+      var c=anchorCentre(pageW,pageH,s,mkW,mkH); draw(c.cx,c.cy);
+    }
+    ctx.restore();
+  }
 
-    const fontSize = parseInt(document.getElementById('fontSize').value);
-    const opacity = parseFloat(document.getElementById('opacityRange').value);
-    const rotation = parseInt(document.getElementById('rotationRange').value);
-    const color = hexToRgb01(document.getElementById('colorInput').value);
+  function renderPreview(){
+    if(!pdfjsDoc) return;
+    var token=++renderToken;
+    var s=currentSettings();
+    // cancel any in-flight render on the shared canvas to avoid overlap
+    if(pvRenderTask){ try{ pvRenderTask.cancel(); }catch(e){} pvRenderTask=null; }
+    pdfjsDoc.getPage(pvPage).then(function(page){
+      if(token!==renderToken) return;
+      var base=page.getViewport({scale:1});
+      var wrapW=Math.min(($('wmCanvas').parentElement.clientWidth||520),520);
+      var fit=wrapW/base.width;
+      var vp=page.getViewport({scale:fit*pvScale});
+      var canvas=$('wmCanvas'); var ctx=canvas.getContext('2d');
+      canvas.width=vp.width; canvas.height=vp.height;
+      var task=page.render({canvasContext:ctx, viewport:vp});
+      pvRenderTask=task;
+      task.promise.then(function(){
+        if(token!==renderToken) return;
+        pvRenderTask=null;
+        var tgt=pageTargeter();
+        if(tgt(pvPage)) drawPreviewOverlay(ctx, canvas.width, canvas.height, base.width, base.height, s);
+      }).catch(function(){ /* render cancelled — ignore */ });
+    });
+    $('pvPage').textContent=pvPage; $('pvTotal').textContent=pageCount;
+    $('pvPrev').disabled=(pvPage<=1); $('pvNext').disabled=(pvPage>=pageCount);
+  }
 
-    const pages = pdfDoc.getPages();
-    pages.forEach(page => {
-      const { width, height } = page.getSize();
-      const textWidth = font.widthOfTextAtSize(text, fontSize);
-      page.drawText(text, {
-        x: width/2 - textWidth/2,
-        y: height/2,
-        size: fontSize,
-        font,
-        color: rgb(color.r, color.g, color.b),
-        opacity,
-        rotate: degrees(rotation),
+  // ── Load file ──────────────────────────────────────────────
+  function resetControls(){
+    $('watermarkText').value='CONFIDENTIAL'; $('fontFamily').value='Helvetica';
+    $('optBold').checked=true; $('optItalic').checked=false; $('optUnderline').checked=false; $('optShadow').checked=false;
+    $('fontSize').value=50; $('fontSizeVal').textContent='50';
+    $('opacityRange').value=0.3; $('opacityVal').textContent='0.30';
+    $('rotationRange').value=45; $('rotationVal').textContent='45'; rotDeg=45;
+    $('colorInput').value='#ff0000'; $('hexInput').value='#ff0000';
+    $('marginRange').value=36; $('marginVal').textContent='36';
+    $('optTile').checked=false; $('imgScale').value=30; $('imgScaleVal').textContent='30';
+    $('optMeta').checked=true; $('optCompress').checked=false; $('outName').value='watermarked';
+    setPos('c'); setLayer('above'); setScope('all'); setType('text');
+  }
+
+  function loadFile(file){
+    if(!file || file.type!=='application/pdf'){ status('⚠️ Please choose a PDF file.'); return; }
+    srcName=file.name;
+    status('⏳ Loading…'); setProg(0.2);
+    file.arrayBuffer().then(function(buf){
+      srcBytes=buf.slice(0);
+      // pdf.js for preview + metadata
+      var task=pdfjsLib.getDocument({data:buf.slice(0)});
+      task.promise.then(function(doc){
+        pdfjsDoc=doc; pageCount=doc.numPages;
+        doc.getMetadata().then(function(md){ meta=(md&&md.info)||{}; $('fiTitle').textContent=meta.Title||'—'; }).catch(function(){ $('fiTitle').textContent='—'; });
+        $('fiName').textContent=srcName;
+        $('fiSize').textContent=formatBytes(file.size);
+        $('fiPages').textContent=pageCount;
+        pvPage=1; pvScale=1;
+        $('workspace').classList.remove('wm-hide');
+        $('dropzone').classList.add('wm-hide');
+        setProg(-1); status('');
+        renderPreview();
+      }).catch(function(err){
+        if(err && err.name==='PasswordException'){
+          var pw=prompt('This PDF is password protected. Enter the password to preview and watermark it:');
+          if(pw!=null){ retryWithPassword(buf.slice(0), pw, file); return; }
+        }
+        setProg(-1); status('❌ Could not read this PDF: '+(err&&err.message||err));
       });
     });
-
-    const newBytes = await pdfDoc.save();
-    const blob = new Blob([newBytes], {type:'application/pdf'});
-    downloadBlob('watermarked.pdf', blob);
-    status.textContent = '✅ Watermark applied and downloaded!';
-  }catch(err){
-    status.textContent = '❌ Error: ' + err.message;
   }
-});
+  function retryWithPassword(buf, pw, file){
+    pdfjsLib.getDocument({data:buf, password:pw}).promise.then(function(doc){
+      pdfjsDoc=doc; pageCount=doc.numPages;
+      $('fiName').textContent=srcName; $('fiSize').textContent=formatBytes(file.size); $('fiPages').textContent=pageCount; $('fiTitle').textContent='(protected)';
+      pvPage=1; $('workspace').classList.remove('wm-hide'); $('dropzone').classList.add('wm-hide');
+      setProg(-1); status(''); renderPreview();
+    }).catch(function(){ setProg(-1); status('❌ Wrong password or unreadable PDF.'); });
+  }
+
+  // ── Logo handling (PNG/JPG/SVG -> dataURL + natural size) ──
+  function loadLogo(file){
+    if(!file) return;
+    var reader=new FileReader();
+    reader.onload=function(){
+      var dataURL=reader.result;
+      if(file.type==='image/svg+xml'){
+        // rasterise SVG to PNG at high res
+        var img=new Image();
+        img.onload=function(){
+          var scale=Math.max(1, 1000/Math.max(img.width||300, img.height||300));
+          var c=document.createElement('canvas');
+          c.width=Math.round((img.width||300)*scale); c.height=Math.round((img.height||300)*scale);
+          c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+          logoDataURL=c.toDataURL('image/png'); logoMime='image/png';
+          finalizeLogo(logoDataURL, file);
+        };
+        img.onerror=function(){ status('❌ Could not read that SVG.'); };
+        img.src=dataURL;
+      } else {
+        logoDataURL=dataURL; logoMime=file.type;
+        finalizeLogo(dataURL, file);
+      }
+    };
+    reader.readAsDataURL(file);
+  }
+  function finalizeLogo(dataURL, file){
+    var im=new Image();
+    im.onload=function(){
+      logoNaturalW=im.naturalWidth||im.width; logoNaturalH=im.naturalHeight||im.height;
+      window.__logoImg=im;
+      $('logoInfo').textContent=file.name+' • '+logoNaturalW+'×'+logoNaturalH;
+      renderPreview();
+    };
+    im.src=dataURL;
+  }
+
+  // ── Build watermarked PDF ──────────────────────────────────
+  function dataURLToUint8(dataURL){
+    var b64=dataURL.split(',')[1]; var bin=atob(b64); var arr=new Uint8Array(bin.length);
+    for(var i=0;i<bin.length;i++) arr[i]=bin.charCodeAt(i); return arr;
+  }
+
+  function pickFont(pdfDoc, s){
+    var F=PDFLibRef.StandardFonts;
+    if(s.font==='TimesRoman') return pdfDoc.embedFont(s.bold&&s.italic?F.TimesRomanBoldItalic:(s.bold?F.TimesRomanBold:(s.italic?F.TimesRomanItalic:F.TimesRoman)));
+    if(s.font==='Courier') return pdfDoc.embedFont(s.bold&&s.italic?F.CourierBoldOblique:(s.bold?F.CourierBold:(s.italic?F.CourierOblique:F.Courier)));
+    return pdfDoc.embedFont(s.bold&&s.italic?F.HelveticaBoldOblique:(s.bold?F.HelveticaBold:(s.italic?F.HelveticaOblique:F.Helvetica)));
+  }
+
+  function build(){
+    return (async function(){
+      var PDFLib=PDFLibRef;
+      var s=currentSettings();
+      if(s.type==='text' && !s.text.trim()) throw new Error('Please enter watermark text.');
+      if(s.type==='image' && !logoDataURL) throw new Error('Please upload a logo image.');
+
+      var src=await PDFLib.PDFDocument.load(srcBytes.slice(0), {ignoreEncryption:true});
+      var pages=src.getPages();
+      var tgt=pageTargeter();
+      var font = s.type==='text' ? await pickFont(src,s) : null;
+      var embedImg=null;
+      if(s.type==='image'){
+        var bytes=dataURLToUint8(logoDataURL);
+        embedImg = logoMime==='image/jpeg' ? await src.embedJpg(bytes) : await src.embedPng(bytes);
+      }
+
+      // For "behind" we need a fresh doc where watermark is drawn then original overlaid.
+      var behindDoc=null, embeddedPages=null;
+      if(s.layer==='behind'){
+        behindDoc = await PDFLib.PDFDocument.create();
+        embeddedPages = await behindDoc.embedPages(pages);
+        if(s.type==='image'){
+          var b2=dataURLToUint8(logoDataURL);
+          embedImg = logoMime==='image/jpeg' ? await behindDoc.embedJpg(b2) : await behindDoc.embedPng(b2);
+        } else {
+          font = await pickFont(behindDoc,s);
+        }
+      }
+
+      var rad=s.rot*Math.PI/180, cos=Math.cos(rad), sin=Math.sin(rad);
+
+      function stampCentre(page, cx, cy){
+        if(s.type==='image'){
+          var iw=page.getWidth()*s.imgScale;
+          var ih=iw*(logoNaturalH/logoNaturalW);
+          // origin (bottom-left) so image centre lands at (cx,cy) after rotation about origin
+          var x=cx-(iw/2)*cos+(ih/2)*sin;
+          var y=cy-(iw/2)*sin-(ih/2)*cos;
+          page.drawImage(embedImg,{x:x,y:y,width:iw,height:ih,rotate:PDFLib.degrees(s.rot),opacity:s.opacity});
+        } else {
+          var tw=font.widthOfTextAtSize(s.text,s.size);
+          var th=font.heightAtSize(s.size);
+          var x=cx-(tw/2)*cos+(th/2)*sin;
+          var y=cy-(tw/2)*sin-(th/2)*cos;
+          var col=PDFLib.rgb(s.color.r,s.color.g,s.color.b);
+          if(s.shadow){
+            page.drawText(s.text,{x:x+s.size*0.03,y:y-s.size*0.03,size:s.size,font:font,color:PDFLib.rgb(0,0,0),opacity:s.opacity*0.5,rotate:PDFLib.degrees(s.rot)});
+          }
+          page.drawText(s.text,{x:x,y:y,size:s.size,font:font,color:col,opacity:s.opacity,rotate:PDFLib.degrees(s.rot)});
+          if(s.underline){
+            // underline: a thin line just below the baseline, rotated with the text
+            var uy=-th*0.12;
+            var x1=x+(0)*cos-(uy)*sin, y1=y+(0)*sin+(uy)*cos;
+            var x2=x+(tw)*cos-(uy)*sin, y2=y+(tw)*sin+(uy)*cos;
+            page.drawLine({start:{x:x1,y:y1},end:{x:x2,y:y2},thickness:Math.max(1,s.size*0.05),color:col,opacity:s.opacity});
+          }
+        }
+      }
+
+      function stampPage(page){
+        var W=page.getWidth(), H=page.getHeight();
+        if(s.tile){
+          var mkW, mkH;
+          if(s.type==='image'){ mkW=W*s.imgScale; mkH=mkW*(logoNaturalH/logoNaturalW); }
+          else { mkW=font.widthOfTextAtSize(s.text,s.size); mkH=s.size; }
+          var stepX=Math.max(mkW*1.6, W/3), stepY=Math.max(mkH*3, H/4);
+          for(var gx=stepX/2; gx<W; gx+=stepX){ for(var gy=stepY/2; gy<H; gy+=stepY){ stampCentre(page,gx,gy); } }
+        } else {
+          var c=anchorCentre(W,H,s,0,0); stampCentre(page,c.cx,c.cy);
+        }
+      }
+
+      var outDoc, total=pages.length, i;
+      if(s.layer==='behind'){
+        for(i=0;i<total;i++){
+          var ep=embeddedPages[i];
+          var pw=pages[i].getWidth(), ph=pages[i].getHeight();
+          var np=behindDoc.addPage([pw,ph]);
+          if(tgt(i+1)){ stampPage(np); }              // watermark first (background)
+          np.drawPage(ep,{x:0,y:0,width:pw,height:ph}); // original content on top
+          setProg((i+1)/total);
+        }
+        outDoc=behindDoc;
+      } else {
+        for(i=0;i<total;i++){ if(tgt(i+1)) stampPage(pages[i]); setProg((i+1)/total); }
+        outDoc=src;
+      }
+
+      // metadata
+      if(!s.type){}
+      if($('optMeta').checked){
+        try{ if(meta.Title) outDoc.setTitle(meta.Title); if(meta.Author) outDoc.setAuthor(meta.Author); if(meta.Subject) outDoc.setSubject(meta.Subject); }catch(e){}
+      } else {
+        try{ outDoc.setTitle(''); outDoc.setAuthor(''); outDoc.setSubject(''); outDoc.setKeywords([]); outDoc.setProducer(''); outDoc.setCreator(''); }catch(e){}
+      }
+      var outBytes=await outDoc.save({useObjectStreams:$('optCompress').checked});
+      return new Blob([outBytes],{type:'application/pdf'});
+    })();
+  }
+
+  function apply(download){
+    status('⏳ Applying watermark…'); setProg(0.05);
+    build().then(function(blob){
+      setProg(1);
+      var name=($('outName').value.trim()||'watermarked').replace(/\.pdf$/i,'')+'.pdf';
+      if(download){
+        if(window.downloadBlob) downloadBlob(name, blob);
+        else { var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; a.click(); }
+        status('✅ Watermark applied and downloaded.');
+        if(window.premToast) premToast('Watermarked PDF downloaded');
+      } else {
+        var url=URL.createObjectURL(blob); var w=window.open(url);
+        if(w){ w.addEventListener('load',function(){ try{w.print();}catch(e){} }); }
+        status('🖨️ Opened print view.');
+      }
+      setTimeout(function(){setProg(-1);},700);
+    }).catch(function(err){ setProg(-1); status('❌ '+(err&&err.message||err)); });
+  }
+
+  // ── UI wiring ──────────────────────────────────────────────
+  function setType(t){
+    wmType=t;
+    $('typeText').classList.toggle('on',t==='text'); $('typeText').setAttribute('aria-pressed',t==='text');
+    $('typeImage').classList.toggle('on',t==='image'); $('typeImage').setAttribute('aria-pressed',t==='image');
+    $('textPanel').classList.toggle('wm-hide',t!=='text');
+    $('imagePanel').classList.toggle('wm-hide',t!=='image');
+    renderPreview();
+  }
+  function setPos(p){ position=p; Array.prototype.forEach.call($('posGrid').children,function(b){ b.classList.toggle('on', b.getAttribute('data-pos')===p); }); renderPreview(); }
+  function setLayer(l){ layer=l; $('layerAbove').classList.toggle('on',l==='above'); $('layerBehind').classList.toggle('on',l==='behind'); renderPreview(); }
+  function setScope(sc){ scope=sc; Array.prototype.forEach.call(document.querySelectorAll('.wm-scope-btn'),function(b){ b.classList.toggle('on', b.getAttribute('data-scope')===sc); }); $('rangeInput').classList.toggle('wm-hide', sc!=='range'); renderPreview(); }
+
+  function wire(){
+    setupDropzone($('dropzone'), $('fileInput'), function(files){ if(files&&files.length) loadFile(files[0]); });
+    $('dropzone').addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); $('fileInput').click(); }});
+
+    $('typeText').addEventListener('click',function(){setType('text');});
+    $('typeImage').addEventListener('click',function(){setType('image');});
+    $('logoInput').addEventListener('change',function(){ if(this.files&&this.files[0]) loadLogo(this.files[0]); });
+
+    $('fontSize').addEventListener('input',function(){ $('fontSizeVal').textContent=this.value; renderPreview(); });
+    $('opacityRange').addEventListener('input',function(){ $('opacityVal').textContent=parseFloat(this.value).toFixed(2); renderPreview(); });
+    $('rotationRange').addEventListener('input',function(){ rotDeg=parseInt(this.value,10); $('rotationVal').textContent=this.value; renderPreview(); });
+    $('imgScale').addEventListener('input',function(){ $('imgScaleVal').textContent=this.value; renderPreview(); });
+    $('marginRange').addEventListener('input',function(){ $('marginVal').textContent=this.value; renderPreview(); });
+    Array.prototype.forEach.call(document.querySelectorAll('.wm-rot'),function(b){ b.addEventListener('click',function(){ var r=this.getAttribute('data-r'); $('rotationRange').value=r; rotDeg=parseInt(r,10); $('rotationVal').textContent=r; renderPreview(); }); });
+
+    $('colorInput').addEventListener('input',function(){ $('hexInput').value=this.value; renderPreview(); });
+    $('hexInput').addEventListener('input',function(){ var v=this.value.trim(); if(/^#?[0-9a-fA-F]{6}$/.test(v)){ if(v[0]!=='#')v='#'+v; $('colorInput').value=v; } renderPreview(); });
+    ['watermarkText','fontFamily'].forEach(function(id){ $(id).addEventListener('input',renderPreview); });
+    ['optBold','optItalic','optUnderline','optShadow','optTile'].forEach(function(id){ $(id).addEventListener('change',renderPreview); });
+    $('rangeInput').addEventListener('input',renderPreview);
+
+    Array.prototype.forEach.call($('posGrid').children,function(b){ b.addEventListener('click',function(){ setPos(this.getAttribute('data-pos')); }); });
+    $('layerAbove').addEventListener('click',function(){setLayer('above');});
+    $('layerBehind').addEventListener('click',function(){setLayer('behind');});
+    Array.prototype.forEach.call(document.querySelectorAll('.wm-scope-btn'),function(b){ b.addEventListener('click',function(){ setScope(this.getAttribute('data-scope')); }); });
+
+    $('pvPrev').addEventListener('click',function(){ if(pvPage>1){pvPage--;renderPreview();} });
+    $('pvNext').addEventListener('click',function(){ if(pvPage<pageCount){pvPage++;renderPreview();} });
+    $('pvZoomIn').addEventListener('click',function(){ pvScale=Math.min(3,pvScale+0.25); renderPreview(); });
+    $('pvZoomOut').addEventListener('click',function(){ pvScale=Math.max(0.5,pvScale-0.25); renderPreview(); });
+
+    $('applyBtn').addEventListener('click',function(){ apply(true); });
+    $('printBtn').addEventListener('click',function(){ apply(false); });
+    $('resetBtn').addEventListener('click',function(){ resetControls(); renderPreview(); status('Settings reset.'); });
+    $('clearBtn').addEventListener('click',function(){ srcBytes=null; pdfjsDoc=null; pageCount=0; logoDataURL=null; window.__logoImg=null; $('workspace').classList.add('wm-hide'); $('dropzone').classList.remove('wm-hide'); $('fileInput').value=''; status(''); });
+
+    document.addEventListener('keydown',function(e){
+      if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='s'){ if(srcBytes){ e.preventDefault(); apply(true); } }
+    });
+
+    window.addEventListener('resize',function(){ if(pdfjsDoc) renderPreview(); });
+  }
+
+  // ── FAQ + schema ───────────────────────────────────────────
+  function buildFaq(){
+    var list=$('faqList'); if(!list) return;
+    list.innerHTML=FAQ.map(function(f){ return '<details><summary>'+f[0]+'</summary><p>'+f[1]+'</p></details>'; }).join('');
+    try{ var sc=$('faqSchema'); var data=JSON.parse(sc.textContent);
+      data.mainEntity=FAQ.map(function(f){ return {'@type':'Question','name':f[0],'acceptedAnswer':{'@type':'Answer','text':f[1]}}; });
+      sc.textContent=JSON.stringify(data);
+    }catch(e){}
+  }
+
+  document.addEventListener('DOMContentLoaded',function(){
+    if(!window.PDFLib){ PDFLibRef=window.PDFLib; }
+    PDFLibRef=window.PDFLib;
+    wire(); buildFaq();
+  });
+  if(document.readyState!=='loading'){ PDFLibRef=window.PDFLib; wire(); buildFaq(); }
+})();
 </script>
 </body>
 </html>
