@@ -4,37 +4,138 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
+<meta name="description" content="Free online PDF form filler. Fill text fields, checkboxes, radio buttons and dropdowns in any fillable PDF (AcroForm), then save editable or flatten to lock. Live preview, form summary, validation. 100% private — runs in your browser, no uploads, no signup.">
+<meta name="keywords" content="pdf form filler, fill pdf form online, acroform filler, fillable pdf, fill and flatten pdf, pdf form editor, free pdf form filler, government form filler">
 <link rel="canonical" href="https://apnesoftware.com/tools/pdf-form-filler.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="PDF Form Filler | ApneSoftware">
-<meta property="og:description" content="Fill and lock PDF forms. Free online tool — no signup required.">
+<meta property="og:title" content="PDF Form Filler — Fill &amp; Flatten Fillable PDF Forms | ApneSoftware">
+<meta property="og:description" content="Fill any fillable PDF form in your browser — text, checkboxes, radios, dropdowns. Live preview, validation, save editable or flatten. 100% private, no uploads.">
 <meta property="og:url" content="https://apnesoftware.com/tools/pdf-form-filler.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PDF Form Filler | ApneSoftware">
-<meta name="twitter:description" content="Fill and lock PDF forms. Free online tool — no signup required.">
+<meta name="twitter:title" content="PDF Form Filler — Fill &amp; Flatten Fillable PDF Forms | ApneSoftware">
+<meta name="twitter:description" content="Fill any fillable PDF form in your browser — text, checkboxes, radios, dropdowns. Live preview, validation, save editable or flatten. 100% private.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PDF Form Filler","description":"Fill and lock PDF forms. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/pdf-form-filler.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PDF Form Filler","description":"Fill fillable PDF forms (AcroForm) entirely in your browser — text fields, checkboxes, radio buttons, dropdowns and list boxes. Live preview, form summary, required-field validation, save editable or flatten. No uploads, no signup.","url":"https://apnesoftware.com/tools/pdf-form-filler.html","applicationCategory":"BusinessApplication","operatingSystem":"Any","browserRequirements":"Requires a modern web browser with JavaScript enabled","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"featureList":["Fill text fields, checkboxes, radio buttons and dropdowns","Read existing form values","Live PDF preview with zoom and page navigation","Form field summary and required-field validation","Auto-insert today's date","Save editable or flatten to lock the form"],"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"PDF Form Filler Tool","url":"https://apnesoftware.com/tools/pdf-form-filler.html","description":"Free browser-based tool to fill and flatten fillable PDF forms.","isPartOf":{"@type":"WebSite","name":"ApneSoftware","url":"https://apnesoftware.com"},"inLanguage":["en","hi"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apnesoftware.com/index.html"},{"@type":"ListItem","position":2,"name":"PDF Form Filler","item":"https://apnesoftware.com/tools/pdf-form-filler.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to fill a PDF form online","description":"Fill a fillable PDF form in your browser and download the completed file.","step":[{"@type":"HowToStep","name":"Upload the PDF form","text":"Drag a fillable PDF into the drop zone or click to choose it. The tool reads its AcroForm fields."},{"@type":"HowToStep","name":"Fill the fields","text":"Type into text fields, tick checkboxes, choose radio options and pick from dropdowns. Existing values are shown."},{"@type":"HowToStep","name":"Check the preview","text":"Update the live preview to see your entries rendered on the actual pages, and review the form summary."},{"@type":"HowToStep","name":"Save or flatten","text":"Save an editable copy, or tick Flatten to lock the answers permanently, then download the finished PDF."}]}
+</script>
+<script type="application/ld+json" id="faqSchema">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}
 </script>
 <meta name="color-scheme" content="dark">
-<title>PDF Form Filler | ApneSoftware</title>
+<title>PDF Form Filler — Fill &amp; Flatten Fillable PDF Forms | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-/* Premium upload enhancement for this tool */
-.dropzone{cursor:pointer}
-.dropzone p{font-size:.9rem}
+/* ===== PDF Form Filler — scoped ff- styles ===== */
+.ff-dropzone{cursor:pointer;transition:border-color .2s,background .2s}
+.ff-dropzone p{font-size:.9rem}
 .panel{position:relative;z-index:1}
-</style>
-<style>
-  .form-field-row{margin-bottom:14px}
-  .form-field-row label{display:block;font-size:.85rem;color:var(--text-dim);margin-bottom:6px;font-weight:600}
-  .form-field-row .field-type{font-size:.72rem;color:var(--accent);margin-left:6px;font-weight:400}
-  .checkbox-row{display:flex;align-items:center;gap:8px}
-  .checkbox-row input{width:auto}
-  .radio-options label{display:flex;align-items:center;gap:6px;font-weight:400;color:var(--text);margin-bottom:4px}
-  .radio-options input{width:auto}
+
+.ff-badges{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:10px;font-size:.78rem;color:var(--text-dim)}
+.ff-badges span{display:inline-flex;align-items:center;gap:5px}
+
+/* file info + summary cards */
+.ff-info{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+@media(max-width:760px){.ff-info{grid-template-columns:1fr}}
+.ff-card{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:14px;padding:14px 16px}
+.ff-card h3{margin:0 0 10px;font-size:.9rem;display:flex;align-items:center;gap:8px}
+.ff-meta{display:grid;grid-template-columns:auto 1fr;gap:5px 12px;font-size:.82rem}
+.ff-meta dt{color:var(--text-dim)}
+.ff-meta dd{margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.ff-sum{display:flex;gap:8px;flex-wrap:wrap}
+.ff-chip{flex:1 1 auto;min-width:70px;text-align:center;background:rgba(255,255,255,.04);border:1px solid var(--border,rgba(255,255,255,.1));border-radius:10px;padding:8px 6px}
+.ff-chip b{display:block;font-size:1.15rem;color:var(--text)}
+.ff-chip span{font-size:.7rem;color:var(--text-dim)}
+.ff-chip.ok b{color:#4ade80}
+.ff-chip.warn b{color:#fbbf24}
+.ff-chip.req b{color:#f87171}
+
+.ff-filerow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px}
+.ff-filerow .ff-fname{flex:1 1 200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.88rem}
+.ff-mini{background:rgba(255,255,255,.06);border:1px solid var(--border,rgba(255,255,255,.12));color:var(--text);border-radius:8px;padding:6px 12px;cursor:pointer;font-size:.8rem;transition:.15s}
+.ff-mini:hover{background:rgba(167,139,250,.25)}
+
+/* work area: form + preview */
+.ff-work{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+@media(max-width:900px){.ff-work{grid-template-columns:1fr}}
+
+.ff-toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.ff-search{flex:1 1 160px}
+.ff-search input{width:100%}
+
+.ff-fields{max-height:640px;overflow-y:auto;padding-right:6px}
+.ff-fields::-webkit-scrollbar{width:8px}
+.ff-fields::-webkit-scrollbar-thumb{background:rgba(167,139,250,.35);border-radius:8px}
+
+.form-field-row{margin-bottom:14px;padding:12px;border:1px solid var(--border,rgba(255,255,255,.07));border-radius:10px;background:rgba(255,255,255,.02);transition:border-color .15s,background .15s}
+.form-field-row.ff-highlight{border-color:#a78bfa;background:rgba(167,139,250,.08)}
+.form-field-row.ff-invalid{border-color:#f87171;background:rgba(248,113,113,.08)}
+.form-field-row.ff-hide{display:none}
+.form-field-row label{display:block;font-size:.85rem;color:var(--text-dim);margin-bottom:6px;font-weight:600}
+.form-field-row .field-type{font-size:.72rem;color:var(--accent,#a78bfa);margin-left:6px;font-weight:400}
+.form-field-row .ff-req{color:#f87171;margin-left:4px}
+.form-field-row textarea.ff-input{min-height:80px;resize:vertical;font-family:inherit}
+.form-field-row .ff-inrow{display:flex;gap:8px;align-items:flex-start}
+.form-field-row .ff-inrow .ff-input{flex:1}
+.form-field-row .ff-maxlen{font-size:.7rem;color:var(--text-dim);margin-top:4px;text-align:right}
+.checkbox-row{display:flex;align-items:center;gap:8px}
+.checkbox-row input{width:auto}
+.radio-options label{display:flex;align-items:center;gap:6px;font-weight:400;color:var(--text);margin-bottom:4px}
+.radio-options input{width:auto}
+.ff-datebtn{flex:0 0 auto;background:rgba(167,139,250,.15);border:1px solid rgba(167,139,250,.35);color:#c4b5fd;border-radius:8px;padding:0 10px;cursor:pointer;font-size:.9rem;height:38px}
+.ff-datebtn:hover{background:rgba(167,139,250,.3)}
+
+/* preview */
+.ff-preview{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:14px;padding:12px;display:flex;flex-direction:column}
+.ff-pvbar{display:flex;gap:6px;align-items:center;justify-content:center;flex-wrap:wrap;margin-bottom:10px;font-size:.8rem;color:var(--text-dim)}
+.ff-pvbar button{background:rgba(255,255,255,.06);border:1px solid var(--border,rgba(255,255,255,.12));color:var(--text);border-radius:7px;width:32px;height:30px;cursor:pointer}
+.ff-pvbar button:hover{background:rgba(167,139,250,.25)}
+.ff-pvbar button:disabled{opacity:.35;cursor:not-allowed}
+.ff-pvwrap{flex:1;overflow:auto;text-align:center;background:#525659;border-radius:10px;padding:12px;min-height:300px;display:flex;align-items:flex-start;justify-content:center}
+.ff-pvwrap canvas{max-width:100%;height:auto;box-shadow:0 4px 18px rgba(0,0,0,.4);background:#fff}
+.ff-pvempty{color:#cbd0d4;font-size:.85rem;align-self:center}
+
+.ff-actions{margin-top:16px}
+.ff-lock{display:flex;align-items:center;gap:8px;font-weight:400;color:var(--text);margin:6px 0 14px;font-size:.9rem}
+.ff-lock input{width:auto}
+.btn.ff-secondary{background:transparent;border:1px solid var(--border,rgba(255,255,255,.18));color:var(--text)}
+
+/* ===== Below-tool content ===== */
+.ff-wrap{margin:26px 0}
+.ff-title{font-size:1.35rem;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+.ff-sub{color:var(--text-dim);font-size:.92rem;margin:0 0 18px;line-height:1.6}
+.ff-feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.ff-fcard{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:14px;padding:16px}
+.ff-fcard h4{margin:0 0 6px;font-size:.98rem;display:flex;align-items:center;gap:8px}
+.ff-fcard p{margin:0;font-size:.86rem;color:var(--text-dim);line-height:1.55}
+.ff-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.ff-rel{display:block;text-decoration:none;background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:14px;transition:.15s;color:var(--text)}
+.ff-rel:hover{border-color:#a78bfa;background:rgba(167,139,250,.1);transform:translateY(-2px)}
+.ff-rel b{display:block;font-size:.92rem;margin-bottom:3px}
+.ff-rel span{font-size:.8rem;color:var(--text-dim);line-height:1.45}
+.ff-faq details{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:0 16px;margin-bottom:10px}
+.ff-faq summary{cursor:pointer;padding:14px 0;font-weight:600;font-size:.92rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.ff-faq summary::-webkit-details-marker{display:none}
+.ff-faq summary::after{content:'+';font-size:1.3rem;color:#a78bfa;flex:0 0 auto}
+.ff-faq details[open] summary::after{content:'−'}
+.ff-faq details p{margin:0 0 14px;font-size:.87rem;color:var(--text-dim);line-height:1.65}
+.ff-steps{list-style:none;counter-reset:s;padding:0;margin:0;display:grid;gap:12px}
+.ff-steps li{counter-increment:s;position:relative;padding-left:46px;font-size:.9rem;color:var(--text-dim);line-height:1.6}
+.ff-steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:32px;height:32px;border-radius:9px;background:rgba(167,139,250,.18);color:#c4b5fd;font-weight:700;display:grid;place-items:center}
+.ff-steps li b{color:var(--text)}
+.ff-pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.ff-pill{background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.3);color:#d6cbff;border-radius:999px;padding:5px 12px;font-size:.8rem}
 </style>
 </head>
 <body>
@@ -48,173 +149,582 @@
 <div class="container">
   <div class="tool-header">
     <h1>📝 PDF Form Filler</h1>
-    <p>Fill in any fillable PDF form right in your browser, then save and download.</p>
+    <p>Fill any fillable PDF form (AcroForm) right in your browser — text fields, checkboxes, radio buttons and dropdowns. See a live preview, validate required fields, then save an editable copy or flatten to lock your answers. Your file never leaves your device.</p>
   </div>
 
   <div class="panel">
-    <div class="dropzone" id="dropzone">
+    <div class="dropzone ff-dropzone" id="dropzone">
       <p>📤 Drag a PDF form here or click to choose</p>
       <input type="file" id="fileInput" accept="application/pdf">
+      <div class="ff-badges">
+        <span>📄 PDF only</span><span>🔒 Secure processing</span><span>🚫 No server upload</span>
+      </div>
     </div>
 
-    <p id="statusMsg" style="color:var(--text-dim);font-size:.9rem"></p>
+    <p id="statusMsg" style="color:var(--text-dim);font-size:.9rem;margin-top:10px" role="status" aria-live="polite"></p>
 
-    <div id="formArea" style="display:none;margin-top:18px">
-      <div id="fieldsContainer"></div>
+    <!-- file info + summary -->
+    <div class="ff-info" id="infoArea" style="display:none">
+      <div class="ff-card">
+        <h3>📄 PDF Information</h3>
+        <dl class="ff-meta" id="pdfMeta"></dl>
+      </div>
+      <div class="ff-card">
+        <h3>🧾 Form Summary</h3>
+        <div class="ff-sum" id="formSummary"></div>
+      </div>
+    </div>
 
-      <label style="display:flex;align-items:center;gap:8px;font-weight:400;color:var(--text);margin:16px 0">
-        <input type="checkbox" id="flattenCheck" style="width:auto"> Lock the form after filling (flatten — can't be edited again)
-      </label>
+    <div class="ff-filerow" id="fileRow" style="display:none">
+      <span class="ff-fname" id="fileNameLbl"></span>
+      <button class="ff-mini" id="replaceBtn" type="button">🔄 Replace</button>
+      <button class="ff-mini" id="removeBtn" type="button">✖ Remove</button>
+    </div>
 
-      <div class="btn-row">
-        <button class="btn" id="saveBtn">💾 Save Filled PDF and Download</button>
+    <div id="formArea" style="display:none">
+      <div class="ff-work">
+        <!-- form fields column -->
+        <div>
+          <div class="ff-toolbar">
+            <div class="ff-search"><input type="text" id="fieldSearch" placeholder="🔍 Search fields…" aria-label="Search form fields"></div>
+            <button class="ff-mini" id="clearAllBtn" type="button">🧹 Clear</button>
+          </div>
+          <div id="fieldsContainer" class="ff-fields"></div>
+          <p id="noMatch" style="display:none;color:var(--text-dim);font-size:.85rem;text-align:center;padding:12px">No fields match your search.</p>
+        </div>
+
+        <!-- preview column -->
+        <div class="ff-preview">
+          <div class="ff-pvbar">
+            <button id="pvPrev" title="Previous page" aria-label="Previous page">‹</button>
+            <span id="pvPageLbl">Page 1 / 1</span>
+            <button id="pvNext" title="Next page" aria-label="Next page">›</button>
+            <button id="pvZoomOut" title="Zoom out" aria-label="Zoom out">−</button>
+            <span id="pvZoomLbl">100%</span>
+            <button id="pvZoomIn" title="Zoom in" aria-label="Zoom in">+</button>
+            <button class="ff-mini" id="pvRefresh" type="button" style="width:auto;height:auto">🔄 Update preview</button>
+          </div>
+          <div class="ff-pvwrap">
+            <canvas id="pvCanvas" aria-label="PDF preview"></canvas>
+            <span class="ff-pvempty" id="pvEmpty">Preview will appear here.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ff-actions">
+        <label class="ff-lock">
+          <input type="checkbox" id="flattenCheck"> Flatten — lock the form after filling (answers can’t be edited again)
+        </label>
+        <div class="btn-row">
+          <button class="btn" id="saveBtn">💾 Save Filled PDF and Download</button>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
+<!-- ===================== BELOW-TOOL CONTENT ===================== -->
 
+<!-- Key features -->
+<div class="ff-wrap">
+  <h2 class="ff-title">✨ Key Features</h2>
+  <div class="ff-feat-grid">
+    <div class="ff-fcard"><h4>🧩 Full AcroForm support</h4><p>Reads every interactive field in a fillable PDF — text boxes, checkboxes, radio groups, dropdowns and list boxes — and renders an editor for each.</p></div>
+    <div class="ff-fcard"><h4>📖 Reads existing values</h4><p>Any answers already saved in the form are loaded so you can review and edit them instead of starting from scratch.</p></div>
+    <div class="ff-fcard"><h4>👁️ Live page preview</h4><p>A built‑in viewer renders the actual PDF pages with zoom and page navigation, so you can confirm your entries land correctly.</p></div>
+    <div class="ff-fcard"><h4>🧾 Form summary</h4><p>See totals for all fields, filled, empty and required at a glance — and know exactly what still needs attention before you save.</p></div>
+    <div class="ff-fcard"><h4>✅ Required‑field validation</h4><p>Required fields are flagged, and saving highlights any that are still empty so nothing important is missed.</p></div>
+    <div class="ff-fcard"><h4>🔍 Search &amp; jump</h4><p>Instantly filter a long form by field name to find and jump to the entry you need in large multi‑page documents.</p></div>
+    <div class="ff-fcard"><h4>📅 Auto date</h4><p>One click inserts today’s date into any text field in DD/MM/YYYY format — perfect for signature and dated fields.</p></div>
+    <div class="ff-fcard"><h4>🔐 Save editable or flatten</h4><p>Download a still‑editable copy, or flatten the form to permanently lock your answers for sharing and printing.</p></div>
+    <div class="ff-fcard"><h4>🔒 100% private</h4><p>Everything runs locally with pdf‑lib and pdf.js. Your form is never uploaded — no server, no account, no tracking of content.</p></div>
+  </div>
+</div>
+
+<!-- Benefits -->
+<div class="ff-wrap">
+  <h2 class="ff-title">🎁 Why use it</h2>
+  <div class="ff-pill-row">
+    <span class="ff-pill">Government &amp; tax forms</span>
+    <span class="ff-pill">Job &amp; admission applications</span>
+    <span class="ff-pill">Bank &amp; KYC forms</span>
+    <span class="ff-pill">Contracts &amp; agreements</span>
+    <span class="ff-pill">Insurance &amp; claim forms</span>
+    <span class="ff-pill">No watermark</span>
+    <span class="ff-pill">Works offline</span>
+    <span class="ff-pill">Free forever</span>
+  </div>
+</div>
+
+<!-- Related tools (ABOVE About) -->
+<div class="ff-wrap">
+  <h2 class="ff-title">🧰 Related Tools</h2>
+  <div class="ff-rel-grid">
+    <a class="ff-rel" href="pdf-sign.html"><b>Sign PDF</b><span>Draw, type or upload a signature onto a PDF.</span></a>
+    <a class="ff-rel" href="pdf-edit.html"><b>Edit PDF</b><span>Add text, shapes and images anywhere on a page.</span></a>
+    <a class="ff-rel" href="pdf-merge.html"><b>Merge PDF</b><span>Combine several PDFs into one document.</span></a>
+    <a class="ff-rel" href="pdf-split.html"><b>Split PDF</b><span>Break a PDF into separate files or ranges.</span></a>
+    <a class="ff-rel" href="pdf-compress.html"><b>Compress PDF</b><span>Reduce PDF file size for easy sharing.</span></a>
+    <a class="ff-rel" href="pdf-info.html"><b>PDF Info</b><span>Inspect metadata, pages and document details.</span></a>
+  </div>
+</div>
+
+<!-- About (bilingual) -->
 <div class="info-wrap">
   <div class="info-section">
     <div class="info-block">
       <h2>ℹ️ About This Tool</h2>
-      <p>This tool reads the fillable fields inside a PDF form (text boxes, checkboxes, radio buttons, dropdowns) and lets you fill them right in your browser, then save the completed form.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Upload a PDF that has fillable form fields.</li>
-        <li>Fill in the fields that appear below.</li>
-        <li>Optionally tick "Lock the form" so it can't be edited further.</li>
-        <li>Click Save and download the completed PDF.</li>
-      </ol>
+      <p>The <b>ApneSoftware PDF Form Filler</b> is a free, browser‑based utility for completing <b>fillable PDF forms</b> — the interactive documents, technically known as <b>AcroForms</b>, that contain clickable text boxes, checkboxes, radio buttons, dropdown menus and list boxes. Instead of printing a form, filling it by hand and scanning it back, you simply open it here, type your answers directly into the digital fields, and download a clean, professional, machine‑readable PDF. Because every step happens inside your own browser tab, the tool is fast, private and works even when you are offline.</p>
+      <p>When you upload a form, the tool reads its field structure and builds a matching editor. Each field appears as a labelled control of the right type: single‑line text boxes and multi‑line text areas for written answers, checkboxes for yes/no choices, radio groups for pick‑one options, and dropdowns or list boxes for predefined selections. Crucially, it also <b>reads any values already stored</b> in the form, so a partially completed document opens with its existing answers in place — you can review, correct or extend them rather than beginning again. Fields that the PDF marks as <b>required</b> are flagged, and where a text field defines a <b>maximum length</b>, the editor enforces it so your entry always fits.</p>
+      <p>A dedicated <b>PDF information panel</b> summarises the document — file name, size, page count, PDF version and embedded metadata such as title, author, creator, subject and the creation and modification dates. Alongside it, a <b>form summary</b> counts the total number of fields and how many are currently filled, empty or required, giving you an at‑a‑glance sense of progress. For long or complex government forms with dozens of fields, a <b>search box</b> lets you filter the list by name and jump straight to the control you need, while a one‑click <b>clear</b> action resets everything if you want to start over.</p>
+      <p>The built‑in <b>live preview</b> sets this tool apart from a plain field list. Powered by pdf.js, it renders the real pages of your document with <b>zoom</b> and <b>page navigation</b>, and an <b>Update preview</b> button re‑renders the pages with your current answers baked in — an honest before‑and‑after view of exactly how the finished form will look when printed or shared. A handy <b>auto‑date</b> button drops today’s date into any text field in DD/MM/YYYY format, which is ideal for the dated and signature lines that appear on almost every official form.</p>
+      <p>When you are done you choose how to finish. <b>Save editable</b> keeps the form interactive so it can be reopened and changed later — perfect for drafts, templates and forms that circulate between several people. <b>Flatten</b> permanently merges your answers into the page content, locking them in place so recipients see a fixed, tamper‑resistant document that prints identically everywhere and cannot be accidentally altered. Either way you get a standard PDF that opens in any viewer, on any device, without special software.</p>
+      <p>The tool is built for the real forms people deal with every day. Indian government and state department applications, income‑tax and GST declarations, PAN and Aadhaar‑linked paperwork, bank account‑opening and KYC forms, loan and insurance proposals, school and college admission forms, employment applications, vendor onboarding sheets and legal agreements are frequently distributed as fillable PDFs. Completing them by hand is slow and error‑prone, and the print‑sign‑scan cycle produces heavy, blurry files that are hard to read and easy to reject. Filling them digitally here yields crisp, uniform text that is easy to read, quick to correct, and light to email or upload. Because you can save an editable copy, the same template can be reused month after month — you simply reopen it, change the few values that differ, and export a fresh copy, which is a huge time‑saver for recurring submissions and for teams that process the same form for many people.</p>
+      <p>Above all, the PDF Form Filler is <b>private by design</b>. It uses the open‑source pdf‑lib and pdf.js libraries to parse, fill and re‑save your document entirely on your device. Nothing is uploaded to a server, nothing is stored, and no account or email is required. That matters enormously for forms, because the very documents you fill in — job applications, bank KYC papers, tax declarations, medical and insurance claims, legal agreements — are packed with personal and financial details that should never be exposed to a third‑party server. Here, that sensitive information stays under your sole control from the moment you open the file to the moment you download the completed version. Whether you are an individual completing a single application, an HR or accounts team processing forms in bulk, or an office that handles confidential paperwork every day, this tool turns a tedious print‑sign‑scan chore into a quick, clean, fully digital workflow.</p>
     </div>
     <hr class="info-divider">
     <div class="info-block">
       <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>यह टूल PDF फॉर्म के अंदर मौजूद भरने लायक फील्ड्स (टेक्स्ट बॉक्स, चेकबॉक्स, रेडियो बटन, ड्रॉपडाउन) को पढ़कर सीधे ब्राउज़र में भरने देता है, फिर पूरा भरा हुआ फॉर्म सेव कर देता है।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>ऐसी PDF अपलोड करें जिसमें भरने लायक फॉर्म फील्ड्स हों।</li>
-        <li>नीचे दिखने वाली फील्ड्स भरें।</li>
-        <li>चाहें तो "Lock the form" टिक करें ताकि बाद में एडिट न हो सके।</li>
-        <li>Save बटन दबाएं और भरी हुई PDF डाउनलोड करें।</li>
-      </ol>
+      <p><b>ApneSoftware PDF Form Filler</b> एक मुफ़्त, ब्राउज़र‑आधारित टूल है जो <b>भरने लायक PDF फ़ॉर्म</b> — यानी वे इंटरैक्टिव दस्तावेज़ जिन्हें तकनीकी भाषा में <b>AcroForm</b> कहते हैं और जिनमें क्लिक करने योग्य टेक्स्ट बॉक्स, चेकबॉक्स, रेडियो बटन, ड्रॉपडाउन और लिस्ट बॉक्स होते हैं — को पूरा करने देता है। फ़ॉर्म को प्रिंट करके, हाथ से भरकर और वापस स्कैन करने के बजाय, आप उसे यहाँ खोलते हैं, सीधे डिजिटल फ़ील्ड्स में अपने जवाब टाइप करते हैं, और एक साफ़, पेशेवर, मशीन‑पठनीय PDF डाउनलोड कर लेते हैं। चूँकि हर काम आपके अपने ब्राउज़र टैब के अंदर होता है, यह टूल तेज़, निजी है और ऑफ़लाइन भी काम करता है।</p>
+      <p>जब आप कोई फ़ॉर्म अपलोड करते हैं, तो टूल उसकी फ़ील्ड संरचना पढ़कर उससे मेल खाता एडिटर बनाता है। हर फ़ील्ड सही प्रकार के लेबल‑युक्त कंट्रोल के रूप में दिखती है: लिखित जवाबों के लिए एक‑पंक्ति टेक्स्ट बॉक्स और बहु‑पंक्ति टेक्स्ट एरिया, हाँ/नहीं विकल्पों के लिए चेकबॉक्स, एक चुनने वाले विकल्पों के लिए रेडियो ग्रुप, और पूर्व‑निर्धारित चयनों के लिए ड्रॉपडाउन या लिस्ट बॉक्स। खास बात यह है कि यह फ़ॉर्म में <b>पहले से सहेजे गए मानों को भी पढ़ता है</b>, इसलिए आंशिक रूप से भरा दस्तावेज़ अपने मौजूदा जवाबों के साथ खुलता है — आप उन्हें दोबारा शुरू करने के बजाय देख, सुधार या बढ़ा सकते हैं। जिन फ़ील्ड्स को PDF <b>आवश्यक</b> मानती है उन्हें चिह्नित किया जाता है, और जहाँ टेक्स्ट फ़ील्ड <b>अधिकतम लंबाई</b> तय करती है वहाँ एडिटर उसे लागू करता है।</p>
+      <p>एक अलग <b>PDF जानकारी पैनल</b> दस्तावेज़ का सार देता है — फ़ाइल नाम, आकार, पेज संख्या, PDF वर्शन और एम्बेडेड मेटाडेटा जैसे शीर्षक, लेखक, निर्माता, विषय और निर्माण व संशोधन तिथियाँ। इसके साथ एक <b>फ़ॉर्म सारांश</b> कुल फ़ील्ड्स और कितनी भरी, खाली या आवश्यक हैं, इनकी गिनती दिखाता है, जिससे आपकी प्रगति एक नज़र में समझ आती है। दर्जनों फ़ील्ड्स वाले लंबे सरकारी फ़ॉर्म के लिए, एक <b>सर्च बॉक्स</b> सूची को नाम से फ़िल्टर करने और सीधे मनचाही फ़ील्ड तक पहुँचने देता है, जबकि एक‑क्लिक <b>Clear</b> सब कुछ रीसेट कर देता है।</p>
+      <p>अंतर्निर्मित <b>लाइव प्रीव्यू</b> इस टूल को साधारण फ़ील्ड सूची से अलग बनाता है। pdf.js द्वारा संचालित, यह आपके दस्तावेज़ के असली पेज <b>ज़ूम</b> और <b>पेज नेविगेशन</b> के साथ रेंडर करता है, और <b>Update preview</b> बटन पेजों को आपके मौजूदा जवाबों के साथ दोबारा रेंडर करता है — यह एक ईमानदार पहले‑और‑बाद वाला दृश्य है कि तैयार फ़ॉर्म प्रिंट या शेयर होने पर कैसा दिखेगा। एक सुविधाजनक <b>auto‑date</b> बटन किसी भी टेक्स्ट फ़ील्ड में आज की तारीख़ DD/MM/YYYY फ़ॉर्मैट में डाल देता है, जो लगभग हर आधिकारिक फ़ॉर्म पर मौजूद दिनांक और हस्ताक्षर पंक्तियों के लिए आदर्श है।</p>
+      <p>काम पूरा होने पर आप तय करते हैं कि कैसे समाप्त करना है। <b>Save editable</b> फ़ॉर्म को इंटरैक्टिव रखता है ताकि इसे बाद में दोबारा खोलकर बदला जा सके — ड्राफ़्ट, टेम्पलेट और कई लोगों के बीच घूमने वाले फ़ॉर्म के लिए एकदम सही। <b>Flatten</b> आपके जवाबों को स्थायी रूप से पेज सामग्री में मिला देता है, उन्हें जगह पर लॉक कर देता है ताकि प्राप्तकर्ता एक स्थिर, छेड़छाड़‑रोधी दस्तावेज़ देखें जो हर जगह एक जैसा प्रिंट होता है। दोनों ही तरह से आपको एक मानक PDF मिलती है जो किसी भी व्यूअर में, किसी भी डिवाइस पर बिना विशेष सॉफ़्टवेयर के खुलती है।</p>
+      <p>यह टूल उन असली फ़ॉर्मों के लिए बना है जिनसे लोग रोज़ जूझते हैं। भारत सरकार और राज्य विभागों के आवेदन, आयकर व GST घोषणाएँ, PAN और आधार‑लिंक्ड कागज़ात, बैंक खाता‑खोलने और KYC फ़ॉर्म, ऋण व बीमा प्रस्ताव, स्कूल‑कॉलेज दाख़िला फ़ॉर्म, नौकरी के आवेदन, वेंडर ऑनबोर्डिंग शीट और कानूनी अनुबंध अक्सर भरने लायक PDF के रूप में बाँटे जाते हैं। इन्हें हाथ से भरना धीमा और गलती‑भरा होता है, और प्रिंट‑साइन‑स्कैन चक्र भारी, धुँधली फ़ाइलें बनाता है जिन्हें पढ़ना कठिन और अस्वीकार करना आसान होता है। इन्हें यहाँ डिजिटल रूप से भरने से साफ़, एक‑समान टेक्स्ट मिलता है जो पढ़ने में आसान, सुधारने में तेज़ और ईमेल या अपलोड करने में हल्का होता है। चूँकि आप एडिटेबल कॉपी सहेज सकते हैं, वही टेम्पलेट महीने‑दर‑महीने दोबारा इस्तेमाल हो सकता है — आप उसे फिर खोलते हैं, केवल बदलने वाले मान बदलते हैं, और एक नई प्रति निर्यात कर देते हैं, जो बार‑बार जमा किए जाने वाले फ़ॉर्म और कई लोगों के लिए एक ही फ़ॉर्म संसाधित करने वाली टीमों के लिए बड़ी समय‑बचत है।</p>
+      <p>सबसे बढ़कर, PDF Form Filler <b>डिज़ाइन से ही निजी</b> है। यह ओपन‑सोर्स pdf‑lib और pdf.js लाइब्रेरी का उपयोग करके आपके दस्तावेज़ को पूरी तरह आपके डिवाइस पर पार्स, भरता और दोबारा सहेजता है। कुछ भी सर्वर पर अपलोड नहीं होता, कुछ भी सेव नहीं होता, और किसी अकाउंट या ईमेल की ज़रूरत नहीं। फ़ॉर्म के लिए यह बेहद ज़रूरी है, क्योंकि जो दस्तावेज़ आप भरते हैं — नौकरी के आवेदन, बैंक KYC, टैक्स घोषणाएँ, मेडिकल और बीमा क्लेम, कानूनी अनुबंध — उनमें ऐसी व्यक्तिगत और वित्तीय जानकारी होती है जो कभी किसी तीसरे‑पक्ष सर्वर पर नहीं जानी चाहिए। यहाँ वह संवेदनशील जानकारी फ़ाइल खोलने से लेकर पूरी की गई प्रति डाउनलोड करने तक पूरी तरह आपके नियंत्रण में रहती है।</p>
     </div>
   </div>
+</div>
+
+<!-- How to use -->
+<div class="ff-wrap">
+  <h2 class="ff-title">📖 How To Use</h2>
+  <ol class="ff-steps">
+    <li><b>Upload the form.</b> Drag a fillable PDF into the drop zone or click to choose it. The tool detects and lists every form field.</li>
+    <li><b>Fill the fields.</b> Type into text boxes, tick checkboxes, choose radio options and pick from dropdowns. Existing values are pre‑loaded; use 📅 to insert today’s date.</li>
+    <li><b>Review the summary &amp; preview.</b> Check the form summary counts, then click <b>Update preview</b> to see your entries rendered on the real pages.</li>
+    <li><b>Choose the output.</b> Leave the form editable, or tick <b>Flatten</b> to lock your answers permanently.</li>
+    <li><b>Save &amp; download.</b> Click <b>Save Filled PDF and Download</b> to get your completed form. Required‑field warnings appear if anything is missing.</li>
+  </ol>
+</div>
+
+<!-- FAQ -->
+<div class="ff-wrap ff-faq">
+  <h2 class="ff-title">❓ Frequently Asked Questions</h2>
+  <div id="faqList"></div>
+</div>
+
+<!-- Privacy -->
+<div class="ff-wrap">
+  <h2 class="ff-title">🔒 Privacy</h2>
+  <p class="ff-sub">This tool processes your form entirely inside your browser using the pdf‑lib and pdf.js libraries. Your PDF is <b>never uploaded</b> to any server, never stored, and never transmitted anywhere. No account, email or signup is required, and once the page has loaded you can even work offline. Because the forms people fill are full of personal and financial data — names, addresses, ID numbers, bank details — this local‑only design keeps that sensitive information under your sole control at all times.</p>
+</div>
+
+<!-- Browser compatibility -->
+<div class="ff-wrap">
+  <h2 class="ff-title">🌐 Browser Compatibility</h2>
+  <p class="ff-sub">Works in all modern browsers — Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, Brave and Opera — on Windows, macOS, Linux, Android and iOS. It relies only on JavaScript and the standard File, Blob and Canvas APIs, which have been widely supported for years. On phones and tablets the layout stacks into a single column and the field controls trigger the correct on‑screen keyboards for comfortable typing.</p>
+</div>
+
+<!-- Supported formats -->
+<div class="ff-wrap">
+  <h2 class="ff-title">📄 Supported Formats</h2>
+  <p class="ff-sub"><b>Input:</b> standard PDF files (.pdf) that contain interactive AcroForm fields — text fields, checkboxes, radio buttons, dropdowns (combo boxes) and list boxes. Static or scanned PDFs without interactive fields have nothing to fill and will report that no form fields were found. <b>Output:</b> a completed PDF — either editable (fields preserved) or flattened (answers locked into the page). Both are standard PDFs that open in any viewer.</p>
 </div>
 
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="../assets/common.js"></script>
 <script>
-const dropzone = document.getElementById('dropzone');
-const fileInput = document.getElementById('fileInput');
-let currentFile = null;
-let pdfDoc = null;
-let formFields = []; // {name, type, field}
+(function(){
+  if(window.pdfjsLib){ pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'; }
+  const $ = id => document.getElementById(id);
 
-setupDropzone(dropzone, fileInput, files => {
-  if(files.length && files[0].type === 'application/pdf') handleFile(files[0]);
-});
+  const dropzone = $('dropzone');
+  const fileInput = $('fileInput');
+  let currentFile = null;
+  let originalBytes = null;   // Uint8Array of uploaded file
+  let pdfDoc = null;          // pdf-lib doc
+  let formFields = [];        // {name,type,field,required,multiline,maxLen}
+  let pvDoc = null;           // pdf.js doc for preview
+  let pvPage = 1, pvZoom = 1, pvTotal = 1;
 
-async function handleFile(file){
-  currentFile = file;
-  const status = document.getElementById('statusMsg');
-  status.textContent = '⏳ Reading form fields...';
-  document.getElementById('formArea').style.display = 'none';
-
-  try{
-    const { PDFDocument } = PDFLib;
-    const bytes = await file.arrayBuffer();
-    pdfDoc = await PDFDocument.load(bytes);
-    const form = pdfDoc.getForm();
-    const fields = form.getFields();
-
-    if(!fields.length){
-      status.textContent = '⚠️ This PDF doesn\'t have any fillable form fields.';
-      return;
-    }
-
-    formFields = fields.map(f => ({ name: f.getName(), type: f.constructor.name, field: f }));
-    renderFields();
-    status.textContent = `✅ Found ${fields.length} field(s)`;
-    document.getElementById('formArea').style.display = 'block';
-  }catch(err){
-    status.textContent = '❌ Error: ' + err.message;
-  }
-}
-
-function renderFields(){
-  const container = document.getElementById('fieldsContainer');
-  container.innerHTML = '';
-
-  formFields.forEach((f, i) => {
-    const row = document.createElement('div');
-    row.className = 'form-field-row';
-
-    if(f.type === 'PDFTextField'){
-      let current = '';
-      try{ current = f.field.getText() || ''; }catch(e){}
-      row.innerHTML = `<label>${f.name} <span class="field-type">(text)</span></label>
-        <input type="text" data-idx="${i}" class="ff-input" value="${current.replace(/"/g,'&quot;')}">`;
-    } else if(f.type === 'PDFCheckBox'){
-      let checked = false;
-      try{ checked = f.field.isChecked(); }catch(e){}
-      row.innerHTML = `<label class="checkbox-row"><input type="checkbox" data-idx="${i}" class="ff-input" ${checked?'checked':''}> ${f.name} <span class="field-type">(checkbox)</span></label>`;
-    } else if(f.type === 'PDFRadioGroup'){
-      let options = [];
-      let selected = '';
-      try{ options = f.field.getOptions(); selected = f.field.getSelected() || ''; }catch(e){}
-      const opts = options.map(o => `<label><input type="radio" name="radio-${i}" data-idx="${i}" class="ff-input" value="${o}" ${o===selected?'checked':''}> ${o}</label>`).join('');
-      row.innerHTML = `<label>${f.name} <span class="field-type">(choose one)</span></label><div class="radio-options">${opts}</div>`;
-    } else if(f.type === 'PDFDropdown' || f.type === 'PDFOptionList'){
-      let options = [];
-      let selected = [];
-      try{ options = f.field.getOptions(); selected = f.field.getSelected() || []; }catch(e){}
-      const opts = options.map(o => `<option value="${o}" ${selected.includes(o)?'selected':''}>${o}</option>`).join('');
-      row.innerHTML = `<label>${f.name} <span class="field-type">(dropdown)</span></label>
-        <select data-idx="${i}" class="ff-input"><option value="">— Select —</option>${opts}</select>`;
-    } else {
-      row.innerHTML = `<label>${f.name} <span class="field-type">(${f.type}, not editable here)</span></label>`;
-    }
-
-    container.appendChild(row);
+  setupDropzone(dropzone, fileInput, files => {
+    if(files.length && files[0].type === 'application/pdf') handleFile(files[0]);
   });
-}
 
-document.getElementById('saveBtn').addEventListener('click', async ()=>{
-  const status = document.getElementById('statusMsg');
-  status.textContent = '⏳ Saving...';
-  try{
+  function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+  // Robust field-type detection via instanceof (minified builds mangle constructor.name)
+  function fieldType(f){
+    const L = PDFLib;
+    if(L.PDFTextField && f instanceof L.PDFTextField) return 'PDFTextField';
+    if(L.PDFCheckBox && f instanceof L.PDFCheckBox) return 'PDFCheckBox';
+    if(L.PDFRadioGroup && f instanceof L.PDFRadioGroup) return 'PDFRadioGroup';
+    if(L.PDFDropdown && f instanceof L.PDFDropdown) return 'PDFDropdown';
+    if(L.PDFOptionList && f instanceof L.PDFOptionList) return 'PDFOptionList';
+    if(L.PDFButton && f instanceof L.PDFButton) return 'PDFButton';
+    if(L.PDFSignature && f instanceof L.PDFSignature) return 'PDFSignature';
+    return f.constructor && f.constructor.name || 'Field';
+  }
+
+  async function handleFile(file){
+    currentFile = file;
+    const status = $('statusMsg');
+    status.textContent = '⏳ Reading form fields…';
+    $('formArea').style.display = 'none';
+    $('infoArea').style.display = 'none';
+    $('fileRow').style.display = 'none';
+
+    try{
+      const { PDFDocument } = PDFLib;
+      const ab = await file.arrayBuffer();
+      originalBytes = new Uint8Array(ab);
+      pdfDoc = await PDFDocument.load(originalBytes.slice(0), { updateMetadata:false });
+      const form = pdfDoc.getForm();
+      const fields = form.getFields();
+
+      // build PDF info panel
+      showPdfInfo(file, pdfDoc, originalBytes);
+      $('fileNameLbl').textContent = '📄 ' + file.name;
+      $('fileRow').style.display = 'flex';
+
+      if(!fields.length){
+        status.textContent = '⚠️ This PDF has no fillable form fields (it may be a static or scanned document).';
+        return;
+      }
+
+      formFields = fields.map(f => {
+        const type = fieldType(f);
+        let required=false, multiline=false, maxLen=0;
+        try{ required = f.isRequired && f.isRequired(); }catch(e){}
+        try{ if(type==='PDFTextField'){ multiline = f.isMultiline(); maxLen = f.getMaxLength() || 0; } }catch(e){}
+        return { name: f.getName(), type, field: f, required, multiline, maxLen };
+      });
+
+      renderFields();
+      updateSummary();
+      await initPreview();
+      status.textContent = `✅ Found ${fields.length} fillable field(s). Fill them below and preview on the right.`;
+      $('formArea').style.display = 'block';
+      $('infoArea').style.display = 'grid';
+    }catch(err){
+      status.textContent = '❌ Error: ' + err.message + ' — the file may be corrupted or password‑protected.';
+    }
+  }
+
+  function showPdfInfo(file, doc, bytes){
+    const meta = $('pdfMeta');
+    const fmt = d => { try{ return d ? new Date(d).toLocaleDateString() : '—'; }catch(e){ return '—'; } };
+    // PDF version from header bytes e.g. %PDF-1.7
+    let ver = '—';
+    try{ const head = new TextDecoder().decode(bytes.slice(0,16)); const m=/%PDF-(\d\.\d)/.exec(head); if(m) ver=m[1]; }catch(e){}
+    const rows = [
+      ['File name', escapeHtml(file.name)],
+      ['File size', formatBytes(file.size)],
+      ['Pages', doc.getPageCount()],
+      ['PDF version', ver],
+      ['Title', escapeHtml(safe(()=>doc.getTitle()))],
+      ['Author', escapeHtml(safe(()=>doc.getAuthor()))],
+      ['Creator', escapeHtml(safe(()=>doc.getCreator()))],
+      ['Subject', escapeHtml(safe(()=>doc.getSubject()))],
+      ['Created', fmt(safe(()=>doc.getCreationDate()))],
+      ['Modified', fmt(safe(()=>doc.getModificationDate()))]
+    ];
+    meta.innerHTML = rows.map(([k,v])=>`<dt>${k}</dt><dd>${v||'—'}</dd>`).join('');
+  }
+  function safe(fn){ try{ const v=fn(); return v==null?'':v; }catch(e){ return ''; } }
+
+  function renderFields(){
+    const container = $('fieldsContainer');
+    container.innerHTML = '';
+    formFields.forEach((f, i) => {
+      const row = document.createElement('div');
+      row.className = 'form-field-row';
+      row.dataset.row = i;
+      row.dataset.fname = f.name.toLowerCase();
+      const reqMark = f.required ? '<span class="ff-req" title="Required">*</span>' : '';
+      const nmeta = escapeHtml(f.name);
+
+      if(f.type === 'PDFTextField'){
+        let current = '';
+        try{ current = f.field.getText() || ''; }catch(e){}
+        const maxAttr = f.maxLen ? ` maxlength="${f.maxLen}"` : '';
+        if(f.multiline){
+          row.innerHTML = `<label>${nmeta}${reqMark} <span class="field-type">(text)</span></label>
+            <textarea data-idx="${i}" class="ff-input"${maxAttr}>${escapeHtml(current)}</textarea>`;
+        } else {
+          row.innerHTML = `<label>${nmeta}${reqMark} <span class="field-type">(text)</span></label>
+            <div class="ff-inrow"><input type="text" data-idx="${i}" class="ff-input" value="${escapeHtml(current)}"${maxAttr}>
+            <button type="button" class="ff-datebtn" data-date="${i}" title="Insert today's date">📅</button></div>
+            ${f.maxLen?`<div class="ff-maxlen"><span data-count="${i}">${current.length}</span>/${f.maxLen}</div>`:''}`;
+        }
+      } else if(f.type === 'PDFCheckBox'){
+        let checked = false; try{ checked = f.field.isChecked(); }catch(e){}
+        row.innerHTML = `<label class="checkbox-row"><input type="checkbox" data-idx="${i}" class="ff-input" ${checked?'checked':''}> ${nmeta}${reqMark} <span class="field-type">(checkbox)</span></label>`;
+      } else if(f.type === 'PDFRadioGroup'){
+        let options=[], selected=''; try{ options=f.field.getOptions(); selected=f.field.getSelected()||''; }catch(e){}
+        const opts = options.map(o=>`<label><input type="radio" name="radio-${i}" data-idx="${i}" class="ff-input" value="${escapeHtml(o)}" ${o===selected?'checked':''}> ${escapeHtml(o)}</label>`).join('');
+        row.innerHTML = `<label>${nmeta}${reqMark} <span class="field-type">(choose one)</span></label><div class="radio-options">${opts}</div>`;
+      } else if(f.type === 'PDFDropdown'){
+        let options=[], selected=[]; try{ options=f.field.getOptions(); selected=f.field.getSelected()||[]; }catch(e){}
+        const opts = options.map(o=>`<option value="${escapeHtml(o)}" ${selected.includes(o)?'selected':''}>${escapeHtml(o)}</option>`).join('');
+        row.innerHTML = `<label>${nmeta}${reqMark} <span class="field-type">(dropdown)</span></label>
+          <select data-idx="${i}" class="ff-input"><option value="">— Select —</option>${opts}</select>`;
+      } else if(f.type === 'PDFOptionList'){
+        let options=[], selected=[]; try{ options=f.field.getOptions(); selected=f.field.getSelected()||[]; }catch(e){}
+        const opts = options.map(o=>`<option value="${escapeHtml(o)}" ${selected.includes(o)?'selected':''}>${escapeHtml(o)}</option>`).join('');
+        row.innerHTML = `<label>${nmeta}${reqMark} <span class="field-type">(list — multi‑select)</span></label>
+          <select data-idx="${i}" class="ff-input" multiple size="4">${opts}</select>`;
+      } else {
+        row.innerHTML = `<label>${nmeta} <span class="field-type">(${escapeHtml(f.type)}, not editable here)</span></label>`;
+      }
+      container.appendChild(row);
+    });
+  }
+
+  // live counters + summary
+  $('fieldsContainer').addEventListener('input', e=>{
+    const t = e.target;
+    if(t.dataset && t.dataset.idx!=null){
+      const idx = t.dataset.idx;
+      const counter = document.querySelector(`[data-count="${idx}"]`);
+      if(counter) counter.textContent = t.value.length;
+      const row = t.closest('.form-field-row'); if(row) row.classList.remove('ff-invalid');
+    }
+    updateSummary();
+  });
+  $('fieldsContainer').addEventListener('change', updateSummary);
+
+  // date button
+  $('fieldsContainer').addEventListener('click', e=>{
+    const b = e.target.closest('[data-date]'); if(!b) return;
+    const idx = b.dataset.date;
+    const input = document.querySelector(`.ff-input[data-idx="${idx}"]`);
+    if(input){
+      const d = new Date();
+      const s = String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+d.getFullYear();
+      input.value = f_maxTrim(input, s); updateSummary();
+    }
+  });
+  function f_maxTrim(input, s){ const m=parseInt(input.getAttribute('maxlength')); return (m && s.length>m)? s.slice(0,m): s; }
+
+  function isFilled(f){
+    const inputs = document.querySelectorAll(`.ff-input[data-idx="${formFields.indexOf(f)}"]`);
+    if(!inputs.length) return false;
+    if(f.type==='PDFTextField') return inputs[0].value.trim()!=='';
+    if(f.type==='PDFCheckBox') return inputs[0].checked;
+    if(f.type==='PDFRadioGroup') return Array.from(inputs).some(r=>r.checked);
+    if(f.type==='PDFDropdown') return inputs[0].value!=='';
+    if(f.type==='PDFOptionList') return Array.from(inputs[0].options).some(o=>o.selected);
+    return false;
+  }
+
+  function updateSummary(){
+    const editable = formFields.filter(f=>['PDFTextField','PDFCheckBox','PDFRadioGroup','PDFDropdown','PDFOptionList'].includes(f.type));
+    const total = formFields.length;
+    let filled=0, required=0;
+    editable.forEach(f=>{ if(isFilled(f)) filled++; });
+    required = formFields.filter(f=>f.required).length;
+    const empty = editable.length - filled;
+    const html = [
+      ['Total', total, ''],
+      ['Filled', filled, 'ok'],
+      ['Empty', empty<0?0:empty, 'warn'],
+      ['Required', required, 'req']
+    ].map(([l,v,c])=>`<div class="ff-chip ${c}"><b>${v}</b><span>${l}</span></div>`).join('');
+    $('formSummary').innerHTML = html;
+  }
+
+  // search / filter
+  $('fieldSearch').addEventListener('input', e=>{
+    const q = e.target.value.trim().toLowerCase();
+    let shown=0;
+    document.querySelectorAll('#fieldsContainer .form-field-row').forEach(r=>{
+      const match = !q || r.dataset.fname.includes(q);
+      r.classList.toggle('ff-hide', !match);
+      if(match) shown++;
+    });
+    $('noMatch').style.display = shown? 'none':'block';
+  });
+
+  $('clearAllBtn').addEventListener('click', ()=>{
+    document.querySelectorAll('#fieldsContainer .ff-input').forEach(inp=>{
+      if(inp.type==='checkbox'||inp.type==='radio') inp.checked=false;
+      else if(inp.tagName==='SELECT'){ Array.from(inp.options).forEach(o=>o.selected=false); if(!inp.multiple) inp.value=''; }
+      else inp.value='';
+    });
+    document.querySelectorAll('[data-count]').forEach(c=>c.textContent='0');
+    updateSummary();
+  });
+
+  // replace / remove
+  $('replaceBtn').addEventListener('click', ()=> fileInput.click());
+  $('removeBtn').addEventListener('click', ()=>{
+    currentFile=null; pdfDoc=null; formFields=[]; originalBytes=null; pvDoc=null;
+    fileInput.value='';
+    $('formArea').style.display='none';
+    $('infoArea').style.display='none';
+    $('fileRow').style.display='none';
+    $('statusMsg').textContent='';
+  });
+
+  // ================= PREVIEW =================
+  async function initPreview(){
+    if(!window.pdfjsLib){ $('pvEmpty').textContent='Preview unavailable.'; return; }
+    try{
+      pvDoc = await pdfjsLib.getDocument({ data: originalBytes.slice(0) }).promise;
+      pvTotal = pvDoc.numPages; pvPage = 1; pvZoom = 1;
+      $('pvEmpty').style.display='none';
+      await renderPreview();
+    }catch(e){ $('pvEmpty').textContent='Preview unavailable.'; }
+  }
+  async function renderPreview(){
+    if(!pvDoc) return;
+    const pg = await pvDoc.getPage(pvPage);
+    const wrap = document.querySelector('.ff-pvwrap');
+    const base = pg.getViewport({scale:1});
+    const fit = Math.min(1, (wrap.clientWidth-24)/base.width);
+    const vp = pg.getViewport({ scale: fit*pvZoom });
+    const canvas = $('pvCanvas');
+    canvas.width = vp.width; canvas.height = vp.height;
+    await pg.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+    $('pvPageLbl').textContent = `Page ${pvPage} / ${pvTotal}`;
+    $('pvZoomLbl').textContent = Math.round(pvZoom*100)+'%';
+    $('pvPrev').disabled = pvPage<=1;
+    $('pvNext').disabled = pvPage>=pvTotal;
+  }
+  $('pvPrev').addEventListener('click', ()=>{ if(pvPage>1){pvPage--;renderPreview();} });
+  $('pvNext').addEventListener('click', ()=>{ if(pvPage<pvTotal){pvPage++;renderPreview();} });
+  $('pvZoomIn').addEventListener('click', ()=>{ pvZoom=Math.min(3,pvZoom+0.25);renderPreview(); });
+  $('pvZoomOut').addEventListener('click', ()=>{ pvZoom=Math.max(0.5,pvZoom-0.25);renderPreview(); });
+  $('pvRefresh').addEventListener('click', async ()=>{
+    const status=$('statusMsg');
+    try{
+      applyValuesToDoc(false);
+      const bytes = await pdfDoc.save();
+      // reload pdf-lib doc from fresh original to avoid double-write side effects next time
+      pvDoc = await pdfjsLib.getDocument({ data: bytes.slice(0) }).promise;
+      pvTotal = pvDoc.numPages; if(pvPage>pvTotal) pvPage=pvTotal;
+      $('pvEmpty').style.display='none';
+      await renderPreview();
+      // reload pdfDoc so subsequent edits start clean
+      pdfDoc = await PDFLib.PDFDocument.load(originalBytes.slice(0), {updateMetadata:false});
+      remapFields();
+      status.textContent='🔄 Preview updated with your current answers.';
+    }catch(e){ status.textContent='❌ Preview error: '+e.message; }
+  });
+
+  // re-bind field objects after reloading pdfDoc
+  function remapFields(){
+    try{
+      const form = pdfDoc.getForm();
+      const byName = {}; form.getFields().forEach(f=>{ byName[f.getName()]=f; });
+      formFields.forEach(f=>{ if(byName[f.name]) f.field = byName[f.name]; });
+    }catch(e){}
+  }
+
+  // write current UI values into pdfDoc fields
+  function applyValuesToDoc(){
     formFields.forEach((f, i) => {
       const inputs = document.querySelectorAll(`.ff-input[data-idx="${i}"]`);
       if(!inputs.length) return;
-
       if(f.type === 'PDFTextField'){
         try{ f.field.setText(inputs[0].value); }catch(e){}
       } else if(f.type === 'PDFCheckBox'){
         try{ inputs[0].checked ? f.field.check() : f.field.uncheck(); }catch(e){}
       } else if(f.type === 'PDFRadioGroup'){
-        const checked = Array.from(inputs).find(r => r.checked);
+        const checked = Array.from(inputs).find(r=>r.checked);
         if(checked){ try{ f.field.select(checked.value); }catch(e){} }
-      } else if(f.type === 'PDFDropdown' || f.type === 'PDFOptionList'){
+      } else if(f.type === 'PDFDropdown'){
         const val = inputs[0].value;
-        if(val){ try{ f.field.select(val); }catch(e){} }
+        try{ val ? f.field.select(val) : f.field.clear && f.field.clear(); }catch(e){}
+      } else if(f.type === 'PDFOptionList'){
+        const vals = Array.from(inputs[0].options).filter(o=>o.selected).map(o=>o.value);
+        try{ if(vals.length) f.field.select(vals); }catch(e){}
       }
     });
-
-    if(document.getElementById('flattenCheck').checked){
-      pdfDoc.getForm().flatten();
-    }
-
-    const newBytes = await pdfDoc.save();
-    const blob = new Blob([newBytes], {type:'application/pdf'});
-    downloadBlob('filled-form.pdf', blob);
-    status.textContent = '✅ Form filled and downloaded!';
-  }catch(err){
-    status.textContent = '❌ Error: ' + err.message;
   }
-});
+
+  // validation: required + empty
+  function validateRequired(){
+    const missing = [];
+    document.querySelectorAll('.form-field-row').forEach(r=>r.classList.remove('ff-invalid'));
+    formFields.forEach(f=>{
+      if(f.required && !isFilled(f)){
+        missing.push(f);
+        const row = document.querySelector(`.form-field-row[data-row="${formFields.indexOf(f)}"]`);
+        if(row) row.classList.add('ff-invalid');
+      }
+    });
+    return missing;
+  }
+
+  // ================= SAVE =================
+  $('saveBtn').addEventListener('click', async ()=>{
+    const status = $('statusMsg');
+    const missing = validateRequired();
+    if(missing.length){
+      status.textContent = `⚠️ Please complete ${missing.length} required field(s) highlighted in red.`;
+      const first = document.querySelector('.form-field-row.ff-invalid');
+      if(first){ first.scrollIntoView({behavior:'smooth',block:'center'}); const inp=first.querySelector('.ff-input'); if(inp) inp.focus(); }
+      return;
+    }
+    status.textContent = '⏳ Saving…';
+    try{
+      // reload a clean doc so repeated saves don't stack
+      pdfDoc = await PDFLib.PDFDocument.load(originalBytes.slice(0), {updateMetadata:false});
+      remapFields();
+      applyValuesToDoc();
+      if($('flattenCheck').checked){ pdfDoc.getForm().flatten(); }
+      const newBytes = await pdfDoc.save();
+      const outName = (currentFile? currentFile.name.replace(/\.pdf$/i,''):'form') + '-filled.pdf';
+      downloadBlob(outName, new Blob([newBytes], {type:'application/pdf'}));
+      status.textContent = $('flattenCheck').checked ? '✅ Form filled, flattened and downloaded!' : '✅ Filled PDF downloaded (still editable).';
+      if(window.premToast) premToast('Form saved ✔');
+    }catch(err){
+      status.textContent = '❌ Error: ' + err.message;
+    }
+  });
+
+  window.addEventListener('resize', ()=>{ if(pvDoc) renderPreview(); });
+
+  // ================= FAQ =================
+  const FAQ = [
+    ['What is a fillable PDF form?','A fillable PDF (technically an AcroForm) contains interactive fields — text boxes, checkboxes, radio buttons and dropdowns — that you can click and complete on screen, rather than a flat page you can only print.'],
+    ['How do I fill a PDF form with this tool?','Upload the PDF, and the tool lists every field as an editable control. Type your answers, tick boxes and choose options, then click Save to download the completed form.'],
+    ['Are my documents uploaded to a server?','No. Everything is processed locally in your browser using pdf‑lib and pdf.js. Your form never leaves your device, nothing is stored, and no signup is needed.'],
+    ['What field types are supported?','Text fields (single and multi‑line), checkboxes, radio button groups, dropdowns (combo boxes) and multi‑select list boxes — the full range of standard AcroForm fields.'],
+    ['Does it read values already in the form?','Yes. Any answers already saved in the PDF are loaded into the editor so you can review or change them instead of starting over.'],
+    ['What does "Flatten" do?','Flattening merges your answers permanently into the page so the form can no longer be edited. Use it when you want to lock and share a final version.'],
+    ['Can I keep the form editable?','Yes. Leave the Flatten box unticked and the saved PDF keeps its interactive fields, so it can be reopened and changed later.'],
+    ['My PDF says "no fillable fields" — why?','The document is a static or scanned PDF without interactive AcroForm fields. There is nothing for the tool to fill; you would need a tool that adds fields or use the Edit PDF or Sign PDF tools to place content manually.'],
+    ['Can I fill a password‑protected PDF?','Encrypted forms usually cannot be opened for editing. Remove the password with your PDF viewer first, then upload the unlocked file here.'],
+    ['Does the live preview show my answers?','Yes. Click Update preview and the pages re‑render with your current entries baked in, giving you an accurate before‑and‑after view.'],
+    ['How does the auto‑date button work?','The 📅 button next to a text field inserts today’s date in DD/MM/YYYY format — handy for dated and signature lines.'],
+    ['What are required fields?','Fields the form marks as mandatory. They are flagged with a red asterisk, and saving highlights any that are still empty so you don’t miss them.'],
+    ['Is there a maximum length on text fields?','If the form defines a character limit for a field, the editor enforces it and shows a live character counter so your entry always fits.'],
+    ['Can I search a long form?','Yes. Use the search box above the field list to filter by field name and jump straight to the control you need.'],
+    ['Will the filled PDF print correctly?','Yes. Whether editable or flattened, the output is a standard PDF that prints identically in any viewer. Flatten is best for guaranteed, tamper‑resistant printing.'],
+    ['Does it work on mobile?','Yes. The layout stacks into a single column on phones and tablets, and each field opens the right on‑screen keyboard for comfortable typing.'],
+    ['Can I clear everything and start again?','Yes. The Clear button empties every field at once, or use Remove to discard the file and upload a different form.'],
+    ['Is the character formatting (font, colour) editable?','Field appearance such as font and colour is defined by the form itself and is preserved. This tool fills the values; to add free‑floating styled text use the Edit PDF tool.'],
+    ['Does the tool need the internet?','Only to load the page once. After that it runs entirely offline, which is ideal for handling confidential forms on a private machine.'],
+    ['Is this tool really free?','Yes. It is completely free with no watermark, no page or field limits, no account and no hidden charges.'],
+    ['Is my personal data safe?','Completely. Because nothing is uploaded, the sensitive details you enter — names, IDs, bank and contact information — never leave your browser and are discarded when you close the tab.']
+  ];
+  const faqList = $('faqList');
+  FAQ.forEach(([q,a])=>{ const d=document.createElement('details'); d.innerHTML='<summary>'+q+'</summary><p>'+a+'</p>'; faqList.appendChild(d); });
+  try{
+    const schema={'@context':'https://schema.org','@type':'FAQPage',mainEntity:FAQ.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))};
+    $('faqSchema').textContent = JSON.stringify(schema);
+  }catch(e){}
+
+  // test hook
+  window.__ffHooks = { fields:()=>formFields, summary:()=>$('formSummary').textContent, applyValuesToDoc, validateRequired };
+})();
 </script>
 </body>
 </html>
