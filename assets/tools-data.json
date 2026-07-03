@@ -519,11 +519,22 @@
     {
       "id": "password-generator",
       "name": "Password Generator",
-      "description": "Generate a strong password",
+      "description": "Strong random, passphrase, PIN, WiFi & API-key passwords with entropy & crack time",
       "icon": "🔐",
       "url": "tools/password-generator.html",
       "category": "developer",
-      "published": true
+      "published": true,
+      "tags": [
+        "password generator",
+        "strong password",
+        "passphrase generator",
+        "random password",
+        "wifi password",
+        "pin generator",
+        "api key generator",
+        "password entropy",
+        "पासवर्ड जनरेटर"
+      ]
     },
     {
       "id": "color-picker",
