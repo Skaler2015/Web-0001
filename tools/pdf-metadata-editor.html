@@ -4,28 +4,110 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
+<meta name="description" content="Free online PDF metadata editor. View and edit a PDF's title, author, subject, keywords, creator, producer, language and dates, add custom XMP/Info fields, remove all metadata to anonymise, and export metadata as JSON/CSV/XML/TXT. 100% private, in your browser, no uploads.">
+<meta name="keywords" content="pdf metadata editor, edit pdf properties, change pdf author, pdf title editor, remove pdf metadata, pdf document properties, xmp metadata, anonymise pdf">
 <link rel="canonical" href="https://apnesoftware.com/tools/pdf-metadata-editor.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="PDF Metadata Editor | ApneSoftware">
-<meta property="og:description" content="Edit title, author, subject, keywords. Free online tool — no signup required.">
+<meta property="og:title" content="PDF Metadata Editor — Edit &amp; Remove PDF Properties | ApneSoftware">
+<meta property="og:description" content="View and edit PDF title, author, subject, keywords, dates and custom fields, or strip all metadata to anonymise. Export as JSON/CSV/XML. 100% private, no uploads.">
 <meta property="og:url" content="https://apnesoftware.com/tools/pdf-metadata-editor.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PDF Metadata Editor | ApneSoftware">
-<meta name="twitter:description" content="Edit title, author, subject, keywords. Free online tool — no signup required.">
+<meta name="twitter:title" content="PDF Metadata Editor — Edit &amp; Remove PDF Properties | ApneSoftware">
+<meta name="twitter:description" content="View and edit PDF title, author, subject, keywords, dates and custom fields, or strip all metadata to anonymise. Export JSON/CSV/XML. 100% private.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PDF Metadata Editor","description":"Edit title, author, subject, keywords. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/pdf-metadata-editor.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PDF Metadata Editor","description":"View and edit PDF document metadata entirely in your browser — title, author, subject, keywords, creator, producer, language, creation and modification dates, and custom Info-dictionary fields. Remove all metadata to anonymise a file and export metadata as JSON, CSV, XML or TXT. No uploads, no signup.","url":"https://apnesoftware.com/tools/pdf-metadata-editor.html","applicationCategory":"BusinessApplication","operatingSystem":"Any","browserRequirements":"Requires a modern web browser with JavaScript enabled","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"featureList":["View full PDF document information","Edit title, author, subject, keywords, creator, producer","Edit language, creation and modification dates","Add, rename and delete custom metadata fields","Remove all metadata to anonymise","Export metadata as JSON, CSV, XML and TXT"],"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"PDF Metadata Editor Tool","url":"https://apnesoftware.com/tools/pdf-metadata-editor.html","description":"Free browser-based tool to view, edit and remove PDF metadata and document properties.","isPartOf":{"@type":"WebSite","name":"ApneSoftware","url":"https://apnesoftware.com"},"inLanguage":["en","hi"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apnesoftware.com/index.html"},{"@type":"ListItem","position":2,"name":"PDF Metadata Editor","item":"https://apnesoftware.com/tools/pdf-metadata-editor.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to edit PDF metadata","description":"View and change a PDF's document properties in your browser.","step":[{"@type":"HowToStep","name":"Upload the PDF","text":"Drag a PDF into the drop zone or click to choose it. Its full document information and existing metadata load automatically."},{"@type":"HowToStep","name":"Edit the fields","text":"Change the title, author, subject, keywords, creator, producer, language and dates, or add your own custom fields."},{"@type":"HowToStep","name":"Review or anonymise","text":"Compare before and after, or tick Remove all metadata to strip every property and produce an anonymised file."},{"@type":"HowToStep","name":"Save and download","text":"Click Save to write the metadata back and download the updated PDF, or export the metadata as JSON, CSV, XML or TXT."}]}
+</script>
+<script type="application/ld+json" id="faqSchema">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}
 </script>
 <meta name="color-scheme" content="dark">
-<title>PDF Metadata Editor | ApneSoftware</title>
+<title>PDF Metadata Editor — Edit &amp; Remove PDF Properties | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-/* Premium upload enhancement for this tool */
+/* ===== PDF Metadata Editor — scoped md- styles ===== */
 .dropzone{cursor:pointer}
 .dropzone p{font-size:.9rem}
 .panel{position:relative;z-index:1}
+.md-badges{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:10px;font-size:.78rem;color:var(--text-dim)}
+.md-badges span{display:inline-flex;align-items:center;gap:5px}
+
+.md-filerow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px}
+.md-filerow .md-fname{flex:1 1 200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.88rem}
+.md-mini{background:rgba(255,255,255,.06);border:1px solid var(--border,rgba(255,255,255,.12));color:var(--text);border-radius:8px;padding:6px 12px;cursor:pointer;font-size:.8rem}
+.md-mini:hover{background:rgba(167,139,250,.25)}
+
+.md-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-top:14px}
+.md-info .md-i{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:10px;padding:8px 10px;font-size:.78rem}
+.md-info .md-i b{display:block;color:var(--text);font-size:.82rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.md-info .md-i span{color:var(--text-dim)}
+
+.md-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+@media(max-width:760px){.md-cols{grid-template-columns:1fr}}
+
+.md-toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:16px}
+.md-tool{background:rgba(255,255,255,.06);border:1px solid var(--border,rgba(255,255,255,.12));color:var(--text);border-radius:8px;padding:7px 11px;cursor:pointer;font-size:.82rem}
+.md-tool:hover{background:rgba(167,139,250,.25)}
+.md-tool:disabled{opacity:.35;cursor:not-allowed}
+.md-tool.danger{border-color:rgba(248,113,113,.4);color:#fca5a5}
+.md-tool.danger:hover{background:rgba(248,113,113,.18)}
+
+.md-custom{margin-top:8px;display:flex;flex-direction:column;gap:8px}
+.md-crow{display:flex;gap:8px;align-items:center}
+.md-crow input.md-key{flex:0 0 38%}
+.md-crow input.md-val{flex:1}
+.md-crow button{flex:0 0 auto;background:rgba(248,113,113,.15);border:1px solid rgba(248,113,113,.35);color:#fca5a5;border-radius:7px;width:32px;height:34px;cursor:pointer}
+
+.md-warn{margin-top:10px;font-size:.82rem;color:#fbbf24;display:none}
+.md-warn.show{display:block}
+
+.md-diff{margin-top:14px;border:1px solid var(--border,rgba(255,255,255,.1));border-radius:10px;overflow:hidden;display:none}
+.md-diff table{width:100%;border-collapse:collapse;font-size:.82rem}
+.md-diff th,.md-diff td{padding:7px 10px;text-align:left;border-bottom:1px solid var(--border,rgba(255,255,255,.06))}
+.md-diff th{color:var(--text-dim);font-weight:600;background:rgba(255,255,255,.03)}
+.md-diff td.old{color:#fca5a5}.md-diff td.new{color:#86efac}
+
+.md-stats{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.md-chip{background:rgba(255,255,255,.04);border:1px solid var(--border,rgba(255,255,255,.1));border-radius:10px;padding:6px 12px;font-size:.8rem;color:var(--text-dim)}
+.md-chip b{color:var(--text)}
+.md-fieldsub{font-size:.72rem;color:var(--text-dim);margin-top:2px}
+
+/* ===== Below-tool content ===== */
+.md-wrap{margin:26px 0}
+.md-title{font-size:1.35rem;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+.md-sub{color:var(--text-dim);font-size:.92rem;margin:0 0 18px;line-height:1.6}
+.md-feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.md-fcard{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:14px;padding:16px}
+.md-fcard h4{margin:0 0 6px;font-size:.98rem;display:flex;align-items:center;gap:8px}
+.md-fcard p{margin:0;font-size:.86rem;color:var(--text-dim);line-height:1.55}
+.md-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.md-rel{display:block;text-decoration:none;background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:14px;transition:.15s;color:var(--text)}
+.md-rel:hover{border-color:#a78bfa;background:rgba(167,139,250,.1);transform:translateY(-2px)}
+.md-rel b{display:block;font-size:.92rem;margin-bottom:3px}
+.md-rel span{font-size:.8rem;color:var(--text-dim);line-height:1.45}
+.md-faq details{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:0 16px;margin-bottom:10px}
+.md-faq summary{cursor:pointer;padding:14px 0;font-weight:600;font-size:.92rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.md-faq summary::-webkit-details-marker{display:none}
+.md-faq summary::after{content:'+';font-size:1.3rem;color:#a78bfa;flex:0 0 auto}
+.md-faq details[open] summary::after{content:'−'}
+.md-faq details p{margin:0 0 14px;font-size:.87rem;color:var(--text-dim);line-height:1.65}
+.md-steps{list-style:none;counter-reset:s;padding:0;margin:0;display:grid;gap:12px}
+.md-steps li{counter-increment:s;position:relative;padding-left:46px;font-size:.9rem;color:var(--text-dim);line-height:1.6}
+.md-steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:32px;height:32px;border-radius:9px;background:rgba(167,139,250,.18);color:#c4b5fd;font-weight:700;display:grid;place-items:center}
+.md-steps li b{color:var(--text)}
+.md-pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.md-pill{background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.3);color:#d6cbff;border-radius:999px;padding:5px 12px;font-size:.8rem}
 </style>
 </head>
 <body>
@@ -39,71 +121,195 @@
 <div class="container">
   <div class="tool-header">
     <h1>🏷️ PDF Metadata Editor</h1>
-    <p>Edit a PDF's title, author, subject, and keywords.</p>
+    <p>View and edit a PDF's document properties — title, author, subject, keywords, creator, producer, language and dates — add your own custom fields, or strip everything to anonymise the file. Everything runs privately in your browser; your PDF is never uploaded.</p>
   </div>
 
   <div class="panel">
     <div class="dropzone" id="dropzone">
       <p>📤 Drag a PDF file here or click to choose</p>
       <input type="file" id="fileInput" accept="application/pdf">
+      <div class="md-badges"><span>📄 PDF only</span><span>🔒 Secure processing</span><span>🚫 No server upload</span></div>
     </div>
 
+    <div class="md-filerow" id="fileRow" style="display:none">
+      <span class="md-fname" id="fileNameLbl"></span>
+      <button class="md-mini" id="replaceBtn" type="button">🔄 Replace</button>
+      <button class="md-mini" id="removeBtn" type="button">✖ Remove</button>
+    </div>
+    <div class="md-info" id="infoArea" style="display:none"></div>
+
     <div id="afterUpload" style="display:none;margin-top:18px">
-      <div class="field">
-        <label for="titleInput">Title</label>
-        <input type="text" id="titleInput">
+      <div class="md-toolbar">
+        <button class="md-tool" id="undoBtn" type="button" disabled>↶ Undo</button>
+        <button class="md-tool" id="redoBtn" type="button" disabled>↷ Redo</button>
+        <button class="md-tool" id="resetBtn" type="button">⟲ Reset changes</button>
+        <button class="md-tool" id="diffBtn" type="button">🔍 Before / After</button>
+        <button class="md-tool" id="importBtn" type="button">📥 Import JSON</button>
+        <input type="file" id="importInput" accept="application/json" style="display:none">
+        <span style="margin-left:auto"></span>
+        <button class="md-tool" id="expJson" type="button">JSON</button>
+        <button class="md-tool" id="expCsv" type="button">CSV</button>
+        <button class="md-tool" id="expXml" type="button">XML</button>
+        <button class="md-tool" id="expTxt" type="button">TXT</button>
       </div>
-      <div class="field">
-        <label for="authorInput">Author</label>
-        <input type="text" id="authorInput">
+
+      <div class="md-cols">
+        <div>
+          <div class="field"><label for="titleInput">Title</label><input type="text" id="titleInput"></div>
+          <div class="field"><label for="authorInput">Author</label><input type="text" id="authorInput"></div>
+          <div class="field"><label for="subjectInput">Subject</label><input type="text" id="subjectInput"></div>
+          <div class="field"><label for="keywordsInput">Keywords (comma separated)</label><input type="text" id="keywordsInput" placeholder="e.g. invoice, 2026, claim"><div class="md-fieldsub" id="kwSub"></div></div>
+        </div>
+        <div>
+          <div class="field"><label for="creatorInput">Creator (authoring app)</label><input type="text" id="creatorInput"></div>
+          <div class="field"><label for="producerInput">Producer (PDF engine)</label><input type="text" id="producerInput"></div>
+          <div class="field"><label for="languageInput">Language (e.g. en, hi, en-US)</label><input type="text" id="languageInput"></div>
+          <div class="field" style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div><label for="creationInput">Created</label><input type="datetime-local" id="creationInput"></div>
+            <div><label for="modInput">Modified</label><input type="datetime-local" id="modInput"></div>
+          </div>
+        </div>
       </div>
-      <div class="field">
-        <label for="subjectInput">Subject</label>
-        <input type="text" id="subjectInput">
+
+      <!-- custom fields -->
+      <div style="margin-top:14px">
+        <label style="font-size:.85rem;color:var(--text-dim)">Custom metadata fields</label>
+        <div class="md-custom" id="customList"></div>
+        <button class="md-tool" id="addFieldBtn" type="button" style="margin-top:8px">＋ Add custom field</button>
       </div>
-      <div class="field">
-        <label for="keywordsInput">Keywords (comma separated)</label>
-        <input type="text" id="keywordsInput" placeholder="e.g. invoice, 2026, claim">
-      </div>
-      <div class="field">
-        <label for="creatorInput">Creator (application name)</label>
-        <input type="text" id="creatorInput">
-      </div>
+
+      <p class="md-warn" id="warnMsg"></p>
+
+      <div class="md-diff" id="diffPanel"><table id="diffTable"></table></div>
+
+      <div class="md-stats" id="statsRow"></div>
+
+      <label style="display:flex;align-items:center;gap:8px;font-weight:400;color:var(--text);margin-top:14px;font-size:.9rem">
+        <input type="checkbox" id="removeAllChk" style="width:auto"> 🧹 Remove ALL metadata (anonymise — clears every field and embedded XMP)
+      </label>
 
       <div class="btn-row">
         <button class="btn" id="saveBtn">💾 Save and Download</button>
       </div>
 
-      <p id="statusMsg" style="margin-top:12px;color:var(--text-dim);font-size:.9rem"></p>
+      <p id="statusMsg" style="margin-top:12px;color:var(--text-dim);font-size:.9rem" role="status" aria-live="polite"></p>
     </div>
   </div>
 </div>
 
+<!-- ===================== BELOW-TOOL CONTENT ===================== -->
 
+<!-- Key features -->
+<div class="md-wrap">
+  <h2 class="md-title">✨ Key Features</h2>
+  <div class="md-feat-grid">
+    <div class="md-fcard"><h4>🧾 Full document info</h4><p>Instantly see the PDF version, file size, page count, page size, orientation, producer, and creation and modification dates.</p></div>
+    <div class="md-fcard"><h4>✏️ Edit every standard field</h4><p>Change title, author, subject, keywords, creator, producer and language, and set the creation and modification dates precisely.</p></div>
+    <div class="md-fcard"><h4>🧩 Custom fields</h4><p>Add, rename and delete your own Info‑dictionary properties such as Company, Department, Copyright or any key your workflow needs.</p></div>
+    <div class="md-fcard"><h4>🧹 Anonymise in one click</h4><p>Remove all metadata — including embedded XMP — to strip author names and hidden properties before sharing a file publicly.</p></div>
+    <div class="md-fcard"><h4>🔍 Before / after compare</h4><p>See exactly which properties you changed, side by side, so nothing is altered by accident before you save.</p></div>
+    <div class="md-fcard"><h4>📤 Export metadata</h4><p>Download the metadata as JSON, CSV, XML or TXT for audits and records, and re‑import a JSON file to reuse it as a template.</p></div>
+    <div class="md-fcard"><h4>✅ Smart validation</h4><p>Duplicate keywords and invalid control characters are flagged so your metadata stays clean and standards‑compliant.</p></div>
+    <div class="md-fcard"><h4>↩️ Undo, redo &amp; reset</h4><p>Experiment freely — every change can be undone or redone, and one click resets all fields to the file's original values.</p></div>
+    <div class="md-fcard"><h4>🔒 100% private</h4><p>Everything runs locally with pdf‑lib. Your PDF is never uploaded — no server, no account, no tracking of its contents.</p></div>
+  </div>
+</div>
+
+<!-- Benefits -->
+<div class="md-wrap">
+  <h2 class="md-title">🎁 Why use it</h2>
+  <div class="md-pill-row">
+    <span class="md-pill">Fix wrong author / title</span>
+    <span class="md-pill">Improve searchability with keywords</span>
+    <span class="md-pill">Anonymise before publishing</span>
+    <span class="md-pill">Brand documents (Company, Copyright)</span>
+    <span class="md-pill">SEO for indexed PDFs</span>
+    <span class="md-pill">Audit &amp; compliance records</span>
+    <span class="md-pill">Works offline</span>
+    <span class="md-pill">Free forever</span>
+  </div>
+</div>
+
+<!-- Related tools (ABOVE About) -->
+<div class="md-wrap">
+  <h2 class="md-title">🧰 Related Tools</h2>
+  <div class="md-rel-grid">
+    <a class="md-rel" href="pdf-info.html"><b>PDF Info</b><span>Inspect metadata, pages and document details.</span></a>
+    <a class="md-rel" href="pdf-compress.html"><b>Compress PDF</b><span>Reduce PDF file size for easy sharing.</span></a>
+    <a class="md-rel" href="pdf-merge.html"><b>Merge PDF</b><span>Combine several PDFs into one document.</span></a>
+    <a class="md-rel" href="pdf-split.html"><b>Split PDF</b><span>Break a PDF into separate files or ranges.</span></a>
+    <a class="md-rel" href="pdf-redact.html"><b>Redact PDF</b><span>Permanently hide sensitive content in a PDF.</span></a>
+    <a class="md-rel" href="pdf-edit.html"><b>Edit PDF</b><span>Add text, shapes and images anywhere on a page.</span></a>
+  </div>
+</div>
+
+<!-- About (bilingual) -->
 <div class="info-wrap">
   <div class="info-section">
     <div class="info-block">
       <h2>ℹ️ About This Tool</h2>
-      <p>This tool lets you view and edit a PDF's hidden document properties — title, author, subject, keywords, and creator application — and save them back into the file.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Upload your PDF.</li>
-        <li>The current metadata loads into the fields automatically — edit any you'd like to change.</li>
-        <li>Click Save and download the updated PDF.</li>
-      </ol>
+      <p>The <b>ApneSoftware PDF Metadata Editor</b> lets you view, edit, add and remove the hidden document properties — the <b>metadata</b> — stored inside a PDF, all from your web browser and without uploading the file anywhere. Every PDF carries a layer of information about itself that is separate from its visible pages: its title, the author’s name, a subject line, keywords, the application that created it, the software that produced the PDF, the language, and the dates it was created and last modified. This data is what appears in a viewer’s “Document Properties” dialog, what search engines and library systems read when they index a file, and what operating systems show in file previews. Editing it properly usually requires expensive desktop software such as Adobe Acrobat Pro; this tool brings the same capability to a fast, free, private web page.</p>
+      <p>When you open a PDF, the tool immediately reads its existing metadata into a clean, two‑column editor and displays a separate, read‑only <b>document information panel</b>. That panel summarises the technical facts about the file — its PDF version, file size, total page count, the page size and orientation, the producer string, and the creation and modification timestamps — so you have full context before changing anything. The editable fields cover every standard <b>Info‑dictionary</b> property: <b>Title</b>, <b>Author</b>, <b>Subject</b>, <b>Keywords</b>, <b>Creator</b> and <b>Producer</b>, plus the document <b>Language</b> and both the <b>creation</b> and <b>modification dates</b>, which you can set to any value using a proper date‑and‑time picker rather than being forced to accept the current moment.</p>
+      <p>Real documents often need more than the standard fields, so the editor also supports <b>custom metadata fields</b>. With one click you can add your own key‑value pairs — <b>Company</b>, <b>Department</b>, <b>Publisher</b>, <b>Copyright</b>, <b>Category</b>, <b>Comments</b> or anything else your organisation uses — and rename or delete them freely. These are written directly into the PDF’s Info dictionary alongside the standard entries, so they travel with the file and are visible to any compliant PDF reader. This makes the tool genuinely useful for records management, where documents must carry consistent ownership, classification and rights information.</p>
+      <p>Privacy and anonymisation are first‑class features. A PDF’s metadata frequently reveals more than its author intended — a real name, a company username, the internal file path, or the software licence used to create it — which can be a serious problem when publishing a document publicly or submitting it to a third party. A single <b>Remove all metadata</b> switch strips every property and also deletes any embedded <b>XMP</b> metadata stream, producing a clean, anonymised file with no lingering personal information or hidden properties. You can equally use the individual fields to correct a wrong author, replace an auto‑generated title with a meaningful one, or add descriptive keywords that make the document easier to find.</p>
+      <p>To keep you in control, the editor includes a <b>before‑and‑after comparison</b> that lists exactly which properties you have changed, an <b>undo/redo</b> history, and a one‑click <b>reset</b> that restores the file’s original values. Built‑in <b>validation</b> warns you about duplicate keywords and invalid control characters so your metadata stays clean and standards‑compliant. And because metadata is often needed outside the PDF too — for a spreadsheet, an audit log or another system — you can <b>export</b> the current metadata as <b>JSON</b>, <b>CSV</b>, <b>XML</b> or <b>TXT</b>, and <b>import</b> a JSON file to apply a saved set of values as a reusable template across many documents.</p>
+      <p>Getting metadata right matters more than most people realise. For <b>publishers and libraries</b>, consistent Title, Author and Subject fields are what make a catalogue searchable and what appear in citation tools and reference managers. For <b>SEO and content teams</b>, a PDF that will be indexed by Google benefits enormously from an accurate title and descriptive keywords, because search engines fall back on this metadata when a document has no obvious on‑page heading. For <b>legal, finance and compliance</b> workflows, embedding Company, Copyright, Category and custom classification fields creates an auditable record of ownership and handling that travels with the file. And for <b>everyone else</b>, the ability to strip metadata is a simple but powerful privacy safeguard: the same document that looks anonymous on screen can quietly carry your full name, your employer, your operating‑system username and the exact software build you used, all of which a recipient can read in seconds. This tool puts every one of those scenarios within reach without a subscription, a download, or a single byte leaving your device.</p>
+      <p>Above all, the tool is <b>private by design</b>. It uses the open‑source pdf‑lib library to read and rewrite the document entirely inside your browser tab. Nothing is uploaded to a server, nothing is stored, and no account or email is required; once the page has loaded you can even work offline. That matters a great deal for metadata specifically, because the very information you are editing — names, organisations, internal identifiers — is exactly the kind of personal or business data that should never be sent to a stranger’s server just to be corrected or removed. Whether you are a publisher standardising document properties across a catalogue, a business stamping ownership and copyright onto its files, an SEO specialist adding titles and keywords to PDFs that will be indexed, or an individual scrubbing personal details before sharing a document, this tool gives you complete, professional control over PDF metadata with nothing to install and no privacy compromise.</p>
     </div>
     <hr class="info-divider">
     <div class="info-block">
       <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>यह टूल PDF की छुपी हुई डॉक्यूमेंट प्रॉपर्टीज़ — टाइटल, लेखक, विषय, कीवर्ड्स और बनाने वाला ऐप — देखने और बदलने देता है, फिर वापस फाइल में सेव कर देता है।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>अपनी PDF अपलोड करें।</li>
-        <li>मौजूदा मेटाडेटा अपने आप फील्ड्स में आ जाएगा — जो बदलना है बदल दें।</li>
-        <li>Save बटन दबाएं और अपडेटेड PDF डाउनलोड करें।</li>
-      </ol>
+      <p><b>ApneSoftware PDF Metadata Editor</b> आपको किसी PDF के अंदर संग्रहीत छिपी हुई डॉक्यूमेंट प्रॉपर्टीज़ — यानी <b>मेटाडेटा</b> — देखने, संपादित करने, जोड़ने और हटाने देता है, वह भी आपके वेब ब्राउज़र से और फ़ाइल को कहीं अपलोड किए बिना। हर PDF अपने बारे में जानकारी की एक परत रखती है जो उसके दिखने वाले पेजों से अलग होती है: उसका शीर्षक, लेखक का नाम, विषय पंक्ति, कीवर्ड, बनाने वाला ऐप, PDF बनाने वाला सॉफ़्टवेयर, भाषा, और बनने व अंतिम बार बदलने की तिथियाँ। यही डेटा किसी व्यूअर के “Document Properties” डायलॉग में दिखता है, यही सर्च इंजन और लाइब्रेरी सिस्टम फ़ाइल को इंडेक्स करते समय पढ़ते हैं। इसे ठीक से संपादित करने के लिए आमतौर पर Adobe Acrobat Pro जैसे महँगे सॉफ़्टवेयर की ज़रूरत होती है; यह टूल वही क्षमता एक तेज़, मुफ़्त, निजी वेब पेज पर लाता है।</p>
+      <p>जब आप कोई PDF खोलते हैं, टूल तुरंत उसका मौजूदा मेटाडेटा एक साफ़, दो‑कॉलम एडिटर में पढ़ लेता है और एक अलग, केवल‑पठनीय <b>डॉक्यूमेंट जानकारी पैनल</b> दिखाता है। वह पैनल फ़ाइल के तकनीकी तथ्यों का सार देता है — PDF वर्शन, फ़ाइल आकार, कुल पेज संख्या, पेज आकार और ओरिएंटेशन, producer स्ट्रिंग, और बनने व बदलने के टाइमस्टैम्प — ताकि कुछ बदलने से पहले आपके पास पूरा संदर्भ हो। संपादन योग्य फ़ील्ड हर मानक <b>Info‑dictionary</b> प्रॉपर्टी को कवर करती हैं: <b>Title</b>, <b>Author</b>, <b>Subject</b>, <b>Keywords</b>, <b>Creator</b> और <b>Producer</b>, साथ ही दस्तावेज़ की <b>भाषा</b> और <b>बनने</b> व <b>बदलने</b> दोनों तिथियाँ।</p>
+      <p>असली दस्तावेज़ों को अक्सर मानक फ़ील्ड से अधिक चाहिए, इसलिए एडिटर <b>कस्टम मेटाडेटा फ़ील्ड</b> का भी समर्थन करता है। एक क्लिक से आप अपने key‑value जोड़े जोड़ सकते हैं — <b>Company</b>, <b>Department</b>, <b>Publisher</b>, <b>Copyright</b>, <b>Category</b>, <b>Comments</b> या जो भी आपका संगठन उपयोग करता है — और उन्हें स्वतंत्र रूप से नाम बदल या हटा सकते हैं। ये सीधे PDF की Info dictionary में लिखे जाते हैं, इसलिए फ़ाइल के साथ चलते हैं और किसी भी अनुरूप PDF रीडर को दिखते हैं।</p>
+      <p>गोपनीयता और अनामीकरण प्रथम‑श्रेणी की सुविधाएँ हैं। किसी PDF का मेटाडेटा अक्सर उससे ज़्यादा बता देता है जितना लेखक चाहता था — असली नाम, कंपनी यूज़रनेम, आंतरिक फ़ाइल पथ, या उपयोग किया गया सॉफ़्टवेयर लाइसेंस — जो किसी दस्तावेज़ को सार्वजनिक रूप से प्रकाशित करते समय गंभीर समस्या हो सकती है। एक ही <b>Remove all metadata</b> स्विच हर प्रॉपर्टी हटा देता है और किसी भी एम्बेडेड <b>XMP</b> मेटाडेटा स्ट्रीम को भी मिटा देता है, जिससे बिना किसी शेष व्यक्तिगत जानकारी के एक साफ़, अनामीकृत फ़ाइल बनती है।</p>
+      <p>आपको नियंत्रण में रखने के लिए, एडिटर में एक <b>before‑and‑after तुलना</b> शामिल है जो ठीक‑ठीक बताती है कि आपने कौन‑सी प्रॉपर्टी बदली, एक <b>undo/redo</b> इतिहास, और एक‑क्लिक <b>reset</b> जो फ़ाइल के मूल मान लौटा देता है। अंतर्निर्मित <b>validation</b> डुप्लिकेट कीवर्ड और अमान्य कंट्रोल कैरेक्टर के बारे में चेतावनी देती है। और चूँकि मेटाडेटा अक्सर PDF के बाहर भी चाहिए होता है, आप वर्तमान मेटाडेटा को <b>JSON</b>, <b>CSV</b>, <b>XML</b> या <b>TXT</b> के रूप में <b>निर्यात</b> कर सकते हैं, और एक सहेजे गए मान‑समूह को टेम्पलेट की तरह लागू करने के लिए JSON फ़ाइल <b>आयात</b> कर सकते हैं।</p>
+      <p>मेटाडेटा को सही रखना जितना लोग समझते हैं उससे कहीं अधिक मायने रखता है। <b>प्रकाशकों और पुस्तकालयों</b> के लिए, एक‑समान Title, Author और Subject फ़ील्ड ही किसी कैटलॉग को खोज योग्य बनाते हैं और उद्धरण उपकरणों में दिखते हैं। <b>SEO और कंटेंट टीमों</b> के लिए, जो PDF Google द्वारा इंडेक्स होगी उसे सटीक शीर्षक और वर्णनात्मक कीवर्ड से बहुत लाभ होता है, क्योंकि सर्च इंजन तब इसी मेटाडेटा पर निर्भर करते हैं। <b>कानूनी, वित्त और अनुपालन</b> वर्कफ़्लो के लिए, Company, Copyright, Category और कस्टम वर्गीकरण फ़ील्ड जोड़ना स्वामित्व और प्रबंधन का एक ऑडिट‑योग्य रिकॉर्ड बनाता है जो फ़ाइल के साथ चलता है। और <b>बाकी सभी</b> के लिए, मेटाडेटा हटाने की क्षमता एक सरल पर शक्तिशाली गोपनीयता सुरक्षा है: वही दस्तावेज़ जो स्क्रीन पर अनाम दिखता है, चुपचाप आपका पूरा नाम, नियोक्ता, ऑपरेटिंग‑सिस्टम यूज़रनेम और उपयोग किया गया सॉफ़्टवेयर बिल्ड ले जा सकता है, जिसे प्राप्तकर्ता सेकंडों में पढ़ सकता है।</p>
+      <p>सबसे बढ़कर, यह टूल <b>डिज़ाइन से ही निजी</b> है। यह ओपन‑सोर्स pdf‑lib लाइब्रेरी का उपयोग करके दस्तावेज़ को पूरी तरह आपके ब्राउज़र टैब के अंदर पढ़ता और दोबारा लिखता है। कुछ भी सर्वर पर अपलोड नहीं होता, कुछ भी सेव नहीं होता, और किसी अकाउंट की ज़रूरत नहीं; पेज लोड होने के बाद आप ऑफ़लाइन भी काम कर सकते हैं। यह मेटाडेटा के लिए विशेष रूप से मायने रखता है, क्योंकि जो जानकारी आप संपादित कर रहे हैं — नाम, संगठन, आंतरिक पहचानकर्ता — ठीक वही व्यक्तिगत या व्यावसायिक डेटा है जो केवल सुधारने या हटाने के लिए कभी किसी अजनबी सर्वर पर नहीं भेजा जाना चाहिए।</p>
     </div>
   </div>
+</div>
+
+<!-- How to use -->
+<div class="md-wrap">
+  <h2 class="md-title">📖 How To Use</h2>
+  <ol class="md-steps">
+    <li><b>Upload your PDF.</b> Drag it into the drop zone or click to choose. Its document information and existing metadata load automatically.</li>
+    <li><b>Edit the fields.</b> Change title, author, subject, keywords, creator, producer, language and dates, or add custom key‑value fields.</li>
+    <li><b>Review or anonymise.</b> Use <b>Before / After</b> to see your changes, or tick <b>Remove all metadata</b> to strip everything including XMP.</li>
+    <li><b>Export (optional).</b> Save the metadata as JSON, CSV, XML or TXT, or import a JSON file to reuse a template.</li>
+    <li><b>Save &amp; download.</b> Click <b>Save and Download</b> to write the metadata back into the PDF.</li>
+  </ol>
+</div>
+
+<!-- FAQ -->
+<div class="md-wrap md-faq">
+  <h2 class="md-title">❓ Frequently Asked Questions</h2>
+  <div id="faqList"></div>
+</div>
+
+<!-- Privacy -->
+<div class="md-wrap">
+  <h2 class="md-title">🔒 Privacy</h2>
+  <p class="md-sub">This tool reads and rewrites your PDF entirely inside your browser using the pdf‑lib library. Your file is <b>never uploaded</b> to any server, never stored, and never transmitted anywhere. No account, email or signup is required, and once the page has loaded you can even work offline. Because metadata itself often contains personal or organisational information — author names, usernames, internal identifiers — this local‑only design keeps that data under your sole control while you edit or remove it.</p>
+</div>
+
+<!-- Browser compatibility -->
+<div class="md-wrap">
+  <h2 class="md-title">🌐 Browser Compatibility</h2>
+  <p class="md-sub">Works in all modern browsers — Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, Brave and Opera — on Windows, macOS, Linux, Android and iOS. It relies only on JavaScript and the standard File and Blob APIs, which have been supported for years. On phones and tablets the two‑column editor stacks into a single column and every field triggers the correct on‑screen keyboard for comfortable editing.</p>
+</div>
+
+<!-- Supported metadata standards -->
+<div class="md-wrap">
+  <h2 class="md-title">🧷 Supported Metadata Standards</h2>
+  <p class="md-sub">The editor reads and writes the classic PDF <b>Document Information dictionary</b> (Info) — Title, Author, Subject, Keywords, Creator, Producer, CreationDate and ModDate — plus the document’s <b>/Lang</b> language entry and arbitrary <b>custom Info keys</b>. The <b>Remove all metadata</b> option additionally deletes any embedded <b>XMP</b> (Extensible Metadata Platform) stream, which is where standards such as <b>Dublin Core</b>, <b>RDF</b> and other packet‑based metadata live, ensuring an anonymised file contains no residual descriptive data.</p>
+</div>
+
+<!-- Supported file formats -->
+<div class="md-wrap">
+  <h2 class="md-title">📄 Supported File Formats</h2>
+  <p class="md-sub"><b>Input:</b> standard PDF files (.pdf), including multi‑page documents. <b>Output:</b> the same PDF with its metadata updated (or removed), plus optional metadata exports in <b>JSON</b>, <b>CSV</b>, <b>XML</b> and <b>TXT</b>. Importing a <b>JSON</b> metadata file lets you reapply a saved template. The visible pages and content of your PDF are never changed — only the document properties are edited.</p>
 </div>
 
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
@@ -111,56 +317,268 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 <script src="../assets/common.js"></script>
 <script>
-const dropzone = document.getElementById('dropzone');
-const fileInput = document.getElementById('fileInput');
-let currentFile = null;
-let pdfDoc = null;
+(function(){
+  const $ = id => document.getElementById(id);
+  const dropzone=$('dropzone'), fileInput=$('fileInput');
+  let currentFile=null, pdfDoc=null, originalBytes=null;
+  let original=null;            // original model snapshot
+  let history=[], future=[];
+  const STD=['Title','Author','Subject','Keywords','Creator','Producer','CreationDate','ModDate','Trapped'];
 
-setupDropzone(dropzone, fileInput, files => {
-  if(files.length && files[0].type === 'application/pdf') handleFile(files[0]);
-});
+  function esc(s){ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+  function safe(fn){ try{ const v=fn(); return v==null?'':v; }catch(e){ return ''; } }
 
-async function handleFile(file){
-  currentFile = file;
-  const status = document.getElementById('statusMsg');
-  status.textContent = '⏳ Reading metadata...';
-  try{
-    const { PDFDocument } = PDFLib;
-    const bytes = await file.arrayBuffer();
-    pdfDoc = await PDFDocument.load(bytes, { updateMetadata: false });
+  setupDropzone(dropzone, fileInput, files=>{ if(files.length && files[0].type==='application/pdf') handleFile(files[0]); });
 
-    document.getElementById('titleInput').value = pdfDoc.getTitle() || '';
-    document.getElementById('authorInput').value = pdfDoc.getAuthor() || '';
-    document.getElementById('subjectInput').value = pdfDoc.getSubject() || '';
-    document.getElementById('keywordsInput').value = (pdfDoc.getKeywords() || '');
-    document.getElementById('creatorInput').value = pdfDoc.getCreator() || '';
-
-    status.textContent = '';
-    document.getElementById('afterUpload').style.display = 'block';
-  }catch(err){
-    status.textContent = '❌ Error: ' + err.message;
+  async function handleFile(file){
+    currentFile=file;
+    const status=$('statusMsg'); status.textContent='⏳ Reading metadata…';
+    try{
+      const ab=await file.arrayBuffer(); originalBytes=new Uint8Array(ab);
+      pdfDoc=await PDFLib.PDFDocument.load(originalBytes.slice(0), {updateMetadata:false});
+      const kw=pdfDoc.getKeywords();
+      const model={
+        title:pdfDoc.getTitle()||'', author:pdfDoc.getAuthor()||'', subject:pdfDoc.getSubject()||'',
+        keywords: Array.isArray(kw)?kw.join(', '):(kw||''),
+        creator:pdfDoc.getCreator()||'', producer:pdfDoc.getProducer()||'',
+        language: readLang()||'',
+        creation: toLocalInput(safe(()=>pdfDoc.getCreationDate())),
+        mod: toLocalInput(safe(()=>pdfDoc.getModificationDate())),
+        custom: readCustom()
+      };
+      original=JSON.parse(JSON.stringify(model));
+      history=[]; future=[]; updateUndo();
+      applyModel(model);
+      showInfo(file, ab);
+      $('fileNameLbl').textContent='📄 '+file.name; $('fileRow').style.display='flex';
+      $('afterUpload').style.display='block';
+      updateStats(); validate();
+      status.textContent='✅ Metadata loaded. Edit any field below.';
+    }catch(err){
+      // retry ignoring encryption for info display
+      status.textContent='❌ Error: '+err.message+' — the PDF may be encrypted or corrupted.';
+    }
   }
-}
 
-document.getElementById('saveBtn').addEventListener('click', async ()=>{
-  const status = document.getElementById('statusMsg');
-  status.textContent = '⏳ Saving...';
-  try{
-    pdfDoc.setTitle(document.getElementById('titleInput').value);
-    pdfDoc.setAuthor(document.getElementById('authorInput').value);
-    pdfDoc.setSubject(document.getElementById('subjectInput').value);
-    pdfDoc.setKeywords(document.getElementById('keywordsInput').value.split(',').map(s=>s.trim()).filter(Boolean));
-    pdfDoc.setCreator(document.getElementById('creatorInput').value);
-    pdfDoc.setModificationDate(new Date());
-
-    const newBytes = await pdfDoc.save();
-    const blob = new Blob([newBytes], {type:'application/pdf'});
-    downloadBlob('metadata-updated.pdf', blob);
-    status.textContent = '✅ Metadata updated and downloaded!';
-  }catch(err){
-    status.textContent = '❌ Error: ' + err.message;
+  function readLang(){ try{ const L=pdfDoc.catalog.get(PDFLib.PDFName.of('Lang')); return L?L.decodeText():''; }catch(e){ return ''; } }
+  function getInfo(){ try{ const ref=pdfDoc.context.trailerInfo.Info; return ref?pdfDoc.context.lookup(ref):null; }catch(e){ return null; } }
+  function readCustom(){
+    const info=getInfo(); const out=[]; if(!info||!info.entries) return out;
+    info.entries().forEach(([k,v])=>{
+      const key=k.decodeText? k.decodeText() : k.asString().replace(/^\//,'');
+      if(STD.includes(key)) return;
+      let val=''; try{ val=v.decodeText? v.decodeText() : (v.asString? v.asString():''); }catch(e){}
+      out.push({key,val});
+    });
+    return out;
   }
-});
+
+  function toLocalInput(d){ if(!d) return ''; try{ const dt=new Date(d); const p=n=>String(n).padStart(2,'0');
+    return `${dt.getFullYear()}-${p(dt.getMonth()+1)}-${p(dt.getDate())}T${p(dt.getHours())}:${p(dt.getMinutes())}`; }catch(e){ return ''; } }
+
+  function showInfo(file, ab){
+    const el=$('infoArea'); el.style.display='grid';
+    let ver='—'; try{ const h=new TextDecoder().decode(new Uint8Array(ab.slice(0,32))); const m=/%PDF-(\d\.\d)/.exec(h); if(m) ver=m[1]; }catch(e){}
+    let linear='No', tagged='No', enc='No';
+    try{ const head=new TextDecoder('latin1').decode(new Uint8Array(ab.slice(0,2048))); if(/\/Linearized/.test(head)) linear='Yes'; }catch(e){}
+    try{ const mk=pdfDoc.catalog.get(PDFLib.PDFName.of('MarkInfo')); if(mk){ const m=pdfDoc.context.lookup(mk); if(m&&m.get&&m.get(PDFLib.PDFName.of('Marked'))) tagged='Yes'; } }catch(e){}
+    try{ if(pdfDoc.context.trailerInfo && pdfDoc.context.trailerInfo.Encrypt) enc='Yes'; if(pdfDoc.isEncrypted) enc='Yes'; }catch(e){}
+    let pageSize='—', orient='—';
+    try{ const p=pdfDoc.getPage(0); const s=p.getSize(); pageSize=Math.round(s.width)+'×'+Math.round(s.height)+' pt'; orient=s.width>s.height?'Landscape':'Portrait'; }catch(e){}
+    const fmt=d=>{try{return d?new Date(d).toLocaleString():'—';}catch(e){return '—';}};
+    const rows=[
+      ['File', esc(file.name)], ['Size', formatBytes(file.size)], ['Pages', safe(()=>pdfDoc.getPageCount())||'—'],
+      ['PDF version', ver], ['Page size', pageSize], ['Orientation', orient],
+      ['Producer', esc(safe(()=>pdfDoc.getProducer()))||'—'], ['Creator', esc(safe(()=>pdfDoc.getCreator()))||'—'],
+      ['Created', fmt(safe(()=>pdfDoc.getCreationDate()))], ['Modified', fmt(safe(()=>pdfDoc.getModificationDate()))],
+      ['Tagged', tagged], ['Linearized', linear], ['Encrypted', enc]
+    ];
+    el.innerHTML=rows.map(([k,v])=>`<div class="md-i"><b>${v||'—'}</b><span>${k}</span></div>`).join('');
+  }
+
+  // ===== model <-> form =====
+  function readModel(){
+    return {
+      title:$('titleInput').value, author:$('authorInput').value, subject:$('subjectInput').value,
+      keywords:$('keywordsInput').value, creator:$('creatorInput').value, producer:$('producerInput').value,
+      language:$('languageInput').value, creation:$('creationInput').value, mod:$('modInput').value,
+      custom: Array.from(document.querySelectorAll('#customList .md-crow')).map(r=>({key:r.querySelector('.md-key').value, val:r.querySelector('.md-val').value})).filter(c=>c.key)
+    };
+  }
+  function applyModel(m){
+    $('titleInput').value=m.title||''; $('authorInput').value=m.author||''; $('subjectInput').value=m.subject||'';
+    $('keywordsInput').value=m.keywords||''; $('creatorInput').value=m.creator||''; $('producerInput').value=m.producer||'';
+    $('languageInput').value=m.language||''; $('creationInput').value=m.creation||''; $('modInput').value=m.mod||'';
+    renderCustom(m.custom||[]);
+    updateStats(); validate();
+  }
+  function renderCustom(list){
+    const wrap=$('customList'); wrap.innerHTML='';
+    list.forEach(c=>addCustomRow(c.key,c.val));
+  }
+  function addCustomRow(key,val){
+    const row=document.createElement('div'); row.className='md-crow';
+    row.innerHTML=`<input type="text" class="md-key" placeholder="Field name" value="${esc(key||'')}">
+      <input type="text" class="md-val" placeholder="Value" value="${esc(val||'')}">
+      <button type="button" title="Delete field">✖</button>`;
+    row.querySelector('button').addEventListener('click',()=>{ pushHistory(); row.remove(); updateStats(); });
+    row.querySelectorAll('input').forEach(i=>i.addEventListener('change',()=>{ pushHistory(); updateStats(); }));
+    $('customList').appendChild(row);
+  }
+  $('addFieldBtn').addEventListener('click',()=>{ pushHistory(); addCustomRow('',''); updateStats(); });
+
+  // ===== history =====
+  function snap(){ return JSON.stringify(readModel()); }
+  let lastSnap=null;
+  function pushHistory(){ const s=lastSnap!=null?lastSnap:snap(); history.push(s); if(history.length>80) history.shift(); future=[]; lastSnap=null; updateUndo(); }
+  function updateUndo(){ $('undoBtn').disabled=!history.length; $('redoBtn').disabled=!future.length; }
+  $('undoBtn').addEventListener('click',()=>{ if(!history.length)return; future.push(snap()); applyModel(JSON.parse(history.pop())); updateUndo(); });
+  $('redoBtn').addEventListener('click',()=>{ if(!future.length)return; history.push(snap()); applyModel(JSON.parse(future.pop())); updateUndo(); });
+  // snapshot standard field edits on change
+  ['titleInput','authorInput','subjectInput','keywordsInput','creatorInput','producerInput','languageInput','creationInput','modInput'].forEach(id=>{
+    $(id).addEventListener('focus',()=>{ lastSnap=snap(); });
+    $(id).addEventListener('change',()=>{ pushHistory(); updateStats(); validate(); });
+    $(id).addEventListener('input',()=>{ if(id==='keywordsInput') validate(); });
+  });
+
+  $('resetBtn').addEventListener('click',()=>{ if(!original)return; pushHistory(); applyModel(JSON.parse(JSON.stringify(original))); $('statusMsg').textContent='↺ Reverted to original values.'; });
+
+  // ===== validation =====
+  function validate(){
+    const warns=[];
+    const kw=$('keywordsInput').value.split(',').map(s=>s.trim()).filter(Boolean);
+    const seen=new Set(), dups=new Set();
+    kw.forEach(k=>{ const l=k.toLowerCase(); if(seen.has(l)) dups.add(k); else seen.add(l); });
+    if(dups.size) warns.push('Duplicate keyword(s): '+[...dups].join(', '));
+    const m=readModel(); const allVals=[m.title,m.author,m.subject,m.keywords,m.creator,m.producer,m.language, ...m.custom.map(c=>c.val)];
+    const ctrl=/[\x00-\x08\x0B\x0C\x0E-\x1F]/;
+    if(allVals.some(v=>ctrl.test(v||''))) warns.push('A field contains invalid control characters.');
+    const dupKeys={}; m.custom.forEach(c=>{ dupKeys[c.key]=(dupKeys[c.key]||0)+1; });
+    if(Object.values(dupKeys).some(n=>n>1)) warns.push('Duplicate custom field names.');
+    const w=$('warnMsg');
+    if(warns.length){ w.textContent='⚠️ '+warns.join('  ·  '); w.classList.add('show'); } else { w.classList.remove('show'); }
+    $('kwSub').textContent = kw.length? kw.length+' keyword(s)' : '';
+  }
+
+  // ===== stats =====
+  function updateStats(){
+    const m=readModel();
+    const filled=[m.title,m.author,m.subject,m.keywords,m.creator,m.producer,m.language].filter(v=>v&&v.trim()).length;
+    $('statsRow').innerHTML=
+      `<span class="md-chip">Standard fields set: <b>${filled}/7</b></span>`+
+      `<span class="md-chip">Custom fields: <b>${m.custom.length}</b></span>`+
+      `<span class="md-chip">Keywords: <b>${m.keywords.split(',').map(s=>s.trim()).filter(Boolean).length}</b></span>`;
+  }
+
+  // ===== before/after =====
+  $('diffBtn').addEventListener('click',()=>{
+    const p=$('diffPanel'); if(p.style.display==='block'){ p.style.display='none'; return; }
+    const cur=readModel(); const rows=[['Title','title'],['Author','author'],['Subject','subject'],['Keywords','keywords'],['Creator','creator'],['Producer','producer'],['Language','language'],['Created','creation'],['Modified','mod']];
+    let html='<tr><th>Property</th><th>Original</th><th>Now</th></tr>';
+    let changed=0;
+    rows.forEach(([label,key])=>{ const o=original[key]||'', n=cur[key]||''; if(o!==n){ changed++; html+=`<tr><td>${label}</td><td class="old">${esc(o)||'—'}</td><td class="new">${esc(n)||'—'}</td></tr>`; } });
+    const oc=JSON.stringify(original.custom||[]), nc=JSON.stringify(cur.custom||[]);
+    if(oc!==nc){ changed++; html+=`<tr><td>Custom fields</td><td class="old">${esc(oc)}</td><td class="new">${esc(nc)}</td></tr>`; }
+    if(!changed) html+='<tr><td colspan="3" style="color:var(--text-dim)">No changes yet.</td></tr>';
+    $('diffTable').innerHTML=html; p.style.display='block';
+  });
+
+  // ===== export / import =====
+  function currentMetaObj(){
+    const m=readModel(); const o={Title:m.title,Author:m.author,Subject:m.subject,Keywords:m.keywords,Creator:m.creator,Producer:m.producer,Language:m.language,CreationDate:m.creation,ModDate:m.mod};
+    m.custom.forEach(c=>{ if(c.key) o[c.key]=c.val; }); return o;
+  }
+  $('expJson').addEventListener('click',()=> downloadText('pdf-metadata.json', JSON.stringify(currentMetaObj(),null,2)));
+  $('expCsv').addEventListener('click',()=>{ const o=currentMetaObj(); const esc2=s=>'"'+String(s).replace(/"/g,'""')+'"'; let c='Field,Value\n'; Object.entries(o).forEach(([k,v])=>c+=esc2(k)+','+esc2(v)+'\n'); downloadText('pdf-metadata.csv',c); });
+  $('expTxt').addEventListener('click',()=>{ const o=currentMetaObj(); downloadText('pdf-metadata.txt', Object.entries(o).map(([k,v])=>k+': '+v).join('\n')); });
+  $('expXml').addEventListener('click',()=>{ const o=currentMetaObj(); let x='<?xml version="1.0" encoding="UTF-8"?>\n<metadata>\n'; Object.entries(o).forEach(([k,v])=>{ const tag=k.replace(/[^A-Za-z0-9_]/g,'_'); x+=`  <${tag}>${esc(v)}</${tag}>\n`; }); x+='</metadata>\n'; downloadText('pdf-metadata.xml',x); });
+  $('importBtn').addEventListener('click',()=>$('importInput').click());
+  $('importInput').addEventListener('change',e=>{
+    const f=e.target.files[0]; if(!f)return; const r=new FileReader();
+    r.onload=()=>{ try{ const o=JSON.parse(r.result); pushHistory();
+      const m=readModel();
+      const map={Title:'title',Author:'author',Subject:'subject',Keywords:'keywords',Creator:'creator',Producer:'producer',Language:'language',CreationDate:'creation',ModDate:'mod'};
+      const nm={...m}; const custom=[];
+      Object.entries(o).forEach(([k,v])=>{ if(map[k]) nm[map[k]]=v; else custom.push({key:k,val:String(v)}); });
+      nm.custom=custom; applyModel(nm); $('statusMsg').textContent='📥 Metadata imported.';
+    }catch(err){ $('statusMsg').textContent='❌ Invalid JSON: '+err.message; } };
+    r.readAsText(f); e.target.value='';
+  });
+
+  // ===== replace / remove =====
+  $('replaceBtn').addEventListener('click',()=>fileInput.click());
+  $('removeBtn').addEventListener('click',()=>{ currentFile=null; pdfDoc=null; originalBytes=null; fileInput.value='';
+    $('afterUpload').style.display='none'; $('infoArea').style.display='none'; $('fileRow').style.display='none'; $('statusMsg').textContent=''; });
+
+  // ===== save =====
+  $('saveBtn').addEventListener('click', async ()=>{
+    const status=$('statusMsg'); status.textContent='⏳ Saving…';
+    const t0=performance.now();
+    try{
+      const { PDFName, PDFString } = PDFLib;
+      // reload clean so repeated saves don't stack
+      pdfDoc=await PDFLib.PDFDocument.load(originalBytes.slice(0), {updateMetadata:false});
+      const m=readModel();
+      if($('removeAllChk').checked){
+        pdfDoc.setTitle(''); pdfDoc.setAuthor(''); pdfDoc.setSubject(''); pdfDoc.setKeywords([]);
+        pdfDoc.setCreator(''); pdfDoc.setProducer('');
+        // clear custom + XMP
+        const info=getInfo(); if(info&&info.entries){ info.entries().forEach(([k])=>{ const key=k.decodeText?k.decodeText():k.asString().replace(/^\//,''); if(!['CreationDate','ModDate'].includes(key)) info.delete(k); }); }
+        try{ pdfDoc.catalog.delete(PDFName.of('Metadata')); }catch(e){}
+        try{ pdfDoc.catalog.delete(PDFName.of('Lang')); }catch(e){}
+      }else{
+        pdfDoc.setTitle(m.title); pdfDoc.setAuthor(m.author); pdfDoc.setSubject(m.subject);
+        pdfDoc.setKeywords(m.keywords.split(',').map(s=>s.trim()).filter(Boolean));
+        pdfDoc.setCreator(m.creator); pdfDoc.setProducer(m.producer);
+        if(m.creation){ try{ pdfDoc.setCreationDate(new Date(m.creation)); }catch(e){} }
+        pdfDoc.setModificationDate(m.mod? new Date(m.mod) : new Date());
+        if(m.language){ try{ pdfDoc.catalog.set(PDFName.of('Lang'), PDFString.of(m.language)); }catch(e){} }
+        // custom fields
+        let info=getInfo();
+        if(!info){ info=pdfDoc.context.obj({}); pdfDoc.context.trailerInfo.Info=pdfDoc.context.register(info); }
+        // remove existing custom keys first
+        if(info.entries){ info.entries().forEach(([k])=>{ const key=k.decodeText?k.decodeText():k.asString().replace(/^\//,''); if(!STD.includes(key)) info.delete(k); }); }
+        m.custom.forEach(c=>{ if(c.key) info.set(PDFName.of(c.key), PDFString.of(c.val||'')); });
+      }
+      const newBytes=await pdfDoc.save();
+      const blob=new Blob([newBytes],{type:'application/pdf'});
+      downloadBlob((currentFile.name.replace(/\.pdf$/i,''))+'-metadata.pdf', blob);
+      const secs=((performance.now()-t0)/1000).toFixed(1);
+      status.textContent = ($('removeAllChk').checked?'✅ All metadata removed':'✅ Metadata updated')+` and downloaded in ${secs}s.`;
+      if(window.premToast) premToast('Metadata saved ✔');
+    }catch(err){ status.textContent='❌ Error: '+err.message; }
+  });
+
+  // ===== FAQ =====
+  const FAQ=[
+    ['What is PDF metadata?','Metadata is hidden information a PDF stores about itself — its title, author, subject, keywords, the app that created it, the producer, language and the creation and modification dates. It appears in a viewer’s Document Properties and is read by search engines.'],
+    ['Are my files uploaded to a server?','No. Everything runs locally in your browser with pdf‑lib. Your PDF never leaves your device, nothing is stored, and no signup is needed.'],
+    ['Which fields can I edit?','All standard Info fields — Title, Author, Subject, Keywords, Creator and Producer — plus the document Language and both the creation and modification dates, and any custom fields you add.'],
+    ['Can I add custom metadata fields?','Yes. Click “Add custom field” to create your own key‑value pairs such as Company, Department, Copyright or Category. They are written into the PDF’s Info dictionary.'],
+    ['How do I remove all metadata?','Tick “Remove ALL metadata” and save. Every property is cleared and any embedded XMP metadata stream is deleted, producing a clean, anonymised file.'],
+    ['Why would I remove metadata?','To protect privacy before sharing a document publicly — metadata can reveal your real name, username, internal file paths or the software you used, which you may not want to disclose.'],
+    ['Does editing metadata change the pages?','No. Only the document properties are edited; the visible pages, text and images of your PDF are left completely unchanged.'],
+    ['Can I export the metadata?','Yes. You can download the current metadata as JSON, CSV, XML or TXT — useful for audits, records or importing into other systems.'],
+    ['Can I import metadata?','Yes. Import a JSON file to apply a saved set of values, which is handy for stamping the same Company, Copyright or Author across many documents.'],
+    ['What does the Before / After button do?','It shows a table of exactly which properties you have changed, comparing the original value with the current one, so nothing is altered by accident.'],
+    ['Can I undo my changes?','Yes. Undo and redo cover your edits, and the Reset button restores every field to the file’s original values in one click.'],
+    ['What is the difference between Creator and Producer?','Creator is the application that authored the original document (e.g. Word); Producer is the software that generated the actual PDF (e.g. a PDF library or printer driver).'],
+    ['Can I change the creation and modification dates?','Yes. Both dates have a date‑and‑time picker, so you can set them to any value rather than being limited to the current moment.'],
+    ['Does it edit XMP metadata?','It reads and writes the classic Info dictionary. The Remove all metadata option also deletes the embedded XMP stream, where Dublin Core and RDF metadata live.'],
+    ['Does it work with password‑protected PDFs?','Encrypted PDFs usually cannot be opened for editing. Remove the password in your PDF viewer first, then upload the unlocked file.'],
+    ['Will keywords help my PDF rank in search?','Accurate title, subject and keyword metadata can help search engines and document systems understand and index a PDF, improving how it is found.'],
+    ['Is there a file size limit?','There is no fixed limit; it depends on your device memory. Metadata editing is lightweight, so even large PDFs are processed almost instantly.'],
+    ['Does it work on mobile?','Yes. The two‑column editor stacks into a single column on phones and tablets, and each field opens the right on‑screen keyboard.'],
+    ['Does the tool need the internet?','Only to load the page once. After that it runs entirely offline, which is ideal for editing metadata on confidential documents.'],
+    ['Is this tool really free?','Yes. It is completely free with no watermark, no limits, no account and no hidden charges.'],
+    ['Is my data safe?','Completely. Because nothing is uploaded, the names and details inside your metadata never leave your browser and are discarded when you close the tab.']
+  ];
+  const faqList=$('faqList');
+  FAQ.forEach(([q,a])=>{ const d=document.createElement('details'); d.innerHTML='<summary>'+q+'</summary><p>'+a+'</p>'; faqList.appendChild(d); });
+  try{ $('faqSchema').textContent=JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:FAQ.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))}); }catch(e){}
+
+  window.__mdHooks={ readModel, applyModel, original:()=>original, save:()=>$('saveBtn').click() };
+})();
 </script>
 </body>
 </html>
