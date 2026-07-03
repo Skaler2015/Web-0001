@@ -4,49 +4,129 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
+<meta name="description" content="Free online Add Image to PDF tool. Place photos, logos, signatures or stamps anywhere on a PDF page — drag, resize, rotate, flip, set opacity and borders, and apply a logo or watermark to every page. 100% private, in your browser, no uploads, no signup.">
+<meta name="keywords" content="add image to pdf, insert image in pdf, put logo on pdf, add photo to pdf, stamp pdf, image to pdf page, place picture in pdf, pdf image editor">
 <link rel="canonical" href="https://apnesoftware.com/tools/pdf-add-image.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Add Image to PDF | ApneSoftware">
-<meta property="og:description" content="Place a photo, logo or stamp on a page. Free online tool — no signup required.">
+<meta property="og:title" content="Add Image to PDF — Place Photos, Logos &amp; Stamps | ApneSoftware">
+<meta property="og:description" content="Place photos, logos, signatures and stamps anywhere on a PDF — drag, resize, rotate, flip, opacity, borders, apply to every page. 100% private, no uploads.">
 <meta property="og:url" content="https://apnesoftware.com/tools/pdf-add-image.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Add Image to PDF | ApneSoftware">
-<meta name="twitter:description" content="Place a photo, logo or stamp on a page. Free online tool — no signup required.">
+<meta name="twitter:title" content="Add Image to PDF — Place Photos, Logos &amp; Stamps | ApneSoftware">
+<meta name="twitter:description" content="Place photos, logos, signatures and stamps anywhere on a PDF — drag, resize, rotate, flip, opacity, borders. 100% private, no uploads.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Add Image to PDF","description":"Place a photo, logo or stamp on a page. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/pdf-add-image.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Add Image to PDF","description":"Place photos, logos, signatures and stamps anywhere on a PDF page entirely in your browser. Drag, resize, rotate, flip, set opacity and borders, and apply a logo or watermark across every page. No uploads, no signup.","url":"https://apnesoftware.com/tools/pdf-add-image.html","applicationCategory":"BusinessApplication","operatingSystem":"Any","browserRequirements":"Requires a modern web browser with JavaScript enabled","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"featureList":["Add PNG and JPG images to any page","Drag, resize and lock aspect ratio","Rotate, flip, opacity and borders","Align and layer ordering","Apply a logo or watermark to all, odd or even pages","Undo/redo, zoom and page thumbnails"],"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Add Image to PDF Tool","url":"https://apnesoftware.com/tools/pdf-add-image.html","description":"Free browser-based tool to place images, logos and stamps onto PDF pages.","isPartOf":{"@type":"WebSite","name":"ApneSoftware","url":"https://apnesoftware.com"},"inLanguage":["en","hi"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apnesoftware.com/index.html"},{"@type":"ListItem","position":2,"name":"Add Image to PDF","item":"https://apnesoftware.com/tools/pdf-add-image.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to add an image to a PDF","description":"Place a photo, logo or stamp onto a PDF page and download the result.","step":[{"@type":"HowToStep","name":"Upload the PDF","text":"Drag a PDF into the drop zone or click to choose it. It renders page by page in your browser."},{"@type":"HowToStep","name":"Add an image","text":"Upload one or more PNG or JPG images. They appear on the current page ready to position."},{"@type":"HowToStep","name":"Position and style","text":"Drag and resize the image, then rotate, flip, set opacity or add a border, and align it precisely."},{"@type":"HowToStep","name":"Apply and download","text":"Optionally apply a logo or watermark to every page, then save and download the finished PDF."}]}
+</script>
+<script type="application/ld+json" id="faqSchema">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}
 </script>
 <meta name="color-scheme" content="dark">
-<title>Add Image to PDF | ApneSoftware</title>
+<title>Add Image to PDF — Place Photos, Logos &amp; Stamps | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-/* Premium upload enhancement for this tool */
+/* ===== Add Image to PDF — scoped aimg- styles ===== */
 .dropzone{cursor:pointer}
 .dropzone p{font-size:.9rem}
 .panel{position:relative;z-index:1}
-</style>
-<style>
-  .page-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:14px}
-  .page-nav span{color:var(--text-dim);font-size:.9rem;min-width:80px;text-align:center}
-  .edit-stage{position:relative;display:inline-block;margin-top:14px;max-width:100%;user-select:none;touch-action:none}
-  .edit-stage canvas{display:block;max-width:100%;border:1px solid var(--border);border-radius:6px}
-  .img-box{position:absolute;box-sizing:border-box;cursor:move;border:1px dashed transparent}
-  .img-box.selected{outline:2px solid var(--accent);outline-offset:1px}
-  .img-box img{width:100%;height:100%;pointer-events:none;display:block}
-  .img-del{
-    position:absolute;top:-10px;right:-10px;width:20px;height:20px;border-radius:50%;
-    background:var(--danger);color:#fff;border:none;cursor:pointer;font-size:.7rem;
-    display:none;align-items:center;justify-content:center;z-index:5;
-  }
-  .img-box.selected .img-del{display:flex}
-  .img-resize{
-    position:absolute;width:14px;height:14px;right:-7px;bottom:-7px;
-    background:var(--accent);border-radius:50%;cursor:nwse-resize;border:2px solid #fff;
-  }
-  .img-dropzone-mini{border:2px dashed var(--border);border-radius:8px;padding:18px;text-align:center;color:var(--text-dim);cursor:pointer;margin-top:14px}
-  .img-dropzone-mini input{display:none}
+.aimg-badges{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:10px;font-size:.78rem;color:var(--text-dim)}
+.aimg-badges span{display:inline-flex;align-items:center;gap:5px}
+
+.aimg-filerow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px}
+.aimg-filerow .aimg-fname{flex:1 1 200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.88rem}
+.aimg-mini{background:rgba(255,255,255,.06);border:1px solid var(--border,rgba(255,255,255,.12));color:var(--text);border-radius:8px;padding:6px 12px;cursor:pointer;font-size:.8rem}
+.aimg-mini:hover{background:rgba(167,139,250,.25)}
+.aimg-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:12px}
+.aimg-info .aimg-i{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:10px;padding:8px 10px;font-size:.78rem}
+.aimg-info .aimg-i b{display:block;color:var(--text);font-size:.82rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.aimg-info .aimg-i span{color:var(--text-dim)}
+
+.img-dropzone-mini{border:2px dashed var(--border,rgba(255,255,255,.2));border-radius:10px;padding:16px;text-align:center;color:var(--text-dim);cursor:pointer;margin-top:14px;transition:border-color .2s,background .2s}
+.img-dropzone-mini:hover{border-color:#a78bfa;background:rgba(167,139,250,.06)}
+.img-dropzone-mini input{display:none}
+
+.aimg-work{display:grid;grid-template-columns:84px 1fr 210px;gap:12px;margin-top:14px}
+@media(max-width:900px){.aimg-work{grid-template-columns:1fr}.aimg-thumbs{flex-direction:row!important;max-height:none!important;overflow-x:auto}}
+.aimg-thumbs{max-height:600px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;padding-right:4px}
+.aimg-thumb{border:2px solid transparent;border-radius:6px;cursor:pointer;position:relative;background:#fff;flex:0 0 auto}
+.aimg-thumb.active{border-color:#a78bfa}
+.aimg-thumb canvas{display:block;width:100%;border-radius:4px}
+.aimg-thumb .aimg-tn{position:absolute;top:2px;left:2px;background:rgba(0,0,0,.6);color:#fff;font-size:.62rem;padding:0 4px;border-radius:4px}
+.aimg-thumb .aimg-tdot{position:absolute;top:2px;right:2px;width:8px;height:8px;border-radius:50%;background:#a78bfa;display:none}
+.aimg-thumb.has-img .aimg-tdot{display:block}
+
+.aimg-stagewrap{overflow:auto;background:#525659;border-radius:10px;padding:12px;display:flex;justify-content:center;min-height:300px}
+.edit-stage{position:relative;display:inline-block;user-select:none;touch-action:none}
+.edit-stage canvas{display:block;border-radius:4px;box-shadow:0 4px 18px rgba(0,0,0,.4)}
+#overlayLayer{position:absolute;inset:0}
+.img-box{position:absolute;box-sizing:border-box;cursor:move;border:1px dashed transparent}
+.img-box.selected{outline:2px solid var(--accent,#a78bfa);outline-offset:1px}
+.img-box img{width:100%;height:100%;pointer-events:none;display:block}
+.img-del{position:absolute;top:-10px;right:-10px;width:20px;height:20px;border-radius:50%;background:var(--danger,#ef4444);color:#fff;border:none;cursor:pointer;font-size:.7rem;display:none;align-items:center;justify-content:center;z-index:5}
+.img-box.selected .img-del{display:flex}
+.img-resize{position:absolute;width:14px;height:14px;right:-7px;bottom:-7px;background:var(--accent,#a78bfa);border-radius:50%;cursor:nwse-resize;border:2px solid #fff}
+
+.aimg-props{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:12px;font-size:.82rem}
+.aimg-props h4{margin:0 0 8px;font-size:.85rem}
+.aimg-props .aimg-muted{color:var(--text-dim);font-size:.78rem}
+.aimg-props label{display:block;color:var(--text-dim);font-size:.75rem;margin:8px 0 3px}
+.aimg-btnrow{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
+.aimg-b{background:rgba(255,255,255,.06);border:1px solid var(--border,rgba(255,255,255,.12));color:var(--text);border-radius:7px;padding:5px 8px;cursor:pointer;font-size:.75rem}
+.aimg-b:hover{background:rgba(167,139,250,.25)}
+.aimg-b.on{background:rgba(167,139,250,.3);border-color:#a78bfa}
+.aimg-props input[type=range]{width:100%}
+.aimg-props .aimg-color{display:flex;align-items:center;gap:6px}
+.aimg-props input[type=color]{width:30px;height:26px;padding:2px;border:1px solid var(--border,rgba(255,255,255,.2));border-radius:6px;background:transparent}
+.aimg-scope{display:flex;gap:5px;flex-wrap:wrap;align-items:center;margin-top:4px}
+.aimg-scope select,.aimg-scope input{font-size:.76rem}
+
+.aimg-toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px}
+.aimg-tool{background:rgba(255,255,255,.06);border:1px solid var(--border,rgba(255,255,255,.12));color:var(--text);border-radius:8px;padding:7px 11px;cursor:pointer;font-size:.82rem}
+.aimg-tool:hover{background:rgba(167,139,250,.25)}
+.aimg-tool:disabled{opacity:.35;cursor:not-allowed}
+.page-nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:12px;flex-wrap:wrap}
+.page-nav span{color:var(--text-dim);font-size:.9rem}
+.page-nav input{width:56px;text-align:center}
+.aimg-stats{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.aimg-chip{background:rgba(255,255,255,.04);border:1px solid var(--border,rgba(255,255,255,.1));border-radius:10px;padding:6px 12px;font-size:.8rem;color:var(--text-dim)}
+.aimg-chip b{color:var(--text)}
+
+/* ===== Below-tool content ===== */
+.aimg-wrap{margin:26px 0}
+.aimg-title{font-size:1.35rem;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+.aimg-sub{color:var(--text-dim);font-size:.92rem;margin:0 0 18px;line-height:1.6}
+.aimg-feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.aimg-fcard{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:14px;padding:16px}
+.aimg-fcard h4{margin:0 0 6px;font-size:.98rem;display:flex;align-items:center;gap:8px}
+.aimg-fcard p{margin:0;font-size:.86rem;color:var(--text-dim);line-height:1.55}
+.aimg-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.aimg-rel{display:block;text-decoration:none;background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:14px;transition:.15s;color:var(--text)}
+.aimg-rel:hover{border-color:#a78bfa;background:rgba(167,139,250,.1);transform:translateY(-2px)}
+.aimg-rel b{display:block;font-size:.92rem;margin-bottom:3px}
+.aimg-rel span{font-size:.8rem;color:var(--text-dim);line-height:1.45}
+.aimg-faq details{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:0 16px;margin-bottom:10px}
+.aimg-faq summary{cursor:pointer;padding:14px 0;font-weight:600;font-size:.92rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.aimg-faq summary::-webkit-details-marker{display:none}
+.aimg-faq summary::after{content:'+';font-size:1.3rem;color:#a78bfa;flex:0 0 auto}
+.aimg-faq details[open] summary::after{content:'−'}
+.aimg-faq details p{margin:0 0 14px;font-size:.87rem;color:var(--text-dim);line-height:1.65}
+.aimg-steps{list-style:none;counter-reset:s;padding:0;margin:0;display:grid;gap:12px}
+.aimg-steps li{counter-increment:s;position:relative;padding-left:46px;font-size:.9rem;color:var(--text-dim);line-height:1.6}
+.aimg-steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:32px;height:32px;border-radius:9px;background:rgba(167,139,250,.18);color:#c4b5fd;font-weight:700;display:grid;place-items:center}
+.aimg-steps li b{color:var(--text)}
+.aimg-pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.aimg-pill{background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.3);color:#d6cbff;border-radius:999px;padding:5px 12px;font-size:.8rem}
 </style>
 </head>
 <body>
@@ -60,68 +140,234 @@
 <div class="container">
   <div class="tool-header">
     <h1>🖼️ Add Image to PDF</h1>
-    <p>Place a photo, logo, or stamp anywhere on a PDF page.</p>
+    <p>Place a photo, logo, signature or stamp anywhere on a PDF page — then drag, resize, rotate, flip, set opacity and borders, and even apply a logo or watermark to every page. Everything runs privately in your browser; your files are never uploaded.</p>
   </div>
 
   <div class="panel">
     <div class="dropzone" id="dropzone">
       <p>📤 Drag a PDF file here or click to choose</p>
       <input type="file" id="fileInput" accept="application/pdf">
+      <div class="aimg-badges"><span>📄 PDF only</span><span>🔒 Secure processing</span><span>🚫 No server upload</span></div>
     </div>
+
+    <div class="aimg-filerow" id="fileRow" style="display:none">
+      <span class="aimg-fname" id="fileNameLbl"></span>
+      <button class="aimg-mini" id="replaceBtn" type="button">🔄 Replace</button>
+      <button class="aimg-mini" id="removeBtn" type="button">✖ Remove</button>
+    </div>
+    <div class="aimg-info" id="infoArea" style="display:none"></div>
 
     <div id="editorArea" style="display:none">
       <div class="img-dropzone-mini" id="imgDropzone">
-        <p>📤 Click or drop an image (PNG/JPG) to add it to the current page</p>
-        <input type="file" id="imgInput" accept="image/*">
+        <p>📤 Click or drop image(s) (PNG/JPG) to add to the current page</p>
+        <input type="file" id="imgInput" accept="image/png,image/jpeg" multiple>
       </div>
 
-      <div class="page-nav">
-        <button class="btn secondary" id="prevPageBtn">⬅️</button>
-        <span id="pageInfo">1 / 1</span>
-        <button class="btn secondary" id="nextPageBtn">➡️</button>
+      <div class="aimg-toolbar">
+        <button class="aimg-tool" id="undoBtn" type="button" disabled>↶ Undo</button>
+        <button class="aimg-tool" id="redoBtn" type="button" disabled>↷ Redo</button>
+        <button class="aimg-tool" id="zoomOutBtn" type="button">➖</button>
+        <span id="zoomLbl" style="font-size:.8rem;color:var(--text-dim)">100%</span>
+        <button class="aimg-tool" id="zoomInBtn" type="button">➕</button>
+        <button class="aimg-tool" id="fitBtn" type="button">Fit width</button>
       </div>
 
-      <div class="edit-stage" id="editStage">
-        <canvas id="bgCanvas"></canvas>
-        <div id="overlayLayer" style="position:absolute;inset:0"></div>
+      <div class="aimg-work">
+        <div class="aimg-thumbs" id="thumbs" aria-label="Page thumbnails"></div>
+
+        <div>
+          <div class="aimg-stagewrap">
+            <div class="edit-stage" id="editStage">
+              <canvas id="bgCanvas"></canvas>
+              <div id="overlayLayer"></div>
+            </div>
+          </div>
+          <div class="page-nav">
+            <button class="btn secondary" id="prevPageBtn" aria-label="Previous page">⬅️</button>
+            <span id="pageInfo">1 / 1</span>
+            <button class="btn secondary" id="nextPageBtn" aria-label="Next page">➡️</button>
+            <span>Go to <input type="number" id="gotoPage" min="1" value="1" aria-label="Go to page"></span>
+          </div>
+          <div class="aimg-stats">
+            <span class="aimg-chip">Images on page: <b id="statPage">0</b></span>
+            <span class="aimg-chip">Total images: <b id="statTotal">0</b></span>
+            <span class="aimg-chip">Pages with images: <b id="statPages">0</b></span>
+          </div>
+        </div>
+
+        <!-- properties -->
+        <div class="aimg-props" id="propsPanel">
+          <h4>🎛️ Image properties</h4>
+          <p class="aimg-muted" id="propsEmpty">Select an image to edit it.</p>
+          <div id="propsBody" style="display:none">
+            <p class="aimg-muted" id="imgMeta"></p>
+            <label>Opacity: <span id="opacityVal">100%</span></label>
+            <input type="range" id="opacityInput" min="10" max="100" value="100">
+            <label>Transform</label>
+            <div class="aimg-btnrow">
+              <button class="aimg-b" id="rotLeft" type="button" title="Rotate left">↺ 90°</button>
+              <button class="aimg-b" id="rotRight" type="button" title="Rotate right">↻ 90°</button>
+              <button class="aimg-b" id="flipH" type="button" title="Flip horizontal">⇋ H</button>
+              <button class="aimg-b" id="flipV" type="button" title="Flip vertical">⇅ V</button>
+              <button class="aimg-b on" id="lockAspect" type="button" title="Lock aspect ratio">🔒 Ratio</button>
+            </div>
+            <label>Align on page</label>
+            <div class="aimg-btnrow">
+              <button class="aimg-b" data-align="left" type="button">⬅</button>
+              <button class="aimg-b" data-align="hcenter" type="button">↔</button>
+              <button class="aimg-b" data-align="right" type="button">➡</button>
+              <button class="aimg-b" data-align="top" type="button">⬆</button>
+              <button class="aimg-b" data-align="vcenter" type="button">↕</button>
+              <button class="aimg-b" data-align="bottom" type="button">⬇</button>
+            </div>
+            <label>Border</label>
+            <div class="aimg-color">
+              <input type="range" id="borderW" min="0" max="12" value="0" style="flex:1">
+              <input type="color" id="borderColor" value="#000000">
+            </div>
+            <label>Layer &amp; copy</label>
+            <div class="aimg-btnrow">
+              <button class="aimg-b" id="toBack" type="button">⤓ Back</button>
+              <button class="aimg-b" id="backward" type="button">↓</button>
+              <button class="aimg-b" id="forward" type="button">↑</button>
+              <button class="aimg-b" id="toFront" type="button">⤒ Front</button>
+              <button class="aimg-b" id="dupBtn" type="button">⧉ Duplicate</button>
+            </div>
+            <label>Apply this image to pages (logo / watermark)</label>
+            <div class="aimg-scope">
+              <select id="scopeSel">
+                <option value="all">All pages</option>
+                <option value="odd">Odd pages</option>
+                <option value="even">Even pages</option>
+                <option value="range">Range</option>
+              </select>
+              <input type="text" id="scopeRange" placeholder="e.g. 2-5,8" style="width:88px;display:none">
+              <button class="aimg-b" id="applyPages" type="button">Apply</button>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <label style="display:flex;align-items:center;gap:8px;font-weight:400;color:var(--text);margin-top:16px;font-size:.9rem">
+        <input type="checkbox" id="flattenCheck" style="width:auto"> Flatten output to images (locks placement; makes text non‑selectable)
+      </label>
 
       <div class="btn-row">
         <button class="btn" id="saveBtn">💾 Save PDF and Download</button>
       </div>
 
-      <p id="statusMsg" style="margin-top:12px;color:var(--text-dim);font-size:.9rem"></p>
+      <p id="statusMsg" style="margin-top:12px;color:var(--text-dim);font-size:.9rem" role="status" aria-live="polite"></p>
     </div>
   </div>
 </div>
 
+<!-- ===================== BELOW-TOOL CONTENT ===================== -->
 
+<!-- Key features -->
+<div class="aimg-wrap">
+  <h2 class="aimg-title">✨ Key Features</h2>
+  <div class="aimg-feat-grid">
+    <div class="aimg-fcard"><h4>🖼️ Place any image</h4><p>Add PNG or JPG photos, logos, signatures or stamps to any page, and drop several images at once for quick layouts.</p></div>
+    <div class="aimg-fcard"><h4>✋ Drag, resize, lock ratio</h4><p>Move an image freely and resize it from the corner handle, with aspect‑ratio lock on by default so pictures never stretch.</p></div>
+    <div class="aimg-fcard"><h4>🔄 Rotate &amp; flip</h4><p>Rotate left or right in 90° steps and flip horizontally or vertically — ideal for orienting scans, signatures and logos.</p></div>
+    <div class="aimg-fcard"><h4>🎚️ Opacity &amp; borders</h4><p>Set image opacity for subtle watermarks and add a coloured border of any width to frame photos and stamps.</p></div>
+    <div class="aimg-fcard"><h4>📐 Align &amp; layer</h4><p>Snap an image to the left, centre, right, top, middle or bottom of the page, and control which images sit in front.</p></div>
+    <div class="aimg-fcard"><h4>🔁 Logo / watermark mode</h4><p>Apply one image to all, odd, even or a range of pages in a single click — perfect for branding every page with a logo.</p></div>
+    <div class="aimg-fcard"><h4>🗂️ Pages, zoom &amp; thumbnails</h4><p>Navigate with arrows, go‑to‑page and a live thumbnail strip that marks pages with images, and zoom in for precise placement.</p></div>
+    <div class="aimg-fcard"><h4>↩️ Undo &amp; redo</h4><p>Every add, move, resize, transform and delete can be undone and redone, so you can experiment without losing work.</p></div>
+    <div class="aimg-fcard"><h4>🔒 100% private</h4><p>Everything runs locally with pdf.js and pdf‑lib. Your PDF and images are never uploaded — no server, no account, no tracking.</p></div>
+  </div>
+</div>
+
+<!-- Benefits -->
+<div class="aimg-wrap">
+  <h2 class="aimg-title">🎁 Why use it</h2>
+  <div class="aimg-pill-row">
+    <span class="aimg-pill">Add a company logo</span>
+    <span class="aimg-pill">Insert a signature image</span>
+    <span class="aimg-pill">Stamp “Paid” / “Approved”</span>
+    <span class="aimg-pill">Brand every page</span>
+    <span class="aimg-pill">Add photos to reports</span>
+    <span class="aimg-pill">No watermark added by us</span>
+    <span class="aimg-pill">Works offline</span>
+    <span class="aimg-pill">Free forever</span>
+  </div>
+</div>
+
+<!-- Related tools (ABOVE About) -->
+<div class="aimg-wrap">
+  <h2 class="aimg-title">🧰 Related Tools</h2>
+  <div class="aimg-rel-grid">
+    <a class="aimg-rel" href="pdf-sign.html"><b>Sign PDF</b><span>Draw, type or upload a signature onto a PDF.</span></a>
+    <a class="aimg-rel" href="pdf-watermark.html"><b>Watermark PDF</b><span>Stamp text or image watermarks across pages.</span></a>
+    <a class="aimg-rel" href="pdf-edit.html"><b>Edit PDF</b><span>Add text, shapes and images anywhere on a page.</span></a>
+    <a class="aimg-rel" href="image-to-pdf.html"><b>Image to PDF</b><span>Convert JPG/PNG images into a PDF document.</span></a>
+    <a class="aimg-rel" href="pdf-merge.html"><b>Merge PDF</b><span>Combine several PDFs into one document.</span></a>
+    <a class="aimg-rel" href="pdf-compress.html"><b>Compress PDF</b><span>Reduce PDF file size for easy sharing.</span></a>
+  </div>
+</div>
+
+<!-- About (bilingual) -->
 <div class="info-wrap">
   <div class="info-section">
     <div class="info-block">
       <h2>ℹ️ About This Tool</h2>
-      <p>This tool lets you place an image (a photo, logo, or stamp) anywhere on any page of a PDF, then drag and resize it to fit.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Upload your PDF.</li>
-        <li>Upload an image — it will appear on the current page.</li>
-        <li>Drag/resize it into position, and navigate pages to add more if needed.</li>
-        <li>Click Save and download the final PDF.</li>
-      </ol>
+      <p>The <b>ApneSoftware Add Image to PDF</b> tool lets you place any picture — a photograph, a company logo, a scanned signature, a rubber‑stamp graphic or a QR code — exactly where you want it on any page of a PDF, without buying desktop software or handing your documents to an online server. It behaves like the image‑placement feature of professional editors such as Adobe Acrobat, Foxit and Nitro, but it runs entirely inside your web browser, so it is instant, free and completely private. Upload a PDF, drop in an image, drag it into position, resize and style it, and download a finished PDF — the whole process takes seconds.</p>
+      <p>When you open a PDF it is rendered page by page using pdf.js, the same engine that displays PDFs inside Firefox, giving you a crisp, accurate preview to work on. Adding an image is as simple as clicking the image drop zone or dragging a file in; you can even add <b>several images at once</b>. Each image appears on the current page with its natural aspect ratio, ready to <b>drag</b> anywhere and <b>resize</b> from its corner handle. Aspect‑ratio lock is enabled by default so photos and logos never look squashed, and you can unlock it whenever you need to stretch an image to a specific box. A small properties panel shows the image’s name and pixel dimensions so you always know what you are working with.</p>
+      <p>Real documents need more than plain placement, so every image can be <b>transformed and styled</b>. Rotate it left or right in ninety‑degree steps to correct a sideways scan, flip it horizontally or vertically, dial its <b>opacity</b> down to create a soft watermark that sits behind the text, and add a coloured <b>border</b> of any thickness to frame a photo or make a stamp stand out. Alignment buttons snap an image neatly to the left, centre, right, top, middle or bottom of the page, and layer controls let you decide which image sits in front when several overlap — bring one to the front, send another to the back, or nudge it one step at a time. Any image can be <b>duplicated</b> to repeat it quickly.</p>
+      <p>One of the most useful capabilities is <b>logo and watermark mode</b>. Position an image once — say your organisation’s logo in the top corner — then choose to apply it to <b>all pages</b>, only <b>odd</b> or <b>even</b> pages, or a custom <b>page range</b>, and the tool places an identical copy at the same spot on every selected page in a single click. This turns the tedious job of branding a fifty‑page report, stamping every page of a contract, or watermarking a draft into a few seconds of work, all without any loss of quality because each copy embeds the original image data.</p>
+      <p>Working on longer documents is comfortable too. A live <b>thumbnail strip</b> down the side lets you jump to any page and clearly marks which pages already contain images, while page arrows, a go‑to‑page box and <b>zoom</b> controls help you place images precisely — zoom in to align a signature over a line, then zoom out to check the whole page. A full <b>undo and redo</b> history covers every action, so you can experiment freely, and a small statistics strip keeps a running count of how many images you have added and how many pages they affect. When you save, you can keep the output as a normal PDF with the images embedded as vector‑quality objects, or tick <b>flatten to image</b> to lock every placement permanently. The status line reports the output size and how long the export took.</p>
+      <p>The tool suits a wide range of everyday jobs. Freelancers and small businesses use it to drop a <b>logo</b> onto invoices, quotations and letterheads, or to stamp documents with a “Paid”, “Approved” or “Confidential” graphic. People completing forms add a <b>scanned signature</b> or a passport‑style <b>photo</b> exactly where the form asks for it, avoiding the print‑sign‑scan cycle entirely. Teachers and students insert diagrams, charts and screenshots into study material and assignments; estate agents and photographers place property or product pictures into brochures; and event organisers add sponsor logos across every page of a programme. Because placement is pixel‑precise and you can preview each page before saving, the finished document looks deliberately designed rather than hastily patched together. And since PNG transparency is respected, a logo or signature with a see‑through background sits naturally over existing text and graphics instead of hiding them behind an opaque rectangle.</p>
+      <p>Above all, this tool is <b>private by design</b>. Every step — rendering the PDF, decoding your images, placing them and saving the result — happens entirely on your own device using the open‑source pdf.js and pdf‑lib libraries. Nothing is uploaded to a server, nothing is stored, and no account or email is required; once the page has loaded you can even work offline. That matters because the documents and images people combine here are often sensitive — signed contracts, ID photos, letterheads, invoices and personal pictures — and they should never travel to a stranger’s server just to have a logo added. Whether you are a freelancer stamping invoices, a business branding its paperwork, a student adding a photo to a form, or anyone who needs a picture in the right place on a PDF, this tool gives you precise, professional results with nothing to install and no privacy trade‑off.</p>
     </div>
     <hr class="info-divider">
     <div class="info-block">
       <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>यह टूल PDF के किसी भी पेज पर इमेज (फोटो, लोगो या स्टैंप) रखने देता है, फिर उसे खींचकर और साइज़ बदलकर सही जगह सेट करने देता है।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>अपनी PDF अपलोड करें।</li>
-        <li>एक इमेज अपलोड करें — वो मौजूदा पेज पर दिख जाएगी।</li>
-        <li>उसे खींचकर/साइज़ बदलकर सही जगह रखें, ज़रूरत हो तो दूसरे पेज पर जाकर और इमेज जोड़ें।</li>
-        <li>Save बटन दबाएं और फाइनल PDF डाउनलोड करें।</li>
-      </ol>
+      <p><b>ApneSoftware Add Image to PDF</b> टूल आपको किसी भी तस्वीर — फोटो, कंपनी लोगो, स्कैन किया हस्ताक्षर, रबर‑स्टैंप ग्राफ़िक या QR कोड — को PDF के किसी भी पेज पर ठीक वहाँ रखने देता है जहाँ आप चाहें, न कोई डेस्कटॉप सॉफ़्टवेयर खरीदे बिना और न ही अपने दस्तावेज़ किसी ऑनलाइन सर्वर को सौंपे बिना। यह Adobe Acrobat, Foxit और Nitro जैसे पेशेवर एडिटरों की इमेज‑प्लेसमेंट सुविधा जैसा व्यवहार करता है, पर पूरी तरह आपके वेब ब्राउज़र के अंदर चलता है, इसलिए यह तुरंत, मुफ़्त और पूरी तरह निजी है। PDF अपलोड करें, इमेज डालें, खींचकर स्थिति में रखें, आकार और शैली बदलें, और तैयार PDF डाउनलोड करें — पूरी प्रक्रिया सेकंडों में हो जाती है।</p>
+      <p>जब आप PDF खोलते हैं, यह pdf.js का उपयोग करके पेज‑दर‑पेज रेंडर होती है — वही इंजन जो Firefox में PDF दिखाता है — जिससे आपको काम करने के लिए साफ़, सटीक प्रीव्यू मिलता है। इमेज जोड़ना उतना ही आसान है जितना इमेज ड्रॉप ज़ोन पर क्लिक करना या फ़ाइल खींचना; आप <b>एक साथ कई इमेज</b> भी जोड़ सकते हैं। हर इमेज अपने प्राकृतिक अनुपात के साथ वर्तमान पेज पर दिखती है, कहीं भी <b>खींचने</b> और कोने के हैंडल से <b>आकार बदलने</b> के लिए तैयार। अनुपात‑लॉक डिफ़ॉल्ट रूप से चालू है ताकि फोटो और लोगो कभी दबे‑कुचले न दिखें, और ज़रूरत होने पर आप इसे अनलॉक कर सकते हैं। एक छोटा गुण पैनल इमेज का नाम और पिक्सेल आयाम दिखाता है।</p>
+      <p>असली दस्तावेज़ों को सिर्फ़ प्लेसमेंट से ज़्यादा चाहिए, इसलिए हर इमेज को <b>ट्रांसफ़ॉर्म और स्टाइल</b> किया जा सकता है। किसी टेढ़े स्कैन को ठीक करने के लिए इसे नब्बे‑डिग्री चरणों में बाएँ या दाएँ घुमाएँ, क्षैतिज या लंबवत पलटें, इसकी <b>opacity</b> कम करके एक हल्का वॉटरमार्क बनाएँ जो टेक्स्ट के पीछे बैठे, और फोटो या स्टैंप को उभारने के लिए किसी भी मोटाई का रंगीन <b>बॉर्डर</b> जोड़ें। संरेखण बटन इमेज को पेज के बाएँ, केंद्र, दाएँ, ऊपर, मध्य या नीचे साफ़‑सुथरे ढंग से सेट करते हैं, और लेयर नियंत्रण तय करते हैं कि कई इमेज ओवरलैप होने पर कौन आगे रहे। किसी भी इमेज को <b>डुप्लिकेट</b> किया जा सकता है।</p>
+      <p>सबसे उपयोगी क्षमताओं में से एक है <b>logo और watermark मोड</b>। इमेज को एक बार रखें — मान लें आपका लोगो ऊपरी कोने में — फिर उसे <b>सभी पेजों</b>, केवल <b>विषम</b> या <b>सम</b> पेजों, या कस्टम <b>पेज रेंज</b> पर लगाना चुनें, और टूल एक ही क्लिक में हर चयनित पेज पर उसी स्थान पर समान प्रति रख देता है। इससे पचास‑पेज की रिपोर्ट को ब्रांड करने, अनुबंध के हर पेज पर स्टैंप लगाने या ड्राफ़्ट को वॉटरमार्क करने का थकाऊ काम कुछ सेकंड में हो जाता है, बिना किसी गुणवत्ता हानि के।</p>
+      <p>लंबे दस्तावेज़ों पर काम करना भी सुविधाजनक है। किनारे पर एक लाइव <b>थंबनेल स्ट्रिप</b> आपको किसी भी पेज पर जाने देती है और स्पष्ट रूप से दिखाती है कि किन पेजों पर पहले से इमेज हैं, जबकि पेज तीर, go‑to‑page बॉक्स और <b>ज़ूम</b> नियंत्रण सटीक प्लेसमेंट में मदद करते हैं। पूरा <b>undo और redo</b> इतिहास हर क्रिया को कवर करता है, और एक छोटी आँकड़ा पट्टी जोड़ी गई इमेजों और प्रभावित पेजों की गिनती रखती है। सेव करते समय आप आउटपुट को सामान्य PDF के रूप में रख सकते हैं जिसमें इमेज एम्बेड हों, या हर प्लेसमेंट को स्थायी रूप से लॉक करने के लिए <b>flatten to image</b> टिक कर सकते हैं।</p>
+      <p>यह टूल कई रोज़मर्रा के कामों के लिए उपयुक्त है। फ्रीलांसर और छोटे व्यवसाय इसका उपयोग चालान, कोटेशन और लेटरहेड पर <b>लोगो</b> डालने, या दस्तावेज़ों पर “Paid”, “Approved” या “Confidential” ग्राफ़िक स्टैंप करने के लिए करते हैं। फ़ॉर्म भरने वाले लोग ठीक वहाँ <b>स्कैन किया हस्ताक्षर</b> या पासपोर्ट‑शैली की <b>फोटो</b> जोड़ते हैं जहाँ फ़ॉर्म माँगता है। शिक्षक और छात्र अध्ययन सामग्री और असाइनमेंट में आरेख, चार्ट और स्क्रीनशॉट डालते हैं; प्रॉपर्टी एजेंट और फ़ोटोग्राफ़र ब्रोशर में तस्वीरें रखते हैं; और आयोजक कार्यक्रम के हर पेज पर प्रायोजक लोगो जोड़ते हैं। चूँकि प्लेसमेंट पिक्सेल‑सटीक है और आप सेव करने से पहले हर पेज देख सकते हैं, तैयार दस्तावेज़ जानबूझकर डिज़ाइन किया हुआ लगता है, और PNG पारदर्शिता का सम्मान होने से पारदर्शी पृष्ठभूमि वाला लोगो या हस्ताक्षर मौजूदा टेक्स्ट पर स्वाभाविक रूप से बैठता है।</p>
+      <p>सबसे बढ़कर, यह टूल <b>डिज़ाइन से ही निजी</b> है। हर चरण — PDF रेंडर करना, इमेज डिकोड करना, उन्हें रखना और परिणाम सहेजना — पूरी तरह आपके अपने डिवाइस पर ओपन‑सोर्स pdf.js और pdf‑lib लाइब्रेरी से होता है। कुछ भी सर्वर पर अपलोड नहीं होता, कुछ भी सेव नहीं होता, और किसी अकाउंट की ज़रूरत नहीं; पेज लोड होने के बाद आप ऑफ़लाइन भी काम कर सकते हैं। यह इसलिए मायने रखता है क्योंकि यहाँ लोग अक्सर संवेदनशील दस्तावेज़ और इमेज जोड़ते हैं — हस्ताक्षरित अनुबंध, ID फोटो, लेटरहेड, चालान और निजी तस्वीरें।</p>
     </div>
   </div>
+</div>
+
+<!-- How to use -->
+<div class="aimg-wrap">
+  <h2 class="aimg-title">📖 How To Use</h2>
+  <ol class="aimg-steps">
+    <li><b>Upload your PDF.</b> Drag it into the drop zone or click to choose. It renders page by page with a thumbnail strip.</li>
+    <li><b>Add image(s).</b> Click the image drop zone or drag PNG/JPG files in. They appear on the current page ready to position.</li>
+    <li><b>Position &amp; style.</b> Drag and resize each image, then rotate, flip, set opacity, add a border and align it precisely.</li>
+    <li><b>Brand every page (optional).</b> Select an image and use <b>Apply</b> to place it on all, odd, even or a range of pages as a logo or watermark.</li>
+    <li><b>Save &amp; download.</b> Optionally tick <b>Flatten</b>, then click Save to download your finished PDF.</li>
+  </ol>
+</div>
+
+<!-- FAQ -->
+<div class="aimg-wrap aimg-faq">
+  <h2 class="aimg-title">❓ Frequently Asked Questions</h2>
+  <div id="faqList"></div>
+</div>
+
+<!-- Privacy -->
+<div class="aimg-wrap">
+  <h2 class="aimg-title">🔒 Privacy</h2>
+  <p class="aimg-sub">This tool processes your PDF and images entirely inside your browser using the pdf.js and pdf‑lib libraries. Your files are <b>never uploaded</b> to any server, never stored, and never transmitted anywhere. No account, email or signup is required, and once the page has loaded you can even work offline. Because the images and documents combined here — signatures, ID photos, letterheads, invoices — are often personal or confidential, this local‑only design keeps them under your sole control from upload to download.</p>
+</div>
+
+<!-- Browser compatibility -->
+<div class="aimg-wrap">
+  <h2 class="aimg-title">🌐 Browser Compatibility</h2>
+  <p class="aimg-sub">Works in all modern browsers — Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, Brave and Opera — on Windows, macOS, Linux, Android and iOS. It relies only on JavaScript and the standard File, Blob and Canvas APIs plus pdf.js. Placing, dragging and resizing images works with both mouse and touch, so you can add a logo or signature from a phone or tablet as easily as from a desktop.</p>
+</div>
+
+<!-- Supported formats -->
+<div class="aimg-wrap">
+  <h2 class="aimg-title">📄 Supported Formats</h2>
+  <p class="aimg-sub"><b>Input:</b> a standard PDF file (.pdf) plus one or more <b>PNG</b> or <b>JPG/JPEG</b> images. PNG transparency is preserved, so logos and signatures with transparent backgrounds sit cleanly over the page. <b>Output:</b> a standard PDF with your images embedded — kept editable/selectable by default, or flattened to images if you choose. The result opens in any PDF viewer.</p>
 </div>
 
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
@@ -130,226 +376,370 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="../assets/common.js"></script>
 <script>
-pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+(function(){
+  pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  const $ = id => document.getElementById(id);
 
-const dropzone = document.getElementById('dropzone');
-const fileInput = document.getElementById('fileInput');
-const imgDropzone = document.getElementById('imgDropzone');
-const imgInput = document.getElementById('imgInput');
-const editStage = document.getElementById('editStage');
-const overlayLayer = document.getElementById('overlayLayer');
-const bgCanvas = document.getElementById('bgCanvas');
+  const dropzone=$('dropzone'), fileInput=$('fileInput'), imgDropzone=$('imgDropzone'), imgInput=$('imgInput');
+  const editStage=$('editStage'), overlayLayer=$('overlayLayer'), bgCanvas=$('bgCanvas');
 
-let currentFile = null;
-let pdfDocJs = null;
-let totalPages = 0;
-let currentPageIndex = 0;
-let renderScale = 1;
+  let currentFile=null, pdfDocJs=null, totalPages=0, currentPageIndex=0;
+  let fitScale=1, zoom=1, pageSizePt={w:0,h:0};
+  let images=[];   // {id,page,x,y,w,h,dataUrl,mime,name,natW,natH,opacity,border,borderColor,lock,rot,flipH,flipV,fileSize}
+  let idCounter=1, selectedId=null, dragState=null;
+  let history=[], future=[];
 
-let images = []; // {id, page, xPdf, yPdfTop, wPdf, hPdf, dataUrl, mimeType}
-let idCounter = 1;
-let selectedId = null;
-let dragState = null;
+  function esc(s){ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+  function dscale(){ return fitScale*zoom; }
+  function sel(){ return images.find(im=>im.id==selectedId); }
 
-setupDropzone(dropzone, fileInput, files => {
-  if(files.length && files[0].type === 'application/pdf') handleFile(files[0]);
-});
+  setupDropzone(dropzone, fileInput, files=>{ if(files.length && files[0].type==='application/pdf') handleFile(files[0]); });
+  setupDropzone(imgDropzone, imgInput, files=>{ Array.from(files).filter(f=>f.type.startsWith('image/')).forEach(handleImage); });
 
-setupDropzone(imgDropzone, imgInput, files => {
-  if(files.length && files[0].type.startsWith('image/')) handleImage(files[0]);
-});
+  async function handleFile(file){
+    currentFile=file; images=[]; selectedId=null; history=[]; future=[]; idCounter=1;
+    try{
+      const ab=await file.arrayBuffer();
+      pdfDocJs=await pdfjsLib.getDocument({data:ab.slice(0)}).promise;
+      totalPages=pdfDocJs.numPages; currentPageIndex=0;
+      const p1=await pdfDocJs.getPage(1); const vp=p1.getViewport({scale:1});
+      pageSizePt={w:vp.width,h:vp.height};
+      fitScale=Math.min(600/vp.width,1.4); zoom=1;
+      await showInfo(file, ab);
+      $('fileNameLbl').textContent='📄 '+file.name; $('fileRow').style.display='flex';
+      $('editorArea').style.display='block'; $('gotoPage').max=totalPages;
+      await renderCurrentPage(); await buildThumbs(); updateStats();
+      $('statusMsg').textContent=`✅ Loaded ${totalPages} page(s). Add an image to begin.`;
+    }catch(e){ $('statusMsg').textContent='❌ Error: '+e.message+' — the file may be corrupted or password‑protected.'; }
+  }
 
-async function handleFile(file){
-  currentFile = file;
-  images = [];
-  selectedId = null;
-  const arrayBuf = await file.arrayBuffer();
-  pdfDocJs = await pdfjsLib.getDocument({data: arrayBuf}).promise;
-  totalPages = pdfDocJs.numPages;
-  currentPageIndex = 0;
+  async function showInfo(file, ab){
+    const el=$('infoArea'); el.style.display='grid';
+    let ver='—'; try{ const h=new TextDecoder().decode(new Uint8Array(ab.slice(0,16))); const m=/%PDF-(\d\.\d)/.exec(h); if(m) ver=m[1]; }catch(e){}
+    const orient=pageSizePt.w>pageSizePt.h?'Landscape':'Portrait';
+    const rows=[['File',esc(file.name)],['Size',formatBytes(file.size)],['Pages',totalPages],['PDF ver',ver],
+      ['Page size',Math.round(pageSizePt.w)+'×'+Math.round(pageSizePt.h)+' pt'],['Orientation',orient]];
+    try{
+      const doc=await PDFLib.PDFDocument.load(new Uint8Array(ab.slice(0)),{updateMetadata:false});
+      const fmt=d=>{try{return d?new Date(d).toLocaleDateString():'—';}catch(e){return '—';}};
+      const safe=fn=>{try{const v=fn();return v==null?'':v;}catch(e){return '';}};
+      rows.push(['Author',esc(safe(()=>doc.getAuthor()))||'—']); rows.push(['Creator',esc(safe(()=>doc.getCreator()))||'—']);
+      rows.push(['Created',fmt(safe(()=>doc.getCreationDate()))]); rows.push(['Modified',fmt(safe(()=>doc.getModificationDate()))]);
+    }catch(e){}
+    el.innerHTML=rows.map(([k,v])=>`<div class="aimg-i"><b>${v||'—'}</b><span>${k}</span></div>`).join('');
+  }
 
-  const firstPage = await pdfDocJs.getPage(1);
-  const vp = firstPage.getViewport({ scale: 1 });
-  renderScale = Math.min(560 / vp.width, 1.4);
-
-  document.getElementById('editorArea').style.display = 'block';
-  await renderCurrentPage();
-}
-
-function handleImage(file){
-  const reader = new FileReader();
-  reader.onload = e => {
-    const img = new Image();
-    img.onload = () => {
-      const wPdf = Math.min(150, img.width / 2);
-      const hPdf = wPdf * (img.height / img.width);
-      const entry = {
-        id: idCounter++, page: currentPageIndex,
-        xPdf: 40, yPdfTop: 40, wPdf, hPdf,
-        dataUrl: e.target.result,
-        mimeType: file.type.includes('png') ? 'png' : 'jpg'
+  function handleImage(file){
+    const reader=new FileReader();
+    reader.onload=e=>{
+      const img=new Image();
+      img.onload=()=>{
+        pushHistory();
+        const wPt=Math.min(150, img.width/2);
+        const hPt=wPt*(img.height/img.width);
+        images.push({ id:idCounter++, page:currentPageIndex, x:40, y:40, w:wPt, h:hPt,
+          dataUrl:e.target.result, mime:file.type.includes('png')?'png':'jpg',
+          name:file.name, natW:img.width, natH:img.height, fileSize:file.size,
+          opacity:1, border:0, borderColor:'#000000', lock:true, rot:0, flipH:false, flipV:false });
+        renderOverlay(); selectElement(idCounter-1); refreshThumbDot(currentPageIndex);
       };
-      images.push(entry);
-      renderOverlayImages();
-      selectElement(entry.id);
+      img.src=e.target.result;
     };
-    img.src = e.target.result;
-  };
-  reader.readAsDataURL(file);
-}
-
-async function renderCurrentPage(){
-  const page = await pdfDocJs.getPage(currentPageIndex + 1);
-  const viewport = page.getViewport({ scale: renderScale });
-  bgCanvas.width = viewport.width;
-  bgCanvas.height = viewport.height;
-  const ctx = bgCanvas.getContext('2d');
-  await page.render({ canvasContext: ctx, viewport }).promise;
-
-  editStage.style.width = viewport.width + 'px';
-  overlayLayer.style.width = viewport.width + 'px';
-  overlayLayer.style.height = viewport.height + 'px';
-
-  document.getElementById('pageInfo').textContent = `${currentPageIndex+1} / ${totalPages}`;
-  renderOverlayImages();
-  deselectAll();
-}
-
-document.getElementById('prevPageBtn').addEventListener('click', async ()=>{
-  if(currentPageIndex > 0){ currentPageIndex--; await renderCurrentPage(); }
-});
-document.getElementById('nextPageBtn').addEventListener('click', async ()=>{
-  if(currentPageIndex < totalPages - 1){ currentPageIndex++; await renderCurrentPage(); }
-});
-
-function renderOverlayImages(){
-  overlayLayer.innerHTML = '';
-  images.filter(im => im.page === currentPageIndex).forEach(im => buildImgDom(im));
-}
-
-function buildImgDom(im){
-  const box = document.createElement('div');
-  box.className = 'img-box';
-  box.dataset.id = im.id;
-  box.style.left = (im.xPdf * renderScale) + 'px';
-  box.style.top = (im.yPdfTop * renderScale) + 'px';
-  box.style.width = (im.wPdf * renderScale) + 'px';
-  box.style.height = (im.hPdf * renderScale) + 'px';
-  if(selectedId === im.id) box.classList.add('selected');
-
-  const imgEl = document.createElement('img');
-  imgEl.src = im.dataUrl;
-  box.appendChild(imgEl);
-
-  const delBtn = document.createElement('button');
-  delBtn.className = 'img-del';
-  delBtn.textContent = '✕';
-  delBtn.addEventListener('mousedown', e=> e.stopPropagation());
-  delBtn.addEventListener('click', (e)=>{ e.stopPropagation(); deleteImage(im.id); });
-  box.appendChild(delBtn);
-
-  box.addEventListener('mousedown', e=> startDrag(e, im, box));
-  box.addEventListener('touchstart', e=> startDrag(e, im, box));
-
-  const resize = document.createElement('div');
-  resize.className = 'img-resize';
-  resize.addEventListener('mousedown', e=> startResize(e, im, box));
-  resize.addEventListener('touchstart', e=> startResize(e, im, box));
-  box.appendChild(resize);
-
-  overlayLayer.appendChild(box);
-}
-
-function startDrag(e, im, box){
-  const point = e.touches ? e.touches[0] : e;
-  dragState = { type:'move', im, box, startX: point.clientX, startY: point.clientY, origLeft: box.offsetLeft, origTop: box.offsetTop };
-  selectElement(im.id);
-  e.stopPropagation();
-  if(e.cancelable) e.preventDefault();
-}
-function startResize(e, im, box){
-  const point = e.touches ? e.touches[0] : e;
-  dragState = { type:'resize', im, box, startX: point.clientX, startY: point.clientY, startW: box.offsetWidth, startH: box.offsetHeight };
-  e.stopPropagation();
-  if(e.cancelable) e.preventDefault();
-}
-function onPointerMove(e){
-  if(!dragState) return;
-  const point = e.touches ? e.touches[0] : e;
-  const dx = point.clientX - dragState.startX;
-  const dy = point.clientY - dragState.startY;
-  const { im, box, type } = dragState;
-
-  if(type === 'move'){
-    let newLeft = dragState.origLeft + dx;
-    let newTop = dragState.origTop + dy;
-    newLeft = Math.max(0, Math.min(newLeft, overlayLayer.clientWidth - box.offsetWidth));
-    newTop = Math.max(0, Math.min(newTop, overlayLayer.clientHeight - box.offsetHeight));
-    box.style.left = newLeft + 'px';
-    box.style.top = newTop + 'px';
-    im.xPdf = newLeft / renderScale;
-    im.yPdfTop = newTop / renderScale;
-  } else if(type === 'resize'){
-    const newW = Math.max(20, dragState.startW + dx);
-    const newH = Math.max(20, dragState.startH + dy);
-    box.style.width = newW + 'px';
-    box.style.height = newH + 'px';
-    im.wPdf = newW / renderScale;
-    im.hPdf = newH / renderScale;
+    reader.readAsDataURL(file);
   }
-  if(e.cancelable) e.preventDefault();
-}
-function onPointerUp(){ dragState = null; }
-document.addEventListener('mousemove', onPointerMove);
-document.addEventListener('mouseup', onPointerUp);
-document.addEventListener('touchmove', onPointerMove, { passive:false });
-document.addEventListener('touchend', onPointerUp);
 
-editStage.addEventListener('mousedown', e=>{ if(e.target === bgCanvas) deselectAll(); });
+  async function renderCurrentPage(){
+    const page=await pdfDocJs.getPage(currentPageIndex+1);
+    const vp1=page.getViewport({scale:1}); pageSizePt={w:vp1.width,h:vp1.height};
+    const viewport=page.getViewport({scale:dscale()});
+    bgCanvas.width=viewport.width; bgCanvas.height=viewport.height;
+    await page.render({canvasContext:bgCanvas.getContext('2d'), viewport}).promise;
+    editStage.style.width=viewport.width+'px'; editStage.style.height=viewport.height+'px';
+    overlayLayer.style.width=viewport.width+'px'; overlayLayer.style.height=viewport.height+'px';
+    $('pageInfo').textContent=`${currentPageIndex+1} / ${totalPages}`; $('gotoPage').value=currentPageIndex+1;
+    $('zoomLbl').textContent=Math.round(zoom*100)+'%';
+    renderOverlay(); highlightThumb();
+  }
 
-function selectElement(id){
-  selectedId = id;
-  document.querySelectorAll('.img-box').forEach(b=> b.classList.toggle('selected', b.dataset.id == id));
-}
-function deselectAll(){
-  selectedId = null;
-  document.querySelectorAll('.img-box').forEach(b => b.classList.remove('selected'));
-}
-function deleteImage(id){
-  images = images.filter(im => im.id != id);
-  if(selectedId == id) deselectAll();
-  renderOverlayImages();
-}
+  function renderOverlay(){
+    overlayLayer.innerHTML='';
+    images.filter(im=>im.page===currentPageIndex).forEach(buildImgDom);
+    updateStats();
+  }
 
-document.getElementById('saveBtn').addEventListener('click', async ()=>{
-  const status = document.getElementById('statusMsg');
-  if(images.length === 0){ status.textContent = '⚠️ Add at least one image first'; return; }
+  function buildImgDom(im){
+    const s=dscale();
+    const box=document.createElement('div'); box.className='img-box'; box.dataset.id=im.id;
+    box.style.left=(im.x*s)+'px'; box.style.top=(im.y*s)+'px';
+    box.style.width=(im.w*s)+'px'; box.style.height=(im.h*s)+'px';
+    box.style.opacity=im.opacity;
+    box.style.border = im.border? (im.border+'px solid '+im.borderColor):'1px dashed transparent';
+    if(selectedId===im.id) box.classList.add('selected');
+    const imgEl=document.createElement('img'); imgEl.src=im.dataUrl;
+    imgEl.style.transform = `scaleX(${im.flipH?-1:1}) scaleY(${im.flipV?-1:1}) rotate(${im.rot}deg)`;
+    box.appendChild(imgEl);
+    const del=document.createElement('button'); del.className='img-del'; del.textContent='✕';
+    del.addEventListener('mousedown',e=>e.stopPropagation());
+    del.addEventListener('click',e=>{ e.stopPropagation(); pushHistory(); deleteImage(im.id); });
+    box.appendChild(del);
+    box.addEventListener('mousedown',e=>startDrag(e,im,box));
+    box.addEventListener('touchstart',e=>startDrag(e,im,box),{passive:false});
+    const rz=document.createElement('div'); rz.className='img-resize';
+    rz.addEventListener('mousedown',e=>startResize(e,im,box)); rz.addEventListener('touchstart',e=>startResize(e,im,box),{passive:false});
+    box.appendChild(rz);
+    overlayLayer.appendChild(box);
+  }
 
-  status.textContent = '⏳ Building PDF...';
-  try{
-    const { PDFDocument } = PDFLib;
-    const bytes = await currentFile.arrayBuffer();
-    const pdfDoc = await PDFDocument.load(bytes);
-    const pages = pdfDoc.getPages();
+  function startDrag(e,im,box){ const p=e.touches?e.touches[0]:e; pushHistory();
+    dragState={type:'move',im,box,startX:p.clientX,startY:p.clientY,origLeft:box.offsetLeft,origTop:box.offsetTop};
+    selectElement(im.id); e.stopPropagation(); if(e.cancelable)e.preventDefault(); }
+  function startResize(e,im,box){ const p=e.touches?e.touches[0]:e; pushHistory();
+    dragState={type:'resize',im,box,startX:p.clientX,startY:p.clientY,startW:box.offsetWidth,startH:box.offsetHeight,ratio:im.w/im.h};
+    e.stopPropagation(); if(e.cancelable)e.preventDefault(); }
 
-    for(const im of images){
-      const page = pages[im.page];
-      if(!page) continue;
-      const imgBytes = await fetch(im.dataUrl).then(r => r.arrayBuffer());
-      const embedded = im.mimeType === 'png' ? await pdfDoc.embedPng(imgBytes) : await pdfDoc.embedJpg(imgBytes);
-      const pageHeight = page.getHeight();
-      const y = pageHeight - im.yPdfTop - im.hPdf;
-      page.drawImage(embedded, { x: im.xPdf, y, width: im.wPdf, height: im.hPdf });
+  function onMove(e){
+    if(!dragState) return;
+    const p=e.touches?e.touches[0]:e; const s=dscale();
+    const dx=p.clientX-dragState.startX, dy=p.clientY-dragState.startY; const {im,box,type}=dragState;
+    if(type==='move'){
+      let nl=Math.max(0,Math.min(dragState.origLeft+dx, overlayLayer.clientWidth-box.offsetWidth));
+      let nt=Math.max(0,Math.min(dragState.origTop+dy, overlayLayer.clientHeight-box.offsetHeight));
+      box.style.left=nl+'px'; box.style.top=nt+'px'; im.x=nl/s; im.y=nt/s;
+    }else{
+      let nw=Math.max(16,dragState.startW+dx), nh=Math.max(16,dragState.startH+dy);
+      if(im.lock) nh=nw/dragState.ratio;
+      box.style.width=nw+'px'; box.style.height=nh+'px'; im.w=nw/s; im.h=nh/s;
     }
-
-    const newBytes = await pdfDoc.save();
-    const blob = new Blob([newBytes], {type:'application/pdf'});
-    downloadBlob('with-image.pdf', blob);
-    status.textContent = '✅ Image(s) added and downloaded!';
-  }catch(err){
-    status.textContent = '❌ Error: ' + err.message;
+    if(e.cancelable)e.preventDefault();
   }
-});
+  function onUp(){ dragState=null; }
+  document.addEventListener('mousemove',onMove); document.addEventListener('mouseup',onUp);
+  document.addEventListener('touchmove',onMove,{passive:false}); document.addEventListener('touchend',onUp);
+  editStage.addEventListener('mousedown',e=>{ if(e.target===bgCanvas) deselectAll(); });
+
+  function selectElement(id){ selectedId=id;
+    overlayLayer.querySelectorAll('.img-box').forEach(b=>b.classList.toggle('selected', b.dataset.id==id));
+    syncProps();
+  }
+  function deselectAll(){ selectedId=null; overlayLayer.querySelectorAll('.img-box').forEach(b=>b.classList.remove('selected')); syncProps(); }
+  function deleteImage(id){ images=images.filter(im=>im.id!=id); if(selectedId==id) deselectAll(); renderOverlay(); refreshThumbDot(currentPageIndex); }
+
+  // properties sync
+  function syncProps(){
+    const im=sel();
+    $('propsEmpty').style.display=im?'none':'block';
+    $('propsBody').style.display=im?'block':'none';
+    if(!im) return;
+    $('imgMeta').textContent=`${im.name} · ${im.natW}×${im.natH}px · ${formatBytes(im.fileSize)}`;
+    $('opacityInput').value=Math.round(im.opacity*100); $('opacityVal').textContent=Math.round(im.opacity*100)+'%';
+    $('borderW').value=im.border; $('borderColor').value=im.borderColor;
+    $('lockAspect').classList.toggle('on', im.lock);
+  }
+  $('opacityInput').addEventListener('input',()=>{ const im=sel(); if(!im)return; im.opacity=$('opacityInput').value/100; $('opacityVal').textContent=$('opacityInput').value+'%'; renderOverlay(); selectElement(im.id); });
+  $('borderW').addEventListener('input',()=>{ const im=sel(); if(!im)return; im.border=+$('borderW').value; renderOverlay(); selectElement(im.id); });
+  $('borderColor').addEventListener('input',()=>{ const im=sel(); if(!im)return; im.borderColor=$('borderColor').value; renderOverlay(); selectElement(im.id); });
+  $('lockAspect').addEventListener('click',()=>{ const im=sel(); if(!im)return; im.lock=!im.lock; syncProps(); });
+  $('rotLeft').addEventListener('click',()=>rotate(-90));
+  $('rotRight').addEventListener('click',()=>rotate(90));
+  function rotate(d){ const im=sel(); if(!im)return; pushHistory(); im.rot=((im.rot+d)%360+360)%360;
+    if(Math.abs(d)===90){ const cx=im.x+im.w/2, cy=im.y+im.h/2; [im.w,im.h]=[im.h,im.w]; im.x=cx-im.w/2; im.y=cy-im.h/2; }
+    renderOverlay(); selectElement(im.id); }
+  $('flipH').addEventListener('click',()=>{ const im=sel(); if(!im)return; pushHistory(); im.flipH=!im.flipH; renderOverlay(); selectElement(im.id); });
+  $('flipV').addEventListener('click',()=>{ const im=sel(); if(!im)return; pushHistory(); im.flipV=!im.flipV; renderOverlay(); selectElement(im.id); });
+  $('dupBtn').addEventListener('click',()=>{ const im=sel(); if(!im)return; pushHistory(); const n={...im,id:idCounter++,x:im.x+12,y:im.y+12}; images.push(n); renderOverlay(); selectElement(n.id); });
+
+  // align
+  document.querySelectorAll('[data-align]').forEach(b=>b.addEventListener('click',()=>{
+    const im=sel(); if(!im)return; pushHistory(); const a=b.dataset.align;
+    if(a==='left') im.x=0; if(a==='right') im.x=pageSizePt.w-im.w; if(a==='hcenter') im.x=(pageSizePt.w-im.w)/2;
+    if(a==='top') im.y=0; if(a==='bottom') im.y=pageSizePt.h-im.h; if(a==='vcenter') im.y=(pageSizePt.h-im.h)/2;
+    renderOverlay(); selectElement(im.id);
+  }));
+
+  // layer order
+  function idx(){ return images.findIndex(im=>im.id==selectedId); }
+  $('toFront').addEventListener('click',()=>{ const i=idx(); if(i<0)return; pushHistory(); const [x]=images.splice(i,1); images.push(x); renderOverlay(); selectElement(x.id); });
+  $('toBack').addEventListener('click',()=>{ const i=idx(); if(i<0)return; pushHistory(); const [x]=images.splice(i,1); images.unshift(x); renderOverlay(); selectElement(x.id); });
+  $('forward').addEventListener('click',()=>{ const i=idx(); if(i<0||i>=images.length-1)return; pushHistory(); [images[i],images[i+1]]=[images[i+1],images[i]]; renderOverlay(); selectElement(selectedId); });
+  $('backward').addEventListener('click',()=>{ const i=idx(); if(i<=0)return; pushHistory(); [images[i],images[i-1]]=[images[i-1],images[i]]; renderOverlay(); selectElement(selectedId); });
+
+  // apply to pages (logo/watermark)
+  $('scopeSel').addEventListener('change',()=>{ $('scopeRange').style.display=$('scopeSel').value==='range'?'inline-block':'none'; });
+  function parseRange(str){ const out=new Set(); str.split(',').forEach(p=>{ p=p.trim(); if(!p)return; const m=/^(\d+)-(\d+)$/.exec(p); if(m){ for(let i=+m[1];i<=+m[2];i++) out.add(i-1); } else if(/^\d+$/.test(p)) out.add(+p-1); }); return out; }
+  $('applyPages').addEventListener('click',()=>{
+    const im=sel(); if(!im)return; pushHistory();
+    let targets=[];
+    const v=$('scopeSel').value;
+    for(let i=0;i<totalPages;i++){
+      if(i===im.page) continue;
+      if(v==='all') targets.push(i);
+      else if(v==='odd' && (i+1)%2===1) targets.push(i);
+      else if(v==='even' && (i+1)%2===0) targets.push(i);
+      else if(v==='range' && parseRange($('scopeRange').value).has(i)) targets.push(i);
+    }
+    targets.forEach(pg=>{ images.push({...im, id:idCounter++, page:pg}); refreshThumbDot(pg); });
+    renderOverlay();
+    $('statusMsg').textContent=`✅ Applied image to ${targets.length} more page(s).`;
+  });
+
+  // history
+  function snap(){ return JSON.stringify(images); }
+  function pushHistory(){ history.push(snap()); if(history.length>60) history.shift(); future=[]; updateUndo(); }
+  function updateUndo(){ $('undoBtn').disabled=!history.length; $('redoBtn').disabled=!future.length; }
+  $('undoBtn').addEventListener('click',()=>{ if(!history.length)return; future.push(snap()); images=JSON.parse(history.pop()); selectedId=null; renderOverlay(); rebuildDots(); syncProps(); updateUndo(); });
+  $('redoBtn').addEventListener('click',()=>{ if(!future.length)return; history.push(snap()); images=JSON.parse(future.pop()); selectedId=null; renderOverlay(); rebuildDots(); syncProps(); updateUndo(); });
+
+  // zoom / nav
+  $('zoomInBtn').addEventListener('click',()=>{ zoom=Math.min(3,zoom+0.25); renderCurrentPage(); });
+  $('zoomOutBtn').addEventListener('click',()=>{ zoom=Math.max(0.5,zoom-0.25); renderCurrentPage(); });
+  $('fitBtn').addEventListener('click',()=>{ zoom=1; renderCurrentPage(); });
+  $('prevPageBtn').addEventListener('click',async()=>{ if(currentPageIndex>0){ currentPageIndex--; await renderCurrentPage(); } });
+  $('nextPageBtn').addEventListener('click',async()=>{ if(currentPageIndex<totalPages-1){ currentPageIndex++; await renderCurrentPage(); } });
+  $('gotoPage').addEventListener('change',async()=>{ let n=parseInt($('gotoPage').value)||1; n=Math.max(1,Math.min(totalPages,n)); currentPageIndex=n-1; await renderCurrentPage(); });
+
+  document.addEventListener('keydown',e=>{
+    if(/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return;
+    if((e.key==='Delete'||e.key==='Backspace')&&selectedId){ e.preventDefault(); pushHistory(); deleteImage(selectedId); }
+    else if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'){ e.preventDefault(); $('undoBtn').click(); }
+    else if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='y'){ e.preventDefault(); $('redoBtn').click(); }
+  });
+
+  // stats
+  function updateStats(){
+    $('statPage').textContent=images.filter(im=>im.page===currentPageIndex).length;
+    $('statTotal').textContent=images.length;
+    $('statPages').textContent=new Set(images.map(im=>im.page)).size;
+  }
+
+  // thumbnails
+  async function buildThumbs(){
+    const wrap=$('thumbs'); wrap.innerHTML='';
+    for(let i=0;i<totalPages;i++){
+      const div=document.createElement('div'); div.className='aimg-thumb'; div.dataset.page=i;
+      div.innerHTML=`<span class="aimg-tn">${i+1}</span><span class="aimg-tdot"></span><canvas></canvas>`;
+      div.addEventListener('click',async()=>{ currentPageIndex=i; await renderCurrentPage(); });
+      wrap.appendChild(div);
+      const page=await pdfDocJs.getPage(i+1);
+      const vp=page.getViewport({scale:74/page.getViewport({scale:1}).width});
+      const c=div.querySelector('canvas'); c.width=vp.width; c.height=vp.height;
+      await page.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;
+    }
+    highlightThumb(); rebuildDots();
+  }
+  function highlightThumb(){ document.querySelectorAll('.aimg-thumb').forEach(t=>t.classList.toggle('active',+t.dataset.page===currentPageIndex)); }
+  function refreshThumbDot(pi){ const t=document.querySelector(`.aimg-thumb[data-page="${pi}"]`); if(t) t.classList.toggle('has-img', images.some(im=>im.page===pi)); }
+  function rebuildDots(){ for(let i=0;i<totalPages;i++) refreshThumbDot(i); }
+
+  // replace/remove
+  $('replaceBtn').addEventListener('click',()=>fileInput.click());
+  $('removeBtn').addEventListener('click',()=>{ currentFile=null; pdfDocJs=null; images=[]; fileInput.value='';
+    $('editorArea').style.display='none'; $('infoArea').style.display='none'; $('fileRow').style.display='none'; $('statusMsg').textContent=''; });
+
+  // ============ SAVE ============
+  $('saveBtn').addEventListener('click', async ()=>{
+    const status=$('statusMsg');
+    if(images.length===0){ status.textContent='⚠️ Add at least one image first.'; return; }
+    const t0=performance.now(); const sizeBefore=currentFile.size;
+    status.textContent='⏳ Building PDF…';
+    try{
+      const { PDFDocument, rgb, degrees } = PDFLib;
+      const bytes=await currentFile.arrayBuffer();
+      const pdfDoc=await PDFDocument.load(bytes);
+      const pages=pdfDoc.getPages();
+      // preserve array (z) order per page: images already in order
+      for(const im of images){
+        const page=pages[im.page]; if(!page) continue;
+        const drawn = await bakeTransform(im);   // {dataUrl,mime} — transform baked in if any
+        const ib=await fetch(drawn.dataUrl).then(r=>r.arrayBuffer());
+        const emb = drawn.mime==='png' ? await pdfDoc.embedPng(ib) : await pdfDoc.embedJpg(ib);
+        const ph=page.getHeight();
+        const y=ph-im.y-im.h;
+        page.drawImage(emb,{ x:im.x, y, width:im.w, height:im.h, opacity:im.opacity });
+        if(im.border>0){
+          const c=hexRgb(im.borderColor);
+          page.drawRectangle({ x:im.x, y, width:im.w, height:im.h, borderColor:rgb(c.r,c.g,c.b), borderWidth:im.border });
+        }
+      }
+      let finalBytes;
+      if($('flattenCheck').checked){
+        status.textContent='⏳ Flattening…';
+        const tmp=await pdfDoc.save();
+        finalBytes=await flattenToImages(tmp);
+      }else{
+        finalBytes=await pdfDoc.save();
+      }
+      const blob=new Blob([finalBytes],{type:'application/pdf'});
+      downloadBlob((currentFile.name.replace(/\.pdf$/i,''))+'-image.pdf', blob);
+      const secs=((performance.now()-t0)/1000).toFixed(1);
+      const pagesMod=new Set(images.map(im=>im.page)).size;
+      status.textContent=`✅ Added ${images.length} image(s) to ${pagesMod} page(s) in ${secs}s · ${formatBytes(sizeBefore)} → ${formatBytes(blob.size)}`;
+      if(window.premToast) premToast('PDF saved ✔');
+    }catch(err){ status.textContent='❌ Error: '+err.message; }
+  });
+
+  // bake rotation/flip into a canvas so pdf-lib gets an already-transformed image (axis-aligned box)
+  function loadImg(url){ return new Promise((res,rej)=>{ const i=new Image(); i.onload=()=>res(i); i.onerror=rej; i.src=url; }); }
+  async function bakeTransform(im){
+    if(!im.flipH && !im.flipV && (im.rot%360)===0) return {dataUrl:im.dataUrl, mime:im.mime};
+    const img=await loadImg(im.dataUrl);
+    const r=((im.rot%360)+360)%360;
+    const swap=(r===90||r===270);
+    const cw=swap?img.height:img.width, ch=swap?img.width:img.height;
+    const cv=document.createElement('canvas'); cv.width=cw; cv.height=ch;
+    const ctx=cv.getContext('2d');
+    ctx.translate(cw/2,ch/2); ctx.rotate(r*Math.PI/180); ctx.scale(im.flipH?-1:1, im.flipV?-1:1);
+    ctx.drawImage(img, -img.width/2, -img.height/2);
+    // PNG preserves transparency; keep JPGs as PNG after transform to avoid black corners on rotation
+    return {dataUrl:cv.toDataURL('image/png'), mime:'png'};
+  }
+
+  async function flattenToImages(pdfBytes){
+    const pdf=await pdfjsLib.getDocument({data:pdfBytes.slice(0)}).promise;
+    const out=await PDFLib.PDFDocument.create();
+    for(let i=1;i<=pdf.numPages;i++){
+      const page=await pdf.getPage(i); const vp=page.getViewport({scale:2});
+      const c=document.createElement('canvas'); c.width=vp.width; c.height=vp.height;
+      const ctx=c.getContext('2d'); ctx.fillStyle='#fff'; ctx.fillRect(0,0,c.width,c.height);
+      await page.render({canvasContext:ctx,viewport:vp}).promise;
+      const jpg=await fetch(c.toDataURL('image/jpeg',0.92)).then(r=>r.arrayBuffer());
+      const emb=await out.embedJpg(jpg); const np=out.addPage([vp.width,vp.height]);
+      np.drawImage(emb,{x:0,y:0,width:vp.width,height:vp.height});
+    }
+    return out.save();
+  }
+  function hexRgb(hex){ hex=hex.replace('#',''); const n=parseInt(hex,16); return {r:((n>>16)&255)/255,g:((n>>8)&255)/255,b:(n&255)/255}; }
+
+  // ============ FAQ ============
+  const FAQ=[
+    ['How do I add an image to a PDF?','Upload your PDF, then click the image drop zone or drag a PNG/JPG in. The image appears on the current page; drag and resize it into place, then click Save to download the finished PDF.'],
+    ['Are my files uploaded to a server?','No. Everything runs locally in your browser with pdf.js and pdf‑lib. Your PDF and images never leave your device, nothing is stored, and no signup is needed.'],
+    ['What image formats are supported?','PNG and JPG/JPEG. PNG transparency is preserved, so logos and signatures with transparent backgrounds sit cleanly on the page.'],
+    ['Can I add more than one image?','Yes. You can drop several images at once and add as many as you like across any pages. Each can be positioned and styled independently.'],
+    ['Can I put a logo on every page?','Yes. Select an image and use “Apply to pages” to place an identical copy on all, odd, even or a custom range of pages — ideal for logos and watermarks.'],
+    ['Can I make an image semi‑transparent?','Yes. The opacity slider lets you fade an image down to create a subtle watermark that sits behind the page content.'],
+    ['Can I rotate or flip an image?','Yes. Rotate left or right in 90° steps and flip horizontally or vertically — useful for correcting sideways scans and orienting signatures.'],
+    ['Does resizing keep the proportions?','Yes. Aspect‑ratio lock is on by default so images never stretch. Turn it off with the 🔒 Ratio button if you need to fit a specific box.'],
+    ['Can I add a border to an image?','Yes. Use the border controls to add a coloured frame of any thickness around a photo or stamp.'],
+    ['Can I align images precisely?','Yes. Alignment buttons snap an image to the left, centre, right, top, middle or bottom of the page for pixel‑accurate placement.'],
+    ['What if images overlap?','Layer controls let you bring an image to the front, send it to the back, or move it one step at a time so the right image shows on top.'],
+    ['Can I undo a mistake?','Yes. Full undo and redo cover every add, move, resize, transform and delete. You can also press Delete to remove the selected image.'],
+    ['Will adding images make the text unselectable?','No, by default the images are simply embedded and the page text stays selectable. Only if you tick “Flatten to image” does each page become a picture.'],
+    ['When should I use Flatten to image?','Use it when you want to lock every placement permanently or guarantee identical rendering everywhere. Note that it makes text non‑selectable and can increase file size.'],
+    ['Does it work with password‑protected PDFs?','Encrypted PDFs usually cannot be opened for editing. Remove the password in your PDF viewer first, then upload the unlocked file.'],
+    ['Is there a file size or page limit?','There is no fixed limit; it depends on your device memory. Large PDFs and high‑resolution images take longer because everything runs locally.'],
+    ['Does it work on mobile?','Yes. You can add, drag and resize images with touch, and the layout adapts to phones and tablets.'],
+    ['Will the image quality be reduced?','No. Images are embedded at full quality by default. Only the optional flatten step re‑renders pages as high‑resolution JPEGs.'],
+    ['Does the tool need the internet?','Only to load the page once. After that it runs entirely offline, which is ideal for adding logos or signatures to confidential documents.'],
+    ['Is this tool really free?','Yes. It is completely free with no watermark, no page limits, no account and no hidden charges.'],
+    ['Is my data safe?','Completely. Because nothing is uploaded, the documents and images you use never leave your browser and are discarded when you close the tab.']
+  ];
+  const faqList=$('faqList');
+  FAQ.forEach(([q,a])=>{ const d=document.createElement('details'); d.innerHTML='<summary>'+q+'</summary><p>'+a+'</p>'; faqList.appendChild(d); });
+  try{ $('faqSchema').textContent=JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:FAQ.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))}); }catch(e){}
+
+  // test hook
+  window.__aiHooks={ images:()=>images, addImage:(dataUrl,mime,page)=>{ images.push({id:idCounter++,page:page??currentPageIndex,x:40,y:40,w:100,h:60,dataUrl,mime:mime||'png',name:'test',natW:100,natH:60,fileSize:0,opacity:1,border:0,borderColor:'#000',lock:true,rot:0,flipH:false,flipV:false}); renderOverlay(); }, save:()=>$('saveBtn').click(), applyAll:()=>{ selectElement(images[images.length-1].id); $('scopeSel').value='all'; $('applyPages').click(); } };
+})();
 </script>
 </body>
 </html>
