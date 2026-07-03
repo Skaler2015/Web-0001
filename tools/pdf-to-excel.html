@@ -157,6 +157,7 @@
             <select id="ocrLang"><option value="eng">English</option><option value="hin">Hindi (हिन्दी)</option><option value="eng+hin">English + Hindi</option></select></div>
         </div>
         <div class="p2e-checkline">
+          <label><input type="checkbox" id="preserveFmt" checked> Match PDF look (borders, bold, colours)</label>
           <label><input type="checkbox" id="detectNumbers" checked> Detect numbers</label>
           <label><input type="checkbox" id="ignoreEmptyRows" checked> Ignore empty rows</label>
           <label><input type="checkbox" id="ignoreEmptyCols" checked> Ignore empty columns</label>
@@ -178,7 +179,7 @@
       </div>
 
       <p id="statusMsg" style="margin-top:12px;color:var(--text-dim);font-size:.9rem" role="status" aria-live="polite"></p>
-      <div class="limit-note">ℹ️ Tables are reconstructed from the position of the text on each page. Clearly-spaced tables convert very well; complex layouts (merged cells, nested or borderless multi-column tables) may need a quick tidy-up in Excel. For scanned PDFs (no selectable text), enable OCR above. See “Conversion Limitations” below.</div>
+      <div class="limit-note">ℹ️ Tables are reconstructed from the position of the text on each page. With <b>Match PDF look</b> on, the .xlsx keeps cell borders, bold, font size, text colour, header shading and alignment so it resembles the original. Clearly-spaced tables convert very well; complex layouts (merged cells, nested or borderless multi-column tables) may need a quick tidy-up. For scanned PDFs (no selectable text), enable OCR above. See “Conversion Limitations” below.</div>
     </div>
   </div>
 </div>
@@ -196,6 +197,7 @@
     <div class="p2e-fcard"><h4>🎯 Page ranges &amp; odd/even</h4><p>Convert all pages, only odd or even pages, or a custom range like 1-3,5 — handy for long reports.</p></div>
     <div class="p2e-fcard"><h4>🗃️ Four output formats</h4><p>Export as Excel (.xlsx), Excel 97–2003 (.xls), CSV (.csv) or OpenDocument (.ods) to fit whatever comes next.</p></div>
     <div class="p2e-fcard"><h4>🔎 Scanned-PDF OCR</h4><p>For image-only PDFs, built-in optical character recognition reads the table text in English, Hindi or both — no AI service.</p></div>
+    <div class="p2e-fcard"><h4>🎨 Match the PDF look</h4><p>Keeps cell borders, bold, font size, text colour, a shaded header row and alignment in the .xlsx, so the spreadsheet closely resembles the original table.</p></div>
     <div class="p2e-fcard"><h4>🧹 Tidy output</h4><p>Optionally drop empty rows and columns and auto-fit column widths so the spreadsheet is clean the moment it opens.</p></div>
     <div class="p2e-fcard"><h4>👁️ PDF &amp; table preview</h4><p>See the first page of the PDF next to the detected grid before you download, so there are no surprises.</p></div>
     <div class="p2e-fcard"><h4>🗜️ Batch &amp; ZIP</h4><p>Convert several PDFs at once and download them individually or bundled into a single ZIP archive.</p></div>
@@ -308,7 +310,7 @@
 <!-- Conversion limitations -->
 <div class="p2e-wrap">
   <h2 class="p2e-title">⚠️ Conversion Limitations</h2>
-  <p class="p2e-sub">Because it rebuilds tables from the position of the text, the output focuses on <b>data and grid structure</b>, not a pixel-perfect copy. Preserved: cell values, row and column arrangement of clearly-spaced tables, Unicode/Hindi text, detected numbers, and auto-fitted column widths. Simplified or not carried over: merged cells, cell borders, background colours, font family, size, colour, bold/italic/underline styling, exact number/date/currency formatting, images, charts, and nested or borderless multi-column tables (which may split imperfectly). Cell styling is not written because the conversion runs on the free, client-side spreadsheet engine. OCR accuracy depends on scan quality. For layout-critical or heavily merged tables, expect a quick tidy-up in Excel.</p>
+  <p class="p2e-sub">With <b>Match PDF look</b> enabled (default, for .xlsx output) the spreadsheet keeps a close visual match to the PDF: <b>cell borders, bold text, font size, text colour, header shading, numeric right-alignment, column widths and row heights</b> are all carried over. Because a PDF still stores positioned glyphs rather than a logical table, some things are approximated or not reproduced: <b>merged cells</b>, exact font family, background colours other than the header, cell-level number/date/currency <i>formatting codes</i>, images, charts, and nested or borderless multi-column tables (which may split imperfectly). Styling is written only to <b>.xlsx</b>; the .xls, .csv and .ods formats carry values without styling. OCR accuracy depends on scan quality. For heavily merged or layout-critical tables, expect a quick tidy-up in Excel.</p>
 </div>
 
 <!-- Troubleshooting -->
@@ -320,7 +322,7 @@
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx-js-style@1.2.0/dist/xlsx.bundle.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 <script src="../assets/common.js"></script>
@@ -402,10 +404,31 @@
     return s;
   }
 
-  // ---- position-based grid detection from a PDF text layer ----
-  function itemsToGrid(items){
+  function fontBold(it, styles){
+    const fam=(styles && styles[it.fontName] && styles[it.fontName].fontFamily) || it.fontName || '';
+    return /bold|black|heavy|semibold|-bd|medi/i.test(fam) || /bold/i.test(it.fontName||'');
+  }
+
+  // ---- read the fill colour active at each showText op (best-effort, for "match PDF look") ----
+  async function pageColors(page){
+    try{
+      const ops=await page.getOperatorList(); const OPS=pdfjsLib.OPS;
+      const hex=n=>('0'+Math.max(0,Math.min(255,Math.round(n))).toString(16)).slice(-2);
+      let cur='000000'; const out=[];
+      for(let i=0;i<ops.fnArray.length;i++){ const fn=ops.fnArray[i], a=ops.argsArray[i];
+        if(fn===OPS.setFillRGBColor){ let r=a[0],g=a[1],b=a[2]; if(r<=1&&g<=1&&b<=1){r*=255;g*=255;b*=255;} cur=hex(r)+hex(g)+hex(b); }
+        else if(fn===OPS.setFillGray){ let v=a[0]; if(v<=1) v*=255; cur=hex(v)+hex(v)+hex(v); }
+        else if(fn===OPS.setFillCMYKColor){ const c=a[0],m=a[1],y=a[2],k=a[3]; cur=hex(255*(1-c)*(1-k))+hex(255*(1-m)*(1-k))+hex(255*(1-y)*(1-k)); }
+        else if(fn===OPS.showText || fn===OPS.showSpacedText){ out.push(cur); }
+      }
+      return out;
+    }catch(e){ return null; }
+  }
+
+  // ---- position-based grid detection from a PDF text layer (returns values + per-cell style) ----
+  function itemsToGrid(items, styles){
     items=items.filter(it=>it.str!==undefined && String(it.str).trim().length);
-    if(!items.length) return [];
+    if(!items.length) return { grid:[], styles:[] };
     const medH=median(items.map(itemHeight))||10;
     const rowTol=Math.max(3, medH*0.6);
     // rows by Y (top to bottom)
@@ -424,14 +447,23 @@
     anchors.push(start);
     const assign=x=>{ let bi=0, bd=Infinity; for(let i=0;i<anchors.length;i++){ const d=Math.abs(x-anchors[i]); if(x>=anchors[i]-gapThresh*0.5 && d<bd){ bd=d; bi=i; } }
       if(bd===Infinity){ for(let i=0;i<anchors.length;i++){ const d=Math.abs(x-anchors[i]); if(d<bd){ bd=d; bi=i; } } } return bi; };
-    // build grid
-    const grid=rows.map(row=>{
+    // build value grid + parallel style grid
+    const grid=[]; const sgrid=[];
+    rows.forEach(row=>{
       const rowSorted=[...row].sort((a,b)=>a.transform[4]-b.transform[4]);
       const cells=new Array(anchors.length).fill('');
-      rowSorted.forEach(it=>{ const ci=assign(it.transform[4]); cells[ci]=cells[ci]?cells[ci]+' '+it.str:it.str; });
-      return cells.map(c=>c.replace(/\s+/g,' ').trim());
+      const cst=new Array(anchors.length).fill(null);
+      rowSorted.forEach(it=>{ const ci=assign(it.transform[4]);
+        cells[ci]=cells[ci]?cells[ci]+' '+it.str:it.str;
+        const st=cst[ci]||(cst[ci]={size:0,bold:false,color:null});
+        st.size=Math.max(st.size, Math.round(itemHeight(it)));
+        st.bold=st.bold||fontBold(it, styles);
+        if(it._color && (!st.color || st.color==='000000')) st.color=it._color;
+      });
+      grid.push(cells.map(c=>c.replace(/\s+/g,' ').trim()));
+      sgrid.push(cst);
     });
-    return grid;
+    return { grid, styles:sgrid };
   }
 
   // ---- OCR a scanned page into rows using word positions ----
@@ -468,11 +500,14 @@
       const page=await pdf.getPage(pi);
       const tc=await page.getTextContent();
       const textChars=tc.items.reduce((s,it)=>s+String(it.str).length,0);
-      let rows;
-      if(textChars<10 && opts.useOcr && window.Tesseract){ rows=await ocrRows(page, opts.ocrLang); }
-      else { rows=itemsToGrid(tc.items); }
-      if(opts.ignoreEmptyRows) rows=rows.filter(r=>r.some(c=>String(c).trim()));
-      pagesData.push({page:pi, rows});
+      let rows, srows;
+      if(textChars<10 && opts.useOcr && window.Tesseract){ rows=await ocrRows(page, opts.ocrLang); srows=rows.map(r=>r.map(()=>null)); }
+      else {
+        if(opts.preserveFmt){ const cols=await pageColors(page); if(cols){ const real=tc.items.filter(it=>it.str!==undefined && String(it.str).trim().length); if(cols.length===real.length) real.forEach((it,i)=>{ it._color=cols[i]; }); } }
+        const g=itemsToGrid(tc.items, tc.styles); rows=g.grid; srows=g.styles;
+      }
+      if(opts.ignoreEmptyRows){ const keep=rows.map(r=>r.some(c=>String(c).trim())); rows=rows.filter((r,i)=>keep[i]); srows=srows.filter((r,i)=>keep[i]); }
+      pagesData.push({page:pi, rows, styles:srows});
     }
     return { pagesData, numPages:pdf.numPages };
   }
@@ -484,6 +519,13 @@
     for(let c=0;c<ncols;c++){ if(grid.some(r=>String(r[c]!=null?r[c]:'').trim())) keep.push(c); }
     return grid.map(r=>keep.map(c=>r[c]!=null?r[c]:''));
   }
+  function dropEmptyColsPair(grid, sg){
+    if(!grid.length) return { grid, styles:sg };
+    const ncols=grid.reduce((m,r)=>Math.max(m,r.length),0);
+    const keep=[];
+    for(let c=0;c<ncols;c++){ if(grid.some(r=>String(r[c]!=null?r[c]:'').trim())) keep.push(c); }
+    return { grid:grid.map(r=>keep.map(c=>r[c]!=null?r[c]:'')), styles:sg.map(r=>keep.map(c=>r[c]!=null?r[c]:null)) };
+  }
   function colWidths(grid){
     const ncols=grid.reduce((m,r)=>Math.max(m,r.length),0);
     const w=[];
@@ -491,24 +533,55 @@
     return w;
   }
 
+  // ---- apply cell styling so the spreadsheet visually matches the PDF ----
+  function applyStyles(ws, vgrid, sg){
+    const B={style:'thin', color:{rgb:'D0D0D0'}};
+    const nrows=vgrid.length; const ncols=vgrid.reduce((m,r)=>Math.max(m,r.length),0);
+    const heights=[];
+    for(let r=0;r<nrows;r++){
+      let maxSz=11;
+      for(let c=0;c<ncols;c++){
+        const addr=XLSX.utils.encode_cell({r,c}); if(!ws[addr]) continue;
+        const st=(sg[r]&&sg[r][c])||null;
+        const v=vgrid[r][c];
+        const isNum=typeof v==='number';
+        const isHeader=r===0;
+        const sz=st&&st.size?Math.min(26,Math.max(8,st.size)):11;
+        maxSz=Math.max(maxSz,sz);
+        const s={
+          font:{ sz, bold: !!(st&&st.bold)||isHeader, color:{rgb:(st&&st.color)||'000000'} },
+          border:{ top:B, bottom:B, left:B, right:B },
+          alignment:{ horizontal:isNum?'right':(isHeader?'center':'left'), vertical:'center', wrapText:false }
+        };
+        if(isHeader) s.fill={ patternType:'solid', fgColor:{rgb:'ECEAF6'} };
+        ws[addr].s=s;
+      }
+      heights.push({hpt:Math.min(40, Math.round(maxSz*1.5))});
+    }
+    ws['!rows']=heights;
+  }
+
   // ---- build a SheetJS workbook ----
   function buildWorkbook(pagesData, opts){
     opts=opts||{};
     const wb=XLSX.utils.book_new();
-    const makeSheet=rows=>{
-      let grid=rows.map(r=>r.map(c=>coerceCell(c, opts.detectNumbers)));
-      if(opts.ignoreEmptyCols) grid=dropEmptyCols(grid);
-      if(!grid.length) grid=[['']];
-      const ws=XLSX.utils.aoa_to_sheet(grid);
-      if(opts.autoFit) ws['!cols']=colWidths(grid);
+    const makeSheet=(rows, srows)=>{
+      let grid=rows.map(r=>r.slice());
+      let sg=(srows||rows.map(r=>r.map(()=>null))).map(r=>r.slice());
+      if(opts.ignoreEmptyCols){ const p=dropEmptyColsPair(grid, sg); grid=p.grid; sg=p.styles; }
+      if(!grid.length){ grid=[['']]; sg=[[null]]; }
+      const vgrid=grid.map(r=>r.map(c=>coerceCell(c, opts.detectNumbers)));
+      const ws=XLSX.utils.aoa_to_sheet(vgrid);
+      if(opts.autoFit) ws['!cols']=colWidths(vgrid);
+      if(opts.preserveFmt) applyStyles(ws, vgrid, sg);
       return ws;
     };
     if(opts.sheetMode==='perpage'){
-      pagesData.forEach(pd=>{ const ws=makeSheet(pd.rows); let name=('Page '+pd.page).slice(0,31); XLSX.utils.book_append_sheet(wb, ws, name); });
+      pagesData.forEach(pd=>{ const ws=makeSheet(pd.rows, pd.styles); let name=('Page '+pd.page).slice(0,31); XLSX.utils.book_append_sheet(wb, ws, name); });
       if(!wb.SheetNames.length) XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet([['']]), 'Sheet1');
     } else {
-      let all=[]; pagesData.forEach((pd,i)=>{ all=all.concat(pd.rows); });
-      const ws=makeSheet(all); XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+      let all=[], allS=[]; pagesData.forEach(pd=>{ all=all.concat(pd.rows); allS=allS.concat(pd.styles||pd.rows.map(r=>r.map(()=>null))); });
+      const ws=makeSheet(all, allS); XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
     }
     return wb;
   }
@@ -524,7 +597,7 @@
   }
   const EXT={xlsx:'xlsx', xls:'xls', csv:'csv', ods:'ods'};
 
-  window.__p2eHooks={ extractTables, itemsToGrid, ocrRows, buildWorkbook, workbookBlob, parseRange, coerceCell, dropEmptyCols };
+  window.__p2eHooks={ extractTables, itemsToGrid, ocrRows, buildWorkbook, workbookBlob, parseRange, coerceCell, dropEmptyCols, pageColors, applyStyles };
 
   // ---- preview ----
   async function preview(file, pagesData){
@@ -551,7 +624,8 @@
     const base={
       sheetMode:$('sheetMode').value, detectNumbers:$('detectNumbers').checked,
       ignoreEmptyRows:$('ignoreEmptyRows').checked, ignoreEmptyCols:$('ignoreEmptyCols').checked,
-      autoFit:$('autoFit').checked, useOcr:$('useOcr').checked, ocrLang:$('ocrLang').value,
+      autoFit:$('autoFit').checked, preserveFmt:$('preserveFmt').checked && fmt==='xlsx',
+      useOcr:$('useOcr').checked, ocrLang:$('ocrLang').value,
       pageMode:$('pageMode').value, pageRange:$('pageRange').value,
       isCancelled:()=>cancelFlag
     };
@@ -600,7 +674,8 @@
     ['Can I put each page on its own sheet?','Yes. Choose “One sheet per page” to keep pages separate, or “All pages in one sheet” to stack a table that runs across several pages into one continuous sheet.'],
     ['Can I convert only some pages?','Yes. Choose all pages, only odd or even pages, or type a custom range like 1-3,5 to convert just the part of the document you need.'],
     ['Does it preserve Hindi and other Unicode text?','Yes. For text PDFs, Unicode content including Hindi is preserved exactly. For scans, choose the Hindi (or English + Hindi) OCR language.'],
-    ['Will it keep colours, borders, fonts and merged cells?','No. It rebuilds the data and grid, but cell styling — colours, borders, fonts, bold and merged cells — is not reproduced, because the conversion uses the free client-side spreadsheet engine. See Conversion Limitations.'],
+    ['Will it keep colours, borders, fonts and bold?','Mostly yes, for .xlsx output. With “Match PDF look” on, cell borders, bold text, font size, text colour, header shading and alignment are carried over so the sheet resembles the PDF. Merged cells and exact font family are not reproduced. See Conversion Limitations.'],
+    ['Can it make the Excel look the same as the PDF?','As close as a real spreadsheet can. Keep “Match PDF look” ticked and export to .xlsx: the tool adds cell borders, bold, font sizes, text colour, a shaded header row and proper alignment. It is a faithful, editable table rather than a pixel-perfect image of the page.'],
     ['Can I convert more than one PDF at once?','Yes. Add several PDFs and the tool converts them one after another, downloading each spreadsheet or bundling them into a single ZIP.'],
     ['Why did I get “No table data found”?','Your PDF is probably a scan with no text layer. Enable OCR and choose the language, then convert again.'],
     ['Why are some columns merged or split wrongly?','Borderless tables or uneven spacing can confuse column detection. Try converting to CSV to see the raw split, or adjust the columns in Excel — it is usually a quick fix.'],
