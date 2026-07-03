@@ -48,7 +48,9 @@
 .emi-ctrl .emi-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:6px}
 .emi-ctrl label{font-size:.85rem;color:var(--text-dim)}
 .emi-val{display:flex;align-items:center;gap:6px}
-.emi-val input{width:130px;text-align:right;padding:6px 10px;font-size:.95rem;font-weight:700}
+.emi-val input{width:150px;max-width:44vw;text-align:right;padding:6px 10px;font-size:.95rem;font-weight:700}
+.emi-val input::-webkit-outer-spin-button,.emi-val input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.emi-val input[type=number]{-moz-appearance:textfield;appearance:textfield}
 .emi-val .u{color:var(--text-dim);font-size:.8rem}
 input[type=range]{width:100%;accent-color:#a78bfa;height:6px;cursor:pointer}
 .emi-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -65,12 +67,12 @@ input[type=range]{width:100%;accent-color:#a78bfa;height:6px;cursor:pointer}
 .emi-grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
 @media(max-width:520px){.emi-grid3{grid-template-columns:1fr 1fr}}
 
-.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:4px}
-.stat-box{background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.2);border-radius:12px;padding:14px;text-align:center}
-.stat-box .num{font-size:1.25rem;font-weight:800;color:#c4b5fd}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:4px}
+.stat-box{background:rgba(167,139,250,.08);border:1px solid rgba(167,139,250,.2);border-radius:12px;padding:12px 10px;text-align:center;min-width:0}
+.stat-box .num{font-size:clamp(.95rem,2.3vw,1.2rem);font-weight:800;color:#c4b5fd;line-height:1.15;overflow-wrap:anywhere;word-break:break-word}
 .stat-box .lbl{font-size:.76rem;color:var(--text-dim);margin-top:3px}
 .stat-box.alt{background:rgba(255,255,255,.03);border-color:var(--border,rgba(255,255,255,.1))}
-.stat-box.alt .num{color:var(--text);font-size:1.05rem}
+.stat-box.alt .num{color:var(--text);font-size:clamp(.85rem,2vw,1.02rem)}
 
 .emi-charts{display:grid;grid-template-columns:180px 1fr;gap:16px;margin-top:18px;align-items:center}
 @media(max-width:560px){.emi-charts{grid-template-columns:1fr}}
