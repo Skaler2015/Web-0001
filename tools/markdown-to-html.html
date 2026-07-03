@@ -4,38 +4,138 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
+<meta name="description" content="Free online Markdown to HTML Converter — split-screen live editor with GitHub-Flavored Markdown, tables, task lists, code syntax highlighting, footnotes, emoji, super/subscript and optional KaTeX math. Beautify/minify/validate HTML, device previews, stats and export to HTML, PDF, DOC, TXT and Markdown. 100% private, sanitized, works in your browser.">
+<meta name="keywords" content="markdown to html, md to html converter, github flavored markdown, markdown editor, markdown preview, markdown syntax highlighting, readme to html, markdown table, convert markdown online">
 <link rel="canonical" href="https://apnesoftware.com/tools/markdown-to-html.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Markdown to HTML Converter | ApneSoftware">
-<meta property="og:description" content="Convert Markdown to clean HTML. Free online tool — no signup required.">
+<meta property="og:title" content="Markdown to HTML Converter — Live Editor, GFM, Syntax Highlighting | ApneSoftware">
+<meta property="og:description" content="Convert Markdown to clean, safe HTML with a split-screen live editor, GitHub-Flavored Markdown, code highlighting, stats and export to HTML/PDF/DOC. Free, private, browser-based.">
 <meta property="og:url" content="https://apnesoftware.com/tools/markdown-to-html.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Markdown to HTML Converter | ApneSoftware">
-<meta name="twitter:description" content="Convert Markdown to clean HTML. Free online tool — no signup required.">
+<meta name="twitter:title" content="Markdown to HTML Converter — Live Editor, GFM, Syntax Highlighting | ApneSoftware">
+<meta name="twitter:description" content="Split-screen Markdown editor with GFM, code highlighting, stats and export to HTML/PDF/DOC/Markdown. Safe, private and free.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Markdown to HTML","description":"Convert Markdown to clean HTML. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/markdown-to-html.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Markdown to HTML Converter","description":"Professional Markdown to HTML converter with a split-screen live editor, GitHub-Flavored Markdown (tables, task lists, autolinks, strikethrough), code syntax highlighting, footnotes, emoji, super/subscript and optional KaTeX math, plus HTML beautify/minify/validate, device previews, document statistics and export to HTML, PDF, DOC, TXT and Markdown. Output is sanitised and everything runs in the browser.","url":"https://apnesoftware.com/tools/markdown-to-html.html","applicationCategory":"DeveloperApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"featureList":["GitHub-Flavored Markdown","Live split-screen preview","Syntax highlighting","Footnotes, emoji, super/subscript","HTML beautify/minify/validate","Device previews","Document statistics","Export HTML/PDF/DOC/TXT/Markdown","Sanitised output"],"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Markdown to HTML Converter — Live Editor and Preview","url":"https://apnesoftware.com/tools/markdown-to-html.html","description":"Private, browser-based Markdown to HTML converter with a live split-screen editor, GFM, syntax highlighting, statistics and exports.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apnesoftware.com/"},{"@type":"ListItem","position":2,"name":"Text Tools","item":"https://apnesoftware.com/index.html"},{"@type":"ListItem","position":3,"name":"Markdown to HTML Converter","item":"https://apnesoftware.com/tools/markdown-to-html.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to convert Markdown to HTML","description":"Turn Markdown into clean HTML in a few steps.","step":[{"@type":"HowToStep","name":"Write or paste Markdown","text":"Type Markdown in the editor or upload a .md file."},{"@type":"HowToStep","name":"See the live preview","text":"The rendered HTML updates instantly beside the editor."},{"@type":"HowToStep","name":"Get the HTML","text":"Switch to the HTML source tab to copy or beautify the code."},{"@type":"HowToStep","name":"Export","text":"Download as HTML, PDF, DOC, TXT or Markdown."}]}
+</script>
+<script type="application/ld+json" id="faqSchema">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}
 </script>
 <meta name="color-scheme" content="dark">
-<title>Markdown to HTML Converter | ApneSoftware</title>
+<title>Markdown to HTML Converter — Live Editor, GFM, Syntax Highlighting | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-  #htmlOutput{font-family:'Consolas','Courier New',monospace;font-size:.85rem}
-  .preview-box{
-    background:#fff;color:#1a1a1a;border:1px solid var(--border);border-radius:10px;
-    padding:18px;margin-top:10px;max-height:420px;overflow-y:auto;font-size:.92rem;line-height:1.6;
-  }
-  .preview-box h1,.preview-box h2,.preview-box h3{margin:.6em 0 .3em}
-  .preview-box pre{background:#f4f4f4;padding:10px;border-radius:6px;overflow-x:auto}
-  .preview-box code{background:#f4f4f4;padding:1px 5px;border-radius:4px}
-  .preview-box blockquote{border-left:3px solid #ccc;padding-left:12px;color:#555}
-  .preview-box table{border-collapse:collapse}
-  .preview-box th,.preview-box td{border:1px solid #ddd;padding:6px 10px}
-  .tab-row{display:flex;gap:8px;margin:14px 0 8px}
-  .tab-btn{padding:7px 14px;border-radius:7px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-dim);font-size:.85rem;cursor:pointer}
-  .tab-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+/* ===== Markdown to HTML — scoped md- styles ===== */
+.md-crumb{font-size:.78rem;color:var(--text-dim);margin-bottom:6px}
+.md-crumb a{color:#c4b5fd;text-decoration:none}
+.md-crumb a:hover{text-decoration:underline}
+.md-btn{background:rgba(167,139,250,.14);border:1px solid rgba(167,139,250,.34);color:#d6cbff;border-radius:9px;padding:8px 12px;font-size:.82rem;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.15s}
+.md-btn:hover{background:rgba(167,139,250,.24)}
+.md-btn.primary{background:linear-gradient(90deg,#7c3aed,#a78bfa);border-color:transparent;color:#fff;font-weight:600}
+.md-btn:focus-visible{outline:2px solid #a78bfa;outline-offset:2px}
+.md-btn.sm{padding:6px 9px;font-size:.76rem}
+.md-toolbar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:12px}
+.md-fbtn{background:rgba(255,255,255,.05);border:1px solid var(--border,rgba(255,255,255,.12));color:var(--text);border-radius:7px;width:34px;height:32px;cursor:pointer;font-size:.85rem;display:inline-flex;align-items:center;justify-content:center}
+.md-fbtn:hover{background:rgba(167,139,250,.2)}
+.md-sep{width:1px;height:22px;background:var(--border,rgba(255,255,255,.14));margin:0 4px}
+.md-tb-right{margin-left:auto;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.md-sel{background:rgba(255,255,255,.05);border:1px solid var(--border,rgba(255,255,255,.14));color:var(--text);border-radius:8px;padding:6px 9px;font-size:.8rem}
+.md-check{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;color:var(--text);cursor:pointer}
+.md-check input{width:auto}
+
+.md-searchbar{display:none;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.md-searchbar.on{display:flex}
+.md-searchbar input{background:rgba(255,255,255,.05);border:1px solid var(--border,rgba(255,255,255,.14));color:var(--text);border-radius:8px;padding:7px 10px;font-size:.82rem}
+
+.md-split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.md-split.editor-only{grid-template-columns:1fr}
+.md-split.preview-only{grid-template-columns:1fr}
+.md-split.editor-only .md-pane-preview{display:none}
+.md-split.preview-only .md-pane-editor{display:none}
+@media(max-width:820px){.md-split{grid-template-columns:1fr}}
+.md-pane{display:flex;flex-direction:column;min-width:0}
+.md-pane h3{font-size:.74rem;color:var(--text-dim);margin:0 0 6px;text-transform:uppercase;letter-spacing:.05em;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.md-edbox{display:flex;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:10px;overflow:hidden;background:var(--surface-2,rgba(255,255,255,.05));flex:1}
+.md-gutter{flex:0 0 auto;padding:12px 6px;text-align:right;color:var(--text-dim);font-family:ui-monospace,monospace;font-size:.82rem;line-height:1.6;background:rgba(255,255,255,.03);user-select:none;overflow:hidden;min-width:32px}
+.md-edbox textarea{flex:1;min-width:0;background:none;border:none;color:var(--text);font-family:ui-monospace,'Consolas',monospace;font-size:.86rem;line-height:1.6;padding:12px;resize:vertical;min-height:360px;white-space:pre;overflow-wrap:normal}
+.md-edbox textarea:focus{outline:none}
+
+.tab-row{display:flex;gap:8px;margin-bottom:8px}
+.tab-btn{padding:6px 13px;border-radius:8px;border:1px solid var(--border,rgba(255,255,255,.12));background:rgba(255,255,255,.04);color:var(--text-dim);font-size:.8rem;cursor:pointer}
+.tab-btn.active{background:linear-gradient(90deg,#7c3aed,#a78bfa);color:#fff;border-color:transparent;font-weight:600}
+.preview-wrap{flex:1;overflow:auto;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:10px;background:#0d1117;display:flex;justify-content:center}
+.preview-box{background:#fff;color:#1a1a1a;padding:22px;min-height:360px;width:100%;font-size:.93rem;line-height:1.65;transition:max-width .2s}
+.preview-box.dev-tablet{max-width:768px}.preview-box.dev-mobile{max-width:390px}
+.preview-box.theme-dark{background:#0d1117;color:#c9d1d9}
+.preview-box.theme-github{background:#fff;color:#1f2328}
+.preview-box.theme-vscode{background:#1e1e1e;color:#d4d4d4}
+.preview-box h1,.preview-box h2,.preview-box h3,.preview-box h4{margin:.7em 0 .35em;line-height:1.25}
+.preview-box h1{border-bottom:1px solid rgba(128,128,128,.3);padding-bottom:.2em}
+.preview-box h2{border-bottom:1px solid rgba(128,128,128,.2);padding-bottom:.2em}
+.preview-box p{margin:.5em 0}
+.preview-box pre{background:#161b22;color:#c9d1d9;padding:12px 14px;border-radius:8px;overflow-x:auto;font-size:.85rem}
+.preview-box code{background:rgba(128,128,128,.18);padding:1px 5px;border-radius:4px;font-size:.9em;font-family:ui-monospace,monospace}
+.preview-box pre code{background:none;padding:0}
+.preview-box blockquote{border-left:3px solid #a78bfa;padding-left:14px;color:inherit;opacity:.85;margin:.6em 0}
+.preview-box table{border-collapse:collapse;margin:.6em 0;display:block;overflow-x:auto}
+.preview-box th,.preview-box td{border:1px solid rgba(128,128,128,.35);padding:6px 11px}
+.preview-box th{background:rgba(128,128,128,.15)}
+.preview-box a{color:#7c3aed}.preview-box.theme-dark a,.preview-box.theme-vscode a{color:#a78bfa}
+.preview-box img{max-width:100%}
+.preview-box ul,.preview-box ol{padding-left:1.5em;margin:.4em 0}
+.preview-box input[type=checkbox]{margin-right:6px}
+.preview-box hr{border:none;border-top:1px solid rgba(128,128,128,.3);margin:1em 0}
+.preview-box .footnotes{font-size:.85em;opacity:.85;border-top:1px solid rgba(128,128,128,.3);margin-top:1.5em;padding-top:.5em}
+#htmlOutput{width:100%;box-sizing:border-box;background:#0d1117;color:#c9d1d9;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:10px;font-family:ui-monospace,'Consolas',monospace;font-size:.82rem;line-height:1.55;padding:12px;min-height:360px;resize:vertical}
+
+.md-statbar{display:flex;flex-wrap:wrap;gap:6px 14px;margin:12px 0;font-size:.78rem;color:var(--text-dim)}
+.md-statbar b{color:#c4b5fd;font-weight:700}
+.md-export{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.md-note{background:rgba(124,92,252,.08);border:1px solid rgba(124,92,252,.25);border-radius:8px;padding:12px 14px;font-size:.84rem;color:var(--text-dim);margin-top:16px;line-height:1.6}
+.md-note b{color:#c4b5fd}
+.md-fullscreen{position:fixed;inset:0;z-index:9999;background:var(--bg,#0d0621);overflow:auto;padding:18px}
+
+/* below-tool */
+.md-wrap{margin:26px 0}
+.md-title{font-size:1.35rem;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+.md-feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.md-fcard{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:14px;padding:16px}
+.md-fcard h4{margin:0 0 6px;font-size:.98rem;display:flex;align-items:center;gap:8px}
+.md-fcard p{margin:0;font-size:.86rem;color:var(--text-dim);line-height:1.55}
+.md-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.md-rel{display:block;text-decoration:none;background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:14px;transition:.15s;color:var(--text)}
+.md-rel:hover{border-color:#a78bfa;background:rgba(167,139,250,.1);transform:translateY(-2px)}
+.md-rel b{display:block;font-size:.92rem;margin-bottom:3px}
+.md-rel span{font-size:.8rem;color:var(--text-dim);line-height:1.45}
+.md-prose p,.md-prose li{color:var(--text-dim);line-height:1.75;font-size:.92rem}
+.md-prose h3{font-size:1.02rem;margin:18px 0 8px}
+.md-tscroll{overflow:auto;border-radius:10px}
+table.md-table{border-collapse:collapse;font-size:.85rem;width:100%}
+table.md-table th,table.md-table td{border:1px solid var(--border,rgba(255,255,255,.12));padding:7px 10px;text-align:left;color:var(--text)}
+table.md-table th{background:rgba(167,139,250,.14);color:#fff;font-weight:600}
+.md-faq details{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:0 16px;margin-bottom:10px}
+.md-faq summary{cursor:pointer;padding:14px 0;font-weight:600;font-size:.92rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.md-faq summary::-webkit-details-marker{display:none}
+.md-faq summary::after{content:'+';font-size:1.3rem;color:#a78bfa;flex:0 0 auto}
+.md-faq details[open] summary::after{content:'−'}
+.md-faq details p{margin:0 0 14px;font-size:.87rem;color:var(--text-dim);line-height:1.65}
+.md-steps{list-style:none;counter-reset:s;padding:0;margin:0;display:grid;gap:12px}
+.md-steps li{counter-increment:s;position:relative;padding-left:46px;font-size:.9rem;color:var(--text-dim);line-height:1.6}
+.md-steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:32px;height:32px;border-radius:9px;background:rgba(167,139,250,.18);color:#c4b5fd;font-weight:700;display:grid;place-items:center}
+.md-steps li b{color:var(--text)}
+@media (prefers-contrast:more){.md-prose p,.md-prose li{color:#fff}}
+@media print{ .site-header,.md-toolbar,.md-pane-editor,.tab-row,.md-statbar,.md-export,.md-wrap,footer{display:none!important} .md-split{grid-template-columns:1fr} .preview-wrap{border:none;background:#fff} body{background:#fff} }
 </style>
 </head>
 <body>
@@ -48,115 +148,457 @@
 
 <div class="container">
   <div class="tool-header">
+    <nav class="md-crumb" aria-label="Breadcrumb"><a href="../index.html">Home</a> › <a href="../index.html">Text Tools</a> › <span>Markdown to HTML Converter</span></nav>
     <h1>📑 Markdown to HTML Converter</h1>
-    <p>Convert Markdown into clean HTML, with a live preview as you type.</p>
+    <p>Convert Markdown into clean, safe HTML with a <b>split-screen live editor</b> — GitHub-Flavored Markdown, tables, task lists, code <b>syntax highlighting</b>, footnotes, emoji and optional math. Beautify/minify/validate the HTML, preview on device sizes, and export to HTML, PDF, DOC, TXT or Markdown. 100% private and sanitised in your browser.</p>
   </div>
 
-  <div class="panel">
-    <div class="field">
-      <label for="mdInput">Markdown source</label>
-      <textarea id="mdInput" style="min-height:220px" placeholder="# Hello World
-
-This is **bold**, this is *italic*, and here's a [link](https://example.com).
-
-- item one
-- item two"></textarea>
-    </div>
-
-    <div class="btn-row">
-      <button class="btn" id="convertBtn">✨ Convert</button>
-      <button class="btn secondary" id="clearBtn">🗑️ Clear</button>
-    </div>
-
-    <div class="tab-row">
-      <button class="tab-btn active" data-tab="preview">👁️ Preview</button>
-      <button class="tab-btn" data-tab="html">{ } HTML Source</button>
-    </div>
-
-    <div id="previewTab"><div class="preview-box" id="previewBox">Your rendered HTML will appear here.</div></div>
-    <div id="htmlTab" style="display:none">
-      <textarea id="htmlOutput" readonly style="min-height:220px"></textarea>
-      <div class="btn-row">
-        <button class="btn secondary" id="copyBtn">📋 Copy HTML</button>
-        <button class="btn secondary" id="downloadBtn">⬇️ Download .html</button>
+  <div class="panel" id="mainPanel">
+    <div class="md-toolbar" id="fmtBar">
+      <button class="md-fbtn" type="button" data-ins="bold" title="Bold (Ctrl+B)"><b>B</b></button>
+      <button class="md-fbtn" type="button" data-ins="italic" title="Italic (Ctrl+I)"><i>I</i></button>
+      <button class="md-fbtn" type="button" data-ins="strike" title="Strikethrough">S̶</button>
+      <button class="md-fbtn" type="button" data-ins="h1" title="Heading">H</button>
+      <span class="md-sep"></span>
+      <button class="md-fbtn" type="button" data-ins="link" title="Link">🔗</button>
+      <button class="md-fbtn" type="button" data-ins="image" title="Image">🖼️</button>
+      <button class="md-fbtn" type="button" data-ins="code" title="Inline code">&lt;/&gt;</button>
+      <button class="md-fbtn" type="button" data-ins="codeblock" title="Code block">{ }</button>
+      <button class="md-fbtn" type="button" data-ins="quote" title="Quote">❝</button>
+      <button class="md-fbtn" type="button" data-ins="ul" title="Bullet list">•</button>
+      <button class="md-fbtn" type="button" data-ins="ol" title="Numbered list">1.</button>
+      <button class="md-fbtn" type="button" data-ins="task" title="Task list">☑</button>
+      <button class="md-fbtn" type="button" data-ins="table" title="Table">▦</button>
+      <button class="md-fbtn" type="button" data-ins="hr" title="Divider">―</button>
+      <div class="md-tb-right">
+        <div class="tab-row" style="margin:0" role="group" aria-label="Layout">
+          <button class="tab-btn active" type="button" id="viewSplit">Split</button>
+          <button class="tab-btn" type="button" id="viewEditor">Editor</button>
+          <button class="tab-btn" type="button" id="viewPreview">Preview</button>
+        </div>
+        <select class="md-sel" id="themeSel" aria-label="Preview theme"><option value="light">Light</option><option value="dark">Dark</option><option value="github" selected>GitHub</option><option value="vscode">VS Code</option></select>
+        <select class="md-sel" id="deviceSel" aria-label="Preview device"><option value="desktop">🖥️ Desktop</option><option value="tablet">📱 Tablet</option><option value="mobile">📲 Mobile</option></select>
+        <button class="md-btn sm" type="button" id="searchToggle">🔎 Find</button>
+        <button class="md-btn sm" type="button" id="fullscreenBtn">⛶ Fullscreen</button>
       </div>
     </div>
+
+    <div class="md-searchbar" id="searchBar">
+      <input type="text" id="findInput" placeholder="Find…" aria-label="Find text">
+      <input type="text" id="replaceInput" placeholder="Replace with…" aria-label="Replace text">
+      <button class="md-btn sm" type="button" id="replaceOne">Replace</button>
+      <button class="md-btn sm" type="button" id="replaceAll">Replace all</button>
+    </div>
+
+    <div class="md-split" id="splitWrap">
+      <div class="md-pane md-pane-editor">
+        <h3><span>Markdown source</span>
+          <span><label class="md-btn sm" style="cursor:pointer">📁 Upload<input type="file" id="fileInput" accept=".md,.markdown,.txt,.mdown,.mkd" style="display:none"></label></span>
+        </h3>
+        <div class="md-edbox"><div class="md-gutter" id="gutter">1</div><textarea id="mdInput" spellcheck="false" placeholder="# Hello World&#10;&#10;This is **bold**, *italic*, ~~strike~~ and a [link](https://example.com).&#10;&#10;- item one&#10;- [x] done task&#10;&#10;\`\`\`js&#10;console.log('hi');&#10;\`\`\`" aria-label="Markdown source"></textarea></div>
+      </div>
+      <div class="md-pane md-pane-preview">
+        <div class="tab-row">
+          <button class="tab-btn active" type="button" data-tab="preview">👁️ Preview</button>
+          <button class="tab-btn" type="button" data-tab="html">{ } HTML Source</button>
+        </div>
+        <div id="previewTab" class="preview-wrap"><div class="preview-box theme-github" id="previewBox">Your rendered HTML will appear here.</div></div>
+        <div id="htmlTab" style="display:none;flex:1;flex-direction:column">
+          <textarea id="htmlOutput" readonly aria-label="HTML source"></textarea>
+          <div class="md-export">
+            <button class="md-btn sm" id="copyBtn" type="button">📋 Copy HTML</button>
+            <button class="md-btn sm" id="beautifyBtn" type="button">✨ Beautify</button>
+            <button class="md-btn sm" id="minifyBtn" type="button">🗜️ Minify</button>
+            <button class="md-btn sm" id="validateBtn" type="button">✅ Validate</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="md-statbar" id="statBar">
+      <span><b id="stWords">0</b> words</span><span><b id="stChars">0</b> chars</span><span><b id="stLines">0</b> lines</span>
+      <span><b id="stRead">0</b> min read</span><span><b id="stHead">0</b> headings</span><span><b id="stLinks">0</b> links</span>
+      <span><b id="stImages">0</b> images</span><span><b id="stTables">0</b> tables</span><span><b id="stCode">0</b> code blocks</span>
+    </div>
+
+    <div class="md-toolbar" style="margin-bottom:0">
+      <button class="md-btn primary" id="convertBtn" type="button">✨ Convert</button>
+      <button class="md-btn" id="clearBtn" type="button">🗑️ Clear</button>
+      <button class="md-btn" id="sampleBtn" type="button">📄 Load example</button>
+      <label class="md-check"><input type="checkbox" id="optGfm" checked> GFM</label>
+      <label class="md-check"><input type="checkbox" id="optBreaks"> Line breaks</label>
+      <label class="md-check"><input type="checkbox" id="optHl" checked> Highlight code</label>
+      <label class="md-check"><input type="checkbox" id="optMath"> Math (KaTeX)</label>
+      <div class="md-tb-right">
+        <span class="md-crumb" style="margin:0">Export:</span>
+        <button class="md-btn sm" id="downloadBtn" type="button">HTML</button>
+        <button class="md-btn sm" id="expMd" type="button">MD</button>
+        <button class="md-btn sm" id="expTxt" type="button">TXT</button>
+        <button class="md-btn sm" id="expDoc" type="button">DOC</button>
+        <button class="md-btn sm" id="expPdf" type="button">PDF</button>
+      </div>
+    </div>
+
+    <div class="md-note">🔒 <b>Safe &amp; private:</b> the generated HTML is sanitised with DOMPurify to strip unsafe scripts, and everything is converted in your browser — nothing is uploaded, and your draft auto-saves only to your device.</div>
   </div>
 </div>
 
+<!-- ===================== BELOW-TOOL CONTENT ===================== -->
+<div class="container">
 
-<div class="info-wrap">
-  <div class="info-section">
-    <div class="info-block">
-      <h2>ℹ️ About This Tool</h2>
-      <p>This tool converts Markdown syntax into HTML — useful for blog posts, README files, or anywhere you need to publish Markdown content as a web page. The output HTML is sanitized to remove unsafe scripts.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Type or paste your Markdown into the box.</li>
-        <li>Click Convert to see a live preview.</li>
-        <li>Switch to the HTML Source tab to copy or download the generated HTML.</li>
-      </ol>
-    </div>
-    <hr class="info-divider">
-    <div class="info-block">
-      <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>यह टूल Markdown सिंटैक्स को HTML में बदल देता है — ब्लॉग पोस्ट, README फाइल या कहीं भी Markdown कंटेंट को वेब पेज की तरह पब्लिश करने के लिए उपयोगी। आउटपुट HTML को सुरक्षित बनाने के लिए सैनिटाइज़ किया जाता है।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>अपना Markdown टाइप या पेस्ट करें।</li>
-        <li>Convert बटन दबाकर लाइव प्रीव्यू देखें।</li>
-        <li>HTML Source टैब में जाकर HTML कॉपी या डाउनलोड करें।</li>
-      </ol>
-    </div>
+<!-- Key Features -->
+<section class="md-wrap">
+  <h2 class="md-title">✨ Key Features</h2>
+  <div class="md-feat-grid">
+    <div class="md-fcard"><h4>⚡ Live Split-Screen</h4><p>Write Markdown on the left and see clean HTML render instantly on the right.</p></div>
+    <div class="md-fcard"><h4>🐙 GitHub-Flavored Markdown</h4><p>Tables, task lists, auto-links and strikethrough, exactly like GitHub renders them.</p></div>
+    <div class="md-fcard"><h4>🎨 Syntax Highlighting</h4><p>Fenced code blocks are highlighted for HTML, CSS, JS, Python, SQL, JSON and many more.</p></div>
+    <div class="md-fcard"><h4>➕ Rich Extras</h4><p>Footnotes, emoji shortcodes, superscript/subscript and optional KaTeX math.</p></div>
+    <div class="md-fcard"><h4>🧰 Formatting Toolbar</h4><p>One-click bold, italic, headings, links, code, lists, tables and more, with shortcuts.</p></div>
+    <div class="md-fcard"><h4>🔢 Editor Power</h4><p>Line numbers, find &amp; replace, fullscreen, file upload and undo/redo.</p></div>
+    <div class="md-fcard"><h4>📱 Device Previews</h4><p>Preview your HTML at desktop, tablet and mobile widths with light/dark/GitHub/VS Code themes.</p></div>
+    <div class="md-fcard"><h4>🛠️ HTML Utilities</h4><p>Beautify, minify and validate the generated HTML in a click.</p></div>
+    <div class="md-fcard"><h4>📊 Document Statistics</h4><p>Words, characters, lines, reading time, headings, links, images, tables and code blocks.</p></div>
+    <div class="md-fcard"><h4>⬇️ Many Exports</h4><p>Download as HTML, PDF, DOC, TXT or Markdown, or copy the HTML source.</p></div>
+    <div class="md-fcard"><h4>🔒 Safe &amp; Private</h4><p>Output is sanitised with DOMPurify; nothing is uploaded and it works offline.</p></div>
+    <div class="md-fcard"><h4>💾 Auto-Save</h4><p>Your Markdown is remembered locally so a refresh never loses your work.</p></div>
   </div>
+</section>
+
+<!-- Benefits -->
+<section class="md-wrap md-prose">
+  <h2 class="md-title">🎯 Benefits</h2>
+  <ul>
+    <li><b>Publish anywhere</b> — turn a README or note into clean HTML ready for a website, email or CMS.</li>
+    <li><b>See it as you type</b> — the live preview removes guesswork and speeds up writing.</li>
+    <li><b>Developer-grade output</b> — GFM, highlighted code and beautified HTML you can drop straight into a project.</li>
+    <li><b>Safe by default</b> — sanitised output protects you from malicious HTML in pasted Markdown.</li>
+    <li><b>Private and free</b> — no account, nothing uploaded, and it works offline once loaded.</li>
+  </ul>
+</section>
+
+<!-- Related Tools (ABOVE About) -->
+<section class="md-wrap">
+  <h2 class="md-title">🧰 Related Tools</h2>
+  <div class="md-rel-grid">
+    <a class="md-rel" href="text-diff.html"><b>🔍 Text &amp; Code Diff Checker</b><span>Compare two texts or code files.</span></a>
+    <a class="md-rel" href="json-formatter.html"><b>{ } JSON Formatter</b><span>Format, validate and minify JSON.</span></a>
+    <a class="md-rel" href="word-counter.html"><b>🔢 Word Counter</b><span>Count words, characters and lines.</span></a>
+    <a class="md-rel" href="case-converter.html"><b>🔠 Case Converter</b><span>Change text case in one click.</span></a>
+    <a class="md-rel" href="url-html-encoder-decoder.html"><b>🔗 URL &amp; HTML Entity Coder</b><span>Encode / decode URLs and entities.</span></a>
+    <a class="md-rel" href="base64-encoder-decoder.html"><b>🔡 Base64 Encoder / Decoder</b><span>Encode and decode Base64 text.</span></a>
+    <a class="md-rel" href="duplicate-line-remover.html"><b>🧹 Duplicate Line Remover</b><span>Remove repeated lines fast.</span></a>
+    <a class="md-rel" href="hash-generator.html"><b>#️⃣ Hash Generator</b><span>MD5, SHA-1, SHA-256 and more.</span></a>
+  </div>
+</section>
+
+<!-- About (English) -->
+<section class="md-wrap md-prose">
+  <h2 class="md-title">ℹ️ About This Tool</h2>
+  <p>The <b>ApneSoftware Markdown to HTML Converter</b> is a professional, privacy-first tool that turns Markdown into clean, safe, ready-to-use HTML — with a live split-screen editor and everything a writer or developer needs in one place. Markdown is the lightweight formatting language behind README files, documentation, blog posts, chat messages and note-taking apps, precisely because it is quick to write and easy to read. But the web ultimately needs HTML, and doing that conversion by hand — or trusting a black-box tool with your content — is slow and risky. This converter renders your Markdown instantly as you type, shows you both the rendered result and the underlying HTML, and lets you copy, refine and export it in whatever form you need.</p>
+  <p>At its core is a fast, standards-compliant parser with full <b>GitHub-Flavored Markdown (GFM)</b> support. That means all the everyday syntax works exactly as you expect — <b>headings (H1–H6), bold, italic, strikethrough, blockquotes, inline code and fenced code blocks, ordered and unordered lists, links, images and horizontal rules</b> — plus the GFM extensions that make Markdown genuinely useful for technical writing: <b>tables, task lists</b> (the <code>- [ ]</code> checkboxes), <b>automatic links</b> and strikethrough. On top of the standard, the tool adds popular extras that many converters miss: <b>emoji</b> shortcodes like <code>:rocket:</code>, <b>superscript and subscript</b>, <b>footnotes</b>, and optional <b>KaTeX math</b> for rendering LaTeX formulae — so scientific and academic documents convert cleanly too.</p>
+  <p>Code is treated as a first-class citizen. Fenced code blocks are run through a <b>syntax highlighter</b> that colours keywords, strings, numbers and comments for dozens of languages — HTML, CSS, JavaScript, TypeScript, PHP, Python, Java, C, C++, C#, SQL, JSON, XML, YAML, Bash and more — so documentation and tutorials look polished. The <b>editor</b> is built for real work: it has <b>line numbers</b>, a <b>formatting toolbar</b> with one-click buttons (and keyboard shortcuts like Ctrl+B and Ctrl+I) for bold, italic, headings, links, code, lists and tables, a <b>find &amp; replace</b> bar, a distraction-free <b>fullscreen</b> mode, drag-and-drop and <b>file upload</b> for <code>.md</code>, <code>.markdown</code> and <code>.txt</code> files, and native <b>undo/redo</b>. Your work is <b>auto-saved</b> to your browser so a refresh never loses a draft.</p>
+  <p>The <b>preview</b> is just as capable. Switch between a <b>rendered view</b> and the raw <b>HTML source</b>, choose a preview <b>theme</b> (Light, Dark, GitHub or VS Code) to match where the content will live, and check how it looks at <b>desktop, tablet and mobile</b> widths before you publish. When you want the code itself, the built-in <b>HTML utilities</b> let you <b>beautify</b> it into neatly indented markup, <b>minify</b> it for production, or <b>validate</b> it to catch unbalanced tags. A live <b>statistics</b> bar keeps count of your words, characters, lines and estimated reading time, and of the structural elements — headings, links, images, tables and code blocks — which is handy for documentation standards and SEO. When you are ready, <b>export</b> the result as a self-contained <b>HTML</b> file (with the highlighting styles embedded), a print-ready <b>PDF</b>, a Word-compatible <b>DOC</b>, plain <b>TXT</b>, or back to <b>Markdown</b>.</p>
+  <p><b>Security and privacy are non-negotiable in a converter.</b> Markdown can contain raw HTML, and pasted content from the web can hide malicious scripts, so every conversion is passed through <b>DOMPurify</b>, an industry-standard sanitiser, which strips dangerous elements and attributes while keeping your formatting intact — the HTML you copy is safe to publish. Just as importantly, the entire process runs in your own browser: your Markdown, the files you upload and the HTML you generate are <b>never sent to any server</b>, there is no account or login, and nothing is tracked. This is essential when the content is confidential — unpublished documentation, internal notes, or proprietary code samples — because a converter that transmitted your text would be a real leak. Being fully client-side also makes it fast and keeps it working with no internet connection once loaded.</p>
+  <p>Finally, the tool meets modern standards of <b>accessibility, responsiveness and maintainability</b>. Controls are keyboard-navigable and labelled for screen readers, focus outlines are visible, and high-contrast preferences are respected. The split-screen layout sits comfortably on wide monitors and cleanly stacks the editor and preview on tablets and phones, with touch-friendly controls. Internally, the parser configuration, extensions, statistics, HTML utilities and export formats are organised into small, well-defined functions, so the tool is accurate, easy to audit and simple to extend. In short, it is a fast, private, developer-grade Markdown to HTML converter suitable for quick one-off conversions, for serious documentation work, and for a professional Markdown platform alike.</p>
+  <p>Common real-world jobs are covered out of the box: converting a project's <b>README.md</b> into HTML for a website, turning meeting notes or a knowledge-base article into a publishable page, preparing formatted release notes, generating an email newsletter body, or simply learning how Markdown maps to HTML by watching the two side by side. Writers appreciate the live preview and reading-time counter; developers value the highlighted code, beautified output and the ability to drop clean markup straight into a template; students and researchers benefit from footnotes and optional maths. Because the same document can be exported to HTML, PDF, DOC, TXT or Markdown, the converter fits naturally into whatever comes next in your workflow, from a static-site generator to a Word review to a printed handout — without ever asking you to sign up or surrender your content.</p>
+</section>
+
+<!-- About (Hindi) -->
+<section class="md-wrap md-prose">
+  <h2 class="md-title">ℹ️ इस टूल के बारे में</h2>
+  <p><b>ApneSoftware Markdown to HTML Converter</b> एक professional, privacy-first टूल है जो Markdown को साफ़, सुरक्षित, उपयोग-योग्य HTML में बदलता है — एक live split-screen editor और लेखक या developer की ज़रूरत की हर चीज़ एक ही जगह। Markdown वह हल्की formatting भाषा है जो README files, documentation, blog posts, chat messages और note-taking apps के पीछे है, क्योंकि इसे लिखना तेज़ और पढ़ना आसान है। पर web को अंततः HTML चाहिए, और यह conversion हाथ से करना — या अपनी सामग्री किसी black-box टूल को सौंपना — धीमा और जोखिम भरा है। यह converter आपके Markdown को टाइप करते ही तुरंत render करता है, rendered नतीजा और underlying HTML दोनों दिखाता है, और आपको इसे copy, refine तथा export करने देता है।</p>
+  <p>इसके मूल में एक तेज़, standards-compliant parser है जिसमें पूरा <b>GitHub-Flavored Markdown (GFM)</b> support है। इसका मतलब सारा रोज़मर्रा का syntax वैसे ही काम करता है जैसा आप उम्मीद करते हैं — <b>headings (H1–H6), bold, italic, strikethrough, blockquotes, inline code और fenced code blocks, ordered व unordered lists, links, images और horizontal rules</b> — साथ ही GFM extensions जो Markdown को technical writing के लिए सचमुच उपयोगी बनाते हैं: <b>tables, task lists</b> (<code>- [ ]</code> checkboxes), <b>automatic links</b> और strikethrough। standard के ऊपर, टूल लोकप्रिय extras जोड़ता है जो कई converters छोड़ देते हैं: <code>:rocket:</code> जैसे <b>emoji</b> shortcodes, <b>superscript और subscript</b>, <b>footnotes</b>, और LaTeX सूत्र render करने के लिए वैकल्पिक <b>KaTeX math</b>।</p>
+  <p>Code को प्रथम-श्रेणी का दर्जा मिलता है। Fenced code blocks एक <b>syntax highlighter</b> से गुज़रते हैं जो दर्जनों भाषाओं — HTML, CSS, JavaScript, TypeScript, PHP, Python, Java, C, C++, C#, SQL, JSON, XML, YAML, Bash आदि — के लिए keywords, strings, numbers और comments रंगता है। <b>editor</b> असली काम के लिए बना है: इसमें <b>line numbers</b>, एक-क्लिक buttons वाला <b>formatting toolbar</b> (और Ctrl+B, Ctrl+I जैसे shortcuts), एक <b>find &amp; replace</b> bar, distraction-free <b>fullscreen</b> mode, drag-and-drop व <code>.md</code>, <code>.markdown</code>, <code>.txt</code> files के लिए <b>file upload</b>, और native <b>undo/redo</b> है। आपका काम browser में <b>auto-save</b> होता है।</p>
+  <p><b>preview</b> भी उतना ही सक्षम है। <b>rendered view</b> और raw <b>HTML source</b> के बीच बदलें, एक preview <b>theme</b> (Light, Dark, GitHub या VS Code) चुनें, और publish करने से पहले <b>desktop, tablet और mobile</b> widths पर देखें कि यह कैसा दिखता है। जब आपको code चाहिए, अंतर्निहित <b>HTML utilities</b> से उसे साफ़-सुथरे indented markup में <b>beautify</b> करें, production के लिए <b>minify</b> करें, या unbalanced tags पकड़ने के लिए <b>validate</b> करें। एक live <b>statistics</b> bar आपके words, characters, lines और अनुमानित reading time, तथा headings, links, images, tables और code blocks की गिनती रखती है। तैयार होने पर, नतीजे को self-contained <b>HTML</b> file, print-ready <b>PDF</b>, Word-compatible <b>DOC</b>, सादे <b>TXT</b>, या वापस <b>Markdown</b> के रूप में export करें।</p>
+  <p><b>Security और privacy किसी converter में गैर-परक्राम्य हैं।</b> Markdown में raw HTML हो सकता है, और web से pasted सामग्री में malicious scripts छिपे हो सकते हैं, इसलिए हर conversion को <b>DOMPurify</b> — एक industry-standard sanitiser — से गुज़ारा जाता है, जो खतरनाक elements और attributes हटाता है पर आपकी formatting बरकरार रखता है। उतना ही महत्वपूर्ण: पूरी प्रक्रिया आपके अपने browser में चलती है: आपका Markdown, upload की गई files और बनाया गया HTML <b>किसी server पर नहीं भेजा जाता</b>, कोई account या login नहीं, और कुछ भी track नहीं होता। जब सामग्री गोपनीय हो तो यह आवश्यक है। पूरी तरह client-side होने से यह तेज़ भी है और page load के बाद बिना इंटरनेट भी काम करता है।</p>
+  <p>अंत में, टूल <b>accessibility, responsiveness और maintainability</b> के आधुनिक मानकों पर खरा उतरता है। Controls keyboard से चलते हैं और screen readers के लिए labelled हैं, focus outlines दिखते हैं, और high-contrast वरीयता का सम्मान होता है। split-screen layout बड़े monitors पर आराम से बैठता है और tablets व phones पर editor तथा preview को साफ़-सुथरे stack करता है। भीतर से, parser configuration, extensions, statistics, HTML utilities और export formats छोटे, सुपरिभाषित functions में व्यवस्थित हैं, इसलिए टूल सटीक, audit करने में आसान और विस्तार करने में सरल है। संक्षेप में, यह एक तेज़, निजी, developer-grade Markdown to HTML converter है।</p>
+  <p>रोज़मर्रा के असली काम इसमें पहले से शामिल हैं: किसी project की <b>README.md</b> को website के लिए HTML में बदलना, meeting notes या knowledge-base article को publishable page बनाना, formatted release notes तैयार करना, email newsletter का body बनाना, या दोनों को साथ-साथ देखकर यह सीखना कि Markdown, HTML से कैसे मेल खाता है। लेखक live preview और reading-time counter को पसंद करते हैं; developers highlighted code, beautified output और साफ़ markup को सीधे template में डालने की सुविधा को महत्व देते हैं; students और researchers footnotes व वैकल्पिक maths से लाभ उठाते हैं। चूँकि एक ही document को HTML, PDF, DOC, TXT या Markdown में export किया जा सकता है, यह converter आपके अगले किसी भी workflow — static-site generator से लेकर Word review या printed handout तक — में स्वाभाविक रूप से फ़िट होता है, वह भी बिना sign up कराए या आपकी सामग्री माँगे।</p>
+</section>
+
+<!-- Supported Markdown Features -->
+<section class="md-wrap md-prose">
+  <h2 class="md-title">📝 Supported Markdown Features</h2>
+  <div class="md-tscroll">
+    <table class="md-table">
+      <thead><tr><th>Feature</th><th>Syntax</th></tr></thead>
+      <tbody>
+        <tr><td>Headings H1–H6</td><td><code># … ###### </code></td></tr>
+        <tr><td>Bold / Italic</td><td><code>**bold**  *italic*</code></td></tr>
+        <tr><td>Strikethrough</td><td><code>~~text~~</code></td></tr>
+        <tr><td>Superscript / Subscript</td><td><code>x^2^   H~2~O</code></td></tr>
+        <tr><td>Blockquote</td><td><code>&gt; quote</code></td></tr>
+        <tr><td>Inline / Block code</td><td><code>`code`</code> and <code>``` fences ```</code></td></tr>
+        <tr><td>Lists / Task lists</td><td><code>- item</code>, <code>1. item</code>, <code>- [x] done</code></td></tr>
+        <tr><td>Table (GFM)</td><td><code>| a | b |</code></td></tr>
+        <tr><td>Link / Image / Autolink</td><td><code>[text](url)</code>, <code>![alt](src)</code></td></tr>
+        <tr><td>Footnote</td><td><code>text[^1]</code> and <code>[^1]: note</code></td></tr>
+        <tr><td>Emoji</td><td><code>:rocket: :smile:</code></td></tr>
+        <tr><td>Horizontal rule</td><td><code>---</code></td></tr>
+        <tr><td>Math (KaTeX, optional)</td><td><code>$E=mc^2$</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- HTML Output Features -->
+<section class="md-wrap md-prose">
+  <h2 class="md-title">🧾 HTML Output Features</h2>
+  <ul>
+    <li><b>Clean, semantic HTML</b> — proper headings, lists, tables and code elements.</li>
+    <li><b>Sanitised</b> — DOMPurify removes scripts and unsafe attributes so the output is safe to publish.</li>
+    <li><b>Syntax-highlighted code</b> — with styles embedded when you download the HTML file.</li>
+    <li><b>Beautify / Minify</b> — get neatly indented code, or compressed code for production.</li>
+    <li><b>Validation</b> — a quick check for unbalanced or unclosed tags.</li>
+    <li><b>Copyable source</b> — the exact HTML you can paste into a page, email or CMS.</li>
+  </ul>
+</section>
+
+<!-- File Format Support -->
+<section class="md-wrap md-prose">
+  <h2 class="md-title">📁 File Format Support</h2>
+  <p><b>Import:</b> upload or drag in <code>.md</code>, <code>.markdown</code>, <code>.mdown</code>, <code>.mkd</code> and <code>.txt</code> files.</p>
+  <p><b>Export:</b> download the result as <b>HTML</b> (self-contained), <b>PDF</b> (via print), <b>DOC</b> (Word), <b>TXT</b>, or back to <b>Markdown</b> — and copy the HTML source directly.</p>
+</section>
+
+<!-- How To Use -->
+<section class="md-wrap md-prose">
+  <h2 class="md-title">🚀 How To Use</h2>
+  <ol class="md-steps">
+    <li>Type or paste <b>Markdown</b> in the editor, or upload a <code>.md</code> file.</li>
+    <li>Watch the <b>live preview</b> render beside it; use the toolbar for quick formatting.</li>
+    <li>Pick a <b>theme</b> and <b>device</b> size to preview how it will look when published.</li>
+    <li>Switch to <b>HTML source</b> to copy, beautify, minify or validate the code.</li>
+    <li><b>Export</b> as HTML, PDF, DOC, TXT or Markdown when you're done.</li>
+  </ol>
+</section>
+
+<!-- FAQ -->
+<section class="md-wrap md-faq">
+  <h2 class="md-title">❓ Frequently Asked Questions</h2>
+  <div id="faqList"></div>
+</section>
+
+<!-- Browser Compatibility -->
+<section class="md-wrap md-prose">
+  <h2 class="md-title">🌐 Browser Compatibility</h2>
+  <p>Works on all modern browsers — <b>Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, Opera and Brave</b> — on Windows, macOS, Linux, Android and iOS. It needs JavaScript enabled, with no plugins or installation. File upload uses the standard File API, copy uses the Clipboard API with a fallback, and the Markdown, sanitiser and highlighter libraries load from a CDN (after which the tool works offline).</p>
+</section>
+
+<!-- Privacy & Security -->
+<section class="md-wrap md-prose">
+  <h2 class="md-title">🔒 Privacy &amp; Security</h2>
+  <div class="md-note"><b>English:</b> Conversion happens entirely in your browser and the HTML is sanitised with DOMPurify to remove unsafe scripts. Your Markdown, uploaded files and generated HTML are never sent to a server; there is no account and nothing is tracked. Your draft auto-saves only to your browser's local storage, which you can clear anytime. The tool works offline once loaded.</div>
+  <div class="md-note"><b>हिन्दी:</b> Conversion पूरी तरह आपके browser में होता है और HTML को DOMPurify से sanitise किया जाता है ताकि असुरक्षित scripts हट जाएँ। आपका Markdown, upload की गई files और बनाया गया HTML किसी server पर नहीं भेजा जाता; कोई account नहीं और कुछ भी track नहीं होता। आपका draft सिर्फ़ आपके browser के local storage में auto-save होता है, जिसे आप कभी भी साफ़ कर सकते हैं। page load होने के बाद टूल offline काम करता है।</div>
+</section>
+
+<!-- Troubleshooting -->
+<section class="md-wrap md-prose">
+  <h2 class="md-title">🛠️ Troubleshooting</h2>
+  <ul>
+    <li><b>Preview is empty:</b> make sure the editor isn't blank; the preview updates as you type.</li>
+    <li><b>A table or task list didn't render:</b> keep <b>GFM</b> enabled and check the syntax (tables need a <code>|---|</code> separator row).</li>
+    <li><b>Math isn't rendering:</b> tick <b>Math (KaTeX)</b>; the maths library loads the first time you enable it.</li>
+    <li><b>Code isn't coloured:</b> add a language after the opening fence, e.g. <code>```js</code>, and keep “Highlight code” on.</li>
+    <li><b>My HTML looks unsafe elements were removed:</b> that's DOMPurify protecting you — scripts and event handlers are stripped by design.</li>
+    <li><b>Library failed to load:</b> check your connection and refresh — Markdown, the sanitiser and highlighter load from a CDN.</li>
+  </ul>
+</section>
+
 </div>
 
-<footer class="site-footer">© 2026 ApneSoftware.com</footer>
+<footer class="site-footer">© 2026 ApneSoftware.com — Free, private, browser-based tools.</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/16.3.0/lib/marked.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.4/purify.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
 <script src="../assets/common.js"></script>
 <script>
-function render(){
-  const md = document.getElementById('mdInput').value;
-  const rawHtml = marked.parse(md || '');
-  const clean = DOMPurify.sanitize(rawHtml);
-  document.getElementById('previewBox').innerHTML = clean || 'Your rendered HTML will appear here.';
-  document.getElementById('htmlOutput').value = clean;
-}
+(function(){
+  "use strict";
+  function $(id){ return document.getElementById(id); }
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  var LS='mdState', mdInput=$('mdInput'), preview=$('previewBox'), htmlOut=$('htmlOutput');
+  var EMOJI={smile:'😄',rocket:'🚀',heart:'❤️',fire:'🔥','+1':'👍','-1':'👎',star:'⭐',check:'✅',x:'❌',warning:'⚠️',bulb:'💡',tada:'🎉',eyes:'👀',wave:'👋',coffee:'☕',bug:'🐛',zap:'⚡',books:'📚',lock:'🔒',computer:'💻',sparkles:'✨',thumbsup:'👍'};
 
-document.getElementById('convertBtn').addEventListener('click', render);
+  /* ===================== Extensions (pre-process) ===================== */
+  function preprocess(md){
+    // footnotes: collect defs
+    var defs={}; md=md.replace(/^\[\^([^\]]+)\]:\s*(.+)$/gm,function(_,id,txt){ defs[id]=txt; return ''; });
+    var order=[];
+    md=md.replace(/\[\^([^\]]+)\]/g,function(_,id){ if(defs[id]===undefined) return _; if(order.indexOf(id)<0) order.push(id); var n=order.indexOf(id)+1; return '<sup class="fnref"><a href="#fn-'+esc(id)+'" id="fnref-'+esc(id)+'">['+n+']</a></sup>'; });
+    window.__mdFootnotes = order.length? {order:order,defs:defs} : null;
+    // emoji
+    md=md.replace(/:([a-z0-9_+-]+):/gi,function(m,name){ return EMOJI[name.toLowerCase()]||m; });
+    // superscript ^x^  (avoid ^^)
+    md=md.replace(/(?<!\^)\^(?!\^)([^\s^]+)\^(?!\^)/g,'<sup>$1</sup>');
+    // subscript ~x~ (avoid ~~ strikethrough)
+    md=md.replace(/(?<!~)~(?!~)([^\s~]+)~(?!~)/g,'<sub>$1</sub>');
+    return md;
+  }
+  function appendFootnotes(html){
+    var f=window.__mdFootnotes; if(!f) return html;
+    var items=f.order.map(function(id,i){ return '<li id="fn-'+esc(id)+'">'+marked.parseInline(f.defs[id])+' <a href="#fnref-'+esc(id)+'">↩</a></li>'; }).join('');
+    return html+'<div class="footnotes"><hr><ol>'+items+'</ol></div>';
+  }
 
-document.getElementById('clearBtn').addEventListener('click', ()=>{
-  document.getElementById('mdInput').value = '';
-  document.getElementById('previewBox').innerHTML = 'Your rendered HTML will appear here.';
-  document.getElementById('htmlOutput').value = '';
-});
+  /* ===================== Convert ===================== */
+  var mathLoaded=false;
+  function ensureMath(cb){
+    if(mathLoaded){ cb(); return; }
+    var css=document.createElement('link'); css.rel='stylesheet'; css.href='https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css'; document.head.appendChild(css);
+    var s1=document.createElement('script'); s1.src='https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js';
+    s1.onload=function(){ var s2=document.createElement('script'); s2.src='https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js'; s2.onload=function(){ mathLoaded=true; cb(); }; document.head.appendChild(s2); };
+    document.head.appendChild(s1);
+  }
+  function configure(){
+    if(typeof marked==='undefined') return;
+    marked.setOptions({ gfm:$('optGfm').checked, breaks:$('optBreaks').checked, headerIds:true, mangle:false });
+  }
+  function render(){
+    if(typeof marked==='undefined'||typeof DOMPurify==='undefined'){ preview.innerHTML='Markdown engine failed to load — check your connection and refresh.'; return; }
+    configure();
+    var raw=mdInput.value;
+    var pre=preprocess(raw);
+    var html;
+    try{ html=marked.parse(pre||''); }catch(e){ html=esc(raw); }
+    html=appendFootnotes(html);
+    var clean=DOMPurify.sanitize(html,{ADD_TAGS:['sup','sub'],ADD_ATTR:['id','target']});
+    preview.innerHTML=clean||'Your rendered HTML will appear here.';
+    // syntax highlight
+    if($('optHl').checked && window.hljs){ preview.querySelectorAll('pre code').forEach(function(b){ try{ hljs.highlightElement(b); }catch(e){} }); }
+    // math
+    if($('optMath').checked){ ensureMath(function(){ try{ renderMathInElement(preview,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]}); }catch(e){} }); }
+    htmlOut.value=preview.innerHTML;
+    updateStats(raw);
+    saveState();
+  }
+  var dbT=null; function debounced(){ if(dbT)clearTimeout(dbT); dbT=setTimeout(render,300); }
 
-document.querySelectorAll('.tab-btn').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const tab = btn.dataset.tab;
-    document.getElementById('previewTab').style.display = tab === 'preview' ? 'block' : 'none';
-    document.getElementById('htmlTab').style.display = tab === 'html' ? 'block' : 'none';
+  /* ===================== Stats ===================== */
+  function updateStats(md){
+    var words=(md.trim().match(/\S+/g)||[]).length;
+    $('stWords').textContent=words; $('stChars').textContent=md.length; $('stLines').textContent=md.split('\n').length;
+    $('stRead').textContent=Math.max(1,Math.ceil(words/200));
+    $('stHead').textContent=preview.querySelectorAll('h1,h2,h3,h4,h5,h6').length;
+    $('stLinks').textContent=preview.querySelectorAll('a').length;
+    $('stImages').textContent=preview.querySelectorAll('img').length;
+    $('stTables').textContent=preview.querySelectorAll('table').length;
+    $('stCode').textContent=preview.querySelectorAll('pre').length;
+    updateGutter();
+  }
+  function updateGutter(){ var n=mdInput.value.split('\n').length,s=''; for(var i=1;i<=n;i++)s+=i+'\n'; $('gutter').textContent=s||'1'; }
+
+  /* ===================== Toolbar formatting ===================== */
+  function wrapSel(before,after,placeholder){
+    var ta=mdInput, s=ta.selectionStart, e=ta.selectionEnd, v=ta.value, sel=v.slice(s,e)||placeholder||'';
+    ta.value=v.slice(0,s)+before+sel+after+v.slice(e);
+    ta.focus(); ta.selectionStart=s+before.length; ta.selectionEnd=s+before.length+sel.length;
+    render();
+  }
+  function lineInsert(prefix){ var ta=mdInput,s=ta.selectionStart,v=ta.value; var ls=v.lastIndexOf('\n',s-1)+1; ta.value=v.slice(0,ls)+prefix+v.slice(ls); ta.focus(); render(); }
+  var INS={
+    bold:function(){wrapSel('**','**','bold');},italic:function(){wrapSel('*','*','italic');},strike:function(){wrapSel('~~','~~','strike');},
+    h1:function(){lineInsert('# ');},link:function(){wrapSel('[','](https://)','text');},image:function(){wrapSel('![','](https://)','alt');},
+    code:function(){wrapSel('`','`','code');},codeblock:function(){wrapSel('\n```js\n','\n```\n','code');},quote:function(){lineInsert('> ');},
+    ul:function(){lineInsert('- ');},ol:function(){lineInsert('1. ');},task:function(){lineInsert('- [ ] ');},
+    table:function(){wrapSel('\n| Col A | Col B |\n|---|---|\n| a | b |\n','','');},hr:function(){wrapSel('\n---\n','','');}
+  };
+  $('fmtBar').addEventListener('click',function(e){ var b=e.target.closest('[data-ins]'); if(b&&INS[b.dataset.ins]) INS[b.dataset.ins](); });
+  mdInput.addEventListener('keydown',function(e){ if(e.ctrlKey||e.metaKey){ if(e.key==='b'){e.preventDefault();INS.bold();} else if(e.key==='i'){e.preventDefault();INS.italic();} } });
+
+  /* ===================== View / theme / device ===================== */
+  function setView(v){ var w=$('splitWrap'); w.className='md-split'+(v==='editor'?' editor-only':v==='preview'?' preview-only':''); ['viewSplit','viewEditor','viewPreview'].forEach(function(id){ $(id).classList.toggle('active', id==='view'+v.charAt(0).toUpperCase()+v.slice(1)); }); }
+  $('viewSplit').addEventListener('click',function(){ setView('split'); });
+  $('viewEditor').addEventListener('click',function(){ setView('editor'); });
+  $('viewPreview').addEventListener('click',function(){ setView('preview'); });
+  $('themeSel').addEventListener('change',function(){ preview.className='preview-box theme-'+this.value+' '+devClass(); });
+  function devClass(){ var d=$('deviceSel').value; return d==='desktop'?'':'dev-'+d; }
+  $('deviceSel').addEventListener('change',function(){ preview.className='preview-box theme-'+$('themeSel').value+' '+devClass(); });
+  $('fullscreenBtn').addEventListener('click',function(){ var p=$('mainPanel'); p.classList.toggle('md-fullscreen'); this.textContent=p.classList.contains('md-fullscreen')?'✕ Exit':'⛶ Fullscreen'; });
+
+  /* ===================== Preview / HTML tabs ===================== */
+  document.querySelectorAll('.md-pane-preview [data-tab]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.md-pane-preview [data-tab]').forEach(function(b){b.classList.remove('active');}); btn.classList.add('active');
+      var t=btn.dataset.tab; $('previewTab').style.display=t==='preview'?'flex':'none'; $('htmlTab').style.display=t==='html'?'flex':'none';
+    });
   });
-});
 
-document.getElementById('copyBtn').addEventListener('click', (e)=>{
-  copyText(document.getElementById('htmlOutput').value, e.target);
-});
+  /* ===================== Search / replace ===================== */
+  $('searchToggle').addEventListener('click',function(){ $('searchBar').classList.toggle('on'); if($('searchBar').classList.contains('on'))$('findInput').focus(); });
+  $('replaceOne').addEventListener('click',function(){ var f=$('findInput').value; if(!f)return; mdInput.value=mdInput.value.replace(f,$('replaceInput').value); render(); });
+  $('replaceAll').addEventListener('click',function(){ var f=$('findInput').value; if(!f)return; mdInput.value=mdInput.value.split(f).join($('replaceInput').value); render(); });
 
-document.getElementById('downloadBtn').addEventListener('click', ()=>{
-  downloadText('converted.html', document.getElementById('htmlOutput').value, 'text/html');
-});
+  /* ===================== HTML utilities ===================== */
+  function beautify(html){ var out='',indent=0,tokens=html.replace(/>\s*</g,'>\n<').split('\n'); tokens.forEach(function(line){ line=line.trim(); if(!line)return; if(/^<\//.test(line)) indent=Math.max(0,indent-1); out+='  '.repeat(indent)+line+'\n'; if(/^<[^!\/][^>]*[^\/]>$/.test(line)&&!/^<(area|base|br|col|hr|img|input|link|meta|source)\b/.test(line)) indent++; }); return out.trim(); }
+  function minify(html){ return html.replace(/>\s+</g,'><').replace(/\s{2,}/g,' ').trim(); }
+  $('beautifyBtn').addEventListener('click',function(){ htmlOut.value=beautify(htmlOut.value); premToast('HTML beautified'); });
+  $('minifyBtn').addEventListener('click',function(){ htmlOut.value=minify(htmlOut.value); premToast('HTML minified'); });
+  $('validateBtn').addEventListener('click',function(){ var doc=new DOMParser().parseFromString(htmlOut.value,'text/html'); var errs=doc.querySelectorAll('parsererror'); premToast(errs.length?'⚠️ '+errs.length+' parse issue(s)':'✅ HTML looks valid'); });
 
-// auto-render on input (debounced)
-let debounceTimer;
-document.getElementById('mdInput').addEventListener('input', ()=>{
-  clearTimeout(debounceTimer);
-  debounceTimer = setTimeout(render, 400);
-});
+  /* ===================== Buttons ===================== */
+  $('convertBtn').addEventListener('click',render);
+  $('clearBtn').addEventListener('click',function(){ mdInput.value=''; preview.innerHTML='Your rendered HTML will appear here.'; htmlOut.value=''; updateStats(''); saveState(); });
+  $('sampleBtn').addEventListener('click',function(){ mdInput.value='# Markdown Example\n\nThis is **bold**, *italic*, ~~strikethrough~~ and `inline code`. Water is H~2~O and 2^10^ = 1024. :rocket:\n\n> A blockquote with a [link](https://apnesoftware.com).\n\n## Task list\n\n- [x] Write docs\n- [ ] Ship it\n\n## Table\n\n| Feature | Supported |\n|---------|:---------:|\n| Tables  | ✅ |\n| Footnotes | ✅[^1] |\n\n```js\nfunction hello(name) {\n  return `Hi ${name}`;\n}\n```\n\n[^1]: Footnotes are supported too.'; render(); });
+  ['optGfm','optBreaks','optHl','optMath'].forEach(function(id){ $(id).addEventListener('change',render); });
+  $('copyBtn').addEventListener('click',function(){ copyText(htmlOut.value); premToast('HTML copied'); });
+
+  /* ===================== File upload / drag-drop ===================== */
+  function loadFile(f){ var fr=new FileReader(); fr.onload=function(){ mdInput.value=fr.result; render(); }; fr.readAsText(f); }
+  $('fileInput').addEventListener('change',function(e){ if(e.target.files[0]) loadFile(e.target.files[0]); });
+  mdInput.addEventListener('dragover',function(e){ e.preventDefault(); });
+  mdInput.addEventListener('drop',function(e){ e.preventDefault(); if(e.dataTransfer.files[0]) loadFile(e.dataTransfer.files[0]); });
+
+  /* ===================== Export ===================== */
+  function saveTextF(name,txt,type){ if(typeof downloadText==='function'&&type==='text/plain'){ downloadText(name,txt); return; } var b=new Blob([txt],{type:type||'text/plain'}); if(typeof downloadBlob==='function') downloadBlob(name,b); else { var a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download=name; a.click(); } }
+  function fullHtml(){ var hlCss='pre code.hljs{display:block;padding:1em;background:#0d1117;color:#c9d1d9}code.hljs{color:#c9d1d9}.hljs-keyword,.hljs-selector-tag{color:#ff7b72}.hljs-string{color:#a5d6ff}.hljs-number{color:#f0883e}.hljs-comment{color:#8b949e}.hljs-title,.hljs-function{color:#d2a8ff}'; return '<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Document</title><style>body{font-family:system-ui,Arial,sans-serif;max-width:820px;margin:40px auto;padding:0 16px;line-height:1.65}pre{background:#0d1117;color:#c9d1d9;padding:12px;border-radius:8px;overflow:auto}code{background:#eee;padding:1px 5px;border-radius:4px}table{border-collapse:collapse}th,td{border:1px solid #ccc;padding:6px 10px}blockquote{border-left:4px solid #a78bfa;padding-left:12px;color:#555}'+hlCss+'</style></head><body>'+htmlOut.value+'</body></html>'; }
+  $('downloadBtn').addEventListener('click',function(){ saveTextF('document.html',fullHtml(),'text/html'); premToast('HTML downloaded'); });
+  $('expMd').addEventListener('click',function(){ saveTextF('document.md',mdInput.value,'text/markdown'); premToast('Markdown downloaded'); });
+  $('expTxt').addEventListener('click',function(){ saveTextF('document.txt',preview.innerText,'text/plain'); premToast('TXT downloaded'); });
+  $('expDoc').addEventListener('click',function(){ var doc='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="utf-8"></head><body>'+htmlOut.value+'</body></html>'; saveTextF('document.doc',doc,'application/msword'); premToast('DOC downloaded'); });
+  $('expPdf').addEventListener('click',function(){ var w=window.open('','_blank'); if(!w){ window.print(); return; } w.document.write(fullHtml()); w.document.close(); w.focus(); setTimeout(function(){ w.print(); },400); });
+
+  /* ===================== Persistence ===================== */
+  function saveState(){ try{ localStorage.setItem(LS,JSON.stringify({md:mdInput.value,theme:$('themeSel').value})); }catch(e){} }
+  function loadState(){ try{ var s=JSON.parse(localStorage.getItem(LS)); if(s){ if(s.md)mdInput.value=s.md; if(s.theme){$('themeSel').value=s.theme;} } }catch(e){} }
+  mdInput.addEventListener('input',function(){ updateGutter(); debounced(); });
+  mdInput.addEventListener('scroll',function(){ $('gutter').scrollTop=mdInput.scrollTop; });
+
+  /* ===================== FAQ ===================== */
+  var FAQ=[
+    ['What is Markdown?','A lightweight text format that uses simple symbols (like # for headings and ** for bold) to produce formatted content. — Markdown एक हल्का text format है।'],
+    ['What does this tool do?','It converts Markdown into clean, safe HTML with a live preview, and lets you copy or export the result. — यह Markdown को HTML में बदलता है।'],
+    ['Is it free?','Yes, completely free — no account, no limits, no watermark, and it works offline. — हाँ, यह पूरी तरह मुफ़्त है।'],
+    ['Is my content private?','Completely. Conversion runs in your browser; nothing you type or upload is sent anywhere. — पूरी तरह; कुछ भी upload नहीं होता।'],
+    ['Is the HTML safe to use?','Yes. Output is sanitised with DOMPurify, which removes scripts and unsafe attributes. — हाँ, HTML DOMPurify से sanitise होता है।'],
+    ['Does it support GitHub-Flavored Markdown?','Yes — tables, task lists, auto-links and strikethrough are all supported. — हाँ, GFM समर्थित है।'],
+    ['Can I highlight code blocks?','Yes. Add a language after the opening fence (e.g. ```js) and code is syntax-highlighted. — हाँ, code highlighting उपलब्ध है।'],
+    ['Which languages are highlighted?','HTML, CSS, JS, TypeScript, PHP, Python, Java, C, C++, C#, SQL, JSON, XML, YAML, Bash and more. — कई भाषाएँ समर्थित हैं।'],
+    ['Does it support math?','Yes, optionally. Enable Math (KaTeX) to render $LaTeX$ formulae. — हाँ, KaTeX math वैकल्पिक रूप से।'],
+    ['Can I preview on mobile and tablet sizes?','Yes. The device selector previews your HTML at desktop, tablet and mobile widths. — हाँ, device previews हैं।'],
+    ['Can I change the preview theme?','Yes — Light, Dark, GitHub and VS Code themes are available. — हाँ, कई themes हैं।'],
+    ['Can I upload a Markdown file?','Yes. Upload or drag in .md, .markdown, .mdown, .mkd or .txt files. — हाँ, file upload उपलब्ध है।'],
+    ['What can I export to?','HTML (self-contained), PDF, DOC, TXT or Markdown; you can also copy the HTML. — HTML, PDF, DOC, TXT, MD।'],
+    ['Does it save my work?','Yes, your Markdown auto-saves to your browser so a refresh won’t lose it. — हाँ, auto-save होता है।'],
+    ['Can I beautify or minify the HTML?','Yes. Use the Beautify and Minify buttons in the HTML source tab. — हाँ, beautify/minify बटन हैं।'],
+    ['Are footnotes and emoji supported?','Yes. Use [^1] footnotes and :emoji: shortcodes; super/subscript with ^x^ and ~x~. — हाँ, footnotes व emoji समर्थित हैं।'],
+    ['Does it work offline?','Yes, once the page and its libraries have loaded it runs entirely offline. — हाँ, यह offline काम करता है।'],
+    ['Why were some HTML tags removed?','DOMPurify strips scripts, iframes and event handlers for safety — that’s intentional. — सुरक्षा के लिए असुरक्षित tags हटते हैं।'],
+    ['Can I use keyboard shortcuts?','Yes. Ctrl/Cmd+B for bold and Ctrl/Cmd+I for italic, plus the toolbar buttons. — हाँ, keyboard shortcuts हैं।'],
+    ['Is there a word count and reading time?','Yes. The status bar shows words, characters, lines, reading time and structural counts. — हाँ, statistics bar है।'],
+    ['Can I convert a README to HTML?','Absolutely — paste or upload your README.md and export clean HTML for the web. — हाँ, README को HTML में बदलें।'],
+    ['Does the downloaded HTML keep code colours?','Yes. The HTML export embeds highlight styles so code stays coloured. — हाँ, highlight styles शामिल होते हैं।']
+  ];
+  function buildFaq(){ var list=$('faqList'); if(!list) return; FAQ.forEach(function(p){ var d=document.createElement('details'); d.innerHTML='<summary>'+esc(p[0])+'</summary><p>'+esc(p[1])+'</p>'; list.appendChild(d); }); try{ $('faqSchema').textContent=JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:FAQ.map(function(p){return {'@type':'Question',name:p[0],acceptedAnswer:{'@type':'Answer',text:p[1]}};})}); }catch(e){} }
+
+  /* ===================== Init ===================== */
+  window.__mdHooks={render:render,preprocess:preprocess,beautify:beautify,minify:minify};
+  buildFaq(); loadState();
+  if(!mdInput.value) mdInput.value='# Hello World\n\nThis is **bold**, *italic* and a [link](https://example.com).\n\n- item one\n- item two';
+  updateGutter(); render();
+})();
 </script>
 </body>
 </html>

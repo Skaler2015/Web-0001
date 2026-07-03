@@ -578,11 +578,20 @@
     {
       "id": "markdown-to-html",
       "name": "Markdown to HTML",
-      "description": "Convert Markdown to clean HTML",
+      "description": "Convert Markdown to clean HTML — live GFM editor, syntax highlighting, stats & export",
       "icon": "📑",
       "url": "tools/markdown-to-html.html",
       "category": "text",
-      "published": true
+      "published": true,
+      "tags": [
+        "markdown to html",
+        "md to html",
+        "github flavored markdown",
+        "markdown editor",
+        "markdown preview",
+        "readme to html",
+        "मार्कडाउन"
+      ]
     },
     {
       "id": "text-encrypt-decrypt",
