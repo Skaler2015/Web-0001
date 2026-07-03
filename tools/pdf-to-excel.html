@@ -4,34 +4,115 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
+<meta name="description" content="Free online PDF to Excel converter. Pull tables out of a PDF into an editable Excel (.xlsx) spreadsheet — with position-based table detection, number detection, per-page or combined sheets, page ranges, CSV/XLS/ODS output, batch conversion and traditional OCR (English &amp; Hindi) for scanned PDFs. 100% private, in your browser, no uploads.">
+<meta name="keywords" content="pdf to excel, pdf to xlsx, convert pdf to excel, pdf table to excel, pdf to spreadsheet, extract table from pdf, pdf to csv, pdf ocr to excel, hindi pdf to excel, free pdf to excel">
 <link rel="canonical" href="https://apnesoftware.com/tools/pdf-to-excel.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="PDF to Excel | ApneSoftware">
-<meta property="og:description" content="Convert PDF table to .xlsx. Free online tool — no signup required.">
+<meta property="og:title" content="PDF to Excel — Convert PDF Tables to XLSX | ApneSoftware">
+<meta property="og:description" content="Convert PDF tables into an editable Excel (.xlsx) spreadsheet with position-based table detection, number detection, page ranges, CSV/XLS/ODS output and OCR for scanned PDFs. 100% private, no uploads.">
 <meta property="og:url" content="https://apnesoftware.com/tools/pdf-to-excel.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PDF to Excel | ApneSoftware">
-<meta name="twitter:description" content="Convert PDF table to .xlsx. Free online tool — no signup required.">
+<meta name="twitter:title" content="PDF to Excel — Convert PDF Tables to XLSX | ApneSoftware">
+<meta name="twitter:description" content="Convert PDF tables into an editable Excel spreadsheet with table detection, number detection, page ranges, CSV/XLS/ODS output and OCR for scanned PDFs. 100% private, no uploads.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PDF to Excel","description":"Convert PDF table to .xlsx. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/pdf-to-excel.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PDF to Excel","description":"Convert the tables and text of a PDF into an editable Microsoft Excel (.xlsx) spreadsheet entirely in your browser, using position-based table detection, number detection, per-page or combined sheets, page ranges, CSV/XLS/ODS output, batch conversion and traditional OCR (English and Hindi) for scanned PDFs. No uploads, no signup.","url":"https://apnesoftware.com/tools/pdf-to-excel.html","applicationCategory":"BusinessApplication","operatingSystem":"Any","browserRequirements":"Requires a modern web browser with JavaScript enabled","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"featureList":["Extract tables from PDFs into editable Excel","Position-based row and column detection","Detect numbers, currency and percentages","Per-page or combined sheets","Page range and odd/even selection","Output XLSX, XLS, CSV and ODS","OCR for scanned PDFs (English and Hindi)","Batch convert with ZIP download","Runs fully in the browser"],"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"PDF to Excel Tool","url":"https://apnesoftware.com/tools/pdf-to-excel.html","description":"Free browser-based tool to convert PDF tables into editable Excel spreadsheets.","isPartOf":{"@type":"WebSite","name":"ApneSoftware","url":"https://apnesoftware.com"},"inLanguage":["en","hi"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apnesoftware.com/index.html"},{"@type":"ListItem","position":2,"name":"PDF to Excel","item":"https://apnesoftware.com/tools/pdf-to-excel.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to convert PDF to Excel","description":"Convert a PDF's tables into an editable Excel spreadsheet in your browser.","step":[{"@type":"HowToStep","name":"Upload the PDF","text":"Drag a PDF into the drop zone or click to choose it. Add several files to convert in a batch."},{"@type":"HowToStep","name":"Choose settings","text":"Pick the output format (XLSX, XLS, CSV or ODS), per-page or combined sheets, a page range, and enable OCR if the PDF is scanned."},{"@type":"HowToStep","name":"Convert","text":"Click Convert. The tool detects rows and columns from the text positions and builds the spreadsheet."},{"@type":"HowToStep","name":"Download","text":"Check the table preview and download the Excel file, or a ZIP when converting several PDFs."}]}
+</script>
+<script type="application/ld+json" id="faqSchema">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}
 </script>
 <meta name="color-scheme" content="dark">
-<title>PDF to Excel | ApneSoftware</title>
+<title>PDF to Excel — Convert PDF Tables to XLSX | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-/* Premium upload enhancement for this tool */
+/* ===== PDF to Excel — scoped p2e- styles ===== */
 .dropzone{cursor:pointer}
 .dropzone p{font-size:.9rem}
 .panel{position:relative;z-index:1}
-</style>
-<style>
-  .limit-note{
-    background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);border-radius:8px;
-    padding:12px 14px;font-size:.85rem;color:#fbbf24;margin-top:14px;
-  }
+.p2e-badges{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:10px;font-size:.78rem;color:var(--text-dim)}
+.p2e-badges span{display:inline-flex;align-items:center;gap:5px}
+
+.p2e-files{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+.p2e-file{display:flex;align-items:center;gap:10px;padding:9px 12px;background:rgba(255,255,255,.04);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:10px;font-size:.85rem}
+.p2e-file .p2e-fn{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.p2e-file .p2e-fs{color:var(--text-dim);font-size:.78rem}
+.p2e-file button{background:rgba(248,113,113,.15);border:1px solid rgba(248,113,113,.35);color:#fca5a5;border-radius:7px;width:28px;height:28px;cursor:pointer}
+.p2e-clear{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:.8rem;color:var(--text-dim)}
+.p2e-clear button{background:none;border:none;color:#c4b5fd;cursor:pointer;text-decoration:underline;font-size:.8rem}
+
+.p2e-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:12px}
+.p2e-info .p2e-i{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:10px;padding:8px 10px;font-size:.78rem}
+.p2e-info .p2e-i b{display:block;color:var(--text);font-size:.82rem}
+.p2e-info .p2e-i span{color:var(--text-dim)}
+.p2e-scan{border-radius:8px;padding:10px 12px;font-size:.82rem;margin-top:10px;display:none}
+.p2e-scan.show{display:block}
+.p2e-scan.warn{background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.3);color:#fcd34d}
+.p2e-scan.ok{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:#86efac}
+
+.p2e-card{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:14px 16px;margin-top:16px}
+.p2e-card h3{margin:0 0 12px;font-size:.92rem;display:flex;align-items:center;gap:8px}
+.p2e-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.p2e-checkline{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px}
+.p2e-checkline label{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;color:var(--text)}
+.p2e-checkline input{width:auto}
+
+.p2e-progress{height:8px;border-radius:5px;background:rgba(255,255,255,.1);margin-top:14px;overflow:hidden;display:none}
+.p2e-progress.show{display:block}
+.p2e-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#7c3aed,#a78bfa);border-radius:5px;transition:width .25s}
+.p2e-btnrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px}
+.p2e-cancel{background:rgba(248,113,113,.12);border:1px solid rgba(248,113,113,.35);color:#fca5a5;border-radius:10px;padding:0 16px;cursor:pointer;font-size:.85rem;display:none}
+.p2e-cancel.show{display:inline-flex;align-items:center;height:42px}
+
+.p2e-preview{display:none;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.p2e-preview.show{display:grid}
+@media(max-width:760px){.p2e-preview.show{grid-template-columns:1fr}}
+.p2e-pvbox{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:12px;min-width:0}
+.p2e-pvbox h4{margin:0 0 8px;font-size:.8rem;color:var(--text-dim)}
+.p2e-pvbox canvas{max-width:100%;height:auto;border-radius:6px;background:#fff}
+.p2e-tblwrap{max-height:300px;overflow:auto}
+.p2e-tbl{border-collapse:collapse;font-size:.76rem;width:max-content;min-width:100%}
+.p2e-tbl td{border:1px solid rgba(255,255,255,.12);padding:4px 8px;color:var(--text);white-space:nowrap;max-width:220px;overflow:hidden;text-overflow:ellipsis}
+.p2e-tbl tr:first-child td{background:rgba(167,139,250,.14);font-weight:600;color:#fff}
+.p2e-pvnote{font-size:.74rem;color:var(--text-dim);margin-top:6px}
+
+.limit-note{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);border-radius:8px;padding:12px 14px;font-size:.85rem;color:#fbbf24;margin-top:14px}
+
+/* ===== Below-tool content ===== */
+.p2e-wrap{margin:26px 0}
+.p2e-title{font-size:1.35rem;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+.p2e-sub{color:var(--text-dim);font-size:.92rem;margin:0 0 18px;line-height:1.6}
+.p2e-feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.p2e-fcard{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:14px;padding:16px}
+.p2e-fcard h4{margin:0 0 6px;font-size:.98rem;display:flex;align-items:center;gap:8px}
+.p2e-fcard p{margin:0;font-size:.86rem;color:var(--text-dim);line-height:1.55}
+.p2e-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.p2e-rel{display:block;text-decoration:none;background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:14px;transition:.15s;color:var(--text)}
+.p2e-rel:hover{border-color:#a78bfa;background:rgba(167,139,250,.1);transform:translateY(-2px)}
+.p2e-rel b{display:block;font-size:.92rem;margin-bottom:3px}
+.p2e-rel span{font-size:.8rem;color:var(--text-dim);line-height:1.45}
+.p2e-faq details{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:0 16px;margin-bottom:10px}
+.p2e-faq summary{cursor:pointer;padding:14px 0;font-weight:600;font-size:.92rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.p2e-faq summary::-webkit-details-marker{display:none}
+.p2e-faq summary::after{content:'+';font-size:1.3rem;color:#a78bfa;flex:0 0 auto}
+.p2e-faq details[open] summary::after{content:'−'}
+.p2e-faq details p{margin:0 0 14px;font-size:.87rem;color:var(--text-dim);line-height:1.65}
+.p2e-steps{list-style:none;counter-reset:s;padding:0;margin:0;display:grid;gap:12px}
+.p2e-steps li{counter-increment:s;position:relative;padding-left:46px;font-size:.9rem;color:var(--text-dim);line-height:1.6}
+.p2e-steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:32px;height:32px;border-radius:9px;background:rgba(167,139,250,.18);color:#c4b5fd;font-weight:700;display:grid;place-items:center}
+.p2e-steps li b{color:var(--text)}
+.p2e-pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.p2e-pill{background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.3);color:#d6cbff;border-radius:999px;padding:5px 12px;font-size:.8rem}
 </style>
 </head>
 <body>
@@ -45,138 +126,497 @@
 <div class="container">
   <div class="tool-header">
     <h1>📈 PDF to Excel</h1>
-    <p>Pull the text/table data out of a PDF into an Excel (.xlsx) spreadsheet.</p>
+    <p>Pull the tables out of a PDF into an editable Excel <b>.xlsx</b> spreadsheet — with position-based <b>table detection</b>, number detection, per-page or combined sheets, page ranges, <b>CSV / XLS / ODS</b> output, batch conversion and optional <b>OCR</b> (English &amp; Hindi) for scanned PDFs. Everything runs in your browser; your file is never uploaded.</p>
   </div>
 
   <div class="panel">
     <div class="dropzone" id="dropzone">
-      <p>📤 Drag a PDF file here or click to choose</p>
-      <input type="file" id="fileInput" accept="application/pdf">
+      <p>📤 Drag PDF file(s) here or click to choose</p>
+      <input type="file" id="fileInput" accept="application/pdf" multiple>
+      <div class="p2e-badges"><span>📄 PDF only</span><span>🔒 Secure processing</span><span>🚫 No server upload</span></div>
     </div>
 
-    <p id="statusMsg" style="color:var(--text-dim);font-size:.9rem"></p>
-    <div class="limit-note">⚠️ Note: this works best on PDFs with simple, clearly-spaced tables. It guesses rows/columns based on text position, so complex tables (merged cells, multi-column layouts) may not split perfectly — please double-check the result.</div>
+    <div class="p2e-files" id="fileList"></div>
+    <div class="p2e-clear" id="clearRow" style="display:none"><span id="fileCount"></span><button id="clearAllBtn" type="button">Remove all</button></div>
+    <div class="p2e-info" id="infoArea" style="display:none"></div>
+    <div class="p2e-scan" id="scanNote"></div>
+
+    <div id="afterUpload" style="display:none">
+      <div class="p2e-card">
+        <h3>⚙️ Conversion settings</h3>
+        <div class="p2e-grid">
+          <div class="field"><label for="outFormat">Output format</label>
+            <select id="outFormat"><option value="xlsx">Excel (.xlsx)</option><option value="xls">Excel 97–2003 (.xls)</option><option value="csv">CSV (.csv)</option><option value="ods">OpenDocument (.ods)</option></select></div>
+          <div class="field"><label for="sheetMode">Sheets</label>
+            <select id="sheetMode"><option value="combined">All pages in one sheet</option><option value="perpage">One sheet per page</option></select></div>
+          <div class="field"><label for="pageMode">Pages</label>
+            <select id="pageMode"><option value="all">All pages</option><option value="odd">Odd pages</option><option value="even">Even pages</option><option value="custom">Custom range…</option></select></div>
+          <div class="field"><label for="pageRange">Custom range (e.g. 1-3,5)</label>
+            <input type="text" id="pageRange" placeholder="1-3,5" disabled></div>
+          <div class="field"><label for="ocrLang">OCR language (scanned PDFs)</label>
+            <select id="ocrLang"><option value="eng">English</option><option value="hin">Hindi (हिन्दी)</option><option value="eng+hin">English + Hindi</option></select></div>
+        </div>
+        <div class="p2e-checkline">
+          <label><input type="checkbox" id="detectNumbers" checked> Detect numbers</label>
+          <label><input type="checkbox" id="ignoreEmptyRows" checked> Ignore empty rows</label>
+          <label><input type="checkbox" id="ignoreEmptyCols" checked> Ignore empty columns</label>
+          <label><input type="checkbox" id="autoFit" checked> Auto-fit columns</label>
+          <label><input type="checkbox" id="useOcr"> Use OCR for scanned pages</label>
+        </div>
+      </div>
+
+      <div class="p2e-progress" id="progress"><i></i></div>
+
+      <div class="p2e-btnrow">
+        <button class="btn" id="convertBtn">📈 Convert to Excel</button>
+        <button class="p2e-cancel" id="cancelBtn" type="button">✖ Cancel</button>
+      </div>
+
+      <div class="p2e-preview" id="preview">
+        <div class="p2e-pvbox"><h4>PDF (page 1)</h4><canvas id="pvCanvas"></canvas></div>
+        <div class="p2e-pvbox"><h4>Detected table preview</h4><div class="p2e-tblwrap"><table class="p2e-tbl" id="pvTable"></table></div><div class="p2e-pvnote" id="pvNote"></div></div>
+      </div>
+
+      <p id="statusMsg" style="margin-top:12px;color:var(--text-dim);font-size:.9rem" role="status" aria-live="polite"></p>
+      <div class="limit-note">ℹ️ Tables are reconstructed from the position of the text on each page. Clearly-spaced tables convert very well; complex layouts (merged cells, nested or borderless multi-column tables) may need a quick tidy-up in Excel. For scanned PDFs (no selectable text), enable OCR above. See “Conversion Limitations” below.</div>
+    </div>
   </div>
 </div>
 
+<!-- ===================== BELOW-TOOL CONTENT ===================== -->
 
+<!-- Key features -->
+<div class="p2e-wrap">
+  <h2 class="p2e-title">✨ Key Features</h2>
+  <div class="p2e-feat-grid">
+    <div class="p2e-fcard"><h4>📊 Editable Excel output</h4><p>Turns a PDF's tables into a real, editable .xlsx you can open and work on in Excel, Google Sheets or LibreOffice Calc.</p></div>
+    <div class="p2e-fcard"><h4>🧭 Position-based table detection</h4><p>Rows are grouped by vertical position and columns are aligned from shared left edges across the whole page, so the grid lines up.</p></div>
+    <div class="p2e-fcard"><h4>🔢 Number detection</h4><p>Cells that look numeric — including amounts with commas and currency symbols — are stored as real numbers so you can sum and sort them.</p></div>
+    <div class="p2e-fcard"><h4>🗂️ Per-page or combined sheets</h4><p>Put every page on its own worksheet, or stack all pages into a single continuous sheet — whichever suits your data.</p></div>
+    <div class="p2e-fcard"><h4>🎯 Page ranges &amp; odd/even</h4><p>Convert all pages, only odd or even pages, or a custom range like 1-3,5 — handy for long reports.</p></div>
+    <div class="p2e-fcard"><h4>🗃️ Four output formats</h4><p>Export as Excel (.xlsx), Excel 97–2003 (.xls), CSV (.csv) or OpenDocument (.ods) to fit whatever comes next.</p></div>
+    <div class="p2e-fcard"><h4>🔎 Scanned-PDF OCR</h4><p>For image-only PDFs, built-in optical character recognition reads the table text in English, Hindi or both — no AI service.</p></div>
+    <div class="p2e-fcard"><h4>🧹 Tidy output</h4><p>Optionally drop empty rows and columns and auto-fit column widths so the spreadsheet is clean the moment it opens.</p></div>
+    <div class="p2e-fcard"><h4>👁️ PDF &amp; table preview</h4><p>See the first page of the PDF next to the detected grid before you download, so there are no surprises.</p></div>
+    <div class="p2e-fcard"><h4>🗜️ Batch &amp; ZIP</h4><p>Convert several PDFs at once and download them individually or bundled into a single ZIP archive.</p></div>
+    <div class="p2e-fcard"><h4>🇮🇳 Unicode &amp; Hindi</h4><p>Devanagari and other Unicode text is preserved in the spreadsheet, and OCR can read Hindi scans.</p></div>
+    <div class="p2e-fcard"><h4>🔒 100% private</h4><p>Detection, conversion and OCR run locally with pdf.js, SheetJS, JSZip and Tesseract. Your PDF is never uploaded.</p></div>
+  </div>
+</div>
+
+<!-- Benefits -->
+<div class="p2e-wrap">
+  <h2 class="p2e-title">🎁 Why use it</h2>
+  <div class="p2e-pill-row">
+    <span class="p2e-pill">Reuse tables from reports</span>
+    <span class="p2e-pill">Total &amp; sort PDF figures</span>
+    <span class="p2e-pill">Bank &amp; invoice statements to Excel</span>
+    <span class="p2e-pill">Extract data from scans (OCR)</span>
+    <span class="p2e-pill">Hindi PDFs to spreadsheets</span>
+    <span class="p2e-pill">No watermark</span>
+    <span class="p2e-pill">Works offline (after OCR load)</span>
+    <span class="p2e-pill">Free forever</span>
+  </div>
+</div>
+
+<!-- Related tools (ABOVE About) -->
+<div class="p2e-wrap">
+  <h2 class="p2e-title">🧰 Related Tools</h2>
+  <div class="p2e-rel-grid">
+    <a class="p2e-rel" href="excel-to-pdf.html"><b>Excel to PDF</b><span>Convert an Excel spreadsheet back into a PDF.</span></a>
+    <a class="p2e-rel" href="pdf-to-word.html"><b>PDF to Word</b><span>Turn a PDF's text into an editable Word document.</span></a>
+    <a class="p2e-rel" href="pdf-extract-text.html"><b>Extract Text</b><span>Pull all selectable text out of a PDF.</span></a>
+    <a class="p2e-rel" href="csv-viewer.html"><b>CSV Viewer</b><span>Open and browse CSV data as a table.</span></a>
+    <a class="p2e-rel" href="csv-json-converter.html"><b>CSV ↔ JSON</b><span>Convert between CSV and JSON data.</span></a>
+    <a class="p2e-rel" href="pdf-ocr.html"><b>PDF OCR</b><span>Make a scanned PDF searchable with OCR.</span></a>
+    <a class="p2e-rel" href="pdf-merge.html"><b>Merge PDF</b><span>Combine several PDFs into one document.</span></a>
+    <a class="p2e-rel" href="pdf-split.html"><b>Split PDF</b><span>Split a PDF into separate pages or ranges.</span></a>
+  </div>
+</div>
+
+<!-- About (bilingual) -->
 <div class="info-wrap">
   <div class="info-section">
     <div class="info-block">
       <h2>ℹ️ About This Tool</h2>
-      <p>This tool reads the text in a PDF along with its position on the page, groups it into rows and columns, and exports the result as an Excel spreadsheet.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Upload your PDF (it needs selectable text, not a scanned image).</li>
-        <li>It converts automatically and downloads as an .xlsx file.</li>
-      </ol>
+      <p>The <b>ApneSoftware PDF to Excel</b> tool converts the tables and tabular text of a PDF into an editable Microsoft Excel <b>.xlsx</b> spreadsheet, entirely inside your browser and without uploading the file anywhere. PDF is a fixed, final-form format built for faithful display, not for calculation — so the moment you need to actually <b>work</b> with the numbers in a PDF (total a column, sort a list, filter rows, feed the figures into another system) you hit a wall. Copy-pasting from a PDF usually collapses a neat table into a jumbled single column, and re-typing it by hand is slow and error-prone. This tool bridges that gap: it reads the text out of your PDF together with the exact position of every fragment on the page, reconstructs the rows and columns from that geometry, and hands you a genuine spreadsheet you can open in Excel, Google Sheets or LibreOffice Calc and start using immediately.</p>
+      <p>At its core the tool uses <b>pdf.js</b>, the same engine that renders PDFs inside Firefox, to read every page and pull out each piece of text along with its coordinates, width and font. From that raw data it rebuilds the table in two steps. First it groups fragments into <b>rows</b> by their vertical position, using a tolerance derived from the text size so that a single line is not accidentally split into two. Then it works out the <b>columns</b>: instead of guessing column breaks separately on each line — which makes columns drift and misalign — it looks at the left edges of text across the whole page, clusters those shared edges into column anchors, and snaps every cell to the anchor it belongs to. The result is a grid whose columns line up down the page, the way a real table should. The finished spreadsheet is assembled with <b>SheetJS</b>, the industry-standard JavaScript spreadsheet library, so it opens cleanly and is fully editable.</p>
+      <p>A spreadsheet is only useful if the numbers behave like numbers, so the tool includes <b>number detection</b>. Cells that look numeric — plain integers, decimals, values with thousands separators, and amounts with a leading currency symbol such as ₹, $, € or £ — are stored as real numeric values rather than text, which means you can immediately sum, average, sort and chart them in Excel without cleaning the data first. Text cells, headings and mixed content are left exactly as they are. You can switch this behaviour off if you would rather keep everything as literal text, for example when a "number" is really an account or invoice code that must keep its leading zeros.</p>
+      <p>Real documents come in many shapes, so the tool gives you control over how the spreadsheet is built. You can put <b>every page on its own worksheet</b> — ideal when each page is a separate table — or stack <b>all pages into one continuous sheet</b> when a single table runs across many pages. You can convert <b>all pages, only the odd or even pages, or a custom range</b> like 1-3,5, which is invaluable for long statements and reports where only part of the document is a table. Two clean-up options, <b>ignore empty rows</b> and <b>ignore empty columns</b>, strip out the blank gaps that PDF layouts often leave behind, and <b>auto-fit columns</b> sizes each column to its content so nothing is clipped when the file opens. Output is not limited to modern Excel either: you can export <b>.xlsx</b>, the older <b>.xls</b> format for legacy software, a universal <b>.csv</b> file for importing into almost any system, or an <b>.ods</b> OpenDocument spreadsheet for LibreOffice and OpenOffice.</p>
+      <p>Not every PDF contains real, selectable text. A great many documents — especially scanned bank statements, invoices, receipts, forms and older records — are actually <b>images of pages</b> with no text layer underneath, and a plain extractor produces nothing from them. To handle these, the tool includes traditional <b>optical character recognition (OCR)</b> powered by the open-source Tesseract engine. When you enable OCR, each scanned page is rendered to an image and read, and the recognised words are grouped back into rows and columns using their positions, so even a scanned table becomes a usable spreadsheet. You can choose the recognition language — <b>English</b>, <b>Hindi</b>, or both together — which is essential for Indian documents, and the tool detects on upload whether a PDF looks scanned and suggests turning OCR on. This is classic pattern-matching OCR that runs on your own device, not a generative AI service.</p>
+      <p>The whole experience is built to feel like the professional tools people already know — the export features of Adobe Acrobat, and the workflows of Foxit, Nitro, Smallpdf, PDF24 and iLovePDF — while remaining completely free and private. When you add a file the tool reports its name, size, page count and whether it contains selectable text; a <b>progress bar</b> shows the conversion advancing page by page, which matters especially for OCR; a <b>cancel</b> button lets you stop a long job; and a <b>preview</b> shows the first page of the PDF beside the detected grid so you can confirm the columns look right before downloading. You can convert a <b>batch</b> of PDFs at once and download them individually or as a single ZIP. Throughout, the status line explains clearly what happened, including a helpful message if a PDF turns out to be a scan and OCR was not enabled.</p>
+      <p>It is worth being honest about what any PDF-to-Excel converter can and cannot do, because it saves a great deal of frustration. A PDF stores <b>positioned glyphs</b>, not a logical table: it knows that a character sits at a certain point on the page, but it does not necessarily record that a group of numbers forms a table, which cells are merged, or where one column ends and the next begins. Rebuilding the table means <b>inferring</b> that lost structure from the geometry, and that inference is excellent for clearly-spaced tables — the columnar reports, statements and price lists that make up the vast majority of real-world needs — but imperfect for heavily designed pages with merged cells, nested tables, or borderless multi-column layouts, which may need a quick tidy-up in Excel afterwards. This tool is deliberately tuned for the common, high-value case: getting clean, aligned, numeric data out of ordinary tables so you can compute with it. It does not pretend to be a pixel-perfect layout importer, and it tells you so honestly, which — for the everyday "I just need these figures in Excel" task — is exactly what people actually want.</p>
+      <p>Above all, this tool is <b>private by design</b>. Every step — reading the PDF, detecting the table, recognising text with OCR, and building the spreadsheet — happens entirely on your own device using pdf.js, SheetJS, JSZip and Tesseract. Nothing is uploaded to a server, nothing is stored, and no account or email is required; after the libraries have loaded you can even work offline. This matters enormously for a conversion tool, because the PDFs people turn into spreadsheets are so often sensitive — bank and card statements, invoices, payroll, tax documents, medical bills and official records — and uploading them to an online converter, as many free services quietly do, would expose exactly the financial and personal data that ought to stay private. Here, that never happens. Whether you are an accountant reconciling statements, an analyst pulling figures from reports, a small-business owner processing invoices, a student compiling data, or anyone who needs the numbers out of a PDF, this tool gives you fast, structure-aware, private PDF-to-Excel conversion with nothing to install.</p>
     </div>
     <hr class="info-divider">
     <div class="info-block">
       <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>यह टूल PDF का टेक्स्ट उसकी पेज पर मौजूद पोज़िशन के साथ पढ़ता है, उसे रो और कॉलम में बांटता है, और नतीजा Excel स्प्रेडशीट के रूप में देता है।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>अपनी PDF अपलोड करें (इसमें चुनने लायक टेक्स्ट होना चाहिए, सिर्फ स्कैन की हुई इमेज नहीं)।</li>
-        <li>यह अपने आप बदलकर .xlsx फाइल के रूप में डाउनलोड हो जाएगी।</li>
-      </ol>
+      <p><b>ApneSoftware PDF to Excel</b> टूल किसी PDF की टेबल और तालिका‑रूपी टेक्स्ट को एक संपादन‑योग्य Microsoft Excel <b>.xlsx</b> स्प्रेडशीट में बदलता है, पूरी तरह आपके ब्राउज़र के अंदर और फ़ाइल को कहीं अपलोड किए बिना। PDF एक स्थिर, अंतिम‑रूप प्रारूप है जो दिखाने के लिए बना है, गणना के लिए नहीं — इसलिए जैसे ही आपको PDF के आँकड़ों के साथ असल में <b>काम</b> करना हो (किसी कॉलम का योग, किसी सूची को क्रमबद्ध करना, पंक्तियाँ छाँटना, या आँकड़े किसी और सिस्टम में डालना), आप एक दीवार से टकरा जाते हैं। PDF से कॉपी‑पेस्ट करने पर अक्सर एक सुंदर टेबल एक उलझे हुए कॉलम में बदल जाती है, और हाथ से दोबारा टाइप करना धीमा और गलती‑भरा होता है। यह टूल उस खाई को पाटता है: यह आपकी PDF से टेक्स्ट को हर टुकड़े की सटीक स्थिति के साथ पढ़ता है, उसी ज्यामिति से रो और कॉलम पुनर्निर्मित करता है, और आपको एक असली स्प्रेडशीट देता है।</p>
+      <p>मूल रूप से यह टूल <b>pdf.js</b> का उपयोग करता है — वही इंजन जो Firefox में PDF रेंडर करता है — हर पेज पढ़कर हर टेक्स्ट टुकड़े को उसके निर्देशांक, चौड़ाई और फ़ॉन्ट के साथ निकालने के लिए। उस डेटा से यह टेबल दो चरणों में बनाता है। पहले यह टुकड़ों को उनकी ऊर्ध्वाधर स्थिति के आधार पर <b>रो</b> में समूहित करता है, टेक्स्ट आकार से निकाली गई सहनशीलता का उपयोग करते हुए ताकि एक ही पंक्ति गलती से दो में न बँट जाए। फिर यह <b>कॉलम</b> तय करता है: हर पंक्ति पर अलग‑अलग अनुमान लगाने के बजाय — जिससे कॉलम खिसक जाते हैं — यह पूरे पेज पर टेक्स्ट के बाएँ किनारों को देखता है, उन साझा किनारों को कॉलम‑एंकर में समूहित करता है, और हर सेल को सही एंकर से जोड़ देता है। नतीजा एक ऐसा ग्रिड होता है जिसके कॉलम पेज के नीचे तक सीध में रहते हैं। तैयार स्प्रेडशीट <b>SheetJS</b> से बनती है।</p>
+      <p>स्प्रेडशीट तभी उपयोगी है जब संख्याएँ संख्याओं की तरह व्यवहार करें, इसलिए टूल में <b>नंबर डिटेक्शन</b> शामिल है। जो सेल संख्यात्मक दिखते हैं — साधारण पूर्णांक, दशमलव, हज़ार‑विभाजक वाले मान, और ₹, $, € या £ जैसे मुद्रा‑चिह्न वाली राशियाँ — उन्हें टेक्स्ट के बजाय असली संख्याओं के रूप में रखा जाता है, जिससे आप डेटा साफ़ किए बिना तुरंत योग, औसत, क्रमबद्ध और चार्ट कर सकते हैं। टेक्स्ट सेल और हेडिंग जैसे‑के‑तैसे रहते हैं। आप इस व्यवहार को बंद भी कर सकते हैं, उदाहरण के लिए जब कोई "संख्या" असल में खाता या इनवॉइस कोड हो जिसके शुरुआती शून्य बने रहने चाहिए।</p>
+      <p>असली दस्तावेज़ कई रूपों में आते हैं, इसलिए टूल आपको नियंत्रण देता है कि स्प्रेडशीट कैसे बने। आप <b>हर पेज को उसकी अलग वर्कशीट</b> पर रख सकते हैं — जब हर पेज एक अलग टेबल हो — या <b>सभी पेजों को एक निरंतर शीट</b> में जोड़ सकते हैं जब एक ही टेबल कई पेजों में फैली हो। आप <b>सभी पेज, केवल विषम या सम पेज, या 1-3,5 जैसी कस्टम रेंज</b> बदल सकते हैं, जो लंबे विवरणों के लिए बहुत उपयोगी है। दो सफ़ाई विकल्प — <b>खाली रो</b> और <b>खाली कॉलम</b> हटाना — PDF लेआउट द्वारा छोड़े गए खाली अंतराल हटा देते हैं, और <b>ऑटो‑फ़िट कॉलम</b> हर कॉलम को उसकी सामग्री के अनुसार आकार देता है। आउटपुट केवल आधुनिक Excel तक सीमित नहीं है: आप <b>.xlsx</b>, पुराना <b>.xls</b>, सार्वभौमिक <b>.csv</b>, या LibreOffice के लिए <b>.ods</b> निर्यात कर सकते हैं।</p>
+      <p>हर PDF में असली, चयन‑योग्य टेक्स्ट नहीं होता। बहुत से दस्तावेज़ — खासकर स्कैन किए बैंक स्टेटमेंट, इनवॉइस, रसीदें, फ़ॉर्म और पुराने रिकॉर्ड — असल में पेजों की <b>तस्वीरें</b> होती हैं जिनके नीचे कोई टेक्स्ट परत नहीं होती। इन्हें संभालने के लिए, टूल में ओपन‑सोर्स Tesseract इंजन द्वारा संचालित पारंपरिक <b>ऑप्टिकल कैरेक्टर रिकग्निशन (OCR)</b> शामिल है। जब आप OCR चालू करते हैं, हर स्कैन किया पेज एक छवि में रेंडर होकर पढ़ा जाता है, और पहचाने गए शब्द उनकी स्थिति से रो और कॉलम में वापस समूहित किए जाते हैं। आप पहचान भाषा — <b>अंग्रेज़ी</b>, <b>हिंदी</b>, या दोनों — चुन सकते हैं, जो भारतीय दस्तावेज़ों के लिए ज़रूरी है। यह पारंपरिक OCR है जो आपके अपने डिवाइस पर चलता है, कोई AI सेवा नहीं।</p>
+      <p>पूरा अनुभव उन पेशेवर टूल जैसा महसूस कराने के लिए बनाया गया है जिन्हें लोग पहले से जानते हैं — Adobe Acrobat की एक्सपोर्ट सुविधाएँ, और Foxit, Nitro, Smallpdf, PDF24 व iLovePDF के वर्कफ़्लो — जबकि यह पूरी तरह मुफ़्त और निजी बना रहता है। फ़ाइल जोड़ने पर टूल उसका नाम, आकार, पेज संख्या और यह बताता है कि उसमें चयन‑योग्य टेक्स्ट है या नहीं; एक <b>प्रगति पट्टी</b> रूपांतरण को पेज‑दर‑पेज दिखाती है; एक <b>कैंसल</b> बटन लंबे काम को रोकने देता है; और एक <b>प्रीव्यू</b> PDF के पहले पेज को पहचानी गई ग्रिड के साथ दिखाता है। आप एक साथ कई PDF का <b>बैच</b> बदल सकते हैं और उन्हें अलग‑अलग या एक ZIP के रूप में डाउनलोड कर सकते हैं।</p>
+      <p>यह ईमानदार होना उपयोगी है कि कोई भी PDF‑to‑Excel कन्वर्टर क्या कर सकता है और क्या नहीं। PDF <b>स्थित ग्लिफ़</b> संग्रहीत करता है, तार्किक टेबल नहीं: यह जानता है कि कोई अक्षर पेज पर किसी बिंदु पर है, पर ज़रूरी नहीं कि दर्ज करे कि संख्याओं का समूह एक टेबल बनाता है, कौन‑से सेल मर्ज हैं, या एक कॉलम कहाँ खत्म होता है। टेबल को फिर से बनाने का अर्थ है उस खोई संरचना का ज्यामिति से <b>अनुमान</b> लगाना, और यह अनुमान स्पष्ट‑स्थान वाली टेबलों के लिए उत्कृष्ट है पर मर्ज किए सेल, नेस्टेड टेबल या बिना‑बॉर्डर बहु‑कॉलम लेआउट वाले पेजों के लिए अपूर्ण, जिन्हें बाद में Excel में थोड़ा ठीक करना पड़ सकता है। यह टूल जानबूझकर सामान्य, उच्च‑मूल्य मामले के लिए तैयार है।</p>
+      <p>सबसे बढ़कर, यह टूल <b>डिज़ाइन से ही निजी</b> है। हर चरण — PDF पढ़ना, टेबल पहचानना, OCR से टेक्स्ट पहचानना, और स्प्रेडशीट बनाना — पूरी तरह आपके अपने डिवाइस पर pdf.js, SheetJS, JSZip और Tesseract से होता है। कुछ भी सर्वर पर अपलोड नहीं होता, कुछ भी सेव नहीं होता, और किसी अकाउंट की ज़रूरत नहीं; लाइब्रेरी लोड होने के बाद आप ऑफ़लाइन भी काम कर सकते हैं। यह किसी रूपांतरण टूल के लिए बहुत मायने रखता है, क्योंकि जिन PDF को लोग स्प्रेडशीट में बदलते हैं वे अक्सर संवेदनशील होती हैं — बैंक और कार्ड स्टेटमेंट, इनवॉइस, वेतन, कर दस्तावेज़, मेडिकल बिल और आधिकारिक रिकॉर्ड। यहाँ वह कभी नहीं होता। चाहे आप अकाउंटेंट हों, विश्लेषक, छोटे व्यवसाय के मालिक, छात्र, या कोई भी जिसे PDF से आँकड़े चाहिए — यह टूल आपको तेज़, संरचना‑जागरूक, निजी PDF‑to‑Excel रूपांतरण देता है, बिना कुछ इंस्टॉल किए।</p>
     </div>
   </div>
+</div>
+
+<!-- How to use -->
+<div class="p2e-wrap">
+  <h2 class="p2e-title">📖 How To Use</h2>
+  <ol class="p2e-steps">
+    <li><b>Upload your PDF.</b> Drag one or more PDFs into the drop zone. The tool shows the file details and whether it has selectable text.</li>
+    <li><b>Choose settings.</b> Pick the output format (XLSX, XLS, CSV or ODS), per-page or combined sheets, and a page range. For a scanned PDF, tick <b>Use OCR</b> and choose the language.</li>
+    <li><b>Convert.</b> Click <b>Convert to Excel</b>. Rows and columns are detected from the text positions; a progress bar shows each page being processed.</li>
+    <li><b>Preview.</b> Check the first-page image and the detected-table preview to confirm the columns line up.</li>
+    <li><b>Download.</b> Save the spreadsheet — or a ZIP if you converted several PDFs.</li>
+  </ol>
+</div>
+
+<!-- FAQ -->
+<div class="p2e-wrap p2e-faq">
+  <h2 class="p2e-title">❓ Frequently Asked Questions</h2>
+  <div id="faqList"></div>
+</div>
+
+<!-- Privacy & Security -->
+<div class="p2e-wrap">
+  <h2 class="p2e-title">🔒 Privacy &amp; Security</h2>
+  <p class="p2e-sub">This tool converts your PDF entirely inside your browser using pdf.js, SheetJS, JSZip and (for scanned files) the Tesseract OCR engine. Your file is <b>never uploaded</b> to any server, never stored, and never transmitted anywhere. No account, email or signup is required, and once the libraries have loaded you can work offline. Because the PDFs people convert to Excel — bank and card statements, invoices, payroll, tax and medical documents — frequently contain sensitive financial and personal data, this local-only design keeps them under your sole control from upload to download.</p>
+</div>
+
+<!-- Browser compatibility -->
+<div class="p2e-wrap">
+  <h2 class="p2e-title">🌐 Browser Compatibility</h2>
+  <p class="p2e-sub">Works in all modern browsers — Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, Brave and Opera — on Windows, macOS, Linux, Android and iOS. It relies only on JavaScript and the standard File, Blob and Canvas APIs. On phones and tablets the layout stacks into a single column with touch-friendly controls and the table preview scrolls horizontally. OCR downloads a language model once (a few megabytes) and then works offline for that language.</p>
+</div>
+
+<!-- Supported PDF types -->
+<div class="p2e-wrap">
+  <h2 class="p2e-title">🧷 Supported PDF Types</h2>
+  <p class="p2e-sub"><b>Text PDFs</b> (with selectable, machine-readable text) convert directly and most accurately — including Hindi and other Unicode text. <b>Scanned / image-only PDFs</b> have no text layer; enable OCR to read the text from the page images (English, Hindi or both). <b>Mixed PDFs</b> that contain both are handled page by page. <b>Password-protected PDFs</b> must be unlocked first with our Unlock PDF tool.</p>
+</div>
+
+<!-- Supported Excel formats -->
+<div class="p2e-wrap">
+  <h2 class="p2e-title">📄 Supported Excel Formats</h2>
+  <p class="p2e-sub"><b>Excel (.xlsx)</b> — the modern Office Open XML workbook, fully editable in Excel, Google Sheets and LibreOffice Calc, and the best choice for multiple sheets. <b>Excel 97–2003 (.xls)</b> — the older binary format for legacy software. <b>CSV (.csv)</b> — a universal plain-text table that imports into almost any application (for multi-page files the sheets are written one after another). <b>ODS</b> — the OpenDocument spreadsheet used by LibreOffice and OpenOffice. Multiple files can be downloaded together as a <b>ZIP</b>.</p>
+</div>
+
+<!-- Conversion limitations -->
+<div class="p2e-wrap">
+  <h2 class="p2e-title">⚠️ Conversion Limitations</h2>
+  <p class="p2e-sub">Because it rebuilds tables from the position of the text, the output focuses on <b>data and grid structure</b>, not a pixel-perfect copy. Preserved: cell values, row and column arrangement of clearly-spaced tables, Unicode/Hindi text, detected numbers, and auto-fitted column widths. Simplified or not carried over: merged cells, cell borders, background colours, font family, size, colour, bold/italic/underline styling, exact number/date/currency formatting, images, charts, and nested or borderless multi-column tables (which may split imperfectly). Cell styling is not written because the conversion runs on the free, client-side spreadsheet engine. OCR accuracy depends on scan quality. For layout-critical or heavily merged tables, expect a quick tidy-up in Excel.</p>
+</div>
+
+<!-- Troubleshooting -->
+<div class="p2e-wrap">
+  <h2 class="p2e-title">🛠️ Troubleshooting</h2>
+  <p class="p2e-sub"><b>“No selectable text found.”</b> Your PDF is a scan — tick <b>Use OCR</b> and choose the language, then convert again. <b>Columns are merged or split wrongly:</b> the table is likely borderless or has uneven spacing; try converting to CSV to review the raw split, or tidy the columns in Excel. <b>Numbers imported as text:</b> make sure <b>Detect numbers</b> is ticked; note that codes with leading zeros are kept as text on purpose. <b>Hindi text looks wrong:</b> for text PDFs it is preserved as-is; for scans, choose the Hindi (or English + Hindi) OCR language. <b>OCR is slow:</b> recognition runs locally and the language model downloads once; large or high-resolution scans take longer — use the Cancel button to stop. <b>“This PDF is encrypted.”</b> Remove the password with our Unlock PDF tool first.</p>
 </div>
 
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 <script src="../assets/common.js"></script>
 <script>
-pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+(function(){
+  pdfjsLib.GlobalWorkerOptions.workerSrc="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  const $ = id => document.getElementById(id);
+  let files=[];
+  let cancelFlag=false;
 
-const dropzone = document.getElementById('dropzone');
-const fileInput = document.getElementById('fileInput');
-
-setupDropzone(dropzone, fileInput, files => {
-  if(files.length && files[0].type === 'application/pdf') handleFile(files[0]);
-});
-
-function extractRows(items){
-  // group text items into rows by Y proximity
-  const sorted = [...items].sort((a,b) => b.transform[5] - a.transform[5]);
-  const rows = [];
-  let currentRow = [];
-  let lastY = null;
-
-  sorted.forEach(item => {
-    const y = item.transform[5];
-    if(lastY !== null && Math.abs(y - lastY) > 4){
-      if(currentRow.length) rows.push(currentRow);
-      currentRow = [];
-    }
-    currentRow.push(item);
-    lastY = y;
+  setupDropzone($('dropzone'), $('fileInput'), list=>{
+    Array.from(list).forEach(f=>{ if(f.type==='application/pdf'||/\.pdf$/i.test(f.name)) files.push(f); });
+    renderList(); if(files.length) inspect(files[0]);
   });
-  if(currentRow.length) rows.push(currentRow);
 
-  // within each row, sort by X and cluster into columns by gap size
-  return rows.map(row => {
-    const sortedRow = [...row].sort((a,b) => a.transform[4] - b.transform[4]);
-    const cells = [];
-    let cellText = sortedRow[0].str;
-    let lastEndX = sortedRow[0].transform[4] + (sortedRow[0].width || sortedRow[0].str.length*5);
+  $('pageMode').addEventListener('change',e=>{ $('pageRange').disabled = e.target.value!=='custom'; });
 
-    for(let i=1; i<sortedRow.length; i++){
-      const item = sortedRow[i];
-      const gap = item.transform[4] - lastEndX;
-      if(gap > 10){
-        cells.push(cellText.trim());
-        cellText = item.str;
-      } else {
-        cellText += item.str;
-      }
-      lastEndX = item.transform[4] + (item.width || item.str.length*5);
-    }
-    cells.push(cellText.trim());
-    return cells;
-  });
-}
+  function esc(s){ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
-async function handleFile(file){
-  const status = document.getElementById('statusMsg');
-  status.textContent = '⏳ Extracting data...';
-  try{
-    const arrayBuf = await file.arrayBuffer();
-    const pdf = await pdfjsLib.getDocument({data: arrayBuf}).promise;
-    let allRows = [];
-
-    for(let i=1; i<=pdf.numPages; i++){
-      status.textContent = `⏳ Reading page ${i}/${pdf.numPages}...`;
-      const page = await pdf.getPage(i);
-      const content = await page.getTextContent();
-      if(content.items.length){
-        const rows = extractRows(content.items);
-        allRows = allRows.concat(rows);
-      }
-    }
-
-    if(!allRows.length){
-      status.textContent = '⚠️ No selectable text found — this looks like a scanned PDF. Try the PDF OCR tool instead.';
-      return;
-    }
-
-    status.textContent = '⏳ Building spreadsheet...';
-    const ws = XLSX.utils.aoa_to_sheet(allRows);
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
-
-    const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
-    const blob = new Blob([wbout], { type: 'application/octet-stream' });
-    const outName = file.name.replace(/\.pdf$/i, '') + '.xlsx';
-    downloadBlob(outName, blob);
-    status.textContent = '✅ Converted and downloaded! Please double-check the rows/columns.';
-  }catch(err){
-    status.textContent = '❌ Error: ' + err.message;
+  function renderList(){
+    const el=$('fileList'); el.innerHTML='';
+    files.forEach((f,i)=>{ const d=document.createElement('div'); d.className='p2e-file';
+      d.innerHTML=`<span class="p2e-fn">📄 ${esc(f.name)}</span><span class="p2e-fs">${formatBytes(f.size)}</span><button data-i="${i}" title="Remove">✖</button>`;
+      el.appendChild(d); });
+    el.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ files.splice(+b.dataset.i,1); renderList(); if(files.length) inspect(files[0]); else { $('infoArea').style.display='none'; $('scanNote').classList.remove('show'); $('preview').classList.remove('show'); } }));
+    $('afterUpload').style.display=files.length?'block':'none';
+    $('clearRow').style.display=files.length?'flex':'none';
+    $('fileCount').textContent=files.length+' file(s)';
   }
-}
+  $('clearAllBtn').addEventListener('click',()=>{ files=[]; renderList(); $('infoArea').style.display='none'; $('scanNote').classList.remove('show'); $('preview').classList.remove('show'); $('statusMsg').textContent=''; });
+
+  async function inspect(file){
+    try{
+      const ab=await file.arrayBuffer();
+      let ver='—'; try{ const h=new TextDecoder('latin1').decode(new Uint8Array(ab.slice(0,1024))); const m=/%PDF-(\d\.\d)/.exec(h); if(m) ver=m[1]; }catch(e){}
+      const pdf=await pdfjsLib.getDocument({data:ab.slice(0)}).promise;
+      let textChars=0; const sample=Math.min(pdf.numPages,3);
+      for(let i=1;i<=sample;i++){ const p=await pdf.getPage(i); const tc=await p.getTextContent(); textChars+=tc.items.reduce((s,it)=>s+it.str.length,0); }
+      const scanned = textChars < 20;
+      const rows=[['File',esc(file.name)],['Size',formatBytes(file.size)],['Pages',pdf.numPages],['PDF version',ver],['Type',scanned?'Scanned / image':'Text PDF']];
+      $('infoArea').style.display='grid';
+      $('infoArea').innerHTML=rows.map(([k,v])=>`<div class="p2e-i"><b>${v}</b><span>${k}</span></div>`).join('');
+      const note=$('scanNote'); note.classList.add('show');
+      if(scanned){ note.className='p2e-scan warn show'; note.textContent='🔎 This PDF appears to be scanned (little or no selectable text). Enable “Use OCR for scanned pages” and pick a language.'; $('useOcr').checked=true; }
+      else { note.className='p2e-scan ok show'; note.textContent='✓ This PDF contains selectable text and will convert directly.'; }
+    }catch(e){ $('scanNote').className='p2e-scan warn show'; $('scanNote').textContent='⚠️ Could not read this PDF — it may be encrypted. Unlock it first.'; }
+  }
+
+  // ---- helpers ----
+  function median(a){ if(!a.length) return 0; const s=[...a].sort((x,y)=>x-y); return s[Math.floor(s.length/2)]; }
+  function itemHeight(it){ return it.height||Math.hypot(it.transform[2],it.transform[3])||10; }
+
+  function parseRange(mode, custom, total){
+    let out=[];
+    if(mode==='all'){ for(let i=1;i<=total;i++) out.push(i); }
+    else if(mode==='odd'){ for(let i=1;i<=total;i++) if(i%2===1) out.push(i); }
+    else if(mode==='even'){ for(let i=1;i<=total;i++) if(i%2===0) out.push(i); }
+    else { // custom "1-3,5"
+      String(custom||'').split(',').forEach(part=>{ part=part.trim(); if(!part) return;
+        const m=/^(\d+)\s*-\s*(\d+)$/.exec(part);
+        if(m){ let a=+m[1], b=+m[2]; if(a>b){ const t=a;a=b;b=t; } for(let i=a;i<=b;i++) out.push(i); }
+        else if(/^\d+$/.test(part)) out.push(+part);
+      });
+      out=out.filter(n=>n>=1&&n<=total);
+      out=Array.from(new Set(out)).sort((a,b)=>a-b);
+      if(!out.length) for(let i=1;i<=total;i++) out.push(i);
+    }
+    return out;
+  }
+
+  function coerceCell(s, detectNumbers){
+    if(!detectNumbers) return s;
+    const t=String(s).trim();
+    if(/^-?\d{1,3}(,\d{3})+(\.\d+)?$/.test(t) || /^-?\d+(\.\d+)?$/.test(t)){
+      const n=Number(t.replace(/,/g,'')); if(isFinite(n)) return n;
+    }
+    const cur=/^[₹$€£]\s?(-?\d{1,3}(,\d{3})+(\.\d+)?|-?\d+(\.\d+)?)$/.exec(t);
+    if(cur){ const n=Number(cur[1].replace(/,/g,'')); if(isFinite(n)) return n; }
+    return s;
+  }
+
+  // ---- position-based grid detection from a PDF text layer ----
+  function itemsToGrid(items){
+    items=items.filter(it=>it.str!==undefined && String(it.str).trim().length);
+    if(!items.length) return [];
+    const medH=median(items.map(itemHeight))||10;
+    const rowTol=Math.max(3, medH*0.6);
+    // rows by Y (top to bottom)
+    const sorted=[...items].sort((a,b)=> (b.transform[5]-a.transform[5]) || (a.transform[4]-b.transform[4]));
+    const rows=[]; let cur=null; let lastY=null;
+    sorted.forEach(it=>{ const y=it.transform[5];
+      if(lastY===null || Math.abs(y-lastY)>rowTol){ cur=[]; rows.push(cur); }
+      cur.push(it); lastY=y;
+    });
+    // global column anchors from left edges
+    const charW=median(items.map(it=>{ const w=it.width||itemHeight(it)*0.5*String(it.str).length; return w/Math.max(1,String(it.str).length); }))||5;
+    const gapThresh=Math.max(8, charW*2.2);
+    const lefts=items.map(it=>it.transform[4]).sort((a,b)=>a-b);
+    const anchors=[]; let start=lefts[0], prev=lefts[0];
+    for(let i=1;i<lefts.length;i++){ if(lefts[i]-prev>gapThresh){ anchors.push(start); start=lefts[i]; } prev=lefts[i]; }
+    anchors.push(start);
+    const assign=x=>{ let bi=0, bd=Infinity; for(let i=0;i<anchors.length;i++){ const d=Math.abs(x-anchors[i]); if(x>=anchors[i]-gapThresh*0.5 && d<bd){ bd=d; bi=i; } }
+      if(bd===Infinity){ for(let i=0;i<anchors.length;i++){ const d=Math.abs(x-anchors[i]); if(d<bd){ bd=d; bi=i; } } } return bi; };
+    // build grid
+    const grid=rows.map(row=>{
+      const rowSorted=[...row].sort((a,b)=>a.transform[4]-b.transform[4]);
+      const cells=new Array(anchors.length).fill('');
+      rowSorted.forEach(it=>{ const ci=assign(it.transform[4]); cells[ci]=cells[ci]?cells[ci]+' '+it.str:it.str; });
+      return cells.map(c=>c.replace(/\s+/g,' ').trim());
+    });
+    return grid;
+  }
+
+  // ---- OCR a scanned page into rows using word positions ----
+  async function ocrRows(page, lang, onProg){
+    const vp=page.getViewport({scale:2}); const c=document.createElement('canvas'); c.width=vp.width; c.height=vp.height;
+    await page.render({canvasContext:c.getContext('2d'), viewport:vp}).promise;
+    const { data }=await Tesseract.recognize(c, lang||'eng', onProg?{logger:onProg}:undefined);
+    const rows=[];
+    (data.lines||[]).forEach(line=>{
+      const words=(line.words||[]).filter(w=>w.text && w.text.trim());
+      if(!words.length) return;
+      words.sort((a,b)=>a.bbox.x0-b.bbox.x0);
+      const lineW=(line.bbox?(line.bbox.x1-line.bbox.x0):600);
+      const gap=Math.max(18, lineW*0.03);
+      const cells=[]; let cell=words[0].text; let lastX1=words[0].bbox.x1;
+      for(let i=1;i<words.length;i++){ const w=words[i]; if(w.bbox.x0-lastX1>gap){ cells.push(cell.trim()); cell=w.text; } else cell+=' '+w.text; lastX1=w.bbox.x1; }
+      cells.push(cell.trim());
+      rows.push(cells);
+    });
+    return rows;
+  }
+
+  // ---- extract table rows per selected page ----
+  async function extractTables(file, opts){
+    opts=opts||{};
+    const ab=await file.arrayBuffer();
+    const pdf=await pdfjsLib.getDocument({data:ab.slice(0)}).promise;
+    const wanted=opts.pages && opts.pages.length ? opts.pages.filter(n=>n<=pdf.numPages) : (function(){const a=[];for(let i=1;i<=pdf.numPages;i++)a.push(i);return a;})();
+    const pagesData=[];
+    for(let idx=0; idx<wanted.length; idx++){
+      if(opts.isCancelled && opts.isCancelled()) throw new Error('Cancelled');
+      const pi=wanted[idx];
+      if(opts.onPage) opts.onPage(idx+1, wanted.length, pi);
+      const page=await pdf.getPage(pi);
+      const tc=await page.getTextContent();
+      const textChars=tc.items.reduce((s,it)=>s+String(it.str).length,0);
+      let rows;
+      if(textChars<10 && opts.useOcr && window.Tesseract){ rows=await ocrRows(page, opts.ocrLang); }
+      else { rows=itemsToGrid(tc.items); }
+      if(opts.ignoreEmptyRows) rows=rows.filter(r=>r.some(c=>String(c).trim()));
+      pagesData.push({page:pi, rows});
+    }
+    return { pagesData, numPages:pdf.numPages };
+  }
+
+  function dropEmptyCols(grid){
+    if(!grid.length) return grid;
+    const ncols=grid.reduce((m,r)=>Math.max(m,r.length),0);
+    const keep=[];
+    for(let c=0;c<ncols;c++){ if(grid.some(r=>String(r[c]!=null?r[c]:'').trim())) keep.push(c); }
+    return grid.map(r=>keep.map(c=>r[c]!=null?r[c]:''));
+  }
+  function colWidths(grid){
+    const ncols=grid.reduce((m,r)=>Math.max(m,r.length),0);
+    const w=[];
+    for(let c=0;c<ncols;c++){ let mx=6; grid.forEach(r=>{ const v=String(r[c]!=null?r[c]:''); if(v.length>mx) mx=v.length; }); w.push({wch:Math.min(60,mx+2)}); }
+    return w;
+  }
+
+  // ---- build a SheetJS workbook ----
+  function buildWorkbook(pagesData, opts){
+    opts=opts||{};
+    const wb=XLSX.utils.book_new();
+    const makeSheet=rows=>{
+      let grid=rows.map(r=>r.map(c=>coerceCell(c, opts.detectNumbers)));
+      if(opts.ignoreEmptyCols) grid=dropEmptyCols(grid);
+      if(!grid.length) grid=[['']];
+      const ws=XLSX.utils.aoa_to_sheet(grid);
+      if(opts.autoFit) ws['!cols']=colWidths(grid);
+      return ws;
+    };
+    if(opts.sheetMode==='perpage'){
+      pagesData.forEach(pd=>{ const ws=makeSheet(pd.rows); let name=('Page '+pd.page).slice(0,31); XLSX.utils.book_append_sheet(wb, ws, name); });
+      if(!wb.SheetNames.length) XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet([['']]), 'Sheet1');
+    } else {
+      let all=[]; pagesData.forEach((pd,i)=>{ all=all.concat(pd.rows); });
+      const ws=makeSheet(all); XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    }
+    return wb;
+  }
+
+  function workbookBlob(wb, fmt){
+    if(fmt==='csv'){
+      const csv=wb.SheetNames.map(n=>XLSX.utils.sheet_to_csv(wb.Sheets[n])).join('\r\n');
+      return new Blob([csv], {type:'text/csv'});
+    }
+    const bt = fmt==='xls'?'xls' : fmt==='ods'?'ods' : 'xlsx';
+    const out=XLSX.write(wb, {bookType:bt, type:'array'});
+    return new Blob([out], {type:'application/octet-stream'});
+  }
+  const EXT={xlsx:'xlsx', xls:'xls', csv:'csv', ods:'ods'};
+
+  window.__p2eHooks={ extractTables, itemsToGrid, ocrRows, buildWorkbook, workbookBlob, parseRange, coerceCell, dropEmptyCols };
+
+  // ---- preview ----
+  async function preview(file, pagesData){
+    try{
+      const ab=await file.arrayBuffer(); const pdf=await pdfjsLib.getDocument({data:ab.slice(0)}).promise;
+      const page=await pdf.getPage(1); const vp0=page.getViewport({scale:1}); const scale=Math.min(1,360/vp0.width);
+      const vp=page.getViewport({scale}); const c=$('pvCanvas'); c.width=vp.width; c.height=vp.height;
+      await page.render({canvasContext:c.getContext('2d'), viewport:vp}).promise;
+    }catch(e){}
+    const rows=(pagesData[0]&&pagesData[0].rows)||[];
+    const shown=rows.slice(0,12);
+    $('pvTable').innerHTML=shown.map(r=>'<tr>'+r.map(c=>`<td>${esc(String(c))}</td>`).join('')+'</tr>').join('')||'<tr><td>(no table detected)</td></tr>';
+    const totalRows=pagesData.reduce((s,p)=>s+p.rows.length,0);
+    $('pvNote').textContent=`Detected ${totalRows} row(s) across ${pagesData.length} page(s). Showing first ${Math.min(12,rows.length)} of page ${pagesData[0]?pagesData[0].page:1}.`;
+    $('preview').classList.add('show');
+  }
+
+  // ---- convert ----
+  $('cancelBtn').addEventListener('click',()=>{ cancelFlag=true; $('statusMsg').textContent='⏹️ Cancelling…'; });
+
+  $('convertBtn').addEventListener('click', async ()=>{
+    if(!files.length){ $('statusMsg').textContent='⚠️ Add a PDF first.'; return; }
+    const fmt=$('outFormat').value;
+    const base={
+      sheetMode:$('sheetMode').value, detectNumbers:$('detectNumbers').checked,
+      ignoreEmptyRows:$('ignoreEmptyRows').checked, ignoreEmptyCols:$('ignoreEmptyCols').checked,
+      autoFit:$('autoFit').checked, useOcr:$('useOcr').checked, ocrLang:$('ocrLang').value,
+      pageMode:$('pageMode').value, pageRange:$('pageRange').value,
+      isCancelled:()=>cancelFlag
+    };
+    const prog=$('progress'); prog.classList.add('show'); prog.querySelector('i').style.width='4%';
+    $('convertBtn').disabled=true; $('cancelBtn').classList.add('show'); cancelFlag=false;
+    const t0=performance.now();
+    try{
+      const outputs=[]; let firstPages=null;
+      for(let i=0;i<files.length;i++){
+        if(cancelFlag) throw new Error('Cancelled');
+        // resolve page range against this file
+        const probe=await pdfjsLib.getDocument({data:(await files[i].arrayBuffer()).slice(0)}).promise;
+        const pages=parseRange(base.pageMode, base.pageRange, probe.numPages);
+        const opts=Object.assign({}, base, { pages,
+          onPage:(done,total,pi)=>{ $('statusMsg').textContent=`⏳ ${files[i].name}: page ${pi} (${done}/${total})${base.useOcr?' · OCR':''}…`; prog.querySelector('i').style.width=Math.round(((i+done/total)/files.length)*92)+'%'; }
+        });
+        const { pagesData }=await extractTables(files[i], opts);
+        if(i===0) firstPages=pagesData;
+        const hasData=pagesData.some(p=>p.rows.some(r=>r.some(c=>String(c).trim())));
+        if(!hasData){ throw new Error('No table data found in '+files[i].name+(base.useOcr?'':' — enable OCR for scanned PDFs.')); }
+        const wb=buildWorkbook(pagesData, opts);
+        const blob=workbookBlob(wb, fmt);
+        outputs.push({name:files[i].name.replace(/\.pdf$/i,'')+'.'+EXT[fmt], blob});
+      }
+      if(firstPages) await preview(files[0], firstPages);
+      prog.querySelector('i').style.width='100%';
+      if(outputs.length===1){ downloadBlob(outputs[0].name, outputs[0].blob); }
+      else { const zip=new JSZip(); for(const o of outputs) zip.file(o.name, o.blob); downloadBlob('pdf-to-excel.zip', await zip.generateAsync({type:'blob'})); }
+      const secs=((performance.now()-t0)/1000).toFixed(1);
+      $('statusMsg').textContent=`✅ Converted ${files.length} file(s) to ${fmt.toUpperCase()} in ${secs}s${outputs.length>1?' (ZIP)':''}. Please double-check the rows/columns.`;
+      if(window.premToast) premToast('Converted ✔');
+    }catch(err){ $('statusMsg').textContent = err.message==='Cancelled' ? '⏹️ Cancelled.' : '❌ '+err.message; }
+    finally{ $('convertBtn').disabled=false; $('cancelBtn').classList.remove('show'); setTimeout(()=>prog.classList.remove('show'),600); }
+  });
+
+  // ===== FAQ =====
+  const FAQ=[
+    ['Does this really produce an editable Excel file?','Yes. It detects the tables in your PDF and builds a valid .xlsx you can open and edit in Microsoft Excel, Google Sheets or LibreOffice Calc, with numbers stored as real numbers.'],
+    ['Is my PDF uploaded to a server?','No. Everything — table detection, OCR and building the spreadsheet — runs in your browser with pdf.js, SheetJS, JSZip and Tesseract. Your file never leaves your device.'],
+    ['How does the table detection work?','The tool reads the position of every piece of text, groups fragments into rows by their vertical position, and aligns columns by clustering the shared left edges across the whole page, so the grid lines up.'],
+    ['Can it convert scanned PDFs?','Yes, with OCR. Tick “Use OCR for scanned pages” and choose the language; the tool reads the text from the page images and rebuilds rows and columns. Text PDFs convert directly without OCR.'],
+    ['Which OCR languages are supported?','English, Hindi, or both together. Choose the one that matches your scanned document for the best accuracy.'],
+    ['Will numbers be usable for calculations?','Yes. With “Detect numbers” on, cells that look numeric — including amounts with commas and currency symbols — are stored as real numbers so you can sum, average and sort them immediately.'],
+    ['How do I keep leading zeros in codes?','Turn off “Detect numbers”, or clean the column in Excel afterwards. When detection is off, every cell is kept exactly as text, preserving leading zeros in account or invoice codes.'],
+    ['What output formats can I choose?','Excel (.xlsx), Excel 97–2003 (.xls), CSV (.csv) and OpenDocument (.ods). Convert several files and download them together as a ZIP.'],
+    ['Can I put each page on its own sheet?','Yes. Choose “One sheet per page” to keep pages separate, or “All pages in one sheet” to stack a table that runs across several pages into one continuous sheet.'],
+    ['Can I convert only some pages?','Yes. Choose all pages, only odd or even pages, or type a custom range like 1-3,5 to convert just the part of the document you need.'],
+    ['Does it preserve Hindi and other Unicode text?','Yes. For text PDFs, Unicode content including Hindi is preserved exactly. For scans, choose the Hindi (or English + Hindi) OCR language.'],
+    ['Will it keep colours, borders, fonts and merged cells?','No. It rebuilds the data and grid, but cell styling — colours, borders, fonts, bold and merged cells — is not reproduced, because the conversion uses the free client-side spreadsheet engine. See Conversion Limitations.'],
+    ['Can I convert more than one PDF at once?','Yes. Add several PDFs and the tool converts them one after another, downloading each spreadsheet or bundling them into a single ZIP.'],
+    ['Why did I get “No table data found”?','Your PDF is probably a scan with no text layer. Enable OCR and choose the language, then convert again.'],
+    ['Why are some columns merged or split wrongly?','Borderless tables or uneven spacing can confuse column detection. Try converting to CSV to see the raw split, or adjust the columns in Excel — it is usually a quick fix.'],
+    ['Does OCR work offline?','After the language model downloads once (a few megabytes), OCR for that language runs entirely offline on your device.'],
+    ['Is there a file size limit?','There is no fixed limit; it depends on your device memory. Large PDFs and OCR of high-resolution scans take longer because everything runs locally. Use the Cancel button to stop a long job.'],
+    ['Can it convert password-protected PDFs?','Not directly. Remove the password first with our Unlock PDF tool, then convert the unlocked file.'],
+    ['Does it change my original PDF?','No. Your PDF is only read to produce the spreadsheet; the original is never modified.'],
+    ['Can I preview before downloading?','Yes. After converting, the tool shows the first page of the PDF alongside the detected table so you can confirm the columns before saving.'],
+    ['Does it work on mobile?','Yes. The layout adapts to phones and tablets, the table preview scrolls sideways, and you can convert a PDF straight from your device.'],
+    ['Is this tool really free?','Yes. It is completely free with no watermark, no limits, no account and no hidden charges.'],
+    ['Is my data safe?','Completely. Because nothing is uploaded, your documents never leave your browser and are discarded when you close the tab.']
+  ];
+  const faqList=$('faqList');
+  FAQ.forEach(([q,a])=>{ const d=document.createElement('details'); d.innerHTML='<summary>'+q+'</summary><p>'+a+'</p>'; faqList.appendChild(d); });
+  try{ $('faqSchema').textContent=JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:FAQ.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))}); }catch(e){}
+})();
 </script>
 </body>
 </html>
