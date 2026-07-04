@@ -67,9 +67,19 @@
 .ig-field.bad .ig-warn{display:block}
 .ig-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .ig-row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-.item-row{display:grid;grid-template-columns:1fr 74px 54px 74px 54px 30px;gap:6px;margin-bottom:7px;align-items:center}
-.item-row input{padding:7px 8px;font-size:.8rem;min-width:0}
-@media(max-width:520px){.item-row{grid-template-columns:1fr 52px 40px 58px 40px 26px;gap:4px}.item-row input{padding:6px 4px;font-size:.72rem}.item-head{font-size:.6rem}}
+.item-row{display:grid;grid-template-columns:minmax(80px,1fr) 84px 48px 110px 54px 30px;gap:6px;margin-bottom:7px;align-items:center}
+.item-row input{padding:7px 8px!important;font-size:.8rem!important;min-width:0;border-radius:8px!important}
+.item-row input[type=number]{text-align:right;-moz-appearance:textfield;appearance:textfield}
+.item-row input[type=number]::-webkit-outer-spin-button,.item-row input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.item-head span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.item-head span:nth-child(3),.item-head span:nth-child(4),.item-head span:nth-child(5){text-align:right}
+@media(max-width:560px){
+  .item-head{display:none}
+  .item-row{grid-template-columns:1.45fr .6fr 1.45fr .75fr 26px;gap:5px;padding:8px;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:8px}
+  .item-row input[data-k="desc"]{grid-column:1 / -1}
+  .item-row input{padding:8px 7px!important;font-size:.78rem!important}
+  .item-row .removeItemBtn{align-self:center}
+}
 .item-row .removeItemBtn{background:none;border:1px solid var(--border,rgba(255,255,255,.16));border-radius:6px;color:var(--text-dim);cursor:pointer;padding:5px;font-size:.78rem}
 .item-row .removeItemBtn:hover{color:#f87171;border-color:#f87171}
 .item-head{font-size:.68rem;color:var(--text-dim)}
@@ -86,7 +96,8 @@
 
 /* preview (exported) */
 .ig-preview-wrap{position:sticky;top:12px}
-#invoicePreview{background:#fff;color:#1a1a1a;border-radius:8px;padding:34px;font-family:'Helvetica Neue',Arial,sans-serif;min-height:640px;box-shadow:0 4px 20px rgba(0,0,0,.3);font-size:12.5px}
+#invoicePreview{background:#fff;color:#1a1a1a;border-radius:8px;padding:34px;font-family:'Helvetica Neue',Arial,sans-serif;min-height:640px;box-shadow:0 4px 20px rgba(0,0,0,.3);font-size:12.5px;overflow-x:auto}
+@media(max-width:560px){#invoicePreview{padding:20px}}
 #invoicePreview .inv-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;gap:16px}
 #invoicePreview .inv-title{font-size:24px;font-weight:800;letter-spacing:.5px}
 #invoicePreview .biz-name{font-weight:700;font-size:15px}
@@ -489,9 +500,9 @@ table.ig-table th{background:rgba(167,139,250,.14);color:#fff;font-weight:600}
       var row=document.createElement('div'); row.className='item-row';
       row.innerHTML='<input type="text" data-k="desc" value="'+escHtml(it.desc).replace(/"/g,'&quot;')+'" placeholder="Item / service">'+
         '<input type="text" data-k="hsn" value="'+escHtml(it.hsn).replace(/"/g,'&quot;')+'" placeholder="HSN">'+
-        '<input type="number" data-k="qty" value="'+it.qty+'" min="0" step="1">'+
-        '<input type="number" data-k="price" value="'+it.price+'" min="0" step="0.01">'+
-        '<input type="number" data-k="disc" value="'+it.disc+'" min="0" max="100" step="1">'+
+        '<input type="number" data-k="qty" value="'+it.qty+'" min="0" step="1" placeholder="Qty" aria-label="Quantity">'+
+        '<input type="number" data-k="price" value="'+it.price+'" min="0" step="0.01" placeholder="Price" aria-label="Price">'+
+        '<input type="number" data-k="disc" value="'+it.disc+'" min="0" max="100" step="1" placeholder="Disc%" aria-label="Discount percent">'+
         '<button class="removeItemBtn" type="button" '+(data.items.length===1?'disabled':'')+'>✕</button>';
       row.querySelectorAll('[data-k]').forEach(function(el){ var num=(el.type==='number'); el.addEventListener('input',function(){ it[el.dataset.k]=num?(parseFloat(el.value)||0):el.value; render(); save(); }); });
       var rm=row.querySelector('.removeItemBtn'); rm.addEventListener('click',function(){ if(data.items.length>1){ data.items.splice(i,1); renderItems(); render(); save(); } });
