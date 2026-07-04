@@ -5,48 +5,128 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://apnesoftware.com/tools/before-after-slider.html">
+<meta name="description" content="Free Professional Image Comparison Suite — compare two images with horizontal/vertical sliders, circle reveal, split, side-by-side, overlay & fade modes, zoom, pan, pixel difference analysis, custom labels and PNG/JPG/WebP/PDF/SVG export. 100% in your browser, no upload.">
+<meta name="keywords" content="image comparison slider, before after slider, compare two images, image difference checker, photo comparison tool, before after image, image overlay compare, split image comparison, circle reveal comparison, pixel difference online">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Before/After Image Comparison Slider | ApneSoftware">
-<meta property="og:description" content="Compare two images with a drag slider. Free online tool — no signup required.">
+<meta property="og:title" content="Professional Image Comparison Suite — Before/After Slider | ApneSoftware">
+<meta property="og:description" content="Compare two images with 7 modes, zoom, pan, difference analysis, custom labels and multi-format export. 100% browser-based, private, no signup.">
 <meta property="og:url" content="https://apnesoftware.com/tools/before-after-slider.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Before/After Image Comparison Slider | ApneSoftware">
-<meta name="twitter:description" content="Compare two images with a drag slider. Free online tool — no signup required.">
+<meta name="twitter:title" content="Professional Image Comparison Suite — Before/After Slider | ApneSoftware">
+<meta name="twitter:description" content="Compare two images with 7 modes, zoom, pan, difference analysis and multi-format export. 100% browser-based & private.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Before/After Comparison Slider","description":"Compare two images with a drag slider. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/before-after-slider.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Professional Image Comparison Suite","description":"Compare two images side by side with horizontal/vertical sliders, circle reveal, split, side-by-side, overlay and fade modes, plus zoom, pan, pixel difference analysis, custom labels and PNG/JPG/WebP/PDF/SVG export. Runs 100% in the browser.","url":"https://apnesoftware.com/tools/before-after-slider.html","applicationCategory":"MultimediaApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"featureList":["Horizontal & vertical comparison slider","Circle reveal, split, side-by-side, overlay and fade modes","Zoom 50%-400% with pan","Pixel difference analysis and histogram","Custom before/after labels","Drag & drop, paste, camera and URL import","Export to PNG, JPG, WebP, PDF and SVG"],"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
 </script>
 <meta name="color-scheme" content="dark">
-<title>Before/After Image Comparison Slider | ApneSoftware</title>
+<title>Professional Image Comparison Suite — Before/After Slider | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-/* Premium upload enhancement for this tool */
+/* ===== Before/After Comparison Suite — scoped with bac- prefix ===== */
 .dropzone{cursor:pointer}
 .dropzone p{font-size:.9rem}
 .panel{position:relative;z-index:1}
-</style>
-<style>
-  .upload-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  @media (max-width:600px){ .upload-row{grid-template-columns:1fr} }
-  .compare-stage{
-    position:relative;width:100%;max-width:100%;margin-top:18px;border-radius:10px;overflow:hidden;
-    border:1px solid var(--border);touch-action:none;user-select:none;
-  }
-  .compare-stage img{display:block;width:100%;height:auto}
-  .compare-after{position:absolute;top:0;left:0;height:100%;overflow:hidden;width:50%}
-  .compare-after img{width:var(--stage-width,100%);max-width:none;height:100%;object-fit:cover}
-  .compare-handle{
-    position:absolute;top:0;bottom:0;left:50%;width:4px;background:#fff;cursor:ew-resize;
-    box-shadow:0 0 6px rgba(0,0,0,.5);
-  }
-  .compare-handle::after{
-    content:'⇔';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-    width:38px;height:38px;background:#fff;color:#222;border-radius:50%;display:flex;align-items:center;justify-content:center;
-    font-size:1.1rem;box-shadow:0 2px 8px rgba(0,0,0,.4);
-  }
-  .label-tag{position:absolute;top:10px;background:rgba(0,0,0,.6);color:#fff;font-size:.75rem;padding:3px 10px;border-radius:12px}
+
+.bac-uploads{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:640px){ .bac-uploads{grid-template-columns:1fr} }
+.bac-slot label.bac-slot-title{font-size:.85rem;color:var(--text-dim);display:block;margin-bottom:6px;font-weight:600}
+.bac-dz{position:relative}
+.bac-slot-actions{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.bac-mini{font-size:.72rem;padding:5px 9px;border-radius:7px;background:var(--surface-2,rgba(255,255,255,.06));border:1px solid var(--border);color:var(--text);cursor:pointer;display:inline-flex;align-items:center;gap:4px}
+.bac-mini:hover{background:rgba(124,92,252,.18);border-color:var(--accent,#7c5cfc)}
+.bac-urlrow{display:none;gap:6px;margin-top:8px}
+.bac-urlrow.show{display:flex}
+.bac-urlrow input{flex:1;min-width:0}
+.bac-thumbs{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.bac-thumb{width:46px;height:46px;border-radius:7px;object-fit:cover;border:2px solid transparent;cursor:pointer;background:#111}
+.bac-thumb.active{border-color:var(--accent,#7c5cfc)}
+
+/* Toolbar */
+.bac-toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 6px;align-items:center}
+.bac-group{display:flex;flex-wrap:wrap;gap:6px;align-items:center;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;padding:7px 9px}
+.bac-group .bac-glabel{font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-dim);margin-right:2px}
+.bac-btn{font-size:.76rem;padding:6px 10px;border-radius:7px;background:var(--surface-2,rgba(255,255,255,.06));border:1px solid var(--border);color:var(--text);cursor:pointer;white-space:nowrap}
+.bac-btn:hover{background:rgba(124,92,252,.18)}
+.bac-btn.active{background:var(--accent,#7c5cfc);border-color:var(--accent,#7c5cfc);color:#fff}
+.bac-btn:disabled{opacity:.4;cursor:not-allowed}
+.bac-select{font-size:.76rem;padding:6px 8px;border-radius:7px;background:var(--surface-2,rgba(255,255,255,.06));border:1px solid var(--border);color:var(--text);cursor:pointer}
+.bac-select option{background:#1a1a2e;color:#fff}
+.bac-range{accent-color:var(--accent,#7c5cfc);vertical-align:middle}
+.bac-swatch{width:22px;height:22px;border-radius:6px;border:1px solid var(--border);cursor:pointer;padding:0;background:none}
+
+/* Stage */
+.bac-stage-wrap{position:relative;margin-top:14px}
+.compare-stage{
+  position:relative;width:100%;max-width:100%;border-radius:12px;overflow:hidden;
+  border:1px solid var(--border);touch-action:none;user-select:none;background:#0d0d16;
+  min-height:220px;display:flex;align-items:center;justify-content:center;
+}
+.compare-stage canvas{display:block;width:100%;height:auto;max-height:74vh}
+.compare-handle{
+  position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;cursor:ew-resize;
+  box-shadow:0 0 8px rgba(0,0,0,.6);transform:translateX(-50%);z-index:4;display:none;
+}
+.compare-handle.vertical{top:50%;bottom:auto;left:0;right:0;width:100%;height:3px;transform:translateY(-50%);cursor:ns-resize}
+.compare-handle::after{
+  content:'⇔';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:40px;height:40px;background:#fff;color:#222;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:1.05rem;font-weight:700;box-shadow:0 2px 10px rgba(0,0,0,.5);
+}
+.compare-handle.vertical::after{content:'⇕'}
+.label-tag{position:absolute;top:10px;background:rgba(0,0,0,.62);color:#fff;font-size:.74rem;font-weight:600;padding:4px 11px;border-radius:12px;z-index:5;pointer-events:none;backdrop-filter:blur(4px)}
+.bac-pct{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.62);color:#fff;font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:11px;z-index:5;pointer-events:none;display:none}
+.compare-stage.grabbable canvas{cursor:grab}
+.compare-stage.grabbing canvas{cursor:grabbing}
+.compare-stage:fullscreen{background:#000;border-radius:0}
+.compare-stage:fullscreen canvas{max-height:100vh}
+
+/* Info + difference panels */
+.bac-panels{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+@media (max-width:760px){ .bac-panels{grid-template-columns:1fr} }
+.bac-card{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+.bac-card h3{font-size:.9rem;margin:0 0 10px;display:flex;align-items:center;gap:6px}
+.bac-info-grid{display:grid;grid-template-columns:auto 1fr;gap:5px 12px;font-size:.8rem}
+.bac-info-grid span:nth-child(odd){color:var(--text-dim)}
+.bac-info-grid span:nth-child(even){text-align:right;font-variant-numeric:tabular-nums;word-break:break-word}
+.bac-diff-row{display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:7px;gap:10px}
+.bac-diff-row b{font-variant-numeric:tabular-nums}
+.bac-diff-bar{height:8px;border-radius:5px;background:rgba(255,255,255,.1);overflow:hidden;margin:2px 0 10px}
+.bac-diff-bar>i{display:block;height:100%;background:linear-gradient(90deg,#16c079,#f59e0b,#ef4444);width:0}
+.bac-diffcanvas{width:100%;border-radius:8px;border:1px solid var(--border);background:#000;display:block;margin-top:6px;image-rendering:pixelated}
+.bac-histo{width:100%;height:60px;border-radius:8px;border:1px solid var(--border);background:#000;display:block;margin-top:8px}
+.bac-hint{font-size:.75rem;color:var(--text-dim);margin-top:6px}
+
+/* Export */
+.bac-export{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;align-items:center}
+.bac-export .bac-btn.primary{background:var(--accent,#7c5cfc);border-color:var(--accent,#7c5cfc);color:#fff;font-weight:600}
+
+.bac-empty{color:var(--text-dim);font-size:.85rem;text-align:center;padding:26px 10px}
+.bac-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.bac-badges span{font-size:.68rem;padding:3px 8px;border-radius:20px;background:rgba(124,92,252,.14);border:1px solid rgba(124,92,252,.3);color:var(--text)}
+
+/* Below-tool content */
+.bac-content{margin-top:8px}
+.bac-content h2{font-size:1.15rem;margin:26px 0 10px}
+.bac-content h3{font-size:1rem;margin:18px 0 8px}
+.bac-content p,.bac-content li{font-size:.92rem;line-height:1.72;color:var(--text)}
+.bac-content ul,.bac-content ol{padding-left:20px}
+.bac-feature-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:14px 0}
+.bac-feature-grid .bac-fcard{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:12px;padding:14px}
+.bac-feature-grid .bac-fcard b{display:block;margin-bottom:5px;font-size:.9rem}
+.bac-feature-grid .bac-fcard span{font-size:.82rem;color:var(--text-dim);line-height:1.6}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin:12px 0}
+.related-grid a{display:flex;align-items:center;gap:9px;padding:12px 13px;border-radius:11px;background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--text);text-decoration:none;font-size:.86rem;font-weight:500;transition:.15s}
+.related-grid a:hover{background:rgba(124,92,252,.16);border-color:var(--accent,#7c5cfc);transform:translateY(-1px)}
+.related-grid a .ri{font-size:1.15rem}
+.bac-faq details{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:11px;padding:2px 14px;margin-bottom:9px}
+.bac-faq summary{cursor:pointer;padding:12px 0;font-weight:600;font-size:.9rem;list-style:none}
+.bac-faq summary::-webkit-details-marker{display:none}
+.bac-faq summary::before{content:'＋';margin-right:9px;color:var(--accent,#7c5cfc);font-weight:700}
+.bac-faq details[open] summary::before{content:'－'}
+.bac-faq details p{padding:0 0 12px;margin:0;font-size:.87rem;color:var(--text-dim)}
+.bac-lang-note{font-size:.78rem;color:var(--text-dim);font-style:italic;margin-top:-4px}
 </style>
 </head>
 <body>
@@ -59,139 +139,1055 @@
 
 <div class="container">
   <div class="tool-header">
-    <h1>↔️ Before/After Comparison Slider</h1>
-    <p>Upload two images and drag the slider to compare them side by side.</p>
+    <h1>↔️ Professional Image Comparison Suite</h1>
+    <p>Compare two images with sliders, circle reveal, split, side-by-side, overlay &amp; fade — plus zoom, pan, pixel-difference analysis, custom labels and PNG/JPG/WebP/PDF/SVG export. 100% in your browser.</p>
   </div>
 
   <div class="panel">
-    <div class="upload-row">
-      <div>
-        <label style="font-size:.85rem;color:var(--text-dim);display:block;margin-bottom:6px">Before image</label>
-        <div class="dropzone" id="dropzoneBefore">
-          <p>📤 Click to choose</p>
-          <input type="file" id="fileInputBefore" accept="image/*">
+    <!-- ===== Upload ===== -->
+    <div class="bac-uploads">
+      <div class="bac-slot">
+        <label class="bac-slot-title" for="fileInputBefore">🅐 Before image(s)</label>
+        <div class="dropzone bac-dz" id="dropzoneBefore">
+          <p>📤 Click, drag &amp; drop, or paste</p>
+          <input type="file" id="fileInputBefore" accept="image/*" multiple>
         </div>
+        <div class="bac-slot-actions">
+          <button type="button" class="bac-mini" id="camBefore">📷 Camera</button>
+          <button type="button" class="bac-mini" id="urlBtnBefore">🔗 From URL</button>
+          <input type="file" id="camInputBefore" accept="image/*" capture="environment" hidden>
+        </div>
+        <div class="bac-urlrow" id="urlRowBefore">
+          <input type="url" id="urlInputBefore" placeholder="https://example.com/before.jpg">
+          <button type="button" class="bac-mini" id="urlLoadBefore">Load</button>
+        </div>
+        <div class="bac-thumbs" id="thumbsBefore"></div>
       </div>
-      <div>
-        <label style="font-size:.85rem;color:var(--text-dim);display:block;margin-bottom:6px">After image</label>
-        <div class="dropzone" id="dropzoneAfter">
-          <p>📤 Click to choose</p>
-          <input type="file" id="fileInputAfter" accept="image/*">
+
+      <div class="bac-slot">
+        <label class="bac-slot-title" for="fileInputAfter">🅑 After image(s)</label>
+        <div class="dropzone bac-dz" id="dropzoneAfter">
+          <p>📤 Click, drag &amp; drop, or paste</p>
+          <input type="file" id="fileInputAfter" accept="image/*" multiple>
         </div>
+        <div class="bac-slot-actions">
+          <button type="button" class="bac-mini" id="camAfter">📷 Camera</button>
+          <button type="button" class="bac-mini" id="urlBtnAfter">🔗 From URL</button>
+          <input type="file" id="camInputAfter" accept="image/*" capture="environment" hidden>
+        </div>
+        <div class="bac-urlrow" id="urlRowAfter">
+          <input type="url" id="urlInputAfter" placeholder="https://example.com/after.jpg">
+          <button type="button" class="bac-mini" id="urlLoadAfter">Load</button>
+        </div>
+        <div class="bac-thumbs" id="thumbsAfter"></div>
       </div>
     </div>
 
-    <div class="compare-stage" id="compareStage" style="display:none">
-      <span class="label-tag" style="left:10px">Before</span>
-      <span class="label-tag" style="right:10px">After</span>
-      <img id="beforeImg" alt="Before">
-      <div class="compare-after" id="afterWrap">
-        <img id="afterImg" alt="After">
+    <!-- ===== Toolbar ===== -->
+    <div class="bac-toolbar" id="bacToolbar" style="display:none">
+      <div class="bac-group">
+        <span class="bac-glabel">Mode</span>
+        <button type="button" class="bac-btn active" data-mode="horizontal">↔ Horizontal</button>
+        <button type="button" class="bac-btn" data-mode="vertical">↕ Vertical</button>
+        <button type="button" class="bac-btn" data-mode="circle">◎ Circle</button>
+        <button type="button" class="bac-btn" data-mode="split">▊▉ Split</button>
+        <button type="button" class="bac-btn" data-mode="side">▭▭ Side&nbsp;by&nbsp;side</button>
+        <button type="button" class="bac-btn" data-mode="overlay">◍ Overlay</button>
+        <button type="button" class="bac-btn" data-mode="fade">◐ Fade</button>
       </div>
-      <div class="compare-handle" id="compareHandle"></div>
+
+      <div class="bac-group" id="grpOverlay" style="display:none">
+        <span class="bac-glabel">Opacity</span>
+        <input type="range" class="bac-range" id="opacityRange" min="0" max="100" value="50" style="width:110px">
+        <span id="opacityVal" style="font-size:.74rem;min-width:34px">50%</span>
+        <select class="bac-select" id="blendSelect" title="Blend mode">
+          <option value="normal">Normal</option>
+          <option value="multiply">Multiply</option>
+          <option value="screen">Screen</option>
+          <option value="overlay">Overlay</option>
+          <option value="difference">Difference</option>
+          <option value="darken">Darken</option>
+          <option value="lighten">Lighten</option>
+        </select>
+      </div>
+
+      <div class="bac-group">
+        <span class="bac-glabel">Zoom</span>
+        <button type="button" class="bac-btn" id="zoomOut">−</button>
+        <span id="zoomVal" style="font-size:.74rem;min-width:42px;text-align:center">100%</span>
+        <button type="button" class="bac-btn" id="zoomIn">＋</button>
+        <button type="button" class="bac-btn" data-zoom="0.5">50%</button>
+        <button type="button" class="bac-btn active" data-zoom="1">100%</button>
+        <button type="button" class="bac-btn" data-zoom="2">200%</button>
+        <button type="button" class="bac-btn" data-zoom="4">400%</button>
+      </div>
+
+      <div class="bac-group">
+        <span class="bac-glabel">Fit</span>
+        <button type="button" class="bac-btn" id="matchAspect" title="Stretch After to match Before's frame">⤢ Match aspect</button>
+      </div>
+
+      <div class="bac-group">
+        <span class="bac-glabel">Labels</span>
+        <select class="bac-select" id="labelPreset">
+          <option value="Before|After">Before / After</option>
+          <option value="Original|Edited">Original / Edited</option>
+          <option value="Version 1|Version 2">Version 1 / Version 2</option>
+          <option value="custom">Custom…</option>
+        </select>
+        <input type="text" class="bac-select" id="labelBefore" value="Before" style="width:90px;display:none">
+        <input type="text" class="bac-select" id="labelAfter" value="After" style="width:90px;display:none">
+      </div>
+
+      <div class="bac-group">
+        <span class="bac-glabel">Background</span>
+        <button type="button" class="bac-btn active" data-bg="checker">▦</button>
+        <button type="button" class="bac-btn" data-bg="white">⬜</button>
+        <button type="button" class="bac-btn" data-bg="black">⬛</button>
+        <button type="button" class="bac-btn" data-bg="transparent">◻ None</button>
+        <input type="color" class="bac-swatch" id="bgColor" value="#7c5cfc" title="Custom colour">
+      </div>
+
+      <div class="bac-group">
+        <button type="button" class="bac-btn" id="resetBtn" title="Reset zoom, pan & slider">↺ Reset</button>
+        <button type="button" class="bac-btn" id="fsBtn" title="Full screen">⛶ Full screen</button>
+        <button type="button" class="bac-btn" id="diffBtn" title="Analyse differences">🔬 Difference</button>
+      </div>
+    </div>
+
+    <!-- ===== Stage ===== -->
+    <div class="bac-stage-wrap">
+      <div class="compare-stage" id="compareStage">
+        <div class="bac-empty" id="stageEmpty">Upload a <b>Before</b> and an <b>After</b> image to start comparing.</div>
+        <!-- hidden decode sources (IDs preserved from the original tool) -->
+        <img id="beforeImg" alt="Before source" style="display:none">
+        <img id="afterImg" alt="After source" style="display:none">
+        <div id="afterWrap" style="display:none"></div>
+        <canvas id="bacCanvas" style="display:none"></canvas>
+        <span class="label-tag" id="tagBefore" style="left:10px;display:none">Before</span>
+        <span class="label-tag" id="tagAfter" style="right:10px;display:none">After</span>
+        <div class="compare-handle" id="compareHandle"></div>
+        <div class="bac-pct" id="pctIndicator">50%</div>
+      </div>
+    </div>
+
+    <!-- ===== Export ===== -->
+    <div class="bac-export" id="bacExport" style="display:none">
+      <span class="bac-glabel" style="font-size:.68rem;text-transform:uppercase;color:var(--text-dim)">Export current view</span>
+      <button type="button" class="bac-btn primary" data-export="png">⬇ PNG</button>
+      <button type="button" class="bac-btn" data-export="jpg">JPG</button>
+      <button type="button" class="bac-btn" data-export="webp">WebP</button>
+      <button type="button" class="bac-btn" data-export="pdf">PDF</button>
+      <button type="button" class="bac-btn" data-export="svg">SVG</button>
+      <label style="font-size:.74rem;color:var(--text-dim);display:flex;align-items:center;gap:5px;margin-left:4px">
+        <input type="checkbox" id="fullResExport" style="width:auto"> Full resolution
+      </label>
+    </div>
+
+    <!-- ===== Info + Difference ===== -->
+    <div class="bac-panels" id="bacPanels" style="display:none">
+      <div class="bac-card">
+        <h3>🅐 Before — image info</h3>
+        <div class="bac-info-grid" id="infoBefore"></div>
+      </div>
+      <div class="bac-card">
+        <h3>🅑 After — image info</h3>
+        <div class="bac-info-grid" id="infoAfter"></div>
+      </div>
+    </div>
+
+    <div class="bac-card" id="diffCard" style="display:none;margin-top:12px">
+      <h3>🔬 Difference analysis</h3>
+      <div class="bac-diff-row"><span>Difference percentage</span><b id="diffPct">—</b></div>
+      <div class="bac-diff-bar"><i id="diffBarFill"></i></div>
+      <div class="bac-diff-row"><span>Changed area (pixels &gt; threshold)</span><b id="diffChanged">—</b></div>
+      <div class="bac-diff-row"><span>Mean pixel difference</span><b id="diffMean">—</b></div>
+      <div class="bac-panels" style="margin-top:6px">
+        <div>
+          <div class="bac-hint">Change map (bright = changed)</div>
+          <canvas class="bac-diffcanvas" id="diffCanvas" width="300" height="180"></canvas>
+        </div>
+        <div>
+          <div class="bac-hint">RGB histogram — Before vs After</div>
+          <canvas class="bac-histo" id="histoCanvas" width="300" height="120"></canvas>
+        </div>
+      </div>
+      <p class="bac-hint" id="diffTaint" style="display:none;color:#f59e0b">⚠️ Difference analysis needs same-origin images. A cross-origin URL image without CORS headers cannot be analysed or exported.</p>
     </div>
   </div>
 </div>
 
+<!-- ============================ BELOW-TOOL CONTENT ============================ -->
+<div class="bac-content">
 
-<div class="info-wrap">
-  <div class="info-section">
-    <div class="info-block">
-      <h2>ℹ️ About This Tool</h2>
-      <p>Compare two images interactively with a draggable slider — perfect for showing before/after edits, renovation results, weight loss progress, or any visual comparison.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Upload a "Before" image and an "After" image.</li>
-        <li>Drag the slider handle left and right to reveal each image.</li>
-      </ol>
-    </div>
-    <hr class="info-divider">
-    <div class="info-block">
-      <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>दो इमेज को draggable slider से इंटरैक्टिव तरीके से compare करें — before/after एडिट, रेनोवेशन रिजल्ट, वेट लॉस प्रोग्रेस, या किसी भी विज़ुअल कंपेरिज़न दिखाने के लिए बढ़िया।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>एक "Before" इमेज और एक "After" इमेज अपलोड करें।</li>
-        <li>slider handle को बाएं-दाएं ड्रैग करके दोनों इमेज देखें।</li>
-      </ol>
-    </div>
+  <!-- Intro -->
+  <h2>🖼️ A complete image comparison workspace — not just a slider</h2>
+  <p>The <strong>Professional Image Comparison Suite</strong> lets you place two images against each other and study exactly how they differ. Whether you are a photographer proofing a retouch, a designer reviewing two mock-ups, a developer verifying a UI regression, an architect showing a renovation, or an e-commerce seller comparing product shots, this tool gives you seven comparison modes, precise zoom and pan, an objective pixel-difference report, and clean multi-format export — all without uploading a single byte to a server.</p>
+
+  <!-- Features -->
+  <h2>✨ Features at a glance</h2>
+  <div class="bac-feature-grid">
+    <div class="bac-fcard"><b>7 comparison modes</b><span>Horizontal &amp; vertical sliders, circle reveal, split, side-by-side, overlay and fade.</span></div>
+    <div class="bac-fcard"><b>Zoom &amp; pan</b><span>50%, 100%, 200%, 400% presets plus mouse-wheel / pinch zoom and hand-tool panning.</span></div>
+    <div class="bac-fcard"><b>Difference analysis</b><span>Difference %, changed-area count, mean pixel delta, a change heat-map and an RGB histogram.</span></div>
+    <div class="bac-fcard"><b>Flexible upload</b><span>Drag &amp; drop, click, paste from clipboard, camera capture, import by URL, and multiple images per side.</span></div>
+    <div class="bac-fcard"><b>Custom labels</b><span>Before/After, Original/Edited, Version 1/2 or your own text baked into the export.</span></div>
+    <div class="bac-fcard"><b>Backgrounds</b><span>Checkerboard, white, black, transparent or any custom colour behind transparent PNGs.</span></div>
+    <div class="bac-fcard"><b>Multi-format export</b><span>Save the composed view as PNG, JPG, WebP, PDF or SVG — at screen or full resolution.</span></div>
+    <div class="bac-fcard"><b>100% private</b><span>Every pixel is processed locally in your browser. Nothing is uploaded, stored or tracked.</span></div>
   </div>
+
+  <!-- Benefits -->
+  <h2>🎯 Benefits</h2>
+  <ul>
+    <li><strong>Objective, not just visual:</strong> the difference report turns "looks a bit different" into real numbers you can quote in a review.</li>
+    <li><strong>Fast:</strong> a canvas engine renders instantly, even at 400% zoom, with no page reloads or waiting on a server.</li>
+    <li><strong>Portable output:</strong> export a single comparison image or PDF you can drop into a client email, ticket, or presentation.</li>
+    <li><strong>Works offline:</strong> once the page has loaded it keeps working with no connection — ideal on site visits and flights.</li>
+    <li><strong>Accessible:</strong> full keyboard control, screen-reader labels and high-contrast handles.</li>
+  </ul>
+
+  <!-- Supported formats -->
+  <h2>📁 Supported formats</h2>
+  <p>You can load <strong>JPG, JPEG, PNG, WebP, AVIF, BMP, TIFF and SVG</strong>. Support for AVIF, TIFF and BMP depends on your browser's built-in image decoders — modern Chrome, Edge, Firefox and Safari handle the common ones. Exports are produced as <strong>PNG, JPG, WebP, PDF and SVG</strong>. PNG and WebP keep transparency; JPG and PDF are flattened onto the chosen background.</p>
+  <div class="bac-badges">
+    <span>JPG</span><span>JPEG</span><span>PNG</span><span>WebP</span><span>AVIF</span><span>BMP</span><span>TIFF</span><span>SVG</span>
+  </div>
+
+  <!-- Comparison modes -->
+  <h2>🔀 Comparison modes explained</h2>
+  <ul>
+    <li><strong>Horizontal slider</strong> — a vertical wipe you drag left/right; the classic before/after reveal.</li>
+    <li><strong>Vertical slider</strong> — a horizontal wipe you drag up/down, useful for landscapes and skies.</li>
+    <li><strong>Circle reveal</strong> — the After image shows inside a growing circle, great for spotting a local edit.</li>
+    <li><strong>Split view</strong> — a fixed 50/50 split showing the left half of one image and the right half of the other.</li>
+    <li><strong>Side by side</strong> — both full images shrunk next to each other for an overview.</li>
+    <li><strong>Overlay</strong> — stack the images with an opacity slider and photographic blend modes (multiply, screen, difference…).</li>
+    <li><strong>Fade</strong> — cross-fade smoothly from Before to After by dragging the slider.</li>
+  </ul>
+
+  <!-- Use cases -->
+  <h2>💼 Who uses it &amp; how</h2>
+  <ul>
+    <li><strong>Photographers &amp; retouchers</strong> — prove the value of a colour grade or skin retouch to a client.</li>
+    <li><strong>Designers</strong> — compare two logo, poster or UI variations pixel-for-pixel.</li>
+    <li><strong>Developers &amp; QA</strong> — catch visual regressions between a baseline screenshot and a new build using difference mode.</li>
+    <li><strong>Architects &amp; interior designers</strong> — present renovation "before vs after" boards.</li>
+    <li><strong>Marketers &amp; agencies</strong> — build eye-catching before/after creatives for social media.</li>
+    <li><strong>E-commerce sellers</strong> — compare product photo edits or two supplier images.</li>
+    <li><strong>Students &amp; researchers</strong> — document changes in experiments, maps or medical scans (non-diagnostic).</li>
+  </ul>
+
+  <!-- Examples -->
+  <h2>🧪 Examples</h2>
+  <ul>
+    <li>Load a RAW export as Before and the graded JPEG as After, use <em>Fade</em> to present the edit.</li>
+    <li>Drop two nightly build screenshots and switch to <em>Overlay → Difference</em> to make every changed pixel glow.</li>
+    <li>Use <em>Circle reveal</em> to zoom to 200% and inspect whether a watermark was fully removed.</li>
+    <li>Pick <em>Side by side</em>, set a white background, and export a PDF for a printed client review.</li>
+  </ul>
+
+  <!-- ===== Related Tools (ABOVE About — required order) ===== -->
+  <h2>🧰 Related Tools</h2>
+  <div class="related-grid">
+    <a href="image-compressor.html"><span class="ri">📉</span> Image Compressor</a>
+    <a href="image-resizer.html"><span class="ri">📐</span> Image Resizer</a>
+    <a href="image-cropper.html"><span class="ri">✂️</span> Image Cropper</a>
+    <a href="image-converter.html"><span class="ri">🔄</span> Image Converter</a>
+    <a href="image-rotate-flip.html"><span class="ri">🔃</span> Image Rotate &amp; Flip</a>
+    <a href="solid-bg-remover.html"><span class="ri">🎭</span> Background Remover</a>
+    <a href="image-watermark.html"><span class="ri">💧</span> Image Watermark Adder</a>
+    <a href="image-color-palette.html"><span class="ri">🎨</span> Image Color Palette Extractor</a>
+    <a href="social-media-resizer.html"><span class="ri">📱</span> Social Media Image Resizer</a>
+    <a href="batch-image-compressor.html"><span class="ri">📦</span> Batch Image Compressor</a>
+    <a href="image-border-frame.html"><span class="ri">🖼️</span> Image Border &amp; Frame</a>
+    <a href="photo-filters.html"><span class="ri">🎛️</span> Image Filters</a>
+    <a href="meme-generator.html"><span class="ri">😂</span> Meme Generator</a>
+    <a href="gif-maker.html"><span class="ri">🎞️</span> GIF Maker</a>
+    <a href="qr-code-scanner.html"><span class="ri">📷</span> QR Code Scanner</a>
+  </div>
+
+  <!-- ===== About (English) ===== -->
+  <h2>ℹ️ About This Tool</h2>
+  <p>The <strong>Professional Image Comparison Suite</strong> is a free, browser-based application for comparing two images with precision and clarity. It began life as a simple before/after slider and has grown into a full comparison workspace that photographers, designers, developers, editors, marketers, students, agencies, architects and e-commerce sellers can rely on for day-to-day visual review work. The guiding idea is simple: comparing images should be fast, honest and completely private, and you should never have to hand your photos to a third-party server just to see how two versions differ.</p>
+
+  <p>At the heart of the tool is a hardware-accelerated HTML5 canvas engine. When you load a Before image and an After image, both are decoded locally and drawn onto a single canvas, aligned to a shared frame so that every comparison is fair. From there you choose how to compare. The <strong>horizontal</strong> and <strong>vertical</strong> sliders give you the familiar wipe reveal — drag the handle and watch one image dissolve into the other along a straight edge. The <strong>circle reveal</strong> mode paints the After image inside a circle whose radius you control, which is perfect for checking a single spot such as a removed blemish or a replaced logo. <strong>Split view</strong> locks the comparison at the centre and shows the left half of one image beside the right half of the other, while <strong>side by side</strong> shrinks both full images into the same frame for a quick overview. For photographic work, the <strong>overlay</strong> mode stacks the images with an adjustable opacity slider and a set of blend modes — multiply, screen, overlay, difference, darken and lighten — that reveal tonal and colour shifts that a wipe would hide. Finally, <strong>fade</strong> cross-dissolves between the two images so you can present an edit smoothly, almost like a slow animation you drive by hand.</p>
+
+  <p>Comparison is only half the story; understanding <em>how much</em> changed is the other half. That is why the suite includes an objective <strong>difference analysis</strong> engine. With a single click it samples both images at a matched resolution, computes the absolute per-pixel difference across the red, green and blue channels, and reports three headline numbers: the overall difference percentage, the count of pixels that changed beyond a sensible threshold (the "changed area"), and the mean pixel delta. It also paints a change heat-map where brighter regions mark bigger changes, and draws an RGB histogram that overlays the tonal distribution of both images so you can see, for instance, that an edit lifted the shadows or cooled the whites. For a QA engineer chasing a visual regression, or a photographer justifying a retouch, these numbers turn a vague impression into evidence.</p>
+
+  <p>Getting images into the tool is deliberately flexible. You can click to browse, drag and drop files straight from your desktop, or paste an image directly from your clipboard after a screenshot. On a phone or tablet you can capture a photo with the camera on the spot. You can also import an image by URL, which is handy when you want to compare something already published online. Each side accepts multiple images, so you can load a set of Before candidates and a set of After candidates and flip between them using the thumbnail strips without re-uploading anything. Because the whole engine is client-side, switching images is instantaneous.</p>
+
+  <p>Once you have a comparison you like, precise inspection tools take over. Zoom presets of 50%, 100%, 200% and 400% sit next to fine-grained mouse-wheel and pinch zoom, and when you are zoomed in the hand tool lets you pan around the image while the slider still works. The double-click and Reset controls snap everything back to a centred, 100% view. You can rename the labels that sit in the corners — Before/After, Original/Edited, Version 1/Version 2, or any custom text — and those labels are baked into whatever you export. Speaking of export, the composed view can be saved as a <strong>PNG</strong> (with transparency), a <strong>JPG</strong> or <strong>WebP</strong> (flattened onto your chosen background), a single-page <strong>PDF</strong> ready for printing or emailing, or an <strong>SVG</strong> wrapper. A full-resolution option renders the export at the native size of your source images rather than at screen size, so printed comparisons stay crisp.</p>
+
+  <p>Throughout, the tool respects your privacy and your time. There is no account, no watermark, no upload and no tracking of your image content. It works offline once loaded, it is fully keyboard accessible, and it is built to be light enough to run comfortably on a mid-range phone. In short, it aims to be the last image-comparison tool you need to bookmark — powerful enough for professional review, simple enough to hand to a client, and trustworthy enough to use with sensitive material.</p>
+
+  <!-- ===== About (Hindi) ===== -->
+  <h2>ℹ️ इस टूल के बारे में (हिंदी में)</h2>
+  <p class="bac-lang-note">The same guide in Hindi / यही जानकारी हिंदी में।</p>
+  <p><strong>Professional Image Comparison Suite</strong> एक फ्री, पूरी तरह ब्राउज़र-आधारित टूल है जिससे आप दो इमेज को बारीकी और सफ़ाई से आपस में compare कर सकते हैं। शुरुआत एक साधारण before/after slider के रूप में हुई थी, पर अब यह एक पूरा comparison workspace बन चुका है जिस पर फ़ोटोग्राफर, डिज़ाइनर, डेवलपर, एडिटर, मार्केटर, छात्र, एजेंसियाँ, आर्किटेक्ट और e-commerce विक्रेता रोज़मर्रा के विज़ुअल रिव्यू के लिए भरोसा कर सकते हैं। मूल सोच सीधी है — इमेज की तुलना तेज़, ईमानदार और पूरी तरह निजी होनी चाहिए, और सिर्फ़ यह देखने के लिए कि दो वर्ज़न में क्या फ़र्क है, आपको अपनी तस्वीरें किसी बाहरी सर्वर को सौंपने की ज़रूरत नहीं होनी चाहिए।</p>
+
+  <p>टूल के केंद्र में एक HTML5 canvas इंजन है। जब आप एक Before इमेज और एक After इमेज लोड करते हैं, तो दोनों आपके डिवाइस पर ही decode होकर एक ही canvas पर, एक साझा फ़्रेम में align होकर बनती हैं, ताकि हर तुलना निष्पक्ष रहे। इसके बाद आप compare करने का तरीका चुनते हैं। <strong>Horizontal</strong> और <strong>Vertical</strong> slider जाना-पहचाना wipe reveal देते हैं — handle को खींचिए और एक इमेज सीधी रेखा के साथ दूसरी में बदलती दिखेगी। <strong>Circle reveal</strong> मोड After इमेज को एक वृत्त के अंदर दिखाता है जिसका आकार आप बदल सकते हैं — किसी एक जगह (जैसे हटाया गया दाग़ या बदला गया लोगो) जाँचने के लिए बढ़िया। <strong>Split view</strong> तुलना को बीच में लॉक कर देता है, जबकि <strong>Side by side</strong> दोनों पूरी इमेज को एक साथ छोटा करके दिखाता है। फ़ोटोग्राफ़िक काम के लिए <strong>Overlay</strong> मोड में opacity slider और blend modes (multiply, screen, overlay, difference आदि) मिलते हैं जो रंग और टोन के बदलाव उजागर करते हैं, और <strong>Fade</strong> मोड दोनों इमेज के बीच सहज cross-fade देता है।</p>
+
+  <p>सिर्फ़ तुलना करना आधी बात है; <em>कितना</em> बदला यह समझना बाक़ी आधी। इसीलिए इस suite में एक वस्तुनिष्ठ <strong>difference analysis</strong> इंजन है। एक क्लिक पर यह दोनों इमेज को एक समान रिज़ॉल्यूशन पर सैंपल करके red, green और blue चैनलों में प्रति-पिक्सेल अंतर निकालता है और तीन मुख्य आँकड़े देता है — कुल difference प्रतिशत, तय सीमा से ज़्यादा बदले पिक्सेल की संख्या (changed area), और औसत पिक्सेल अंतर। साथ ही यह एक change heat-map बनाता है जहाँ ज़्यादा चमकीले हिस्से बड़े बदलाव दिखाते हैं, और एक RGB histogram भी बनाता है जिसमें दोनों इमेज की टोन एक-दूसरे पर दिखती है। किसी QA इंजीनियर या फ़ोटोग्राफर के लिए ये आँकड़े "थोड़ा अलग लग रहा है" को ठोस सबूत में बदल देते हैं।</p>
+
+  <p>इमेज लोड करने के तरीके भी लचीले हैं। आप क्लिक करके चुन सकते हैं, डेस्कटॉप से फ़ाइल drag &amp; drop कर सकते हैं, या स्क्रीनशॉट लेने के बाद clipboard से सीधे paste कर सकते हैं। फ़ोन या टैबलेट पर आप वहीं कैमरे से फ़ोटो खींच सकते हैं। URL से इमेज import करने का विकल्प भी है। हर तरफ़ एक से ज़्यादा इमेज स्वीकार होती हैं, इसलिए आप कई Before और कई After इमेज लोड करके thumbnail strip से उनके बीच बिना दोबारा अपलोड किए स्विच कर सकते हैं — और चूँकि पूरा इंजन आपके ब्राउज़र में चलता है, यह स्विचिंग तुरंत होती है।</p>
+
+  <p>तुलना पसंद आने पर बारीक जाँच के औज़ार काम आते हैं। 50%, 100%, 200% और 400% ज़ूम प्रीसेट के साथ mouse-wheel और pinch ज़ूम भी है, और ज़ूम करने पर hand tool से आप इमेज को पैन कर सकते हैं जबकि slider तब भी काम करता रहता है। Double-click और Reset सब कुछ केंद्रित 100% व्यू पर लौटा देते हैं। कोनों में दिखने वाले labels को आप बदल सकते हैं और वे export में भी शामिल होते हैं। Export के रूप में composed व्यू को <strong>PNG</strong> (पारदर्शिता सहित), <strong>JPG</strong>/<strong>WebP</strong> (चुने हुए बैकग्राउंड पर flatten), एक-पेज <strong>PDF</strong>, या <strong>SVG</strong> के रूप में सहेजा जा सकता है। "Full resolution" विकल्प export को स्क्रीन आकार के बजाय स्रोत इमेज के मूल आकार पर बनाता है, ताकि प्रिंट की गई तुलनाएँ साफ़ रहें।</p>
+
+  <p>पूरे समय टूल आपकी निजता और समय का सम्मान करता है — कोई अकाउंट नहीं, कोई watermark नहीं, कोई अपलोड नहीं और आपकी इमेज की कोई ट्रैकिंग नहीं। एक बार लोड होने पर यह ऑफ़लाइन काम करता है, कीबोर्ड से पूरी तरह चलता है, और मिड-रेंज फ़ोन पर भी आराम से चलने लायक हल्का है। संक्षेप में, यह वही आख़िरी image-comparison टूल बनने की कोशिश करता है जिसे आपको bookmark करना पड़े।</p>
+
+  <!-- ===== FAQ (immediately after About — required order) ===== -->
+  <h2>❓ Frequently Asked Questions</h2>
+  <div class="bac-faq" id="bacFaq">
+    <details><summary>Is this image comparison tool really free?</summary><p>Yes. It is completely free with no account, no watermark and no limits on how many comparisons you make. / हाँ, यह पूरी तरह मुफ़्त है — न अकाउंट, न watermark, न कोई सीमा।</p></details>
+    <details><summary>Are my images uploaded to a server?</summary><p>No. Every image is decoded and processed locally in your browser using the canvas API. Nothing leaves your device. / नहीं। हर इमेज आपके ब्राउज़र में ही process होती है; कुछ भी आपके डिवाइस से बाहर नहीं जाता।</p></details>
+    <details><summary>Does it work offline?</summary><p>Yes. Once the page has loaded, you can disconnect from the internet and keep comparing and exporting. / हाँ, पेज लोड होने के बाद यह इंटरनेट के बिना भी काम करता है।</p></details>
+    <details><summary>Which image formats can I load?</summary><p>JPG, JPEG, PNG, WebP, AVIF, BMP, TIFF and SVG — support for AVIF/TIFF/BMP depends on your browser's decoders. / JPG, JPEG, PNG, WebP, AVIF, BMP, TIFF और SVG; कुछ formats आपके ब्राउज़र पर निर्भर करते हैं।</p></details>
+    <details><summary>What comparison modes are available?</summary><p>Horizontal slider, vertical slider, circle reveal, split view, side by side, overlay (with blend modes) and fade. / horizontal, vertical, circle, split, side-by-side, overlay और fade — सात मोड।</p></details>
+    <details><summary>How do I move the slider?</summary><p>Drag the handle with your mouse or finger, use the arrow keys after clicking the stage, or click anywhere on the image to jump the slider there. / handle को माउस/उँगली से खींचें, arrow keys दबाएँ, या इमेज पर कहीं भी क्लिक करें।</p></details>
+    <details><summary>Can I zoom in to check fine details?</summary><p>Yes. Use the 50/100/200/400% presets, the +/− buttons, the mouse wheel or pinch on touch devices, then pan with the hand tool. / हाँ, 50/100/200/400% प्रीसेट, wheel या pinch से ज़ूम करें और hand tool से पैन करें।</p></details>
+    <details><summary>What does the difference percentage mean?</summary><p>It is the average per-pixel colour difference between the two images across all channels, expressed as a percentage of the maximum possible difference. / यह दोनों इमेज के बीच औसत प्रति-पिक्सेल रंग अंतर है, प्रतिशत में।</p></details>
+    <details><summary>What is the "changed area"?</summary><p>It counts how many sampled pixels differ by more than a small threshold, so tiny compression noise is ignored but real edits are caught. / यह गिनता है कि कितने पिक्सेल एक तय सीमा से ज़्यादा बदले हैं।</p></details>
+    <details><summary>Can I compare two images of different sizes?</summary><p>Yes. Both are aligned to a shared frame and centred. Turn on "Match aspect" to stretch the After image to the Before frame for a strict pixel overlay. / हाँ, दोनों एक साझा फ़्रेम में align होती हैं; सख़्त overlay के लिए "Match aspect" चालू करें।</p></details>
+    <details><summary>Can I add custom labels?</summary><p>Yes. Choose a preset (Before/After, Original/Edited, Version 1/2) or select "Custom" to type your own — labels appear in the export too. / हाँ, प्रीसेट चुनें या "Custom" से अपने labels लिखें; ये export में भी आते हैं।</p></details>
+    <details><summary>Which export formats are supported?</summary><p>PNG, JPG, WebP, PDF and SVG. PNG and WebP keep transparency; JPG and PDF flatten onto your chosen background. / PNG, JPG, WebP, PDF और SVG।</p></details>
+    <details><summary>What is the "Full resolution" export option?</summary><p>By default the export matches the on-screen size. Enable Full resolution to render at the native pixel size of your source images for crisp prints. / यह export को स्रोत इमेज के मूल pixel आकार पर बनाता है।</p></details>
+    <details><summary>Can I paste a screenshot directly?</summary><p>Yes. Copy any image to your clipboard and press Ctrl/Cmd+V on the page — it loads into the Before slot first, then the After slot. / हाँ, इमेज copy करके पेज पर Ctrl/Cmd+V दबाएँ।</p></details>
+    <details><summary>Can I use my phone camera?</summary><p>Yes. Tap the 📷 Camera button on either side to capture a photo directly on mobile. / हाँ, किसी भी तरफ़ 📷 Camera बटन दबाएँ।</p></details>
+    <details><summary>Why can't I export or analyse a URL image?</summary><p>If a remote image is served without CORS permission, the browser marks the canvas "tainted" and blocks reading its pixels. Download the image and upload it instead. / CORS अनुमति के बिना remote इमेज के pixels ब्राउज़र पढ़ने नहीं देता; उसे download करके upload करें।</p></details>
+    <details><summary>Does it work on mobile and tablets?</summary><p>Yes. The layout is fully responsive and supports touch drag, pinch-zoom and tap-to-position. / हाँ, यह मोबाइल और टैबलेट पर touch के साथ पूरी तरह काम करता है।</p></details>
+    <details><summary>Is it accessible with a keyboard and screen reader?</summary><p>Yes. Controls are focusable, the slider responds to arrow keys, and elements carry descriptive labels for screen readers. / हाँ, यह कीबोर्ड और screen reader के साथ सुलभ है।</p></details>
+    <details><summary>Can I compare more than one pair quickly?</summary><p>Load several images on each side; the thumbnail strips let you switch the active Before and After instantly without re-uploading. / हर तरफ़ कई इमेज लोड करें और thumbnail से तुरंत स्विच करें।</p></details>
+    <details><summary>What can I use the difference mode for?</summary><p>Great for UI regression testing, spotting watermark removal, verifying retouching, or documenting real changes objectively. / UI regression, watermark हटाना जाँचने, retouch सत्यापित करने आदि के लिए।</p></details>
+    <details><summary>Will it change or compress my original files?</summary><p>No. Your source files are never modified. Only the new export you download is generated. / नहीं, आपकी मूल फ़ाइलें कभी नहीं बदलतीं।</p></details>
+    <details><summary>Does it use any AI?</summary><p>No. Everything is deterministic maths on the canvas — no AI, no cloud models, no surprises. / नहीं, इसमें कोई AI नहीं है; सब कुछ canvas पर गणित से होता है।</p></details>
+  </div>
+
+  <!-- ===== Privacy ===== -->
+  <h2>🔒 Privacy</h2>
+  <p>This tool is built privacy-first. All decoding, comparison, difference analysis and export happen entirely in your browser using local JavaScript and the canvas API. Your images are never uploaded, never stored on any server, and never sent to any analytics or AI service. Because the processing is offline-capable, you can safely use it with confidential product shots, medical scans (for non-diagnostic documentation), legal documents or unreleased designs. Closing the tab clears everything from memory. / यह टूल privacy-first है — सारा काम आपके ब्राउज़र में ही होता है, कोई इमेज अपलोड या स्टोर नहीं होती, और टैब बंद करते ही सब कुछ मेमोरी से हट जाता है।</p>
+
+  <!-- ===== Troubleshooting ===== -->
+  <h2>🛠️ Troubleshooting</h2>
+  <ul>
+    <li><strong>An AVIF/TIFF/BMP image won't load:</strong> your browser may not decode that format. Convert it to PNG or JPG first with the <a href="image-converter.html">Image Converter</a>.</li>
+    <li><strong>Export or Difference is blocked after a URL import:</strong> the remote image is cross-origin without CORS. Download it and upload the file instead.</li>
+    <li><strong>The two images look misaligned:</strong> they have different aspect ratios. Enable <em>Match aspect</em> for a strict overlay, or crop them to the same ratio with the <a href="image-cropper.html">Image Cropper</a>.</li>
+    <li><strong>The slider feels stuck at high zoom:</strong> you may be in the hand-pan area — press <em>Reset</em> or double-click to recentre.</li>
+    <li><strong>A very large image is slow:</strong> resize it first with the <a href="image-resizer.html">Image Resizer</a>; the difference engine already samples down automatically for speed.</li>
+    <li><strong>Nothing happens on Paste:</strong> make sure an image (not a file path) is actually on your clipboard, and that the page has focus.</li>
+  </ul>
 </div>
 
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
 <script src="../assets/common.js"></script>
 <script>
-let beforeLoaded = false, afterLoaded = false;
+(function(){
+  'use strict';
 
-const dropzoneBefore = document.getElementById('dropzoneBefore');
-const fileInputBefore = document.getElementById('fileInputBefore');
-setupDropzone(dropzoneBefore, fileInputBefore, files => {
-  if(files.length && files[0].type.startsWith('image/')){
-    document.getElementById('beforeImg').src = URL.createObjectURL(files[0]);
-    beforeLoaded = true;
-    checkReady();
+  // ---------- State ----------
+  var state = {
+    mode: 'horizontal',
+    pos: 50,               // slider position 0-100
+    zoom: 1,
+    panX: 0, panY: 0,
+    labelBefore: 'Before',
+    labelAfter: 'After',
+    bg: 'checker',
+    bgColor: '#7c5cfc',
+    opacity: 0.5,
+    blend: 'normal',
+    matchAspect: false
+  };
+  var beforeList = [], afterList = [];   // arrays of {img, name, size, type, dpi}
+  var A = null, B = null;                // active before / after entries
+  var tainted = false;                   // cross-origin canvas taint
+
+  var stage = document.getElementById('compareStage');
+  var canvas = document.getElementById('bacCanvas');
+  var ctx = canvas.getContext('2d');
+  var handle = document.getElementById('compareHandle');
+  var pctInd = document.getElementById('pctIndicator');
+  var stageEmpty = document.getElementById('stageEmpty');
+  var tagBefore = document.getElementById('tagBefore');
+  var tagAfter = document.getElementById('tagAfter');
+  var beforeImgEl = document.getElementById('beforeImg');
+  var afterImgEl = document.getElementById('afterImg');
+
+  function $(id){ return document.getElementById(id); }
+  function toast(msg){
+    var t = document.createElement('div');
+    t.textContent = msg;
+    t.style.cssText = 'position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#1a1a2e;color:#fff;border:1px solid rgba(255,255,255,.15);padding:10px 18px;border-radius:10px;font-size:.85rem;z-index:9999;box-shadow:0 6px 24px rgba(0,0,0,.4)';
+    document.body.appendChild(t);
+    setTimeout(function(){ t.style.transition='.3s'; t.style.opacity='0'; }, 1800);
+    setTimeout(function(){ t.remove(); }, 2200);
   }
-});
 
-const dropzoneAfter = document.getElementById('dropzoneAfter');
-const fileInputAfter = document.getElementById('fileInputAfter');
-setupDropzone(dropzoneAfter, fileInputAfter, files => {
-  if(files.length && files[0].type.startsWith('image/')){
-    document.getElementById('afterImg').src = URL.createObjectURL(files[0]);
-    afterLoaded = true;
-    checkReady();
+  // ---------- Image loading ----------
+  function readDPI(file, cb){
+    // Best-effort DPI: PNG pHYs chunk or JPEG JFIF density. Returns null if unknown.
+    if(!file || !file.slice){ cb(null); return; }
+    var fr = new FileReader();
+    fr.onload = function(){
+      try{
+        var b = new Uint8Array(fr.result);
+        // PNG
+        if(b[0]===0x89 && b[1]===0x50){
+          for(var i=8;i<b.length-12;){
+            var len=(b[i]<<24)|(b[i+1]<<16)|(b[i+2]<<8)|b[i+3];
+            var type=String.fromCharCode(b[i+4],b[i+5],b[i+6],b[i+7]);
+            if(type==='pHYs'){
+              var ppuX=(b[i+8]<<24)|(b[i+9]<<16)|(b[i+10]<<8)|b[i+11];
+              var unit=b[i+16];
+              if(unit===1){ cb(Math.round(ppuX*0.0254)); return; }
+              cb(null); return;
+            }
+            if(type==='IDAT'){ break; }
+            i += 12+len;
+          }
+          cb(null); return;
+        }
+        // JPEG JFIF (APP0)
+        if(b[0]===0xFF && b[1]===0xD8){
+          for(var j=2;j<b.length-8;){
+            if(b[j]!==0xFF){ j++; continue; }
+            var marker=b[j+1];
+            var seg=(b[j+2]<<8)|b[j+3];
+            if(marker===0xE0 && b[j+4]===0x4A){ // 'J' of JFIF
+              var units=b[j+11];
+              var xd=(b[j+12]<<8)|b[j+13];
+              if(units===1){ cb(xd); return; }
+              if(units===2){ cb(Math.round(xd*2.54)); return; }
+              cb(null); return;
+            }
+            if(marker===0xDA){ break; }
+            j += 2+seg;
+          }
+        }
+      }catch(e){}
+      cb(null);
+    };
+    fr.onerror = function(){ cb(null); };
+    fr.readAsArrayBuffer(file.slice(0, 65536));
   }
-});
 
-function checkReady(){
-  if(beforeLoaded && afterLoaded){
-    document.getElementById('compareStage').style.display = 'block';
-    syncAfterWidth();
-    setPosition(50);
+  function addImage(side, src, meta){
+    var img = new Image();
+    if(meta && meta.cors){ img.crossOrigin = 'anonymous'; }
+    img.onload = function(){
+      var entry = { img: img, name: (meta&&meta.name)||'image', size: (meta&&meta.size)||0,
+                    type: (meta&&meta.type)||'', dpi: null, url: (meta&&meta.remote)||false };
+      var list = side==='before' ? beforeList : afterList;
+      list.push(entry);
+      if(side==='before'){ A = entry; } else { B = entry; }
+      if(meta && meta.file){ readDPI(meta.file, function(d){ entry.dpi=d; if((side==='before'&&A===entry)||(side==='after'&&B===entry)) renderInfo(); }); }
+      renderThumbs(side);
+      afterReady();
+    };
+    img.onerror = function(){
+      toast('Could not load that image — the format may be unsupported.');
+    };
+    img.src = src;
   }
-}
 
-function syncAfterWidth(){
-  const stage = document.getElementById('compareStage');
-  document.getElementById('afterImg').style.width = stage.clientWidth + 'px';
-}
+  function handleFiles(side, files){
+    var arr = Array.prototype.slice.call(files||[]);
+    arr.forEach(function(f){
+      if(!f.type || f.type.indexOf('image')!==0){
+        // some SVG/TIFF may report empty type; still try by extension
+        if(!/\.(jpe?g|png|webp|avif|bmp|tiff?|svg)$/i.test(f.name||'')) return;
+      }
+      var url = URL.createObjectURL(f);
+      addImage(side, url, { name:f.name, size:f.size, type:f.type||'', file:f });
+    });
+  }
 
-function setPosition(pct){
-  pct = Math.max(0, Math.min(100, pct));
-  document.getElementById('afterWrap').style.width = pct + '%';
-  document.getElementById('compareHandle').style.left = pct + '%';
-}
+  function loadUrl(side, url){
+    if(!url){ return; }
+    addImage(side, url, { name:url.split('/').pop()||'remote', type:'', remote:true, cors:true });
+    // Fallback without CORS if it fails — retry plain so at least it displays
+    setTimeout(function(){
+      var list = side==='before'?beforeList:afterList;
+      var loaded = list.some(function(e){ return e.url; });
+      if(!loaded){ addImage(side, url, { name:url.split('/').pop()||'remote', type:'', remote:true, cors:false }); }
+    }, 1500);
+  }
 
-let dragging = false;
-const handle = document.getElementById('compareHandle');
-const stage = document.getElementById('compareStage');
+  // ---------- Thumbnails ----------
+  function renderThumbs(side){
+    var wrap = $(side==='before'?'thumbsBefore':'thumbsAfter');
+    var list = side==='before'?beforeList:afterList;
+    var active = side==='before'?A:B;
+    wrap.innerHTML='';
+    if(list.length<2){ return; }
+    list.forEach(function(e){
+      var im=document.createElement('img');
+      im.className='bac-thumb'+(e===active?' active':'');
+      im.src=e.img.src; im.alt=e.name; im.title=e.name;
+      im.addEventListener('click',function(){
+        if(side==='before'){ A=e; } else { B=e; }
+        renderThumbs(side); renderInfo(); render();
+      });
+      wrap.appendChild(im);
+    });
+  }
 
-function startDrag(e){ dragging = true; e.preventDefault(); }
-function onDrag(e){
-  if(!dragging) return;
-  const pt = e.touches ? e.touches[0] : e;
-  const rect = stage.getBoundingClientRect();
-  const pct = ((pt.clientX - rect.left) / rect.width) * 100;
-  setPosition(pct);
-}
-function endDrag(){ dragging = false; }
+  // ---------- Layout helpers ----------
+  function refDims(){
+    // Shared comparison frame = Before natural size (fallback After).
+    if(A) return { w:A.img.naturalWidth, h:A.img.naturalHeight };
+    if(B) return { w:B.img.naturalWidth, h:B.img.naturalHeight };
+    return { w:800, h:600 };
+  }
 
-handle.addEventListener('mousedown', startDrag);
-handle.addEventListener('touchstart', startDrag, {passive:false});
-stage.addEventListener('mousedown', (e)=>{ startDrag(e); onDrag(e); });
-window.addEventListener('mousemove', onDrag);
-window.addEventListener('touchmove', onDrag, {passive:false});
-window.addEventListener('mouseup', endDrag);
-window.addEventListener('touchend', endDrag);
-window.addEventListener('resize', syncAfterWidth);
+  function sizeCanvas(){
+    var maxW = stage.clientWidth || 800;
+    var rd = refDims();
+    var ratio = rd.h/rd.w;
+    var dpr = Math.min(window.devicePixelRatio||1, 2);
+    var cssW = maxW;
+    var cssH = Math.round(maxW*ratio);
+    var maxCssH = Math.round((window.innerHeight||800)*0.74);
+    if(cssH>maxCssH){ cssH=maxCssH; cssW=Math.round(maxCssH/ratio); }
+    canvas.style.width = cssW+'px';
+    canvas.style.height = cssH+'px';
+    canvas.width = Math.round(cssW*dpr);
+    canvas.height = Math.round(cssH*dpr);
+    return { w:canvas.width, h:canvas.height, dpr:dpr };
+  }
+
+  // Rect (in canvas px) that a source image fills, respecting zoom/pan & aspect.
+  function contentRect(cw, ch){
+    var rd = refDims();
+    var scale = Math.min(cw/rd.w, ch/rd.h);
+    var w = rd.w*scale*state.zoom;
+    var h = rd.h*scale*state.zoom;
+    var x = (cw-w)/2 + state.panX;
+    var y = (ch-h)/2 + state.panY;
+    return { x:x, y:y, w:w, h:h };
+  }
+
+  function drawContain(img, rect, forceRect){
+    // Draw img inside rect: if matchAspect/forceRect, stretch to rect; else contain centered.
+    if(state.matchAspect || forceRect){
+      ctx.drawImage(img, rect.x, rect.y, rect.w, rect.h);
+      return;
+    }
+    var ir = img.naturalWidth/img.naturalHeight;
+    var rr = rect.w/rect.h;
+    var w,h,x,y;
+    if(ir>rr){ w=rect.w; h=rect.w/ir; } else { h=rect.h; w=rect.h*ir; }
+    x=rect.x+(rect.w-w)/2; y=rect.y+(rect.h-h)/2;
+    ctx.drawImage(img, x, y, w, h);
+  }
+
+  // ---------- Background ----------
+  function paintBackground(cw, ch){
+    if(state.bg==='transparent'){ ctx.clearRect(0,0,cw,ch); return; }
+    if(state.bg==='white'){ ctx.fillStyle='#ffffff'; ctx.fillRect(0,0,cw,ch); return; }
+    if(state.bg==='black'){ ctx.fillStyle='#000000'; ctx.fillRect(0,0,cw,ch); return; }
+    if(state.bg==='custom'){ ctx.fillStyle=state.bgColor; ctx.fillRect(0,0,cw,ch); return; }
+    // checkerboard
+    var s=Math.max(8,Math.round(cw/40));
+    for(var y=0;y<ch;y+=s){
+      for(var x=0;x<cw;x+=s){
+        ctx.fillStyle = ((x/s+y/s)%2<1)?'#2a2a3a':'#1c1c28';
+        ctx.fillRect(x,y,s,s);
+      }
+    }
+  }
+
+  // ---------- Main render ----------
+  function render(){
+    if(!A || !B){ return; }
+    var dims = sizeCanvas();
+    var cw=dims.w, ch=dims.h;
+    ctx.save();
+    ctx.clearRect(0,0,cw,ch);
+    paintBackground(cw,ch);
+    var rect = contentRect(cw,ch);
+    var m = state.mode;
+
+    if(m==='side'){
+      // both full images, each contained in one half
+      var half=cw/2;
+      var lr={x:0,y:0,w:half,h:ch}, rr={x:half,y:0,w:half,h:ch};
+      // apply zoom/pan uniformly by shrinking within halves (keep simple: contain)
+      drawContain(A.img, lr, false);
+      drawContain(B.img, rr, false);
+      ctx.strokeStyle='rgba(255,255,255,.5)'; ctx.lineWidth=dims.dpr; ctx.beginPath();
+      ctx.moveTo(half,0); ctx.lineTo(half,ch); ctx.stroke();
+      ctx.restore(); positionOverlays(dims,'side'); return;
+    }
+
+    // Base image = After; Before drawn on top clipped (so left/top shows Before)
+    if(m==='overlay'){
+      drawContain(A.img, rect, false);
+      ctx.globalAlpha = state.opacity;
+      ctx.globalCompositeOperation = state.blend==='normal' ? 'source-over' : state.blend;
+      drawContain(B.img, rect, false);
+      ctx.globalAlpha=1; ctx.globalCompositeOperation='source-over';
+      ctx.restore(); positionOverlays(dims,'overlay'); return;
+    }
+    if(m==='fade'){
+      drawContain(A.img, rect, false);
+      ctx.globalAlpha = state.pos/100;
+      drawContain(B.img, rect, false);
+      ctx.globalAlpha=1;
+      ctx.restore(); positionOverlays(dims,'fade'); return;
+    }
+
+    // Draw After as base
+    drawContain(B.img, rect, false);
+    // Clip region for Before
+    ctx.save();
+    ctx.beginPath();
+    if(m==='horizontal'){
+      var wx = cw*state.pos/100;
+      ctx.rect(0,0,wx,ch);
+    } else if(m==='vertical'){
+      var hy = ch*state.pos/100;
+      ctx.rect(0,0,cw,hy);
+    } else if(m==='split'){
+      ctx.rect(0,0,cw*0.5,ch);
+    } else if(m==='circle'){
+      var cx=cw/2, cy=ch/2;
+      var maxR=Math.sqrt(cx*cx+cy*cy);
+      ctx.arc(cx,cy,maxR*state.pos/100,0,Math.PI*2);
+    }
+    ctx.clip();
+    drawContain(A.img, rect, false);
+    ctx.restore();
+    ctx.restore();
+    positionOverlays(dims,m);
+  }
+
+  function positionOverlays(dims, mode){
+    var cw=dims.w, ch=dims.h, dpr=dims.dpr;
+    // labels
+    tagBefore.textContent=state.labelBefore;
+    tagAfter.textContent=state.labelAfter;
+    tagBefore.style.display='block'; tagAfter.style.display='block';
+    // handle + pct
+    handle.classList.remove('vertical');
+    var showHandle = (mode==='horizontal'||mode==='vertical'||mode==='circle');
+    handle.style.display = showHandle ? 'block' : 'none';
+    var showPct = (mode==='horizontal'||mode==='vertical'||mode==='circle'||mode==='fade');
+    pctInd.style.display = showPct ? 'block':'none';
+    pctInd.textContent = Math.round(state.pos)+'%';
+    var cssW = parseFloat(canvas.style.width), cssH=parseFloat(canvas.style.height);
+    if(mode==='horizontal'){
+      handle.style.left=(state.pos)+'%'; handle.style.top='0';
+    } else if(mode==='vertical'){
+      handle.classList.add('vertical');
+      handle.style.top=(state.pos)+'%'; handle.style.left='0';
+    } else if(mode==='circle'){
+      handle.style.left=(state.pos)+'%'; handle.style.top='0';
+    }
+    stage.classList.toggle('grabbable', state.zoom>1);
+  }
+
+  // ---------- Info ----------
+  function fmtBytes(n){ if(!n) return '—'; if(n<1024) return n+' B'; if(n<1048576) return (n/1024).toFixed(1)+' KB'; return (n/1048576).toFixed(2)+' MB'; }
+  function gcd(a,b){ return b?gcd(b,a%b):a; }
+  function aspect(w,h){ var g=gcd(w,h)||1; return (w/g)+':'+(h/g); }
+  function infoRows(entry){
+    if(!entry) return '';
+    var w=entry.img.naturalWidth,h=entry.img.naturalHeight;
+    var fmt=entry.type ? entry.type.replace('image/','').toUpperCase() : (entry.name.split('.').pop()||'').toUpperCase();
+    var rows=[
+      ['Width', w+' px'],['Height', h+' px'],
+      ['Resolution', w+' × '+h],
+      ['Aspect ratio', aspect(w,h)],
+      ['File size', fmtBytes(entry.size)],
+      ['DPI', entry.dpi?entry.dpi+' dpi':'≈ 96 (screen)'],
+      ['Format', fmt||'—']
+    ];
+    return rows.map(function(r){ return '<span>'+r[0]+'</span><span>'+r[1]+'</span>'; }).join('');
+  }
+  function renderInfo(){
+    $('infoBefore').innerHTML=infoRows(A);
+    $('infoAfter').innerHTML=infoRows(B);
+  }
+
+  // ---------- Difference analysis ----------
+  function analyseDifference(){
+    if(!A||!B){ return; }
+    var W=300,H=Math.max(100,Math.round(300*refDims().h/refDims().w));
+    H=Math.min(H,240);
+    var c1=document.createElement('canvas'); c1.width=W;c1.height=H;
+    var c2=document.createElement('canvas'); c2.width=W;c2.height=H;
+    var x1=c1.getContext('2d'), x2=c2.getContext('2d');
+    try{
+      x1.drawImage(A.img,0,0,W,H);
+      x2.drawImage(B.img,0,0,W,H);
+      var d1=x1.getImageData(0,0,W,H), d2=x2.getImageData(0,0,W,H);
+      var a=d1.data,b=d2.data;
+      var diffImg=ctx.createImageData(W,H);
+      var out=diffImg.data;
+      var changed=0, sum=0, thresh=30, n=W*H;
+      var hA=new Array(256).fill(0), hB=new Array(256).fill(0);
+      for(var i=0;i<a.length;i+=4){
+        var dr=Math.abs(a[i]-b[i]),dg=Math.abs(a[i+1]-b[i+1]),db=Math.abs(a[i+2]-b[i+2]);
+        var dm=(dr+dg+db)/3;
+        sum+=dm;
+        if(dm>thresh) changed++;
+        var v=Math.min(255,dm*3);
+        out[i]=v; out[i+1]=Math.round(v*0.5); out[i+2]=0; out[i+3]=255;
+        var la=Math.round((a[i]*0.299+a[i+1]*0.587+a[i+2]*0.114));
+        var lb=Math.round((b[i]*0.299+b[i+1]*0.587+b[i+2]*0.114));
+        hA[la]++; hB[lb]++;
+      }
+      var meanDiff=sum/n;
+      var pct=(meanDiff/255*100);
+      $('diffPct').textContent=pct.toFixed(2)+'%';
+      $('diffBarFill').style.width=Math.min(100,pct*4).toFixed(1)+'%';
+      $('diffChanged').textContent=changed.toLocaleString()+' / '+n.toLocaleString()+' ('+(changed/n*100).toFixed(1)+'%)';
+      $('diffMean').textContent=meanDiff.toFixed(1)+' / 255';
+      // heat map
+      var dc=$('diffCanvas'); dc.width=W; dc.height=H;
+      dc.getContext('2d').putImageData(diffImg,0,0);
+      // histogram
+      drawHisto(hA,hB);
+      $('diffTaint').style.display='none';
+      $('diffCard').style.display='block';
+    }catch(e){
+      tainted=true;
+      $('diffTaint').style.display='block';
+      $('diffCard').style.display='block';
+      $('diffPct').textContent='—'; $('diffChanged').textContent='—'; $('diffMean').textContent='—';
+    }
+  }
+  function drawHisto(hA,hB){
+    var c=$('histoCanvas'); var w=c.width=300,h=c.height=120; var x=c.getContext('2d');
+    x.clearRect(0,0,w,h); x.fillStyle='#000'; x.fillRect(0,0,w,h);
+    var maxA=Math.max.apply(null,hA)||1, maxB=Math.max.apply(null,hB)||1, mx=Math.max(maxA,maxB);
+    function plot(hist,color){
+      x.beginPath(); x.strokeStyle=color; x.lineWidth=1;
+      for(var i=0;i<256;i++){
+        var px=i/255*w, py=h-(hist[i]/mx*h);
+        if(i===0)x.moveTo(px,py); else x.lineTo(px,py);
+      }
+      x.stroke();
+      x.globalAlpha=.18; x.fillStyle=color; x.lineTo(w,h); x.lineTo(0,h); x.closePath(); x.fill(); x.globalAlpha=1;
+    }
+    plot(hA,'#7c5cfc'); plot(hB,'#16c079');
+  }
+
+  // ---------- Export ----------
+  function composeExport(fullRes){
+    // Returns an offscreen canvas rendered at chosen resolution with current state.
+    var rd=refDims();
+    var oc=document.createElement('canvas');
+    var scale = fullRes ? 1 : (canvas.width/rd.w);
+    var ow = Math.max(1,Math.round(rd.w*(fullRes?1:scale)));
+    var oh = Math.max(1,Math.round(rd.h*(fullRes?1:scale)));
+    if(fullRes){ ow=rd.w; oh=rd.h; }
+    oc.width=ow; oc.height=oh;
+    var octx=oc.getContext('2d');
+    // temporarily draw using a mini-render mirroring render() at (ow,oh) with zoom=1,pan=0
+    var savedZoom=state.zoom, sx=state.panX, sy=state.panY;
+    // For export we render the composition without user zoom/pan (clean full frame)
+    var rect={x:0,y:0,w:ow,h:oh};
+    function dc(img,forceRect){
+      if(state.matchAspect||forceRect){ octx.drawImage(img,rect.x,rect.y,rect.w,rect.h); return; }
+      var ir=img.naturalWidth/img.naturalHeight, rr=rect.w/rect.h, w,h,x,y;
+      if(ir>rr){ w=rect.w;h=rect.w/ir; } else { h=rect.h;w=rect.h*ir; }
+      x=rect.x+(rect.w-w)/2; y=rect.y+(rect.h-h)/2; octx.drawImage(img,x,y,w,h);
+    }
+    // bg
+    if(state.bg==='white'){octx.fillStyle='#fff';octx.fillRect(0,0,ow,oh);}
+    else if(state.bg==='black'){octx.fillStyle='#000';octx.fillRect(0,0,ow,oh);}
+    else if(state.bg==='custom'){octx.fillStyle=state.bgColor;octx.fillRect(0,0,ow,oh);}
+    else if(state.bg==='checker'){ var s=Math.max(8,Math.round(ow/40)); for(var yy=0;yy<oh;yy+=s){for(var xx=0;xx<ow;xx+=s){octx.fillStyle=((xx/s+yy/s)%2<1)?'#2a2a3a':'#1c1c28';octx.fillRect(xx,yy,s,s);}} }
+    var m=state.mode;
+    if(m==='side'){ var hf=ow/2; dc(A.img,false); }
+    if(m==='side'){
+      octx.save(); octx.beginPath(); octx.rect(0,0,ow/2,oh); octx.clip();
+      var lr={x:0,y:0,w:ow/2,h:oh}; drawContainOn(octx,A.img,lr); octx.restore();
+      octx.save(); octx.beginPath(); octx.rect(ow/2,0,ow/2,oh); octx.clip();
+      var rr2={x:ow/2,y:0,w:ow/2,h:oh}; drawContainOn(octx,B.img,rr2); octx.restore();
+    } else if(m==='overlay'){
+      dc(A.img,false); octx.globalAlpha=state.opacity; octx.globalCompositeOperation=state.blend==='normal'?'source-over':state.blend; dc(B.img,false); octx.globalAlpha=1; octx.globalCompositeOperation='source-over';
+    } else if(m==='fade'){
+      dc(A.img,false); octx.globalAlpha=state.pos/100; dc(B.img,false); octx.globalAlpha=1;
+    } else {
+      dc(B.img,false);
+      octx.save(); octx.beginPath();
+      if(m==='horizontal'){ octx.rect(0,0,ow*state.pos/100,oh); }
+      else if(m==='vertical'){ octx.rect(0,0,ow,oh*state.pos/100); }
+      else if(m==='split'){ octx.rect(0,0,ow*0.5,oh); }
+      else if(m==='circle'){ var cx=ow/2,cy=oh/2,mr=Math.sqrt(cx*cx+cy*cy); octx.arc(cx,cy,mr*state.pos/100,0,Math.PI*2); }
+      octx.clip(); dc(A.img,false); octx.restore();
+    }
+    // labels
+    var fs=Math.max(12,Math.round(ow/40));
+    octx.font='600 '+fs+'px system-ui,Arial'; octx.textBaseline='top';
+    function tag(text,alignRight){
+      var pad=fs*0.5, tw=octx.measureText(text).width;
+      var x=alignRight?(ow-tw-pad*2-fs*0.4):fs*0.4, y=fs*0.4;
+      octx.fillStyle='rgba(0,0,0,.6)'; octx.fillRect(x,y,tw+pad*2,fs+pad);
+      octx.fillStyle='#fff'; octx.fillText(text,x+pad,y+pad*0.5);
+    }
+    if(m!=='overlay'){ tag(state.labelBefore,false); tag(state.labelAfter,true); }
+    state.zoom=savedZoom; state.panX=sx; state.panY=sy;
+    return oc;
+  }
+  function drawContainOn(octx,img,rect){
+    var ir=img.naturalWidth/img.naturalHeight, rr=rect.w/rect.h, w,h,x,y;
+    if(ir>rr){ w=rect.w;h=rect.w/ir; } else { h=rect.h;w=rect.h*ir; }
+    x=rect.x+(rect.w-w)/2; y=rect.y+(rect.h-h)/2; octx.drawImage(img,x,y,w,h);
+  }
+
+  function download(blob,filename){
+    var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=filename;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); },1000);
+  }
+  function doExport(type){
+    if(!A||!B){ return; }
+    var full=$('fullResExport').checked;
+    var oc;
+    try{ oc=composeExport(full); }
+    catch(e){ toast('Export blocked — a cross-origin image taints the canvas.'); return; }
+    var ts=Date.now();
+    if(type==='png'){ oc.toBlob(function(b){ if(b)download(b,'comparison-'+ts+'.png'); else toast('Export failed (canvas may be tainted).'); },'image/png'); }
+    else if(type==='jpg'){ oc.toBlob(function(b){ if(b)download(b,'comparison-'+ts+'.jpg'); else toast('Export failed.'); },'image/jpeg',0.92); }
+    else if(type==='webp'){ oc.toBlob(function(b){ if(b)download(b,'comparison-'+ts+'.webp'); else toast('WebP not supported here.'); },'image/webp',0.92); }
+    else if(type==='svg'){ exportSVG(oc,ts); }
+    else if(type==='pdf'){ exportPDF(oc,ts); }
+  }
+  function exportSVG(oc,ts){
+    var data;
+    try{ data=oc.toDataURL('image/png'); }catch(e){ toast('Export blocked — tainted canvas.'); return; }
+    var svg='<?xml version="1.0" encoding="UTF-8"?>\n'+
+      '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="'+oc.width+'" height="'+oc.height+'" viewBox="0 0 '+oc.width+' '+oc.height+'">'+
+      '<image width="'+oc.width+'" height="'+oc.height+'" xlink:href="'+data+'"/></svg>';
+    download(new Blob([svg],{type:'image/svg+xml'}),'comparison-'+ts+'.svg');
+  }
+  function exportPDF(oc,ts){
+    // Minimal single-page PDF embedding a JPEG of the canvas.
+    var jpg;
+    try{ jpg=oc.toDataURL('image/jpeg',0.92); }catch(e){ toast('Export blocked — tainted canvas.'); return; }
+    var bin=atob(jpg.split(',')[1]);
+    var bytes=new Uint8Array(bin.length);
+    for(var i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i);
+    var w=oc.width, h=oc.height;
+    var enc=new TextEncoder();
+    var chunks=[]; var offsets=[]; var pos=0;
+    function push(str){ var u=enc.encode(str); chunks.push(u); pos+=u.length; }
+    function pushBytes(u){ chunks.push(u); pos+=u.length; }
+    push('%PDF-1.4\n');
+    var objPos=[];
+    objPos[1]=pos; push('1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n');
+    objPos[2]=pos; push('2 0 obj\n<< /Type /Pages /Kids [3 0 R] /Count 1 >>\nendobj\n');
+    objPos[3]=pos; push('3 0 obj\n<< /Type /Page /Parent 2 0 R /MediaBox [0 0 '+w+' '+h+'] /Resources << /XObject << /Im0 4 0 R >> >> /Contents 5 0 R >>\nendobj\n');
+    objPos[4]=pos; push('4 0 obj\n<< /Type /XObject /Subtype /Image /Width '+w+' /Height '+h+' /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length '+bytes.length+' >>\nstream\n');
+    pushBytes(bytes); push('\nendstream\nendobj\n');
+    var content='q\n'+w+' 0 0 '+h+' 0 0 cm\n/Im0 Do\nQ\n';
+    objPos[5]=pos; push('5 0 obj\n<< /Length '+content.length+' >>\nstream\n'+content+'endstream\nendobj\n');
+    var xrefPos=pos;
+    var xref='xref\n0 6\n0000000000 65535 f \n';
+    for(var o=1;o<=5;o++){ xref+=('0000000000'+objPos[o]).slice(-10)+' 00000 n \n'; }
+    push(xref);
+    push('trailer\n<< /Size 6 /Root 1 0 R >>\nstartxref\n'+xrefPos+'\n%%EOF');
+    var total=chunks.reduce(function(s,c){return s+c.length;},0);
+    var out=new Uint8Array(total); var off=0;
+    chunks.forEach(function(c){ out.set(c,off); off+=c.length; });
+    download(new Blob([out],{type:'application/pdf'}),'comparison-'+ts+'.pdf');
+  }
+
+  // ---------- UI wiring ----------
+  function afterReady(){
+    if(A && B){
+      stageEmpty.style.display='none';
+      canvas.style.display='block';
+      $('bacToolbar').style.display='flex';
+      $('bacExport').style.display='flex';
+      $('bacPanels').style.display='grid';
+      renderInfo();
+      render();
+    }
+  }
+
+  // dropzones (uses common.js setupDropzone; preserves original IDs)
+  setupDropzone($('dropzoneBefore'), $('fileInputBefore'), function(files){ handleFiles('before',files); });
+  setupDropzone($('dropzoneAfter'), $('fileInputAfter'), function(files){ handleFiles('after',files); });
+
+  // camera
+  $('camBefore').addEventListener('click',function(){ $('camInputBefore').click(); });
+  $('camAfter').addEventListener('click',function(){ $('camInputAfter').click(); });
+  $('camInputBefore').addEventListener('change',function(e){ handleFiles('before',e.target.files); });
+  $('camInputAfter').addEventListener('change',function(e){ handleFiles('after',e.target.files); });
+
+  // url
+  $('urlBtnBefore').addEventListener('click',function(){ $('urlRowBefore').classList.toggle('show'); });
+  $('urlBtnAfter').addEventListener('click',function(){ $('urlRowAfter').classList.toggle('show'); });
+  $('urlLoadBefore').addEventListener('click',function(){ loadUrl('before',$('urlInputBefore').value.trim()); });
+  $('urlLoadAfter').addEventListener('click',function(){ loadUrl('after',$('urlInputAfter').value.trim()); });
+
+  // paste
+  window.addEventListener('paste',function(e){
+    var items=(e.clipboardData||{}).items||[];
+    for(var i=0;i<items.length;i++){
+      if(items[i].type && items[i].type.indexOf('image')===0){
+        var f=items[i].getAsFile();
+        var side = !A ? 'before' : (!B ? 'after' : 'before');
+        handleFiles(side,[f]);
+        toast('Pasted into '+side+' slot');
+        e.preventDefault();
+        break;
+      }
+    }
+  });
+
+  // mode buttons
+  Array.prototype.forEach.call(document.querySelectorAll('[data-mode]'),function(btn){
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('[data-mode]').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      state.mode=btn.getAttribute('data-mode');
+      $('grpOverlay').style.display = state.mode==='overlay' ? 'flex':'none';
+      render();
+    });
+  });
+
+  // overlay controls
+  $('opacityRange').addEventListener('input',function(){ state.opacity=this.value/100; $('opacityVal').textContent=this.value+'%'; render(); });
+  $('blendSelect').addEventListener('change',function(){ state.blend=this.value; render(); });
+
+  // zoom
+  function setZoom(z,btn){
+    state.zoom=Math.max(0.5,Math.min(4,z));
+    $('zoomVal').textContent=Math.round(state.zoom*100)+'%';
+    document.querySelectorAll('[data-zoom]').forEach(function(b){ b.classList.toggle('active', parseFloat(b.getAttribute('data-zoom'))===state.zoom); });
+    if(state.zoom===1){ state.panX=0; state.panY=0; }
+    render();
+  }
+  document.querySelectorAll('[data-zoom]').forEach(function(b){ b.addEventListener('click',function(){ setZoom(parseFloat(b.getAttribute('data-zoom'))); }); });
+  $('zoomIn').addEventListener('click',function(){ setZoom(state.zoom*1.25); });
+  $('zoomOut').addEventListener('click',function(){ setZoom(state.zoom/1.25); });
+
+  // match aspect
+  $('matchAspect').addEventListener('click',function(){ state.matchAspect=!state.matchAspect; this.classList.toggle('active',state.matchAspect); render(); });
+
+  // labels
+  $('labelPreset').addEventListener('change',function(){
+    if(this.value==='custom'){ $('labelBefore').style.display='inline-block'; $('labelAfter').style.display='inline-block'; return; }
+    $('labelBefore').style.display='none'; $('labelAfter').style.display='none';
+    var parts=this.value.split('|'); state.labelBefore=parts[0]; state.labelAfter=parts[1];
+    $('labelBefore').value=parts[0]; $('labelAfter').value=parts[1];
+    render();
+  });
+  $('labelBefore').addEventListener('input',function(){ state.labelBefore=this.value||'Before'; render(); });
+  $('labelAfter').addEventListener('input',function(){ state.labelAfter=this.value||'After'; render(); });
+
+  // background
+  document.querySelectorAll('[data-bg]').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('[data-bg]').forEach(function(x){ x.classList.remove('active'); });
+      b.classList.add('active'); state.bg=b.getAttribute('data-bg'); render();
+    });
+  });
+  $('bgColor').addEventListener('input',function(){
+    state.bg='custom'; state.bgColor=this.value;
+    document.querySelectorAll('[data-bg]').forEach(function(x){ x.classList.remove('active'); });
+    render();
+  });
+
+  // reset / fullscreen / difference
+  $('resetBtn').addEventListener('click',function(){ state.zoom=1;state.panX=0;state.panY=0;state.pos=50; setZoom(1); render(); });
+  $('fsBtn').addEventListener('click',function(){
+    if(!document.fullscreenElement){ (stage.requestFullscreen||stage.webkitRequestFullscreen||function(){}).call(stage); }
+    else{ (document.exitFullscreen||document.webkitExitFullscreen||function(){}).call(document); }
+  });
+  document.addEventListener('fullscreenchange',function(){ setTimeout(render,60); });
+  $('diffBtn').addEventListener('click',analyseDifference);
+
+  // export
+  document.querySelectorAll('[data-export]').forEach(function(b){ b.addEventListener('click',function(){ doExport(b.getAttribute('data-export')); }); });
+
+  // ---------- Slider / pan interaction ----------
+  var dragging=false, panning=false, lastX=0, lastY=0;
+  function posFromEvent(e){
+    var pt=e.touches?e.touches[0]:e;
+    var rect=canvas.getBoundingClientRect();
+    if(state.mode==='vertical'){ return ((pt.clientY-rect.top)/rect.height)*100; }
+    return ((pt.clientX-rect.left)/rect.width)*100;
+  }
+  function stageDown(e){
+    if(!A||!B) return;
+    var sliderMode=(state.mode==='horizontal'||state.mode==='vertical'||state.mode==='circle'||state.mode==='fade');
+    if(state.zoom>1 && !(e.target===handle)){
+      panning=true; var pt=e.touches?e.touches[0]:e; lastX=pt.clientX; lastY=pt.clientY; stage.classList.add('grabbing');
+      if(sliderMode && e.target!==handle){ /* allow slider too via click */ }
+    }
+    if(sliderMode){ dragging=true; state.pos=Math.max(0,Math.min(100,posFromEvent(e))); render(); }
+    e.preventDefault();
+  }
+  function stageMove(e){
+    if(panning && state.zoom>1){
+      var pt=e.touches?e.touches[0]:e;
+      state.panX+=(pt.clientX-lastX); state.panY+=(pt.clientY-lastY);
+      lastX=pt.clientX; lastY=pt.clientY; render(); e.preventDefault(); return;
+    }
+    if(dragging){ state.pos=Math.max(0,Math.min(100,posFromEvent(e))); render(); e.preventDefault(); }
+  }
+  function stageUp(){ dragging=false; panning=false; stage.classList.remove('grabbing'); }
+  handle.addEventListener('mousedown',function(e){ e.stopPropagation(); dragging=true; e.preventDefault(); });
+  handle.addEventListener('touchstart',function(e){ e.stopPropagation(); dragging=true; e.preventDefault(); },{passive:false});
+  canvas.addEventListener('mousedown',stageDown);
+  canvas.addEventListener('touchstart',stageDown,{passive:false});
+  window.addEventListener('mousemove',stageMove);
+  window.addEventListener('touchmove',stageMove,{passive:false});
+  window.addEventListener('mouseup',stageUp);
+  window.addEventListener('touchend',stageUp);
+
+  // double click reset
+  canvas.addEventListener('dblclick',function(){ state.zoom=1;state.panX=0;state.panY=0;state.pos=50; setZoom(1); });
+
+  // wheel zoom
+  stage.addEventListener('wheel',function(e){
+    if(!A||!B) return;
+    e.preventDefault();
+    setZoom(state.zoom*(e.deltaY<0?1.1:0.9));
+  },{passive:false});
+
+  // pinch zoom
+  var pinchDist=0;
+  stage.addEventListener('touchstart',function(e){ if(e.touches.length===2){ pinchDist=touchDist(e); } },{passive:false});
+  stage.addEventListener('touchmove',function(e){
+    if(e.touches.length===2){ var d=touchDist(e); if(pinchDist){ setZoom(state.zoom*(d/pinchDist)); } pinchDist=d; e.preventDefault(); }
+  },{passive:false});
+  function touchDist(e){ var a=e.touches[0],b=e.touches[1]; return Math.hypot(a.clientX-b.clientX,a.clientY-b.clientY); }
+
+  // keyboard
+  stage.setAttribute('tabindex','0');
+  stage.setAttribute('role','group');
+  stage.setAttribute('aria-label','Image comparison stage. Use arrow keys to move the slider.');
+  stage.addEventListener('keydown',function(e){
+    if(!A||!B) return;
+    var step=e.shiftKey?10:2;
+    if(e.key==='ArrowLeft'||e.key==='ArrowDown'){ state.pos=Math.max(0,state.pos-step); render(); e.preventDefault(); }
+    else if(e.key==='ArrowRight'||e.key==='ArrowUp'){ state.pos=Math.min(100,state.pos+step); render(); e.preventDefault(); }
+    else if(e.key==='Home'){ state.pos=0; render(); e.preventDefault(); }
+    else if(e.key==='End'){ state.pos=100; render(); e.preventDefault(); }
+    else if(e.key==='0'){ setZoom(1); e.preventDefault(); }
+    else if(e.key==='+'||e.key==='='){ setZoom(state.zoom*1.25); e.preventDefault(); }
+    else if(e.key==='-'){ setZoom(state.zoom/1.25); e.preventDefault(); }
+  });
+
+  window.addEventListener('resize',function(){ if(A&&B) render(); });
+})();
 </script>
 <!-- Default Statcounter code for Apne Software
 https://apnesoftware.com -->
 <script type="text/javascript">
-var sc_project=13334460; 
-var sc_invisible=1; 
-var sc_security="a5854dc7"; 
+var sc_project=13334460;
+var sc_invisible=1;
+var sc_security="a5854dc7";
 </script>
 <script type="text/javascript"
 src="https://www.statcounter.com/counter/counter.js"
@@ -203,5 +1199,33 @@ src="https://c.statcounter.com/13334460/0/a5854dc7/1/"
 alt="Web Analytics"
 referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 <!-- End of Statcounter Code -->
+
+<!-- FAQ structured data -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is this image comparison tool really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is completely free with no account, no watermark and no limits on how many comparisons you make."}},
+{"@type":"Question","name":"Are my images uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Every image is decoded and processed locally in your browser using the canvas API. Nothing leaves your device."}},
+{"@type":"Question","name":"Does it work offline?","acceptedAnswer":{"@type":"Answer","text":"Yes. Once the page has loaded, you can disconnect from the internet and keep comparing and exporting."}},
+{"@type":"Question","name":"Which image formats can I load?","acceptedAnswer":{"@type":"Answer","text":"JPG, JPEG, PNG, WebP, AVIF, BMP, TIFF and SVG. Support for AVIF, TIFF and BMP depends on your browser's decoders."}},
+{"@type":"Question","name":"What comparison modes are available?","acceptedAnswer":{"@type":"Answer","text":"Horizontal slider, vertical slider, circle reveal, split view, side by side, overlay with blend modes, and fade."}},
+{"@type":"Question","name":"How do I move the slider?","acceptedAnswer":{"@type":"Answer","text":"Drag the handle with your mouse or finger, use the arrow keys after clicking the stage, or click anywhere on the image to jump the slider there."}},
+{"@type":"Question","name":"Can I zoom in to check fine details?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use the 50/100/200/400% presets, the +/- buttons, the mouse wheel or pinch on touch devices, then pan with the hand tool."}},
+{"@type":"Question","name":"What does the difference percentage mean?","acceptedAnswer":{"@type":"Answer","text":"It is the average per-pixel colour difference between the two images across all channels, expressed as a percentage of the maximum possible difference."}},
+{"@type":"Question","name":"What is the changed area?","acceptedAnswer":{"@type":"Answer","text":"It counts how many sampled pixels differ by more than a small threshold, so tiny compression noise is ignored but real edits are caught."}},
+{"@type":"Question","name":"Can I compare two images of different sizes?","acceptedAnswer":{"@type":"Answer","text":"Yes. Both are aligned to a shared frame and centred. Turn on Match aspect to stretch the After image to the Before frame for a strict pixel overlay."}},
+{"@type":"Question","name":"Can I add custom labels?","acceptedAnswer":{"@type":"Answer","text":"Yes. Choose a preset such as Before/After, Original/Edited or Version 1/2, or select Custom to type your own. Labels appear in the export too."}},
+{"@type":"Question","name":"Which export formats are supported?","acceptedAnswer":{"@type":"Answer","text":"PNG, JPG, WebP, PDF and SVG. PNG and WebP keep transparency; JPG and PDF flatten onto your chosen background."}},
+{"@type":"Question","name":"What is the Full resolution export option?","acceptedAnswer":{"@type":"Answer","text":"By default the export matches the on-screen size. Enable Full resolution to render at the native pixel size of your source images for crisp prints."}},
+{"@type":"Question","name":"Can I paste a screenshot directly?","acceptedAnswer":{"@type":"Answer","text":"Yes. Copy any image to your clipboard and press Ctrl or Cmd plus V on the page. It loads into the Before slot first, then the After slot."}},
+{"@type":"Question","name":"Can I use my phone camera?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tap the Camera button on either side to capture a photo directly on mobile."}},
+{"@type":"Question","name":"Why can't I export or analyse a URL image?","acceptedAnswer":{"@type":"Answer","text":"If a remote image is served without CORS permission, the browser marks the canvas tainted and blocks reading its pixels. Download the image and upload it instead."}},
+{"@type":"Question","name":"Does it work on mobile and tablets?","acceptedAnswer":{"@type":"Answer","text":"Yes. The layout is fully responsive and supports touch drag, pinch-zoom and tap-to-position."}},
+{"@type":"Question","name":"Is it accessible with a keyboard and screen reader?","acceptedAnswer":{"@type":"Answer","text":"Yes. Controls are focusable, the slider responds to arrow keys, and elements carry descriptive labels for screen readers."}},
+{"@type":"Question","name":"Can I compare more than one pair quickly?","acceptedAnswer":{"@type":"Answer","text":"Load several images on each side; the thumbnail strips let you switch the active Before and After instantly without re-uploading."}},
+{"@type":"Question","name":"What can I use the difference mode for?","acceptedAnswer":{"@type":"Answer","text":"It is great for UI regression testing, spotting watermark removal, verifying retouching, or documenting real changes objectively."}},
+{"@type":"Question","name":"Will it change or compress my original files?","acceptedAnswer":{"@type":"Answer","text":"No. Your source files are never modified. Only the new export you download is generated."}},
+{"@type":"Question","name":"Does it use any AI?","acceptedAnswer":{"@type":"Answer","text":"No. Everything is deterministic maths on the canvas. There is no AI, no cloud models and no surprises."}}
+]}
+</script>
 </body>
 </html>

@@ -1524,12 +1524,13 @@
         {
             "id": "before-after-slider",
             "name": "Before/After Comparison Slider",
-            "description": "Compare two images with a drag slider",
+            "description": "Compare two images with 7 modes — horizontal/vertical slider, circle reveal, split, side-by-side, overlay & fade — plus zoom, pan, pixel-difference analysis, custom labels and PNG/JPG/WebP/PDF/SVG export",
             "icon": "↔️",
             "url": "tools/before-after-slider.html",
             "category": "image",
             "categories": [
-                "image"
+                "image",
+                "pdf"
             ],
             "published": true
         },
