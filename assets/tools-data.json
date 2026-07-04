@@ -875,11 +875,22 @@
     {
       "id": "solid-bg-remover",
       "name": "Solid-Color Background Remover",
-      "description": "Make a plain solid background transparent",
+      "description": "Make a flat, solid-colored background transparent — eyedropper & auto corner detection, multi-color removal, tolerance, feather and edge cleanup, before/after compare, background replacement (transparent/white/black/solid) and export a transparent PNG, WebP or matted JPG. 100% local.",
       "icon": "🎭",
       "url": "tools/solid-bg-remover.html",
       "category": "image",
-      "published": true
+      "published": true,
+      "tags": [
+        "solid color background remover",
+        "remove background online",
+        "make background transparent",
+        "transparent png maker",
+        "remove white background",
+        "remove green background",
+        "product photo background",
+        "id photo background",
+        "offline"
+      ]
     },
     {
       "id": "image-pixelator",
