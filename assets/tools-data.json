@@ -1200,7 +1200,7 @@
     {
       "id": "image-color-palette",
       "name": "Image Color Palette Extractor",
-      "description": "Extract dominant colors with hex codes",
+      "description": "Extract dominant/vibrant/muted colors in HEX/RGB/HSL/CMYK/LAB with WCAG contrast, harmonies, gradients & export to PNG/SVG/CSS/ASE",
       "icon": "🎨",
       "url": "tools/image-color-palette.html",
       "category": "image",
