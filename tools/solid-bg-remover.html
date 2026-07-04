@@ -4,36 +4,123 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
+<meta name="description" content="Free online Solid-Color Background Remover — make a plain, evenly-lit background transparent in your browser. Eyedropper + auto corner detection, multi-color removal, tolerance, feather and edge cleanup, before/after compare, replace background with transparent/white/black/solid colour, and export a transparent PNG, WebP or matted JPG. 100% local, nothing uploaded, works offline.">
+<meta name="keywords" content="solid color background remover, remove background online, make background transparent, transparent png maker, remove white background, remove green background, chroma key online, product photo background remover, id photo background">
 <link rel="canonical" href="https://apnesoftware.com/tools/solid-bg-remover.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Solid-Color Background Remover | ApneSoftware">
-<meta property="og:description" content="Make a plain solid background transparent. Free online tool — no signup required.">
+<meta property="og:title" content="Solid-Color Background Remover — Make a Plain Background Transparent | ApneSoftware">
+<meta property="og:description" content="Remove a flat, solid background and export a transparent PNG. Eyedropper, multi-color removal, tolerance, feather, edge cleanup, before/after compare and background replacement. Free, private, offline.">
 <meta property="og:url" content="https://apnesoftware.com/tools/solid-bg-remover.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Solid-Color Background Remover | ApneSoftware">
-<meta name="twitter:description" content="Make a plain solid background transparent. Free online tool — no signup required.">
+<meta name="twitter:title" content="Solid-Color Background Remover — Make a Plain Background Transparent | ApneSoftware">
+<meta name="twitter:description" content="Eyedropper + auto detection, multi-color removal, tolerance, feather, edge cleanup, before/after compare, background replacement and transparent PNG/WebP export. Free, private, offline.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Solid-Color Background Remover","description":"Make a plain solid background transparent. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/solid-bg-remover.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Solid-Color Background Remover","description":"Browser-based tool that makes a flat, solid-colored background transparent. Includes an eyedropper and automatic corner detection, multi-color removal, tolerance, feather and edge-cleanup controls, before/after compare, background replacement (transparent, white, black or a solid colour) and export to transparent PNG, WebP or matted JPG. Runs entirely in the browser with no upload.","url":"https://apnesoftware.com/tools/solid-bg-remover.html","applicationCategory":"MultimediaApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"featureList":["Eyedropper and auto corner detection","Multi-color background removal","Tolerance, feather and edge cleanup","Before/after compare","Background replacement (transparent/white/black/solid)","Transparent PNG/WebP export","Undo/redo/reset","100% local processing"],"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Solid-Color Background Remover — Make a Plain Background Transparent","url":"https://apnesoftware.com/tools/solid-bg-remover.html","description":"Private, browser-based tool to remove a solid background and export a transparent PNG, with eyedropper, tolerance, feather, edge cleanup, compare and background replacement.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apnesoftware.com/"},{"@type":"ListItem","position":2,"name":"Image Tools","item":"https://apnesoftware.com/index.html"},{"@type":"ListItem","position":3,"name":"Solid-Color Background Remover","item":"https://apnesoftware.com/tools/solid-bg-remover.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to remove a solid background","description":"Make a plain background transparent in your browser.","step":[{"@type":"HowToStep","name":"Upload an image","text":"Drag and drop or choose a JPG, PNG or WebP with a plain background."},{"@type":"HowToStep","name":"Pick the background colour","text":"Use the auto-detected corner colour or click the background with the eyedropper."},{"@type":"HowToStep","name":"Refine","text":"Adjust tolerance, feather and edge cleanup until the background disappears cleanly."},{"@type":"HowToStep","name":"Export","text":"Choose transparent or a replacement background and download a PNG, WebP or JPG."}]}
+</script>
+<script type="application/ld+json" id="faqSchema">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}
 </script>
 <meta name="color-scheme" content="dark">
-<title>Solid-Color Background Remover | ApneSoftware</title>
+<title>Solid-Color Background Remover — Make a Plain Background Transparent | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-/* Premium upload enhancement for this tool */
-.dropzone{cursor:pointer}
-.dropzone p{font-size:.9rem}
-.panel{position:relative;z-index:1}
-</style>
-<style>
-  #previewCanvas{max-width:100%;border-radius:10px;background:repeating-conic-gradient(#2a2a2a 0% 25%, #222 0% 50%) 50% / 20px 20px;cursor:crosshair}
-  .swatch-preview{width:34px;height:34px;border-radius:6px;border:1px solid var(--border);display:inline-block;vertical-align:middle;margin-left:8px}
-  .new-tech-note{
-    background:rgba(124,92,252,.08);border:1px solid rgba(124,92,252,.25);border-radius:8px;
-    padding:12px 14px;font-size:.85rem;color:var(--text-dim);margin-top:14px;
-  }
+/* ===== Solid-Color Background Remover — scoped sbr- styles ===== */
+.sbr-crumb{font-size:.78rem;color:var(--text-dim);margin-bottom:6px}
+.sbr-crumb a{color:#c4b5fd;text-decoration:none}
+.sbr-crumb a:hover{text-decoration:underline}
+.sbr-btn{background:rgba(167,139,250,.14);border:1px solid rgba(167,139,250,.34);color:#d6cbff;border-radius:10px;padding:9px 13px;font-size:.83rem;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.15s}
+.sbr-btn:hover{background:rgba(167,139,250,.24)}
+.sbr-btn.primary{background:linear-gradient(90deg,#7c3aed,#a78bfa);border-color:transparent;color:#fff;font-weight:600}
+.sbr-btn.sm{padding:6px 10px;font-size:.76rem}
+.sbr-btn:focus-visible,.sbr-chip:focus-visible,.sbr-swatch:focus-visible,.dropzone:focus-visible{outline:2px solid #a78bfa;outline-offset:2px}
+.sbr-toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+
+.dropzone{cursor:pointer;border:2px dashed rgba(167,139,250,.4);border-radius:16px;padding:34px 20px;text-align:center;transition:.15s;background:rgba(167,139,250,.04)}
+.dropzone:hover,.dropzone.drag{background:rgba(167,139,250,.12);border-color:#a78bfa}
+.dropzone .ic{font-size:2.2rem}
+.dropzone p{font-size:.95rem;margin:8px 0}
+.dropzone .sub{font-size:.82rem;color:var(--text-dim)}
+.dropzone input{display:none}
+
+.sbr-grid{display:grid;grid-template-columns:1fr 330px;gap:18px;margin-top:16px}
+@media(max-width:900px){.sbr-grid{grid-template-columns:1fr}}
+.sbr-stage{background:repeating-conic-gradient(#2a2a35 0% 25%,#20202a 0% 50%) 50% / 22px 22px;border:1px solid var(--border,rgba(255,255,255,.1));border-radius:14px;padding:10px;display:flex;flex-direction:column;align-items:center;gap:8px;min-width:0;overflow:auto;max-height:62vh}
+#previewCanvas{max-width:100%;height:auto;border-radius:8px;cursor:crosshair;display:block}
+.sbr-stagebar{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+
+.sbr-side{min-width:0}
+.sbr-card{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.1));border-radius:12px;padding:12px 14px;margin-bottom:12px}
+.sbr-card h4{margin:0 0 9px;font-size:.8rem;text-transform:uppercase;letter-spacing:.03em;color:#c4b5fd}
+.swatch-preview{width:30px;height:30px;border-radius:6px;border:1px solid var(--border,rgba(255,255,255,.2));display:inline-block;vertical-align:middle;margin-left:8px}
+.sbr-swlist{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.sbr-swatch{width:30px;height:30px;border-radius:7px;border:2px solid rgba(255,255,255,.2);cursor:pointer;position:relative;padding:0}
+.sbr-swatch[aria-pressed="true"]{border-color:#a78bfa}
+.sbr-swatch .x{position:absolute;top:-6px;right:-6px;width:16px;height:16px;border-radius:50%;background:#7c3aed;color:#fff;font-size:.7rem;line-height:16px;text-align:center;display:none}
+.sbr-swatch:hover .x{display:block}
+.sbr-recent{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.sbr-recent button{width:22px;height:22px;border-radius:5px;border:1px solid rgba(255,255,255,.2);cursor:pointer;padding:0}
+.sbr-field{margin-bottom:9px}
+.sbr-field:last-child{margin-bottom:0}
+.sbr-field label{display:flex;justify-content:space-between;font-size:.78rem;color:var(--text-dim);margin-bottom:4px}
+.sbr-field label .v{color:#c4b5fd;font-weight:600}
+.sbr-field input[type=range]{width:100%;accent-color:#a78bfa}
+.sbr-field select,.sbr-field input[type=color]{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border,rgba(255,255,255,.14));color:var(--text);border-radius:8px;padding:6px 9px;font-size:.82rem}
+.sbr-field input[type=color]{height:36px;padding:2px;cursor:pointer}
+.sbr-row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sbr-chips{display:flex;flex-wrap:wrap;gap:6px}
+.sbr-chip{font-size:.76rem;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid var(--border,rgba(255,255,255,.14));color:var(--text-dim);cursor:pointer;font-weight:600}
+.sbr-chip:hover{border-color:#a78bfa;color:#c4b5fd}
+.sbr-chip[aria-pressed="true"]{background:rgba(167,139,250,.2);color:#c4b5fd;border-color:#a78bfa}
+.sbr-toggle{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--text-dim);cursor:pointer}
+.sbr-info{font-size:.76rem;color:var(--text-dim)}
+.sbr-info div{display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.sbr-info div:last-child{border-bottom:none}
+.sbr-info b{color:#c4b5fd}
+#statusMsg{margin-top:8px;font-size:.85rem;min-height:1em}
+.privacy-note{background:rgba(124,92,252,.08);border:1px solid rgba(124,92,252,.25);border-radius:8px;padding:12px 14px;font-size:.84rem;color:var(--text-dim);margin-top:16px;line-height:1.6}
+.privacy-note b{color:#c4b5fd}
+
+/* below-tool */
+.sbr-wrap{margin:26px 0}
+.sbr-title{font-size:1.35rem;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+.sbr-feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.sbr-fcard{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:14px;padding:16px}
+.sbr-fcard h4{margin:0 0 6px;font-size:.98rem;display:flex;align-items:center;gap:8px}
+.sbr-fcard p{margin:0;font-size:.86rem;color:var(--text-dim);line-height:1.55}
+.sbr-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.sbr-rel{display:block;text-decoration:none;background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:14px;transition:.15s;color:var(--text)}
+.sbr-rel:hover{border-color:#a78bfa;background:rgba(167,139,250,.1);transform:translateY(-2px)}
+.sbr-rel b{display:block;font-size:.92rem;margin-bottom:3px}
+.sbr-rel span{font-size:.8rem;color:var(--text-dim);line-height:1.45}
+.sbr-prose p,.sbr-prose li{color:var(--text-dim);line-height:1.75;font-size:.92rem}
+.sbr-prose h3{font-size:1.02rem;margin:18px 0 8px}
+.sbr-tscroll{overflow:auto;border-radius:10px}
+table.sbr-table{border-collapse:collapse;font-size:.85rem;width:100%}
+table.sbr-table th,table.sbr-table td{border:1px solid var(--border,rgba(255,255,255,.12));padding:7px 10px;text-align:left;color:var(--text)}
+table.sbr-table th{background:rgba(167,139,250,.14);color:#fff;font-weight:600}
+.sbr-faq details{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:0 16px;margin-bottom:10px}
+.sbr-faq summary{cursor:pointer;padding:14px 0;font-weight:600;font-size:.92rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.sbr-faq summary::-webkit-details-marker{display:none}
+.sbr-faq summary::after{content:'+';font-size:1.3rem;color:#a78bfa;flex:0 0 auto}
+.sbr-faq details[open] summary::after{content:'−'}
+.sbr-faq details p{margin:0 0 14px;font-size:.87rem;color:var(--text-dim);line-height:1.65}
+.sbr-steps{list-style:none;counter-reset:s;padding:0;margin:0;display:grid;gap:12px}
+.sbr-steps li{counter-increment:s;position:relative;padding-left:46px;font-size:.9rem;color:var(--text-dim);line-height:1.6}
+.sbr-steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:32px;height:32px;border-radius:9px;background:rgba(167,139,250,.18);color:#c4b5fd;font-weight:700;display:grid;place-items:center}
+.sbr-steps li b{color:var(--text)}
+@media (prefers-contrast:more){.sbr-prose p,.sbr-prose li{color:#fff}}
 </style>
 </head>
 <body>
@@ -46,176 +133,517 @@
 
 <div class="container">
   <div class="tool-header">
+    <nav class="sbr-crumb" aria-label="Breadcrumb"><a href="../index.html">Home</a> › <a href="../index.html">Image Tools</a> › <span>Solid-Color Background Remover</span></nav>
     <h1>🎭 Solid-Color Background Remover</h1>
-    <p>Make a flat, solid-colored background transparent — works great for product photos and ID-style photos with a plain background.</p>
+    <p>Make a flat, solid-colored background <b>transparent</b> — perfect for product shots, logos and ID-style photos on a plain backdrop. Eyedropper &amp; auto detection, <b>multi-color removal</b>, tolerance, feather and edge cleanup, before/after compare and background replacement. 100% local — nothing is uploaded.</p>
+    <div class="sbr-toolbar">
+      <button class="sbr-btn" id="newImgBtn" type="button">↺ New image</button>
+    </div>
   </div>
 
   <div class="panel">
-    <div class="dropzone" id="dropzone">
-      <p>📤 Drag an image here or click to choose (plain background works best)</p>
+    <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-label="Upload image">
+      <div class="ic">🖼️</div>
+      <p><b>Drop an image here</b> or click to choose <span style="color:var(--text-dim)">(plain background works best)</span></p>
+      <div class="sub">🔒 JPG/PNG/WebP · paste with Ctrl+V · processed locally · nothing uploaded</div>
       <input type="file" id="fileInput" accept="image/*">
     </div>
 
-    <div id="afterUpload" style="display:none;margin-top:18px">
-      <p style="font-size:.88rem;color:var(--text-dim)">Click anywhere on the background in the preview to pick its color, or use the auto-detected corner color.</p>
-      <div class="field">
-        <label>Background color to remove <span class="swatch-preview" id="colorSwatch"></span></label>
-      </div>
-      <div class="field">
-        <label for="toleranceSlider">Tolerance: <span id="toleranceVal">35</span></label>
-        <input type="range" id="toleranceSlider" min="0" max="120" value="35">
+    <div id="afterUpload" style="display:none">
+      <div class="sbr-grid">
+        <div class="sbr-stage" id="sbrStage">
+          <canvas id="previewCanvas" aria-label="Background removal preview"></canvas>
+          <div class="sbr-stagebar">
+            <button class="sbr-btn sm" id="compareBtn" type="button">◐ Hold to compare</button>
+            <button class="sbr-chip" id="zoomOutBtn" type="button" aria-label="Zoom out">➖</button>
+            <button class="sbr-chip" id="zoomFitBtn" type="button">Fit</button>
+            <button class="sbr-chip" id="zoomInBtn" type="button" aria-label="Zoom in">➕</button>
+          </div>
+        </div>
+
+        <div class="sbr-side">
+          <div class="sbr-card">
+            <h4>Background colour(s) <span class="swatch-preview" id="colorSwatch"></span></h4>
+            <div class="sbr-chips" style="margin-bottom:9px">
+              <button class="sbr-chip" id="eyedropBtn" type="button" aria-pressed="true">💧 Eyedropper</button>
+              <button class="sbr-chip" id="autoBtn" type="button">✨ Auto-detect</button>
+            </div>
+            <label class="sbr-toggle" style="margin-bottom:8px"><input type="checkbox" id="multiChk"> Add multiple colours</label>
+            <div class="sbr-swlist" id="colorList" aria-label="Selected background colours"></div>
+            <div class="sbr-recent" id="recentColors" aria-label="Recent colours"></div>
+          </div>
+
+          <div class="sbr-card">
+            <h4>Refine</h4>
+            <div class="sbr-field"><label for="toleranceSlider">Tolerance <span class="v" id="toleranceVal">35</span></label><input type="range" id="toleranceSlider" min="0" max="180" value="35"></div>
+            <div class="sbr-field"><label for="featherSlider">Feather / edge softness <span class="v" id="featherVal">40</span>%</label><input type="range" id="featherSlider" min="0" max="100" value="40"></div>
+            <div class="sbr-field"><label for="cleanupSlider">Edge cleanup (despill) <span class="v" id="cleanupVal">0</span>%</label><input type="range" id="cleanupSlider" min="0" max="100" value="0"></div>
+          </div>
+
+          <div class="sbr-card">
+            <h4>Background</h4>
+            <div class="sbr-chips" style="margin-bottom:9px">
+              <button class="sbr-chip bgmode" data-mode="transparent" aria-pressed="true" type="button">Transparent</button>
+              <button class="sbr-chip bgmode" data-mode="white" type="button">White</button>
+              <button class="sbr-chip bgmode" data-mode="black" type="button">Black</button>
+              <button class="sbr-chip bgmode" data-mode="color" type="button">Colour</button>
+            </div>
+            <div class="sbr-field" id="bgColorWrap" style="display:none"><label for="bgColorPick">Replacement colour</label><input type="color" id="bgColorPick" value="#ffffff"></div>
+          </div>
+
+          <div class="sbr-card">
+            <h4>History &amp; output</h4>
+            <div class="sbr-chips" style="margin-bottom:9px">
+              <button class="sbr-chip" id="undoBtn" type="button">⟲ Undo</button>
+              <button class="sbr-chip" id="redoBtn" type="button">⟳ Redo</button>
+              <button class="sbr-chip" id="resetBtn" type="button">↩ Reset</button>
+            </div>
+            <div class="sbr-row2">
+              <div class="sbr-field"><label for="outFmt">Format</label><select id="outFmt"><option value="image/png" selected>PNG</option><option value="image/webp">WebP</option><option value="image/jpeg">JPG</option></select></div>
+              <div class="sbr-field"><label for="quality">Quality <span class="v" id="qualityVal">92</span>%</label><input type="range" id="quality" min="60" max="100" value="92"></div>
+            </div>
+          </div>
+
+          <div class="sbr-card">
+            <h4>Image info</h4>
+            <div class="sbr-info" id="imgInfo"></div>
+          </div>
+        </div>
       </div>
 
-      <canvas id="previewCanvas"></canvas>
-
-      <div class="btn-row">
-        <button class="btn" id="downloadBtn">⬇️ Download Transparent PNG</button>
-        <button class="btn secondary" id="resetBtn">↩️ Reset</button>
+      <div class="sbr-toolbar">
+        <button class="sbr-btn primary" id="downloadBtn" type="button">⬇️ Download Transparent PNG</button>
       </div>
-      <p id="statusMsg" style="margin-top:10px;color:var(--text-dim);font-size:.9rem"></p>
-      <div class="new-tech-note">ℹ️ This works by removing pixels close to one chosen color — best for plain, evenly-lit backgrounds. For complex photo backgrounds, an AI-based tool would be needed.</div>
+      <p id="statusMsg" style="color:var(--text-dim)"></p>
+
+      <div class="privacy-note">🔒 <b>Private by design:</b> your image is processed entirely in your browser on an HTML canvas. Nothing is uploaded to a server, and the tool keeps working offline once loaded.</div>
     </div>
   </div>
 </div>
 
+<!-- ===================== BELOW-TOOL CONTENT ===================== -->
+<div class="container">
 
-<div class="info-wrap">
-  <div class="info-section">
-    <div class="info-block">
-      <h2>ℹ️ About This Tool</h2>
-      <p>Removes a flat, solid-colored background (like white, green, or any plain backdrop) by making matching pixels transparent. Ideal for product photos, ID photos, or graphics shot against a plain backdrop.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Upload a photo with a plain, even-colored background.</li>
-        <li>Click on the background in the preview to pick its exact color (or use the auto-detected one).</li>
-        <li>Adjust the tolerance slider until the background disappears cleanly, then download.</li>
-      </ol>
-    </div>
-    <hr class="info-divider">
-    <div class="info-block">
-      <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>यह टूल एक प्लेन, सॉलिड-कलर बैकग्राउंड (जैसे सफेद, हरा, या कोई भी एक रंग का बैकग्राउंड) हटाता है, उससे मिलते-जुलते पिक्सल को ट्रांसपेरेंट बना देता है। प्रोडक्ट फोटो, ID फोटो, या प्लेन बैकग्राउंड वाली ग्राफिक्स के लिए बढ़िया।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>प्लेन, एक जैसे रंग वाले बैकग्राउंड की फोटो अपलोड करें।</li>
-        <li>प्रीव्यू में बैकग्राउंड पर क्लिक करके उसका सही रंग चुनें (या ऑटो-डिटेक्टेड रंग इस्तेमाल करें)।</li>
-        <li>टॉलरेंस स्लाइडर सेट करें जब तक बैकग्राउंड साफ तरीके से हट न जाए, फिर डाउनलोड करें।</li>
-      </ol>
-    </div>
+<!-- Key Features -->
+<section class="sbr-wrap">
+  <h2 class="sbr-title">✨ Key Features</h2>
+  <div class="sbr-feat-grid">
+    <div class="sbr-fcard"><h4>💧 Eyedropper + Auto-detect</h4><p>Click the background to sample its exact colour, or let the tool auto-detect from the four corners.</p></div>
+    <div class="sbr-fcard"><h4>🎨 Multi-Colour Removal</h4><p>Add several background colours at once — great for backdrops with subtle shade variation.</p></div>
+    <div class="sbr-fcard"><h4>🎚️ Tolerance &amp; Feather</h4><p>Control how similar a pixel must be, and soften edges so the cut-out blends naturally.</p></div>
+    <div class="sbr-fcard"><h4>🧹 Edge Cleanup</h4><p>Despill reduces the coloured fringe that a strong backdrop can leave around your subject.</p></div>
+    <div class="sbr-fcard"><h4>◐ Before / After</h4><p>Hold the compare button to instantly see the original versus the removed background.</p></div>
+    <div class="sbr-fcard"><h4>🖼️ Replace Background</h4><p>Keep it transparent, or drop your subject onto white, black or any solid colour.</p></div>
+    <div class="sbr-fcard"><h4>🔍 Zoom &amp; Pan</h4><p>Zoom in to check edges pixel-by-pixel; fit-to-screen returns to the full view.</p></div>
+    <div class="sbr-fcard"><h4>🔄 Undo / Redo / Reset</h4><p>Step back and forth through changes, or reset to the untouched image in one click.</p></div>
+    <div class="sbr-fcard"><h4>💾 Multi-Format Export</h4><p>Transparent PNG or WebP, or a matted JPG, with a quality slider.</p></div>
+    <div class="sbr-fcard"><h4>📋 Paste &amp; Replace</h4><p>Paste an image with Ctrl+V or swap in a new one without reloading the page.</p></div>
+    <div class="sbr-fcard"><h4>🔒 100% Local</h4><p>Every pixel is processed in your browser. Nothing is uploaded, logged or tracked.</p></div>
+    <div class="sbr-fcard"><h4>♿ Accessible &amp; Mobile</h4><p>Keyboard navigation, ARIA labels, high-contrast support and a responsive layout.</p></div>
   </div>
+</section>
+
+<!-- Benefits -->
+<section class="sbr-wrap sbr-prose">
+  <h2 class="sbr-title">🎯 Benefits</h2>
+  <ul>
+    <li><b>Studio-clean cut-outs</b> — turn a plain backdrop into crisp transparency for product listings and catalogues.</li>
+    <li><b>No subscriptions or uploads</b> — a professional result without an account, a watermark or a server round-trip.</li>
+    <li><b>Full manual control</b> — deterministic colour maths means the same settings always give the same cut-out.</li>
+    <li><b>Ready for anything</b> — export transparent art for decks, thumbnails, stickers, logos and mock-ups.</li>
+    <li><b>Completely private</b> — your images never leave the browser, and it works offline.</li>
+  </ul>
+</section>
+
+<!-- Related Tools (ABOVE About) -->
+<section class="sbr-wrap">
+  <h2 class="sbr-title">🧰 Related Tools</h2>
+  <div class="sbr-rel-grid">
+    <a class="sbr-rel" href="image-cropper.html"><b>✂️ Image Cropper</b><span>Crop images precisely.</span></a>
+    <a class="sbr-rel" href="image-rounded-corners.html"><b>⭕ Rounded &amp; Circle Crop</b><span>Round corners or circle-crop.</span></a>
+    <a class="sbr-rel" href="photo-filters.html"><b>🎨 Photo Filters</b><span>Filter and adjust photos.</span></a>
+    <a class="sbr-rel" href="image-converter.html"><b>🔄 Image Converter</b><span>Convert between JPG, PNG, WebP.</span></a>
+    <a class="sbr-rel" href="image-compressor.html"><b>🗜️ Image Compressor</b><span>Shrink image file size.</span></a>
+    <a class="sbr-rel" href="image-resizer.html"><b>📐 Image Resizer</b><span>Resize images to any dimensions.</span></a>
+    <a class="sbr-rel" href="image-watermark.html"><b>💧 Image Watermark</b><span>Add text or logo watermarks.</span></a>
+    <a class="sbr-rel" href="image-border-frame.html"><b>🖼️ Border &amp; Frame Adder</b><span>Add borders and frames.</span></a>
+  </div>
+</section>
+
+<!-- About (English) -->
+<section class="sbr-wrap sbr-prose">
+  <h2 class="sbr-title">ℹ️ About This Tool</h2>
+  <p>The <b>ApneSoftware Solid-Color Background Remover</b> is a professional, privacy-first tool for turning a flat, evenly-coloured background into clean transparency — directly in your browser. When a photo is shot against a plain backdrop — a white sweep for a product, a green screen, a coloured card behind an ID portrait, or a solid fill behind a logo — the background is a single, predictable colour. That predictability is exactly what this tool exploits: instead of guessing at complex scenery, it measures how close every pixel is to the colour you choose and makes the matching pixels transparent. The result is a crisp cut-out you can drop onto any design, and because the whole process is deterministic colour maths rather than a black-box model, the same settings always produce the same result.</p>
+  <p>Getting the colour right is the heart of a good cut-out, so the tool gives you two fast ways to choose it. The moment you upload an image it <b>auto-detects</b> the likely background by averaging the four corners — usually enough for a plain sweep. When you want precision, the <b>eyedropper</b> lets you click the exact spot you want to remove, sampling that pixel's true colour. Real backdrops are rarely one perfect shade, so you can enable <b>multi-colour removal</b> and add several samples — a lit edge and a shadowed edge of the same wall, for example — and the tool removes anything close to <em>any</em> of them. A live swatch list shows every colour in play, each removable with a click, and a <b>recent colours</b> strip remembers what you have used so you can reapply it instantly.</p>
+  <p>Two sliders then shape the cut. <b>Tolerance</b> sets how similar a pixel must be to a target colour before it is removed: low values only take near-identical pixels (safe, but may leave a halo), while higher values reach further into shades and shadows (cleaner, but can start biting into your subject). <b>Feather</b> controls edge softness — rather than a hard on/off cut at the tolerance boundary, feather ramps the transparency across a band so the edge of your subject blends smoothly instead of looking jagged or aliased. A third control, <b>edge cleanup (despill)</b>, tackles the coloured fringe that a strong backdrop can leave on semi-transparent edge pixels, nudging those pixels away from the removed colour so a green or blue rim doesn't linger around hair and edges. Together these three controls let you dial in everything from a quick logo knockout to a careful portrait matte.</p>
+  <p>Once the subject is isolated you can decide what sits behind it. Keeping the background <b>transparent</b> is the default and is shown over a checkerboard so you can see exactly what is see-through. But you can also <b>replace</b> the background in one click with <b>white</b> (ideal for marketplace listings that require a clean white field), <b>black</b>, or any <b>solid colour</b> you pick — handy for brand backgrounds, passport-style photos or quick composites. A <b>before/after</b> compare button reveals the untouched original whenever you hold it, so you can judge precisely what the removal is doing, and <b>zoom</b> controls let you inspect edges pixel-by-pixel and then fit the whole image back on screen. Full <b>undo, redo and reset</b> mean you can experiment freely; nothing is committed until you export.</p>
+  <p><b>Export is flexible and lossless where it matters.</b> A transparent cut-out is saved as a <b>PNG</b> or <b>WebP</b>, both of which preserve the alpha channel so your subject stays see-through wherever you place it. If you need a <b>JPG</b> — which cannot store transparency — the tool automatically mattes your subject onto the chosen background colour so you never get a black box where the transparency was. A quality slider tunes compression for WebP and JPG, and every export is rendered at the image's <b>full native resolution</b>, so a cut-out from a large product photo stays sharp. An <b>image-information</b> panel reports dimensions, megapixels, aspect ratio and source file size so you always know what you are producing.</p>
+  <p><b>Privacy is fundamental.</b> Unlike many online background removers that upload your photo to a server, this tool does everything <b>locally</b>. Your image is read into the browser, drawn onto a canvas, processed and handed straight back to you — it never leaves your device, there is no account, and nothing about your image is tracked or stored. That makes it safe for personal ID photos, brand assets and client work alike, and it means the tool keeps working <b>offline</b> once the page has loaded. The interface follows modern accessibility standards too, with keyboard-operable controls, ARIA labelling, visible focus outlines and high-contrast support. Importantly, this is a genuine, deterministic colour-keying tool — <b>there are no AI features</b>, so it excels at plain, solid backgrounds and does not attempt to hallucinate edges on busy scenes. For flat backdrops, that honesty is a strength: what you see is exactly the maths applied to your pixels, fast, private and repeatable.</p>
+</section>
+
+<!-- About (Hindi) -->
+<section class="sbr-wrap sbr-prose">
+  <h2 class="sbr-title">ℹ️ इस टूल के बारे में</h2>
+  <p><b>ApneSoftware Solid-Color Background Remover</b> एक professional, privacy-first टूल है जो एक सपाट, एक-रंग वाले background को साफ़ transparency में बदल देता है — सीधे आपके browser में। जब कोई photo किसी plain backdrop पर ली जाती है — product के लिए सफ़ेद sweep, green screen, ID portrait के पीछे रंगीन card, या logo के पीछे एक ठोस रंग — तो background एक ही, अनुमानित रंग होता है। यही अनुमेयता इस टूल का आधार है: जटिल दृश्य का अंदाज़ा लगाने के बजाय, यह मापता है कि हर pixel आपके चुने रंग के कितना करीब है और मिलते-जुलते pixels को transparent बना देता है। परिणाम एक साफ़ cut-out है जिसे आप किसी भी design पर रख सकते हैं, और चूँकि पूरी प्रक्रिया deterministic colour maths है, वही settings हमेशा वही परिणाम देते हैं।</p>
+  <p>सही रंग चुनना अच्छे cut-out का दिल है, इसलिए टूल इसे चुनने के दो तेज़ तरीके देता है। image upload करते ही यह चारों कोनों का औसत लेकर संभावित background <b>auto-detect</b> कर लेता है — plain sweep के लिए अक्सर यही काफ़ी है। जब आप सटीकता चाहें, <b>eyedropper</b> आपको ठीक उसी जगह click करने देता है जिसे आप हटाना चाहते हैं। असली backdrops शायद ही कभी एक ही रंग के होते हैं, इसलिए आप <b>multi-colour removal</b> चालू कर कई नमूने जोड़ सकते हैं — जैसे एक ही दीवार का रोशन किनारा और छायादार किनारा — और टूल उनमें से <em>किसी भी</em> रंग के करीब सब कुछ हटा देता है। एक live swatch सूची हर रंग दिखाती है, और एक <b>recent colours</b> पट्टी याद रखती है कि आपने क्या उपयोग किया।</p>
+  <p>फिर दो sliders cut को आकार देते हैं। <b>Tolerance</b> तय करता है कि हटाने से पहले pixel target रंग के कितना समान होना चाहिए: कम मान केवल लगभग-समान pixels लेते हैं (सुरक्षित, पर halo रह सकता है), जबकि ऊँचे मान shades व shadows में और गहरे पहुँचते हैं (साफ़, पर आपके subject में काटना शुरू कर सकते हैं)। <b>Feather</b> edge की कोमलता नियंत्रित करता है — tolerance सीमा पर कठोर on/off कट के बजाय, feather transparency को एक पट्टी में क्रमशः बढ़ाता है ताकि आपके subject का किनारा जगमगाने या aliased दिखने के बजाय सहजता से मिल जाए। एक तीसरा नियंत्रण, <b>edge cleanup (despill)</b>, उस रंगीन fringe से निपटता है जो एक मज़बूत backdrop semi-transparent किनारों पर छोड़ सकता है।</p>
+  <p>subject अलग होने के बाद आप तय कर सकते हैं कि उसके पीछे क्या हो। background <b>transparent</b> रखना default है और इसे एक checkerboard पर दिखाया जाता है ताकि आप ठीक-ठीक देख सकें कि क्या पारदर्शी है। लेकिन आप एक click में background को <b>white</b> (marketplace listings के लिए आदर्श), <b>black</b>, या किसी भी <b>solid colour</b> से <b>बदल</b> भी सकते हैं। एक <b>before/after</b> compare button दबाकर रखने पर अछूता मूल दिखाता है, और <b>zoom</b> नियंत्रण किनारों को pixel-दर-pixel जाँचने देते हैं। पूर्ण <b>undo, redo व reset</b> का मतलब है कि आप स्वतंत्र रूप से प्रयोग कर सकते हैं; export तक कुछ भी स्थायी नहीं होता।</p>
+  <p><b>Export लचीला व जहाँ ज़रूरी वहाँ lossless है।</b> एक transparent cut-out <b>PNG</b> या <b>WebP</b> के रूप में सहेजा जाता है, जो alpha channel सुरक्षित रखते हैं। यदि आपको <b>JPG</b> चाहिए — जो transparency नहीं रख सकता — तो टूल स्वतः आपके subject को चुने रंग पर matte कर देता है, इसलिए आपको transparency की जगह कभी काला box नहीं मिलता। एक quality slider WebP व JPG के लिए compression tune करता है, और हर export image के <b>पूर्ण native resolution</b> पर render होता है। एक <b>image-information</b> panel आयाम, megapixels, aspect ratio व source file size बताता है।</p>
+  <p><b>Privacy मौलिक है।</b> कई online background removers के विपरीत जो आपकी photo server पर भेजते हैं, यह टूल सब कुछ <b>locally</b> करता है। आपकी image browser में पढ़ी जाती है, canvas पर बनाई जाती है, process व वापस दी जाती है — यह कभी आपके device से बाहर नहीं जाती, कोई account नहीं, और आपकी image के बारे में कुछ भी track या store नहीं होता। यह व्यक्तिगत ID photos, brand assets व client काम सबके लिए सुरक्षित बनाता है, और page load होने के बाद टूल <b>offline</b> काम करता है। ध्यान दें कि यह एक असली, deterministic colour-keying टूल है — <b>कोई AI feature नहीं</b>, इसलिए यह plain, solid backgrounds में उत्कृष्ट है और व्यस्त दृश्यों पर किनारे नहीं गढ़ता। सपाट backdrops के लिए यही ईमानदारी इसकी ताक़त है।</p>
+</section>
+
+<!-- Supported Formats -->
+<section class="sbr-wrap sbr-prose">
+  <h2 class="sbr-title">🖼️ Supported Formats</h2>
+  <div class="sbr-tscroll">
+    <table class="sbr-table">
+      <thead><tr><th>Format</th><th>Input</th><th>Output</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>PNG</td><td>✔</td><td>✔</td><td>Best output — keeps full transparency.</td></tr>
+        <tr><td>WebP</td><td>✔</td><td>✔</td><td>Transparent and smaller; modern browsers.</td></tr>
+        <tr><td>JPG / JPEG</td><td>✔</td><td>Matted</td><td>No transparency — subject is placed on the chosen background colour.</td></tr>
+        <tr><td>GIF (static)</td><td>✔</td><td>PNG/WebP</td><td>First frame is processed; export as PNG or WebP.</td></tr>
+        <tr><td>AVIF / HEIC / TIFF / BMP</td><td>Browser-dependent</td><td>PNG/WebP</td><td>If your browser can decode it, it can be processed and exported as PNG/WebP.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Background Removal Guide -->
+<section class="sbr-wrap sbr-prose">
+  <h2 class="sbr-title">🧭 Background Removal Guide</h2>
+  <ul>
+    <li><b>Start with the right photo</b> — a plain, evenly-lit backdrop with good contrast between subject and background gives the cleanest cut.</li>
+    <li><b>Pick the colour first</b> — use Auto-detect for a quick start, then click the background with the eyedropper for precision.</li>
+    <li><b>Add colours if the backdrop varies</b> — turn on multi-colour and sample both the bright and shaded areas of the background.</li>
+    <li><b>Raise tolerance gradually</b> — increase it until the background clears, and stop before it starts eating your subject.</li>
+    <li><b>Soften with feather</b> — add just enough to smooth jagged edges without creating a fuzzy halo.</li>
+    <li><b>Clean the fringe</b> — use edge cleanup if a coloured rim remains around your subject.</li>
+  </ul>
+</section>
+
+<!-- Tolerance Guide -->
+<section class="sbr-wrap sbr-prose">
+  <h2 class="sbr-title">🎚️ Tolerance Guide</h2>
+  <div class="sbr-tscroll">
+    <table class="sbr-table">
+      <thead><tr><th>Tolerance</th><th>Effect</th><th>Best for</th></tr></thead>
+      <tbody>
+        <tr><td>Low (0–30)</td><td>Removes only near-identical pixels; safe but may leave a halo.</td><td>Very clean, uniform backgrounds.</td></tr>
+        <tr><td>Medium (30–80)</td><td>Reaches into shades and soft shadows; the usual sweet spot.</td><td>Most product and ID photos.</td></tr>
+        <tr><td>High (80–180)</td><td>Aggressive; clears uneven backdrops but can bite the subject.</td><td>Backgrounds close in colour to the subject — use with care.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Export Guide -->
+<section class="sbr-wrap sbr-prose">
+  <h2 class="sbr-title">💾 Export Guide</h2>
+  <ul>
+    <li><b>PNG</b> — the safe default for transparent cut-outs; lossless and universally supported.</li>
+    <li><b>WebP</b> — also keeps transparency and produces smaller files in modern browsers.</li>
+    <li><b>JPG</b> — has no transparency, so your subject is matted onto the chosen background colour (pick a Background other than transparent).</li>
+    <li><b>Quality slider</b> — affects WebP and JPG; 90–95% is a good default.</li>
+    <li>Exports are rendered at <b>full resolution</b>, so downloads keep every detail.</li>
+  </ul>
+</section>
+
+<!-- How To Use -->
+<section class="sbr-wrap sbr-prose">
+  <h2 class="sbr-title">🚀 How To Use</h2>
+  <ol class="sbr-steps">
+    <li><b>Upload</b> a photo with a plain background by dragging it in, clicking the dropzone, or pasting with Ctrl+V.</li>
+    <li><b>Pick the background colour</b> — accept the auto-detected one or click the background with the eyedropper.</li>
+    <li><b>Refine</b> with Tolerance and Feather; add more colours or edge cleanup if needed.</li>
+    <li>Choose a <b>background</b> — keep it transparent or replace it with white, black or a solid colour.</li>
+    <li>Pick a <b>format</b> and click <b>Download</b>. Use undo/redo/reset freely.</li>
+  </ol>
+</section>
+
+<!-- FAQ -->
+<section class="sbr-wrap sbr-faq">
+  <h2 class="sbr-title">❓ Frequently Asked Questions</h2>
+  <div id="faqList"></div>
+</section>
+
+<!-- Troubleshooting -->
+<section class="sbr-wrap sbr-prose">
+  <h2 class="sbr-title">🛠️ Troubleshooting</h2>
+  <ul>
+    <li><b>Background won't fully clear:</b> raise Tolerance, or turn on multi-colour and sample the lighter and darker parts of the backdrop.</li>
+    <li><b>Parts of the subject disappear:</b> lower Tolerance — the subject is too close in colour to the background.</li>
+    <li><b>Jagged edges:</b> increase Feather to soften the cut-out boundary.</li>
+    <li><b>Coloured halo around the subject:</b> raise Edge cleanup (despill) to remove the fringe.</li>
+    <li><b>Downloaded JPG has a solid box instead of transparency:</b> JPG can't store transparency — export PNG/WebP, or set a Background colour for JPG.</li>
+    <li><b>WebP export unavailable:</b> some older browsers can't encode WebP — choose PNG.</li>
+    <li><b>Busy photo background isn't removed cleanly:</b> this tool is for plain, solid backgrounds — complex scenes need a subject with a single-colour backdrop.</li>
+  </ul>
+</section>
+
 </div>
 
-<footer class="site-footer">© 2026 ApneSoftware.com</footer>
+<footer class="site-footer">© 2026 ApneSoftware.com — Free, private, browser-based tools.</footer>
 
 <script src="../assets/common.js"></script>
 <script>
-const dropzone = document.getElementById('dropzone');
-const fileInput = document.getElementById('fileInput');
-const canvas = document.getElementById('previewCanvas');
-const ctx = canvas.getContext('2d');
-let img = new Image();
-let targetColor = [255,255,255];
+(function(){
+  "use strict";
+  function $(id){ return document.getElementById(id); }
+  function clamp(v,a,b){ return v<a?a:v>b?b:v; }
 
-setupDropzone(dropzone, fileInput, files => {
-  if(files.length && files[0].type.startsWith('image/')){
-    img.onload = ()=>{
-      canvas.width = img.naturalWidth;
-      canvas.height = img.naturalHeight;
-      document.getElementById('afterUpload').style.display = 'block';
-      autoDetectColor();
-      render();
-    };
-    img.src = URL.createObjectURL(files[0]);
+  var canvas=$('previewCanvas'), ctx=canvas.getContext('2d');
+  var img=new Image(), currentFile=null, comparing=false, zoom=1, eyedrop=true;
+  var srcData=null; // ImageData of the original at natural resolution
+  var st={colors:[[255,255,255]], tolerance:35, feather:40, cleanup:0, multi:false, bgMode:'transparent', bgColor:'#ffffff'};
+  var recent=[], undoStack=[], redoStack=[];
+
+  /* ===== upload ===== */
+  var dz=$('dropzone'), fi=$('fileInput');
+  if(typeof setupDropzone==='function'){
+    setupDropzone(dz, fi, function(files){ if(files.length) handleFile(files[0]); });
+  } else {
+    dz.addEventListener('click',function(){ fi.click(); });
+    fi.addEventListener('change',function(e){ handleFile(e.target.files[0]); });
   }
-});
+  dz.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ fi.click(); e.preventDefault(); } });
+  // paste
+  window.addEventListener('paste',function(e){ var items=(e.clipboardData||{}).items||[]; for(var i=0;i<items.length;i++){ if(items[i].type&&items[i].type.indexOf('image/')===0){ handleFile(items[i].getAsFile()); break; } } });
 
-function autoDetectColor(){
-  const tmp = document.createElement('canvas');
-  tmp.width = img.naturalWidth; tmp.height = img.naturalHeight;
-  const tctx = tmp.getContext('2d');
-  tctx.drawImage(img, 0, 0);
-  const corners = [
-    tctx.getImageData(0,0,1,1).data,
-    tctx.getImageData(tmp.width-1,0,1,1).data,
-    tctx.getImageData(0,tmp.height-1,1,1).data,
-    tctx.getImageData(tmp.width-1,tmp.height-1,1,1).data
-  ];
-  let r=0,g=0,b=0;
-  corners.forEach(c=>{ r+=c[0]; g+=c[1]; b+=c[2]; });
-  targetColor = [Math.round(r/4), Math.round(g/4), Math.round(b/4)];
-  updateSwatch();
-}
+  function handleFile(f){ if(!f||f.type.indexOf('image/')!==0) return; currentFile=f; loadSrc(URL.createObjectURL(f)); }
+  function loadSrc(url){
+    img.onload=function(){
+      var w=img.naturalWidth, h=img.naturalHeight;
+      var t=document.createElement('canvas'); t.width=w; t.height=h; var tx=t.getContext('2d'); tx.drawImage(img,0,0);
+      try{ srcData=tx.getImageData(0,0,w,h); }catch(e){ srcData=null; }
+      canvas.width=w; canvas.height=h;
+      undoStack=[]; redoStack=[];
+      $('afterUpload').style.display='block';
+      autoDetect(); fitZoom(); render(); buildInfo();
+      try{ $('afterUpload').scrollIntoView({behavior:'smooth',block:'start'}); }catch(e){}
+    };
+    img.src=url;
+  }
 
-function updateSwatch(){
-  document.getElementById('colorSwatch').style.background = `rgb(${targetColor[0]},${targetColor[1]},${targetColor[2]})`;
-}
+  /* ===== colour detection ===== */
+  function autoDetect(){
+    if(!srcData){ st.colors=[[255,255,255]]; syncColors(); return; }
+    var w=srcData.width,h=srcData.height,d=srcData.data;
+    function px(x,y){ var i=(y*w+x)*4; return [d[i],d[i+1],d[i+2]]; }
+    var cs=[px(0,0),px(w-1,0),px(0,h-1),px(w-1,h-1)], r=0,g=0,b=0;
+    cs.forEach(function(c){ r+=c[0]; g+=c[1]; b+=c[2]; });
+    st.colors=[[Math.round(r/4),Math.round(g/4),Math.round(b/4)]]; syncColors();
+  }
+  function pushRecent(c){ var key=c.join(','); recent=recent.filter(function(x){return x.join(',')!==key;}); recent.unshift(c); if(recent.length>8)recent.pop(); syncRecent(); }
+  function addColor(c){ if(st.multi){ st.colors.push(c); } else { st.colors=[c]; } pushRecent(c); syncColors(); }
 
-function render(){
-  const tolerance = parseInt(document.getElementById('toleranceSlider').value);
-  const tmp = document.createElement('canvas');
-  tmp.width = canvas.width; tmp.height = canvas.height;
-  const tctx = tmp.getContext('2d');
-  tctx.drawImage(img, 0, 0);
-  const imageData = tctx.getImageData(0, 0, tmp.width, tmp.height);
-  const data = imageData.data;
-  const [tr, tg, tb] = targetColor;
+  function syncColors(){
+    var first=st.colors[0]||[255,255,255];
+    $('colorSwatch').style.background='rgb('+first[0]+','+first[1]+','+first[2]+')';
+    var wrap=$('colorList'); wrap.innerHTML='';
+    st.colors.forEach(function(c,idx){
+      var b=document.createElement('button'); b.className='sbr-swatch'; b.type='button'; b.style.background='rgb('+c[0]+','+c[1]+','+c[2]+')';
+      b.setAttribute('aria-label','Background colour '+(idx+1)+' — remove');
+      var x=document.createElement('span'); x.className='x'; x.textContent='×'; b.appendChild(x);
+      b.addEventListener('click',function(){ if(st.colors.length>1){ pushHist(); st.colors.splice(idx,1); syncColors(); render(); } });
+      wrap.appendChild(b);
+    });
+  }
+  function syncRecent(){
+    var wrap=$('recentColors'); wrap.innerHTML='';
+    recent.forEach(function(c){ var b=document.createElement('button'); b.type='button'; b.style.background='rgb('+c[0]+','+c[1]+','+c[2]+')'; b.setAttribute('aria-label','Use recent colour'); b.addEventListener('click',function(){ pushHist(); addColor(c.slice()); render(); }); wrap.appendChild(b); });
+  }
 
-  for(let i=0;i<data.length;i+=4){
-    const dr = data[i]-tr, dg = data[i+1]-tg, db = data[i+2]-tb;
-    const dist = Math.sqrt(dr*dr + dg*dg + db*db);
-    if(dist < tolerance){
-      // smooth edge: fade alpha near the threshold boundary
-      const fade = Math.max(0, Math.min(1, (tolerance - dist) / Math.max(1,tolerance*0.4)));
-      data[i+3] = Math.round(data[i+3] * (1 - fade));
+  /* ===== render (uses cached srcData) ===== */
+  function render(){
+    if(!srcData) return;
+    var w=srcData.width,h=srcData.height,src=srcData.data;
+    var out=ctx.createImageData(w,h), o=out.data;
+    if(comparing){ o.set(src); ctx.putImageData(out,0,0); return; }
+    var tol=st.tolerance, cols=st.colors, ncol=cols.length;
+    var frac=Math.max(0.02, st.feather/100); var band=Math.max(1,tol*frac);
+    var clean=st.cleanup/100;
+    for(var i=0;i<src.length;i+=4){
+      var r=src[i],g=src[i+1],b=src[i+2],a=src[i+3];
+      o[i]=r; o[i+1]=g; o[i+2]=b; o[i+3]=a;
+      // nearest target colour
+      var best=1e9, bc=cols[0];
+      for(var k=0;k<ncol;k++){ var c=cols[k], dr=r-c[0],dg=g-c[1],db=b-c[2], dist=Math.sqrt(dr*dr+dg*dg+db*db); if(dist<best){ best=dist; bc=c; } }
+      if(best<tol){
+        var t=clamp((tol-best)/band,0,1); // 1 = fully background
+        o[i+3]=Math.round(a*(1-t));
+        // despill on partially-kept edge pixels
+        if(clean>0 && o[i+3]>0){
+          var f=clean*t;
+          o[i]  =clamp(Math.round(r+(r-bc[0])*f),0,255);
+          o[i+1]=clamp(Math.round(g+(g-bc[1])*f),0,255);
+          o[i+2]=clamp(Math.round(b+(b-bc[2])*f),0,255);
+        }
+      }
+    }
+    ctx.clearRect(0,0,w,h);
+    if(st.bgMode==='transparent'){ ctx.putImageData(out,0,0); }
+    else {
+      var tmp=document.createElement('canvas'); tmp.width=w; tmp.height=h; tmp.getContext('2d').putImageData(out,0,0);
+      ctx.fillStyle=bgFill(); ctx.fillRect(0,0,w,h); ctx.drawImage(tmp,0,0);
     }
   }
+  function bgFill(){ return st.bgMode==='white'?'#ffffff':st.bgMode==='black'?'#000000':st.bgColor; }
 
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  ctx.putImageData(imageData, 0, 0);
-}
+  function buildInfo(){
+    if(!srcData) return;
+    var w=srcData.width,h=srcData.height;
+    function g(a,b){return b?g(b,a%b):a;} var d=g(w,h);
+    var kb='—'; if(currentFile){ kb=currentFile.size<1048576?(currentFile.size/1024).toFixed(0)+' KB':(currentFile.size/1048576).toFixed(2)+' MB'; }
+    var rows=[['Dimensions',w+' × '+h+' px'],['Megapixels',(w*h/1e6).toFixed(1)+' MP'],['Aspect',d?(w/d)+':'+(h/d):'—'],['Orientation',w>h?'Landscape':w<h?'Portrait':'Square'],['Source file',kb]];
+    $('imgInfo').innerHTML=rows.map(function(r){ return '<div><span>'+r[0]+'</span><b>'+r[1]+'</b></div>'; }).join('');
+  }
 
-canvas.addEventListener('click', (e)=>{
-  const rect = canvas.getBoundingClientRect();
-  const scaleX = canvas.width / rect.width;
-  const scaleY = canvas.height / rect.height;
-  const x = Math.floor((e.clientX - rect.left) * scaleX);
-  const y = Math.floor((e.clientY - rect.top) * scaleY);
+  /* ===== eyedropper (click canvas) ===== */
+  canvas.addEventListener('click',function(e){
+    if(!eyedrop||!srcData) return;
+    var rect=canvas.getBoundingClientRect();
+    var x=Math.floor((e.clientX-rect.left)*(canvas.width/rect.width));
+    var y=Math.floor((e.clientY-rect.top)*(canvas.height/rect.height));
+    x=clamp(x,0,srcData.width-1); y=clamp(y,0,srcData.height-1);
+    var i=(y*srcData.width+x)*4;
+    pushHist(); addColor([srcData.data[i],srcData.data[i+1],srcData.data[i+2]]); render();
+  });
 
-  const tmp = document.createElement('canvas');
-  tmp.width = canvas.width; tmp.height = canvas.height;
-  const tctx = tmp.getContext('2d');
-  tctx.drawImage(img, 0, 0);
-  const px = tctx.getImageData(x, y, 1, 1).data;
-  targetColor = [px[0], px[1], px[2]];
-  updateSwatch();
-  render();
-});
+  /* ===== controls ===== */
+  $('eyedropBtn').addEventListener('click',function(){ eyedrop=true; this.setAttribute('aria-pressed','true'); });
+  $('autoBtn').addEventListener('click',function(){ pushHist(); autoDetect(); render(); });
+  $('multiChk').addEventListener('change',function(){ st.multi=this.checked; });
+  function bindRange(id,valId,key){ var el=$(id),v=$(valId); el.addEventListener('input',function(){ st[key]=parseInt(el.value,10); if(v)v.textContent=el.value; render(); }); el.addEventListener('change',function(){ pushHist(); }); }
+  bindRange('toleranceSlider','toleranceVal','tolerance');
+  bindRange('featherSlider','featherVal','feather');
+  bindRange('cleanupSlider','cleanupVal','cleanup');
+  $('quality').addEventListener('input',function(){ $('qualityVal').textContent=this.value; });
 
-document.getElementById('toleranceSlider').addEventListener('input', ()=>{
-  document.getElementById('toleranceVal').textContent = document.getElementById('toleranceSlider').value;
-  render();
-});
+  // background mode
+  Array.prototype.forEach.call(document.querySelectorAll('.bgmode'),function(btn){
+    btn.addEventListener('click',function(){
+      pushHist();
+      document.querySelectorAll('.bgmode').forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+      btn.setAttribute('aria-pressed','true');
+      st.bgMode=btn.getAttribute('data-mode');
+      $('bgColorWrap').style.display=st.bgMode==='color'?'block':'none';
+      updateDlLabel(); render();
+    });
+  });
+  $('bgColorPick').addEventListener('input',function(){ st.bgColor=this.value; if(st.bgMode==='color')render(); });
+  function updateDlLabel(){ $('downloadBtn').textContent=st.bgMode==='transparent'?'⬇️ Download Transparent PNG':'⬇️ Download Image'; }
 
-document.getElementById('resetBtn').addEventListener('click', ()=>{
-  document.getElementById('toleranceSlider').value = 35;
-  document.getElementById('toleranceVal').textContent = 35;
-  autoDetectColor();
-  render();
-});
+  /* ===== zoom ===== */
+  function applyZoom(){ canvas.style.width=(canvas.width*zoom)+'px'; canvas.style.maxWidth=zoom>1?'none':'100%'; }
+  function fitZoom(){ zoom=1; canvas.style.width=''; canvas.style.maxWidth='100%'; }
+  $('zoomInBtn').addEventListener('click',function(){ zoom=clamp(zoom*1.25,0.2,8); applyZoom(); });
+  $('zoomOutBtn').addEventListener('click',function(){ zoom=clamp(zoom/1.25,0.2,8); applyZoom(); });
+  $('zoomFitBtn').addEventListener('click',fitZoom);
 
-document.getElementById('downloadBtn').addEventListener('click', ()=>{
-  canvas.toBlob((blob)=>{
-    downloadBlob('transparent.png', blob);
-    document.getElementById('statusMsg').textContent = '✅ Downloaded!';
-  }, 'image/png');
-});
+  /* ===== compare (hold) ===== */
+  var cb=$('compareBtn');
+  function startCmp(e){ comparing=true; render(); if(e)e.preventDefault(); }
+  function endCmp(){ if(comparing){ comparing=false; render(); } }
+  cb.addEventListener('mousedown',startCmp); cb.addEventListener('touchstart',startCmp,{passive:false});
+  window.addEventListener('mouseup',endCmp); window.addEventListener('touchend',endCmp);
+  cb.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ comparing=!comparing; render(); e.preventDefault(); } });
+
+  /* ===== history ===== */
+  function snap(){ return JSON.stringify({colors:st.colors,tolerance:st.tolerance,feather:st.feather,cleanup:st.cleanup,multi:st.multi,bgMode:st.bgMode,bgColor:st.bgColor}); }
+  function pushHist(){ undoStack.push(snap()); if(undoStack.length>60)undoStack.shift(); redoStack=[]; }
+  function restore(s){ var o=JSON.parse(s); st.colors=o.colors; st.tolerance=o.tolerance; st.feather=o.feather; st.cleanup=o.cleanup; st.multi=o.multi; st.bgMode=o.bgMode; st.bgColor=o.bgColor; syncUI(); }
+  function syncUI(){
+    $('toleranceSlider').value=st.tolerance; $('toleranceVal').textContent=st.tolerance;
+    $('featherSlider').value=st.feather; $('featherVal').textContent=st.feather;
+    $('cleanupSlider').value=st.cleanup; $('cleanupVal').textContent=st.cleanup;
+    $('multiChk').checked=st.multi; $('bgColorPick').value=st.bgColor;
+    document.querySelectorAll('.bgmode').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-mode')===st.bgMode?'true':'false'); });
+    $('bgColorWrap').style.display=st.bgMode==='color'?'block':'none';
+    updateDlLabel(); syncColors();
+  }
+  $('undoBtn').addEventListener('click',function(){ if(undoStack.length){ redoStack.push(snap()); restore(undoStack.pop()); render(); } });
+  $('redoBtn').addEventListener('click',function(){ if(redoStack.length){ undoStack.push(snap()); restore(redoStack.pop()); render(); } });
+  $('resetBtn').addEventListener('click',function(){ pushHist(); st.tolerance=35; st.feather=40; st.cleanup=0; st.multi=false; st.bgMode='transparent'; st.bgColor='#ffffff'; autoDetect(); syncUI(); render(); });
+
+  /* ===== export ===== */
+  function saveBlob(name,blob){ if(typeof downloadBlob==='function')downloadBlob(name,blob); else { var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; a.click(); } }
+  function renderOutput(){
+    var w=srcData.width,h=srcData.height,c=document.createElement('canvas'); c.width=w; c.height=h; var x=c.getContext('2d');
+    var prev=comparing; comparing=false;
+    // reuse render logic by drawing current preview at full res: recompute directly
+    var out=x.createImageData(w,h), o=out.data, src=srcData.data, tol=st.tolerance, cols=st.colors, ncol=cols.length;
+    var band=Math.max(1,tol*Math.max(0.02,st.feather/100)), clean=st.cleanup/100;
+    for(var i=0;i<src.length;i+=4){
+      var r=src[i],g=src[i+1],b=src[i+2],a=src[i+3]; o[i]=r;o[i+1]=g;o[i+2]=b;o[i+3]=a;
+      var best=1e9,bc=cols[0];
+      for(var k=0;k<ncol;k++){ var cc=cols[k],dr=r-cc[0],dg=g-cc[1],db=b-cc[2],dist=Math.sqrt(dr*dr+dg*dg+db*db); if(dist<best){best=dist;bc=cc;} }
+      if(best<tol){ var t=clamp((tol-best)/band,0,1); o[i+3]=Math.round(a*(1-t)); if(clean>0&&o[i+3]>0){ var f=clean*t; o[i]=clamp(Math.round(r+(r-bc[0])*f),0,255); o[i+1]=clamp(Math.round(g+(g-bc[1])*f),0,255); o[i+2]=clamp(Math.round(b+(b-bc[2])*f),0,255); } }
+    }
+    comparing=prev;
+    var fmt=$('outFmt').value, needMatte=(fmt==='image/jpeg')||(st.bgMode!=='transparent');
+    if(needMatte){ x.fillStyle=st.bgMode==='transparent'?'#ffffff':bgFill(); x.fillRect(0,0,w,h); var t2=document.createElement('canvas'); t2.width=w;t2.height=h; t2.getContext('2d').putImageData(out,0,0); x.drawImage(t2,0,0); }
+    else { x.putImageData(out,0,0); }
+    return c;
+  }
+  $('downloadBtn').addEventListener('click',function(){
+    if(!srcData) return;
+    var c=renderOutput();
+    var fmt=$('outFmt').value, ext=fmt.indexOf('png')>=0?'png':fmt.indexOf('webp')>=0?'webp':'jpg';
+    c.toBlob(function(blob){ if(!blob){ $('statusMsg').style.color='#fca5a5'; $('statusMsg').textContent='Export not supported in this browser — try PNG.'; return; } saveBlob('cutout.'+ext,blob); $('statusMsg').style.color='#6ee7b7'; $('statusMsg').textContent='✅ Downloaded cutout.'+ext+' ('+c.width+'×'+c.height+')'; }, fmt, parseInt($('quality').value,10)/100);
+  });
+  $('newImgBtn').addEventListener('click',function(){ $('afterUpload').style.display='none'; fi.value=''; currentFile=null; srcData=null; });
+
+  /* ===== FAQ ===== */
+  function esc(s){ return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+  var FAQ=[
+    ['Is my image uploaded anywhere?','No. Everything is processed in your browser; nothing is uploaded. — नहीं, कुछ भी upload नहीं होता।'],
+    ['What kind of backgrounds work best?','Plain, evenly-lit solid colours — white sweeps, green screens, coloured cards. — सादे, एक-रंग background।'],
+    ['Does it work on busy photo backgrounds?','No — it keys on a solid colour, so complex scenes are not removed cleanly. — व्यस्त background के लिए नहीं।'],
+    ['Are there any AI features?','No — it is deterministic colour maths, no AI. — नहीं, कोई AI नहीं।'],
+    ['How do I pick the background colour?','Use Auto-detect, or click the background with the eyedropper. — auto-detect या eyedropper।'],
+    ['Can I remove more than one colour?','Yes — enable "Add multiple colours" and sample several. — हाँ, multiple colours।'],
+    ['What does Tolerance do?','It sets how similar a pixel must be to be removed. — कितना समान pixel हटे।'],
+    ['What does Feather do?','It softens the cut-out edge so it blends smoothly. — किनारा नरम करता है।'],
+    ['What is Edge cleanup / despill?','It removes the coloured fringe a strong backdrop leaves on edges. — रंगीन fringe हटाता है।'],
+    ['Can I replace the background?','Yes — keep it transparent or use white, black or any solid colour. — हाँ, background बदलें।'],
+    ['Which formats can I export?','Transparent PNG or WebP, or a matted JPG. — PNG, WebP, JPG।'],
+    ['Why is my JPG not transparent?','JPG cannot store transparency — use PNG or WebP. — JPG transparency नहीं रखता।'],
+    ['Does it reduce image quality?','No — it processes full-resolution pixels, not the preview. — नहीं, पूर्ण resolution।'],
+    ['Can I undo a change?','Yes — Undo, Redo and Reset are available. — हाँ, undo/redo/reset।'],
+    ['Can I compare before and after?','Yes — hold the Compare button to see the original. — हाँ, compare button।'],
+    ['Can I paste an image?','Yes — copy an image and press Ctrl+V on the page. — हाँ, Ctrl+V से।'],
+    ['Does it work offline?','Yes, once the page has loaded it works without internet. — हाँ, offline।'],
+    ['Is it free?','Completely free — no account, no limits, no watermark. — हाँ, मुफ़्त।'],
+    ['Can I use it on mobile?','Yes — the layout adapts and controls are touch-friendly. — हाँ, mobile पर।'],
+    ['How do I remove a white background?','Auto-detect usually finds white; raise tolerance a little to clean shadows. — white हटाने के लिए।'],
+    ['Does it change my original file?','No — it downloads a new copy; your original is untouched. — मूल file अछूती।'],
+    ['Which browsers are supported?','All modern browsers — Chrome, Firefox, Edge, Safari, Opera, Brave. — सभी आधुनिक browsers।']
+  ];
+  function buildFaq(){ var list=$('faqList'); if(!list)return; FAQ.forEach(function(p){ var d=document.createElement('details'); d.innerHTML='<summary>'+esc(p[0])+'</summary><p>'+esc(p[1])+'</p>'; list.appendChild(d); }); try{ $('faqSchema').textContent=JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:FAQ.map(function(p){return {'@type':'Question',name:p[0],acceptedAnswer:{'@type':'Answer',text:p[1]}};})}); }catch(e){} }
+
+  /* ===== hooks / init ===== */
+  window.__sbrHooks={
+    loadSrc:loadSrc,
+    setColors:function(arr){ st.colors=arr.map(function(c){return c.slice();}); syncColors(); render(); },
+    setTolerance:function(v){ st.tolerance=v; $('toleranceSlider').value=v; $('toleranceVal').textContent=v; render(); },
+    setFeather:function(v){ st.feather=v; render(); },
+    setCleanup:function(v){ st.cleanup=v; render(); },
+    setBg:function(mode,color){ st.bgMode=mode; if(color)st.bgColor=color; syncUI(); render(); },
+    setCompare:function(b){ comparing=b; render(); },
+    sampleAt:function(x,y){ var i=(y*srcData.width+x)*4; var c=[srcData.data[i],srcData.data[i+1],srcData.data[i+2]]; addColor(c); render(); return c; },
+    pixelAt:function(px,py){ return Array.from(ctx.getImageData(px,py,1,1).data); },
+    getState:function(){ return {colors:st.colors,tolerance:st.tolerance,feather:st.feather,cleanup:st.cleanup,bgMode:st.bgMode,w:canvas.width,h:canvas.height}; }
+  };
+  buildFaq();
+})();
 </script>
 <!-- Default Statcounter code for Apne Software
 https://apnesoftware.com -->
 <script type="text/javascript">
-var sc_project=13334460; 
-var sc_invisible=1; 
-var sc_security="a5854dc7"; 
+var sc_project=13334460;
+var sc_invisible=1;
+var sc_security="a5854dc7";
 </script>
 <script type="text/javascript"
 src="https://www.statcounter.com/counter/counter.js"
