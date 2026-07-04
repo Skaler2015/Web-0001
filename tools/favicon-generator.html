@@ -4,35 +4,136 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
+<meta name="description" content="Free online Favicon Generator — turn any image into a complete favicon set: favicon.ico (16/32/48), PNG favicons, Apple touch icon, Android Chrome icons, maskable icons, Microsoft tiles and Safari pinned tab. Edit background, padding, corner radius, zoom, rotate and fit, preview across browsers, edit the web manifest, and download a ready-to-use ZIP with the HTML snippet. 100% local, nothing uploaded, works offline.">
+<meta name="keywords" content="favicon generator, favicon.ico, apple touch icon, android chrome icon, maskable icon, site.webmanifest, browserconfig.xml, favicon maker, generate favicon, web app icons">
 <link rel="canonical" href="https://apnesoftware.com/tools/favicon-generator.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Favicon Generator | ApneSoftware">
-<meta property="og:description" content="Make a full favicon set from one image. Free online tool — no signup required.">
+<meta property="og:title" content="Favicon Generator — Complete Favicon &amp; Web App Icon Set | ApneSoftware">
+<meta property="og:description" content="Turn one image into favicon.ico, PNG favicons, Apple touch, Android, maskable and Microsoft tile icons — with background, crop and manifest controls, browser previews and a ready ZIP. Free, private, offline.">
 <meta property="og:url" content="https://apnesoftware.com/tools/favicon-generator.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Favicon Generator | ApneSoftware">
-<meta name="twitter:description" content="Make a full favicon set from one image. Free online tool — no signup required.">
+<meta name="twitter:title" content="Favicon Generator — Complete Favicon &amp; Web App Icon Set | ApneSoftware">
+<meta name="twitter:description" content="Turn one image into a full favicon set with background, crop and manifest controls, browser previews and a ready-to-use ZIP. Free, private, offline.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Favicon Generator","description":"Make a full favicon set from one image. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/favicon-generator.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Favicon Generator","description":"Professional browser-based favicon generator that turns one image into a complete icon set — favicon.ico, PNG favicons, Apple touch icon, Android Chrome icons, maskable icons, Microsoft tiles and Safari pinned tab — with background, padding, corner-radius, zoom, rotate and fit controls, live browser previews, an editable web app manifest, browserconfig.xml and a ready-to-use ZIP with the HTML snippet. Runs entirely in the browser.","url":"https://apnesoftware.com/tools/favicon-generator.html","applicationCategory":"DeveloperApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"featureList":["favicon.ico and PNG favicons","Apple touch and Android icons","Maskable and Microsoft tile icons","Background, padding, radius, zoom, rotate","Live browser and device previews","Editable web app manifest","ZIP package with HTML snippet","100% local processing"],"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Favicon Generator — Create a Complete Favicon &amp; Web App Icon Set","url":"https://apnesoftware.com/tools/favicon-generator.html","description":"Private, browser-based favicon generator with image editing, browser previews, an editable manifest and a ready ZIP package.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apnesoftware.com/"},{"@type":"ListItem","position":2,"name":"Image Tools","item":"https://apnesoftware.com/index.html"},{"@type":"ListItem","position":3,"name":"Favicon Generator","item":"https://apnesoftware.com/tools/favicon-generator.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to generate a favicon set","description":"Turn one image into a complete favicon and web app icon set.","step":[{"@type":"HowToStep","name":"Upload an image","text":"Drag and drop or choose a square image, ideally 512×512 or larger."},{"@type":"HowToStep","name":"Adjust it","text":"Set background, padding, corner radius, zoom, rotation and fit; preview across browsers."},{"@type":"HowToStep","name":"Edit the manifest","text":"Set app name, short name, theme and background colours and display mode."},{"@type":"HowToStep","name":"Download","text":"Download the ZIP and paste the HTML snippet into your site's head."}]}
+</script>
+<script type="application/ld+json" id="faqSchema">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}
 </script>
 <meta name="color-scheme" content="dark">
-<title>Favicon Generator | ApneSoftware</title>
+<title>Favicon Generator — Complete Favicon &amp; Web App Icon Set | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-/* Premium upload enhancement for this tool */
-.dropzone{cursor:pointer}
-.dropzone p{font-size:.9rem}
-.panel{position:relative;z-index:1}
-</style>
-<style>
-  .preview-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}
-  .preview-item{text-align:center}
-  .preview-item img{border:1px solid var(--border);border-radius:6px;background:repeating-conic-gradient(#2a2a2a 0% 25%, #222 0% 50%) 50% / 14px 14px}
-  .preview-item span{display:block;font-size:.72rem;color:var(--text-dim);margin-top:4px}
-  #codeSnippet{font-family:'Consolas','Courier New',monospace;font-size:.8rem;white-space:pre}
+/* ===== Favicon Generator — scoped fv- styles ===== */
+.fv-crumb{font-size:.78rem;color:var(--text-dim);margin-bottom:6px}
+.fv-crumb a{color:#c4b5fd;text-decoration:none}
+.fv-crumb a:hover{text-decoration:underline}
+.fv-btn{background:rgba(167,139,250,.14);border:1px solid rgba(167,139,250,.34);color:#d6cbff;border-radius:10px;padding:9px 13px;font-size:.83rem;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.15s}
+.fv-btn:hover{background:rgba(167,139,250,.24)}
+.fv-btn.primary{background:linear-gradient(90deg,#7c3aed,#a78bfa);border-color:transparent;color:#fff;font-weight:600}
+.fv-btn:focus-visible,.fv-tgl:focus-visible{outline:2px solid #a78bfa;outline-offset:2px}
+.fv-btn.sm{padding:6px 10px;font-size:.76rem}
+.fv-toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+
+.dropzone{cursor:pointer;border:2px dashed rgba(167,139,250,.4);border-radius:16px;padding:38px 20px;text-align:center;transition:.15s;background:rgba(167,139,250,.04)}
+.dropzone:hover,.dropzone.drag{background:rgba(167,139,250,.12);border-color:#a78bfa}
+.dropzone .ic{font-size:2.4rem}
+.dropzone p{font-size:.95rem;margin:8px 0}
+.dropzone .sub{font-size:.82rem;color:var(--text-dim)}
+.dropzone input{display:none}
+
+.fv-grid{display:grid;grid-template-columns:1fr 330px;gap:18px;margin-top:18px}
+@media(max-width:860px){.fv-grid{grid-template-columns:1fr}}
+.fv-stage{min-width:0}
+.fv-editor{background:rgba(0,0,0,.25);border:1px solid var(--border,rgba(255,255,255,.1));border-radius:14px;padding:14px;display:flex;flex-direction:column;align-items:center;gap:10px}
+#fvEditCanvas{width:220px;height:220px;max-width:100%;border-radius:10px;border:1px solid var(--border,rgba(255,255,255,.12));background:repeating-conic-gradient(#2a2a2a 0% 25%,#222 0% 50%) 50%/16px 16px}
+
+.fv-sec{margin-top:16px}
+.fv-sec h3{font-size:.82rem;text-transform:uppercase;letter-spacing:.03em;color:#c4b5fd;margin:0 0 10px}
+.preview-row{display:flex;gap:12px;flex-wrap:wrap}
+.preview-item{text-align:center}
+.preview-item img,.preview-item canvas{border:1px solid var(--border,rgba(255,255,255,.14));border-radius:6px;background:repeating-conic-gradient(#2a2a2a 0% 25%,#222 0% 50%) 50%/14px 14px;display:block}
+.preview-item span{display:block;font-size:.72rem;color:var(--text-dim);margin-top:4px}
+
+/* browser mockups */
+.fv-mock-row{display:flex;gap:16px;flex-wrap:wrap}
+.fv-tab{background:#e9edf3;border-radius:9px 9px 0 0;padding:7px 12px 9px;display:inline-flex;align-items:center;gap:8px;min-width:150px;box-shadow:0 -1px 0 rgba(0,0,0,.1) inset}
+.fv-tab canvas,.fv-tab .fvfav{width:16px;height:16px;border-radius:3px;flex:0 0 auto}
+.fv-tab .t{font-size:.74rem;color:#222;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fv-phone{width:104px;text-align:center}
+.fv-phone .scr{background:linear-gradient(160deg,#3a3f57,#242838);border-radius:16px;padding:14px 0 10px;border:1px solid rgba(255,255,255,.1)}
+.fv-phone canvas{width:52px;height:52px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,.35)}
+.fv-phone.android canvas{border-radius:50%}
+.fv-phone span{display:block;font-size:.7rem;color:var(--text-dim);margin-top:5px}
+.fv-tile{width:104px;text-align:center}
+.fv-tile .sq{background:#2b7a3d;border-radius:6px;display:grid;place-items:center;height:88px}
+.fv-tile canvas{width:44px;height:44px}
+
+.fv-controls{min-width:0}
+.fv-card{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.1));border-radius:12px;padding:13px 14px;margin-bottom:12px}
+.fv-card h4{margin:0 0 10px;font-size:.85rem;color:#fff;letter-spacing:.02em;text-transform:uppercase;opacity:.85}
+.fv-field{margin-bottom:10px}
+.fv-field:last-child{margin-bottom:0}
+.fv-field label{display:block;font-size:.8rem;color:var(--text-dim);margin-bottom:5px}
+.fv-field label .v{color:#c4b5fd;font-weight:600}
+.fv-field input[type=text],.fv-field input[type=url],.fv-field select{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border,rgba(255,255,255,.14));color:var(--text);border-radius:8px;padding:8px 10px;font-size:.85rem}
+.fv-field input[type=range]{width:100%;accent-color:#a78bfa}
+.fv-row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fv-color{display:flex;align-items:center;gap:8px}
+.fv-color input[type=color]{width:40px;height:32px;padding:2px;border:1px solid var(--border,rgba(255,255,255,.14));border-radius:8px;background:transparent}
+.fv-check{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;color:var(--text);cursor:pointer}
+.fv-check input{width:auto;accent-color:#a78bfa}
+.fv-tglrow{display:flex;flex-wrap:wrap;gap:6px}
+.fv-tgl{font-size:.78rem;padding:5px 10px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid var(--border,rgba(255,255,255,.14));color:var(--text-dim);cursor:pointer;font-weight:600}
+.fv-tgl[aria-pressed="true"]{background:linear-gradient(90deg,#7c3aed,#a78bfa);border-color:transparent;color:#fff}
+.fv-sizes{display:flex;flex-wrap:wrap;gap:6px 12px}
+.fv-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+#statusMsg{margin-top:10px;font-size:.86rem;min-height:1em}
+#codeSnippet{width:100%;font-family:'Consolas','Courier New',monospace;font-size:.78rem;white-space:pre;background:rgba(0,0,0,.35);border:1px solid var(--border,rgba(255,255,255,.12));color:#d6cbff;border-radius:10px;padding:12px;min-height:150px;margin-top:8px}
+.privacy-note{background:rgba(124,92,252,.08);border:1px solid rgba(124,92,252,.25);border-radius:8px;padding:12px 14px;font-size:.84rem;color:var(--text-dim);margin-top:16px;line-height:1.6}
+.privacy-note b{color:#c4b5fd}
+
+/* below-tool */
+.fv-wrap{margin:26px 0}
+.fv-title{font-size:1.35rem;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+.fv-feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.fv-fcard{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:14px;padding:16px}
+.fv-fcard h4{margin:0 0 6px;font-size:.98rem;display:flex;align-items:center;gap:8px}
+.fv-fcard p{margin:0;font-size:.86rem;color:var(--text-dim);line-height:1.55}
+.fv-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.fv-rel{display:block;text-decoration:none;background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:14px;transition:.15s;color:var(--text)}
+.fv-rel:hover{border-color:#a78bfa;background:rgba(167,139,250,.1);transform:translateY(-2px)}
+.fv-rel b{display:block;font-size:.92rem;margin-bottom:3px}
+.fv-rel span{font-size:.8rem;color:var(--text-dim);line-height:1.45}
+.fv-prose p,.fv-prose li{color:var(--text-dim);line-height:1.75;font-size:.92rem}
+.fv-prose h3{font-size:1.02rem;margin:18px 0 8px}
+.fv-tscroll{overflow:auto;border-radius:10px}
+table.fv-table{border-collapse:collapse;font-size:.85rem;width:100%}
+table.fv-table th,table.fv-table td{border:1px solid var(--border,rgba(255,255,255,.12));padding:7px 10px;text-align:left;color:var(--text)}
+table.fv-table th{background:rgba(167,139,250,.14);color:#fff;font-weight:600}
+.fv-faq details{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:0 16px;margin-bottom:10px}
+.fv-faq summary{cursor:pointer;padding:14px 0;font-weight:600;font-size:.92rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.fv-faq summary::-webkit-details-marker{display:none}
+.fv-faq summary::after{content:'+';font-size:1.3rem;color:#a78bfa;flex:0 0 auto}
+.fv-faq details[open] summary::after{content:'−'}
+.fv-faq details p{margin:0 0 14px;font-size:.87rem;color:var(--text-dim);line-height:1.65}
+.fv-steps{list-style:none;counter-reset:s;padding:0;margin:0;display:grid;gap:12px}
+.fv-steps li{counter-increment:s;position:relative;padding-left:46px;font-size:.9rem;color:var(--text-dim);line-height:1.6}
+.fv-steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:32px;height:32px;border-radius:9px;background:rgba(167,139,250,.18);color:#c4b5fd;font-weight:700;display:grid;place-items:center}
+.fv-steps li b{color:var(--text)}
+@media (prefers-contrast:more){.fv-prose p,.fv-prose li{color:#fff}}
 </style>
 </head>
 <body>
@@ -45,214 +146,471 @@
 
 <div class="container">
   <div class="tool-header">
+    <nav class="fv-crumb" aria-label="Breadcrumb"><a href="../index.html">Home</a> › <a href="../index.html">Image Tools</a> › <span>Favicon Generator</span></nav>
     <h1>🌐 Favicon Generator</h1>
-    <p>Turn any image into a complete favicon set — favicon.ico, Apple touch icon, and Android icons, ready to drop into your website.</p>
+    <p>Turn one image into a <b>complete favicon &amp; web-app icon set</b> — favicon.ico, PNG favicons, Apple touch, Android, maskable and Microsoft tiles. Adjust background, crop and corners, preview across browsers, edit the manifest, and download a <b>ready-to-use ZIP</b> with the HTML snippet. 100% local — nothing is uploaded.</p>
+    <div class="fv-toolbar">
+      <button class="fv-btn" id="resetBtn" type="button">↺ New image</button>
+    </div>
   </div>
 
   <div class="panel">
-    <div class="dropzone" id="dropzone">
-      <p>📤 Drag a square image here or click to choose (PNG/JPG, ideally 512×512 or larger)</p>
+    <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-label="Upload image">
+      <div class="ic">🖼️</div>
+      <p><b>Drop a square image here</b> or click to choose</p>
+      <div class="sub">🔒 PNG/JPG/WebP · ideally 512×512 or larger · processed locally · nothing uploaded</div>
       <input type="file" id="fileInput" accept="image/*">
     </div>
 
-    <div id="afterUpload" style="display:none;margin-top:18px">
-      <h3 style="font-size:.95rem;margin-bottom:6px">👁️ Preview</h3>
-      <div class="preview-row" id="previewRow"></div>
+    <div id="afterUpload" style="display:none">
+      <div class="fv-grid">
+        <!-- Stage -->
+        <div class="fv-stage">
+          <div class="fv-editor">
+            <canvas id="fvEditCanvas" width="220" height="220" aria-label="Favicon editor preview"></canvas>
+            <div id="fvSrcInfo" style="font-size:.78rem;color:var(--text-dim)"></div>
+          </div>
 
-      <div class="btn-row">
-        <button class="btn" id="downloadBtn">⬇️ Download Favicon Pack (.zip)</button>
-      </div>
-      <p id="statusMsg" style="margin-top:10px;color:var(--text-dim);font-size:.9rem"></p>
+          <div class="fv-sec">
+            <h3>👁️ Size previews</h3>
+            <div class="preview-row" id="previewRow"></div>
+          </div>
 
-      <h3 style="font-size:.95rem;margin:18px 0 6px">📋 HTML to add in your &lt;head&gt;</h3>
-      <textarea id="codeSnippet" readonly style="min-height:140px"></textarea>
-      <div class="btn-row">
-        <button class="btn secondary" id="copyCodeBtn">📋 Copy Code</button>
+          <div class="fv-sec">
+            <h3>🖥️ Browser tab preview</h3>
+            <div class="fv-mock-row">
+              <div class="fv-tab"><canvas id="tabFav" width="16" height="16"></canvas><span class="t" id="tabTitle">My Site</span></div>
+              <div class="fv-phone"><div class="scr"><canvas id="iosFav" width="120" height="120"></canvas></div><span>iOS home</span></div>
+              <div class="fv-phone android"><div class="scr"><canvas id="andFav" width="120" height="120"></canvas></div><span>Android</span></div>
+              <div class="fv-tile"><div class="sq"><canvas id="tileFav" width="120" height="120"></canvas></div><span>Windows tile</span></div>
+            </div>
+          </div>
+
+          <div class="fv-sec">
+            <h3>📋 HTML for your &lt;head&gt;</h3>
+            <textarea id="codeSnippet" readonly aria-label="HTML head snippet"></textarea>
+            <div class="fv-actions"><button class="fv-btn sm" id="copyCodeBtn" type="button">📋 Copy code</button></div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="fv-controls">
+          <div class="fv-card">
+            <h4>Background &amp; crop</h4>
+            <div class="fv-row2">
+              <div class="fv-field">
+                <label for="fvBg">Background</label>
+                <div class="fv-color"><input type="color" id="fvBg" value="#ffffff"></div>
+              </div>
+              <div class="fv-field">
+                <label>&nbsp;</label>
+                <label class="fv-check"><input type="checkbox" id="fvTransparent"> Transparent</label>
+              </div>
+            </div>
+            <div class="fv-field">
+              <label for="fvFit">Fit</label>
+              <select id="fvFit"><option value="cover">Cover (fill)</option><option value="contain" selected>Contain (fit)</option><option value="stretch">Stretch</option></select>
+            </div>
+            <div class="fv-row2">
+              <div class="fv-field"><label for="fvPadding">Padding: <span class="v" id="fvPaddingVal">10</span>%</label><input type="range" id="fvPadding" min="0" max="35" step="1" value="10"></div>
+              <div class="fv-field"><label for="fvRadius">Corner: <span class="v" id="fvRadiusVal">0</span>%</label><input type="range" id="fvRadius" min="0" max="50" step="1" value="0"></div>
+            </div>
+            <div class="fv-row2">
+              <div class="fv-field"><label for="fvZoom">Zoom: <span class="v" id="fvZoomVal">100</span>%</label><input type="range" id="fvZoom" min="50" max="200" step="1" value="100"></div>
+              <div class="fv-field"><label for="fvRotate">Rotate: <span class="v" id="fvRotateVal">0</span>°</label><input type="range" id="fvRotate" min="0" max="360" step="1" value="0"></div>
+            </div>
+            <div class="fv-field">
+              <label>Flip</label>
+              <div class="fv-tglrow">
+                <button class="fv-tgl" id="fvFlipH" type="button" aria-pressed="false">↔ Horizontal</button>
+                <button class="fv-tgl" id="fvFlipV" type="button" aria-pressed="false">↕ Vertical</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="fv-card">
+            <h4>Web app manifest</h4>
+            <div class="fv-field"><label for="fvName">App name</label><input type="text" id="fvName" value="My Site" autocomplete="off"></div>
+            <div class="fv-field"><label for="fvShort">Short name</label><input type="text" id="fvShort" value="Site" autocomplete="off"></div>
+            <div class="fv-row2">
+              <div class="fv-field"><label for="fvTheme">Theme colour</label><div class="fv-color"><input type="color" id="fvTheme" value="#7c3aed"></div></div>
+              <div class="fv-field"><label for="fvManifestBg">Manifest bg</label><div class="fv-color"><input type="color" id="fvManifestBg" value="#ffffff"></div></div>
+            </div>
+            <div class="fv-row2">
+              <div class="fv-field"><label for="fvDisplay">Display</label><select id="fvDisplay"><option>standalone</option><option>fullscreen</option><option>minimal-ui</option><option>browser</option></select></div>
+              <div class="fv-field"><label for="fvStart">Start URL</label><input type="text" id="fvStart" value="/" autocomplete="off"></div>
+            </div>
+          </div>
+
+          <div class="fv-card">
+            <h4>Icons to include</h4>
+            <div class="fv-sizes" id="fvSizes"></div>
+          </div>
+
+          <div class="fv-actions">
+            <button class="fv-btn primary" id="downloadBtn" type="button">⬇️ Download ZIP</button>
+          </div>
+          <p id="statusMsg" style="color:var(--text-dim)"></p>
+        </div>
       </div>
+
+      <div class="privacy-note">🔒 <b>Private by design:</b> your image is turned into icons entirely in your browser using an HTML canvas. Nothing is uploaded to a server, and the tool works offline once loaded.</div>
     </div>
   </div>
 </div>
 
+<!-- ===================== BELOW-TOOL CONTENT ===================== -->
+<div class="container">
 
-<div class="info-wrap">
-  <div class="info-section">
-    <div class="info-block">
-      <h2>ℹ️ About This Tool</h2>
-      <p>This tool generates a complete favicon set from a single image — including the classic favicon.ico (16/32/48px), an Apple touch icon for iOS home screens, and Android Chrome icons — all packaged in a zip ready to upload to your site.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Upload a square image, ideally 512×512px or larger.</li>
-        <li>Review the size previews.</li>
-        <li>Download the zip and extract it into your website's root folder.</li>
-        <li>Copy the provided HTML snippet into your site's &lt;head&gt; section.</li>
-      </ol>
-    </div>
-    <hr class="info-divider">
-    <div class="info-block">
-      <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>यह टूल एक इमेज से पूरा फेविकॉन सेट बनाता है — क्लासिक favicon.ico (16/32/48px), iOS होम स्क्रीन के लिए Apple touch icon, और Android Chrome icons — सब एक zip में पैक करके, सीधे आपकी वेबसाइट पर अपलोड करने के लिए तैयार।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>एक स्क्वायर इमेज अपलोड करें, अच्छा होगा अगर 512×512px या बड़ी हो।</li>
-        <li>साइज़ प्रीव्यू चेक करें।</li>
-        <li>zip डाउनलोड करके अपनी वेबसाइट के रूट फोल्डर में एक्सट्रैक्ट करें।</li>
-        <li>दिया गया HTML कोड अपनी साइट के &lt;head&gt; सेक्शन में पेस्ट करें।</li>
-      </ol>
-    </div>
+<!-- Key Features -->
+<section class="fv-wrap">
+  <h2 class="fv-title">✨ Key Features</h2>
+  <div class="fv-feat-grid">
+    <div class="fv-fcard"><h4>🧩 Complete Icon Set</h4><p>favicon.ico, PNG favicons, Apple touch, Android Chrome, maskable and Microsoft tile icons from one image.</p></div>
+    <div class="fv-fcard"><h4>🎨 Background &amp; Transparency</h4><p>Pick a background colour or keep transparency for PNG icons that sit on any theme.</p></div>
+    <div class="fv-fcard"><h4>✂️ Crop &amp; Fit</h4><p>Cover, contain or stretch, with padding, zoom, rotation and flip for the perfect framing.</p></div>
+    <div class="fv-fcard"><h4>⭕ Rounded Corners</h4><p>Add a corner radius for modern, app-style icons — or keep them square.</p></div>
+    <div class="fv-fcard"><h4>🖥️ Browser Previews</h4><p>See how the icon looks in a browser tab, on iOS and Android home screens and as a Windows tile.</p></div>
+    <div class="fv-fcard"><h4>📱 Maskable Icons</h4><p>Generates safe-zone maskable icons so Android can apply its adaptive shapes cleanly.</p></div>
+    <div class="fv-fcard"><h4>⚙️ Manifest Editor</h4><p>Set app name, short name, theme &amp; background colours, display mode and start URL.</p></div>
+    <div class="fv-fcard"><h4>📄 Ready-Made Files</h4><p>site.webmanifest, browserconfig.xml and a copy-paste HTML head snippet included.</p></div>
+    <div class="fv-fcard"><h4>✅ Choose Sizes</h4><p>Include the whole set or tick just the icons your project needs.</p></div>
+    <div class="fv-fcard"><h4>📦 One-Click ZIP</h4><p>Download everything packaged and ready to drop into your site's root folder.</p></div>
+    <div class="fv-fcard"><h4>🔒 100% Local</h4><p>Every icon is generated in your browser. Nothing is uploaded, logged or tracked.</p></div>
+    <div class="fv-fcard"><h4>♿ Accessible &amp; Mobile</h4><p>Keyboard navigation, ARIA labels, high-contrast support and a responsive layout.</p></div>
   </div>
+</section>
+
+<!-- Benefits -->
+<section class="fv-wrap fv-prose">
+  <h2 class="fv-title">🎯 Benefits</h2>
+  <ul>
+    <li><b>Cover every platform</b> — one upload produces the icons Chrome, Safari, Firefox, Edge, Android, iOS and Windows expect.</li>
+    <li><b>Look professional</b> — a crisp favicon and app icon make your site feel finished and trustworthy.</li>
+    <li><b>Save time</b> — no manual resizing or hand-editing a manifest; it's all generated for you.</li>
+    <li><b>Ship faster</b> — download the ZIP, extract to your root, paste the snippet, done.</li>
+    <li><b>Stay private</b> — no uploads, no account, and it works offline.</li>
+  </ul>
+</section>
+
+<!-- Related Tools (ABOVE About) -->
+<section class="fv-wrap">
+  <h2 class="fv-title">🧰 Related Tools</h2>
+  <div class="fv-rel-grid">
+    <a class="fv-rel" href="image-compressor.html"><b>🗜️ Image Compressor</b><span>Shrink image file size.</span></a>
+    <a class="fv-rel" href="image-converter.html"><b>🔄 Image Converter</b><span>Convert between JPG, PNG, WebP.</span></a>
+    <a class="fv-rel" href="image-resizer.html"><b>📐 Image Resizer</b><span>Resize images to any dimensions.</span></a>
+    <a class="fv-rel" href="image-cropper.html"><b>✂️ Image Cropper</b><span>Crop images precisely.</span></a>
+    <a class="fv-rel" href="image-rounded-corners.html"><b>⭕ Rounded &amp; Circle Crop</b><span>Round corners or circle-crop.</span></a>
+    <a class="fv-rel" href="image-watermark.html"><b>💧 Image Watermark</b><span>Add text or logo watermarks.</span></a>
+    <a class="fv-rel" href="qr-generator.html"><b>🔳 QR Code Generator</b><span>Create QR codes.</span></a>
+    <a class="fv-rel" href="image-resolution-checker.html"><b>🔎 Resolution Checker</b><span>Check image dimensions &amp; DPI.</span></a>
+  </div>
+</section>
+
+<!-- About (English) -->
+<section class="fv-wrap fv-prose">
+  <h2 class="fv-title">ℹ️ About This Tool</h2>
+  <p>The <b>ApneSoftware Favicon Generator</b> is a professional, privacy-first utility that turns a single image into the <b>complete set of favicons and web-app icons</b> a modern website needs — all in your browser, with no signup, subscription or upload. A favicon is the tiny icon that appears in a browser tab, a bookmark, the history list, a search result and, when someone adds your site to their home screen, on their phone. It is a small detail with an outsized effect: a sharp, correct favicon makes a site feel finished, trustworthy and memorable, while a missing or blurry one makes even a polished site look unfinished. The trouble is that "adding a favicon" is no longer a single file. Different browsers and operating systems expect different sizes and formats — a classic multi-resolution <b>favicon.ico</b>, separate <b>PNG favicons</b>, an <b>Apple touch icon</b> for iOS, several <b>Android Chrome</b> icons, <b>maskable</b> icons for adaptive shapes, and <b>Microsoft tile</b> icons for Windows — plus a <b>web app manifest</b> and the right <b>HTML tags</b>. This tool handles all of it from one upload.</p>
+  <p>You start by dropping in a <b>square image</b>, ideally 512×512 pixels or larger so every generated size stays crisp. The tool loads it into a live editor where you can frame it exactly as you want. Choose a solid <b>background colour</b> or keep it <b>transparent</b> so PNG icons blend onto light and dark browser chrome alike. Pick a <b>fit mode</b> — <b>cover</b> to fill the square edge-to-edge, <b>contain</b> to fit the whole image inside, or <b>stretch</b> — and fine-tune with <b>padding</b>, <b>zoom</b>, <b>rotation</b> and horizontal or vertical <b>flip</b>. Add a <b>corner radius</b> if you want a rounded, app-style icon, or leave it square for a traditional favicon. Every adjustment updates the live preview instantly, so you always see exactly what will be generated.</p>
+  <p>Because a favicon looks different in every context, the tool shows <b>real browser previews</b> as you edit: a <b>browser-tab</b> mock-up with your title, an <b>iOS home-screen</b> icon with the rounded-square mask, an <b>Android</b> icon with its circular adaptive mask, and a <b>Windows tile</b>. This makes it easy to catch problems that only appear at a specific size or shape — an image that touches the edges, a detail that disappears at 16 pixels, or artwork that gets clipped by Android's circle. Seeing these previews before you download saves the frustrating cycle of exporting, installing and re-checking on real devices.</p>
+  <p>On the technical side, the generator produces everything a correct setup requires. The <b>favicon.ico</b> is a genuine multi-image ICO containing 16×16, 32×32 and 48×48 versions, so browsers and Windows can each pick the resolution they need. Standalone <b>PNG favicons</b> (16 and 32), the <b>180×180 Apple touch icon</b>, <b>192 and 512 Android Chrome</b> icons and a dedicated <b>maskable</b> icon with the recommended safe-zone padding are all included, along with a <b>Microsoft tile</b> image. The tool also writes the supporting files for you: a <b>site.webmanifest</b> with your chosen app name, short name, theme colour, background colour, display mode and start URL; a <b>browserconfig.xml</b> for Windows tiles; and a ready-to-paste <b>HTML head snippet</b> that links everything correctly. You can include the entire set or tick only the icons your project actually needs.</p>
+  <p><b>Downloading is a single click.</b> Everything is packaged into one <b>ZIP</b> that you extract into your website's root folder; then you copy the provided snippet into your page's <code>&lt;head&gt;</code> and you are done. The HTML snippet and manifest use conventional file names and paths, so the output works with plain static sites, WordPress, React, Vue, Next.js, static-site generators and virtually any framework or CMS. Because the icons follow the current standards — including maskable icons and a proper manifest — your site will also behave correctly as an installable <b>Progressive Web App</b>, showing a clean icon on the home screen rather than a cropped screenshot.</p>
+  <p><b>Privacy is fundamental.</b> Unlike many online favicon services that require you to upload your artwork to their servers, this tool does <b>everything locally</b>. Your image is read into the browser, drawn onto a canvas, resized and encoded, and packaged into a ZIP entirely on your device — it never leaves your computer, there is no account, and nothing is tracked or stored. That makes it safe for confidential brand assets and unreleased logos, and it means the tool keeps working <b>offline</b> once the page has loaded. The interface is built to modern standards too: the dropzone and controls are keyboard-accessible and labelled for screen readers, focus outlines are visible, high-contrast preferences are respected, and the layout adapts smoothly from a spacious editor-and-controls view on desktop to a single, touch-friendly column on phones. In short, it is a fast, private, genuinely complete favicon generator that produces exactly the files a modern website needs — without the guesswork.</p>
+</section>
+
+<!-- About (Hindi) -->
+<section class="fv-wrap fv-prose">
+  <h2 class="fv-title">ℹ️ इस टूल के बारे में</h2>
+  <p><b>ApneSoftware Favicon Generator</b> एक professional, privacy-first उपयोगिता है जो एक ही image को आधुनिक website के लिए ज़रूरी <b>favicons और web-app icons के पूरे सेट</b> में बदल देती है — सब कुछ आपके browser में, बिना signup, subscription या upload के। Favicon वह छोटा icon है जो browser tab, bookmark, history और search result में दिखता है, और जब कोई आपकी site को home screen पर जोड़ता है तो उनके phone पर भी। यह छोटा विवरण बड़ा असर डालता है: एक तीखा, सही favicon site को पूर्ण, भरोसेमंद और यादगार बनाता है, जबकि गायब या धुंधला favicon अच्छी site को भी अधूरा दिखाता है। समस्या यह है कि "favicon जोड़ना" अब एक file नहीं रह गया। अलग-अलग browsers व operating systems अलग sizes व formats चाहते हैं — classic multi-resolution <b>favicon.ico</b>, अलग <b>PNG favicons</b>, iOS के लिए <b>Apple touch icon</b>, कई <b>Android Chrome</b> icons, adaptive आकृतियों के लिए <b>maskable</b> icons, और Windows के लिए <b>Microsoft tile</b> icons — साथ ही एक <b>web app manifest</b> और सही <b>HTML tags</b>। यह टूल यह सब एक upload से संभालता है।</p>
+  <p>आप एक <b>square image</b> drop करके शुरू करते हैं, अच्छा हो 512×512 pixels या बड़ी ताकि हर generated size तीखा रहे। टूल उसे एक live editor में load करता है जहाँ आप उसे ठीक अपनी पसंद अनुसार frame कर सकते हैं। एक ठोस <b>background colour</b> चुनें या उसे <b>transparent</b> रखें ताकि PNG icons हल्के व गहरे browser chrome दोनों पर मिल जाएँ। एक <b>fit mode</b> चुनें — किनारे-से-किनारे भरने के लिए <b>cover</b>, पूरी image अंदर फिट करने के लिए <b>contain</b>, या <b>stretch</b> — और <b>padding</b>, <b>zoom</b>, <b>rotation</b> व horizontal/vertical <b>flip</b> से बारीकी सेट करें। rounded, app-जैसा icon चाहिए तो <b>corner radius</b> जोड़ें, या पारंपरिक favicon के लिए square रखें। हर समायोजन live preview को तुरंत अपडेट करता है।</p>
+  <p>चूँकि favicon हर संदर्भ में अलग दिखता है, टूल आपके edit करते ही <b>वास्तविक browser previews</b> दिखाता है: आपके title के साथ एक <b>browser-tab</b> mock-up, rounded-square mask वाला <b>iOS home-screen</b> icon, circular adaptive mask वाला <b>Android</b> icon, और एक <b>Windows tile</b>। इससे उन समस्याओं को पकड़ना आसान है जो केवल किसी विशेष size या आकृति पर दिखती हैं — किनारों को छूती image, 16 pixel पर गायब होता विवरण, या Android के circle से कटती artwork। download से पहले ये previews देखना export-install-recheck के झंझट को बचाता है।</p>
+  <p>तकनीकी रूप से, generator वह सब बनाता है जो एक सही setup माँगता है। <b>favicon.ico</b> एक असली multi-image ICO है जिसमें 16×16, 32×32 और 48×48 संस्करण हैं, ताकि browsers व Windows अपनी ज़रूरत का resolution चुन सकें। standalone <b>PNG favicons</b> (16 व 32), <b>180×180 Apple touch icon</b>, <b>192 व 512 Android Chrome</b> icons और अनुशंसित safe-zone padding वाला एक समर्पित <b>maskable</b> icon, साथ ही एक <b>Microsoft tile</b> image — सब शामिल हैं। टूल सहायक files भी लिखता है: आपके चुने app name, short name, theme colour, background colour, display mode व start URL के साथ एक <b>site.webmanifest</b>; Windows tiles के लिए <b>browserconfig.xml</b>; और सब कुछ सही से link करता एक तैयार <b>HTML head snippet</b>।</p>
+  <p><b>Download एक click में है।</b> सब कुछ एक <b>ZIP</b> में पैक होता है जिसे आप अपनी website के root folder में extract करते हैं; फिर दिया गया snippet अपने page के <code>&lt;head&gt;</code> में copy करें और काम पूरा। HTML snippet व manifest पारंपरिक file नाम व paths उपयोग करते हैं, इसलिए output सादे static sites, WordPress, React, Vue, Next.js, static-site generators और लगभग किसी भी framework या CMS के साथ काम करता है। चूँकि icons मौजूदा मानकों का पालन करते हैं — maskable icons व उचित manifest सहित — आपकी site एक installable <b>Progressive Web App</b> के रूप में भी सही व्यवहार करेगी।</p>
+  <p><b>Privacy मौलिक है।</b> कई online favicon सेवाओं के विपरीत जो आपकी artwork उनके servers पर upload करवाती हैं, यह टूल सब कुछ <b>locally</b> करता है। आपकी image browser में पढ़ी जाती है, canvas पर बनाई जाती है, resize व encode होती है, और पूरी तरह आपके device पर एक ZIP में पैक होती है — यह कभी आपके computer से बाहर नहीं जाती, कोई account नहीं, और कुछ भी track या store नहीं होता। यह गोपनीय brand assets व अप्रकाशित logos के लिए सुरक्षित बनाता है, और page load होने के बाद टूल <b>offline</b> काम करता रहता है। Interface भी आधुनिक मानकों पर बना है: dropzone व controls keyboard-सुलभ और screen readers के लिए labelled हैं, focus outlines दिखते हैं, high-contrast वरीयता का सम्मान होता है, और layout desktop के विस्तृत editor-and-controls view से phones पर एकल, touch-friendly column तक सहजता से ढलता है। संक्षेप में, यह एक तेज़, निजी, सचमुच पूर्ण favicon generator है।</p>
+</section>
+
+<!-- Supported Icon Sizes -->
+<section class="fv-wrap fv-prose">
+  <h2 class="fv-title">📐 Supported Icon Sizes</h2>
+  <div class="fv-tscroll">
+    <table class="fv-table">
+      <thead><tr><th>File</th><th>Size</th><th>Used by</th></tr></thead>
+      <tbody>
+        <tr><td>favicon.ico</td><td>16, 32, 48</td><td>All browsers, bookmarks, Windows.</td></tr>
+        <tr><td>favicon-16x16.png</td><td>16×16</td><td>Browser tabs (standard density).</td></tr>
+        <tr><td>favicon-32x32.png</td><td>32×32</td><td>Browser tabs (retina), taskbars.</td></tr>
+        <tr><td>apple-touch-icon.png</td><td>180×180</td><td>iOS / iPadOS home screen.</td></tr>
+        <tr><td>android-chrome-192x192.png</td><td>192×192</td><td>Android home screen &amp; PWA.</td></tr>
+        <tr><td>android-chrome-512x512.png</td><td>512×512</td><td>Android splash &amp; PWA install.</td></tr>
+        <tr><td>maskable-512x512.png</td><td>512×512</td><td>Android adaptive (maskable) icons.</td></tr>
+        <tr><td>mstile-150x150.png</td><td>150×150</td><td>Windows Start menu tiles.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Installation Guide -->
+<section class="fv-wrap fv-prose">
+  <h2 class="fv-title">🧭 Installation Guide</h2>
+  <ol class="fv-steps">
+    <li><b>Extract the ZIP</b> into your website's <b>root folder</b> (the same place as your home page).</li>
+    <li><b>Paste the HTML snippet</b> from this tool into the <code>&lt;head&gt;</code> of every page (or your shared layout/template).</li>
+    <li>Make sure <b>site.webmanifest</b> and <b>browserconfig.xml</b> sit in the root and are reachable at <code>/site.webmanifest</code>.</li>
+    <li><b>Clear your cache</b> (and any CDN cache) — browsers hold onto old favicons, so a hard refresh helps.</li>
+    <li><b>Verify</b> in a browser tab, then add the site to a phone home screen to check the app icon.</li>
+  </ol>
+</section>
+
+<!-- Browser Compatibility -->
+<section class="fv-wrap fv-prose">
+  <h2 class="fv-title">🌐 Browser Compatibility</h2>
+  <p>Works on all modern browsers — <b>Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, Opera and Brave</b> — on Windows, macOS, Linux, Android and iOS. It needs JavaScript, with no plugins or installation, and works offline once loaded. Canvas rendering, ICO/PNG generation and ZIP downloads are supported everywhere. The generated icons themselves cover every major browser and platform, including installable PWAs and Windows tiles.</p>
+</section>
+
+<!-- Privacy & Security -->
+<section class="fv-wrap fv-prose">
+  <h2 class="fv-title">🔒 Privacy &amp; Security</h2>
+  <div class="privacy-note"><b>English:</b> Every icon is generated entirely in your browser using an HTML canvas. Your image is never uploaded to a server, there is no account, and nothing is tracked. The file is held only in memory and released when you load a new image, and the tool works offline once loaded — so your artwork never leaves your device, ideal for confidential brand assets.</div>
+  <div class="privacy-note"><b>हिन्दी:</b> हर icon पूरी तरह आपके browser में HTML canvas से बनता है। आपकी image किसी server पर upload नहीं होती, कोई account नहीं, और कुछ भी track नहीं होता। File केवल memory में रहती है और नई image load करने पर release हो जाती है, और page load के बाद टूल offline काम करता है — इसलिए आपकी artwork कभी device से बाहर नहीं जाती।</div>
+</section>
+
+<!-- How To Use -->
+<section class="fv-wrap fv-prose">
+  <h2 class="fv-title">🚀 How To Use</h2>
+  <ol class="fv-steps">
+    <li><b>Upload</b> a square image (512×512 or larger is best) by dragging it in or clicking the dropzone.</li>
+    <li>Set the <b>background</b> (or transparent), <b>fit</b>, padding, corner radius, zoom, rotation and flip.</li>
+    <li>Check the <b>browser and device previews</b> to make sure it reads well at every size.</li>
+    <li>Fill in the <b>manifest</b> — app name, short name, theme &amp; background colours, display and start URL.</li>
+    <li>Tick the <b>icons</b> you need, click <b>Download ZIP</b>, and copy the <b>HTML snippet</b> into your head.</li>
+  </ol>
+</section>
+
+<!-- FAQ -->
+<section class="fv-wrap fv-faq">
+  <h2 class="fv-title">❓ Frequently Asked Questions</h2>
+  <div id="faqList"></div>
+</section>
+
+<!-- Troubleshooting -->
+<section class="fv-wrap fv-prose">
+  <h2 class="fv-title">🛠️ Troubleshooting</h2>
+  <ul>
+    <li><b>Old favicon still showing:</b> browsers cache favicons hard — clear the cache, hard-refresh, or open in a private window.</li>
+    <li><b>Icon looks blurry:</b> upload a larger source image (512×512 or more) so small sizes stay sharp.</li>
+    <li><b>Android crops my icon:</b> increase padding — Android's maskable shape needs a safe zone around the artwork.</li>
+    <li><b>Transparent icon has a white box:</b> tick “Transparent” and export — favicon.ico and PNGs will keep transparency.</li>
+    <li><b>Manifest not applied:</b> confirm the snippet's <code>&lt;link rel="manifest"&gt;</code> path matches where you placed site.webmanifest.</li>
+    <li><b>ZIP didn't download:</b> check your connection so the ZIP library can load, then try again.</li>
+    <li><b>Image looks off-centre:</b> use zoom and the fit mode to reframe; “Contain” keeps the whole image visible.</li>
+  </ul>
+</section>
+
 </div>
 
-<footer class="site-footer">© 2026 ApneSoftware.com</footer>
+<footer class="site-footer">© 2026 ApneSoftware.com — Free, private, browser-based tools.</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="../assets/common.js"></script>
 <script>
-const dropzone = document.getElementById('dropzone');
-const fileInput = document.getElementById('fileInput');
-let sourceImg = null;
-const ICO_SIZES = [16, 32, 48];
-const PNG_SIZES = [
-  { size: 180, name: 'apple-touch-icon.png' },
-  { size: 192, name: 'android-chrome-192x192.png' },
-  { size: 512, name: 'android-chrome-512x512.png' },
-  { size: 32,  name: 'favicon-32x32.png' },
-  { size: 16,  name: 'favicon-16x16.png' },
-];
+(function(){
+  "use strict";
+  function $(id){ return document.getElementById(id); }
 
-setupDropzone(dropzone, fileInput, files => {
-  if(files.length && files[0].type.startsWith('image/')){
-    const img = new Image();
-    img.onload = ()=>{
-      sourceImg = img;
-      renderPreviews();
-      document.getElementById('afterUpload').style.display = 'block';
-    };
-    img.src = URL.createObjectURL(files[0]);
+  var sourceImg=null;
+  var st={ bg:'#ffffff', transparent:false, fit:'contain', padding:10, radius:0, zoom:100, rotate:0, flipH:false, flipV:false,
+           name:'My Site', short:'Site', theme:'#7c3aed', mbg:'#ffffff', display:'standalone', start:'/' };
+
+  var ICON_DEFS=[
+    {id:'ico',      label:'favicon.ico',  file:'favicon.ico',                sizes:[16,32,48], ico:true, on:true},
+    {id:'p16',      label:'16×16',        file:'favicon-16x16.png',          size:16,  on:true},
+    {id:'p32',      label:'32×32',        file:'favicon-32x32.png',          size:32,  on:true},
+    {id:'apple',    label:'Apple 180',    file:'apple-touch-icon.png',       size:180, on:true},
+    {id:'and192',   label:'Android 192',  file:'android-chrome-192x192.png', size:192, on:true},
+    {id:'and512',   label:'Android 512',  file:'android-chrome-512x512.png', size:512, on:true},
+    {id:'mask',     label:'Maskable 512', file:'maskable-512x512.png',       size:512, maskable:true, on:true},
+    {id:'mstile',   label:'MS tile 150',  file:'mstile-150x150.png',         size:150, on:true}
+  ];
+
+  /* ===================== Dropzone ===================== */
+  var dz=$('dropzone'), fi=$('fileInput');
+  dz.addEventListener('click',function(){ fi.click(); });
+  dz.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ fi.click(); e.preventDefault(); } });
+  fi.addEventListener('change',function(e){ handleFiles(e.target.files); });
+  dz.addEventListener('dragover',function(e){ e.preventDefault(); dz.classList.add('drag'); });
+  dz.addEventListener('dragleave',function(){ dz.classList.remove('drag'); });
+  dz.addEventListener('drop',function(e){ e.preventDefault(); dz.classList.remove('drag'); handleFiles(e.dataTransfer.files); });
+
+  function handleFiles(list){
+    var f=Array.prototype.slice.call(list).filter(function(x){return x.type.indexOf('image/')===0;})[0];
+    if(!f) return;
+    var img=new Image();
+    img.onload=function(){ sourceImg=img; $('afterUpload').style.display='block'; showSrcInfo(f,img); renderAll(); try{$('afterUpload').scrollIntoView({behavior:'smooth',block:'start'});}catch(e){} };
+    img.src=URL.createObjectURL(f);
   }
-});
+  function showSrcInfo(f,img){
+    var sq=img.naturalWidth===img.naturalHeight;
+    var warn=(img.naturalWidth<192||img.naturalHeight<192)?' · ⚠️ small — use 512×512 for crisp icons':(!sq?' · ⚠️ not square — will be cropped/fit':'');
+    $('fvSrcInfo').textContent=img.naturalWidth+'×'+img.naturalHeight+' px'+warn;
+  }
 
-function resizeToCanvas(img, size){
-  const canvas = document.createElement('canvas');
-  canvas.width = size; canvas.height = size;
-  const ctx = canvas.getContext('2d');
-  // letterbox into a square using the smaller dimension, centered crop
-  const minDim = Math.min(img.naturalWidth, img.naturalHeight);
-  const sx = (img.naturalWidth - minDim)/2;
-  const sy = (img.naturalHeight - minDim)/2;
-  ctx.drawImage(img, sx, sy, minDim, minDim, 0, 0, size, size);
-  return canvas;
-}
+  /* ===================== Controls ===================== */
+  function bindColor(id,key){ $(id).addEventListener('input',function(){ st[key]=this.value; renderAll(); }); }
+  function bindRange(id,valId,key){ var el=$(id),v=$(valId); el.addEventListener('input',function(){ st[key]=parseInt(el.value,10); if(v)v.textContent=el.value; renderAll(); }); }
+  function bindText(id,key){ $(id).addEventListener('input',function(){ st[key]=this.value; renderAll(); }); }
+  function bindSel(id,key){ $(id).addEventListener('change',function(){ st[key]=this.value; renderAll(); }); }
+  bindColor('fvBg','bg'); bindColor('fvTheme','theme'); bindColor('fvManifestBg','mbg');
+  $('fvTransparent').addEventListener('change',function(){ st.transparent=this.checked; renderAll(); });
+  bindSel('fvFit','fit'); bindSel('fvDisplay','display');
+  bindRange('fvPadding','fvPaddingVal','padding'); bindRange('fvRadius','fvRadiusVal','radius');
+  bindRange('fvZoom','fvZoomVal','zoom'); bindRange('fvRotate','fvRotateVal','rotate');
+  bindText('fvName','name'); bindText('fvShort','short'); bindText('fvStart','start');
+  function bindTgl(id,key){ var b=$(id); b.addEventListener('click',function(){ st[key]=!st[key]; b.setAttribute('aria-pressed',st[key]?'true':'false'); renderAll(); }); }
+  bindTgl('fvFlipH','flipH'); bindTgl('fvFlipV','flipV');
 
-function renderPreviews(){
-  const row = document.getElementById('previewRow');
-  row.innerHTML = '';
-  [16,32,48,180,192,512].forEach(size=>{
-    const canvas = resizeToCanvas(sourceImg, Math.min(size, 96));
-    const wrap = document.createElement('div');
-    wrap.className = 'preview-item';
-    const dispImg = document.createElement('img');
-    dispImg.src = canvas.toDataURL();
-    dispImg.style.width = Math.min(size,64) + 'px';
-    dispImg.style.height = Math.min(size,64) + 'px';
-    wrap.appendChild(dispImg);
-    const label = document.createElement('span');
-    label.textContent = size + '×' + size;
-    wrap.appendChild(label);
-    row.appendChild(wrap);
+  // size checkboxes
+  (function buildSizeChecks(){
+    var wrap=$('fvSizes');
+    ICON_DEFS.forEach(function(d){ var l=document.createElement('label'); l.className='fv-check'; l.innerHTML='<input type="checkbox" data-id="'+d.id+'"'+(d.on?' checked':'')+'> '+d.label; l.querySelector('input').addEventListener('change',function(){ d.on=this.checked; }); wrap.appendChild(l); });
+  })();
+
+  /* ===================== Core rendering ===================== */
+  function renderIcon(size,opts){
+    opts=opts||{};
+    var c=document.createElement('canvas'); c.width=size; c.height=size;
+    var ctx=c.getContext('2d');
+    var radiusPx=(opts.maskable?0:(st.radius/100)*size);
+    if(radiusPx>0){ roundRect(ctx,0,0,size,size,radiusPx); ctx.clip(); }
+    if(!st.transparent){ ctx.fillStyle=st.bg; ctx.fillRect(0,0,size,size); }
+    if(!sourceImg) return c;
+    // content box with padding (maskable adds safe zone)
+    var padPct=st.padding/100 + (opts.maskable?0.16:0);
+    if(padPct>0.45)padPct=0.45;
+    var inset=padPct*size, box=size-inset*2, bx=inset, by=inset;
+    var iw=sourceImg.naturalWidth, ih=sourceImg.naturalHeight;
+    var z=st.zoom/100;
+    ctx.save();
+    ctx.translate(bx+box/2, by+box/2);
+    ctx.rotate(st.rotate*Math.PI/180);
+    ctx.scale(st.flipH?-1:1, st.flipV?-1:1);
+    if(st.fit==='stretch'){ ctx.drawImage(sourceImg,-box/2*z,-box/2*z,box*z,box*z); }
+    else { var s=(st.fit==='cover')?Math.max(box/iw,box/ih):Math.min(box/iw,box/ih); s*=z; ctx.drawImage(sourceImg,-iw*s/2,-ih*s/2,iw*s,ih*s); }
+    ctx.restore();
+    return c;
+  }
+  function roundRect(c,x,y,w,h,r){ r=Math.min(r,w/2,h/2); c.beginPath(); c.moveTo(x+r,y); c.arcTo(x+w,y,x+w,y+h,r); c.arcTo(x+w,y+h,x,y+h,r); c.arcTo(x,y+h,x,y,r); c.arcTo(x,y,x+w,y,r); c.closePath(); }
+
+  function renderAll(){
+    if(!sourceImg) return;
+    // main editor
+    var ed=$('fvEditCanvas'), ectx=ed.getContext('2d'); ectx.clearRect(0,0,ed.width,ed.height);
+    ectx.drawImage(renderIcon(256),0,0,ed.width,ed.height);
+    // size previews
+    var row=$('previewRow'); row.innerHTML='';
+    [16,32,48,180,192,512].forEach(function(sz){ var disp=Math.min(sz,64); var ic=renderIcon(Math.max(sz,48)); var wrap=document.createElement('div'); wrap.className='preview-item'; var im=new Image(); im.src=ic.toDataURL(); im.width=disp; im.height=disp; im.alt=sz+' pixel favicon preview'; wrap.appendChild(im); var s=document.createElement('span'); s.textContent=sz+'×'+sz; wrap.appendChild(s); row.appendChild(wrap); });
+    // mockups
+    drawInto('tabFav',16,false); drawInto('iosFav',120,false); drawInto('andFav',120,false); drawInto('tileFav',120,false);
+    $('tabTitle').textContent=st.short||st.name||'My Site';
+    // snippet
+    $('codeSnippet').value=buildSnippet();
+  }
+  function drawInto(id,size,maskable){ var el=$(id); if(!el)return; var cx=el.getContext('2d'); el.width=size; el.height=size; cx.clearRect(0,0,size,size); cx.drawImage(renderIcon(size,{maskable:maskable}),0,0); }
+
+  function buildSnippet(){
+    return '<link rel="icon" href="/favicon.ico" sizes="any">\n'+
+      '<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">\n'+
+      '<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">\n'+
+      '<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">\n'+
+      '<link rel="manifest" href="/site.webmanifest">\n'+
+      '<meta name="theme-color" content="'+st.theme+'">\n'+
+      '<meta name="msapplication-TileColor" content="'+st.theme+'">\n'+
+      '<meta name="msapplication-config" content="/browserconfig.xml">';
+  }
+  function buildManifest(){
+    return JSON.stringify({ name:st.name, short_name:st.short, icons:[
+      {src:'/android-chrome-192x192.png',sizes:'192x192',type:'image/png'},
+      {src:'/android-chrome-512x512.png',sizes:'512x512',type:'image/png'},
+      {src:'/maskable-512x512.png',sizes:'512x512',type:'image/png',purpose:'maskable'}
+    ], theme_color:st.theme, background_color:st.mbg, display:st.display, start_url:st.start }, null, 2);
+  }
+  function buildBrowserConfig(){
+    return '<?xml version="1.0" encoding="utf-8"?>\n<browserconfig>\n  <msapplication>\n    <tile>\n      <square150x150logo src="/mstile-150x150.png"/>\n      <TileColor>'+st.theme+'</TileColor>\n    </tile>\n  </msapplication>\n</browserconfig>';
+  }
+
+  /* ===================== ICO builder ===================== */
+  function canvasToPng(c){ return new Promise(function(res){ c.toBlob(function(b){ b.arrayBuffer().then(function(buf){ res(new Uint8Array(buf)); }); },'image/png'); }); }
+  function buildIco(pngs,sizes){
+    var total=0; pngs.forEach(function(b){ total+=b.length; });
+    var headerLen=6+16*pngs.length, out=new Uint8Array(headerLen+total), view=new DataView(out.buffer);
+    view.setUint16(0,0,true); view.setUint16(2,1,true); view.setUint16(4,pngs.length,true);
+    var offset=headerLen;
+    for(var i=0;i<pngs.length;i++){ var e=6+i*16, s=sizes[i]; out[e]=s>=256?0:s; out[e+1]=s>=256?0:s; out[e+2]=0; out[e+3]=0; view.setUint16(e+4,1,true); view.setUint16(e+6,32,true); view.setUint32(e+8,pngs[i].length,true); view.setUint32(e+12,offset,true); out.set(pngs[i],offset); offset+=pngs[i].length; }
+    return out;
+  }
+
+  /* ===================== Download ===================== */
+  function saveBlob(name,blob){ if(typeof downloadBlob==='function') downloadBlob(name,blob); else { var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; a.click(); } }
+
+  $('downloadBtn').addEventListener('click',function(){
+    if(!sourceImg){ if(typeof premToast==='function')premToast('Upload an image first'); return; }
+    if(typeof JSZip==='undefined'){ if(typeof premToast==='function')premToast('ZIP unavailable'); return; }
+    var status=$('statusMsg'); status.style.color='var(--text-dim)'; status.textContent='⏳ Generating favicon set…';
+    var zip=new JSZip();
+    var jobs=[];
+    ICON_DEFS.forEach(function(d){ if(!d.on) return;
+      if(d.ico){ jobs.push(Promise.all(d.sizes.map(function(s){ return canvasToPng(renderIcon(s)); })).then(function(pngs){ zip.file(d.file, buildIco(pngs,d.sizes)); })); }
+      else { jobs.push(canvasToPng(renderIcon(d.size,{maskable:d.maskable})).then(function(bytes){ zip.file(d.file,bytes); })); }
+    });
+    Promise.all(jobs).then(function(){
+      zip.file('site.webmanifest', buildManifest());
+      zip.file('browserconfig.xml', buildBrowserConfig());
+      zip.file('head-snippet.html', buildSnippet());
+      return zip.generateAsync({type:'blob'});
+    }).then(function(blob){ saveBlob('favicon-pack.zip',blob); status.style.color='#6ee7b7'; status.textContent='✅ favicon-pack.zip downloaded — extract into your site root and paste the snippet.'; })
+    .catch(function(){ status.style.color='#fca5a5'; status.textContent='Something went wrong generating the pack.'; });
   });
 
-  document.getElementById('codeSnippet').value =
-`<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">`;
-}
+  $('copyCodeBtn').addEventListener('click',function(e){ if(typeof copyText==='function') copyText($('codeSnippet').value,e.target); else { $('codeSnippet').select(); try{document.execCommand('copy');}catch(x){} } });
 
-function canvasToPngBytes(canvas){
-  return new Promise(resolve=>{
-    canvas.toBlob(blob=>{
-      blob.arrayBuffer().then(buf=> resolve(new Uint8Array(buf)));
-    }, 'image/png');
-  });
-}
+  /* ===================== Reset ===================== */
+  $('resetBtn').addEventListener('click',function(){ sourceImg=null; $('afterUpload').style.display='none'; fi.value=''; $('statusMsg').textContent=''; });
 
-// Build a PNG-in-ICO file (supported by all modern browsers & Windows Vista+)
-function buildIco(pngBuffers, sizes){
-  let totalDataLen = 0;
-  pngBuffers.forEach(b => totalDataLen += b.length);
-  const headerLen = 6 + 16 * pngBuffers.length;
-  const out = new Uint8Array(headerLen + totalDataLen);
-  const view = new DataView(out.buffer);
+  /* ===================== FAQ ===================== */
+  var FAQ=[
+    ['What is a favicon?','The small icon shown in a browser tab, bookmark and history for your site. — यह browser tab में दिखने वाला छोटा icon है।'],
+    ['What does this tool generate?','favicon.ico, PNG favicons, Apple touch, Android, maskable and Microsoft tile icons, plus a manifest. — पूरा icon सेट व manifest।'],
+    ['Is my image uploaded anywhere?','No. Every icon is generated in your browser; nothing is uploaded. — नहीं, कुछ भी upload नहीं होता।'],
+    ['What size image should I use?','A square image 512×512 or larger keeps every generated size sharp. — 512×512 या बड़ी square image।'],
+    ['Does it make a real favicon.ico?','Yes — a multi-image ICO with 16, 32 and 48 pixel versions. — हाँ, असली multi-size ICO।'],
+    ['What is a maskable icon?','An icon with a safe zone so Android can apply its adaptive shape without clipping. — Android adaptive आकृति के लिए।'],
+    ['Can I keep a transparent background?','Yes — tick “Transparent” to keep PNG transparency. — हाँ, transparent रख सकते हैं।'],
+    ['Can I add rounded corners?','Yes, use the Corner slider for app-style rounded icons. — हाँ, corner radius जोड़ सकते हैं।'],
+    ['How do I install the icons?','Extract the ZIP into your site root and paste the HTML snippet in your head. — ZIP extract कर snippet paste करें।'],
+    ['What is site.webmanifest for?','It tells browsers your app name, colours and icons for PWA install. — यह PWA install जानकारी देता है।'],
+    ['What is browserconfig.xml?','It defines the Windows Start-menu tile image and colour. — Windows tile के लिए।'],
+    ['My old favicon still shows — why?','Browsers cache favicons hard; clear the cache or hard-refresh. — browser cache साफ़ करें।'],
+    ['Can I choose which icons to download?','Yes, tick only the sizes your project needs. — हाँ, sizes चुन सकते हैं।'],
+    ['Does it work for PWAs?','Yes — the manifest and maskable icon make it install cleanly. — हाँ, PWA के लिए तैयार।'],
+    ['Can I set the theme colour?','Yes, the theme colour goes into the manifest and meta tags. — हाँ, theme colour सेट करें।'],
+    ['Will it work with WordPress or React?','Yes — the files use standard names and paths for any platform. — हाँ, हर platform के साथ।'],
+    ['Is it free?','Completely free — no account, no limits, no watermark. — हाँ, पूरी तरह मुफ़्त।'],
+    ['Does it work offline?','Yes, once the page has loaded it works without internet. — हाँ, offline काम करता है।'],
+    ['My icon is cropped on Android — help?','Increase padding so the artwork stays inside the maskable safe zone. — padding बढ़ाएँ।'],
+    ['Can I preview before downloading?','Yes — tab, iOS, Android and Windows-tile previews update live. — हाँ, live preview मिलता है।'],
+    ['What formats can I upload?','PNG, JPG and WebP images are supported. — PNG, JPG, WebP समर्थित हैं।'],
+    ['Where do I put the files?','In your website\'s root folder, alongside your home page. — website के root folder में।']
+  ];
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function buildFaq(){ var list=$('faqList'); if(!list) return; FAQ.forEach(function(p){ var d=document.createElement('details'); d.innerHTML='<summary>'+esc(p[0])+'</summary><p>'+esc(p[1])+'</p>'; list.appendChild(d); }); try{ $('faqSchema').textContent=JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:FAQ.map(function(p){return {'@type':'Question',name:p[0],acceptedAnswer:{'@type':'Answer',text:p[1]}};})}); }catch(e){} }
 
-  view.setUint16(0, 0, true);   // reserved
-  view.setUint16(2, 1, true);   // type = icon
-  view.setUint16(4, pngBuffers.length, true); // count
-
-  let offset = headerLen;
-  for(let i=0;i<pngBuffers.length;i++){
-    const entryOffset = 6 + i*16;
-    const size = sizes[i];
-    out[entryOffset] = size >= 256 ? 0 : size;       // width
-    out[entryOffset+1] = size >= 256 ? 0 : size;     // height
-    out[entryOffset+2] = 0;                          // color count
-    out[entryOffset+3] = 0;                          // reserved
-    view.setUint16(entryOffset+4, 1, true);           // planes
-    view.setUint16(entryOffset+6, 32, true);          // bit count
-    view.setUint32(entryOffset+8, pngBuffers[i].length, true); // bytes in resource
-    view.setUint32(entryOffset+12, offset, true);      // image offset
-
-    out.set(pngBuffers[i], offset);
-    offset += pngBuffers[i].length;
-  }
-  return out;
-}
-
-document.getElementById('downloadBtn').addEventListener('click', async ()=>{
-  const status = document.getElementById('statusMsg');
-  status.textContent = '⏳ Packaging favicon set...';
-
-  const zip = new JSZip();
-
-  // ICO with 16/32/48
-  const icoPngs = [];
-  for(const size of ICO_SIZES){
-    const canvas = resizeToCanvas(sourceImg, size);
-    icoPngs.push(await canvasToPngBytes(canvas));
-  }
-  const icoBytes = buildIco(icoPngs, ICO_SIZES);
-  zip.file('favicon.ico', icoBytes);
-
-  // Standalone PNGs
-  for(const item of PNG_SIZES){
-    const canvas = resizeToCanvas(sourceImg, item.size);
-    const bytes = await canvasToPngBytes(canvas);
-    zip.file(item.name, bytes);
-  }
-
-  // site.webmanifest
-  const manifest = {
-    name: "My Site",
-    short_name: "Site",
-    icons: [
-      { src: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
-      { src: "/android-chrome-512x512.png", sizes: "512x512", type: "image/png" }
-    ],
-    theme_color: "#ffffff",
-    background_color: "#ffffff",
-    display: "standalone"
-  };
-  zip.file('site.webmanifest', JSON.stringify(manifest, null, 2));
-  zip.file('head-snippet.html', document.getElementById('codeSnippet').value);
-
-  const blob = await zip.generateAsync({ type: 'blob' });
-  downloadBlob('favicon-pack.zip', blob);
-  status.textContent = '✅ Favicon pack downloaded! Extract it into your site\'s root folder.';
-});
-
-document.getElementById('copyCodeBtn').addEventListener('click', (e)=>{
-  copyText(document.getElementById('codeSnippet').value, e.target);
-});
+  /* ===================== Init / hooks ===================== */
+  window.__fvHooks={ handleFiles:handleFiles, renderIcon:renderIcon, getState:function(){return st;},
+    buildManifest:buildManifest, buildSnippet:buildSnippet, buildBrowserConfig:buildBrowserConfig,
+    setImg:function(im){ sourceImg=im; $('afterUpload').style.display='block'; renderAll(); },
+    exportZip:function(cb){ $('downloadBtn').click(); if(cb)setTimeout(cb,300); } };
+  buildFaq();
+})();
 </script>
 </body>
 </html>

@@ -674,11 +674,22 @@
     {
       "id": "favicon-generator",
       "name": "Favicon Generator",
-      "description": "Make a full favicon set from one image",
+      "description": "Turn one image into a complete favicon set — favicon.ico, PNG, Apple touch, Android, maskable & Microsoft tile icons — with background, crop & manifest controls, browser previews and a ready ZIP. 100% local.",
       "icon": "🌐",
       "url": "tools/favicon-generator.html",
       "category": "image",
-      "published": true
+      "published": true,
+      "tags": [
+        "favicon generator",
+        "favicon.ico",
+        "apple touch icon",
+        "android icon",
+        "maskable icon",
+        "site.webmanifest",
+        "favicon maker",
+        "web app icons",
+        "offline"
+      ]
     },
     {
       "id": "hash-generator",
