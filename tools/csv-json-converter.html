@@ -4,36 +4,119 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
+<meta name="description" content="Free online CSV ↔ JSON Converter — convert CSV to JSON and JSON arrays back to CSV with a live table preview, auto delimiter detection, custom delimiter/quote, header toggle, trim &amp; skip-empty options, JSON validation, pretty/minify, statistics (rows, columns, empty cells, duplicates, data types) and export to JSON/CSV/TSV/XML/XLSX. 100% local, nothing uploaded, works offline.">
+<meta name="keywords" content="csv to json, json to csv, csv json converter, convert csv, convert json, csv parser, json to csv online, csv to xml, csv to xlsx, data converter">
 <link rel="canonical" href="https://apnesoftware.com/tools/csv-json-converter.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="CSV ↔ JSON Converter | ApneSoftware">
-<meta property="og:description" content="Convert between CSV and JSON data. Free online tool — no signup required.">
+<meta property="og:title" content="CSV ↔ JSON Converter — CSV to JSON &amp; JSON to CSV | ApneSoftware">
+<meta property="og:description" content="Convert CSV to JSON and JSON to CSV with a live table preview, delimiter options, validation, statistics and export to JSON/CSV/TSV/XML/XLSX. Free, private, offline.">
 <meta property="og:url" content="https://apnesoftware.com/tools/csv-json-converter.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="CSV ↔ JSON Converter | ApneSoftware">
-<meta name="twitter:description" content="Convert between CSV and JSON data. Free online tool — no signup required.">
+<meta name="twitter:title" content="CSV ↔ JSON Converter — CSV to JSON &amp; JSON to CSV | ApneSoftware">
+<meta name="twitter:description" content="Convert CSV to JSON and JSON to CSV with table preview, delimiter options, validation, statistics and export to JSON/CSV/TSV/XML/XLSX. Free, private, offline.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CSV ↔ JSON Converter","description":"Convert between CSV and JSON data. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/csv-json-converter.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CSV ↔ JSON Converter","description":"Professional browser-based CSV and JSON converter that converts CSV to JSON and JSON arrays back to CSV with a live table preview, automatic delimiter detection, custom delimiter and quote characters, header detection, trim and skip-empty options, JSON validation with pretty-print and minify, statistics (rows, columns, empty cells, duplicate rows, processing time, data types) and export to JSON, CSV, TSV, XML and XLSX. Runs entirely in the browser.","url":"https://apnesoftware.com/tools/csv-json-converter.html","applicationCategory":"DeveloperApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"featureList":["CSV to JSON conversion","JSON to CSV conversion","Live table preview","Auto and custom delimiter","JSON validation, pretty print & minify","Statistics and data types","Export JSON/CSV/TSV/XML/XLSX","100% local processing"],"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"CSV ↔ JSON Converter — Convert CSV and JSON","url":"https://apnesoftware.com/tools/csv-json-converter.html","description":"Private, browser-based CSV/JSON converter with table preview, delimiter options, validation, statistics and multi-format export.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apnesoftware.com/"},{"@type":"ListItem","position":2,"name":"Developer & Utility","item":"https://apnesoftware.com/index.html"},{"@type":"ListItem","position":3,"name":"CSV ↔ JSON Converter","item":"https://apnesoftware.com/tools/csv-json-converter.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to convert CSV to JSON or JSON to CSV","description":"Convert between CSV and JSON with a live preview.","step":[{"@type":"HowToStep","name":"Choose a direction","text":"Pick CSV → JSON or JSON → CSV."},{"@type":"HowToStep","name":"Enter data","text":"Paste your data or upload a file."},{"@type":"HowToStep","name":"Set options","text":"Adjust header, delimiter and formatting options."},{"@type":"HowToStep","name":"Convert & export","text":"Convert, preview the table, then copy or export the result."}]}
+</script>
+<script type="application/ld+json" id="faqSchema">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}
 </script>
 <meta name="color-scheme" content="dark">
-<title>CSV ↔ JSON Converter | ApneSoftware</title>
+<title>CSV ↔ JSON Converter — CSV to JSON &amp; JSON to CSV | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-/* Premium upload enhancement for this tool */
-.dropzone{cursor:pointer}
-.dropzone p{font-size:.9rem}
-.panel{position:relative;z-index:1}
-</style>
-<style>
-  #outputText{font-family:'Consolas','Courier New',monospace;font-size:.85rem}
-  .tab-row{display:flex;gap:8px;margin-bottom:14px}
-  .tab-btn{padding:8px 16px;border-radius:7px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-dim);font-size:.9rem;cursor:pointer}
-  .tab-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-  .status-err{color:var(--danger);font-weight:600}
-  .status-ok{color:var(--accent-2);font-weight:600}
+/* ===== CSV ↔ JSON Converter — scoped cj- styles ===== */
+.cj-crumb{font-size:.78rem;color:var(--text-dim);margin-bottom:6px}
+.cj-crumb a{color:#c4b5fd;text-decoration:none}
+.cj-crumb a:hover{text-decoration:underline}
+.cj-btn{background:rgba(167,139,250,.14);border:1px solid rgba(167,139,250,.34);color:#d6cbff;border-radius:10px;padding:9px 13px;font-size:.83rem;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.15s}
+.cj-btn:hover{background:rgba(167,139,250,.24)}
+.cj-btn.primary{background:linear-gradient(90deg,#7c3aed,#a78bfa);border-color:transparent;color:#fff;font-weight:600}
+.cj-btn.danger{color:#fca5a5;border-color:rgba(248,113,113,.4)}
+.cj-btn:focus-visible,.cj-tab:focus-visible{outline:2px solid #a78bfa;outline-offset:2px}
+.cj-btn.sm{padding:6px 10px;font-size:.76rem}
+.cj-toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+
+.cj-tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.cj-tab{padding:8px 18px;border-radius:999px;border:1px solid var(--border,rgba(255,255,255,.14));background:rgba(255,255,255,.05);color:var(--text-dim);font-size:.85rem;cursor:pointer;font-weight:700}
+.cj-tab[aria-selected="true"]{background:linear-gradient(90deg,#7c3aed,#a78bfa);border-color:transparent;color:#fff}
+
+.dropzone{cursor:pointer;border:2px dashed rgba(167,139,250,.4);border-radius:16px;padding:28px 20px;text-align:center;transition:.15s;background:rgba(167,139,250,.04)}
+.dropzone:hover,.dropzone.drag{background:rgba(167,139,250,.12);border-color:#a78bfa}
+.dropzone .ic{font-size:2rem}
+.dropzone p{font-size:.92rem;margin:6px 0}
+.dropzone .sub{font-size:.8rem;color:var(--text-dim)}
+.dropzone input{display:none}
+
+.cj-label{display:block;font-size:.8rem;color:var(--text-dim);margin:12px 0 6px;text-transform:uppercase;letter-spacing:.03em}
+textarea.cj-ta{width:100%;min-height:150px;background:rgba(255,255,255,.05);border:1px solid var(--border,rgba(255,255,255,.14));color:var(--text);border-radius:10px;padding:12px;font-family:'Consolas','Courier New',monospace;font-size:.84rem;resize:vertical;line-height:1.55}
+#outputText{min-height:180px}
+
+.cj-opts{display:flex;gap:10px 16px;flex-wrap:wrap;align-items:center;padding:11px 14px;background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.1));border-radius:10px;margin-top:12px}
+.cj-opts label{display:flex;align-items:center;gap:6px;font-size:.81rem;font-weight:600;color:var(--text);cursor:pointer}
+.cj-opts input[type=checkbox]{accent-color:#a78bfa}
+.cj-opts select,.cj-opts input[type=text]{background:rgba(255,255,255,.05);border:1px solid var(--border,rgba(255,255,255,.14));color:var(--text);border-radius:8px;padding:5px 8px;font-size:.8rem;max-width:120px}
+
+.cj-stats{display:none;flex-wrap:wrap;gap:8px;margin:14px 0}
+.cj-stats.on{display:flex}
+.stat-chip{padding:4px 11px;border-radius:999px;font-size:.74rem;font-weight:600;background:rgba(255,255,255,.05);border:1px solid var(--border,rgba(255,255,255,.14));color:var(--text-dim)}
+.stat-chip b{color:#c4b5fd}
+#statusMsg{margin:10px 0;font-size:.85rem;min-height:1em}
+#statusMsg.err{color:#fca5a5;font-weight:600}
+#statusMsg.ok{color:#6ee7b7}
+
+.cj-sub{font-size:.9rem;margin:16px 0 6px;display:flex;align-items:center;gap:8px}
+.cj-preview{display:none;overflow:auto;max-height:340px;border:1px solid var(--border,rgba(255,255,255,.12));border-radius:10px}
+.cj-preview.on{display:block}
+table.cj-datatable{border-collapse:collapse;font-size:.78rem;width:100%;font-family:'Consolas','Courier New',monospace}
+table.cj-datatable th,table.cj-datatable td{border:1px solid var(--border,rgba(255,255,255,.1));padding:6px 9px;text-align:left;white-space:nowrap;color:var(--text)}
+table.cj-datatable th{background:rgba(167,139,250,.16);color:#fff;position:sticky;top:0}
+table.cj-datatable tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.cj-more{font-size:.76rem;color:var(--text-dim);padding:6px 9px}
+.privacy-note{background:rgba(124,92,252,.08);border:1px solid rgba(124,92,252,.25);border-radius:8px;padding:12px 14px;font-size:.84rem;color:var(--text-dim);margin-top:16px;line-height:1.6}
+.privacy-note b{color:#c4b5fd}
+
+/* below-tool */
+.cj-wrap{margin:26px 0}
+.cj-title{font-size:1.35rem;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+.cj-feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.cj-fcard{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:14px;padding:16px}
+.cj-fcard h4{margin:0 0 6px;font-size:.98rem;display:flex;align-items:center;gap:8px}
+.cj-fcard p{margin:0;font-size:.86rem;color:var(--text-dim);line-height:1.55}
+.cj-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.cj-rel{display:block;text-decoration:none;background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:14px;transition:.15s;color:var(--text)}
+.cj-rel:hover{border-color:#a78bfa;background:rgba(167,139,250,.1);transform:translateY(-2px)}
+.cj-rel b{display:block;font-size:.92rem;margin-bottom:3px}
+.cj-rel span{font-size:.8rem;color:var(--text-dim);line-height:1.45}
+.cj-prose p,.cj-prose li{color:var(--text-dim);line-height:1.75;font-size:.92rem}
+.cj-prose h3{font-size:1.02rem;margin:18px 0 8px}
+.cj-tscroll{overflow:auto;border-radius:10px}
+table.cj-table{border-collapse:collapse;font-size:.85rem;width:100%}
+table.cj-table th,table.cj-table td{border:1px solid var(--border,rgba(255,255,255,.12));padding:7px 10px;text-align:left;color:var(--text)}
+table.cj-table th{background:rgba(167,139,250,.14);color:#fff;font-weight:600}
+table.cj-table td code{color:#c4b5fd;font-family:'Consolas','Courier New',monospace}
+.cj-faq details{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:0 16px;margin-bottom:10px}
+.cj-faq summary{cursor:pointer;padding:14px 0;font-weight:600;font-size:.92rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.cj-faq summary::-webkit-details-marker{display:none}
+.cj-faq summary::after{content:'+';font-size:1.3rem;color:#a78bfa;flex:0 0 auto}
+.cj-faq details[open] summary::after{content:'−'}
+.cj-faq details p{margin:0 0 14px;font-size:.87rem;color:var(--text-dim);line-height:1.65}
+.cj-steps{list-style:none;counter-reset:s;padding:0;margin:0;display:grid;gap:12px}
+.cj-steps li{counter-increment:s;position:relative;padding-left:46px;font-size:.9rem;color:var(--text-dim);line-height:1.6}
+.cj-steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:32px;height:32px;border-radius:9px;background:rgba(167,139,250,.18);color:#c4b5fd;font-weight:700;display:grid;place-items:center}
+.cj-steps li b{color:var(--text)}
+@media (prefers-contrast:more){.cj-prose p,.cj-prose li{color:#fff}}
 </style>
 </head>
 <body>
@@ -46,155 +129,392 @@
 
 <div class="container">
   <div class="tool-header">
+    <nav class="cj-crumb" aria-label="Breadcrumb"><a href="../index.html">Home</a> › <a href="../index.html">Developer &amp; Utility</a> › <span>CSV ↔ JSON Converter</span></nav>
     <h1>🔁 CSV ↔ JSON Converter</h1>
-    <p>Convert CSV data to JSON, or JSON arrays back to CSV — paste text or upload a file.</p>
+    <p>Convert <b>CSV to JSON</b> and <b>JSON arrays back to CSV</b> — with a live <b>table preview</b>, delimiter options, validation, statistics and export to JSON/CSV/TSV/XML/XLSX. 100% local — nothing is uploaded.</p>
   </div>
 
   <div class="panel">
-    <div class="tab-row">
-      <button class="tab-btn active" data-tab="csv2json">CSV → JSON</button>
-      <button class="tab-btn" data-tab="json2csv">JSON → CSV</button>
+    <div class="cj-tabs" role="tablist" aria-label="Direction">
+      <button class="cj-tab" id="tabC2J" role="tab" aria-selected="true" type="button">CSV → JSON</button>
+      <button class="cj-tab" id="tabJ2C" role="tab" aria-selected="false" type="button">JSON → CSV</button>
     </div>
 
+    <!-- CSV → JSON -->
     <div id="csv2jsonTab">
-      <div class="dropzone" id="csvDropzone">
-        <p>📤 Drag a .csv file here or click to choose (or just paste below)</p>
-        <input type="file" id="csvFileInput" accept=".csv,text/csv">
+      <div class="dropzone" id="csvDropzone" role="button" tabindex="0" aria-label="Upload CSV file">
+        <div class="ic">📊</div>
+        <p><b>Drop a .csv file here</b> or click to choose</p>
+        <div class="sub">🔒 processed locally · nothing uploaded · or just paste below</div>
+        <input type="file" id="csvFileInput" accept=".csv,.tsv,.txt,text/csv">
       </div>
-      <div class="field" style="margin-top:14px">
-        <label for="csvInput">CSV data</label>
-        <textarea id="csvInput" style="min-height:160px" placeholder="name,age,city
-Ravi,25,Jaipur
-Priya,30,Delhi"></textarea>
-      </div>
-      <div class="row" style="align-items:center">
-        <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:.88rem">
-          <input type="checkbox" id="hasHeader" checked style="width:auto"> First row is header
+      <label class="cj-label" for="csvInput">CSV data</label>
+      <textarea id="csvInput" class="cj-ta" placeholder="name,age,city&#10;Ravi,25,Jaipur&#10;Priya,30,Delhi" spellcheck="false"></textarea>
+      <div class="cj-opts">
+        <label><input type="checkbox" id="hasHeader" checked> First row is header</label>
+        <label>Delimiter
+          <select id="cjDelim"><option value="">Auto</option><option value=",">Comma</option><option value=";">Semicolon</option><option value="\t">Tab</option><option value="|">Pipe</option></select>
         </label>
+        <label><input type="checkbox" id="cjTrim" checked> Trim spaces</label>
+        <label><input type="checkbox" id="cjSkipEmpty" checked> Skip empty rows</label>
+        <label><input type="checkbox" id="cjTyping" checked> Detect numbers/booleans</label>
       </div>
-      <div class="btn-row">
-        <button class="btn" id="csvToJsonBtn">➡️ Convert to JSON</button>
+      <div class="cj-toolbar">
+        <button class="cj-btn primary" id="csvToJsonBtn" type="button">➡️ Convert to JSON</button>
+        <button class="cj-btn sm" id="cjSampleCsv" type="button">📄 Sample</button>
+        <button class="cj-btn danger sm" id="cjClearCsv" type="button">✕ Clear</button>
       </div>
     </div>
 
+    <!-- JSON → CSV -->
     <div id="json2csvTab" style="display:none">
-      <div class="field">
-        <label for="jsonInput">JSON array</label>
-        <textarea id="jsonInput" style="min-height:200px" placeholder='[{"name":"Ravi","age":25,"city":"Jaipur"},{"name":"Priya","age":30,"city":"Delhi"}]'></textarea>
+      <label class="cj-label" for="jsonInput">JSON array</label>
+      <textarea id="jsonInput" class="cj-ta" style="min-height:190px" placeholder='[{"name":"Ravi","age":25,"city":"Jaipur"},{"name":"Priya","age":30,"city":"Delhi"}]' spellcheck="false"></textarea>
+      <div class="cj-opts">
+        <label>Delimiter
+          <select id="cjDelimOut"><option value=",">Comma</option><option value=";">Semicolon</option><option value="\t">Tab (TSV)</option><option value="|">Pipe</option></select>
+        </label>
+        <label><input type="checkbox" id="cjFlatten"> Flatten nested keys</label>
       </div>
-      <div class="btn-row">
-        <button class="btn" id="jsonToCsvBtn">➡️ Convert to CSV</button>
+      <div class="cj-toolbar">
+        <button class="cj-btn primary" id="jsonToCsvBtn" type="button">➡️ Convert to CSV</button>
+        <button class="cj-btn sm" id="cjSampleJson" type="button">📄 Sample</button>
+        <button class="cj-btn danger sm" id="cjClearJson" type="button">✕ Clear</button>
       </div>
     </div>
 
-    <div class="field" style="margin-top:16px">
-      <label>Result</label>
-      <textarea id="outputText" readonly style="min-height:200px"></textarea>
+    <div class="cj-stats" id="statsRow">
+      <span class="stat-chip">Rows: <b id="stRows">0</b></span>
+      <span class="stat-chip">Columns: <b id="stCols">0</b></span>
+      <span class="stat-chip">Empty cells: <b id="stEmpty">0</b></span>
+      <span class="stat-chip">Duplicates: <b id="stDup">0</b></span>
+      <span class="stat-chip">Time: <b id="stTime">—</b></span>
+      <span class="stat-chip">Size: <b id="stSize">—</b></span>
     </div>
-    <div class="btn-row">
-      <button class="btn secondary" id="copyBtn">📋 Copy</button>
-      <button class="btn secondary" id="downloadBtn">⬇️ Download</button>
+
+    <p id="statusMsg"></p>
+
+    <h3 class="cj-sub">👁️ Table preview <small id="previewNote" style="color:var(--text-dim);font-weight:400"></small></h3>
+    <div class="cj-preview" id="tablePreview"></div>
+
+    <label class="cj-label" for="outputText" style="margin-top:16px">Result</label>
+    <textarea id="outputText" class="cj-ta" readonly placeholder="Converted output appears here…"></textarea>
+    <div class="cj-toolbar">
+      <button class="cj-btn primary" id="copyBtn" type="button">📋 Copy</button>
+      <button class="cj-btn" id="downloadBtn" type="button">⬇ Download</button>
+      <button class="cj-btn sm" id="expJson" type="button">JSON</button>
+      <button class="cj-btn sm" id="expCsv" type="button">CSV</button>
+      <button class="cj-btn sm" id="expTsv" type="button">TSV</button>
+      <button class="cj-btn sm" id="expXml" type="button">XML</button>
+      <button class="cj-btn sm" id="expXlsx" type="button">XLSX</button>
     </div>
-    <p id="statusMsg" style="margin-top:10px"></p>
+
+    <div class="privacy-note">🔒 <b>Private by design:</b> your data is parsed and converted entirely in your browser. Nothing is uploaded to a server, and the tool works offline once loaded.</div>
   </div>
 </div>
 
+<!-- ===================== BELOW-TOOL CONTENT ===================== -->
+<div class="container">
 
-<div class="info-wrap">
-  <div class="info-section">
-    <div class="info-block">
-      <h2>ℹ️ About This Tool</h2>
-      <p>Quickly convert between CSV (spreadsheet-style) data and JSON arrays of objects — useful when moving data between spreadsheets, databases, and code. Handles quoted fields and commas inside values correctly.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Pick a direction: CSV → JSON or JSON → CSV.</li>
-        <li>Paste your data or upload a CSV file.</li>
-        <li>Click Convert, then copy or download the result.</li>
-      </ol>
-    </div>
-    <hr class="info-divider">
-    <div class="info-block">
-      <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>CSV (स्प्रेडशीट-स्टाइल) डेटा और JSON ऑब्जेक्ट्स के बीच आसानी से कन्वर्ट करें — स्प्रेडशीट, डेटाबेस और कोड के बीच डेटा ले जाने के लिए उपयोगी। कोट किए गए फील्ड और वैल्यू के अंदर कॉमा को सही तरीके से हैंडल करता है।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>दिशा चुनें: CSV → JSON या JSON → CSV।</li>
-        <li>अपना डेटा पेस्ट करें या CSV फाइल अपलोड करें।</li>
-        <li>Convert दबाएं, फिर रिजल्ट कॉपी या डाउनलोड करें।</li>
-      </ol>
-    </div>
+<!-- Key Features -->
+<section class="cj-wrap">
+  <h2 class="cj-title">✨ Key Features</h2>
+  <div class="cj-feat-grid">
+    <div class="cj-fcard"><h4>🔁 Both Directions</h4><p>Convert CSV to JSON and JSON arrays back to CSV, switching in one click.</p></div>
+    <div class="cj-fcard"><h4>👁️ Live Table Preview</h4><p>See your parsed data as a scrollable table before you export a single byte.</p></div>
+    <div class="cj-fcard"><h4>🔍 Auto Delimiter</h4><p>Detects commas, semicolons, tabs or pipes automatically — or set your own.</p></div>
+    <div class="cj-fcard"><h4>🏷️ Header Detection</h4><p>Treat the first row as column names, or generate keys automatically.</p></div>
+    <div class="cj-fcard"><h4>🧹 Clean-up Options</h4><p>Trim spaces, skip empty rows and auto-detect numbers and booleans.</p></div>
+    <div class="cj-fcard"><h4>✅ JSON Validation</h4><p>Invalid JSON is caught with a clear error so you can fix it fast.</p></div>
+    <div class="cj-fcard"><h4>🗺️ Flatten Nested JSON</h4><p>Optionally flatten nested objects into dotted column names for CSV.</p></div>
+    <div class="cj-fcard"><h4>📊 Statistics</h4><p>Rows, columns, empty cells, duplicate rows, processing time and size.</p></div>
+    <div class="cj-fcard"><h4>📤 Multi-Format Export</h4><p>Download as JSON, CSV, TSV, XML or XLSX — or copy the result.</p></div>
+    <div class="cj-fcard"><h4>⚡ Fast &amp; Robust</h4><p>Powered by a battle-tested CSV parser that handles quotes and commas in values.</p></div>
+    <div class="cj-fcard"><h4>🔒 100% Local</h4><p>All parsing runs in your browser. Nothing is uploaded, logged or tracked.</p></div>
+    <div class="cj-fcard"><h4>♿ Accessible &amp; Mobile</h4><p>Keyboard navigation, ARIA labels, high-contrast support and a responsive layout.</p></div>
   </div>
+</section>
+
+<!-- Benefits -->
+<section class="cj-wrap cj-prose">
+  <h2 class="cj-title">🎯 Benefits</h2>
+  <ul>
+    <li><b>Bridge tools</b> — move data between spreadsheets, databases and code without hand-editing.</li>
+    <li><b>Trust the output</b> — the table preview shows exactly how rows and columns were parsed.</li>
+    <li><b>Handle messy data</b> — quoted fields, embedded commas, odd delimiters and empty rows are handled correctly.</li>
+    <li><b>Export anywhere</b> — one dataset, five formats (JSON, CSV, TSV, XML, XLSX).</li>
+    <li><b>Keep it private</b> — your data never leaves the browser, and it works offline.</li>
+  </ul>
+</section>
+
+<!-- Related Tools (ABOVE About) -->
+<section class="cj-wrap">
+  <h2 class="cj-title">🧰 Related Tools</h2>
+  <div class="cj-rel-grid">
+    <a class="cj-rel" href="base64-encoder-decoder.html"><b>🔢 Base64 Encoder / Decoder</b><span>Encode &amp; decode Base64.</span></a>
+    <a class="cj-rel" href="hash-generator.html"><b>#️⃣ Hash Generator</b><span>MD5, SHA, CRC32 checksums.</span></a>
+    <a class="cj-rel" href="regex-tester.html"><b>🧩 Regex Tester</b><span>Build &amp; test regular expressions.</span></a>
+    <a class="cj-rel" href="url-html-encoder-decoder.html"><b>🔗 URL &amp; HTML Entity Coder</b><span>Encode &amp; decode URLs / HTML.</span></a>
+    <a class="cj-rel" href="text-diff.html"><b>🔎 Text &amp; Code Diff</b><span>Compare two texts.</span></a>
+    <a class="cj-rel" href="uuid-generator.html"><b>🆔 UUID Generator</b><span>Generate unique IDs.</span></a>
+    <a class="cj-rel" href="timestamp-converter.html"><b>⏱️ Timestamp Converter</b><span>Convert Unix timestamps.</span></a>
+    <a class="cj-rel" href="text-encrypt-decrypt.html"><b>🔐 Text Encrypt / Decrypt</b><span>AES encryption in your browser.</span></a>
+  </div>
+</section>
+
+<!-- About (English) -->
+<section class="cj-wrap cj-prose">
+  <h2 class="cj-title">ℹ️ About This Tool</h2>
+  <p>The <b>ApneSoftware CSV ↔ JSON Converter</b> is a professional, privacy-first utility for moving tabular data between the two formats that dominate everyday computing: <b>CSV</b> and <b>JSON</b>. CSV — comma-separated values — is the lingua franca of spreadsheets, exports and data feeds: a simple, row-and-column text format that Excel, Google Sheets, databases and countless business systems can read and write. <b>JSON</b> — JavaScript Object Notation — is the standard for APIs, configuration and modern applications, representing the same information as structured objects and arrays. Data constantly needs to cross between these two worlds — a spreadsheet export that a program must consume, or an API response that a colleague wants in Excel — and doing it by hand is tedious and error-prone. This tool makes the round trip instant, accurate and completely private.</p>
+  <p>Converting from <b>CSV to JSON</b> sounds trivial until you meet real data. Fields contain commas inside quotes, values are wrapped in quotation marks, rows have trailing whitespace, some lines are blank, and the delimiter is not always a comma — European exports often use semicolons, and other systems use tabs or pipes. A naive split-on-comma breaks on all of these. This converter is built on a <b>robust, battle-tested CSV parser</b> that handles quoted fields, escaped quotes, embedded delimiters and mixed line endings correctly, so the JSON you get out is faithful to the data you put in. You can treat the <b>first row as headers</b> to produce an array of named objects, or turn that off to get plain arrays; <b>auto-detect the delimiter</b> or choose it explicitly; <b>trim</b> surrounding spaces; <b>skip empty rows</b>; and let the tool <b>infer types</b> so that numbers and booleans become real JSON numbers and booleans rather than strings.</p>
+  <p>Going the other way, from <b>JSON to CSV</b>, the tool takes an array of objects (or a single object) and flattens it into clean, spreadsheet-ready rows, automatically working out the full set of columns even when different objects have different keys. It <b>validates</b> your JSON first and, if something is wrong, shows the exact parser error so you can find the stray comma or missing bracket immediately instead of guessing. You can pick the output <b>delimiter</b> — comma, semicolon, tab (for TSV) or pipe — and optionally <b>flatten nested objects</b> so that a structure like <code>{"user":{"name":"Ravi"}}</code> becomes a <code>user.name</code> column, which is exactly what you need to open API data in a spreadsheet.</p>
+  <p>What sets this converter apart is the <b>live table preview</b>. Rather than dumping raw text and hoping it parsed correctly, the tool renders your data as an actual scrollable table the moment you convert, so you can see the columns, spot a misaligned row, and confirm the delimiter was right before you trust the output. Alongside it, a <b>statistics</b> panel summarises the dataset at a glance: the number of <b>rows</b> and <b>columns</b>, how many <b>empty cells</b> it contains, how many <b>duplicate rows</b> exist, the <b>processing time</b>, and the approximate <b>data size</b>. These small signals catch big mistakes — a column count that is double what you expected usually means the wrong delimiter, and a surprising duplicate count often reveals a bad export.</p>
+  <p>Because converted data rarely stops at one format, the tool offers flexible <b>export</b>. You can copy the result to the clipboard, download it in its native format, or export the same dataset as <b>JSON, CSV, TSV, XML or XLSX</b> — so one paste can feed a spreadsheet, a database import, a config file and an API test without repeating the work. Sample data is one click away to help you learn the format or test an integration, and the interface is fully <b>responsive</b>, collapsing cleanly from a wide desktop layout to a single-column mobile view with touch-friendly controls and drag-and-drop file upload.</p>
+  <p><b>Privacy is fundamental.</b> Many online converters upload your file to a server to process it — a serious concern when the data is customer records, financial exports or anything confidential. This tool never does that. Your CSV and JSON are parsed and converted <b>entirely in your browser</b>; nothing is uploaded, there is no account, and nothing about your content is logged or tracked. Because all processing is local, it also works <b>offline</b> once loaded, and it follows accessibility best practices with keyboard navigation, ARIA labelling, visible focus outlines and high-contrast support. In short, it is a fast, accurate, genuinely private data-conversion workbench — robust enough for messy real-world files, simple enough for a quick one-off — that runs entirely on your own machine.</p>
+</section>
+
+<!-- About (Hindi) -->
+<section class="cj-wrap cj-prose">
+  <h2 class="cj-title">ℹ️ इस टूल के बारे में</h2>
+  <p><b>ApneSoftware CSV ↔ JSON Converter</b> tabular data को रोज़मर्रा की computing पर हावी दो formats — <b>CSV</b> व <b>JSON</b> — के बीच ले जाने के लिए एक professional, privacy-first उपयोगिता है। CSV — comma-separated values — spreadsheets, exports व data feeds की साझा भाषा है: एक सरल, row-and-column text format जिसे Excel, Google Sheets, databases व अनगिनत business systems पढ़-लिख सकते हैं। <b>JSON</b> — JavaScript Object Notation — APIs, configuration व आधुनिक applications का मानक है, जो वही जानकारी structured objects व arrays के रूप में दर्शाता है। Data को लगातार इन दो दुनियाओं के बीच जाना पड़ता है, और इसे हाथ से करना थकाऊ व त्रुटि-प्रवण है। यह टूल यह आवागमन तुरंत, सटीक व पूरी तरह निजी बनाता है।</p>
+  <p><b>CSV से JSON</b> में बदलना तब तक आसान लगता है जब तक असली data न मिले। Fields में quotes के अंदर commas होते हैं, values quotation marks में लिपटी होती हैं, rows में trailing whitespace होता है, कुछ lines खाली होती हैं, और delimiter हमेशा comma नहीं होता — यूरोपीय exports अक्सर semicolons उपयोग करते हैं, अन्य systems tabs या pipes। एक सरल split-on-comma इन सब पर टूट जाता है। यह converter एक <b>मज़बूत, परखे हुए CSV parser</b> पर बना है जो quoted fields, escaped quotes, embedded delimiters व mixed line endings सही ढंग से संभालता है। आप <b>पहली row को headers</b> मान सकते हैं, delimiter <b>auto-detect</b> कर सकते हैं या स्वयं चुन सकते हैं, spaces <b>trim</b> कर सकते हैं, खाली rows <b>skip</b> कर सकते हैं, और numbers व booleans को असली JSON मानों में बदल सकते हैं।</p>
+  <p>दूसरी दिशा में, <b>JSON से CSV</b>, टूल objects की एक array (या एक object) लेकर उसे साफ़, spreadsheet-तैयार rows में समतल करता है, और अलग objects में अलग keys होने पर भी columns का पूरा सेट स्वतः निकालता है। यह पहले आपका JSON <b>validate</b> करता है और कुछ ग़लत होने पर सटीक parser error दिखाता है ताकि आप तुरंत भटकी comma या गायब bracket ढूँढ सकें। आप output <b>delimiter</b> चुन सकते हैं — comma, semicolon, tab (TSV के लिए) या pipe — और वैकल्पिक रूप से <b>nested objects समतल</b> कर सकते हैं ताकि <code>{"user":{"name":"Ravi"}}</code> जैसी संरचना एक <code>user.name</code> column बन जाए।</p>
+  <p>इस converter को जो अलग बनाता है वह है <b>live table preview</b>। raw text उगलने के बजाय, टूल convert करते ही आपके data को एक वास्तविक scrollable table के रूप में render करता है, ताकि आप columns देख सकें, किसी misaligned row को पकड़ सकें, और output पर भरोसा करने से पहले पुष्टि कर सकें कि delimiter सही था। साथ में एक <b>statistics</b> panel dataset का सार देता है: <b>rows</b> व <b>columns</b> की संख्या, कितने <b>empty cells</b>, कितनी <b>duplicate rows</b>, <b>processing time</b>, व अनुमानित <b>data size</b>। ये छोटे संकेत बड़ी ग़लतियाँ पकड़ते हैं।</p>
+  <p>चूँकि converted data शायद ही एक format पर रुकता है, टूल लचीला <b>export</b> देता है। आप परिणाम clipboard पर copy कर सकते हैं, उसके native format में download कर सकते हैं, या उसी dataset को <b>JSON, CSV, TSV, XML या XLSX</b> के रूप में export कर सकते हैं — ताकि एक paste एक spreadsheet, एक database import, एक config file व एक API test को खिला सके। Sample data एक click दूर है, और interface पूरी तरह <b>responsive</b> है, wide desktop layout से single-column mobile view तक साफ़ ढलता है।</p>
+  <p><b>Privacy मौलिक है।</b> कई online converters आपकी file process करने के लिए server पर upload करते हैं — जब data ग्राहक records, वित्तीय exports या कुछ गोपनीय हो तो एक गंभीर चिंता। यह टूल कभी ऐसा नहीं करता। आपका CSV व JSON पूरी तरह आपके browser में parse व convert होते हैं; कुछ भी upload नहीं होता, कोई account नहीं, और आपकी सामग्री के बारे में कुछ log या track नहीं होता। सब कुछ local होने के कारण यह load होने के बाद <b>offline</b> भी काम करता है, और keyboard navigation, ARIA labelling व high-contrast समर्थन के साथ accessibility सर्वोत्तम प्रथाओं का पालन करता है। संक्षेप में, यह एक तेज़, सटीक, सचमुच निजी data-conversion workbench है।</p>
+</section>
+
+<!-- CSV Guide -->
+<section class="cj-wrap cj-prose">
+  <h2 class="cj-title">📗 CSV Guide</h2>
+  <div class="cj-tscroll">
+    <table class="cj-table">
+      <thead><tr><th>Concept</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Header row</td><td>The first line usually names the columns (e.g. <code>name,age,city</code>).</td></tr>
+        <tr><td>Delimiter</td><td>Commas are standard, but semicolons, tabs and pipes are common too.</td></tr>
+        <tr><td>Quoting</td><td>Wrap a field in <code>"</code> quotes if it contains a comma or newline.</td></tr>
+        <tr><td>Escaped quotes</td><td>A literal quote inside a field is written as <code>""</code>.</td></tr>
+        <tr><td>Empty fields</td><td>Two delimiters in a row (<code>a,,c</code>) mean an empty value.</td></tr>
+        <tr><td>Line endings</td><td>Rows end with a newline; both <code>\n</code> and <code>\r\n</code> are accepted.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- JSON Guide -->
+<section class="cj-wrap cj-prose">
+  <h2 class="cj-title">📘 JSON Guide</h2>
+  <div class="cj-tscroll">
+    <table class="cj-table">
+      <thead><tr><th>Concept</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Array of objects</td><td>Tabular data maps to <code>[{...},{...}]</code> — one object per row.</td></tr>
+        <tr><td>Keys &amp; values</td><td>Object keys become columns; values must be quoted strings, numbers, booleans or null.</td></tr>
+        <tr><td>Double quotes</td><td>JSON keys and strings must use <code>"</code>, never single quotes.</td></tr>
+        <tr><td>No trailing commas</td><td>A comma after the last item is invalid JSON.</td></tr>
+        <tr><td>Nested objects</td><td>Values can themselves be objects/arrays; flatten them for CSV.</td></tr>
+        <tr><td>Pretty vs minified</td><td>Indentation is for humans; minified JSON is smaller for transport.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Conversion Examples -->
+<section class="cj-wrap cj-prose">
+  <h2 class="cj-title">🔄 Conversion Examples</h2>
+  <div class="cj-tscroll">
+    <table class="cj-table">
+      <thead><tr><th>CSV</th><th>JSON</th></tr></thead>
+      <tbody>
+        <tr><td><code>name,age<br>Ravi,25</code></td><td><code>[{"name":"Ravi","age":25}]</code></td></tr>
+        <tr><td><code>a;b;c<br>1;2;3</code> (semicolon)</td><td><code>[{"a":1,"b":2,"c":3}]</code></td></tr>
+        <tr><td><code>"Doe, John",NY</code> (quoted comma)</td><td><code>[{"0":"Doe, John","1":"NY"}]</code></td></tr>
+        <tr><td><code>user.name,user.city<br>Ravi,Jaipur</code></td><td><code>[{"user.name":"Ravi","user.city":"Jaipur"}]</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- How To Use -->
+<section class="cj-wrap cj-prose">
+  <h2 class="cj-title">🚀 How To Use</h2>
+  <ol class="cj-steps">
+    <li>Choose <b>CSV → JSON</b> or <b>JSON → CSV</b>.</li>
+    <li>Paste your data, upload a <b>.csv</b> file, or load the <b>sample</b>.</li>
+    <li>Set options — <b>header</b> row, <b>delimiter</b>, trim, skip-empty and type detection.</li>
+    <li>Click <b>Convert</b> and check the <b>table preview</b> and statistics.</li>
+    <li><b>Copy</b> or <b>export</b> as JSON, CSV, TSV, XML or XLSX.</li>
+  </ol>
+</section>
+
+<!-- FAQ -->
+<section class="cj-wrap cj-faq">
+  <h2 class="cj-title">❓ Frequently Asked Questions</h2>
+  <div id="faqList"></div>
+</section>
+
+<!-- Troubleshooting -->
+<section class="cj-wrap cj-prose">
+  <h2 class="cj-title">🛠️ Troubleshooting</h2>
+  <ul>
+    <li><b>Wrong number of columns:</b> the delimiter is probably wrong — set it explicitly (semicolon/tab) instead of Auto.</li>
+    <li><b>“Invalid JSON” error:</b> read the message — it's usually a trailing comma, single quotes, or a missing bracket.</li>
+    <li><b>Numbers became strings:</b> enable “Detect numbers/booleans” for CSV → JSON.</li>
+    <li><b>Commas inside a value split it:</b> wrap that field in double quotes in the source CSV.</li>
+    <li><b>Nested JSON looks odd in CSV:</b> enable “Flatten nested keys” to get dotted column names.</li>
+    <li><b>XLSX export does nothing:</b> the spreadsheet library loads from a CDN — check your connection, or use CSV.</li>
+    <li><b>Header row treated as data:</b> tick “First row is header” (or untick it if there is no header).</li>
+  </ul>
+</section>
+
 </div>
 
-<footer class="site-footer">© 2026 ApneSoftware.com</footer>
+<footer class="site-footer">© 2026 ApneSoftware.com — Free, private, browser-based tools.</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="../assets/common.js"></script>
 <script>
-document.querySelectorAll('.tab-btn').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const tab = btn.dataset.tab;
-    document.getElementById('csv2jsonTab').style.display = tab === 'csv2json' ? 'block' : 'none';
-    document.getElementById('json2csvTab').style.display = tab === 'json2csv' ? 'block' : 'none';
-    document.getElementById('outputText').value = '';
-    document.getElementById('statusMsg').textContent = '';
-  });
-});
+(function(){
+  "use strict";
+  function $(id){ return document.getElementById(id); }
+  function esc(s){ return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
 
-const csvDropzone = document.getElementById('csvDropzone');
-const csvFileInput = document.getElementById('csvFileInput');
-setupDropzone(csvDropzone, csvFileInput, files => {
-  if(files.length){
-    const reader = new FileReader();
-    reader.onload = (e)=> { document.getElementById('csvInput').value = e.target.result; };
-    reader.readAsText(files[0]);
+  var dir='c2j', lastData=[], lastFields=[];
+
+  function delimVal(v){ return v==='\\t'?'\t':v; }
+
+  /* ===== tabs ===== */
+  function selDir(d){ dir=d; $('tabC2J').setAttribute('aria-selected',d==='c2j'?'true':'false'); $('tabJ2C').setAttribute('aria-selected',d==='j2c'?'true':'false'); $('csv2jsonTab').style.display=d==='c2j'?'block':'none'; $('json2csvTab').style.display=d==='j2c'?'block':'none'; $('outputText').value=''; setStatus(''); $('statsRow').classList.remove('on'); $('tablePreview').classList.remove('on'); $('previewNote').textContent=''; }
+  $('tabC2J').addEventListener('click',function(){ selDir('c2j'); });
+  $('tabJ2C').addEventListener('click',function(){ selDir('j2c'); });
+
+  function setStatus(msg,type){ var s=$('statusMsg'); s.textContent=msg; s.className=type||''; }
+
+  /* ===== dropzone ===== */
+  var dz=$('csvDropzone'), fi=$('csvFileInput');
+  function readFile(f){ if(!f)return; var r=new FileReader(); r.onload=function(e){ $('csvInput').value=e.target.result; runCsv(f.size); }; r.readAsText(f); }
+  dz.addEventListener('click',function(){ fi.click(); });
+  dz.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ fi.click(); e.preventDefault(); } });
+  dz.addEventListener('dragover',function(e){ e.preventDefault(); dz.classList.add('drag'); });
+  dz.addEventListener('dragleave',function(){ dz.classList.remove('drag'); });
+  dz.addEventListener('drop',function(e){ e.preventDefault(); dz.classList.remove('drag'); readFile(e.dataTransfer.files[0]); });
+  fi.addEventListener('change',function(){ readFile(fi.files[0]); });
+
+  /* ===== flatten ===== */
+  function flatten(obj,prefix,out){ out=out||{}; prefix=prefix||''; for(var k in obj){ var v=obj[k], key=prefix?prefix+'.'+k:k; if(v&&typeof v==='object'&&!Array.isArray(v))flatten(v,key,out); else out[key]=Array.isArray(v)?JSON.stringify(v):v; } return out; }
+
+  /* ===== stats ===== */
+  function computeStats(data,fields,ms,bytes){
+    var rows=data.length, cols=fields.length, empty=0, seen={}, dup=0;
+    data.forEach(function(r){ fields.forEach(function(f){ var v=r[f]; if(v===''||v===null||v===undefined)empty++; }); var key=JSON.stringify(fields.map(function(f){return r[f];})); if(seen[key])dup++; else seen[key]=1; });
+    $('stRows').textContent=rows.toLocaleString('en-IN'); $('stCols').textContent=cols; $('stEmpty').textContent=empty; $('stDup').textContent=dup;
+    $('stTime').textContent=ms<1?'<1 ms':ms.toFixed(1)+' ms'; $('stSize').textContent=fmtBytes(bytes!=null?bytes:new Blob([$('outputText').value]).size);
+    $('statsRow').classList.add('on');
   }
-});
+  function fmtBytes(n){ if(n<1024)return n+' B'; if(n<1048576)return (n/1024).toFixed(1)+' KB'; return (n/1048576).toFixed(2)+' MB'; }
 
-document.getElementById('csvToJsonBtn').addEventListener('click', ()=>{
-  const status = document.getElementById('statusMsg');
-  const csv = document.getElementById('csvInput').value;
-  const hasHeader = document.getElementById('hasHeader').checked;
-
-  const result = Papa.parse(csv.trim(), { header: hasHeader, skipEmptyLines: true, dynamicTyping: true });
-
-  if(result.errors && result.errors.length){
-    status.textContent = '⚠️ Parsed with warnings: ' + result.errors[0].message;
-    status.className = 'status-err';
-  } else {
-    status.textContent = '✅ Converted ' + result.data.length + ' row(s)';
-    status.className = 'status-ok';
+  /* ===== table preview ===== */
+  function renderTable(data,fields){
+    var wrap=$('tablePreview'); if(!data.length){ wrap.classList.remove('on'); return; }
+    var max=Math.min(data.length,100);
+    var html='<table class="cj-datatable"><thead><tr>'+fields.map(function(f){return '<th>'+esc(f)+'</th>';}).join('')+'</tr></thead><tbody>';
+    for(var i=0;i<max;i++){ html+='<tr>'+fields.map(function(f){ var v=data[i][f]; return '<td>'+esc(v===null||v===undefined?'':(typeof v==='object'?JSON.stringify(v):v))+'</td>'; }).join('')+'</tr>'; }
+    html+='</tbody></table>';
+    wrap.innerHTML=html; wrap.classList.add('on');
+    $('previewNote').textContent=data.length>max?('(showing first '+max+' of '+data.length+' rows)'):'';
   }
-  document.getElementById('outputText').value = JSON.stringify(result.data, null, 2);
-});
 
-document.getElementById('jsonToCsvBtn').addEventListener('click', ()=>{
-  const status = document.getElementById('statusMsg');
-  const raw = document.getElementById('jsonInput').value;
-  try{
-    const data = JSON.parse(raw);
-    const arr = Array.isArray(data) ? data : [data];
-    const csv = Papa.unparse(arr);
-    document.getElementById('outputText').value = csv;
-    status.textContent = '✅ Converted ' + arr.length + ' row(s)';
-    status.className = 'status-ok';
-  }catch(err){
-    document.getElementById('outputText').value = '';
-    status.textContent = '❌ Invalid JSON: ' + err.message;
-    status.className = 'status-err';
+  /* ===== CSV → JSON ===== */
+  function runCsv(bytes){
+    var t0=performance.now(), csv=$('csvInput').value.trim();
+    if(!csv){ setStatus('⚠️ Paste some CSV or upload a file.','err'); return; }
+    if(typeof Papa==='undefined'){ setStatus('CSV parser failed to load.','err'); return; }
+    var opts={ header:$('hasHeader').checked, skipEmptyLines:$('cjSkipEmpty').checked?'greedy':false, dynamicTyping:$('cjTyping').checked };
+    var d=delimVal($('cjDelim').value); if(d)opts.delimiter=d;
+    if($('cjTrim').checked){ opts.transform=function(v){ return typeof v==='string'?v.trim():v; }; opts.transformHeader=function(h){ return h.trim(); }; }
+    var res=Papa.parse(csv,opts);
+    var data=res.data, fields;
+    if($('hasHeader').checked){ fields=res.meta.fields||(data[0]?Object.keys(data[0]):[]); }
+    else { var maxc=0; data.forEach(function(r){ if(r.length>maxc)maxc=r.length; }); fields=[]; for(var i=0;i<maxc;i++)fields.push(String(i)); data=data.map(function(r){ var o={}; for(var j=0;j<maxc;j++)o[j]=r[j]; return o; }); }
+    lastData=data; lastFields=fields;
+    $('outputText').value=JSON.stringify(data,null,2);
+    var ms=performance.now()-t0;
+    if(res.errors&&res.errors.length)setStatus('⚠️ Parsed with warnings: '+res.errors[0].message,'err');
+    else setStatus('✅ Converted '+data.length+' row(s), '+fields.length+' column(s).','ok');
+    renderTable(data,fields); computeStats(data,fields,ms,bytes);
   }
-});
+  $('csvToJsonBtn').addEventListener('click',function(){ runCsv(); });
 
-document.getElementById('copyBtn').addEventListener('click', (e)=>{
-  copyText(document.getElementById('outputText').value, e.target);
-});
+  /* ===== JSON → CSV ===== */
+  function runJson(){
+    var t0=performance.now(), raw=$('jsonInput').value.trim();
+    if(!raw){ setStatus('⚠️ Paste a JSON array.','err'); return; }
+    var data;
+    try{ data=JSON.parse(raw); }catch(err){ $('outputText').value=''; $('tablePreview').classList.remove('on'); $('statsRow').classList.remove('on'); setStatus('❌ Invalid JSON: '+err.message,'err'); return; }
+    var arr=Array.isArray(data)?data:[data];
+    if($('cjFlatten').checked)arr=arr.map(function(o){ return (o&&typeof o==='object')?flatten(o):o; });
+    var fset=[]; arr.forEach(function(o){ if(o&&typeof o==='object')Object.keys(o).forEach(function(k){ if(fset.indexOf(k)<0)fset.push(k); }); });
+    var delim=delimVal($('cjDelimOut').value);
+    var csv=Papa.unparse({fields:fset,data:arr},{delimiter:delim});
+    lastData=arr; lastFields=fset;
+    $('outputText').value=csv;
+    var ms=performance.now()-t0;
+    setStatus('✅ Converted '+arr.length+' row(s), '+fset.length+' column(s).','ok');
+    renderTable(arr,fset); computeStats(arr,fset,ms);
+  }
+  $('jsonToCsvBtn').addEventListener('click',runJson);
 
-document.getElementById('downloadBtn').addEventListener('click', ()=>{
-  const isJson = document.querySelector('.tab-btn.active').dataset.tab === 'csv2json';
-  downloadText(isJson ? 'converted.json' : 'converted.csv', document.getElementById('outputText').value, isJson ? 'application/json' : 'text/csv');
-});
+  /* ===== samples ===== */
+  $('cjSampleCsv').addEventListener('click',function(){ $('csvInput').value='name,age,city,active\nRavi,25,Jaipur,true\nPriya,30,Delhi,false\n"Kumar, A.",42,Mumbai,true'; runCsv(); });
+  $('cjSampleJson').addEventListener('click',function(){ $('jsonInput').value=JSON.stringify([{name:'Ravi',age:25,city:'Jaipur'},{name:'Priya',age:30,city:'Delhi'}],null,2); runJson(); });
+  $('cjClearCsv').addEventListener('click',function(){ $('csvInput').value=''; $('outputText').value=''; setStatus(''); $('statsRow').classList.remove('on'); $('tablePreview').classList.remove('on'); });
+  $('cjClearJson').addEventListener('click',function(){ $('jsonInput').value=''; $('outputText').value=''; setStatus(''); $('statsRow').classList.remove('on'); $('tablePreview').classList.remove('on'); });
+
+  /* ===== output actions / export ===== */
+  $('copyBtn').addEventListener('click',function(e){ if(!$('outputText').value){ if(typeof premToast==='function')premToast('Nothing to copy'); return; } if(typeof copyText==='function')copyText($('outputText').value,e.target); else navigator.clipboard.writeText($('outputText').value); });
+  function save(name,txt,type){ var blob=new Blob([txt],{type:type||'text/plain'}); if(typeof downloadBlob==='function')downloadBlob(name,blob); else { var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; a.click(); } }
+  $('downloadBtn').addEventListener('click',function(){ if(!$('outputText').value)return; if(dir==='c2j')save('converted.json',$('outputText').value,'application/json'); else save('converted.csv',$('outputText').value,'text/csv'); });
+  $('expJson').addEventListener('click',function(){ if(!lastData.length)return; save('data.json',JSON.stringify(lastData,null,2),'application/json'); });
+  $('expCsv').addEventListener('click',function(){ if(!lastData.length)return; save('data.csv',Papa.unparse({fields:lastFields,data:lastData}),'text/csv'); });
+  $('expTsv').addEventListener('click',function(){ if(!lastData.length)return; save('data.tsv',Papa.unparse({fields:lastFields,data:lastData},{delimiter:'\t'}),'text/tab-separated-values'); });
+  $('expXml').addEventListener('click',function(){ if(!lastData.length)return; save('data.xml',toXml(lastData,lastFields),'application/xml'); });
+  $('expXlsx').addEventListener('click',function(){ if(!lastData.length)return; if(typeof XLSX==='undefined'){ if(typeof premToast==='function')premToast('XLSX library unavailable'); return; } var ws=XLSX.utils.json_to_sheet(lastData,{header:lastFields}); var wb=XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb,ws,'Data'); XLSX.writeFile(wb,'data.xlsx'); });
+  function toXml(data,fields){ var x='<?xml version="1.0" encoding="UTF-8"?>\n<rows>\n'; data.forEach(function(r){ x+='  <row>\n'; fields.forEach(function(f){ var v=r[f]; x+='    <'+xmlTag(f)+'>'+esc(v===null||v===undefined?'':(typeof v==='object'?JSON.stringify(v):v))+'</'+xmlTag(f)+'>\n'; }); x+='  </row>\n'; }); return x+'</rows>'; }
+  function xmlTag(s){ return String(s).replace(/[^A-Za-z0-9_.-]/g,'_').replace(/^[^A-Za-z_]/,'_'); }
+
+  /* ===== FAQ ===== */
+  var FAQ=[
+    ['What does this tool do?','It converts CSV to JSON and JSON arrays back to CSV, with a preview and export options. — यह CSV व JSON के बीच बदलता है।'],
+    ['Is my data uploaded anywhere?','No. All parsing runs in your browser; nothing is uploaded. — नहीं, कुछ भी upload नहीं होता।'],
+    ['What delimiters are supported?','Comma, semicolon, tab and pipe, or auto-detect. — comma, semicolon, tab, pipe।'],
+    ['Does it handle commas inside values?','Yes — quoted fields with embedded commas are parsed correctly. — हाँ, quoted fields सही संभलती हैं।'],
+    ['How do I keep the header row?','Tick “First row is header” to turn columns into object keys. — header option चालू रखें।'],
+    ['Why did my numbers become strings?','Enable “Detect numbers/booleans” for CSV → JSON. — type detection चालू करें।'],
+    ['Can I convert JSON to CSV?','Yes — paste a JSON array of objects and click Convert to CSV. — हाँ, JSON→CSV उपलब्ध।'],
+    ['What if my JSON is invalid?','The tool shows the exact parser error so you can fix it. — सटीक error दिखता है।'],
+    ['Can I flatten nested JSON?','Yes — enable “Flatten nested keys” to get dotted columns. — हाँ, flatten विकल्प है।'],
+    ['What export formats are available?','JSON, CSV, TSV, XML and XLSX, plus copy. — JSON/CSV/TSV/XML/XLSX।'],
+    ['Is there a table preview?','Yes — converted data is shown as a scrollable table. — हाँ, table preview मिलता है।'],
+    ['What statistics are shown?','Rows, columns, empty cells, duplicates, time and size. — कई statistics दिखते हैं।'],
+    ['Can I upload a CSV file?','Yes — drag &amp; drop or click to choose a .csv/.tsv/.txt file. — हाँ, file upload कर सकते हैं।'],
+    ['How big a file can it handle?','It works well into the multi-MB range; huge files may be slower. — बड़ी files भी।'],
+    ['Is it free?','Completely free — no account, no limits, no watermark. — हाँ, पूरी तरह मुफ़्त।'],
+    ['Does it work offline?','Yes; core conversion works offline (XLSX needs one CDN load). — हाँ, offline काम करता है।'],
+    ['What is TSV?','Tab-separated values — like CSV but with tabs as the delimiter. — tab-separated format।'],
+    ['Does it preserve column order?','Yes — columns follow the header/first-seen key order. — हाँ, column क्रम बना रहता है।'],
+    ['Can objects have different keys?','Yes — JSON → CSV collects the union of all keys as columns. — हाँ, सभी keys मिलती हैं।'],
+    ['Why are some cells empty in CSV?','Because those objects lacked that key — that is expected. — वह key नहीं थी।'],
+    ['Does it store my data?','No — nothing is saved or logged; it stays in memory only. — नहीं, कुछ store नहीं होता।'],
+    ['Which browsers are supported?','All modern browsers — Chrome, Firefox, Edge, Safari, Opera, Brave. — सभी आधुनिक browsers।']
+  ];
+  function buildFaq(){ var list=$('faqList'); if(!list)return; FAQ.forEach(function(p){ var d=document.createElement('details'); d.innerHTML='<summary>'+esc(p[0])+'</summary><p>'+esc(p[1])+'</p>'; list.appendChild(d); }); try{ $('faqSchema').textContent=JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:FAQ.map(function(p){return {'@type':'Question',name:p[0],acceptedAnswer:{'@type':'Answer',text:p[1].replace(/&amp;/g,'&')}};})}); }catch(e){} }
+
+  /* ===== init / hooks ===== */
+  window.__cjHooks={ csvToJson:function(csv,hdr){ $('csvInput').value=csv; if(hdr!==undefined)$('hasHeader').checked=hdr; runCsv(); }, jsonToCsv:function(j){ $('jsonInput').value=j; selDir('j2c'); runJson(); }, setDir:selDir, getData:function(){ return {data:lastData,fields:lastFields}; }, getOutput:function(){ return $('outputText').value; } };
+  buildFaq();
+})();
 </script>
 </body>
 </html>

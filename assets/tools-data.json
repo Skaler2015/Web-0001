@@ -755,11 +755,22 @@
     {
       "id": "csv-json-converter",
       "name": "CSV ↔ JSON Converter",
-      "description": "Convert between CSV and JSON data",
+      "description": "Convert CSV to JSON and JSON arrays back to CSV with a live table preview, auto/custom delimiter, header & type detection, JSON validation, flatten, statistics and export to JSON/CSV/TSV/XML/XLSX. 100% local.",
       "icon": "🔁",
       "url": "tools/csv-json-converter.html",
       "category": "developer",
-      "published": true
+      "published": true,
+      "tags": [
+        "csv to json",
+        "json to csv",
+        "csv json converter",
+        "csv parser",
+        "data converter",
+        "csv to xml",
+        "csv to xlsx",
+        "json validator",
+        "offline"
+      ]
     },
     {
       "id": "image-cropper",
