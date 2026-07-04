@@ -76,7 +76,9 @@
 .color-row{display:flex;align-items:center;gap:10px}
 .logo-dropzone{border:1px dashed var(--border,rgba(255,255,255,.2));border-radius:8px;padding:12px;text-align:center;cursor:pointer;font-size:.82rem;color:var(--text-dim)}
 .ig-tot{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.12));border-radius:10px;padding:10px 12px;font-size:.82rem;color:var(--text-dim)}
-.ig-tot div{display:flex;justify-content:space-between;padding:2px 0}
+.ig-tot div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:2px 0}
+.ig-tot div span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ig-tot div b{white-space:nowrap;flex:0 0 auto;font-variant-numeric:tabular-nums}
 .ig-tot .g{font-weight:800;color:#c4b5fd;border-top:1px solid rgba(255,255,255,.12);margin-top:4px;padding-top:6px}
 .privacy-note{background:rgba(124,92,252,.08);border:1px solid rgba(124,92,252,.25);border-radius:8px;padding:12px 14px;font-size:.84rem;color:var(--text-dim);margin-top:16px;line-height:1.6}
 .privacy-note b{color:#c4b5fd}
@@ -96,9 +98,11 @@
 #invoicePreview table{width:100%;border-collapse:collapse;margin-top:8px}
 #invoicePreview th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.3px;color:#fff;background:#222;padding:6px 8px}
 #invoicePreview td{padding:7px 8px;border-bottom:1px solid #eee;vertical-align:top;font-size:11.5px}
-#invoicePreview .num-col{text-align:right}
-#invoicePreview .totals{margin-top:12px;margin-left:auto;width:270px}
-#invoicePreview .totals-row{display:flex;justify-content:space-between;padding:3px 0;font-size:12px}
+#invoicePreview .num-col{text-align:right;white-space:nowrap}
+#invoicePreview .totals{margin-top:12px;margin-left:auto;width:fit-content;min-width:240px;max-width:100%}
+#invoicePreview .totals-row{display:flex;justify-content:space-between;gap:22px;padding:3px 0;font-size:12px;white-space:nowrap}
+#invoicePreview .totals-row span:first-child{min-width:0;overflow:hidden;text-overflow:ellipsis}
+#invoicePreview .totals-row span:last-child{flex:0 0 auto;font-variant-numeric:tabular-nums}
 #invoicePreview .totals-row.grand{font-weight:800;font-size:14px;border-top:2px solid #222;margin-top:4px;padding-top:7px}
 #invoicePreview .words{font-size:11px;color:#333;margin-top:8px;font-style:italic}
 #invoicePreview .pay-grid{display:flex;gap:24px;margin-top:18px;flex-wrap:wrap}
