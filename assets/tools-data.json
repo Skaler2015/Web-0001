@@ -1164,7 +1164,7 @@
     {
       "id": "url-html-encoder-decoder",
       "name": "URL & HTML Entity Encoder/Decoder",
-      "description": "Encode/decode text for URLs or HTML",
+      "description": "URL & HTML encode/decode plus JSON/XML/JS/CSS/SQL escaping, Base64, Unicode, URL parser, HTML preview, entity reference, batch & files",
       "icon": "🔗",
       "url": "tools/url-html-encoder-decoder.html",
       "category": "developer",

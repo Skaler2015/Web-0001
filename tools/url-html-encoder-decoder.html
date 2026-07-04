@@ -4,28 +4,123 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
+<meta name="description" content="Free online Web Encoding Toolkit — URL encode/decode (encodeURI, encodeURIComponent, RFC 3986, RFC 1738), HTML entity encode/decode (named, decimal, hex), plus JSON, XML, JavaScript, CSS, SQL escaping, Base64, Unicode escapes, URL parser, HTML preview, entity reference, batch mode, file upload/download, character stats, validation and history. 100% private, browser-only, offline-capable, no signup.">
+<meta name="keywords" content="URL encoder decoder, HTML entity encoder, encodeURIComponent, RFC 3986, percent encoding, HTML decode, JSON escape, XML escape, JavaScript escape, CSS escape, SQL escape, base64, unicode escape, URL parser, developer tools">
 <link rel="canonical" href="https://apnesoftware.com/tools/url-html-encoder-decoder.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="URL & HTML Entity Encoder/Decoder | ApneSoftware">
-<meta property="og:description" content="Encode/decode text for URLs or HTML. Free online tool — no signup required.">
+<meta property="og:title" content="Web Encoding Toolkit — URL, HTML, JSON, Base64, Unicode | ApneSoftware">
+<meta property="og:description" content="URL & HTML encode/decode plus JSON, XML, JS, CSS, SQL escaping, Base64, Unicode, URL parser, HTML preview, entity reference, batch, stats & files. Free, private, offline.">
 <meta property="og:url" content="https://apnesoftware.com/tools/url-html-encoder-decoder.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="URL & HTML Entity Encoder/Decoder | ApneSoftware">
-<meta name="twitter:description" content="Encode/decode text for URLs or HTML. Free online tool — no signup required.">
+<meta name="twitter:title" content="Web Encoding Toolkit — URL, HTML, JSON, Base64, Unicode | ApneSoftware">
+<meta name="twitter:description" content="URL & HTML encode/decode plus JSON, XML, JS, CSS, SQL escaping, Base64, Unicode, URL parser, HTML preview, entity reference, batch, stats & files. Free, private, offline.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"URL & HTML Entity Encoder/Decoder","description":"Encode/decode text for URLs or HTML. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/url-html-encoder-decoder.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Web Encoding Toolkit (URL & HTML Encoder/Decoder)","description":"Encode and decode URL and HTML entities plus JSON, XML, JavaScript, CSS, SQL escaping, Base64 and Unicode, with a URL parser, safe HTML preview, entity reference, batch mode, file upload/download, character statistics, validation and history — all client-side.","url":"https://apnesoftware.com/tools/url-html-encoder-decoder.html","applicationCategory":"DeveloperApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"featureList":["URL encode/decode (encodeURI, encodeURIComponent, RFC 3986, RFC 1738)","HTML entity encode (full, minimal, decimal, hex) and decode","JSON, XML, JavaScript, CSS, SQL escaping","Base64 encode/decode (UTF-8 safe)","Unicode escapes and code points","Auto-detect encoding","Batch processing","File upload and download","Character statistics","Validation of broken encoding","URL parser with query-parameter table","Safe HTML preview","Searchable HTML entity reference","Copy, export and history"],"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Web Encoding Toolkit","url":"https://apnesoftware.com/tools/url-html-encoder-decoder.html","description":"Browser-based URL and HTML entity encoder/decoder with JSON/XML/JS/CSS/SQL escaping, Base64, Unicode, URL parser, HTML preview, entity reference, batch mode and file support.","inLanguage":["en","hi"],"isPartOf":{"@type":"WebSite","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apnesoftware.com/index.html"},{"@type":"ListItem","position":2,"name":"Developer & Utility","item":"https://apnesoftware.com/index.html#cat-developer"},{"@type":"ListItem","position":3,"name":"URL & HTML Entity Encoder/Decoder","item":"https://apnesoftware.com/tools/url-html-encoder-decoder.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to encode or decode text for the web","description":"Encode or decode text for URLs, HTML and other web formats.","step":[{"@type":"HowToStep","name":"Choose an operation","text":"Pick a category (URL, HTML, Code escapes, Base64, Unicode) and the exact encode or decode operation."},{"@type":"HowToStep","name":"Enter text","text":"Type, paste or upload your text; the output updates instantly."},{"@type":"HowToStep","name":"Use the extras","text":"Parse a URL, preview HTML safely, look up entities, batch-process lines or check statistics."},{"@type":"HowToStep","name":"Copy or export","text":"Copy the output, download it as TXT/HTML/CSV/JSON, or save it to history."}]}
+</script>
+<script type="application/ld+json" id="faqSchema"></script>
 <meta name="color-scheme" content="dark">
-<title>URL & HTML Entity Encoder/Decoder | ApneSoftware</title>
+<title>Web Encoding Toolkit — URL, HTML, JSON, Base64, Unicode | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-  #outputText{font-family:'Consolas','Courier New',monospace;font-size:.85rem}
-  .tab-row{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
-  .tab-btn{padding:8px 16px;border-radius:7px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-dim);font-size:.9rem;cursor:pointer}
-  .tab-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  /* ===== Web Encoding Toolkit — scoped we- prefix ===== */
+  .we-breadcrumb{font-size:.82rem;color:var(--text-dim);margin-bottom:14px}
+  .we-breadcrumb a{color:#c4b5fd;text-decoration:none}
+  .we-breadcrumb a:hover{text-decoration:underline}
+  .we-breadcrumb span{opacity:.6;margin:0 6px}
+
+  .we-cats{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
+  .we-cat{padding:8px 14px;border-radius:9px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-dim);font-size:.86rem;font-weight:600;cursor:pointer;transition:.15s}
+  .we-cat:hover{border-color:var(--border-strong);color:var(--text)}
+  .we-cat[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+  .we-ops{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+  .we-op{padding:6px 12px;border-radius:20px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-dim);font-size:.79rem;font-weight:600;cursor:pointer;transition:.15s}
+  .we-op:hover{border-color:var(--border-strong);color:var(--text)}
+  .we-op[aria-pressed="true"]{background:rgba(124,92,252,.22);border-color:var(--accent);color:#c4b5fd}
+
+  .we-io label{display:block;font-size:.82rem;color:var(--text-dim);margin-bottom:5px;font-weight:600}
+  .we-io textarea{width:100%!important;min-width:0;min-height:150px!important;padding:11px 12px!important;border-radius:10px!important;border:1px solid var(--border)!important;background:var(--surface-2)!important;color:var(--text)!important;font-family:ui-monospace,SFMono-Regular,Menlo,monospace!important;font-size:.85rem!important;outline:none;resize:vertical}
+  .we-io textarea:focus{border-color:var(--accent)!important;box-shadow:0 0 0 3px rgba(124,92,252,.15)}
+
+  .we-btn-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+  .we-btn-row .btn{flex:0 0 auto}
+  .we-mini{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+  .we-mini button{padding:7px 11px;border-radius:8px;border:1px solid var(--border);background:var(--surface-2);color:var(--text);font-size:.78rem;font-weight:600;cursor:pointer;transition:.15s}
+  .we-mini button:hover{border-color:var(--accent);color:#c4b5fd}
+  .we-check{display:inline-flex;align-items:center;gap:7px;font-size:.8rem;color:var(--text-dim);cursor:pointer;padding:7px 4px}
+  .we-check input{width:auto}
+
+  .we-msg{font-size:.82rem;min-height:1em;margin:6px 0;color:#f87171}
+  .we-msg.ok{color:#34d399}
+
+  .we-stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .we-stats .we-stat{flex:1 1 auto;min-width:-moz-fit-content;min-width:fit-content;background:var(--surface-2);border:1px solid var(--border);border-radius:9px;padding:8px 12px;text-align:center}
+  .we-stats .we-stat b{display:block;color:#c4b5fd;font-size:1rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .we-stats .we-stat span{font-size:.7rem;color:var(--text-dim)}
+
+  .we-card{background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:16px}
+  .we-card h3{font-size:.95rem;margin:0 0 12px;display:flex;align-items:center;gap:8px}
+  .we-card h3 .we-hint{font-size:.72rem;font-weight:500;color:var(--text-dim);margin-left:auto}
+  .we-card input[type=text]{width:100%!important;padding:9px 12px!important;border-radius:9px!important;border:1px solid var(--border)!important;background:var(--surface-2)!important;color:var(--text)!important;font-size:.9rem!important;outline:none}
+  .we-card input[type=text]:focus{border-color:var(--accent)!important}
+
+  .we-parse-row{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid var(--border);font-size:.84rem}
+  .we-parse-row .k{color:var(--text-dim)}
+  .we-parse-row .v{font-family:ui-monospace,monospace;color:#c4b5fd;text-align:right;overflow-x:auto;white-space:nowrap;min-width:0}
+
+  .we-tbl-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;max-height:280px;overflow-y:auto}
+  .we-tbl{width:100%;border-collapse:collapse;font-size:.82rem}
+  .we-tbl th,.we-tbl td{padding:7px 10px;text-align:left;border-bottom:1px solid var(--border);white-space:nowrap}
+  .we-tbl th{color:#c4b5fd;font-size:.72rem;text-transform:uppercase;position:sticky;top:0;background:#150a2e}
+  .we-tbl td.ch{font-family:ui-monospace,monospace;font-size:1rem;color:#fff}
+  .we-tbl td.cp{font-family:ui-monospace,monospace;color:var(--text-dim);cursor:pointer}
+  .we-tbl td.cp:hover{color:#c4b5fd}
+
+  #we-preview{width:100%;height:200px;border:1px solid var(--border);border-radius:10px;background:#fff}
+
+  .we-hist-list{display:flex;flex-direction:column;gap:8px;max-height:220px;overflow-y:auto}
+  .we-hist-item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 11px;border-radius:9px;border:1px solid var(--border);background:var(--surface-2);font-size:.8rem}
+  .we-hist-item .m{min-width:0}
+  .we-hist-item .m b{color:#c4b5fd}
+  .we-hist-item .s{color:var(--text-dim);font-size:.72rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;font-family:ui-monospace,monospace}
+  .we-hist-item button{background:none;border:none;color:#f87171;cursor:pointer;font-size:.9rem;padding:2px 6px;flex-shrink:0}
+  .we-hist-empty{font-size:.82rem;color:var(--text-dim);text-align:center;padding:14px}
+
+  .we-note{background:rgba(124,92,252,.08);border:1px solid rgba(124,92,252,.25);border-radius:9px;padding:11px 13px;font-size:.82rem;color:var(--text-dim);margin-top:14px;line-height:1.55}
+
+  .we-related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:6px}
+  .we-related-grid a{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:var(--surface-2);color:var(--text);text-decoration:none;font-size:.88rem;font-weight:600;transition:.15s}
+  .we-related-grid a:hover{border-color:var(--accent);color:#c4b5fd;transform:translateY(-2px)}
+  .we-related-grid a .ri{font-size:1.2rem}
+
+  .we-faq details{border:1px solid var(--border);border-radius:10px;margin-bottom:9px;background:var(--surface-2);overflow:hidden}
+  .we-faq summary{padding:13px 15px;cursor:pointer;font-weight:600;font-size:.92rem;list-style:none;position:relative;padding-right:40px}
+  .we-faq summary::-webkit-details-marker{display:none}
+  .we-faq summary::after{content:'+';position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:1.2rem;color:var(--accent)}
+  .we-faq details[open] summary::after{content:'−'}
+  .we-faq details[open] summary{color:#c4b5fd}
+  .we-faq .we-faq-a{padding:0 15px 14px;font-size:.88rem;line-height:1.6;color:var(--text-dim)}
+
+  .we-fmt-table{width:100%;border-collapse:collapse;font-size:.85rem}
+  .we-fmt-table th,.we-fmt-table td{padding:8px 11px;text-align:left;border-bottom:1px solid var(--border)}
+  .we-fmt-table th{color:#c4b5fd;font-weight:700;font-size:.78rem;text-transform:uppercase}
+  .we-fmt-table td code{font-family:ui-monospace,monospace;color:#c4b5fd}
+  .we-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px;margin:12px 0}
+
+  .info-block h3{color:#c4b5fd;margin-top:22px;margin-bottom:8px;font-size:1.02rem}
+  .info-block ul,.info-block ol{margin:8px 0 8px 20px;line-height:1.7}
+  .info-block ul li,.info-block ol li{margin-bottom:5px}
 </style>
 </head>
 <body>
@@ -37,62 +132,214 @@
 </header>
 
 <div class="container">
+  <nav class="we-breadcrumb" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a><span>›</span>
+    <a href="../index.html#cat-developer">Developer &amp; Utility</a><span>›</span>
+    URL &amp; HTML Entity Encoder/Decoder
+  </nav>
+
   <div class="tool-header">
-    <h1>🔗 URL & HTML Entity Encoder/Decoder</h1>
-    <p>Encode or decode text for safe use in URLs or HTML.</p>
+    <h1>🔗 URL &amp; HTML Entity Encoder/Decoder</h1>
+    <p>A complete web encoding toolkit — URL &amp; HTML entities, plus JSON, XML, JavaScript, CSS, SQL, Base64 and Unicode, with a URL parser, safe HTML preview, entity reference, batch mode and files. 100% in your browser.</p>
   </div>
 
   <div class="panel">
-    <div class="tab-row">
-      <button class="tab-btn active" data-mode="urlEncode">URL Encode</button>
-      <button class="tab-btn" data-mode="urlDecode">URL Decode</button>
-      <button class="tab-btn" data-mode="htmlEncode">HTML Encode</button>
-      <button class="tab-btn" data-mode="htmlDecode">HTML Decode</button>
-    </div>
+    <div class="we-cats" id="we-cats" role="group" aria-label="Category"></div>
+    <div class="we-ops" id="we-ops" role="group" aria-label="Operation"></div>
 
-    <div class="field">
+    <div class="we-io">
+      <div class="we-mini">
+        <button type="button" id="we-paste">📥 Paste</button>
+        <button type="button" id="we-upload">📁 Upload file</button>
+        <button type="button" id="we-autodetect">🔍 Auto-detect &amp; decode</button>
+        <input type="file" id="we-file" accept=".txt,.csv,.json,.html,.xml,.js,.css,.md,text/*" style="display:none">
+        <label class="we-check"><input type="checkbox" id="we-batch"> Batch (per line)</label>
+      </div>
       <label for="inputText">Input</label>
-      <textarea id="inputText" style="min-height:140px" placeholder="Type or paste text here..."></textarea>
+      <textarea id="inputText" placeholder="Type or paste text here…" aria-label="Input text"></textarea>
+      <div class="we-stats" id="we-stats"></div>
+      <div class="we-msg" id="we-msg" role="status" aria-live="polite"></div>
     </div>
 
-    <div class="btn-row">
+    <div class="we-btn-row">
       <button class="btn" id="convertBtn">⚡ Convert</button>
       <button class="btn secondary" id="clearBtn">🗑️ Clear</button>
+      <button class="btn secondary" id="we-swap">↕ Output → Input</button>
+      <label class="we-check"><input type="checkbox" id="we-auto" checked> Live</label>
+      <label class="we-check"><input type="checkbox" id="we-autocopy"> Auto-copy</label>
     </div>
 
-    <div class="field" style="margin-top:14px">
-      <label>Result</label>
-      <textarea id="outputText" readonly style="min-height:140px"></textarea>
+    <div class="we-io">
+      <label for="outputText">Result</label>
+      <textarea id="outputText" readonly placeholder="Output appears here…" aria-label="Output text"></textarea>
     </div>
-    <div class="btn-row">
+    <div class="we-btn-row">
       <button class="btn secondary" id="copyBtn">📋 Copy</button>
+      <button class="btn secondary" id="we-dlTxt">⬇️ TXT</button>
+      <button class="btn secondary" id="we-dlHtml">⬇️ HTML</button>
+      <button class="btn secondary" id="we-dlCsv">⬇️ CSV</button>
+      <button class="btn secondary" id="we-dlJson">⬇️ JSON</button>
+      <button class="btn secondary" id="we-saveHist">💾 Save</button>
+    </div>
+
+    <!-- Utility cards -->
+    <div class="we-card" style="margin-top:8px">
+      <h3>🔎 URL Parser <span class="we-hint">parses the input as a URL</span></h3>
+      <div id="we-parseOut"><p style="font-size:.82rem;color:var(--text-dim)">Enter a URL in the input above to see its parts.</p></div>
+      <div id="we-paramsWrap"></div>
+    </div>
+
+    <div class="we-card">
+      <h3>👁️ HTML Preview <span class="we-hint">sandboxed · scripts disabled</span></h3>
+      <button type="button" class="btn secondary" id="we-renderPreview" style="margin-bottom:10px">▶ Render input as HTML</button>
+      <iframe id="we-preview" sandbox title="HTML preview"></iframe>
+    </div>
+
+    <div class="we-card">
+      <h3>🔤 HTML Entity Reference <span class="we-hint">click a code to copy</span></h3>
+      <input type="text" id="we-entSearch" placeholder="Search entity, name or character…" aria-label="Search entities">
+      <div class="we-tbl-wrap" style="margin-top:10px"><table class="we-tbl" id="we-entTable"><thead><tr><th>Char</th><th>Name</th><th>Decimal</th><th>Hex</th></tr></thead><tbody></tbody></table></div>
+    </div>
+
+    <div class="we-card">
+      <h3>🕘 History <span class="we-hint" id="we-histCount"></span></h3>
+      <div class="we-hist-list" id="we-histList"><div class="we-hist-empty">No saved conversions yet.</div></div>
+      <div class="we-mini" style="margin-top:12px"><button type="button" id="we-histJson">⬇️ Export JSON</button><button type="button" id="we-histClear">🗑️ Clear</button></div>
+    </div>
+
+    <div class="we-note">ℹ️ Everything runs in your browser — nothing is uploaded, no login, and it works offline once loaded. The HTML preview runs in a sandboxed iframe with scripts disabled, so pasted markup can be viewed safely.</div>
+  </div>
+</div>
+
+<!-- ============================ RELATED TOOLS ============================ -->
+<div class="info-wrap">
+  <div class="info-section">
+    <div class="info-block">
+      <h2>🔗 Related Tools</h2>
+      <p style="color:var(--text-dim);font-size:.9rem;margin-bottom:4px">More free, non-AI, browser-based developer utilities.</p>
+      <div class="we-related-grid">
+        <a href="base64-encoder-decoder.html"><span class="ri">🔤</span> Base64 Encoder</a>
+        <a href="hash-generator.html"><span class="ri">🔒</span> Hash Generator</a>
+        <a href="regex-tester.html"><span class="ri">🧩</span> Regex Tester</a>
+        <a href="csv-json-converter.html"><span class="ri">🔁</span> CSV ↔ JSON</a>
+        <a href="timestamp-converter.html"><span class="ri">🕒</span> Timestamp Converter</a>
+        <a href="qr-code-generator.html"><span class="ri">🔳</span> QR Code Generator</a>
+        <a href="color-picker.html"><span class="ri">🎨</span> Color Picker</a>
+        <a href="password-generator.html"><span class="ri">🔑</span> Password Generator</a>
+      </div>
     </div>
   </div>
 </div>
 
-
+<!-- ============================ ABOUT + REFERENCE ============================ -->
 <div class="info-wrap">
   <div class="info-section">
     <div class="info-block">
       <h2>ℹ️ About This Tool</h2>
-      <p>URL encoding converts special characters (spaces, &, ?, etc.) into a safe format for use in web addresses. HTML encoding converts characters like &lt; and &amp; into entities so they display correctly instead of being interpreted as code. This tool handles both, in either direction.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Pick URL Encode, URL Decode, HTML Encode, or HTML Decode.</li>
-        <li>Paste your text and click Convert.</li>
-        <li>Copy the result.</li>
-      </ol>
+      <p>The <strong>URL &amp; HTML Entity Encoder/Decoder</strong> has grown into a complete <strong>web encoding toolkit</strong> — a single, private, browser-based workspace for every text-transformation a web developer, backend engineer, tester or security professional runs into. On the web, text constantly has to be made "safe" for a particular context. A space or an ampersand in a URL must become <code>%20</code> or <code>%26</code>; a less-than sign in HTML must become <code>&amp;lt;</code> so the browser shows it instead of treating it as a tag; a quote inside a JSON value must be escaped; a string embedded in a SQL query or a JavaScript literal has its own rules. Getting these transformations right — and reversing them correctly — is fiddly and error-prone by hand, and doing it in the wrong context is a common source of bugs and even security holes. This tool does every one of them instantly and correctly, with the output shown live as you type.</p>
+
+      <p>For <strong>URLs</strong> it offers the full family of encoders, not just one: <code>encodeURIComponent</code> for query values, <code>encodeURI</code> for whole addresses, strict <strong>RFC 3986</strong> encoding that also escapes the sub-delimiters <code>! ' ( ) *</code>, and <strong>RFC 1738</strong> form-style encoding that turns spaces into <code>+</code>. Decoding is equally careful: it handles percent sequences and reports clearly when a string contains a broken or invalid <code>%</code> sequence instead of throwing a cryptic error. For <strong>HTML</strong> it provides a full encode (escaping the five core characters plus every non-ASCII character to numeric entities), a minimal encode (just <code>&amp; &lt; &gt; &quot; &#39;</code>), and decimal or hexadecimal numeric-entity output — and a robust decoder that understands named entities like <code>&amp;copy;</code>, decimal entities like <code>&amp;#169;</code> and hexadecimal entities like <code>&amp;#xA9;</code> all at once, mixed together.</p>
+
+      <p>Beyond URL and HTML, the toolkit covers the other escapes developers reach for daily. It provides <strong>JSON escaping</strong> (and unescaping) so you can safely embed a string in a JSON document, <strong>XML escaping</strong>, <strong>JavaScript string escaping</strong> (to <code>\n</code>, <code>\t</code>, <code>\xNN</code> and <code>\uNNNN</code>), <strong>CSS escaping</strong> for identifiers, and <strong>SQL escaping</strong> that doubles single quotes to prevent the classic injection mistake. It also includes <strong>Base64</strong> encoding and decoding that is fully UTF-8 safe (so emoji and non-Latin scripts survive the round trip), and <strong>Unicode</strong> tools that convert text to <code>\uXXXX</code> escapes and back, or list every character's <code>U+</code> code point. A handy <strong>auto-detect</strong> button inspects your input, recognises whether it is URL-, HTML-, Base64- or Unicode-encoded, and decodes it with the right method — perfect when you have pasted something and are not sure what it is.</p>
+
+      <p>Real work is rarely a single string, so the tool scales. A <strong>batch mode</strong> processes a whole list line by line, transforming each independently — ideal for a column of values from a log or spreadsheet. You can <strong>upload a file</strong> (TXT, CSV, JSON, HTML, XML, JS, CSS and more) straight into the input and <strong>download</strong> the result as TXT, HTML, CSV or JSON. A live <strong>character-statistics</strong> panel shows the character count, word count, line count, byte size (UTF-8) and the number of non-ASCII characters, which is useful for length limits and payload sizing. And built-in <strong>validation</strong> flags broken percent-encoding, malformed HTML entities and other issues, explaining the problem rather than producing garbage.</p>
+
+      <p>Three developer power-features round it out. A <strong>URL parser</strong> takes any address and breaks it into its protocol, host, port, path, query and fragment, and lists every query parameter in a clean table — no more squinting at a long query string. A sandboxed <strong>HTML preview</strong> renders pasted markup safely in an isolated iframe with scripts disabled, so you can see what a fragment looks like without risk. And a searchable <strong>HTML entity reference</strong> puts the common named entities — arrows, currency symbols, punctuation, maths, copyright and trademark — one click away, with their decimal and hexadecimal codes ready to copy. Every result is copyable in one tap, an optional <strong>auto-copy</strong> puts the output on your clipboard automatically, and a local <strong>history</strong> keeps recent conversions in your browser to revisit or export.</p>
+
+      <p>Because the whole toolkit is plain JavaScript running on your own device, it is fast and instant, works offline once loaded, and is completely private — no text, URL, token or markup you paste is ever uploaded to a server, there is no sign-up, and nothing is tracked against you. That privacy matters: developers often need to encode or decode data that contains internal URLs, tokens or user content, and this tool guarantees none of it leaves your machine. <strong>Who is it for?</strong> Frontend and backend developers building and debugging web apps and APIs; security professionals inspecting encoded payloads; QA engineers and testers checking how systems handle special characters; system administrators massaging config and log data; and students learning how URL encoding, HTML entities and the various escape formats actually work. Whether you need a one-off encode or a full pipeline of transformations with preview and validation, this toolkit puts every web encoding format in one private, offline-capable place.</p>
+
+      <h3>✅ Key Benefits</h3>
+      <ul>
+        <li><strong>Every URL encoder</strong> — encodeURIComponent, encodeURI, RFC 3986 and RFC 1738, plus safe decoding.</li>
+        <li><strong>Complete HTML entities</strong> — full/minimal/decimal/hex encode and a mixed named+numeric decoder.</li>
+        <li><strong>All the escapes</strong> — JSON, XML, JavaScript, CSS and SQL, plus UTF-8-safe Base64 and Unicode tools.</li>
+        <li><strong>Auto-detect</strong> — recognises and decodes URL, HTML, Base64 or Unicode input automatically.</li>
+        <li><strong>Batch &amp; files</strong> — process lists line by line; upload and download common file types.</li>
+        <li><strong>Developer extras</strong> — URL parser with a parameter table, sandboxed HTML preview, entity reference.</li>
+        <li><strong>Stats &amp; validation</strong> — character/word/byte counts and clear encoding-error detection.</li>
+        <li><strong>Private &amp; offline</strong> — 100% browser-based, no upload, no login, with copy, export and history.</li>
+      </ul>
     </div>
+
     <hr class="info-divider">
+
     <div class="info-block">
       <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>URL encoding स्पेशल कैरेक्टर (स्पेस, &, ? वगैरह) को वेब एड्रेस में इस्तेमाल के लिए सुरक्षित फॉर्मेट में बदल देती है। HTML encoding &lt; और &amp; जैसे कैरेक्टर को entities में बदल देती है ताकि वो कोड की तरह नहीं बल्कि सही तरीके से दिखें। यह टूल दोनों, दोनों दिशाओं में हैंडल करता है।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
+      <p>यह <strong>URL &amp; HTML Entity Encoder/Decoder</strong> अब एक पूरा <strong>web encoding toolkit</strong> बन गया है — एक ही, निजी, browser-आधारित workspace जो हर उस text-रूपांतरण के लिए है जिससे किसी web developer, backend engineer, tester या security professional का सामना होता है। web पर text को लगातार किसी विशेष संदर्भ के लिए "सुरक्षित" बनाना पड़ता है। URL में space या ampersand को <code>%20</code> या <code>%26</code> बनना पड़ता है; HTML में less-than चिह्न को <code>&amp;lt;</code> बनना पड़ता है ताकि browser उसे tag की तरह न समझे; JSON value के अंदर quote escape करना पड़ता है; SQL query या JavaScript literal में embedded string के अपने नियम हैं। इन रूपांतरणों को सही करना — और सही ढंग से उल्टा करना — हाथ से मुश्किल व त्रुटि-प्रवण है, और गलत संदर्भ में करना bugs और यहाँ तक कि security holes का आम स्रोत है। यह टूल इन सबको तुरंत और सही ढंग से करता है, output live दिखाते हुए।</p>
+
+      <p><strong>URLs</strong> के लिए यह सिर्फ़ एक नहीं, encoders का पूरा परिवार देता है: query values के लिए <code>encodeURIComponent</code>, पूरे पते के लिए <code>encodeURI</code>, सख़्त <strong>RFC 3986</strong> encoding जो sub-delimiters <code>! ' ( ) *</code> को भी escape करती है, और <strong>RFC 1738</strong> form-style encoding जो spaces को <code>+</code> बनाती है। Decoding भी सावधान है: यह percent sequences संभालती है और जब कोई string टूटा या अमान्य <code>%</code> sequence रखती है तो स्पष्ट रूप से बताती है, cryptic error फेंकने के बजाय। <strong>HTML</strong> के लिए यह full encode (पाँच core characters और हर non-ASCII character को numeric entities में), minimal encode (सिर्फ़ <code>&amp; &lt; &gt; &quot; &#39;</code>), और decimal या hexadecimal numeric-entity output देता है — और एक मज़बूत decoder जो <code>&amp;copy;</code> जैसे named, <code>&amp;#169;</code> जैसे decimal और <code>&amp;#xA9;</code> जैसे hexadecimal entities को एक साथ, मिश्रित रूप में समझता है।</p>
+
+      <p>URL और HTML से आगे, toolkit उन बाकी escapes को भी कवर करता है जो developers रोज़ इस्तेमाल करते हैं। यह <strong>JSON escaping</strong> (व unescaping), <strong>XML escaping</strong>, <strong>JavaScript string escaping</strong> (<code>\n</code>, <code>\t</code>, <code>\xNN</code> व <code>\uNNNN</code> में), identifiers के लिए <strong>CSS escaping</strong>, और <strong>SQL escaping</strong> देता है जो classic injection गलती रोकने के लिए single quotes को दोगुना करती है। इसमें पूरी तरह UTF-8-safe <strong>Base64</strong> encode/decode (ताकि emoji व गैर-Latin scripts round trip में बचे रहें), और <strong>Unicode</strong> tools हैं जो text को <code>\uXXXX</code> escapes में व वापस बदलते हैं, या हर character का <code>U+</code> code point दिखाते हैं। एक उपयोगी <strong>auto-detect</strong> बटन आपके input की जाँच करता है, पहचानता है कि यह URL-, HTML-, Base64- या Unicode-encoded है, और सही तरीके से decode करता है।</p>
+
+      <p>असल काम शायद ही एक string होता है, इसलिए टूल बड़े स्तर पर काम करता है। एक <strong>batch mode</strong> पूरी सूची को पंक्ति-दर-पंक्ति प्रोसेस करता है, हर एक को स्वतंत्र रूप से बदलते हुए — किसी log या spreadsheet के column के लिए बढ़िया। आप एक <strong>file upload</strong> (TXT, CSV, JSON, HTML, XML, JS, CSS और अधिक) सीधे input में कर सकते हैं और result को TXT, HTML, CSV या JSON के रूप में <strong>download</strong> कर सकते हैं। एक live <strong>character-statistics</strong> panel character, word, line count, byte size (UTF-8) और non-ASCII characters की संख्या दिखाता है, जो length limits व payload sizing के लिए उपयोगी है। और built-in <strong>validation</strong> टूटा percent-encoding, malformed HTML entities व अन्य समस्याएँ चिह्नित करता है, garbage बनाने के बजाय समस्या समझाता है।</p>
+
+      <p>तीन developer power-features इसे पूरा करते हैं। एक <strong>URL parser</strong> किसी भी पते को protocol, host, port, path, query व fragment में तोड़ता है, और हर query parameter को एक साफ़ table में सूचीबद्ध करता है। एक sandboxed <strong>HTML preview</strong> paste किए markup को एक अलग iframe में scripts बंद करके सुरक्षित रूप से render करता है। और एक searchable <strong>HTML entity reference</strong> आम named entities — arrows, currency symbols, punctuation, maths, copyright व trademark — को एक क्लिक दूर रखता है, उनके decimal व hexadecimal codes copy करने को तैयार। हर परिणाम एक tap में copyable है, एक वैकल्पिक <strong>auto-copy</strong> output को अपने आप clipboard पर डालता है, और एक local <strong>history</strong> हाल की conversions को browser में रखती है।</p>
+
+      <p>चूँकि पूरा toolkit आपके अपने device पर plain JavaScript है, यह तेज़ और तुरंत है, load होने पर offline काम करता है, और पूरी तरह निजी है — आपका paste किया कोई text, URL, token या markup कभी server पर upload नहीं होता, कोई sign-up नहीं, कुछ भी track नहीं होता। यह privacy मायने रखती है: developers को अक्सर ऐसा data encode/decode करना होता है जिसमें internal URLs, tokens या user content होता है, और यह टूल सुनिश्चित करता है कि उनमें से कुछ भी आपके machine से बाहर न जाए। <strong>यह किसके लिए है?</strong> web apps व APIs बनाते व debug करते frontend व backend developers; encoded payloads जाँचते security professionals; special characters का handling जाँचते QA engineers व testers; config व log data संभालते system administrators; और URL encoding, HTML entities व विभिन्न escape formats को समझते students।</p>
+    </div>
+
+    <hr class="info-divider">
+
+    <div class="info-block">
+      <h2>🗂️ Supported Encoding Formats</h2>
+      <div class="we-table-wrap">
+        <table class="we-fmt-table">
+          <thead><tr><th>Format</th><th>Example input</th><th>Example output</th></tr></thead>
+          <tbody>
+            <tr><td>encodeURIComponent</td><td>a b&amp;c</td><td><code>a%20b%26c</code></td></tr>
+            <tr><td>encodeURI</td><td>https://x.com/a b</td><td><code>https://x.com/a%20b</code></td></tr>
+            <tr><td>RFC 1738 (form)</td><td>a b</td><td><code>a+b</code></td></tr>
+            <tr><td>HTML encode</td><td>&lt;a&gt;&amp;"</td><td><code>&amp;lt;a&amp;gt;&amp;amp;&amp;quot;</code></td></tr>
+            <tr><td>HTML decimal</td><td>©</td><td><code>&amp;#169;</code></td></tr>
+            <tr><td>JSON escape</td><td>line"1\n</td><td><code>line\"1\\n</code></td></tr>
+            <tr><td>Base64</td><td>Hi 👋</td><td><code>SGkg8J+Riw==</code></td></tr>
+            <tr><td>Unicode</td><td>A</td><td><code>A</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>💡 Best practices</h3>
+      <ul>
+        <li>Use <strong>encodeURIComponent</strong> for query-string values and <strong>encodeURI</strong> only for a whole URL — mixing them breaks addresses.</li>
+        <li>HTML-encode any user-supplied text before inserting it into a page to prevent broken layout and XSS.</li>
+        <li>Never build SQL by string concatenation; SQL escaping here is a fallback — prefer parameterised queries.</li>
+        <li>Base64 is <em>encoding</em>, not encryption — it does not protect data, only makes it text-safe.</li>
+        <li>When unsure what an encoded blob is, use <strong>Auto-detect</strong> before decoding.</li>
+      </ul>
+
+      <h3>🔒 Privacy</h3>
+      <p>This toolkit is <strong>100% client-side</strong>. Every character you type or paste is processed by JavaScript in your own browser — nothing is sent to any server, there is no account, and your history is stored only in your browser's local storage. Clear it anytime; once loaded, the tool works with no internet connection.</p>
+
+      <h3>🚀 How to use</h3>
       <ol>
-        <li>URL Encode, URL Decode, HTML Encode, या HTML Decode चुनें।</li>
-        <li>अपना टेक्स्ट पेस्ट करें और Convert दबाएं।</li>
-        <li>रिजल्ट कॉपी करें।</li>
+        <li>Pick a <strong>category</strong> (URL, HTML, Code escapes, Base64, Unicode) and the exact <strong>operation</strong>.</li>
+        <li>Type, paste or <strong>upload</strong> your text — the output updates live.</li>
+        <li>Turn on <strong>Batch</strong> to process each line separately, or use <strong>Auto-detect</strong> to decode unknown input.</li>
+        <li>Use the <strong>URL parser</strong>, <strong>HTML preview</strong> or <strong>entity reference</strong> as needed.</li>
+        <li>Copy the output, download it, or save it to history.</li>
       </ol>
+    </div>
+
+    <hr class="info-divider">
+
+    <div class="info-block we-faq">
+      <h2>❓ Frequently Asked Questions</h2>
+      <div id="we-faqList"></div>
+    </div>
+
+    <hr class="info-divider">
+
+    <div class="info-block">
+      <h2>🛠️ Troubleshooting</h2>
+      <ul>
+        <li><strong>URL decode shows an error:</strong> The input has a broken percent sequence (a <code>%</code> not followed by two hex digits). Fix or remove it; the tool points out invalid <code>%</code>.</li>
+        <li><strong>Output looks double-encoded:</strong> The text was already encoded. Decode once, or use Auto-detect, rather than encoding again.</li>
+        <li><strong>HTML entities not decoding:</strong> Make sure you chose an HTML <em>decode</em> operation; the decoder handles named, decimal and hex entities together.</li>
+        <li><strong>Base64 decode fails:</strong> The input is not valid Base64 (wrong characters or length). Check for stray spaces or line breaks.</li>
+        <li><strong>Emoji break after Base64:</strong> This tool is UTF-8 safe; if another system mangled them, re-encode the original text here.</li>
+        <li><strong>Preview is blank:</strong> The HTML preview disables scripts by design; static markup renders, but script-driven content will not.</li>
+        <li><strong>History disappeared:</strong> History lives only in your browser; clearing browser data or private mode will not retain it.</li>
+      </ul>
     </div>
   </div>
 </div>
@@ -101,56 +348,198 @@
 
 <script src="../assets/common.js"></script>
 <script>
-let mode = 'urlEncode';
+(function(){
+  "use strict";
+  function $(id){ return document.getElementById(id); }
+  function pad(s,l){ s=String(s); while(s.length<l)s='0'+s; return s; }
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function toast(m){ if(typeof premToast==='function') premToast(m); }
 
-document.querySelectorAll('.tab-btn').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    mode = btn.dataset.mode;
-  });
-});
+  /* ===== encoding functions ===== */
+  function htmlEncodeFull(s){ var named={'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'};
+    return Array.from(s).map(function(ch){ if(named[ch])return named[ch]; var c=ch.codePointAt(0); return c>127?'&#'+c+';':ch; }).join(''); }
+  function htmlEncodeMin(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+  function htmlDecimal(s){ var core={'&':38,'<':60,'>':62,'"':34,"'":39};
+    return Array.from(s).map(function(ch){ if(core[ch])return '&#'+core[ch]+';'; var c=ch.codePointAt(0); return c>127?'&#'+c+';':ch; }).join(''); }
+  function htmlHex(s){ var core={'&':38,'<':60,'>':62,'"':34,"'":39};
+    return Array.from(s).map(function(ch){ var c=core[ch]||ch.codePointAt(0); return (core[ch]||c>127)?'&#x'+c.toString(16).toUpperCase()+';':ch; }).join(''); }
+  function htmlDecode(s){ var t=document.createElement('textarea'); t.innerHTML=s; return t.value; }
 
-function htmlEncode(str){
-  const div = document.createElement('div');
-  div.textContent = str;
-  return div.innerHTML;
-}
-function htmlDecode(str){
-  const div = document.createElement('div');
-  div.innerHTML = str;
-  return div.textContent;
-}
+  function rfc3986(s){ return encodeURIComponent(s).replace(/[!'()*]/g,function(c){ return '%'+c.charCodeAt(0).toString(16).toUpperCase(); }); }
+  function rfc1738(s){ return rfc3986(s).replace(/%20/g,'+'); }
+  function urlDecode(s){ try{ return decodeURIComponent(s); }catch(e){ return '⚠️ Invalid percent-encoding — check for a "%" not followed by two hex digits.'; } }
+  function urlDecodePlus(s){ try{ return decodeURIComponent(s.replace(/\+/g,' ')); }catch(e){ return '⚠️ Invalid percent-encoding.'; } }
 
-document.getElementById('convertBtn').addEventListener('click', ()=>{
-  const input = document.getElementById('inputText').value;
-  let result = '';
-  try{
-    if(mode === 'urlEncode') result = encodeURIComponent(input);
-    else if(mode === 'urlDecode') result = decodeURIComponent(input);
-    else if(mode === 'htmlEncode') result = htmlEncode(input);
-    else if(mode === 'htmlDecode') result = htmlDecode(input);
-  }catch(err){
-    result = '❌ Error: ' + err.message;
+  function jsonEscape(s){ var j=JSON.stringify(s); return j.slice(1,-1); }
+  function jsonUnescape(s){ try{ return JSON.parse(s.charAt(0)==='"'?s:'"'+s+'"'); }catch(e){ return '⚠️ Invalid JSON string escape.'; } }
+  function xmlEscape(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;'); }
+  function xmlUnescape(s){ return s.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&apos;/g,"'").replace(/&#(\d+);/g,function(m,d){return String.fromCodePoint(+d);}).replace(/&#x([0-9a-fA-F]+);/g,function(m,h){return String.fromCodePoint(parseInt(h,16));}).replace(/&amp;/g,'&'); }
+  function jsEscape(s){ return Array.from(s).map(function(ch){ var c=ch.codePointAt(0);
+    if(ch==='\\')return '\\\\'; if(ch==='"')return '\\"'; if(ch==="'")return "\\'"; if(ch==='\n')return '\\n'; if(ch==='\r')return '\\r'; if(ch==='\t')return '\\t';
+    if(c<32||c===0x7f)return '\\x'+pad(c.toString(16),2); if(c>0x7f){ return c>0xFFFF?'\\u{'+c.toString(16)+'}':'\\u'+pad(c.toString(16),4); } return ch; }).join(''); }
+  function cssEscape(s){ if(window.CSS&&CSS.escape) return CSS.escape(s);
+    return s.replace(/[^a-zA-Z0-9_-]/g,function(ch){ return '\\'+ch.codePointAt(0).toString(16)+' '; }); }
+  function sqlEscape(s){ return "'"+s.replace(/'/g,"''")+"'"; }
+
+  function b64encode(s){ try{ return btoa(unescape(encodeURIComponent(s))); }catch(e){ return '⚠️ Cannot Base64-encode this input.'; } }
+  function b64decode(s){ try{ return decodeURIComponent(escape(atob(s.replace(/\s+/g,'')))); }catch(e){ return '⚠️ Invalid Base64 input.'; } }
+
+  function toUnicode(s){ return s.split('').map(function(c){ return '\\u'+pad(c.charCodeAt(0).toString(16),4); }).join(''); }
+  function fromUnicode(s){ return s.replace(/\\u\{([0-9a-fA-F]+)\}/g,function(m,h){return String.fromCodePoint(parseInt(h,16));}).replace(/\\u([0-9a-fA-F]{4})/g,function(m,h){return String.fromCharCode(parseInt(h,16));}).replace(/\\x([0-9a-fA-F]{2})/g,function(m,h){return String.fromCharCode(parseInt(h,16));}); }
+  function toCodePoints(s){ return Array.from(s).map(function(ch){ return 'U+'+pad(ch.codePointAt(0).toString(16).toUpperCase(),4); }).join(' '); }
+
+  var CATS=[['url','URL'],['html','HTML'],['code','Code Escapes'],['base64','Base64'],['unicode','Unicode']];
+  var OPS={
+    url:[['encURIComp','encodeURIComponent',encodeURIComponent],['encURI','encodeURI',encodeURI],['rfc3986','RFC 3986',rfc3986],['rfc1738','RFC 1738 (form +)',rfc1738],['urlDec','URL Decode',urlDecode],['urlDecPlus','URL Decode (+ as space)',urlDecodePlus]],
+    html:[['htmlFull','HTML Encode (full)',htmlEncodeFull],['htmlMin','HTML Encode (minimal)',htmlEncodeMin],['htmlDec','Decimal entities',htmlDecimal],['htmlHex','Hex entities',htmlHex],['htmlDecode','HTML Decode',htmlDecode]],
+    code:[['jsonEsc','JSON escape',jsonEscape],['jsonUn','JSON unescape',jsonUnescape],['xmlEsc','XML escape',xmlEscape],['xmlUn','XML unescape',xmlUnescape],['jsEsc','JavaScript escape',jsEscape],['cssEsc','CSS escape',cssEscape],['sqlEsc','SQL escape',sqlEscape]],
+    base64:[['b64enc','Base64 encode',b64encode],['b64dec','Base64 decode',b64decode]],
+    unicode:[['toUni','Text → \\uXXXX',toUnicode],['fromUni','\\uXXXX → Text',fromUnicode],['cps','Code points (U+)',toCodePoints]]
+  };
+  var state={ cat:'url', op:'encURIComp' };
+  function opFn(){ var list=OPS[state.cat]; for(var i=0;i<list.length;i++) if(list[i][0]===state.op) return list[i]; return list[0]; }
+
+  /* ===== render ===== */
+  function convert(){
+    var inp=$('inputText').value; var fn=opFn()[2]; var out;
+    var msg=$('we-msg'); msg.textContent=''; msg.className='we-msg';
+    try{
+      if($('we-batch').checked){ out=inp.split(/\r?\n/).map(function(l){ return fn(l); }).join('\n'); }
+      else out=fn(inp);
+    }catch(e){ out='⚠️ '+e.message; }
+    $('outputText').value=out;
+    if(typeof out==='string' && out.indexOf('⚠️')===0) msg.textContent=out;
+    // validation hints
+    if(state.op==='urlDec'||state.op==='urlDecPlus'){ if(/%(?![0-9A-Fa-f]{2})/.test(inp)&&inp){ msg.textContent='⚠️ Input contains an invalid "%" sequence.'; } }
+    updateStats(); parseURL(); if($('we-autocopy').checked && out && typeof copyText==='function') copyText(out);
   }
-  document.getElementById('outputText').value = result;
-});
 
-document.getElementById('clearBtn').addEventListener('click', ()=>{
-  document.getElementById('inputText').value = '';
-  document.getElementById('outputText').value = '';
-});
+  function utf8bytes(s){ try{ return window.TextEncoder ? new TextEncoder().encode(s).length : unescape(encodeURIComponent(s)).length; }catch(e){ return s.length; } }
+  function updateStats(){ var s=$('inputText').value;
+    var chars=Array.from(s).length; var words=(s.trim().match(/\S+/g)||[]).length; var lines=s?s.split(/\r?\n/).length:0;
+    var bytes=utf8bytes(s);
+    var uni=Array.from(s).filter(function(c){return c.codePointAt(0)>127;}).length;
+    $('we-stats').innerHTML=[['Characters',chars],['Words',words],['Lines',lines],['Bytes (UTF-8)',bytes],['Non-ASCII',uni]].map(function(x){ return '<div class="we-stat"><b>'+x[1]+'</b><span>'+x[0]+'</span></div>'; }).join('');
+  }
 
-document.getElementById('copyBtn').addEventListener('click', (e)=>{
-  copyText(document.getElementById('outputText').value, e.target);
-});
+  function parseURL(){ var v=$('inputText').value.trim(); var out=$('we-parseOut'), pw=$('we-paramsWrap');
+    if(!v || !/^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(v)){ out.innerHTML='<p style="font-size:.82rem;color:var(--text-dim)">Enter a full URL (with a scheme like https://) to see its parts.</p>'; pw.innerHTML=''; return; }
+    var u; try{ u=new URL(v); }catch(e){ out.innerHTML='<p style="font-size:.82rem;color:#f87171">⚠️ Not a valid URL.</p>'; pw.innerHTML=''; return; }
+    var rows=[['Protocol',u.protocol],['Host',u.hostname],['Port',u.port||'(default)'],['Path',u.pathname],['Query',u.search||'(none)'],['Fragment',u.hash||'(none)']];
+    out.innerHTML=rows.map(function(r){ return '<div class="we-parse-row"><span class="k">'+r[0]+'</span><span class="v">'+esc(r[1])+'</span></div>'; }).join('');
+    var params=[]; u.searchParams.forEach(function(val,key){ params.push([key,val]); });
+    pw.innerHTML=params.length?'<div class="we-tbl-wrap" style="margin-top:10px"><table class="we-tbl"><thead><tr><th>Parameter</th><th>Value</th></tr></thead><tbody>'+params.map(function(p){ return '<tr><td>'+esc(p[0])+'</td><td>'+esc(decodeURIComponent(p[1]))+'</td></tr>'; }).join('')+'</tbody></table></div>':'';
+  }
+
+  /* ===== auto-detect ===== */
+  function autoDetect(){ var v=$('inputText').value.trim(); if(!v){toast('Enter something first.');return;}
+    var pick;
+    if(/%[0-9A-Fa-f]{2}/.test(v)){ pick=['url','urlDec']; }
+    else if(/&(#\d+|#x[0-9a-fA-F]+|[a-zA-Z]+);/.test(v)){ pick=['html','htmlDecode']; }
+    else if(/\\u[0-9a-fA-F]{4}/.test(v)){ pick=['unicode','fromUni']; }
+    else if(/^[A-Za-z0-9+/\s]+={0,2}$/.test(v)&&v.replace(/\s/g,'').length%4===0&&v.length>=4){ pick=['base64','b64dec']; }
+    else { toast('Could not detect a known encoding.'); return; }
+    state.cat=pick[0]; state.op=pick[1]; buildCats(); buildOps(); convert(); toast('Detected & decoded.');
+  }
+
+  /* ===== HTML preview ===== */
+  function renderPreview(){ var html=$('inputText').value; try{ $('we-preview').srcdoc=html; }catch(e){ $('we-preview').srcdoc='<p style="color:red">Cannot render.</p>'; } }
+
+  /* ===== files / export ===== */
+  function download(name,content,mime){ if(typeof downloadText==='function') downloadText(name,content,mime); }
+  function exportTXT(){ download('encoded.txt',$('outputText').value,'text/plain'); }
+  function exportHTML(){ download('encoded.html',$('outputText').value,'text/html'); }
+  function exportCSV(){ var lines=$('outputText').value.split(/\r?\n/); var csv=lines.map(function(l){return '"'+l.replace(/"/g,'""')+'"';}).join('\n'); download('encoded.csv',csv,'text/csv'); }
+  function exportJSON(){ download('encoded.json',JSON.stringify({operation:opFn()[1],input:$('inputText').value,output:$('outputText').value},null,2),'application/json'); }
+
+  /* ===== history ===== */
+  var HKEY='weHistory';
+  function loadH(){ try{ return JSON.parse(localStorage.getItem(HKEY)||'[]'); }catch(e){ return []; } }
+  function saveH(a){ try{ localStorage.setItem(HKEY,JSON.stringify(a.slice(0,50))); }catch(e){} }
+  function addHist(){ var inp=$('inputText').value, out=$('outputText').value; if(!inp){toast('Nothing to save.');return;}
+    var a=loadH(); a.unshift({t:Date.now(),op:opFn()[1],inp:inp.slice(0,200),out:out.slice(0,200)}); saveH(a); renderHist(); toast('Saved.'); }
+  function renderHist(){ var a=loadH(),box=$('we-histList'); $('we-histCount').textContent=a.length?a.length+' saved':'';
+    if(!a.length){ box.innerHTML='<div class="we-hist-empty">No saved conversions yet.</div>'; return; }
+    box.innerHTML=a.map(function(h,i){ return '<div class="we-hist-item"><div class="m"><b>'+esc(h.op)+'</b><span class="s">'+esc(h.out||h.inp)+'</span></div><button type="button" data-hi="'+i+'" aria-label="Delete">✕</button></div>'; }).join('');
+    box.querySelectorAll('button[data-hi]').forEach(function(b){ b.addEventListener('click',function(){ var a=loadH(); a.splice(+b.dataset.hi,1); saveH(a); renderHist(); }); });
+    box.querySelectorAll('.we-hist-item .m').forEach(function(el,i){ el.style.cursor='pointer'; el.addEventListener('click',function(){ var a=loadH(); if(a[i]){ $('inputText').value=a[i].inp; convert(); } }); }); }
+  function histJSON(){ var a=loadH(); if(!a.length){toast('History empty.');return;} download('encoding-history.json',JSON.stringify(a,null,2),'application/json'); }
+  function histClear(){ if(!loadH().length)return; if(confirm('Clear all saved conversions?')){ saveH([]); renderHist(); } }
+
+  /* ===== entity reference ===== */
+  var ENTS=[['&','amp',38],['<','lt',60],['>','gt',62],['"','quot',34],["'",'apos',39],[' ','nbsp',160],['¢','cent',162],['£','pound',163],['¥','yen',165],['€','euro',8364],['©','copy',169],['®','reg',174],['™','trade',8482],['§','sect',167],['¶','para',182],['•','bull',8226],['…','hellip',8230],['–','ndash',8211],['—','mdash',8212],['‘','lsquo',8216],['’','rsquo',8217],['“','ldquo',8220],['”','rdquo',8221],['°','deg',176],['±','plusmn',177],['×','times',215],['÷','divide',247],['¼','frac14',188],['½','frac12',189],['¾','frac34',190],['←','larr',8592],['→','rarr',8594],['↑','uarr',8593],['↓','darr',8595],['↔','harr',8596],['⇒','rArr',8658],['√','radic',8730],['∞','infin',8734],['≠','ne',8800],['≤','le',8804],['≥','ge',8805],['♥','hearts',9829],['★','starf',9733],['✓','check',10003],['✗','cross',10007]];
+  function buildEnts(filter){ var tb=$('we-entTable').querySelector('tbody'); var q=(filter||'').toLowerCase();
+    tb.innerHTML=ENTS.filter(function(e){ return !q || e[1].indexOf(q)>=0 || e[0]===filter || String(e[2]).indexOf(q)>=0; }).map(function(e){
+      return '<tr><td class="ch">'+esc(e[0])+'</td><td>&amp;'+e[1]+';</td><td class="cp" data-c="&amp;#'+e[2]+';">&amp;#'+e[2]+';</td><td class="cp" data-c="&amp;#x'+e[2].toString(16).toUpperCase()+';">&amp;#x'+e[2].toString(16).toUpperCase()+';</td></tr>'; }).join('');
+    tb.querySelectorAll('.cp').forEach(function(td){ td.addEventListener('click',function(){ if(typeof copyText==='function') copyText(td.dataset.c,td); }); }); }
+
+  /* ===== FAQ ===== */
+  var FAQ=[
+    ["What is URL encoding?","URL encoding (percent-encoding) replaces characters that are unsafe or reserved in a web address with a % followed by their hex code — for example a space becomes %20 and & becomes %26. It keeps query strings and paths from breaking. This tool encodes and decodes it several ways.","URL encoding क्या है?","URL encoding (percent-encoding) उन characters को बदलती है जो web address में असुरक्षित या आरक्षित हैं, % और उनके hex code से — जैसे space %20 और & %26 बन जाता है। यह query strings व paths को टूटने से बचाती है। यह टूल इसे कई तरीकों से encode व decode करता है।"],
+    ["What is the difference between encodeURI and encodeURIComponent?","encodeURI encodes a whole URL and leaves characters like / : ? & intact, so the address still works. encodeURIComponent encodes a single value and also escapes those characters, which is what you want for a query-string parameter. Use the right one for the context.","encodeURI और encodeURIComponent में क्या अंतर है?","encodeURI पूरे URL को encode करता है और / : ? & जैसे characters को अछूता छोड़ता है, ताकि पता काम करता रहे। encodeURIComponent एक एकल मान encode करता है और उन characters को भी escape करता है, जो query-string parameter के लिए चाहिए। संदर्भ के अनुसार सही चुनें।"],
+    ["What is RFC 3986 vs RFC 1738 encoding?","RFC 3986 is the modern URI standard; this tool's RFC 3986 mode also escapes ! ' ( ) * that encodeURIComponent leaves. RFC 1738 is the older form-encoding style that turns spaces into + (used in application/x-www-form-urlencoded bodies).","RFC 3986 बनाम RFC 1738 encoding क्या है?","RFC 3986 आधुनिक URI मानक है; इस टूल का RFC 3986 mode ! ' ( ) * को भी escape करता है जिन्हें encodeURIComponent छोड़ता है। RFC 1738 पुरानी form-encoding शैली है जो spaces को + बनाती है (application/x-www-form-urlencoded bodies में)।"],
+    ["What is HTML entity encoding?","HTML encoding converts characters that have special meaning in HTML — like <, >, & and quotes — into entities such as &lt;, &gt;, &amp; and &quot;, so they display as text instead of being parsed as markup. It is essential for showing user text safely.","HTML entity encoding क्या है?","HTML encoding उन characters को बदलती है जिनका HTML में विशेष अर्थ है — जैसे <, >, & व quotes — &lt;, &gt;, &amp; व &quot; जैसी entities में, ताकि वे markup की तरह parse होने के बजाय text के रूप में दिखें। user text सुरक्षित दिखाने के लिए यह ज़रूरी है।"],
+    ["What are named, decimal and hex entities?","The same character can be written three ways: a named entity (&copy;), a decimal numeric entity (&#169;) or a hexadecimal entity (&#xA9;). This tool can output decimal or hex, and its decoder understands all three — even mixed together.","named, decimal व hex entities क्या हैं?","एक ही character तीन तरह लिखा जा सकता है: named entity (&copy;), decimal numeric entity (&#169;) या hexadecimal entity (&#xA9;)। यह टूल decimal या hex output कर सकता है, और इसका decoder तीनों को — मिश्रित भी — समझता है।"],
+    ["Can it auto-detect the encoding?","Yes. The Auto-detect button inspects your input and decodes it as URL, HTML, Base64 or Unicode automatically, which is handy when you have pasted an encoded blob and are not sure what it is.","क्या यह encoding अपने आप पहचान सकता है?","हाँ। Auto-detect बटन आपके input की जाँच करके उसे URL, HTML, Base64 या Unicode के रूप में अपने आप decode करता है, जो तब उपयोगी है जब आपने कोई encoded blob paste किया हो और पता न हो कि वह क्या है।"],
+    ["Does it handle JSON, XML, JavaScript, CSS and SQL escaping?","Yes. Under Code Escapes you can JSON-escape and unescape, XML-escape and unescape, JavaScript-escape (to \\n, \\xNN, \\uNNNN), CSS-escape identifiers, and SQL-escape by doubling single quotes.","क्या यह JSON, XML, JavaScript, CSS व SQL escaping संभालता है?","हाँ। Code Escapes के तहत आप JSON escape/unescape, XML escape/unescape, JavaScript escape (\\n, \\xNN, \\uNNNN में), CSS identifiers escape, और single quotes दोगुना करके SQL escape कर सकते हैं।"],
+    ["Is the Base64 UTF-8 safe?","Yes. The Base64 encoder and decoder handle UTF-8 correctly, so emoji and non-Latin scripts survive the round trip without corruption — unlike a naive btoa/atob.","क्या Base64 UTF-8 safe है?","हाँ। Base64 encoder व decoder UTF-8 सही ढंग से संभालते हैं, इसलिए emoji व गैर-Latin scripts round trip में बिना बिगड़े बचे रहते हैं — साधारण btoa/atob के विपरीत।"],
+    ["Is Base64 a form of encryption?","No. Base64 is encoding, not encryption — it only makes binary or special text safe to transmit as plain characters. Anyone can decode it, so never use it to hide secrets.","क्या Base64 encryption का एक रूप है?","नहीं। Base64 encoding है, encryption नहीं — यह केवल binary या special text को plain characters के रूप में भेजने योग्य बनाता है। कोई भी इसे decode कर सकता है, इसलिए इसे secrets छिपाने के लिए कभी इस्तेमाल न करें।"],
+    ["What do the Unicode tools do?","They convert text to \\uXXXX escape sequences and back, and can list every character's U+ code point. This is useful for embedding non-ASCII characters in source code or debugging encoding issues.","Unicode tools क्या करते हैं?","वे text को \\uXXXX escape sequences में व वापस बदलते हैं, और हर character का U+ code point सूचीबद्ध कर सकते हैं। यह source code में non-ASCII characters embed करने या encoding समस्याएँ debug करने के लिए उपयोगी है।"],
+    ["Can I process many lines at once?","Yes. Enable Batch mode and each line of your input is transformed independently — perfect for a column of values from a log or spreadsheet. You can then copy or download the whole result.","क्या मैं एक साथ कई पंक्तियाँ process कर सकता हूँ?","हाँ। Batch mode चालू करें और आपके input की हर पंक्ति स्वतंत्र रूप से बदलती है — किसी log या spreadsheet के column के लिए बढ़िया। फिर आप पूरा परिणाम copy या download कर सकते हैं।"],
+    ["Can I upload and download files?","Yes. Upload a TXT, CSV, JSON, HTML, XML, JS or CSS file straight into the input, and download the output as TXT, HTML, CSV or JSON. Everything stays on your device.","क्या मैं files upload व download कर सकता हूँ?","हाँ। एक TXT, CSV, JSON, HTML, XML, JS या CSS file सीधे input में upload करें, और output को TXT, HTML, CSV या JSON के रूप में download करें। सब कुछ आपके device पर रहता है।"],
+    ["What does the URL parser show?","Paste a full URL and it breaks it into protocol, host, port, path, query and fragment, and lists every query parameter with its decoded value in a table — great for debugging links and API calls.","URL parser क्या दिखाता है?","एक पूरा URL paste करें और यह उसे protocol, host, port, path, query व fragment में तोड़ता है, और हर query parameter को उसके decoded मान के साथ एक table में सूचीबद्ध करता है — links व API calls debug करने के लिए बढ़िया।"],
+    ["Is the HTML preview safe?","Yes. It renders your markup inside a sandboxed iframe with scripts disabled, so you can see how a fragment looks without any risk of the pasted code running.","क्या HTML preview सुरक्षित है?","हाँ। यह आपके markup को एक sandboxed iframe में scripts बंद करके render करता है, ताकि आप paste किए code के चलने के किसी जोखिम के बिना देख सकें कि fragment कैसा दिखता है।"],
+    ["What character statistics are shown?","For your input it shows the character count, word count, line count, UTF-8 byte size and the number of non-ASCII characters — useful for length limits, payload sizing and spotting hidden characters.","कौन-से character statistics दिखते हैं?","आपके input के लिए यह character count, word count, line count, UTF-8 byte size और non-ASCII characters की संख्या दिखाता है — length limits, payload sizing व छिपे characters पहचानने के लिए उपयोगी।"],
+    ["How does validation work?","When decoding, the tool checks for broken percent-encoding (a % not followed by two hex digits), invalid Base64 and malformed escapes, and shows a clear message instead of producing garbage output.","Validation कैसे काम करता है?","decode करते समय टूल टूटा percent-encoding (% जिसके बाद दो hex अंक नहीं), अमान्य Base64 व malformed escapes जाँचता है, और garbage output बनाने के बजाय स्पष्ट संदेश दिखाता है।"],
+    ["Can I copy the output automatically?","Yes. Turn on Auto-copy and the output is placed on your clipboard whenever it changes. You can also copy any value manually with the Copy button or by clicking entity codes.","क्या मैं output अपने आप copy कर सकता हूँ?","हाँ। Auto-copy चालू करें और output बदलते ही clipboard पर रख दिया जाता है। आप Copy बटन से या entity codes पर क्लिक करके भी किसी मान को manually copy कर सकते हैं।"],
+    ["Is my data private?","Completely. All processing runs in your browser with JavaScript; nothing is uploaded, there is no login, and your history stays only on your device. The tool works offline once loaded — ideal for sensitive URLs, tokens or user content.","क्या मेरा डेटा निजी है?","पूरी तरह। सभी processing आपके browser में JavaScript से चलती है; कुछ भी upload नहीं होता, कोई login नहीं, और history केवल आपके device पर रहती है। load होने के बाद टूल offline काम करता है — संवेदनशील URLs, tokens या user content के लिए आदर्श।"],
+    ["Is the tool free?","Yes, completely free with no sign-up, no limits and no watermarks — part of ApneSoftware's suite of free, privacy-friendly, browser-based developer tools.","क्या टूल मुफ़्त है?","हाँ, पूरी तरह मुफ़्त — कोई sign-up नहीं, कोई सीमा नहीं, कोई watermark नहीं — ApneSoftware के मुफ़्त, privacy-friendly, browser-आधारित developer टूल्स का हिस्सा।"],
+    ["Who is this tool for?","Frontend and backend developers, security professionals, QA engineers and testers, system administrators, and students — anyone who encodes or decodes text for URLs, HTML, JSON, Base64 or other web formats.","यह टूल किसके लिए है?","Frontend व backend developers, security professionals, QA engineers व testers, system administrators, और students — कोई भी जो URLs, HTML, JSON, Base64 या अन्य web formats के लिए text encode या decode करता है।"]
+  ];
+  function buildFAQ(){ var list=$('we-faqList'); if(!list)return;
+    FAQ.forEach(function(f){ var d=document.createElement('details'); d.innerHTML='<summary>'+esc(f[0])+' / '+esc(f[2])+'</summary><div class="we-faq-a"><p>'+esc(f[1])+'</p><p style="margin-top:8px">'+esc(f[3])+'</p></div>'; list.appendChild(d); });
+    try{ $('faqSchema').textContent=JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:FAQ.map(function(f){return {'@type':'Question',name:f[0],acceptedAnswer:{'@type':'Answer',text:f[1]}};})}); }catch(e){} }
+
+  /* ===== build UI ===== */
+  function buildCats(){ $('we-cats').innerHTML=CATS.map(function(c){ return '<button type="button" class="we-cat" data-cat="'+c[0]+'" aria-pressed="'+(c[0]===state.cat)+'">'+c[1]+'</button>'; }).join('');
+    $('we-cats').querySelectorAll('button').forEach(function(b){ b.addEventListener('click',function(){ state.cat=b.dataset.cat; state.op=OPS[state.cat][0][0]; buildCats(); buildOps(); convert(); }); }); }
+  function buildOps(){ $('we-ops').innerHTML=OPS[state.cat].map(function(o){ return '<button type="button" class="we-op" data-op="'+o[0]+'" aria-pressed="'+(o[0]===state.op)+'">'+esc(o[1])+'</button>'; }).join('');
+    $('we-ops').querySelectorAll('button').forEach(function(b){ b.addEventListener('click',function(){ state.op=b.dataset.op; buildOps(); convert(); }); }); }
+
+  function init(){
+    buildCats(); buildOps(); buildEnts(''); buildFAQ(); renderHist();
+    $('inputText').addEventListener('input',function(){ if($('we-auto').checked) convert(); else { updateStats(); parseURL(); } });
+    $('convertBtn').addEventListener('click',convert);
+    $('clearBtn').addEventListener('click',function(){ $('inputText').value=''; $('outputText').value=''; $('we-msg').textContent=''; updateStats(); parseURL(); });
+    $('copyBtn').addEventListener('click',function(e){ if(typeof copyText==='function') copyText($('outputText').value,e.target); });
+    $('we-swap').addEventListener('click',function(){ $('inputText').value=$('outputText').value; convert(); });
+    $('we-paste').addEventListener('click',function(){ if(navigator.clipboard&&navigator.clipboard.readText){ navigator.clipboard.readText().then(function(t){ $('inputText').value=t; convert(); }).catch(function(){ toast('Clipboard blocked — paste manually.'); }); } else toast('Paste not supported — use Ctrl+V.'); });
+    $('we-autodetect').addEventListener('click',autoDetect);
+    $('we-upload').addEventListener('click',function(){ $('we-file').click(); });
+    $('we-file').addEventListener('change',function(e){ var f=e.target.files[0]; if(!f)return; var r=new FileReader(); r.onload=function(){ $('inputText').value=String(r.result); convert(); }; r.readAsText(f); });
+    $('we-batch').addEventListener('change',convert);
+    $('we-dlTxt').addEventListener('click',exportTXT); $('we-dlHtml').addEventListener('click',exportHTML);
+    $('we-dlCsv').addEventListener('click',exportCSV); $('we-dlJson').addEventListener('click',exportJSON);
+    $('we-saveHist').addEventListener('click',addHist);
+    $('we-renderPreview').addEventListener('click',renderPreview);
+    $('we-entSearch').addEventListener('input',function(){ buildEnts($('we-entSearch').value); });
+    $('we-histJson').addEventListener('click',histJSON); $('we-histClear').addEventListener('click',histClear);
+    convert();
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+
+  /* ===== test hooks ===== */
+  window.__weHooks={ run:function(cat,op,input){ state.cat=cat; state.op=op; $('inputText').value=input; var fn=opFn()[2]; return fn(input); },
+    fns:{htmlEncodeFull:htmlEncodeFull,htmlEncodeMin:htmlEncodeMin,htmlDecimal:htmlDecimal,htmlHex:htmlHex,htmlDecode:htmlDecode,rfc3986:rfc3986,rfc1738:rfc1738,urlDecode:urlDecode,jsonEscape:jsonEscape,jsonUnescape:jsonUnescape,xmlEscape:xmlEscape,jsEscape:jsEscape,sqlEscape:sqlEscape,b64encode:b64encode,b64decode:b64decode,toUnicode:toUnicode,fromUnicode:fromUnicode,toCodePoints:toCodePoints},
+    autoDetect:autoDetect, convert:convert };
+})();
 </script>
 <!-- Default Statcounter code for Apne Software
 https://apnesoftware.com -->
 <script type="text/javascript">
-var sc_project=13334460; 
-var sc_invisible=1; 
-var sc_security="a5854dc7"; 
+var sc_project=13334460;
+var sc_invisible=1;
+var sc_security="a5854dc7";
 </script>
 <script type="text/javascript"
 src="https://www.statcounter.com/counter/counter.js"
