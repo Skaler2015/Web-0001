@@ -4,30 +4,123 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
+<meta name="description" content="Free online Timestamp Converter — convert Unix seconds/milliseconds/microseconds/nanoseconds, JavaScript, Java, .NET ticks, Windows FileTime, Apple Cocoa and Excel serial dates to and from human-readable dates. Get ISO 8601, RFC 2822, HTTP, ordinal and ISO-week dates, convert across 16+ timezones, calculate date differences, batch-convert lists, see calendar facts, and copy programming examples for JS, Python, Java, PHP, Go, Rust, Swift, Kotlin and SQL. 100% private, browser-only, offline-capable, no signup.">
+<meta name="keywords" content="timestamp converter, unix timestamp, epoch converter, milliseconds to date, ISO 8601, RFC 2822, timezone converter, date difference, .NET ticks, windows filetime, excel date, batch timestamp, epoch time developer tool">
 <link rel="canonical" href="https://apnesoftware.com/tools/timestamp-converter.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Timestamp Converter | ApneSoftware">
-<meta property="og:description" content="Unix timestamp to/from human-readable date. Free online tool — no signup required.">
+<meta property="og:title" content="Timestamp Converter — Unix, ISO, Timezones, Diff & Code | ApneSoftware">
+<meta property="og:description" content="Convert Unix/JS/Java/.NET/FileTime/Excel timestamps to dates and back, across 16+ timezones, with ISO/RFC formats, date difference, batch mode, calendar facts and code snippets. Free, private, offline.">
 <meta property="og:url" content="https://apnesoftware.com/tools/timestamp-converter.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Timestamp Converter | ApneSoftware">
-<meta name="twitter:description" content="Unix timestamp to/from human-readable date. Free online tool — no signup required.">
+<meta name="twitter:title" content="Timestamp Converter — Unix, ISO, Timezones, Diff & Code | ApneSoftware">
+<meta name="twitter:description" content="Convert Unix/JS/Java/.NET/FileTime/Excel timestamps to dates and back, across 16+ timezones, with ISO/RFC formats, date difference, batch mode and code snippets. Free, private, offline.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Timestamp Converter","description":"Unix timestamp to/from human-readable date. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/timestamp-converter.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Timestamp Converter","description":"Convert Unix, JavaScript, Java, .NET ticks, Windows FileTime, Apple Cocoa and Excel timestamps to and from human-readable dates, across 16+ timezones, with ISO 8601 / RFC 2822 / HTTP / ordinal / ISO-week formats, date-difference calculator, batch conversion, calendar facts and programming examples.","url":"https://apnesoftware.com/tools/timestamp-converter.html","applicationCategory":"DeveloperApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"featureList":["Unix seconds/milliseconds/microseconds/nanoseconds","JavaScript, Java, .NET ticks, Windows FileTime, Apple Cocoa, Excel serial","ISO 8601, RFC 2822, HTTP, cookie, ordinal, ISO week date","Timezone conversion across 16+ zones","Date to timestamp","Date difference calculator","Batch conversion","Calendar facts (week, quarter, day, leap year)","Programming examples for 10 languages","Copy, export TXT/CSV/JSON/PDF and history"],"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Timestamp Converter","url":"https://apnesoftware.com/tools/timestamp-converter.html","description":"Browser-based timestamp and date-time conversion tool with multiple timestamp and date formats, timezone conversion, date difference, batch mode, calendar facts and code examples.","inLanguage":["en","hi"],"isPartOf":{"@type":"WebSite","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apnesoftware.com/index.html"},{"@type":"ListItem","position":2,"name":"Developer & Utility","item":"https://apnesoftware.com/index.html#cat-developer"},{"@type":"ListItem","position":3,"name":"Timestamp Converter","item":"https://apnesoftware.com/tools/timestamp-converter.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to convert a Unix timestamp to a date","description":"Convert a timestamp to a human-readable date and back.","step":[{"@type":"HowToStep","name":"Enter a timestamp","text":"Paste a Unix timestamp or click Use Current Timestamp; the unit is auto-detected."},{"@type":"HowToStep","name":"Read the formats","text":"See local, UTC, ISO 8601, RFC and other date formats plus every timestamp format."},{"@type":"HowToStep","name":"Convert timezones or a date","text":"Pick a timezone, or choose a date and time to get its timestamp."},{"@type":"HowToStep","name":"Copy or export","text":"Copy any value, batch-convert a list, or export to TXT, CSV, JSON or PDF."}]}
+</script>
+<script type="application/ld+json" id="faqSchema"></script>
 <meta name="color-scheme" content="dark">
-<title>Timestamp Converter | ApneSoftware</title>
+<title>Timestamp Converter — Unix, ISO, Timezones, Diff &amp; Code | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-  .result-row{
-    display:flex;justify-content:space-between;align-items:center;background:var(--surface-2);
-    border:1px solid var(--border);border-radius:8px;padding:10px 14px;margin-bottom:8px;font-size:.9rem;
-  }
-  .result-row .lbl{color:var(--text-dim);font-size:.8rem}
-  .result-row .val{font-family:'Consolas','Courier New',monospace}
+  /* ===== Timestamp Converter — scoped tc- prefix ===== */
+  .tc-breadcrumb{font-size:.82rem;color:var(--text-dim);margin-bottom:14px}
+  .tc-breadcrumb a{color:#c4b5fd;text-decoration:none}
+  .tc-breadcrumb a:hover{text-decoration:underline}
+  .tc-breadcrumb span{opacity:.6;margin:0 6px}
+
+  .tc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+  #tc-leftSide,#tc-rightSide{min-width:0}
+
+  .tc-card{background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:16px}
+  .tc-card h3{font-size:.95rem;margin:0 0 12px;display:flex;align-items:center;gap:8px}
+  .tc-card h3 .tc-hint{font-size:.72rem;font-weight:500;color:var(--text-dim);margin-left:auto}
+
+  .tc-field{margin-bottom:12px}
+  .tc-field:last-child{margin-bottom:0}
+  .tc-field label{display:block;font-size:.82rem;color:var(--text-dim);margin-bottom:5px;font-weight:600}
+  .tc-field input,.tc-field select,.tc-field textarea{width:100%!important;min-width:0;padding:10px 12px!important;border-radius:9px!important;border:1px solid var(--border)!important;background:var(--surface-2)!important;color:var(--text)!important;font-size:.92rem!important;font-family:inherit;outline:none;transition:.15s}
+  .tc-field input:focus,.tc-field select:focus,.tc-field textarea:focus{border-color:var(--accent)!important;box-shadow:0 0 0 3px rgba(124,92,252,.15)}
+  .tc-field input[aria-invalid="true"]{border-color:#f87171!important}
+  .tc-field textarea{min-height:96px!important;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;resize:vertical}
+
+  .tc-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .tc-row>*{min-width:0}
+
+  .tc-msg{font-size:.82rem;margin-top:8px;min-height:1em;color:#f87171}
+  .tc-msg.ok{color:#34d399}
+
+  /* result rows */
+  .result-row,.tc-row-line{display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:9px 12px;margin-bottom:7px}
+  .result-row .lbl,.tc-row-line .lbl{color:var(--text-dim);font-size:.78rem;flex:0 0 auto}
+  .result-row .val,.tc-row-line .val{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.83rem;text-align:right;overflow-x:auto;white-space:nowrap;min-width:0;color:#c4b5fd;cursor:pointer}
+  .tc-row-line .val:hover{color:#fff}
+  .tc-copyhint{font-size:.68rem;color:var(--text-dim);margin-top:2px}
+
+  .tc-facts{display:flex;flex-wrap:wrap;gap:8px}
+  .tc-facts .tc-fact{flex:1 1 auto;min-width:-moz-fit-content;min-width:fit-content;background:var(--surface-2);border:1px solid var(--border);border-radius:9px;padding:9px 12px;text-align:center}
+  .tc-facts .tc-fact b{display:block;color:#c4b5fd;font-size:1.05rem;white-space:nowrap}
+  .tc-facts .tc-fact span{font-size:.72rem;color:var(--text-dim)}
+
+  .tc-copy-row,.tc-export-row{display:flex;gap:8px;flex-wrap:wrap}
+  .tc-copy-row button,.tc-export-row button{flex:1 1 auto;min-width:92px;padding:9px 10px;border-radius:9px;border:1px solid var(--border);background:var(--surface-2);color:var(--text);font-size:.82rem;font-weight:600;cursor:pointer;transition:.15s}
+  .tc-copy-row button:hover,.tc-export-row button:hover{border-color:var(--accent);color:#c4b5fd}
+
+  .tc-lang-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+  .tc-lang{padding:5px 11px;border-radius:16px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-dim);font-size:.78rem;font-weight:600;cursor:pointer}
+  .tc-lang[aria-pressed="true"]{background:rgba(124,92,252,.22);border-color:var(--accent);color:#c4b5fd}
+  .tc-code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8rem;line-height:1.6;background:#0b0618;border:1px solid var(--border);border-radius:9px;padding:12px 13px;color:#d6ccff;overflow-x:auto;white-space:pre;margin:0}
+
+  .tc-batch-table{width:100%;border-collapse:collapse;font-size:.8rem}
+  .tc-batch-table th,.tc-batch-table td{padding:7px 8px;border-bottom:1px solid var(--border);text-align:left;white-space:nowrap}
+  .tc-batch-table th{color:#c4b5fd;font-size:.72rem;text-transform:uppercase;letter-spacing:.03em}
+  .tc-batch-table td{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--text-dim)}
+  .tc-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px}
+
+  .tc-hist-list{display:flex;flex-direction:column;gap:8px;max-height:230px;overflow-y:auto}
+  .tc-hist-item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 11px;border-radius:9px;border:1px solid var(--border);background:var(--surface-2);font-size:.8rem}
+  .tc-hist-item .m{min-width:0;font-family:ui-monospace,monospace}
+  .tc-hist-item .m b{color:#c4b5fd}
+  .tc-hist-item .s{color:var(--text-dim);font-size:.72rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+  .tc-hist-item button{background:none;border:none;color:#f87171;cursor:pointer;font-size:.9rem;padding:2px 6px;flex-shrink:0}
+  .tc-hist-empty{font-size:.82rem;color:var(--text-dim);text-align:center;padding:14px}
+
+  .tc-note{background:rgba(124,92,252,.08);border:1px solid rgba(124,92,252,.25);border-radius:9px;padding:11px 13px;font-size:.82rem;color:var(--text-dim);margin-top:14px;line-height:1.55}
+
+  .tc-related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:6px}
+  .tc-related-grid a{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:var(--surface-2);color:var(--text);text-decoration:none;font-size:.88rem;font-weight:600;transition:.15s}
+  .tc-related-grid a:hover{border-color:var(--accent);color:#c4b5fd;transform:translateY(-2px)}
+  .tc-related-grid a .ri{font-size:1.2rem}
+
+  .tc-faq details{border:1px solid var(--border);border-radius:10px;margin-bottom:9px;background:var(--surface-2);overflow:hidden}
+  .tc-faq summary{padding:13px 15px;cursor:pointer;font-weight:600;font-size:.92rem;list-style:none;position:relative;padding-right:40px}
+  .tc-faq summary::-webkit-details-marker{display:none}
+  .tc-faq summary::after{content:'+';position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:1.2rem;color:var(--accent)}
+  .tc-faq details[open] summary::after{content:'−'}
+  .tc-faq details[open] summary{color:#c4b5fd}
+  .tc-faq .tc-faq-a{padding:0 15px 14px;font-size:.88rem;line-height:1.6;color:var(--text-dim)}
+
+  .tc-fmt-table{width:100%;border-collapse:collapse;font-size:.85rem}
+  .tc-fmt-table th,.tc-fmt-table td{padding:8px 11px;text-align:left;border-bottom:1px solid var(--border)}
+  .tc-fmt-table th{color:#c4b5fd;font-weight:700;font-size:.78rem;text-transform:uppercase}
+
+  .info-block h3{color:#c4b5fd;margin-top:22px;margin-bottom:8px;font-size:1.02rem}
+  .info-block ul,.info-block ol{margin:8px 0 8px 20px;line-height:1.7}
+  .info-block ul li,.info-block ol li{margin-bottom:5px}
+
+  @media(max-width:860px){ .tc-grid{grid-template-columns:1fr} }
+  @media(max-width:520px){ .tc-row{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
@@ -39,59 +132,284 @@
 </header>
 
 <div class="container">
+  <nav class="tc-breadcrumb" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a><span>›</span>
+    <a href="../index.html#cat-developer">Developer &amp; Utility</a><span>›</span>
+    Timestamp Converter
+  </nav>
+
   <div class="tool-header">
     <h1>🕒 Timestamp Converter</h1>
-    <p>Convert between Unix timestamps and human-readable dates.</p>
+    <p>Convert Unix, JavaScript, Java, .NET, FileTime, Cocoa and Excel timestamps to and from readable dates — with ISO/RFC formats, 16+ timezones, date-difference, batch mode, calendar facts and code snippets. 100% in your browser.</p>
   </div>
 
   <div class="panel">
-    <div class="field">
-      <label for="unixInput">Unix timestamp (seconds or milliseconds)</label>
-      <input type="text" id="unixInput" placeholder="e.g. 1750000000">
-    </div>
-    <div class="btn-row">
-      <button class="btn secondary" id="nowBtn">🕐 Use Current Timestamp</button>
+    <div class="tc-grid">
+      <!-- ===================== LEFT ===================== -->
+      <div id="tc-leftSide">
+        <div class="tc-card">
+          <h3>⏱️ Timestamp Input</h3>
+          <div class="tc-field">
+            <label for="unixInput">Timestamp (Unix seconds, ms, µs or ns)</label>
+            <input type="text" id="unixInput" inputmode="numeric" placeholder="e.g. 1750000000" aria-describedby="tc-msg">
+          </div>
+          <div class="tc-field">
+            <label for="tc-unit">Interpret input as</label>
+            <select id="tc-unit">
+              <option value="auto">Auto-detect</option>
+              <option value="s">Seconds (Unix)</option>
+              <option value="ms">Milliseconds (JS / Java)</option>
+              <option value="us">Microseconds</option>
+              <option value="ns">Nanoseconds</option>
+            </select>
+          </div>
+          <div class="tc-copy-row">
+            <button type="button" class="btn secondary" id="nowBtn" style="flex:1 1 auto">🕐 Use Current Timestamp</button>
+          </div>
+          <div class="tc-msg" id="tc-msg" role="status" aria-live="polite"></div>
+        </div>
+
+        <div class="tc-card">
+          <h3>🔄 Date → Timestamp</h3>
+          <div class="tc-field">
+            <label for="dateInput">Pick a date &amp; time (your local timezone)</label>
+            <input type="datetime-local" id="dateInput" step="1">
+          </div>
+          <div class="result-row"><span class="lbl">Unix (seconds)</span><span class="val" id="reverseResult">—</span></div>
+          <div class="result-row"><span class="lbl">Unix (ms)</span><span class="val" id="tc-revMs">—</span></div>
+          <div class="tc-copyhint">Tip: click any value to copy it.</div>
+        </div>
+
+        <div class="tc-card">
+          <h3>🌍 Timezone</h3>
+          <div class="tc-field">
+            <label for="tc-tz">Convert to timezone</label>
+            <select id="tc-tz"></select>
+          </div>
+          <div class="result-row"><span class="lbl" id="tc-tzLbl">Zone time</span><span class="val" id="tc-tzResult">—</span></div>
+          <div class="result-row"><span class="lbl">UTC offset</span><span class="val" id="tc-tzOffset">—</span></div>
+        </div>
+
+        <div class="tc-card">
+          <h3>➖ Date Difference</h3>
+          <div class="tc-row">
+            <div class="tc-field"><label for="tc-diffA">Date A</label><input type="datetime-local" id="tc-diffA" step="1"></div>
+            <div class="tc-field"><label for="tc-diffB">Date B</label><input type="datetime-local" id="tc-diffB" step="1"></div>
+          </div>
+          <div class="result-row"><span class="lbl">Calendar</span><span class="val" id="tc-diffCal">—</span></div>
+          <div class="result-row"><span class="lbl">Total</span><span class="val" id="tc-diffTotal">—</span></div>
+        </div>
+      </div>
+
+      <!-- ===================== RIGHT ===================== -->
+      <div id="tc-rightSide">
+        <div class="tc-card">
+          <h3>📅 Date Formats <span class="tc-hint">click to copy</span></h3>
+          <div class="result-row"><span class="lbl">Local date &amp; time</span><span class="val" id="localResult">—</span></div>
+          <div class="result-row"><span class="lbl">UTC date &amp; time</span><span class="val" id="utcResult">—</span></div>
+          <div class="result-row"><span class="lbl">ISO 8601</span><span class="val" id="isoResult">—</span></div>
+          <div class="result-row"><span class="lbl">Relative</span><span class="val" id="relativeResult">—</span></div>
+          <div class="result-row"><span class="lbl">RFC 2822</span><span class="val" id="tc-rfc">—</span></div>
+          <div class="result-row"><span class="lbl">HTTP / Cookie</span><span class="val" id="tc-http">—</span></div>
+          <div class="result-row"><span class="lbl">Ordinal date</span><span class="val" id="tc-ordinal">—</span></div>
+          <div class="result-row"><span class="lbl">ISO week date</span><span class="val" id="tc-isoweek">—</span></div>
+        </div>
+
+        <div class="tc-card">
+          <h3>🔢 Timestamp Formats <span class="tc-hint">click to copy</span></h3>
+          <div class="result-row"><span class="lbl">Unix seconds</span><span class="val" id="tc-fs">—</span></div>
+          <div class="result-row"><span class="lbl">Unix milliseconds</span><span class="val" id="tc-fms">—</span></div>
+          <div class="result-row"><span class="lbl">Microseconds</span><span class="val" id="tc-fus">—</span></div>
+          <div class="result-row"><span class="lbl">Nanoseconds</span><span class="val" id="tc-fns">—</span></div>
+          <div class="result-row"><span class="lbl">.NET ticks</span><span class="val" id="tc-ftick">—</span></div>
+          <div class="result-row"><span class="lbl">Windows FileTime</span><span class="val" id="tc-ffile">—</span></div>
+          <div class="result-row"><span class="lbl">Apple Cocoa</span><span class="val" id="tc-fcocoa">—</span></div>
+          <div class="result-row"><span class="lbl">Excel serial</span><span class="val" id="tc-fexcel">—</span></div>
+        </div>
+
+        <div class="tc-card">
+          <h3>📆 Calendar Facts</h3>
+          <div class="tc-facts" id="tc-facts"></div>
+        </div>
+
+        <div class="tc-card">
+          <h3>📋 Copy &amp; Export</h3>
+          <div class="tc-copy-row">
+            <button type="button" id="tc-copyLocal">Copy Local</button>
+            <button type="button" id="tc-copyUtc">Copy UTC</button>
+            <button type="button" id="tc-copyIso">Copy ISO</button>
+            <button type="button" id="tc-copyTs">Copy Timestamp</button>
+          </div>
+          <div class="tc-export-row" style="margin-top:8px">
+            <button type="button" id="tc-expTxt">📄 TXT</button>
+            <button type="button" id="tc-expCsv">📊 CSV</button>
+            <button type="button" id="tc-expJson">🧩 JSON</button>
+            <button type="button" id="tc-expPdf">📕 PDF</button>
+            <button type="button" id="tc-print">🖨️ Print</button>
+          </div>
+          <button type="button" class="btn" id="tc-saveHist" style="width:100%;margin-top:12px">💾 Save to history</button>
+        </div>
+      </div>
     </div>
 
-    <div style="margin-top:16px">
-      <div class="result-row"><span class="lbl">Local date & time</span><span class="val" id="localResult">—</span></div>
-      <div class="result-row"><span class="lbl">UTC date & time</span><span class="val" id="utcResult">—</span></div>
-      <div class="result-row"><span class="lbl">ISO 8601</span><span class="val" id="isoResult">—</span></div>
-      <div class="result-row"><span class="lbl">Relative</span><span class="val" id="relativeResult">—</span></div>
+    <div class="tc-card" style="margin-top:2px">
+      <h3>💻 Programming Examples <span class="tc-hint">uses the current timestamp</span></h3>
+      <div class="tc-lang-tabs" id="tc-langTabs"></div>
+      <pre class="tc-code" id="tc-code"></pre>
+      <div class="tc-copy-row" style="margin-top:8px"><button type="button" id="tc-copyCode">📋 Copy code</button></div>
     </div>
 
-    <h3 style="font-size:.9rem;margin:20px 0 8px">🔄 Or convert a date to timestamp</h3>
-    <div class="field">
-      <label for="dateInput">Pick a date & time (your local timezone)</label>
-      <input type="datetime-local" id="dateInput">
+    <div class="tc-card">
+      <h3>📚 Batch Converter <span class="tc-hint">one timestamp per line</span></h3>
+      <div class="tc-field"><textarea id="tc-batchInput" placeholder="1750000000&#10;1609459200000&#10;0"></textarea></div>
+      <div class="tc-copy-row" style="margin-bottom:10px"><button type="button" id="tc-batchRun">▶ Convert</button><button type="button" id="tc-batchCsv">⬇️ CSV</button></div>
+      <div class="tc-table-wrap"><table class="tc-batch-table" id="tc-batchTable"><thead><tr><th>Input</th><th>UTC (ISO)</th><th>Local</th></tr></thead><tbody></tbody></table></div>
     </div>
-    <div class="result-row"><span class="lbl">Unix timestamp (seconds)</span><span class="val" id="reverseResult">—</span></div>
+
+    <div class="tc-card">
+      <h3>🕘 History <span class="tc-hint" id="tc-histCount"></span></h3>
+      <div class="tc-hist-list" id="tc-histList"><div class="tc-hist-empty">No saved conversions yet.</div></div>
+      <div class="tc-copy-row" style="margin-top:12px"><button type="button" id="tc-histCsv">⬇️ CSV</button><button type="button" id="tc-histJson">⬇️ JSON</button><button type="button" id="tc-histClear">🗑️ Clear</button></div>
+    </div>
+
+    <div class="tc-note">ℹ️ All conversions run entirely in your browser — nothing is uploaded, no login, and it works offline once loaded. Timezone conversions use your browser's built-in IANA database (including DST). Some legacy formats (e.g. Excel serial) use the common conventions noted in the docs below.</div>
   </div>
 </div>
 
+<div id="tc-report" aria-hidden="true" style="position:absolute;left:-9999px;top:0;width:620px;background:#fff;color:#111;padding:28px;font-family:Arial,Helvetica,sans-serif"></div>
 
+<!-- ============================ RELATED TOOLS ============================ -->
+<div class="info-wrap">
+  <div class="info-section">
+    <div class="info-block">
+      <h2>🔗 Related Tools</h2>
+      <p style="color:var(--text-dim);font-size:.9rem;margin-bottom:4px">More free, non-AI, browser-based developer &amp; date utilities.</p>
+      <div class="tc-related-grid">
+        <a href="date-difference-calculator.html"><span class="ri">📆</span> Date Difference</a>
+        <a href="age-calculator.html"><span class="ri">🎂</span> Age Calculator</a>
+        <a href="base64-encoder-decoder.html"><span class="ri">🔤</span> Base64 Encoder</a>
+        <a href="url-encoder-decoder.html"><span class="ri">🔗</span> URL Encoder</a>
+        <a href="hash-generator.html"><span class="ri">🔒</span> Hash Generator</a>
+        <a href="regex-tester.html"><span class="ri">🧩</span> Regex Tester</a>
+        <a href="csv-json-converter.html"><span class="ri">🔁</span> CSV ↔ JSON</a>
+        <a href="qr-code-generator.html"><span class="ri">🔳</span> QR Code Generator</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================ ABOUT + REFERENCE ============================ -->
 <div class="info-wrap">
   <div class="info-section">
     <div class="info-block">
       <h2>ℹ️ About This Tool</h2>
-      <p>Convert Unix timestamps (seconds since January 1, 1970) into readable dates in your local timezone, UTC, and ISO 8601 format — or go the other way and turn any date into a Unix timestamp. Handles both second and millisecond timestamps automatically.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Paste a Unix timestamp, or click "Use Current Timestamp".</li>
-        <li>See it converted to local time, UTC, ISO format, and relative time.</li>
-        <li>To go the other way, pick a date and time below to get its timestamp.</li>
-      </ol>
+      <p>The <strong>Timestamp Converter</strong> is a fast, private, browser-based utility that turns machine timestamps into human-readable dates — and back again — across every format a developer, database administrator, DevOps engineer or analyst is likely to meet. A "timestamp" is just a number that represents a moment in time, but there is no single convention: Unix systems count seconds since 1 January 1970, JavaScript and Java count milliseconds since the same epoch, .NET counts 100-nanosecond "ticks" since the year 1, Windows FileTime counts 100-nanosecond intervals since 1601, Apple's Cocoa frameworks count seconds since 2001, and spreadsheets like Excel count days since 1899. Reading a log line, a database column, an API response or a file's metadata therefore often means first working out <em>which</em> timestamp you are looking at, and then converting it into something you can actually understand. This tool does both instantly, showing every common interpretation side by side so you never have to guess or reach for a REPL.</p>
+
+      <p>Paste any number and the converter auto-detects whether it is in seconds, milliseconds, microseconds or nanoseconds based on its magnitude — or you can force a specific unit from the dropdown when you already know the source. From that single moment it derives a complete set of <strong>date formats</strong>: your <strong>local</strong> time with timezone, <strong>UTC</strong>, strict <strong>ISO 8601</strong> (with a Zulu variant), <strong>RFC 2822</strong>, the <strong>HTTP/cookie</strong> date used in web headers, the <strong>ordinal date</strong> (year plus day-of-year), and the <strong>ISO week date</strong> (year, week number and weekday). It also gives a plain-English <strong>relative time</strong> — "3 hours ago", "in 2 days" — which is invaluable when scanning logs. Alongside the dates, it renders the same instant in every <strong>timestamp format</strong>: Unix seconds and milliseconds, microseconds and nanoseconds, .NET ticks, Windows FileTime, Apple Cocoa time and the Excel serial number, each ready to copy with a single click.</p>
+
+      <p>Because time is meaningless without a zone, a built-in <strong>timezone converter</strong> lets you view any instant in more than sixteen major zones — UTC and GMT, India (IST), the US zones (PST, MST, CST, EST), the UK (GMT/BST), Japan (JST), Korea (KST), Australia (AEST), New Zealand (NZST), Dubai, Singapore and representative European, African and American cities. Conversions use your browser's built-in IANA timezone database, so daylight-saving transitions are handled correctly rather than with a naive fixed offset. Going the other direction, a <strong>date-to-timestamp</strong> picker turns any date and time you choose into its Unix value in both seconds and milliseconds, and a <strong>date-difference calculator</strong> compares two moments and breaks the gap down into years, months and days as well as a total in weeks, days, hours, minutes and seconds — handy for SLAs, ages, countdowns and durations.</p>
+
+      <p>For real developer workflows the tool goes further. A <strong>batch converter</strong> accepts a whole list of timestamps — paste them one per line — and returns a table of UTC and local dates you can export, perfect for turning a column of epoch values from a log or database dump into something readable. A <strong>programming-examples</strong> panel shows exactly how to produce or parse the current timestamp in ten languages — JavaScript, Node.js, Python, Java, PHP, Go, Rust, Swift, Kotlin and SQL — with the live value substituted in, so you can copy a correct, ready-to-paste snippet instead of remembering each language's date API. A <strong>calendar-facts</strong> panel surfaces the day name, week number, quarter, day-of-year, whether it is a weekend and whether the year is a leap year, which is useful for scheduling, reporting and validation.</p>
+
+      <p>Every value in the tool is <strong>click-to-copy</strong>, and dedicated buttons copy the local, UTC, ISO or raw timestamp in one tap. You can <strong>export</strong> a full conversion as TXT, CSV, JSON or PDF, <strong>print</strong> it, and keep a local <strong>history</strong> of recent conversions in your browser to revisit or download later. Robust <strong>validation</strong> catches non-numeric input, values outside the representable date range, and other edge cases, explaining the problem instead of showing a broken "Invalid Date". And because the entire tool is plain JavaScript running on your own machine, it is lightweight and instant, works offline once the page has loaded, and is completely private — no timestamp, date or log fragment you paste is ever uploaded to a server, there is no sign-up, and nothing is tracked against you.</p>
+
+      <p><strong>Who is it for?</strong> Backend and API developers decoding epoch fields in requests and responses; DevOps and SRE engineers reading timestamps in logs and metrics across timezones; database administrators converting stored epoch columns; data analysts normalising time data from mixed sources; QA engineers verifying date handling and boundary cases; and students learning how epoch time, UTC, ISO 8601 and timezones fit together. Whether you need a one-second sanity check on a single value or a full multi-format, multi-timezone breakdown with copyable code, this converter puts every timestamp and date format in one private, offline-capable place.</p>
+
+      <h3>✅ Key Benefits</h3>
+      <ul>
+        <li><strong>Every timestamp format</strong> — Unix s/ms/µs/ns, JavaScript, Java, .NET ticks, Windows FileTime, Apple Cocoa and Excel serial.</li>
+        <li><strong>Every date format</strong> — local, UTC, ISO 8601, RFC 2822, HTTP/cookie, ordinal and ISO week date, plus relative time.</li>
+        <li><strong>Timezone converter</strong> — 16+ zones with correct daylight-saving handling via the browser's IANA database.</li>
+        <li><strong>Two-way &amp; difference</strong> — date-to-timestamp and a full date-difference calculator.</li>
+        <li><strong>Batch &amp; code</strong> — convert lists at once and copy ready-to-use snippets for 10 languages.</li>
+        <li><strong>Calendar facts</strong> — day, week, quarter, day-of-year, weekend and leap-year checks.</li>
+        <li><strong>Copy, export &amp; history</strong> — click-to-copy everything; export TXT/CSV/JSON/PDF; local history.</li>
+        <li><strong>Private &amp; offline</strong> — 100% browser-based, no upload, no login.</li>
+      </ul>
     </div>
+
     <hr class="info-divider">
+
     <div class="info-block">
       <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>Unix timestamp (1 जनवरी 1970 से सेकंड्स) को आपके local timezone, UTC, और ISO 8601 फॉर्मेट में पढ़ने लायक डेट में बदलें — या उल्टा किसी भी डेट को Unix timestamp में बदलें। सेकंड और मिलीसेकंड दोनों तरह के timestamp अपने आप पहचान लेता है।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
+      <p>यह <strong>Timestamp Converter</strong> एक तेज़, निजी और पूरी तरह ब्राउज़र में चलने वाला उपयोगी टूल है जो machine timestamps को पढ़ने-योग्य dates में — और वापस — बदलता है, हर उस format में जिससे किसी developer, database administrator, DevOps engineer या analyst का सामना होता है। "timestamp" बस एक संख्या है जो समय के किसी पल को दर्शाती है, पर इसका कोई एक ही तरीका नहीं है: Unix सिस्टम 1 जनवरी 1970 से seconds गिनते हैं, JavaScript और Java उसी epoch से milliseconds, .NET साल 1 से 100-नैनोसेकंड "ticks", Windows FileTime 1601 से 100-नैनोसेकंड अंतराल, Apple के Cocoa framework 2001 से seconds, और Excel जैसे spreadsheet 1899 से days। किसी log line, database column, API response या file के metadata को पढ़ने के लिए अक्सर पहले यह पता लगाना पड़ता है कि आप <em>कौन-सा</em> timestamp देख रहे हैं, फिर उसे कुछ समझने-योग्य में बदलना पड़ता है। यह टूल दोनों तुरंत करता है, हर आम interpretation साथ-साथ दिखाकर, ताकि आपको कभी अंदाज़ा न लगाना पड़े।</p>
+
+      <p>कोई भी संख्या paste करें और converter उसके आकार से अपने आप पहचान लेता है कि यह seconds, milliseconds, microseconds या nanoseconds में है — या जब आपको स्रोत पता हो तो dropdown से एक इकाई चुन सकते हैं। उस एक पल से यह <strong>date formats</strong> का पूरा सेट निकालता है: timezone सहित <strong>local</strong> समय, <strong>UTC</strong>, सख़्त <strong>ISO 8601</strong> (Zulu संस्करण सहित), <strong>RFC 2822</strong>, web headers में इस्तेमाल होने वाली <strong>HTTP/cookie</strong> date, <strong>ordinal date</strong> (साल और day-of-year), और <strong>ISO week date</strong>। यह एक सरल-भाषा <strong>relative time</strong> भी देता है — "3 hours ago", "in 2 days" — जो logs देखते समय बहुत उपयोगी है। dates के साथ, यह उसी पल को हर <strong>timestamp format</strong> में दिखाता है: Unix seconds और milliseconds, microseconds और nanoseconds, .NET ticks, Windows FileTime, Apple Cocoa time और Excel serial — हर एक एक क्लिक में copy होने को तैयार।</p>
+
+      <p>चूँकि समय बिना zone के अर्थहीन है, एक built-in <strong>timezone converter</strong> आपको किसी भी पल को सोलह से ज़्यादा प्रमुख zones में देखने देता है — UTC और GMT, भारत (IST), US zones (PST, MST, CST, EST), UK (GMT/BST), Japan (JST), Korea (KST), Australia (AEST), New Zealand (NZST), Dubai, Singapore और प्रतिनिधि European, African व American शहर। Conversions आपके browser के built-in IANA timezone database का उपयोग करते हैं, इसलिए daylight-saving बदलाव सही ढंग से संभाले जाते हैं, न कि किसी सरल स्थिर offset से। दूसरी दिशा में, एक <strong>date-to-timestamp</strong> picker आपकी चुनी किसी भी date-time को seconds और milliseconds दोनों में उसके Unix मान में बदलता है, और एक <strong>date-difference calculator</strong> दो पलों की तुलना करके अंतर को years, months और days के साथ-साथ weeks, days, hours, minutes और seconds के कुल में तोड़ता है।</p>
+
+      <p>असल developer workflows के लिए टूल और आगे जाता है। एक <strong>batch converter</strong> timestamps की पूरी सूची लेता है — एक प्रति पंक्ति paste करें — और UTC व local dates की एक table लौटाता है जिसे आप export कर सकते हैं, किसी log या database dump के epoch column को पढ़ने-योग्य बनाने के लिए बढ़िया। एक <strong>programming-examples</strong> panel दिखाता है कि मौजूदा timestamp को दस भाषाओं में कैसे बनाएँ या parse करें — JavaScript, Node.js, Python, Java, PHP, Go, Rust, Swift, Kotlin और SQL — live मान भरकर, ताकि आप हर भाषा की date API याद करने के बजाय एक सही, तैयार snippet copy कर सकें। एक <strong>calendar-facts</strong> panel day name, week number, quarter, day-of-year, weekend और leap year दिखाता है।</p>
+
+      <p>टूल का हर मान <strong>click-to-copy</strong> है, और अलग बटन local, UTC, ISO या raw timestamp एक tap में copy करते हैं। आप पूरी conversion को TXT, CSV, JSON या PDF में <strong>export</strong>, <strong>print</strong>, और हाल की conversions की local <strong>history</strong> browser में रख सकते हैं। मज़बूत <strong>validation</strong> गैर-संख्यात्मक input, प्रस्तुत-योग्य सीमा से बाहर मान, और बाकी edge cases पकड़ता है, टूटी "Invalid Date" दिखाने के बजाय समस्या समझाता है। और चूँकि पूरा टूल आपके अपने device पर plain JavaScript है, यह हल्का और तुरंत है, load होने पर offline काम करता है, और पूरी तरह निजी है — आपका paste किया कोई timestamp या date कभी server पर upload नहीं होता, कोई sign-up नहीं, कुछ भी track नहीं होता।</p>
+
+      <p><strong>यह किसके लिए है?</strong> requests और responses में epoch fields decode करते backend व API developers; timezones के पार logs व metrics में timestamps पढ़ते DevOps व SRE engineers; संग्रहीत epoch columns बदलते database administrators; मिश्रित स्रोतों से time data सामान्य करते data analysts; date handling व boundary cases जाँचते QA engineers; और epoch time, UTC, ISO 8601 व timezones को समझते students। चाहे किसी एक मान की एक-सेकंड जाँच हो या copyable code सहित पूरा multi-format, multi-timezone breakdown — यह converter हर timestamp और date format को एक निजी, offline-capable जगह पर लाता है।</p>
+    </div>
+
+    <hr class="info-divider">
+
+    <div class="info-block">
+      <h2>🗂️ Supported Formats</h2>
+      <div class="tc-table-wrap" style="margin:12px 0">
+        <table class="tc-fmt-table">
+          <thead><tr><th>Format</th><th>Epoch / base</th><th>Unit</th></tr></thead>
+          <tbody>
+            <tr><td>Unix seconds</td><td>1970-01-01 UTC</td><td>seconds</td></tr>
+            <tr><td>Unix ms (JavaScript / Java)</td><td>1970-01-01 UTC</td><td>milliseconds</td></tr>
+            <tr><td>Microseconds / Nanoseconds</td><td>1970-01-01 UTC</td><td>µs / ns</td></tr>
+            <tr><td>.NET ticks</td><td>0001-01-01</td><td>100-nanosecond ticks</td></tr>
+            <tr><td>Windows FileTime</td><td>1601-01-01 UTC</td><td>100-nanosecond intervals</td></tr>
+            <tr><td>Apple Cocoa / Core Data</td><td>2001-01-01 UTC</td><td>seconds</td></tr>
+            <tr><td>Excel serial date</td><td>1899-12-30</td><td>days (with 1900 leap-year quirk)</td></tr>
+            <tr><td>ISO 8601 / RFC 3339</td><td>—</td><td>calendar date-time string</td></tr>
+            <tr><td>RFC 2822 / HTTP date</td><td>—</td><td>calendar date-time string</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>🧮 Examples</h3>
+      <ul>
+        <li><strong>1750000000</strong> (Unix s) → 2025-06-15 15:06:40 UTC.</li>
+        <li><strong>1609459200000</strong> (Unix ms) → 2021-01-01 00:00:00 UTC.</li>
+        <li><strong>0</strong> → the Unix epoch, 1970-01-01 00:00:00 UTC.</li>
+        <li><strong>Date → timestamp:</strong> pick 2030-01-01 00:00 local → its Unix seconds value appears instantly.</li>
+      </ul>
+
+      <h3>💻 Programming examples</h3>
+      <p>The tool generates ready-to-copy snippets for JavaScript, Node.js, Python, Java, PHP, Go, Rust, Swift, Kotlin and SQL, each using the current timestamp. For example, in JavaScript <code>new Date(unix * 1000).toISOString()</code>, in Python <code>datetime.utcfromtimestamp(unix)</code>, and in SQL <code>to_timestamp(unix)</code>.</p>
+
+      <h3>🔒 Privacy</h3>
+      <p>This converter is <strong>100% client-side</strong>. Every timestamp and date you enter is processed by JavaScript in your own browser — nothing is sent to any server, there is no account, and your history is stored only in your browser's local storage. Clear it anytime; once loaded, the tool works with no internet connection.</p>
+
+      <h3>🚀 How to use</h3>
       <ol>
-        <li>Unix timestamp पेस्ट करें, या "Use Current Timestamp" दबाएं।</li>
-        <li>local time, UTC, ISO फॉर्मेट और relative time में बदला हुआ देखें।</li>
-        <li>उल्टा करने के लिए नीचे कोई डेट और टाइम चुनें ताकि उसका timestamp मिले।</li>
+        <li>Paste a timestamp, or click <strong>Use Current Timestamp</strong>; the unit is auto-detected (or force one).</li>
+        <li>Read the <strong>date formats</strong>, <strong>timestamp formats</strong> and <strong>calendar facts</strong>.</li>
+        <li>Pick a <strong>timezone</strong> to convert, or a <strong>date</strong> to get its timestamp.</li>
+        <li>Use the <strong>difference calculator</strong>, <strong>batch converter</strong> or <strong>code snippets</strong> as needed.</li>
+        <li>Click any value to copy, or export the result and save it to history.</li>
       </ol>
+    </div>
+
+    <hr class="info-divider">
+
+    <div class="info-block tc-faq">
+      <h2>❓ Frequently Asked Questions</h2>
+      <div id="tc-faqList"></div>
+    </div>
+
+    <hr class="info-divider">
+
+    <div class="info-block">
+      <h2>🛠️ Troubleshooting</h2>
+      <ul>
+        <li><strong>Shows "Invalid" or "—":</strong> The input is not a number or is outside the supported date range (roughly ±271,000 years from 1970). Check for stray letters or characters.</li>
+        <li><strong>Wrong by a factor of 1000:</strong> Your value's unit was mis-detected — set the "Interpret input as" dropdown to seconds, milliseconds, microseconds or nanoseconds explicitly.</li>
+        <li><strong>Timezone time looks off by an hour:</strong> That is usually daylight saving; the tool follows the IANA database, so the offset shown is the correct one for that date.</li>
+        <li><strong>Local time differs from a colleague's:</strong> Local time depends on each device's timezone setting. Compare using UTC or ISO to avoid confusion.</li>
+        <li><strong>Excel serial looks off by 1–2 days:</strong> Excel includes a historical 1900 leap-year bug; this tool uses the common 1899-12-30 base that matches modern Excel for dates after 1900-03-01.</li>
+        <li><strong>PDF export not working:</strong> It uses a library loaded from the internet. Offline, use TXT/CSV/JSON export or Print, which always work.</li>
+        <li><strong>History disappeared:</strong> History lives only in your browser; clearing browser data or private mode will not retain it.</li>
+      </ul>
     </div>
   </div>
 </div>
@@ -99,62 +417,262 @@
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
 <script src="../assets/common.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
 <script>
-function updateFromTimestamp(){
-  const raw = document.getElementById('unixInput').value.trim();
-  if(!raw){
-    ['localResult','utcResult','isoResult','relativeResult'].forEach(id=> document.getElementById(id).textContent = '—');
-    return;
+(function(){
+  "use strict";
+  function $(id){ return document.getElementById(id); }
+  function pad(n,l){ n=String(Math.abs(n)); while(n.length<(l||2))n='0'+n; return n; }
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function toast(m){ if(typeof premToast==='function') premToast(m); }
+  var MAXMS=8.64e15;
+
+  var TZS=[
+    ['Local (your device)','local'],['UTC','UTC'],['GMT — London','Europe/London'],
+    ['IST — India','Asia/Kolkata'],['PST/PDT — Los Angeles','America/Los_Angeles'],
+    ['MST — Denver','America/Denver'],['CST — Chicago','America/Chicago'],
+    ['EST/EDT — New York','America/New_York'],['BST — London','Europe/London'],
+    ['JST — Tokyo','Asia/Tokyo'],['KST — Seoul','Asia/Seoul'],['AEST — Sydney','Australia/Sydney'],
+    ['NZST — Auckland','Pacific/Auckland'],['Dubai','Asia/Dubai'],['Singapore','Asia/Singapore'],
+    ['Europe — Paris','Europe/Paris'],['Africa — Johannesburg','Africa/Johannesburg'],['America — São Paulo','America/Sao_Paulo']
+  ];
+
+  var state={ ms:null, lang:'javascript' };
+
+  /* ===== parse input ===== */
+  function parseInput(){
+    var raw=$('unixInput').value.trim(); var msg=$('tc-msg'); msg.textContent=''; msg.className='tc-msg';
+    $('unixInput').setAttribute('aria-invalid','false');
+    if(raw===''){ return null; }
+    if(!/^-?\d+(\.\d+)?$/.test(raw)){ msg.textContent='⚠️ Enter a numeric timestamp.'; $('unixInput').setAttribute('aria-invalid','true'); return NaN; }
+    var n=parseFloat(raw); var unit=$('tc-unit').value; var ms;
+    if(unit==='s') ms=n*1000;
+    else if(unit==='ms') ms=n;
+    else if(unit==='us') ms=n/1000;
+    else if(unit==='ns') ms=n/1e6;
+    else { // auto by digit count of integer part
+      var digits=raw.replace(/^-/,'').split('.')[0].length;
+      if(digits<=11) ms=n*1000;          // seconds
+      else if(digits<=14) ms=n;          // milliseconds
+      else if(digits<=17) ms=n/1000;     // microseconds
+      else ms=n/1e6;                      // nanoseconds
+    }
+    if(!isFinite(ms) || Math.abs(ms)>MAXMS){ msg.textContent='⚠️ Timestamp is out of range.'; $('unixInput').setAttribute('aria-invalid','true'); return NaN; }
+    return ms;
   }
-  let num = parseFloat(raw);
-  if(isNaN(num)) return;
-  // Heuristic: if it's a huge number, treat as milliseconds
-  const ms = Math.abs(num) > 99999999999 ? num : num * 1000;
-  const date = new Date(ms);
 
-  document.getElementById('localResult').textContent = date.toString();
-  document.getElementById('utcResult').textContent = date.toUTCString();
-  document.getElementById('isoResult').textContent = date.toISOString();
+  /* ===== date format helpers ===== */
+  function relTime(ms){ var d=(Date.now()-ms)/1000, fut=d<0, a=Math.abs(d), s;
+    if(a<60)s=Math.round(a)+' seconds'; else if(a<3600)s=Math.round(a/60)+' minutes'; else if(a<86400)s=Math.round(a/3600)+' hours';
+    else if(a<2592000)s=Math.round(a/86400)+' days'; else if(a<31536000)s=Math.round(a/2592000)+' months'; else s=(a/31536000).toFixed(1)+' years';
+    return fut?'in '+s:s+' ago'; }
+  function dayOfYear(d){ var start=Date.UTC(d.getUTCFullYear(),0,0); return Math.floor((Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate())-start)/86400000); }
+  function isoWeek(d){ var t=new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate())); var day=(t.getUTCDay()+6)%7; t.setUTCDate(t.getUTCDate()-day+3); var first=new Date(Date.UTC(t.getUTCFullYear(),0,4)); var week=1+Math.round(((t-first)/86400000-3+((first.getUTCDay()+6)%7))/7); return {year:t.getUTCFullYear(),week:week,weekday:((d.getUTCDay()+6)%7)+1}; }
+  function localOffsetStr(d){ var o=-d.getTimezoneOffset(); var sign=o>=0?'+':'-'; return sign+pad(Math.floor(Math.abs(o)/60))+':'+pad(Math.abs(o)%60); }
+  function localISO(d){ var o=-d.getTimezoneOffset(); var sign=o>=0?'+':'-';
+    return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())+'T'+pad(d.getHours())+':'+pad(d.getMinutes())+':'+pad(d.getSeconds())+sign+pad(Math.floor(Math.abs(o)/60))+':'+pad(Math.abs(o)%60); }
+  function isLeap(y){ return (y%4===0&&y%100!==0)||y%400===0; }
 
-  const diffSec = (Date.now() - ms) / 1000;
-  document.getElementById('relativeResult').textContent = relativeTime(diffSec);
-}
+  function tzFormat(ms,zone){ try{ var opts={year:'numeric',month:'short',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false};
+      if(zone!=='local') opts.timeZone=zone; return new Intl.DateTimeFormat('en-GB',opts).format(new Date(ms)); }catch(e){ return '—'; } }
+  function tzOffset(ms,zone){ if(zone==='local') return localOffsetStr(new Date(ms));
+    try{ var dtf=new Intl.DateTimeFormat('en-US',{timeZone:zone,timeZoneName:'shortOffset',hour:'2-digit'}); var parts=dtf.formatToParts(new Date(ms)); var p=parts.find(function(x){return x.type==='timeZoneName';}); return p?p.value.replace('GMT','UTC'):'—'; }catch(e){ return '—'; } }
 
-function relativeTime(diffSec){
-  const future = diffSec < 0;
-  const abs = Math.abs(diffSec);
-  let str;
-  if(abs < 60) str = Math.round(abs) + ' seconds';
-  else if(abs < 3600) str = Math.round(abs/60) + ' minutes';
-  else if(abs < 86400) str = Math.round(abs/3600) + ' hours';
-  else if(abs < 2592000) str = Math.round(abs/86400) + ' days';
-  else if(abs < 31536000) str = Math.round(abs/2592000) + ' months';
-  else str = (abs/31536000).toFixed(1) + ' years';
-  return future ? 'in ' + str : str + ' ago';
-}
+  /* ===== main render ===== */
+  function render(){
+    var ms=parseInput(); state.ms=(ms!=null && !isNaN(ms))?ms:null;
+    var ids=['localResult','utcResult','isoResult','relativeResult','tc-rfc','tc-http','tc-ordinal','tc-isoweek','tc-fs','tc-fms','tc-fus','tc-fns','tc-ftick','tc-ffile','tc-fcocoa','tc-fexcel'];
+    if(state.ms==null){ ids.forEach(function(i){ $(i).textContent='—'; }); $('tc-facts').innerHTML=''; renderTZ(); renderCode(); return; }
+    var d=new Date(state.ms);
+    $('localResult').textContent=d.toString();
+    $('utcResult').textContent=d.toUTCString();
+    $('isoResult').textContent=d.toISOString();
+    $('relativeResult').textContent=relTime(state.ms);
+    $('tc-rfc').textContent=localISO(d).replace('T',' ');
+    $('tc-http').textContent=d.toUTCString();
+    var doy=dayOfYear(d); $('tc-ordinal').textContent=d.getUTCFullYear()+'-'+pad(doy,3)+' (day '+doy+')';
+    var iw=isoWeek(d); $('tc-isoweek').textContent=iw.year+'-W'+pad(iw.week)+'-'+iw.weekday;
+    // timestamp formats
+    var secs=state.ms/1000;
+    $('tc-fs').textContent=Math.round(secs);
+    $('tc-fms').textContent=Math.round(state.ms);
+    $('tc-fus').textContent=Math.round(state.ms*1000);
+    $('tc-fns').textContent=(BigInt(Math.round(state.ms))*1000000n).toString();
+    $('tc-ftick').textContent=(BigInt(Math.round(state.ms)+62135596800000)*10000n).toString();
+    $('tc-ffile').textContent=(BigInt(Math.round(state.ms)+11644473600000)*10000n).toString();
+    $('tc-fcocoa').textContent=Math.round(secs-978307200);
+    $('tc-fexcel').textContent=(state.ms/86400000+25569).toFixed(6);
+    // calendar facts
+    var days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    var dn=days[d.getDay()]; var wknd=(d.getDay()===0||d.getDay()===6);
+    var q=Math.floor(d.getMonth()/3)+1;
+    var facts=[['Day',dn],['Quarter','Q'+q],['Week','W'+isoWeek(d).week],['Day of year',doy],['Weekend',wknd?'Yes':'No'],['Leap year',isLeap(d.getFullYear())?'Yes':'No']];
+    $('tc-facts').innerHTML=facts.map(function(f){ return '<div class="tc-fact"><b>'+esc(f[1])+'</b><span>'+esc(f[0])+'</span></div>'; }).join('');
+    renderTZ(); renderCode();
+  }
 
-document.getElementById('unixInput').addEventListener('input', updateFromTimestamp);
+  function renderTZ(){ var zone=$('tc-tz').value; var lbl=$('tc-tz').options[$('tc-tz').selectedIndex].text;
+    $('tc-tzLbl').textContent=lbl.split(' — ')[0];
+    if(state.ms==null){ $('tc-tzResult').textContent='—'; $('tc-tzOffset').textContent='—'; return; }
+    $('tc-tzResult').textContent=tzFormat(state.ms,zone);
+    $('tc-tzOffset').textContent=tzOffset(state.ms,zone); }
 
-document.getElementById('nowBtn').addEventListener('click', ()=>{
-  document.getElementById('unixInput').value = Math.floor(Date.now()/1000);
-  updateFromTimestamp();
-});
+  /* ===== reverse (date -> timestamp) ===== */
+  function renderReverse(){ var v=$('dateInput').value; if(!v){ $('reverseResult').textContent='—'; $('tc-revMs').textContent='—'; return; }
+    var d=new Date(v); if(isNaN(d.getTime())){ $('reverseResult').textContent='—'; $('tc-revMs').textContent='—'; return; }
+    $('reverseResult').textContent=Math.floor(d.getTime()/1000); $('tc-revMs').textContent=d.getTime(); }
 
-document.getElementById('dateInput').addEventListener('input', ()=>{
-  const val = document.getElementById('dateInput').value;
-  if(!val){ document.getElementById('reverseResult').textContent = '—'; return; }
-  const date = new Date(val);
-  document.getElementById('reverseResult').textContent = Math.floor(date.getTime()/1000);
-});
+  /* ===== difference ===== */
+  function renderDiff(){ var a=$('tc-diffA').value, b=$('tc-diffB').value;
+    if(!a||!b){ $('tc-diffCal').textContent='—'; $('tc-diffTotal').textContent='—'; return; }
+    var da=new Date(a), db=new Date(b); if(isNaN(da)||isNaN(db)){ $('tc-diffCal').textContent='—'; $('tc-diffTotal').textContent='—'; return; }
+    var lo=da<db?da:db, hi=da<db?db:da;
+    // calendar Y/M/D
+    var y=hi.getFullYear()-lo.getFullYear(), m=hi.getMonth()-lo.getMonth(), dd=hi.getDate()-lo.getDate();
+    if(dd<0){ m--; var pm=new Date(hi.getFullYear(),hi.getMonth(),0).getDate(); dd+=pm; }
+    if(m<0){ y--; m+=12; }
+    $('tc-diffCal').textContent=y+'y '+m+'mo '+dd+'d';
+    var sec=Math.abs(hi-lo)/1000;
+    $('tc-diffTotal').textContent=Math.floor(sec/86400)+'d '+Math.floor(sec%86400/3600)+'h '+Math.floor(sec%3600/60)+'m '+Math.floor(sec%60)+'s ('+Math.floor(sec/604800)+' wk)'; }
 
-updateFromTimestamp();
+  /* ===== code examples ===== */
+  var LANGS=[['javascript','JavaScript'],['node','Node.js'],['python','Python'],['java','Java'],['php','PHP'],['go','Go'],['rust','Rust'],['swift','Swift'],['kotlin','Kotlin'],['sql','SQL']];
+  function codeFor(lang,secs,ms){
+    switch(lang){
+      case 'javascript': return "// Unix seconds -> Date\nconst d = new Date("+secs+" * 1000);\nconsole.log(d.toISOString());\n// Now -> Unix seconds\nMath.floor(Date.now() / 1000);";
+      case 'node': return "// Node.js\nconst d = new Date("+ms+");\nconsole.log(d.toISOString());\nconst now = Math.floor(Date.now() / 1000);";
+      case 'python': return "from datetime import datetime, timezone\nd = datetime.fromtimestamp("+secs+", tz=timezone.utc)\nprint(d.isoformat())\nnow = int(datetime.now(timezone.utc).timestamp())";
+      case 'java': return "import java.time.*;\nInstant d = Instant.ofEpochSecond("+secs+"L);\nSystem.out.println(d);\nlong now = Instant.now().getEpochSecond();";
+      case 'php': return "<?php\n$d = new DateTime('@"+secs+"');\necho $d->format(DateTime::ATOM);\n$now = time();";
+      case 'go': return "package main\nimport (\"fmt\"; \"time\")\nfunc main() {\n    d := time.Unix("+secs+", 0).UTC()\n    fmt.Println(d.Format(time.RFC3339))\n    now := time.Now().Unix()\n    _ = now\n}";
+      case 'rust': return "use chrono::{DateTime, Utc, TimeZone};\nlet d: DateTime<Utc> = Utc.timestamp_opt("+secs+", 0).unwrap();\nprintln!(\"{}\", d.to_rfc3339());\nlet now = Utc::now().timestamp();";
+      case 'swift': return "import Foundation\nlet d = Date(timeIntervalSince1970: "+secs+")\nprint(ISO8601DateFormatter().string(from: d))\nlet now = Int(Date().timeIntervalSince1970)";
+      case 'kotlin': return "import java.time.Instant\nval d = Instant.ofEpochSecond("+secs+"L)\nprintln(d)\nval now = Instant.now().epochSecond";
+      case 'sql': return "-- PostgreSQL\nSELECT to_timestamp("+secs+");\n-- MySQL\nSELECT FROM_UNIXTIME("+secs+");\n-- Current epoch (Postgres)\nSELECT EXTRACT(EPOCH FROM now())::bigint;";
+    }
+    return '';
+  }
+  function renderCode(){ var secs=state.ms!=null?Math.round(state.ms/1000):Math.floor(Date.now()/1000);
+    var ms=state.ms!=null?Math.round(state.ms):Date.now();
+    $('tc-code').textContent=codeFor(state.lang,secs,ms); }
+
+  /* ===== batch ===== */
+  function runBatch(){ var lines=$('tc-batchInput').value.split(/\r?\n/).map(function(l){return l.trim();}).filter(Boolean);
+    var tb=$('tc-batchTable').querySelector('tbody'); tb.innerHTML='';
+    var rows=lines.map(function(l){ if(!/^-?\d+(\.\d+)?$/.test(l)) return [l,'invalid','invalid'];
+      var n=parseFloat(l), digits=l.replace(/^-/,'').split('.')[0].length, ms;
+      if(digits<=11)ms=n*1000; else if(digits<=14)ms=n; else if(digits<=17)ms=n/1000; else ms=n/1e6;
+      if(!isFinite(ms)||Math.abs(ms)>MAXMS) return [l,'out of range','out of range'];
+      var d=new Date(ms); return [l,d.toISOString(),d.toString()]; });
+    tb.innerHTML=rows.map(function(r){ return '<tr><td>'+esc(r[0])+'</td><td>'+esc(r[1])+'</td><td>'+esc(r[2])+'</td></tr>'; }).join('');
+    lastBatch=rows; }
+  var lastBatch=[];
+  function batchCSV(){ if(!lastBatch.length){toast('Run a batch first.');return;} var rows=[['Input','UTC_ISO','Local']].concat(lastBatch);
+    var csv=rows.map(function(r){return r.map(function(c){return '"'+String(c).replace(/"/g,'""')+'"';}).join(',');}).join('\n'); if(typeof downloadText==='function') downloadText('timestamps-batch.csv',csv,'text/csv'); }
+
+  /* ===== copy / export ===== */
+  function rowData(){ if(state.ms==null) return null; var d=new Date(state.ms);
+    return {input:$('unixInput').value.trim(),local:d.toString(),utc:d.toUTCString(),iso:d.toISOString(),relative:relTime(state.ms),unix_s:Math.round(state.ms/1000),unix_ms:Math.round(state.ms)}; }
+  function copyVal(text,btn){ if(typeof copyText==='function') copyText(text,btn); }
+  function buildReport(){ var d=rowData(); if(!d)return; var acc='#7C5CFC';
+    var rows=[['Input',d.input],['Local',d.local],['UTC',d.utc],['ISO 8601',d.iso],['Relative',d.relative],['Unix seconds',d.unix_s],['Unix ms',d.unix_ms]];
+    $('tc-report').innerHTML='<div style="border-bottom:3px solid '+acc+';padding-bottom:10px;margin-bottom:14px"><div style="font-size:20px;font-weight:800;color:'+acc+'">Timestamp Conversion</div><div style="font-size:12px;color:#666">ApneSoftware · '+new Date().toLocaleString('en-IN')+'</div></div>'+
+      '<table style="width:100%;border-collapse:collapse;font-size:13px;color:#111">'+rows.map(function(r){return '<tr><td style="padding:6px 0;color:#666;white-space:nowrap;padding-right:14px">'+esc(r[0])+'</td><td style="padding:6px 0;font-family:monospace;word-break:break-all">'+esc(r[1])+'</td></tr>';}).join('')+'</table>'+
+      '<div style="margin-top:16px;font-size:11px;color:#999">apnesoftware.com · converted in your browser</div>'; }
+  function exportTXT(){ var d=rowData(); if(!d){toast('Enter a timestamp.');return;} var t='Timestamp Conversion\nInput: '+d.input+'\nLocal: '+d.local+'\nUTC: '+d.utc+'\nISO 8601: '+d.iso+'\nRelative: '+d.relative+'\nUnix seconds: '+d.unix_s+'\nUnix ms: '+d.unix_ms; if(typeof downloadText==='function') downloadText('timestamp.txt',t,'text/plain'); }
+  function exportCSV(){ var d=rowData(); if(!d){toast('Enter a timestamp.');return;} var rows=[['Field','Value'],['Input',d.input],['Local',d.local],['UTC',d.utc],['ISO',d.iso],['Relative',d.relative],['Unix_s',d.unix_s],['Unix_ms',d.unix_ms]]; var csv=rows.map(function(r){return r.map(function(c){return '"'+String(c).replace(/"/g,'""')+'"';}).join(',');}).join('\n'); if(typeof downloadText==='function') downloadText('timestamp.csv',csv,'text/csv'); }
+  function exportJSON(){ var d=rowData(); if(!d){toast('Enter a timestamp.');return;} if(typeof downloadText==='function') downloadText('timestamp.json',JSON.stringify(d,null,2),'application/json'); }
+  function exportPDF(){ var d=rowData(); if(!d){toast('Enter a timestamp.');return;} buildReport(); if(typeof html2pdf==='undefined'){toast('PDF library still loading.');return;}
+    html2pdf().set({margin:10,filename:'timestamp.pdf',image:{type:'jpeg',quality:.98},html2canvas:{scale:2,backgroundColor:'#ffffff'},jsPDF:{unit:'mm',format:'a4',orientation:'portrait'}}).from($('tc-report')).save(); }
+
+  /* ===== history ===== */
+  var HKEY='tsHistory';
+  function loadH(){ try{ return JSON.parse(localStorage.getItem(HKEY)||'[]'); }catch(e){ return []; } }
+  function saveH(a){ try{ localStorage.setItem(HKEY,JSON.stringify(a.slice(0,50))); }catch(e){} }
+  function addHist(){ var d=rowData(); if(!d){toast('Enter a timestamp.');return;} var a=loadH(); a.unshift({t:Date.now(),input:d.input,iso:d.iso,unix_s:d.unix_s}); saveH(a); renderHist(); toast('Saved.'); }
+  function renderHist(){ var a=loadH(),box=$('tc-histList'); $('tc-histCount').textContent=a.length?a.length+' saved':'';
+    if(!a.length){ box.innerHTML='<div class="tc-hist-empty">No saved conversions yet.</div>'; return; }
+    box.innerHTML=a.map(function(h,i){ return '<div class="tc-hist-item"><div class="m"><b>'+esc(h.input)+'</b><span class="s">'+esc(h.iso)+'</span></div><button type="button" data-hi="'+i+'" aria-label="Delete">✕</button></div>'; }).join('');
+    box.querySelectorAll('button[data-hi]').forEach(function(b){ b.addEventListener('click',function(){ var a=loadH(); a.splice(+b.dataset.hi,1); saveH(a); renderHist(); }); }); }
+  function histCSV(){ var a=loadH(); if(!a.length){toast('History empty.');return;} var rows=[['Date','Input','ISO','Unix_s']]; a.forEach(function(h){ rows.push([new Date(h.t).toLocaleString('en-IN'),h.input,h.iso,h.unix_s]); }); var csv=rows.map(function(r){return r.map(function(c){return '"'+String(c).replace(/"/g,'""')+'"';}).join(',');}).join('\n'); if(typeof downloadText==='function') downloadText('timestamp-history.csv',csv,'text/csv'); }
+  function histJSON(){ var a=loadH(); if(!a.length){toast('History empty.');return;} if(typeof downloadText==='function') downloadText('timestamp-history.json',JSON.stringify(a,null,2),'application/json'); }
+  function histClear(){ if(!loadH().length)return; if(confirm('Clear all saved conversions?')){ saveH([]); renderHist(); } }
+
+  /* ===== FAQ ===== */
+  var FAQ=[
+    ["What is a Unix timestamp?","A Unix timestamp is the number of seconds that have elapsed since 1 January 1970 00:00:00 UTC (the Unix epoch), ignoring leap seconds. It is a compact, timezone-independent way to store a moment in time. This tool converts it to readable dates and back.","Unix timestamp क्या है?","Unix timestamp 1 जनवरी 1970 00:00:00 UTC (Unix epoch) से बीते seconds की संख्या है, leap seconds को छोड़कर। यह समय के किसी पल को संग्रहीत करने का एक संक्षिप्त, timezone-स्वतंत्र तरीका है। यह टूल इसे पढ़ने-योग्य dates में और वापस बदलता है।"],
+    ["What's the difference between seconds and milliseconds timestamps?","Unix timestamps are usually in seconds (10 digits around now), but JavaScript and Java use milliseconds (13 digits). The tool auto-detects the unit by length, and you can also force seconds, milliseconds, microseconds or nanoseconds from the dropdown.","seconds और milliseconds timestamp में क्या अंतर है?","Unix timestamps आम तौर पर seconds में होते हैं (अभी लगभग 10 अंक), पर JavaScript और Java milliseconds इस्तेमाल करते हैं (13 अंक)। टूल लंबाई से इकाई अपने आप पहचानता है, और आप dropdown से seconds, milliseconds, microseconds या nanoseconds भी चुन सकते हैं।"],
+    ["How do I convert a timestamp to a date?","Paste the number into the input (or click Use Current Timestamp). The tool instantly shows local, UTC, ISO 8601 and other date formats, plus relative time and calendar facts. Click any value to copy it.","मैं timestamp को date में कैसे बदलूँ?","संख्या input में paste करें (या Use Current Timestamp दबाएँ)। टूल तुरंत local, UTC, ISO 8601 व अन्य date formats, relative time और calendar facts दिखाता है। किसी भी मान को copy करने के लिए उस पर क्लिक करें।"],
+    ["How do I convert a date to a timestamp?","Use the Date → Timestamp picker: choose a date and time in your local timezone and the tool shows its Unix value in seconds and milliseconds. You can copy either.","मैं date को timestamp में कैसे बदलूँ?","Date → Timestamp picker इस्तेमाल करें: अपने local timezone में date-time चुनें और टूल उसका Unix मान seconds व milliseconds में दिखाता है। आप कोई भी copy कर सकते हैं।"],
+    ["What is ISO 8601?","ISO 8601 is the international standard date-time format, like 2025-06-15T14:26:40Z. The 'Z' means UTC (Zulu time). It sorts correctly as text and is unambiguous across systems, which is why APIs and databases prefer it.","ISO 8601 क्या है?","ISO 8601 अंतरराष्ट्रीय मानक date-time format है, जैसे 2025-06-15T14:26:40Z। 'Z' का अर्थ UTC (Zulu time) है। यह text के रूप में सही sort होता है और systems के बीच स्पष्ट है, इसीलिए APIs व databases इसे पसंद करते हैं।"],
+    ["Which timestamp formats are supported?","Unix seconds, milliseconds, microseconds and nanoseconds, JavaScript/Java milliseconds, .NET ticks, Windows FileTime, Apple Cocoa time and the Excel serial date — all shown simultaneously and copyable.","कौन-से timestamp formats समर्थित हैं?","Unix seconds, milliseconds, microseconds व nanoseconds, JavaScript/Java milliseconds, .NET ticks, Windows FileTime, Apple Cocoa time और Excel serial date — सभी एक साथ दिखते हैं और copy किए जा सकते हैं।"],
+    ["Does it handle timezones and daylight saving?","Yes. The timezone converter uses your browser's built-in IANA database, so it applies the correct offset — including daylight-saving changes — for the specific date, not a naive fixed offset.","क्या यह timezones और daylight saving संभालता है?","हाँ। timezone converter आपके browser के built-in IANA database का उपयोग करता है, इसलिए यह उस विशेष तारीख के लिए सही offset — daylight-saving बदलाव सहित — लगाता है, न कि कोई सरल स्थिर offset।"],
+    ["What are .NET ticks and Windows FileTime?","Both count 100-nanosecond intervals but from different epochs: .NET ticks start at year 1 (0001-01-01), and Windows FileTime starts at 1601-01-01. The tool converts your instant into both automatically.",".NET ticks और Windows FileTime क्या हैं?","दोनों 100-नैनोसेकंड अंतराल गिनते हैं पर अलग epochs से: .NET ticks साल 1 (0001-01-01) से, और Windows FileTime 1601-01-01 से शुरू होते हैं। टूल आपके पल को दोनों में अपने आप बदल देता है।"],
+    ["What is the Excel serial date?","Excel stores dates as a serial number of days since 1899-12-30 (with a historical 1900 leap-year quirk). The tool shows this serial so you can paste timestamps into spreadsheets, and vice versa.","Excel serial date क्या है?","Excel dates को 1899-12-30 से days की serial संख्या के रूप में संग्रहीत करता है (एक ऐतिहासिक 1900 leap-year quirk के साथ)। टूल यह serial दिखाता है ताकि आप timestamps को spreadsheets में paste कर सकें, और उल्टा।"],
+    ["Can I convert many timestamps at once?","Yes. Paste a list into the Batch Converter (one per line) and it produces a table of UTC and local dates that you can export to CSV — ideal for a column from a log or database.","क्या मैं एक साथ कई timestamps बदल सकता हूँ?","हाँ। Batch Converter में एक सूची paste करें (एक प्रति पंक्ति) और यह UTC व local dates की एक table बनाता है जिसे आप CSV में export कर सकते हैं — किसी log या database के column के लिए बढ़िया।"],
+    ["Does it show a date difference?","Yes. The difference calculator compares two date-times and shows the gap as years/months/days and as a total in weeks, days, hours, minutes and seconds — useful for durations, ages and SLAs.","क्या यह date difference दिखाता है?","हाँ। difference calculator दो date-times की तुलना करके अंतर को years/months/days और weeks, days, hours, minutes व seconds के कुल में दिखाता है — durations, ages व SLAs के लिए उपयोगी।"],
+    ["Can I get code snippets?","Yes. The Programming Examples panel generates ready-to-copy snippets for JavaScript, Node.js, Python, Java, PHP, Go, Rust, Swift, Kotlin and SQL, each using the current timestamp.","क्या मुझे code snippets मिल सकते हैं?","हाँ। Programming Examples panel JavaScript, Node.js, Python, Java, PHP, Go, Rust, Swift, Kotlin और SQL के लिए तैयार snippets बनाता है, हर एक मौजूदा timestamp इस्तेमाल करते हुए।"],
+    ["What calendar facts does it show?","For any instant it shows the day name, ISO week number, quarter, day-of-year, whether it is a weekend, and whether the year is a leap year — handy for reporting and validation.","यह कौन-से calendar facts दिखाता है?","किसी भी पल के लिए यह day name, ISO week number, quarter, day-of-year, weekend है या नहीं, और साल leap year है या नहीं दिखाता है — reporting व validation के लिए उपयोगी।"],
+    ["What is relative time?","Relative time expresses how far a timestamp is from now in plain language — '3 hours ago' or 'in 2 days'. It is great for quickly gauging how old a log entry or record is.","Relative time क्या है?","Relative time बताता है कि कोई timestamp अभी से कितना दूर है, सरल भाषा में — '3 hours ago' या 'in 2 days'। यह जल्दी अंदाज़ा लगाने के लिए बढ़िया है कि कोई log entry कितनी पुरानी है।"],
+    ["Can I copy or export results?","Yes. Every value is click-to-copy, dedicated buttons copy local/UTC/ISO/timestamp, and you can export a full conversion to TXT, CSV, JSON or PDF, or print it.","क्या मैं परिणाम copy या export कर सकता हूँ?","हाँ। हर मान click-to-copy है, अलग बटन local/UTC/ISO/timestamp copy करते हैं, और आप पूरी conversion को TXT, CSV, JSON या PDF में export, या print कर सकते हैं।"],
+    ["Does it keep a history?","Yes. Save any conversion to your browser's local history; you can revisit, delete entries, download the log as CSV or JSON, or clear it. History never leaves your device.","क्या यह history रखता है?","हाँ। किसी भी conversion को browser की local history में सहेजें; आप उसे दोबारा देख, हटा, CSV/JSON में download, या मिटा सकते हैं। history कभी device से बाहर नहीं जाती।"],
+    ["Is my data private?","Completely. All conversions run in your browser with JavaScript; nothing is uploaded, there is no login, and your history stays only on your device. The tool works offline once loaded.","क्या मेरा डेटा निजी है?","पूरी तरह। सभी conversions आपके browser में JavaScript से चलती हैं; कुछ भी upload नहीं होता, कोई login नहीं, और history केवल आपके device पर रहती है। load होने के बाद टूल offline काम करता है।"],
+    ["Why does my local time differ from UTC?","Local time is your device's timezone applied to the same instant; UTC is the universal reference. They differ by your timezone's offset (e.g., IST is UTC+5:30). Use UTC or ISO when sharing to avoid confusion.","मेरा local time UTC से अलग क्यों है?","Local time उसी पल पर लगाया गया आपके device का timezone है; UTC सार्वभौमिक संदर्भ है। ये आपके timezone के offset से अलग होते हैं (जैसे IST = UTC+5:30)। साझा करते समय भ्रम से बचने के लिए UTC या ISO इस्तेमाल करें।"],
+    ["What range of dates is supported?","JavaScript dates span roughly ±271,000 years around 1970. Values beyond that, or non-numeric input, are flagged instead of producing a broken 'Invalid Date'.","कौन-सी तारीखों की सीमा समर्थित है?","JavaScript dates लगभग 1970 के आसपास ±271,000 वर्ष तक फैली हैं। इससे परे मान, या गैर-संख्यात्मक input, टूटी 'Invalid Date' बनाने के बजाय चिह्नित किए जाते हैं।"],
+    ["Is the Timestamp Converter free?","Yes, completely free with no sign-up, no limits and no watermarks — part of ApneSoftware's suite of free, privacy-friendly, browser-based developer tools.","क्या Timestamp Converter मुफ़्त है?","हाँ, पूरी तरह मुफ़्त — कोई sign-up नहीं, कोई सीमा नहीं, कोई watermark नहीं — ApneSoftware के मुफ़्त, privacy-friendly, browser-आधारित developer टूल्स का हिस्सा।"],
+    ["Who is this tool for?","Backend and API developers, DevOps and SRE engineers, database administrators, data analysts, QA engineers and students — anyone who reads or writes timestamps across systems, timezones and languages.","यह टूल किसके लिए है?","Backend व API developers, DevOps व SRE engineers, database administrators, data analysts, QA engineers और students — कोई भी जो systems, timezones व languages के पार timestamps पढ़ता या लिखता है।"]
+  ];
+  function buildFAQ(){ var list=$('tc-faqList'); if(!list)return;
+    FAQ.forEach(function(f){ var d=document.createElement('details'); d.innerHTML='<summary>'+esc(f[0])+' / '+esc(f[2])+'</summary><div class="tc-faq-a"><p>'+esc(f[1])+'</p><p style="margin-top:8px">'+esc(f[3])+'</p></div>'; list.appendChild(d); });
+    try{ $('faqSchema').textContent=JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:FAQ.map(function(f){return {'@type':'Question',name:f[0],acceptedAnswer:{'@type':'Answer',text:f[1]}};})}); }catch(e){} }
+
+  /* ===== init ===== */
+  function init(){
+    // timezone options
+    $('tc-tz').innerHTML=TZS.map(function(z){ return '<option value="'+z[1]+'">'+esc(z[0])+'</option>'; }).join('');
+    // language tabs
+    $('tc-langTabs').innerHTML=LANGS.map(function(l){ return '<button type="button" class="tc-lang" data-lang="'+l[0]+'" aria-pressed="'+(l[0]===state.lang)+'">'+l[1]+'</button>'; }).join('');
+    $('tc-langTabs').querySelectorAll('button').forEach(function(b){ b.addEventListener('click',function(){ state.lang=b.dataset.lang; $('tc-langTabs').querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed','false');}); b.setAttribute('aria-pressed','true'); renderCode(); }); });
+
+    $('unixInput').addEventListener('input',render);
+    $('tc-unit').addEventListener('change',render);
+    $('nowBtn').addEventListener('click',function(){ $('unixInput').value=Math.floor(Date.now()/1000); $('tc-unit').value='auto'; render(); });
+    $('tc-tz').addEventListener('change',renderTZ);
+    $('dateInput').addEventListener('input',renderReverse);
+    $('tc-diffA').addEventListener('input',renderDiff); $('tc-diffB').addEventListener('input',renderDiff);
+
+    // click-to-copy on result values
+    document.querySelectorAll('.result-row .val').forEach(function(el){ el.addEventListener('click',function(){ if(el.textContent&&el.textContent!=='—') copyVal(el.textContent,el); }); });
+
+    $('tc-copyLocal').addEventListener('click',function(){ if(state.ms!=null) copyVal($('localResult').textContent,this); });
+    $('tc-copyUtc').addEventListener('click',function(){ if(state.ms!=null) copyVal($('utcResult').textContent,this); });
+    $('tc-copyIso').addEventListener('click',function(){ if(state.ms!=null) copyVal($('isoResult').textContent,this); });
+    $('tc-copyTs').addEventListener('click',function(){ if(state.ms!=null) copyVal($('tc-fs').textContent,this); });
+    $('tc-copyCode').addEventListener('click',function(){ copyVal($('tc-code').textContent,this); });
+
+    $('tc-expTxt').addEventListener('click',exportTXT); $('tc-expCsv').addEventListener('click',exportCSV);
+    $('tc-expJson').addEventListener('click',exportJSON); $('tc-expPdf').addEventListener('click',exportPDF);
+    $('tc-print').addEventListener('click',function(){ buildReport(); window.print(); });
+    $('tc-saveHist').addEventListener('click',addHist);
+    $('tc-batchRun').addEventListener('click',runBatch); $('tc-batchCsv').addEventListener('click',batchCSV);
+    $('tc-histCsv').addEventListener('click',histCSV); $('tc-histJson').addEventListener('click',histJSON); $('tc-histClear').addEventListener('click',histClear);
+
+    buildFAQ(); renderHist();
+    $('unixInput').value=Math.floor(Date.now()/1000); render();
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+
+  /* ===== test hooks ===== */
+  window.__tsHooks={ parse:function(raw,unit){ $('unixInput').value=raw; if(unit)$('tc-unit').value=unit; return parseInput(); },
+    render:render, isoWeek:isoWeek, dayOfYear:dayOfYear, isLeap:isLeap, codeFor:codeFor, relTime:relTime, tzFormat:tzFormat, getMs:function(){ return state.ms; } };
+})();
 </script>
 <!-- Default Statcounter code for Apne Software
 https://apnesoftware.com -->
 <script type="text/javascript">
-var sc_project=13334460; 
-var sc_invisible=1; 
-var sc_security="a5854dc7"; 
+var sc_project=13334460;
+var sc_invisible=1;
+var sc_security="a5854dc7";
 </script>
 <script type="text/javascript"
 src="https://www.statcounter.com/counter/counter.js"
