@@ -795,11 +795,22 @@
     {
       "id": "image-rotate-flip",
       "name": "Image Rotate & Flip",
-      "description": "Rotate 90° or flip horizontally/vertically",
+      "description": "Rotate JPG/PNG/WebP left/right 90°, 180° or by any custom angle with an auto-expanding canvas and transparent/white/black/custom background, flip H/V, undo/redo, live preview and PNG/JPG/WebP export. 100% local.",
       "icon": "🔄",
       "url": "tools/image-rotate-flip.html",
       "category": "image",
-      "published": true
+      "published": true,
+      "tags": [
+        "rotate image",
+        "flip image",
+        "mirror image",
+        "rotate 90 degrees",
+        "rotate by angle",
+        "straighten photo",
+        "flip horizontal vertical",
+        "image orientation",
+        "offline"
+      ]
     },
     {
       "id": "image-rounded-corners",

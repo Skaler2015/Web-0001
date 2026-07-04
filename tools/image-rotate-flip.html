@@ -4,31 +4,117 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
+<meta name="description" content="Free online Image Rotate &amp; Flip tool — rotate JPG, PNG or WebP left/right in 90° steps, 180°, or by any custom angle with an auto-expanding canvas and transparent/white/black/custom background, flip horizontally or vertically, undo/redo, live preview, image info, and export to PNG/JPG/WebP with a quality slider. 100% local, nothing uploaded, works offline.">
+<meta name="keywords" content="rotate image, flip image, image rotate flip, rotate photo online, mirror image, rotate 90 degrees, rotate by angle, straighten photo, flip horizontal vertical">
 <link rel="canonical" href="https://apnesoftware.com/tools/image-rotate-flip.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Image Rotate & Flip | ApneSoftware">
-<meta property="og:description" content="Rotate 90° or flip horizontally/vertically. Free online tool — no signup required.">
+<meta property="og:title" content="Image Rotate &amp; Flip — Rotate &amp; Mirror Photos | ApneSoftware">
+<meta property="og:description" content="Rotate images by 90° or any custom angle and flip horizontally/vertically, with background options, undo/redo, live preview and PNG/JPG/WebP export. Free, private, offline.">
 <meta property="og:url" content="https://apnesoftware.com/tools/image-rotate-flip.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Image Rotate & Flip | ApneSoftware">
-<meta name="twitter:description" content="Rotate 90° or flip horizontally/vertically. Free online tool — no signup required.">
+<meta name="twitter:title" content="Image Rotate &amp; Flip — Rotate &amp; Mirror Photos | ApneSoftware">
+<meta name="twitter:description" content="Rotate images by 90° or any angle and flip horizontally/vertically, with background options, undo/redo, live preview and multi-format export. Free, private, offline.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Image Rotate & Flip","description":"Rotate 90° or flip horizontally/vertically. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/image-rotate-flip.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Image Rotate & Flip","description":"Professional browser-based image orientation tool that rotates JPG, PNG and WebP images left or right in 90° steps, 180°, or by any custom angle with an auto-expanding canvas and a transparent, white, black or custom background, flips horizontally and vertically, with undo/redo, a live preview, image information and export to PNG, JPG or WebP with a quality slider. Runs entirely in the browser.","url":"https://apnesoftware.com/tools/image-rotate-flip.html","applicationCategory":"MultimediaApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"featureList":["Rotate 90° left/right and 180°","Custom-angle rotation with auto-expand canvas","Background: transparent/white/black/custom","Flip horizontal and vertical","Undo, redo and reset","Live preview and image info","PNG/JPG/WebP export with quality","100% local processing"],"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Image Rotate & Flip — Rotate and Mirror Photos Online","url":"https://apnesoftware.com/tools/image-rotate-flip.html","description":"Private, browser-based image rotate and flip tool with custom-angle rotation, background options, undo/redo, live preview and multi-format export.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apnesoftware.com/"},{"@type":"ListItem","position":2,"name":"Image Tools","item":"https://apnesoftware.com/index.html"},{"@type":"ListItem","position":3,"name":"Image Rotate & Flip","item":"https://apnesoftware.com/tools/image-rotate-flip.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"How to rotate or flip an image","description":"Rotate or mirror a photo in your browser.","step":[{"@type":"HowToStep","name":"Upload an image","text":"Drag and drop or choose a JPG, PNG or WebP file."},{"@type":"HowToStep","name":"Rotate or flip","text":"Rotate left/right/180°, enter a custom angle, or flip horizontally/vertically."},{"@type":"HowToStep","name":"Set background","text":"For angled rotation choose transparent, white, black or a custom colour."},{"@type":"HowToStep","name":"Export","text":"Pick PNG, JPG or WebP and download the result."}]}
+</script>
+<script type="application/ld+json" id="faqSchema">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[]}
 </script>
 <meta name="color-scheme" content="dark">
-<title>Image Rotate & Flip | ApneSoftware</title>
+<title>Image Rotate &amp; Flip — Rotate &amp; Mirror Photos | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-/* Premium upload enhancement for this tool */
-.dropzone{cursor:pointer}
-.dropzone p{font-size:.9rem}
-.panel{position:relative;z-index:1}
-</style>
-<style>
-  #previewCanvas{max-width:100%;border-radius:10px;border:1px solid var(--border)}
+/* ===== Image Rotate & Flip — scoped rf- styles ===== */
+.rf-crumb{font-size:.78rem;color:var(--text-dim);margin-bottom:6px}
+.rf-crumb a{color:#c4b5fd;text-decoration:none}
+.rf-crumb a:hover{text-decoration:underline}
+.rf-btn{background:rgba(167,139,250,.14);border:1px solid rgba(167,139,250,.34);color:#d6cbff;border-radius:10px;padding:9px 13px;font-size:.83rem;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.15s}
+.rf-btn:hover{background:rgba(167,139,250,.24)}
+.rf-btn.primary{background:linear-gradient(90deg,#7c3aed,#a78bfa);border-color:transparent;color:#fff;font-weight:600}
+.rf-btn.danger{color:#fca5a5;border-color:rgba(248,113,113,.4)}
+.rf-btn:focus-visible,.rf-chip:focus-visible{outline:2px solid #a78bfa;outline-offset:2px}
+.rf-btn.sm{padding:6px 10px;font-size:.76rem}
+.rf-toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+
+.dropzone{cursor:pointer;border:2px dashed rgba(167,139,250,.4);border-radius:16px;padding:34px 20px;text-align:center;transition:.15s;background:rgba(167,139,250,.04)}
+.dropzone:hover,.dropzone.drag{background:rgba(167,139,250,.12);border-color:#a78bfa}
+.dropzone .ic{font-size:2.2rem}
+.dropzone p{font-size:.95rem;margin:8px 0}
+.dropzone .sub{font-size:.82rem;color:var(--text-dim)}
+.dropzone input{display:none}
+
+.rf-grid{display:grid;grid-template-columns:1fr 300px;gap:18px;margin-top:16px}
+@media(max-width:860px){.rf-grid{grid-template-columns:1fr}}
+.rf-stage{background:rgba(0,0,0,.3);border:1px solid var(--border,rgba(255,255,255,.1));border-radius:14px;padding:12px;display:flex;justify-content:center;align-items:center;min-width:0;min-height:200px}
+#previewCanvas{max-width:100%;max-height:56vh;height:auto;border-radius:8px;background:repeating-conic-gradient(#2a2a2a 0% 25%,#222 0% 50%) 50%/16px 16px}
+
+.rf-side{min-width:0}
+.rf-card{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.1));border-radius:12px;padding:12px 14px;margin-bottom:12px}
+.rf-card h4{margin:0 0 9px;font-size:.8rem;text-transform:uppercase;letter-spacing:.03em;color:#c4b5fd}
+.rf-chips{display:flex;flex-wrap:wrap;gap:6px}
+.rf-chip{font-size:.76rem;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid var(--border,rgba(255,255,255,.14));color:var(--text-dim);cursor:pointer;font-weight:600}
+.rf-chip:hover{border-color:#a78bfa;color:#c4b5fd}
+.rf-chip.big{flex:1;justify-content:center;display:inline-flex;padding:9px 8px;font-size:.82rem}
+.rf-field{margin-bottom:9px}
+.rf-field:last-child{margin-bottom:0}
+.rf-field label{display:block;font-size:.78rem;color:var(--text-dim);margin-bottom:5px}
+.rf-field label .v{color:#c4b5fd;font-weight:600}
+.rf-anglerow{display:flex;gap:8px;align-items:center}
+.rf-anglerow input[type=range]{flex:1;accent-color:#a78bfa}
+.rf-anglerow input[type=number]{width:66px;background:rgba(255,255,255,.05);border:1px solid var(--border,rgba(255,255,255,.14));color:var(--text);border-radius:8px;padding:6px 8px;font-size:.82rem}
+.rf-field select{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border,rgba(255,255,255,.14));color:var(--text);border-radius:8px;padding:7px 9px;font-size:.82rem}
+.rf-field input[type=range]{width:100%;accent-color:#a78bfa}
+.rf-bg{display:flex;gap:6px;align-items:center;margin-top:6px}
+.rf-bg input[type=color]{width:38px;height:30px;padding:2px;border:1px solid var(--border,rgba(255,255,255,.14));border-radius:8px;background:transparent}
+.rf-info{font-size:.76rem;color:var(--text-dim)}
+.rf-info div{display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.rf-info div:last-child{border-bottom:none}
+.rf-info b{color:#c4b5fd}
+#statusMsg{margin-top:8px;font-size:.85rem;min-height:1em}
+.privacy-note{background:rgba(124,92,252,.08);border:1px solid rgba(124,92,252,.25);border-radius:8px;padding:12px 14px;font-size:.84rem;color:var(--text-dim);margin-top:16px;line-height:1.6}
+.privacy-note b{color:#c4b5fd}
+
+/* below-tool */
+.rf-wrap{margin:26px 0}
+.rf-title{font-size:1.35rem;margin:0 0 14px;display:flex;align-items:center;gap:10px}
+.rf-feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.rf-fcard{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:14px;padding:16px}
+.rf-fcard h4{margin:0 0 6px;font-size:.98rem;display:flex;align-items:center;gap:8px}
+.rf-fcard p{margin:0;font-size:.86rem;color:var(--text-dim);line-height:1.55}
+.rf-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.rf-rel{display:block;text-decoration:none;background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:14px;transition:.15s;color:var(--text)}
+.rf-rel:hover{border-color:#a78bfa;background:rgba(167,139,250,.1);transform:translateY(-2px)}
+.rf-rel b{display:block;font-size:.92rem;margin-bottom:3px}
+.rf-rel span{font-size:.8rem;color:var(--text-dim);line-height:1.45}
+.rf-prose p,.rf-prose li{color:var(--text-dim);line-height:1.75;font-size:.92rem}
+.rf-prose h3{font-size:1.02rem;margin:18px 0 8px}
+.rf-tscroll{overflow:auto;border-radius:10px}
+table.rf-table{border-collapse:collapse;font-size:.85rem;width:100%}
+table.rf-table th,table.rf-table td{border:1px solid var(--border,rgba(255,255,255,.12));padding:7px 10px;text-align:left;color:var(--text)}
+table.rf-table th{background:rgba(167,139,250,.14);color:#fff;font-weight:600}
+.rf-faq details{background:rgba(255,255,255,.03);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:12px;padding:0 16px;margin-bottom:10px}
+.rf-faq summary{cursor:pointer;padding:14px 0;font-weight:600;font-size:.92rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.rf-faq summary::-webkit-details-marker{display:none}
+.rf-faq summary::after{content:'+';font-size:1.3rem;color:#a78bfa;flex:0 0 auto}
+.rf-faq details[open] summary::after{content:'−'}
+.rf-faq details p{margin:0 0 14px;font-size:.87rem;color:var(--text-dim);line-height:1.65}
+.rf-steps{list-style:none;counter-reset:s;padding:0;margin:0;display:grid;gap:12px}
+.rf-steps li{counter-increment:s;position:relative;padding-left:46px;font-size:.9rem;color:var(--text-dim);line-height:1.6}
+.rf-steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:32px;height:32px;border-radius:9px;background:rgba(167,139,250,.18);color:#c4b5fd;font-weight:700;display:grid;place-items:center}
+.rf-steps li b{color:var(--text)}
+@media (prefers-contrast:more){.rf-prose p,.rf-prose li{color:#fff}}
 </style>
 </head>
 <body>
@@ -41,120 +127,364 @@
 
 <div class="container">
   <div class="tool-header">
-    <h1>🔄 Image Rotate & Flip</h1>
-    <p>Rotate your image in 90° steps or flip it horizontally/vertically.</p>
+    <nav class="rf-crumb" aria-label="Breadcrumb"><a href="../index.html">Home</a> › <a href="../index.html">Image Tools</a> › <span>Image Rotate &amp; Flip</span></nav>
+    <h1>🔄 Image Rotate &amp; Flip</h1>
+    <p>Rotate JPG, PNG or WebP images left/right in 90° steps, 180°, or by <b>any custom angle</b> (with an auto-expanding canvas and background choice), and <b>flip</b> horizontally or vertically — with undo/redo and multi-format export. 100% local — nothing is uploaded.</p>
+    <div class="rf-toolbar">
+      <button class="rf-btn" id="newImgBtn" type="button">↺ New image</button>
+    </div>
   </div>
 
   <div class="panel">
-    <div class="dropzone" id="dropzone">
-      <p>📤 Drag an image here or click to choose</p>
+    <div class="dropzone" id="dropzone" role="button" tabindex="0" aria-label="Upload image">
+      <div class="ic">🖼️</div>
+      <p><b>Drop an image here</b> or click to choose</p>
+      <div class="sub">🔒 JPG/PNG/WebP · processed locally · nothing uploaded</div>
       <input type="file" id="fileInput" accept="image/*">
     </div>
 
-    <div id="afterUpload" style="display:none;margin-top:18px">
-      <canvas id="previewCanvas"></canvas>
+    <div id="afterUpload" style="display:none">
+      <div class="rf-grid">
+        <div class="rf-stage"><canvas id="previewCanvas" aria-label="Rotated image preview"></canvas></div>
 
-      <div class="btn-row">
-        <button class="btn secondary" id="rotateLeftBtn">↺ Rotate Left 90°</button>
-        <button class="btn secondary" id="rotateRightBtn">↻ Rotate Right 90°</button>
-        <button class="btn secondary" id="flipHBtn">⇋ Flip Horizontal</button>
-        <button class="btn secondary" id="flipVBtn">⇕ Flip Vertical</button>
-        <button class="btn secondary" id="resetBtn">↩️ Reset</button>
+        <div class="rf-side">
+          <div class="rf-card">
+            <h4>Rotate</h4>
+            <div class="rf-chips" style="margin-bottom:8px">
+              <button class="rf-chip big" id="rotateLeftBtn" type="button">↺ Left 90°</button>
+              <button class="rf-chip big" id="rotateRightBtn" type="button">↻ Right 90°</button>
+            </div>
+            <div class="rf-chips" style="margin-bottom:9px" id="quickAngles">
+              <button class="rf-chip" data-a="45" type="button">45°</button>
+              <button class="rf-chip" data-a="90" type="button">90°</button>
+              <button class="rf-chip" data-a="180" type="button">180°</button>
+              <button class="rf-chip" data-a="270" type="button">270°</button>
+            </div>
+            <div class="rf-field">
+              <label for="angleRange">Custom angle: <span class="v" id="angleVal">0</span>°</label>
+              <div class="rf-anglerow">
+                <input type="range" id="angleRange" min="0" max="359" step="1" value="0">
+                <input type="number" id="angleNum" min="0" max="359" value="0" aria-label="Angle in degrees">
+              </div>
+            </div>
+          </div>
+
+          <div class="rf-card">
+            <h4>Flip</h4>
+            <div class="rf-chips">
+              <button class="rf-chip big" id="flipHBtn" type="button" aria-pressed="false">⇋ Horizontal</button>
+              <button class="rf-chip big" id="flipVBtn" type="button" aria-pressed="false">⇕ Vertical</button>
+            </div>
+          </div>
+
+          <div class="rf-card">
+            <h4>Background (for angled rotation)</h4>
+            <div class="rf-field">
+              <select id="bgMode"><option value="transparent">Transparent</option><option value="#ffffff">White</option><option value="#000000">Black</option><option value="custom">Custom…</option></select>
+              <div class="rf-bg" id="bgCustomRow" style="display:none"><input type="color" id="bgColor" value="#7c3aed"><span style="font-size:.78rem;color:var(--text-dim)">custom colour</span></div>
+            </div>
+          </div>
+
+          <div class="rf-card">
+            <h4>History</h4>
+            <div class="rf-chips">
+              <button class="rf-chip" id="undoBtn" type="button">⟲ Undo</button>
+              <button class="rf-chip" id="redoBtn" type="button">⟳ Redo</button>
+              <button class="rf-chip" id="resetBtn" type="button">↩ Reset</button>
+            </div>
+          </div>
+
+          <div class="rf-card">
+            <h4>Output</h4>
+            <div class="rf-field"><label for="outFmt">Format</label><select id="outFmt"><option value="image/png">PNG</option><option value="image/jpeg" selected>JPG</option><option value="image/webp">WebP</option></select></div>
+            <div class="rf-field"><label for="quality">Quality: <span class="v" id="qualityVal">92</span>%</label><input type="range" id="quality" min="60" max="100" value="92"></div>
+          </div>
+
+          <div class="rf-card">
+            <h4>Image info</h4>
+            <div class="rf-info" id="imgInfo"></div>
+          </div>
+        </div>
       </div>
 
-      <div class="btn-row">
-        <button class="btn" id="downloadBtn">⬇️ Download</button>
+      <div class="rf-toolbar">
+        <button class="rf-btn primary" id="downloadBtn" type="button">⬇️ Download</button>
       </div>
-      <p id="statusMsg" style="margin-top:10px;color:var(--text-dim);font-size:.9rem"></p>
+      <p id="statusMsg" style="color:var(--text-dim)"></p>
+
+      <div class="privacy-note">🔒 <b>Private by design:</b> your image is rotated and flipped entirely in your browser using an HTML canvas. Nothing is uploaded to a server, and the tool works offline once loaded.</div>
     </div>
   </div>
 </div>
 
+<!-- ===================== BELOW-TOOL CONTENT ===================== -->
+<div class="container">
 
-<div class="info-wrap">
-  <div class="info-section">
-    <div class="info-block">
-      <h2>ℹ️ About This Tool</h2>
-      <p>Quickly rotate a sideways or upside-down photo, or flip it like a mirror image — common fixes needed after scanning documents or taking photos at an angle.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Upload an image.</li>
-        <li>Use the rotate and flip buttons — you can combine them as needed.</li>
-        <li>Click Download to save the result.</li>
-      </ol>
-    </div>
-    <hr class="info-divider">
-    <div class="info-block">
-      <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>तिरछी या उल्टी फोटो को तुरंत घुमाएं, या उसे मिरर इमेज की तरह फ्लिप करें — स्कैन किए गए डॉक्यूमेंट या एंगल से ली गई फोटो में आम तौर पर ज़रूरी फिक्स।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>एक इमेज अपलोड करें।</li>
-        <li>रोटेट और फ्लिप बटन इस्तेमाल करें — ज़रूरत के हिसाब से दोनों मिला भी सकते हैं।</li>
-        <li>Download दबाकर रिजल्ट सेव करें।</li>
-      </ol>
-    </div>
+<!-- Key Features -->
+<section class="rf-wrap">
+  <h2 class="rf-title">✨ Key Features</h2>
+  <div class="rf-feat-grid">
+    <div class="rf-fcard"><h4>↺ Rotate 90° &amp; 180°</h4><p>Fix a sideways or upside-down photo instantly with one-click left, right and 180° rotation.</p></div>
+    <div class="rf-fcard"><h4>🎚️ Any Custom Angle</h4><p>Rotate by any degree with a slider or exact input — great for straightening a tilted horizon.</p></div>
+    <div class="rf-fcard"><h4>📐 Auto-Expand Canvas</h4><p>Angled rotation grows the canvas so no corner of your image is ever clipped.</p></div>
+    <div class="rf-fcard"><h4>🎨 Background Choice</h4><p>Fill the corners left by angled rotation with transparent, white, black or a custom colour.</p></div>
+    <div class="rf-fcard"><h4>⇋ Flip &amp; Mirror</h4><p>Flip horizontally or vertically, and combine with rotation for any orientation.</p></div>
+    <div class="rf-fcard"><h4>🔄 Undo / Redo / Reset</h4><p>Step back and forth through your edits, or return to the original in one click.</p></div>
+    <div class="rf-fcard"><h4>👁️ Live Preview</h4><p>Every change renders instantly on a checkerboard canvas so transparency is obvious.</p></div>
+    <div class="rf-fcard"><h4>📊 Image Information</h4><p>See width, height, aspect ratio, orientation and file size at a glance.</p></div>
+    <div class="rf-fcard"><h4>🔄 Multi-Format Export</h4><p>Save as PNG, JPG or WebP with a quality slider.</p></div>
+    <div class="rf-fcard"><h4>📐 Full Resolution</h4><p>Rotation and flipping run on the image's real pixels — no quality-losing downscale.</p></div>
+    <div class="rf-fcard"><h4>🔒 100% Local</h4><p>Every edit is processed in your browser. Nothing is uploaded, logged or tracked.</p></div>
+    <div class="rf-fcard"><h4>♿ Accessible &amp; Mobile</h4><p>Keyboard shortcuts, ARIA labels, high-contrast support and a responsive layout.</p></div>
   </div>
+</section>
+
+<!-- Benefits -->
+<section class="rf-wrap rf-prose">
+  <h2 class="rf-title">🎯 Benefits</h2>
+  <ul>
+    <li><b>Fix orientation fast</b> — turn a sideways scan or phone photo upright in a click.</li>
+    <li><b>Straighten tilted shots</b> — custom-angle rotation levels a crooked horizon precisely.</li>
+    <li><b>Mirror when needed</b> — flip selfies or align document scans with a single tap.</li>
+    <li><b>Keep quality</b> — edits use full-resolution pixels and export in your chosen format.</li>
+    <li><b>Stay private</b> — your photos never leave the browser, and it works offline.</li>
+  </ul>
+</section>
+
+<!-- Related Tools (ABOVE About) -->
+<section class="rf-wrap">
+  <h2 class="rf-title">🧰 Related Tools</h2>
+  <div class="rf-rel-grid">
+    <a class="rf-rel" href="image-cropper.html"><b>✂️ Image Cropper</b><span>Crop images precisely.</span></a>
+    <a class="rf-rel" href="image-compressor.html"><b>🗜️ Image Compressor</b><span>Shrink image file size.</span></a>
+    <a class="rf-rel" href="image-resizer.html"><b>📐 Image Resizer</b><span>Resize images to any dimensions.</span></a>
+    <a class="rf-rel" href="image-converter.html"><b>🔄 Image Converter</b><span>Convert between JPG, PNG, WebP.</span></a>
+    <a class="rf-rel" href="image-rounded-corners.html"><b>⭕ Rounded &amp; Circle Crop</b><span>Round corners or circle-crop.</span></a>
+    <a class="rf-rel" href="image-watermark.html"><b>💧 Image Watermark</b><span>Add text or logo watermarks.</span></a>
+    <a class="rf-rel" href="exif-viewer-remover.html"><b>🕵️ EXIF Viewer &amp; Remover</b><span>Inspect &amp; strip photo metadata.</span></a>
+    <a class="rf-rel" href="favicon-generator.html"><b>🌐 Favicon Generator</b><span>Make a favicon set.</span></a>
+  </div>
+</section>
+
+<!-- About (English) -->
+<section class="rf-wrap rf-prose">
+  <h2 class="rf-title">ℹ️ About This Tool</h2>
+  <p>The <b>ApneSoftware Image Rotate &amp; Flip</b> tool is a professional, privacy-first utility for correcting and changing the orientation of your photos directly in the browser. Orientation problems are among the most common issues in everyday imaging: a phone held sideways produces a rotated photo, a scanned document comes in upside-down, a selfie needs mirroring, and a landscape shot ends up with a crooked horizon. Fixing these usually means opening heavyweight editing software or uploading a private image to some website just to turn it a quarter-turn. This tool removes all of that friction. It gives you fast, precise rotation and flipping — including rotation by any custom angle — with no installation, no signup, and, crucially, no upload. Your image is loaded into the page, transformed locally on an HTML canvas, and handed straight back to you.</p>
+  <p>The core actions are immediate. One click rotates the image <b>90° left</b> or <b>90° right</b>, and quick buttons jump straight to <b>180°</b> and <b>270°</b> — exactly what you need to right a sideways photo or flip a document that scanned in the wrong direction. For orientation fixes that are not a clean quarter-turn, the tool offers <b>custom-angle rotation</b>: a slider and an exact numeric input let you rotate by any degree from 0 to 359, which is the correct way to <b>straighten a tilted horizon</b> or level a crooked scan. Crucially, when you rotate by an arbitrary angle the tool <b>automatically expands the canvas</b> to the new bounding box, so the corners of your image are never clipped off — a common failing of naive rotate tools that keep the original frame.</p>
+  <p>Because an angled rotation leaves triangular gaps in the corners, you control what fills them with the <b>background</b> setting. Choose <b>transparent</b> to keep those corners see-through (ideal when exporting a PNG to layer over another design), or fill them with <b>white</b>, <b>black</b> or any <b>custom colour</b> to match your document or layout. The live preview renders on a checkerboard so transparency is always obvious, and because the export honours your choice, what you see is exactly what you download. This level of control makes the tool useful not just for casual fixes but for real design and print work where a clean, correctly-filled rotation matters.</p>
+  <p><b>Flipping</b> is equally simple and combinable. A <b>horizontal flip</b> mirrors the image left-to-right — perfect for selfies, which cameras often reverse, or for matching the direction of a subject — while a <b>vertical flip</b> mirrors top-to-bottom. Flips stack cleanly with rotation, so any of the eight distinct orientations of an image is reachable, and mirror effects are a click away. To keep experimentation safe, the tool includes proper <b>undo</b>, <b>redo</b> and <b>reset</b>: you can step back through every transformation, step forward again, or jump straight back to the untouched original at any time, so nothing you try is ever permanent until you download.</p>
+  <p><b>Output is flexible and lossless where it counts.</b> Every transformation is applied to the image's <b>full native resolution</b>, not the on-screen preview, so there is no quality-reducing downscale — a rotated 4000-pixel photo stays a 4000-pixel photo. You can export as <b>PNG</b> (lossless, and the only sensible choice when you want transparent corners), <b>JPG</b> (small files ideal for the web and email) or <b>WebP</b> (the best size-to-quality balance in modern browsers), and a <b>quality slider</b> controls compression for JPG and WebP. An <b>image-information</b> panel keeps you oriented, reporting the current width and height, the aspect ratio, whether the image is landscape or portrait, and the file size, so you always know exactly what you are producing.</p>
+  <p><b>Privacy is fundamental.</b> Unlike many online rotate tools that send your photo to a server to process it, this tool does everything <b>locally</b>. Your image is read into the browser, drawn onto a canvas, rotated or flipped and exported back to you — it never leaves your device, there is no account, and nothing is tracked or stored. That makes it safe for personal photos, confidential scans and ID documents alike, and it means the tool keeps working <b>offline</b> once the page has loaded. The interface follows modern accessibility standards too, with keyboard-operable controls, ARIA labelling, visible focus outlines, high-contrast support and a layout that adapts from a spacious desktop workspace to a single, touch-friendly column on phones. In short, it is a fast, precise, genuinely private orientation studio that lives entirely in your browser — capable enough for design work, simple enough for a quick quarter-turn.</p>
+</section>
+
+<!-- About (Hindi) -->
+<section class="rf-wrap rf-prose">
+  <h2 class="rf-title">ℹ️ इस टूल के बारे में</h2>
+  <p><b>ApneSoftware Image Rotate &amp; Flip</b> टूल आपकी photos की orientation को सीधे browser में ठीक करने व बदलने के लिए एक professional, privacy-first उपयोगिता है। Orientation की समस्याएँ रोज़मर्रा की imaging में सबसे आम हैं: बग़ल में पकड़ा phone एक घुमी photo बनाता है, scan किया document उल्टा आता है, एक selfie को mirror करना पड़ता है, और एक landscape shot टेढ़े horizon के साथ निकलता है। इन्हें ठीक करने का मतलब आमतौर पर भारी editing software खोलना या किसी website पर निजी image upload करना होता है। यह टूल यह सारी परेशानी हटा देता है। यह तेज़, सटीक rotation व flipping देता है — किसी भी custom angle से rotation सहित — बिना installation, बिना signup, और सबसे महत्वपूर्ण, बिना upload के।</p>
+  <p>मुख्य क्रियाएँ तुरंत हैं। एक click image को <b>90° बाएँ</b> या <b>90° दाएँ</b> घुमाता है, और quick buttons सीधे <b>180°</b> व <b>270°</b> पर पहुँचते हैं — ठीक वही जो एक बग़ल की photo सीधी करने या ग़लत दिशा में scan हुए document को पलटने के लिए चाहिए। जो orientation fixes साफ़ चौथाई-मोड़ नहीं हैं, उनके लिए टूल <b>custom-angle rotation</b> देता है: एक slider व एक सटीक numeric input आपको 0 से 359 तक किसी भी degree से घुमाने देते हैं, जो एक <b>टेढ़े horizon को सीधा करने</b> का सही तरीका है। महत्वपूर्ण रूप से, जब आप किसी arbitrary angle से घुमाते हैं, टूल <b>canvas को स्वतः विस्तृत</b> करता है ताकि आपकी image के कोने कभी न कटें।</p>
+  <p>चूँकि angled rotation कोनों में त्रिकोणीय अंतराल छोड़ता है, आप <b>background</b> setting से नियंत्रित करते हैं कि उन्हें क्या भरे। उन कोनों को see-through रखने के लिए <b>transparent</b> चुनें (किसी अन्य design पर layer करने हेतु PNG export के लिए आदर्श), या उन्हें <b>white</b>, <b>black</b> या किसी <b>custom colour</b> से भरें। live preview एक checkerboard पर render होता है ताकि transparency हमेशा स्पष्ट रहे, और चूँकि export आपकी पसंद का सम्मान करता है, आप जो देखते हैं वही download करते हैं।</p>
+  <p><b>Flipping</b> उतना ही सरल व संयोजनीय है। एक <b>horizontal flip</b> image को बाएँ-से-दाएँ mirror करता है — selfies के लिए बढ़िया, जिन्हें cameras अक्सर उलट देते हैं — जबकि एक <b>vertical flip</b> ऊपर-से-नीचे mirror करता है। Flips rotation के साथ साफ़ जुड़ते हैं, इसलिए image की आठ में से कोई भी विशिष्ट orientation पहुँच योग्य है। प्रयोग सुरक्षित रखने के लिए, टूल में उचित <b>undo</b>, <b>redo</b> व <b>reset</b> शामिल हैं: आप हर परिवर्तन से पीछे जा सकते हैं, फिर आगे बढ़ सकते हैं, या किसी भी समय अछूते मूल पर लौट सकते हैं।</p>
+  <p><b>Output लचीला व जहाँ मायने रखे वहाँ lossless है।</b> हर परिवर्तन image के <b>पूर्ण native resolution</b> पर लागू होता है, on-screen preview पर नहीं, इसलिए कोई गुणवत्ता-घटाता downscale नहीं — एक घुमी 4000-pixel photo 4000-pixel ही रहती है। आप <b>PNG</b> (lossless, transparent कोनों के लिए एकमात्र समझदार विकल्प), <b>JPG</b> (web व email के लिए आदर्श छोटी files) या <b>WebP</b> के रूप में export कर सकते हैं, और एक <b>quality slider</b> JPG व WebP के लिए compression नियंत्रित करता है। एक <b>image-information</b> panel वर्तमान width-height, aspect ratio, landscape/portrait व file size बताता है।</p>
+  <p><b>Privacy मौलिक है।</b> कई online rotate tools के विपरीत जो आपकी photo process के लिए server पर भेजते हैं, यह टूल सब कुछ <b>locally</b> करता है। आपकी image browser में पढ़ी जाती है, canvas पर बनाई जाती है, घुमाई या flip की जाती है और वापस आपको export की जाती है — यह कभी आपके device से बाहर नहीं जाती, कोई account नहीं, और कुछ भी track या store नहीं होता। यह व्यक्तिगत photos, गोपनीय scans व ID documents सबके लिए सुरक्षित बनाता है, और page load होने के बाद टूल <b>offline</b> काम करता है। Interface भी आधुनिक accessibility मानकों का पालन करता है, keyboard-चालित नियंत्रणों, ARIA labelling, दृश्य focus outlines, high-contrast समर्थन व एक ढलते layout के साथ। संक्षेप में, यह एक तेज़, सटीक, सचमुच निजी orientation studio है।</p>
+</section>
+
+<!-- Supported Formats -->
+<section class="rf-wrap rf-prose">
+  <h2 class="rf-title">🖼️ Supported Formats</h2>
+  <div class="rf-tscroll">
+    <table class="rf-table">
+      <thead><tr><th>Format</th><th>Input</th><th>Output</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>JPG / JPEG</td><td>✔</td><td>✔</td><td>Small files; no transparency (angled corners fill with your background).</td></tr>
+        <tr><td>PNG</td><td>✔</td><td>✔</td><td>Lossless; keeps transparent corners after angled rotation.</td></tr>
+        <tr><td>WebP</td><td>✔</td><td>✔</td><td>Best size-to-quality; supports transparency in modern browsers.</td></tr>
+        <tr><td>GIF (static)</td><td>✔</td><td>PNG/JPG</td><td>First frame is rotated; export as PNG or JPG.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Rotation Guide -->
+<section class="rf-wrap rf-prose">
+  <h2 class="rf-title">🔄 Rotation Guide</h2>
+  <div class="rf-tscroll">
+    <table class="rf-table">
+      <thead><tr><th>Rotation</th><th>Effect</th><th>Common use</th></tr></thead>
+      <tbody>
+        <tr><td>90° left / right</td><td>Quarter turn; swaps width and height.</td><td>Sideways phone photos.</td></tr>
+        <tr><td>180°</td><td>Turns the image upside-down.</td><td>Documents scanned the wrong way.</td></tr>
+        <tr><td>270°</td><td>Three-quarter turn.</td><td>Same as 90° the other way.</td></tr>
+        <tr><td>Custom (e.g. 3°, 15°)</td><td>Any angle; canvas auto-expands.</td><td>Straightening a tilted horizon.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Flip Guide -->
+<section class="rf-wrap rf-prose">
+  <h2 class="rf-title">⇋ Flip Guide</h2>
+  <div class="rf-tscroll">
+    <table class="rf-table">
+      <thead><tr><th>Flip</th><th>Effect</th><th>Common use</th></tr></thead>
+      <tbody>
+        <tr><td>Horizontal</td><td>Mirrors left ↔ right.</td><td>Un-mirroring selfies; facing a subject the other way.</td></tr>
+        <tr><td>Vertical</td><td>Mirrors top ↕ bottom.</td><td>Reflections; correcting flipped scans.</td></tr>
+        <tr><td>Both (combined)</td><td>Equivalent to a 180° rotation.</td><td>Full mirror.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- How To Use -->
+<section class="rf-wrap rf-prose">
+  <h2 class="rf-title">🚀 How To Use</h2>
+  <ol class="rf-steps">
+    <li><b>Upload</b> an image by dragging it in or clicking the dropzone.</li>
+    <li><b>Rotate</b> left, right or 180°, or enter a <b>custom angle</b> to straighten it.</li>
+    <li><b>Flip</b> horizontally or vertically if you need a mirror.</li>
+    <li>For angled rotation, choose a <b>background</b> (transparent, white, black or custom).</li>
+    <li>Pick a <b>format</b> and quality, then click <b>Download</b>. Use undo/redo/reset freely.</li>
+  </ol>
+</section>
+
+<!-- FAQ -->
+<section class="rf-wrap rf-faq">
+  <h2 class="rf-title">❓ Frequently Asked Questions</h2>
+  <div id="faqList"></div>
+</section>
+
+<!-- Troubleshooting -->
+<section class="rf-wrap rf-prose">
+  <h2 class="rf-title">🛠️ Troubleshooting</h2>
+  <ul>
+    <li><b>Angled rotation has black/white corners:</b> that's the background — set it to Transparent and export as PNG.</li>
+    <li><b>Corners get cut off:</b> they shouldn't — the canvas auto-expands; make sure you're not viewing a cropped older result.</li>
+    <li><b>Transparent corners turned black in JPG:</b> JPG has no transparency — export as PNG or pick a background colour.</li>
+    <li><b>Image looks lower resolution:</b> it isn't — rotation uses full native pixels; the preview is just scaled to fit.</li>
+    <li><b>Custom angle field won't accept a value:</b> enter a whole number from 0 to 359.</li>
+    <li><b>WebP export unavailable:</b> some older browsers can't encode WebP — choose PNG or JPG.</li>
+    <li><b>Flip and rotate look confusing together:</b> use Reset to start over, then apply one change at a time.</li>
+  </ul>
+</section>
+
 </div>
 
-<footer class="site-footer">© 2026 ApneSoftware.com</footer>
+<footer class="site-footer">© 2026 ApneSoftware.com — Free, private, browser-based tools.</footer>
 
 <script src="../assets/common.js"></script>
 <script>
-const dropzone = document.getElementById('dropzone');
-const fileInput = document.getElementById('fileInput');
-const canvas = document.getElementById('previewCanvas');
-const ctx = canvas.getContext('2d');
-let img = new Image();
-let currentFile = null;
-let rotation = 0; // 0, 90, 180, 270
-let flipH = false, flipV = false;
+(function(){
+  "use strict";
+  function $(id){ return document.getElementById(id); }
 
-setupDropzone(dropzone, fileInput, files => {
-  if(files.length && files[0].type.startsWith('image/')){
-    currentFile = files[0];
-    img.onload = ()=>{
-      rotation = 0; flipH = false; flipV = false;
-      document.getElementById('afterUpload').style.display = 'block';
-      draw();
-    };
-    img.src = URL.createObjectURL(currentFile);
+  var canvas=$('previewCanvas'), ctx=canvas.getContext('2d');
+  var img=new Image(), currentFile=null, origSrc=null;
+  var st={angle:0,flipH:false,flipV:false,bg:'transparent'};
+  var undoStack=[], redoStack=[];
+
+  /* ===== upload ===== */
+  var dz=$('dropzone'), fi=$('fileInput');
+  dz.addEventListener('click',function(){ fi.click(); });
+  dz.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ fi.click(); e.preventDefault(); } });
+  fi.addEventListener('change',function(e){ handleFile(e.target.files[0]); });
+  dz.addEventListener('dragover',function(e){ e.preventDefault(); dz.classList.add('drag'); });
+  dz.addEventListener('dragleave',function(){ dz.classList.remove('drag'); });
+  dz.addEventListener('drop',function(e){ e.preventDefault(); dz.classList.remove('drag'); handleFile(e.dataTransfer.files[0]); });
+  function handleFile(f){ if(!f||f.type.indexOf('image/')!==0) return; currentFile=f; loadSrc(URL.createObjectURL(f)); }
+  function loadSrc(url){ img.onload=function(){ origSrc=url; st={angle:0,flipH:false,flipV:false,bg:$('bgMode').value}; undoStack=[]; redoStack=[]; $('afterUpload').style.display='block'; draw(); try{$('afterUpload').scrollIntoView({behavior:'smooth',block:'start'});}catch(e){} }; img.src=url; }
+
+  /* ===== bg helpers ===== */
+  function bgColor(){ var m=$('bgMode').value; if(m==='transparent')return null; if(m==='custom')return $('bgColor').value; return m; }
+  $('bgMode').addEventListener('change',function(){ $('bgCustomRow').style.display=this.value==='custom'?'flex':'none'; st.bg=this.value; draw(); });
+  $('bgColor').addEventListener('input',function(){ if($('bgMode').value==='custom')draw(); });
+
+  /* ===== render ===== */
+  function renderTo(c,forExport){
+    if(!img.naturalWidth) return;
+    var w=img.naturalWidth, h=img.naturalHeight, rad=st.angle*Math.PI/180;
+    var cos=Math.abs(Math.cos(rad)), sin=Math.abs(Math.sin(rad));
+    var nw=Math.round(w*cos+h*sin), nh=Math.round(w*sin+h*cos);
+    c.width=nw; c.height=nh;
+    var x=c.getContext('2d');
+    var bg=bgColor();
+    if(forExport && bg===null && /jpe?g/i.test($('outFmt').value)){ bg='#ffffff'; } // jpg can't be transparent
+    if(bg){ x.fillStyle=bg; x.fillRect(0,0,nw,nh); }
+    x.save(); x.translate(nw/2,nh/2); x.rotate(rad); x.scale(st.flipH?-1:1, st.flipV?-1:1); x.drawImage(img,-w/2,-h/2); x.restore();
   }
-});
+  function draw(){ renderTo(canvas,false); buildInfo(); }
+  function buildInfo(){
+    if(!img.naturalWidth) return;
+    var w=canvas.width, h=canvas.height;
+    function g(a,b){return b?g(b,a%b):a;} var d=g(w,h);
+    var kb='—'; if(currentFile){ kb=currentFile.size<1048576?(currentFile.size/1024).toFixed(0)+' KB':(currentFile.size/1048576).toFixed(2)+' MB'; }
+    var rows=[['Current size',w+' × '+h+' px'],['Aspect',d?(w/d)+':'+(h/d):'—'],['Orientation',w>h?'Landscape':w<h?'Portrait':'Square'],['Angle',st.angle+'° · flip '+(st.flipH?'H':'')+(st.flipV?'V':'')||'none'],['Source file',kb]];
+    $('imgInfo').innerHTML=rows.map(function(r){ return '<div><span>'+r[0]+'</span><b>'+r[1]+'</b></div>'; }).join('');
+  }
 
-function draw(){
-  const rad = rotation * Math.PI / 180;
-  const swapped = (rotation === 90 || rotation === 270);
-  canvas.width = swapped ? img.naturalHeight : img.naturalWidth;
-  canvas.height = swapped ? img.naturalWidth : img.naturalHeight;
+  /* ===== history ===== */
+  function snapshot(){ undoStack.push(JSON.stringify(st)); if(undoStack.length>50)undoStack.shift(); redoStack=[]; }
+  function apply(fn){ snapshot(); fn(); draw(); }
+  $('undoBtn').addEventListener('click',function(){ if(undoStack.length){ redoStack.push(JSON.stringify(st)); st=JSON.parse(undoStack.pop()); syncUI(); draw(); } });
+  $('redoBtn').addEventListener('click',function(){ if(redoStack.length){ undoStack.push(JSON.stringify(st)); st=JSON.parse(redoStack.pop()); syncUI(); draw(); } });
+  $('resetBtn').addEventListener('click',function(){ snapshot(); st={angle:0,flipH:false,flipV:false,bg:$('bgMode').value}; syncUI(); draw(); });
+  function syncUI(){ $('angleRange').value=st.angle; $('angleNum').value=st.angle; $('angleVal').textContent=st.angle; $('flipHBtn').setAttribute('aria-pressed',st.flipH?'true':'false'); $('flipVBtn').setAttribute('aria-pressed',st.flipV?'true':'false'); }
 
-  ctx.save();
-  ctx.translate(canvas.width/2, canvas.height/2);
-  ctx.rotate(rad);
-  ctx.scale(flipH ? -1 : 1, flipV ? -1 : 1);
-  ctx.drawImage(img, -img.naturalWidth/2, -img.naturalHeight/2);
-  ctx.restore();
-}
+  /* ===== rotate / flip controls ===== */
+  $('rotateLeftBtn').addEventListener('click',function(){ apply(function(){ st.angle=((st.angle-90)%360+360)%360; }); syncUI(); });
+  $('rotateRightBtn').addEventListener('click',function(){ apply(function(){ st.angle=(st.angle+90)%360; }); syncUI(); });
+  $('quickAngles').querySelectorAll('.rf-chip').forEach(function(b){ b.addEventListener('click',function(){ apply(function(){ st.angle=parseInt(b.getAttribute('data-a'),10)%360; }); syncUI(); }); });
+  $('flipHBtn').addEventListener('click',function(){ apply(function(){ st.flipH=!st.flipH; }); syncUI(); });
+  $('flipVBtn').addEventListener('click',function(){ apply(function(){ st.flipV=!st.flipV; }); syncUI(); });
+  function setAngle(v){ v=Math.max(0,Math.min(359,parseInt(v,10)||0)); st.angle=v; $('angleRange').value=v; $('angleNum').value=v; $('angleVal').textContent=v; draw(); }
+  $('angleRange').addEventListener('input',function(){ setAngle(this.value); });
+  $('angleRange').addEventListener('change',function(){ snapshot(); });
+  $('angleNum').addEventListener('input',function(){ setAngle(this.value); });
+  $('quality').addEventListener('input',function(){ $('qualityVal').textContent=this.value; });
 
-document.getElementById('rotateLeftBtn').addEventListener('click', ()=>{
-  rotation = (rotation - 90 + 360) % 360; draw();
-});
-document.getElementById('rotateRightBtn').addEventListener('click', ()=>{
-  rotation = (rotation + 90) % 360; draw();
-});
-document.getElementById('flipHBtn').addEventListener('click', ()=>{ flipH = !flipH; draw(); });
-document.getElementById('flipVBtn').addEventListener('click', ()=>{ flipV = !flipV; draw(); });
-document.getElementById('resetBtn').addEventListener('click', ()=>{
-  rotation = 0; flipH = false; flipV = false; draw();
-});
+  /* ===== keyboard shortcuts ===== */
+  document.addEventListener('keydown',function(e){ if(!img.naturalWidth||$('afterUpload').style.display==='none')return; var t=e.target.tagName; if(t==='INPUT'||t==='SELECT'||t==='TEXTAREA')return; var k=e.key.toLowerCase(); if(k==='l'){ $('rotateLeftBtn').click(); } else if(k==='r'){ $('rotateRightBtn').click(); } else if(k==='h'){ $('flipHBtn').click(); } else if(k==='v'){ $('flipVBtn').click(); } });
 
-document.getElementById('downloadBtn').addEventListener('click', ()=>{
-  canvas.toBlob((blob)=>{
-    const ext = (currentFile.type === 'image/png') ? 'png' : 'jpg';
-    downloadBlob('rotated.' + ext, blob);
-    document.getElementById('statusMsg').textContent = '✅ Downloaded!';
-  }, currentFile.type === 'image/png' ? 'image/png' : 'image/jpeg', 0.95);
-});
+  /* ===== export ===== */
+  function saveBlob(name,blob){ if(typeof downloadBlob==='function')downloadBlob(name,blob); else { var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; a.click(); } }
+  $('downloadBtn').addEventListener('click',function(){
+    var c=document.createElement('canvas'); renderTo(c,true);
+    var fmt=$('outFmt').value, ext=fmt.indexOf('png')>=0?'png':fmt.indexOf('webp')>=0?'webp':'jpg';
+    c.toBlob(function(blob){ if(!blob){ $('statusMsg').textContent='Export not supported in this browser.'; return; } saveBlob('rotated.'+ext,blob); $('statusMsg').style.color='#6ee7b7'; $('statusMsg').textContent='✅ Downloaded rotated.'+ext+' ('+c.width+'×'+c.height+')'; }, fmt, parseInt($('quality').value,10)/100);
+  });
+  $('newImgBtn').addEventListener('click',function(){ $('afterUpload').style.display='none'; fi.value=''; currentFile=null; });
+
+  /* ===== FAQ ===== */
+  function esc(s){ return String(s).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+  var FAQ=[
+    ['Is my image uploaded anywhere?','No. Rotation and flipping happen in your browser; nothing is uploaded. — नहीं, कुछ भी upload नहीं होता।'],
+    ['How do I rotate 90 degrees?','Click Left 90° or Right 90°, or use the 90° quick button. — 90° button दबाएँ।'],
+    ['Can I rotate by a custom angle?','Yes — use the slider or type any angle from 0 to 359. — हाँ, custom angle उपलब्ध।'],
+    ['Why did the canvas get bigger after rotating?','It auto-expands so angled rotation never clips your corners. — कोने कटने से बचाने के लिए।'],
+    ['What fills the corners after an angled rotate?','Your chosen background: transparent, white, black or custom. — आपका चुना background।'],
+    ['How do I keep transparent corners?','Set background to Transparent and export as PNG or WebP. — Transparent + PNG।'],
+    ['How do I flip an image?','Use Flip Horizontal or Flip Vertical; combine with rotation. — flip buttons दबाएँ।'],
+    ['What is a horizontal flip?','A left-to-right mirror — useful for un-mirroring selfies. — बाएँ-दाएँ mirror।'],
+    ['Can I undo a change?','Yes — Undo, Redo and Reset are all available. — हाँ, undo/redo/reset हैं।'],
+    ['Does rotating reduce quality?','No — it uses full-resolution pixels, not the preview. — नहीं, पूर्ण resolution।'],
+    ['Which formats can I export?','PNG, JPG and WebP, with a quality slider for JPG/WebP. — PNG, JPG, WebP।'],
+    ['Why are my corners black in a JPG?','JPG has no transparency — export PNG or set a background. — JPG transparency नहीं रखता।'],
+    ['Does it keep the aspect ratio?','90°/270° swap width and height; other angles change the frame. — 90° पर w/h बदलते हैं।'],
+    ['Is there a keyboard shortcut?','Yes — L/R to rotate, H/V to flip. — L/R rotate, H/V flip।'],
+    ['Can I straighten a tilted photo?','Yes — enter a small custom angle to level the horizon. — हाँ, छोटा angle डालें।'],
+    ['Is it free?','Completely free — no account, no limits, no watermark. — हाँ, पूरी तरह मुफ़्त।'],
+    ['Does it work offline?','Yes, once the page has loaded it works without internet. — हाँ, offline काम करता है।'],
+    ['Does it change my original file?','No — it downloads a new copy; your original is untouched. — मूल file अछूती रहती है।'],
+    ['Can I rotate a scanned document?','Yes — 90°/180° fixes most scan orientation problems. — हाँ, scans के लिए।'],
+    ['How big an image can it handle?','Large photos work; very large ones just take a moment. — बड़ी images भी।'],
+    ['Does flip plus flip equal rotate?','Yes — horizontal + vertical flip equals a 180° rotation. — हाँ, दोनों flip = 180°।'],
+    ['Which browsers are supported?','All modern browsers — Chrome, Firefox, Edge, Safari, Opera, Brave. — सभी आधुनिक browsers।']
+  ];
+  function buildFaq(){ var list=$('faqList'); if(!list)return; FAQ.forEach(function(p){ var d=document.createElement('details'); d.innerHTML='<summary>'+esc(p[0])+'</summary><p>'+esc(p[1])+'</p>'; list.appendChild(d); }); try{ $('faqSchema').textContent=JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:FAQ.map(function(p){return {'@type':'Question',name:p[0],acceptedAnswer:{'@type':'Answer',text:p[1]}};})}); }catch(e){} }
+
+  /* ===== hooks / init ===== */
+  window.__rfHooks={ loadSrc:loadSrc, setAngle:function(a){ snapshot(); setAngle(a); }, rotateBy:function(d){ st.angle=((st.angle+d)%360+360)%360; syncUI(); draw(); }, flipH:function(){ st.flipH=!st.flipH; syncUI(); draw(); }, flipV:function(){ st.flipV=!st.flipV; syncUI(); draw(); }, setBg:function(m){ $('bgMode').value=m; $('bgMode').dispatchEvent(new Event('change')); }, getState:function(){ return {a:st.angle,h:st.flipH,v:st.flipV,w:canvas.width,ch:canvas.height}; }, exportCanvas:function(){ var c=document.createElement('canvas'); renderTo(c,true); return c; } };
+  buildFaq();
+})();
 </script>
 </body>
 </html>
