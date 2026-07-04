@@ -1191,7 +1191,7 @@
     {
       "id": "number-to-words",
       "name": "Number to Words Converter",
-      "description": "Number to words, Indian lakh/crore system",
+      "description": "Numbers & amounts to words — Indian/International system, English/Hindi, 10 currencies, cheque layout, reverse, batch & export",
       "icon": "🔤",
       "url": "tools/number-to-words.html",
       "category": "text",
