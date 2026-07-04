@@ -1155,7 +1155,7 @@
     {
       "id": "timestamp-converter",
       "name": "Timestamp Converter",
-      "description": "Unix timestamp to/from human-readable date",
+      "description": "Convert Unix/JS/Java/.NET/FileTime/Excel timestamps to dates & back, across 16+ timezones, with ISO/RFC formats, date diff, batch mode & code snippets",
       "icon": "🕒",
       "url": "tools/timestamp-converter.html",
       "category": "developer",
