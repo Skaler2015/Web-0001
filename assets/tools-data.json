@@ -1530,6 +1530,18 @@
             "published": true
         },
         {
+            "id": "presumptive-tax-calculator",
+            "name": "Presumptive Tax Calculator",
+            "description": "Instant Presumptive Income and Tax Liability under Sections 44AD, 44ADA and 44AE — eligibility checks, turnover/receipt limits, vehicle-based rates, deductions, Surcharge and Cess, 100% in your browser.",
+            "icon": "🧾",
+            "url": "tools/presumptive-tax-calculator.html",
+            "category": "calculator",
+            "categories": [
+                "calculator"
+            ],
+            "published": true
+        },
+        {
             "id": "percentage-discount-calculator",
             "name": "Percentage & Discount Calculator",
             "description": "30+ percentage calculators — of/what-percent, change, discount, profit, margin, markup, GST/VAT, ROI, CAGR, marks & conversions with formula and steps",
