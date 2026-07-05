@@ -5,35 +5,113 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://apnesoftware.com/tools/bmr-calorie-calculator.html">
+<meta name="description" content="Free Professional Health & Nutrition Calculator — BMR & TDEE with 7 formulas (Mifflin-St Jeor, Harris-Benedict, Katch-McArdle & more), calorie targets for every goal, protein/carb/fat macros, BMI, US-Navy body fat, water intake, meal planning, charts and PDF/CSV export. Metric & imperial, 100% in your browser.">
+<meta name="keywords" content="bmr calculator, tdee calculator, calorie calculator, macro calculator, protein calculator, body fat calculator, bmi calculator, maintenance calories, weight loss calories, katch mcardle">
 <meta property="og:type" content="website">
-<meta property="og:title" content="BMR & Calorie Calculator | ApneSoftware">
-<meta property="og:description" content="Estimate daily calorie needs (Mifflin-St Jeor). Free online tool — no signup required.">
+<meta property="og:title" content="Professional Health & Nutrition Calculator (BMR, TDEE, Macros) | ApneSoftware">
+<meta property="og:description" content="BMR/TDEE with 7 formulas, calorie & macro targets, BMI, body fat, water intake and meal planning with charts. Metric/imperial, private, browser-based.">
 <meta property="og:url" content="https://apnesoftware.com/tools/bmr-calorie-calculator.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="BMR & Calorie Calculator | ApneSoftware">
-<meta name="twitter:description" content="Estimate daily calorie needs (Mifflin-St Jeor). Free online tool — no signup required.">
+<meta name="twitter:title" content="Professional Health & Nutrition Calculator | ApneSoftware">
+<meta name="twitter:description" content="BMR, TDEE, calorie targets, macros, BMI, body fat, water & meal planning with charts. Metric/imperial, private & browser-based.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"BMR & Calorie Calculator","description":"Estimate daily calorie needs (Mifflin-St Jeor). Free online tool — no signup required.","url":"https://apnesoftware.com/tools/bmr-calorie-calculator.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Professional Health & Nutrition Calculator","description":"Calculate BMR and TDEE with seven formulas, calorie targets for weight loss, maintenance and muscle gain, protein/carbohydrate/fat macros, BMI, US-Navy body fat, water intake and a meal-planning breakdown, with charts and PDF/CSV export in metric or imperial units. Runs entirely in the browser.","url":"https://apnesoftware.com/tools/bmr-calorie-calculator.html","applicationCategory":"HealthApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"featureList":["7 BMR formulas including Mifflin-St Jeor, Harris-Benedict and Katch-McArdle","TDEE with 8 activity levels and custom multiplier","Calorie targets for loss, maintenance and gain","Protein, carb, fat, fiber, sugar and water calculations","BMI and US-Navy body fat with lean/fat mass","Meal planning, macro & calorie charts and PDF/CSV export"],"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
 </script>
 <meta name="color-scheme" content="dark">
-<title>BMR & Calorie Calculator | ApneSoftware</title>
+<title>Professional Health & Nutrition Calculator (BMR, TDEE, Macros) | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-  .goal-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px}
-  @media (max-width:600px){ .goal-grid{grid-template-columns:1fr} }
-  .goal-card{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center}
-  .goal-card .kcal{font-size:1.3rem;font-weight:800;color:var(--accent-2)}
-  .goal-card .lbl{font-size:.8rem;color:var(--text-dim);margin-top:4px}
-  .tab-row{display:flex;gap:8px;margin-bottom:6px}
-  .tab-btn{padding:7px 16px;border-radius:7px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-dim);font-size:.85rem;cursor:pointer}
-  .tab-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-  .new-tech-note{
-    background:rgba(124,92,252,.08);border:1px solid rgba(124,92,252,.25);border-radius:8px;
-    padding:12px 14px;font-size:.85rem;color:var(--text-dim);margin-top:16px;
-  }
+/* ===== Health & Nutrition Calculator — scoped hn- prefix ===== */
+.panel{position:relative;z-index:1}
+.tab-row{display:flex;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.tab-btn{padding:8px 16px;border-radius:8px;border:1px solid var(--border);background:var(--surface-2,rgba(255,255,255,.06));color:var(--text);font-size:.85rem;cursor:pointer}
+.tab-btn.active{background:var(--accent,#7c5cfc);color:#fff;border-color:var(--accent,#7c5cfc)}
+
+.hn-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:600px){ .hn-row{grid-template-columns:1fr 1fr} }
+.hn-field{margin-bottom:2px}
+.hn-field label{display:block;font-size:.76rem;color:var(--text-dim);margin-bottom:5px;font-weight:600}
+.hn-field input,.hn-field select{width:100%;font-size:.85rem;padding:9px 11px;border-radius:8px;background:var(--surface-2,rgba(255,255,255,.06));border:1px solid var(--border);color:var(--text)}
+.hn-field select option{background:#1a1a2e}
+.hn-field.invalid input{border-color:#f87171}
+.hn-field .hn-err{color:#f87171;font-size:.7rem;margin-top:3px;display:none}
+.hn-field.invalid .hn-err{display:block}
+.hn-suffix{display:flex;align-items:center;gap:6px}
+.hn-suffix span{font-size:.72rem;color:var(--text-dim)}
+
+.hn-section{border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:14px;background:rgba(255,255,255,.02)}
+.hn-section>h3{font-size:.9rem;margin:0 0 12px;display:flex;align-items:center;gap:7px}
+.hn-collapse summary{cursor:pointer;font-size:.9rem;font-weight:700;padding:4px 0;list-style:none}
+.hn-collapse summary::-webkit-details-marker{display:none}
+.hn-collapse summary::before{content:'▸ ';color:var(--accent,#7c5cfc)}
+.hn-collapse[open] summary::before{content:'▾ '}
+
+.goal-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:6px}
+@media (max-width:600px){ .goal-grid{grid-template-columns:1fr} }
+.goal-card{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:12px;padding:14px;text-align:center}
+.goal-card .kcal{font-size:1.3rem;font-weight:800;color:var(--accent-2,#16c079)}
+.goal-card .lbl{font-size:.78rem;color:var(--text-dim);margin-top:4px}
+
+.hn-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:6px}
+.hn-stat{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:11px;padding:12px;text-align:center}
+.hn-stat .n{font-size:1.05rem;font-weight:800}
+.hn-stat .l{font-size:.68rem;color:var(--text-dim);margin-top:3px}
+.hn-targets{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:6px}
+.hn-target{border:1px solid var(--border);border-radius:11px;padding:10px 12px;background:rgba(255,255,255,.03)}
+.hn-target .t{font-size:.72rem;color:var(--text-dim)}
+.hn-target .v{font-size:1.05rem;font-weight:800;margin-top:2px}
+
+.hn-macros{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:6px}
+.hn-macro-list{flex:1;min-width:200px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.hn-macro{border:1px solid var(--border);border-radius:10px;padding:9px 11px;background:rgba(255,255,255,.03)}
+.hn-macro .mn{font-size:.72rem;color:var(--text-dim)}
+.hn-macro .mv{font-size:1rem;font-weight:700}
+.hn-canvas-wrap{background:rgba(0,0,0,.18);border:1px solid var(--border);border-radius:12px;padding:10px;margin-top:6px}
+#macroCanvas,#calorieCanvas{display:block;width:100%;height:200px}
+.hn-legend{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;font-size:.72rem;color:var(--text-dim);margin-top:6px}
+.hn-legend i{width:10px;height:10px;border-radius:3px;display:inline-block;margin-right:4px;vertical-align:middle}
+
+.hn-meals{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:6px}
+.hn-meal{border:1px solid var(--border);border-radius:11px;padding:12px;text-align:center;background:rgba(255,255,255,.03)}
+.hn-meal .mi{font-size:1.3rem}
+.hn-meal .mk{font-size:1rem;font-weight:800;margin-top:2px}
+.hn-meal .ml{font-size:.7rem;color:var(--text-dim)}
+
+.hn-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.hn-btn{font-size:.78rem;padding:8px 13px;border-radius:8px;background:var(--surface-2,rgba(255,255,255,.06));border:1px solid var(--border);color:var(--text);cursor:pointer}
+.hn-btn:hover{background:rgba(124,92,252,.18)}
+.hn-btn.primary{background:var(--accent,#7c5cfc);border-color:var(--accent,#7c5cfc);color:#fff;font-weight:600}
+.hn-history .hitem{display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--border);border-radius:9px;background:rgba(255,255,255,.03);margin-bottom:6px;font-size:.76rem}
+.hn-history .hitem .g{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hn-history .hitem button{background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:.9rem}
+
+.new-tech-note{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.3);border-radius:10px;padding:12px 14px;font-size:.84rem;color:var(--text);margin-top:16px}
+
+/* Below-tool content */
+.hn-content h2{font-size:1.15rem;margin:26px 0 10px}
+.hn-content h3{font-size:1rem;margin:18px 0 8px}
+.hn-content p,.hn-content li{font-size:.92rem;line-height:1.72}
+.hn-content ul,.hn-content ol{padding-left:20px}
+.hn-fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:14px 0}
+.hn-fgrid .fc{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:12px;padding:14px}
+.hn-fgrid .fc b{display:block;margin-bottom:5px;font-size:.9rem}
+.hn-fgrid .fc span{font-size:.82rem;color:var(--text-dim);line-height:1.6}
+.hn-formula{background:rgba(0,0,0,.35);border:1px solid var(--border);border-radius:8px;padding:12px 14px;font-family:ui-monospace,Consolas,monospace;font-size:.8rem;overflow-x:auto;white-space:pre}
+.hn-disclaimer{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.3);border-radius:10px;padding:14px 16px;font-size:.9rem}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin:12px 0}
+.related-grid a{display:flex;align-items:center;gap:9px;padding:12px 13px;border-radius:11px;background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--text);text-decoration:none;font-size:.86rem;font-weight:500;transition:.15s}
+.related-grid a:hover{background:rgba(124,92,252,.16);border-color:var(--accent,#7c5cfc);transform:translateY(-1px)}
+.related-grid a .ri{font-size:1.15rem}
+.hn-faq details{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:11px;padding:2px 14px;margin-bottom:9px}
+.hn-faq summary{cursor:pointer;padding:12px 0;font-weight:600;font-size:.9rem;list-style:none}
+.hn-faq summary::-webkit-details-marker{display:none}
+.hn-faq summary::before{content:'＋';margin-right:9px;color:var(--accent,#7c5cfc);font-weight:700}
+.hn-faq details[open] summary::before{content:'－'}
+.hn-faq details p{padding:0 0 12px;margin:0;font-size:.87rem;color:var(--text-dim)}
+.hn-lang-note{font-size:.78rem;color:var(--text-dim);font-style:italic;margin-top:-4px}
 </style>
 </head>
 <body>
@@ -46,130 +124,534 @@
 
 <div class="container">
   <div class="tool-header">
-    <h1>🔥 BMR & Calorie Calculator</h1>
-    <p>Estimate your daily calorie needs based on the Mifflin-St Jeor formula.</p>
+    <h1>🔥 Professional Health &amp; Nutrition Calculator</h1>
+    <p>BMR &amp; TDEE with 7 formulas, calorie &amp; macro targets, BMI, body fat, water intake and meal planning — with charts and export. Metric &amp; imperial, 100% in your browser.</p>
   </div>
 
   <div class="panel">
-    <div class="tab-row">
-      <button class="tab-btn active" data-gender="male">Male</button>
-      <button class="tab-btn" data-gender="female">Female</button>
+    <!-- Gender + units -->
+    <div class="hn-actions" style="margin-top:0;justify-content:space-between">
+      <div class="tab-row">
+        <button class="tab-btn active" data-gender="male">♂ Male</button>
+        <button class="tab-btn" data-gender="female">♀ Female</button>
+      </div>
+      <div class="tab-row">
+        <button class="tab-btn active" data-units="metric">Metric</button>
+        <button class="tab-btn" data-units="imperial">Imperial</button>
+      </div>
     </div>
 
-    <div class="row">
-      <div class="field"><label for="age">Age</label><input type="number" id="age" value="30" min="10" max="100"></div>
-      <div class="field"><label for="height">Height (cm)</label><input type="number" id="height" value="170" min="100" max="250"></div>
-      <div class="field"><label for="weight">Weight (kg)</label><input type="number" id="weight" value="70" min="30" max="250"></div>
+    <!-- Core inputs (IDs preserved) -->
+    <div class="hn-row" style="margin-top:12px">
+      <div class="hn-field"><label for="age">Age (years)</label><input type="number" id="age" value="30" min="10" max="120"><div class="hn-err">Age 10–120.</div></div>
+      <div class="hn-field"><label for="height" id="heightLabel">Height (cm)</label><input type="number" id="height" value="170" min="50" max="260" step="any"><div class="hn-err">Enter a valid height.</div></div>
+      <div class="hn-field"><label for="weight" id="weightLabel">Weight (kg)</label><input type="number" id="weight" value="70" min="10" max="400" step="any"><div class="hn-err">Enter a valid weight.</div></div>
     </div>
 
-    <div class="field">
-      <label for="activity">Activity level</label>
-      <select id="activity">
-        <option value="1.2">Sedentary (little or no exercise)</option>
-        <option value="1.375" selected>Light activity (1-3 days/week)</option>
-        <option value="1.55">Moderate activity (3-5 days/week)</option>
-        <option value="1.725">Very active (6-7 days/week)</option>
-        <option value="1.9">Extremely active (physical job + training)</option>
+    <div class="hn-row" style="margin-top:10px">
+      <div class="hn-field" style="grid-column:span 2"><label for="activity">Activity level</label>
+        <select id="activity">
+          <option value="1.2">Sedentary (little or no exercise)</option>
+          <option value="1.375" selected>Light (1–3 days/week)</option>
+          <option value="1.55">Moderate (3–5 days/week)</option>
+          <option value="1.725">Active (6–7 days/week)</option>
+          <option value="1.9">Very active (hard exercise daily)</option>
+          <option value="2.1">Athlete (2× training/day)</option>
+          <option value="1.8">Physical job (manual labour)</option>
+          <option value="custom">Custom multiplier…</option>
+        </select>
+      </div>
+      <div class="hn-field"><label for="formula">BMR formula</label>
+        <select id="formula">
+          <option value="mifflin" selected>Mifflin-St Jeor</option>
+          <option value="harris">Harris-Benedict</option>
+          <option value="revharris">Revised Harris-Benedict</option>
+          <option value="katch">Katch-McArdle</option>
+          <option value="cunningham">Cunningham</option>
+          <option value="owen">Owen</option>
+          <option value="schofield">Schofield (WHO)</option>
+        </select>
+      </div>
+    </div>
+    <div class="hn-field" id="customMultRow" style="display:none;margin-top:8px;max-width:240px"><label for="customMult">Custom activity multiplier</label><input type="number" id="customMult" value="1.5" min="1" max="3" step="0.01"></div>
+
+    <div class="hn-field" style="margin-top:10px;max-width:340px"><label for="goal">Primary goal</label>
+      <select id="goal">
+        <option value="loss">Lose weight / fat loss</option>
+        <option value="maintain" selected>Maintain weight</option>
+        <option value="gain">Gain weight</option>
+        <option value="leanbulk">Lean bulk</option>
+        <option value="muscle">Muscle gain</option>
       </select>
     </div>
 
-    <div class="goal-grid" id="goalGrid"></div>
+    <!-- Optional body measurements -->
+    <details class="hn-collapse hn-section" style="margin-top:14px">
+      <summary>📏 Body measurements (optional — for body fat, Katch-McArdle &amp; goals)</summary>
+      <div class="hn-row" style="margin-top:12px">
+        <div class="hn-field"><label for="neck" id="neckLabel">Neck (cm)</label><input type="number" id="neck" placeholder="e.g. 38" step="any"></div>
+        <div class="hn-field"><label for="waist" id="waistLabel">Waist (cm)</label><input type="number" id="waist" placeholder="e.g. 85" step="any"></div>
+        <div class="hn-field" id="hipField"><label for="hip" id="hipLabel">Hip (cm, female)</label><input type="number" id="hip" placeholder="e.g. 95" step="any"></div>
+        <div class="hn-field"><label for="bodyFat">Body fat % (if known)</label><input type="number" id="bodyFat" placeholder="auto" step="any" min="1" max="70"></div>
+        <div class="hn-field"><label for="goalWeight" id="goalWeightLabel">Goal weight (kg)</label><input type="number" id="goalWeight" placeholder="optional" step="any"></div>
+        <div class="hn-field"><label for="targetDate">Target date</label><input type="date" id="targetDate"></div>
+      </div>
+    </details>
 
-    <div class="new-tech-note">ℹ️ These are general estimates based on a standard formula, not personalized medical advice. Calorie needs vary by individual. If you're considering a significant change to your diet, it's a good idea to check in with a doctor or registered dietitian first.</div>
+    <!-- ===== RESULTS ===== -->
+    <div class="hn-section">
+      <h3>🔥 Energy expenditure</h3>
+      <div class="hn-stats">
+        <div class="hn-stat"><div class="n" id="bmrVal">—</div><div class="l">BMR (resting)</div></div>
+        <div class="hn-stat"><div class="n" id="tdeeVal">—</div><div class="l">TDEE (daily)</div></div>
+        <div class="hn-stat"><div class="n" id="weeklyVal">—</div><div class="l">Weekly calories</div></div>
+        <div class="hn-stat"><div class="n" id="monthlyVal">—</div><div class="l">Monthly calories</div></div>
+        <div class="hn-stat"><div class="n" id="annualVal">—</div><div class="l">Annual calories</div></div>
+      </div>
+    </div>
+
+    <div class="hn-section">
+      <h3>🎯 Calorie targets by goal</h3>
+      <div class="goal-grid" id="goalGrid"></div>
+      <div class="hn-targets" id="targetGrid" style="margin-top:10px"></div>
+    </div>
+
+    <div class="hn-section">
+      <h3>🍗 Macronutrients &amp; water <span style="font-weight:400;font-size:.74rem;color:var(--text-dim)">(for your selected goal)</span></h3>
+      <div class="hn-macros">
+        <div class="hn-canvas-wrap" style="width:210px;margin-top:0"><canvas id="macroCanvas" width="380" height="200" style="height:180px"></canvas>
+          <div class="hn-legend"><span><i style="background:#7c5cfc"></i>Protein</span><span><i style="background:#16c079"></i>Carbs</span><span><i style="background:#f59e0b"></i>Fat</span></div>
+        </div>
+        <div class="hn-macro-list">
+          <div class="hn-macro"><div class="mn">Protein</div><div class="mv" id="proteinVal">—</div></div>
+          <div class="hn-macro"><div class="mn">Carbohydrates</div><div class="mv" id="carbVal">—</div></div>
+          <div class="hn-macro"><div class="mn">Fat</div><div class="mv" id="fatVal">—</div></div>
+          <div class="hn-macro"><div class="mn">Fiber</div><div class="mv" id="fiberVal">—</div></div>
+          <div class="hn-macro"><div class="mn">Sugar (max)</div><div class="mv" id="sugarVal">—</div></div>
+          <div class="hn-macro"><div class="mn">Water / day</div><div class="mv" id="waterVal">—</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hn-section">
+      <h3>⚖️ BMI &amp; body composition</h3>
+      <div class="hn-stats">
+        <div class="hn-stat"><div class="n" id="bmiVal">—</div><div class="l">BMI</div></div>
+        <div class="hn-stat"><div class="n" id="bmiCat">—</div><div class="l">Category</div></div>
+        <div class="hn-stat"><div class="n" id="healthyRange">—</div><div class="l">Healthy weight range</div></div>
+        <div class="hn-stat"><div class="n" id="bodyFatVal">—</div><div class="l">Body fat % (US Navy)</div></div>
+        <div class="hn-stat"><div class="n" id="leanMassVal">—</div><div class="l">Lean mass</div></div>
+        <div class="hn-stat"><div class="n" id="fatMassVal">—</div><div class="l">Fat mass</div></div>
+      </div>
+    </div>
+
+    <div class="hn-section">
+      <h3>💧 Water intake</h3>
+      <div class="hn-stats">
+        <div class="hn-stat"><div class="n" id="waterDaily">—</div><div class="l">Daily baseline</div></div>
+        <div class="hn-stat"><div class="n" id="waterWorkout">—</div><div class="l">+ per hour workout</div></div>
+        <div class="hn-stat"><div class="n" id="waterHot">—</div><div class="l">Hot weather total</div></div>
+      </div>
+    </div>
+
+    <div class="hn-section">
+      <h3>🍽️ Meal planning <span style="font-weight:400;font-size:.74rem;color:var(--text-dim)">(distribution of your goal calories)</span></h3>
+      <div class="hn-meals" id="mealGrid"></div>
+    </div>
+
+    <div class="hn-section">
+      <h3>📊 Calorie comparison</h3>
+      <div class="hn-canvas-wrap"><canvas id="calorieCanvas" width="900" height="220" style="height:200px"></canvas></div>
+    </div>
+
+    <div class="hn-actions">
+      <button class="hn-btn primary" id="saveBtn">⭐ Save result</button>
+      <button class="hn-btn" data-export="csv">⬇ CSV</button>
+      <button class="hn-btn" data-export="xls">⬇ Excel</button>
+      <button class="hn-btn" data-export="pdf">⬇ PDF</button>
+      <button class="hn-btn" id="printBtn">🖨 Print</button>
+      <button class="hn-btn" id="copyBtn">📋 Copy</button>
+    </div>
+    <div class="hn-actions" style="margin-top:14px"><strong style="font-size:.88rem">🕘 Saved &amp; recent</strong>
+      <button class="hn-btn" id="clearHistBtn" style="margin-left:auto">Clear</button></div>
+    <div class="hn-history" id="historyList"></div>
+
+    <div class="new-tech-note">ℹ️ These are general estimates from standard formulas, not personalized medical advice. Calorie and nutrient needs vary by individual. Before any significant diet or training change — or if you have a health condition — consult a doctor or registered dietitian.</div>
   </div>
 </div>
 
+<!-- ============================ BELOW-TOOL CONTENT ============================ -->
+<div class="hn-content">
 
-<div class="info-wrap">
-  <div class="info-section">
-    <div class="info-block">
-      <h2>ℹ️ About This Tool</h2>
-      <p>Your Basal Metabolic Rate, or BMR, is the number of calories your body needs just to keep its basic functions running while completely at rest — breathing, circulating blood, maintaining body temperature, and supporting your organs. Total Daily Energy Expenditure, or TDEE, builds on that by adding in the calories you burn through daily activity and exercise, giving a more complete picture of how much energy your body actually uses across a typical day. This calculator uses the Mifflin-St Jeor equation, which nutrition professionals widely consider one of the more accurate formulas for estimating BMR from basic measurements like age, height, weight, and gender.</p>
-      <p>To get your estimate, you enter your age, height, weight, and select the activity level that best matches your typical week, ranging from sedentary through to extremely active. The tool then calculates your BMR and multiplies it by an activity factor to estimate your TDEE, which represents roughly how many calories you'd need to eat daily to maintain your current weight. Alongside the maintenance figure, the tool also shows gentle, moderate calorie ranges for those with weight goals — a modest deficit range for gradual weight loss and a modest surplus range for gradual weight gain, both kept within commonly recommended, sustainable limits rather than anything extreme.</p>
-      <p>It's worth understanding that this number is an estimate based on population averages, not a precise measurement of your individual metabolism, which can vary based on muscle mass, genetics, hormonal factors, and other variables this formula doesn't capture. Two people with identical age, height, and weight can have genuinely different calorie needs in practice. This tool is meant to give you a reasonable starting point for thinking about nutrition and activity, not a precise prescription, and it deliberately avoids suggesting aggressive or extreme calorie deficits, since sustainable, gradual changes are both healthier and more likely to last.</p>
-      <p>If you're considering a meaningful change to your diet, especially anything involving a significant calorie deficit, increased training intensity, or you have an existing health condition, it's genuinely worth having that conversation with a doctor or a registered dietitian who can account for your full health picture rather than relying on a formula alone. This calculator runs entirely in your browser, with no data about your age, weight, or health ever sent anywhere, so you're free to check it privately as often as you'd like as your weight or activity level changes over time.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Select your gender, and enter your age, height, and weight.</li>
-        <li>Pick the activity level that best matches your week.</li>
-        <li>See your estimated maintenance calories and gentle ranges for weight goals.</li>
-      </ol>
-    </div>
-    <hr class="info-divider">
-    <div class="info-block">
-      <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>आपका Basal Metabolic Rate, या BMR, वह कैलोरी संख्या है जो आपके शरीर को पूरी तरह आराम की हालत में भी अपने बुनियादी कामकाज चलाने के लिए चाहिए होती है — सांस लेना, खून का संचार, body temperature बनाए रखना, और अपने organs को सहारा देना। Total Daily Energy Expenditure, या TDEE, इसी पर बनता है और रोज़ की activity और exercise से बर्न होने वाली कैलोरी भी जोड़ देता है, जिससे यह ज़्यादा पूरी तस्वीर मिलती है कि आपका शरीर एक सामान्य दिन में असल में कितनी energy इस्तेमाल करता है। यह calculator Mifflin-St Jeor equation इस्तेमाल करता है, जिसे nutrition professionals age, height, weight, और gender जैसी बुनियादी जानकारी से BMR का अंदाज़ा लगाने के लिए व्यापक रूप से ज़्यादा सटीक formulas में से एक मानते हैं।</p>
-      <p>अपना अनुमान पाने के लिए, आप अपनी age, height, weight डालते हैं, और अपने सामान्य हफ्ते से सबसे मेल खाने वाला activity level चुनते हैं, sedentary से लेकर extremely active तक। टूल फिर आपका BMR निकालता है और उसे एक activity factor से multiply करके आपका TDEE अनुमानित करता है, जो लगभग बताता है कि अपना मौजूदा वज़न बनाए रखने के लिए आपको रोज़ कितनी कैलोरी खानी चाहिए। Maintenance वाले आंकड़े के साथ-साथ, टूल weight goals रखने वालों के लिए हल्के, सामान्य calorie ranges भी दिखाता है — धीरे-धीरे वज़न घटाने के लिए एक मामूली deficit range और धीरे-धीरे वज़न बढ़ाने के लिए एक मामूली surplus range, दोनों ही आम तौर पर सुझाई जाने वाली, टिकाऊ सीमाओं के अंदर, किसी भी तरह की extreme चीज़ नहीं।</p>
-      <p>यह समझना ज़रूरी है कि यह नंबर population averages पर आधारित एक अनुमान है, आपके individual metabolism की सटीक measurement नहीं, जो muscle mass, genetics, hormonal factors, और इस formula में शामिल न होने वाले बाकी कारकों के हिसाब से अलग हो सकता है। एक जैसी age, height, और weight वाले दो लोगों की असल calorie needs वाकई अलग हो सकती हैं। यह टूल nutrition और activity के बारे में सोचने के लिए एक उचित शुरुआती बिंदु देने के लिए है, कोई सटीक prescription नहीं, और यह जानबूझकर aggressive या extreme calorie deficits सुझाने से बचता है, क्योंकि टिकाऊ, धीरे-धीरे होने वाले बदलाव ज़्यादा healthy भी होते हैं और लंबे समय तक टिकने की संभावना भी ज़्यादा होती है।</p>
-      <p>अगर आप अपनी diet में कोई बड़ा बदलाव सोच रहे हैं, खासकर कोई बड़ा calorie deficit, training की intensity बढ़ाना, या आपको कोई मौजूदा health condition है, तो यह बातचीत किसी doctor या registered dietitian से करना सच में बेहतर है जो सिर्फ एक formula पर भरोसा करने की बजाय आपकी पूरी health picture को ध्यान में रख सके। यह calculator पूरी तरह आपके browser में चलता है, आपकी age, weight, या health के बारे में कोई data कहीं नहीं भेजा जाता, तो समय के साथ आपका वज़न या activity level बदलने पर आप इसे जितनी बार चाहें निजी तौर पर check कर सकते हैं।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>अपना gender चुनें, और age, height, weight डालें।</li>
-        <li>अपने हफ्ते के हिसाब से activity level चुनें।</li>
-        <li>अपनी अनुमानित maintenance कैलोरी और हल्के goal ranges देखें।</li>
-      </ol>
-    </div>
+  <h2>🧬 One calculator for calories, macros and body composition</h2>
+  <p>The <strong>Professional Health &amp; Nutrition Calculator</strong> turns a basic BMR estimate into a complete daily-nutrition dashboard. From your age, height, weight, gender and activity level it calculates your Basal Metabolic Rate and Total Daily Energy Expenditure, then translates those numbers into calorie targets for every goal, a full macronutrient breakdown, your BMI and body-fat percentage, a personalised water-intake figure and a suggested meal distribution — with clear charts and one-click export. It is built for students, fitness enthusiasts, gym users, athletes and nutrition coaches, and it runs entirely in your browser so none of your health data is ever uploaded.</p>
+
+  <h2>📐 Formula used</h2>
+  <p>BMR can be estimated several ways, and this tool offers seven well-known formulas so you can match the method to your situation:</p>
+  <div class="hn-formula">Mifflin-St Jeor  : 10·kg + 6.25·cm − 5·age + (male +5 / female −161)
+Harris-Benedict  : male 66.47 + 13.75·kg + 5.003·cm − 6.755·age
+                   female 655.1 + 9.563·kg + 1.850·cm − 4.676·age
+Katch-McArdle    : 370 + 21.6·LBM        (LBM = lean body mass in kg)
+Cunningham       : 500 + 22·LBM
+Owen             : male 879 + 10.2·kg  /  female 795 + 7.18·kg
+TDEE = BMR × activity multiplier (1.2 sedentary … 2.1 athlete)</div>
+  <p>Mifflin-St Jeor is the modern default and works well for most people. Katch-McArdle and Cunningham are more accurate for lean, muscular individuals because they use lean body mass (from your body-fat %). BMI uses <em>weight ÷ height²</em>, and body fat uses the US-Navy circumference method.</p>
+
+  <h2>✨ Features</h2>
+  <div class="hn-fgrid">
+    <div class="fc"><b>7 BMR formulas</b><span>Mifflin-St Jeor, Harris-Benedict, revised HB, Katch-McArdle, Cunningham, Owen and Schofield.</span></div>
+    <div class="fc"><b>8 activity levels</b><span>Sedentary to athlete, physical-job and a custom multiplier for precise TDEE.</span></div>
+    <div class="fc"><b>Calorie targets</b><span>Mild/moderate/aggressive loss, maintenance, lean gain and muscle gain — daily, weekly, monthly, annual.</span></div>
+    <div class="fc"><b>Full macros</b><span>Protein, carbs, fat, fiber, sugar limit and water, tuned to your goal.</span></div>
+    <div class="fc"><b>BMI &amp; body fat</b><span>BMI with category and healthy range, plus US-Navy body fat, lean mass and fat mass.</span></div>
+    <div class="fc"><b>Meal planning</b><span>Breakfast, lunch, dinner and snack calorie split.</span></div>
+    <div class="fc"><b>Charts &amp; export</b><span>Macro pie and calorie comparison charts; CSV, Excel, PDF, print and copy.</span></div>
+    <div class="fc"><b>Metric &amp; imperial</b><span>Switch units instantly; save, compare and recall recent results.</span></div>
   </div>
+
+  <h2>🎯 Benefits</h2>
+  <ul>
+    <li><strong>Everything in one place:</strong> no need for separate BMR, macro, BMI and water tools.</li>
+    <li><strong>Goal-aware:</strong> macros and calories adjust automatically to fat loss, maintenance or muscle gain.</li>
+    <li><strong>Accurate for you:</strong> pick a formula that suits your body composition, including lean-mass methods.</li>
+    <li><strong>Private &amp; instant:</strong> live recalculation with nothing uploaded.</li>
+    <li><strong>Actionable:</strong> meal split and water target turn numbers into a plan.</li>
+  </ul>
+
+  <div class="hn-disclaimer">
+    <strong>⚕️ Medical disclaimer:</strong> This tool provides general educational estimates using standard formulas and population averages. It is <strong>not</strong> medical advice, diagnosis or treatment, and individual needs vary with genetics, muscle mass, hormones, medical conditions and medication. Do not use it to self-treat. Consult a qualified doctor or registered dietitian before starting a diet, a calorie deficit/surplus, or a new training programme — especially if you are pregnant, under 18, elderly, or managing a health condition. / यह टूल केवल सामान्य शैक्षिक अनुमान देता है, यह चिकित्सा सलाह नहीं है; किसी भी बदलाव से पहले डॉक्टर या पंजीकृत आहार-विशेषज्ञ से परामर्श करें।
+  </div>
+
+  <h2>🧮 Examples</h2>
+  <ul>
+    <li><strong>30-year-old man, 170 cm, 70 kg, light activity:</strong> Mifflin BMR ≈ 1,617 kcal, TDEE ≈ 2,224 kcal/day. Mild fat-loss target ≈ 1,974 kcal; ~123 g protein.</li>
+    <li><strong>28-year-old woman, 162 cm, 60 kg, moderate activity:</strong> BMR ≈ 1,336 kcal, TDEE ≈ 2,070 kcal; maintenance with ~108 g protein and ~2.1 L water.</li>
+    <li><strong>Lean athlete at 12% body fat:</strong> Katch-McArdle uses lean mass for a more accurate BMR than weight-only formulas.</li>
+  </ul>
+
+  <h2>📗 Healthy weight guide</h2>
+  <p>BMI bands (WHO): under 18.5 is underweight, 18.5–24.9 is the healthy range, 25–29.9 is overweight and 30+ is obese. BMI is a screening tool, not a diagnosis — very muscular people can read as "overweight" despite low body fat, which is exactly why this calculator also shows body-fat percentage and lean mass. Aim for gradual change: roughly a 300–500 kcal daily deficit for sustainable fat loss (about 0.25–0.5 kg per week) or a similar modest surplus for lean muscle gain, paired with adequate protein and strength training.</p>
+
+  <!-- ===== Related Tools (ABOVE About — required order) ===== -->
+  <h2>🧰 Related Tools</h2>
+  <div class="related-grid">
+    <a href="bmi-calculator.html"><span class="ri">⚖️</span> BMI Calculator</a>
+    <a href="water-intake-calculator.html"><span class="ri">💧</span> Water Intake Calculator</a>
+    <a href="body-fat-calculator.html"><span class="ri">📉</span> Body Fat Calculator</a>
+    <a href="age-calculator.html"><span class="ri">🎂</span> Age Calculator</a>
+    <a href="unit-converter.html"><span class="ri">📐</span> Unit Converter</a>
+    <a href="percentage-discount-calculator.html"><span class="ri">📊</span> Percentage Calculator</a>
+    <a href="average-calculator.html"><span class="ri">🧮</span> Average Calculator</a>
+    <a href="date-difference-calculator.html"><span class="ri">📅</span> Date Difference Calculator</a>
+  </div>
+
+  <!-- ===== About (English) ===== -->
+  <h2>ℹ️ About This Tool</h2>
+  <p>The <strong>Professional Health &amp; Nutrition Calculator</strong> is a free, browser-based tool that brings together the core numbers people need when they start paying attention to their nutrition and fitness. It began as a simple BMR and calorie calculator and grew into a complete dashboard because those figures are far more useful together than in isolation: knowing your maintenance calories only helps if you can also see how to split them into protein, carbohydrates and fat, how they change for a fat-loss or muscle-gain goal, how much water to drink, and where you stand on BMI and body fat. This tool computes all of that from a handful of inputs, instantly and privately, and presents it with charts and a meal breakdown so the numbers translate into something you can actually act on.</p>
+
+  <p>The foundation is your Basal Metabolic Rate — the energy your body uses at complete rest to breathe, circulate blood, regulate temperature and keep your organs working. Because no single equation is perfect for everyone, the calculator offers seven established formulas. The default, Mifflin-St Jeor, is widely regarded as the most accurate general-purpose equation for the modern population. Harris-Benedict and its revised version are long-standing alternatives. Owen and Schofield offer simpler estimates, while Katch-McArdle and Cunningham take a different and often more accurate route for lean, muscular people by basing the calculation on lean body mass derived from your body-fat percentage rather than total weight. Being able to choose the method — and to compare them — is part of what makes this a professional-grade tool rather than a one-formula widget.</p>
+
+  <p>Once your BMR is known, the tool multiplies it by an activity factor to estimate your Total Daily Energy Expenditure, the calories you actually burn on a typical day including movement and exercise. Eight activity levels are provided, from sedentary through to a two-a-day athlete, plus a physical-job option and a custom multiplier for people who know their own figure. From this maintenance number the calculator derives a full spectrum of calorie targets: mild, moderate and aggressive deficits for weight loss, the maintenance figure itself, and modest surpluses for lean gain and muscle building. It also expresses your intake as weekly, monthly and annual totals, which puts the daily number in a longer-term perspective that many people find motivating.</p>
+
+  <p>Calories alone do not build a diet, so the calculator breaks your chosen goal's target into macronutrients. Protein is set from your body weight and goal — higher for fat loss and muscle gain to preserve and build muscle — while fat is allocated a healthy share of total energy and carbohydrates fill the remainder, the balance that best supports training and recovery. It also estimates fiber and a sensible upper limit for added sugar, and calculates a personalised daily water target with adjustments for exercise and hot weather. A macronutrient pie chart makes the protein-carb-fat split obvious at a glance, and a meal-planning panel distributes the day's calories across breakfast, lunch, dinner and snacks so you have a realistic template to build meals around.</p>
+
+  <p>Body composition rounds out the picture. The tool shows your BMI with its category and the healthy weight range for your height, and — if you enter a few tape-measure circumferences — estimates body-fat percentage using the US-Navy method, along with your lean mass and fat mass in the same units you are working in. This matters because BMI on its own can mislabel muscular people; seeing body fat alongside it gives a truer sense of health and progress. Everything works in both metric and imperial units, switching instantly without losing your data, and a calorie-comparison chart lets you see loss, maintenance and gain targets side by side.</p>
+
+  <p>Just as important is what the tool does not do. It never sends your age, weight, measurements or goals anywhere — every calculation runs locally in your browser, so you can check your numbers as often as you like in complete privacy, and it keeps working offline once loaded. You can save results, recall recent ones and export a summary as CSV, Excel or PDF, or print and copy it, which is handy for coaches tracking clients or for keeping your own records over time. Inputs are validated to catch empty, zero or out-of-range values before they produce a nonsensical result. Above all, the calculator is deliberately conservative and honest: it favours gradual, sustainable targets over extreme deficits, and it repeats a clear medical disclaimer, because these are educational estimates from population-average formulas, not a substitute for personalised advice from a doctor or registered dietitian. Used consistently over weeks and months, and adjusted against your real-world progress on the scale, in the mirror and in the gym, it becomes a dependable reference point that quietly keeps your nutrition, hydration and training goals aligned — which is exactly what a good calculator should do.</p>
+
+  <!-- ===== About (Hindi) ===== -->
+  <h2>ℹ️ इस टूल के बारे में (हिंदी में)</h2>
+  <p class="hn-lang-note">The same guide in Hindi / यही जानकारी हिंदी में।</p>
+  <p><strong>Professional Health &amp; Nutrition Calculator</strong> एक फ्री, ब्राउज़र-आधारित टूल है जो पोषण और फिटनेस पर ध्यान देना शुरू करते ही लोगों को ज़रूरी सभी मुख्य आँकड़े एक साथ देता है। इसकी शुरुआत एक साधारण BMR और calorie calculator के रूप में हुई थी और यह एक पूरा dashboard बन गया क्योंकि ये आँकड़े अलग-अलग की बजाय साथ में कहीं ज़्यादा उपयोगी हैं: अपनी maintenance calories जानना तभी काम आता है जब आप यह भी देख सकें कि उन्हें protein, carbohydrates और fat में कैसे बाँटें, fat-loss या muscle-gain लक्ष्य के लिए वे कैसे बदलती हैं, कितना पानी पिएँ, और BMI तथा body fat पर आप कहाँ हैं। यह टूल कुछ ही inputs से यह सब तुरंत और निजी रूप से निकालता है, और charts व meal breakdown के साथ दिखाता है।</p>
+
+  <p>इसकी नींव आपका Basal Metabolic Rate है — वह energy जो आपका शरीर पूरी तरह आराम में साँस लेने, रक्त-संचार, तापमान नियंत्रण और अंगों के कामकाज के लिए इस्तेमाल करता है। चूँकि कोई एक समीकरण सबके लिए सटीक नहीं होता, यह calculator सात स्थापित formulas देता है। डिफ़ॉल्ट Mifflin-St Jeor को आधुनिक आबादी के लिए सबसे सटीक सामान्य समीकरण माना जाता है। Harris-Benedict और इसका revised रूप पुराने विकल्प हैं। Owen और Schofield सरल अनुमान देते हैं, जबकि Katch-McArdle और Cunningham lean, muscular लोगों के लिए total weight के बजाय body-fat % से निकाले lean body mass पर आधारित होकर अक्सर ज़्यादा सटीक होते हैं।</p>
+
+  <p>BMR पता चलने पर टूल इसे एक activity factor से multiply करके आपका Total Daily Energy Expenditure अनुमानित करता है, यानी एक सामान्य दिन में movement और exercise समेत आप जितनी calories असल में बर्न करते हैं। आठ activity levels दिए गए हैं, sedentary से लेकर दिन में दो बार training करने वाले athlete तक, साथ ही physical-job विकल्प और अपनी संख्या जानने वालों के लिए custom multiplier। इसी maintenance संख्या से टूल calorie targets की पूरी श्रृंखला निकालता है: weight loss के लिए mild, moderate और aggressive deficit, maintenance, और lean gain तथा muscle building के लिए मामूली surplus। यह आपकी खपत को weekly, monthly और annual रूप में भी दिखाता है।</p>
+
+  <p>सिर्फ़ calories से diet नहीं बनती, इसलिए calculator आपके चुने लक्ष्य के target को macronutrients में बाँटता है। Protein आपके शरीर के वज़न और लक्ष्य से तय होता है — fat loss और muscle gain के लिए ज़्यादा — जबकि fat को कुल energy का स्वस्थ हिस्सा मिलता है और carbohydrates बाक़ी भरते हैं। यह fiber और added sugar की उचित ऊपरी सीमा का भी अनुमान लगाता है, और exercise तथा गर्म मौसम के हिसाब से समायोजन के साथ एक व्यक्तिगत दैनिक पानी लक्ष्य निकालता है। एक macronutrient pie chart protein-carb-fat विभाजन को एक नज़र में स्पष्ट कर देता है, और meal-planning panel दिन की calories को नाश्ते, दोपहर, रात के खाने और snacks में बाँट देता है।</p>
+
+  <p>Body composition तस्वीर को पूरा करता है। टूल आपका BMI उसकी श्रेणी और आपकी height के स्वस्थ weight range के साथ दिखाता है, और — यदि आप कुछ माप डालें — US-Navy विधि से body-fat प्रतिशत तथा lean mass और fat mass का अनुमान देता है। यह मायने रखता है क्योंकि अकेला BMI muscular लोगों को ग़लत श्रेणी में डाल सकता है। सब कुछ metric और imperial दोनों में काम करता है, और एक calorie-comparison chart loss, maintenance और gain targets को साथ-साथ दिखाता है।</p>
+
+  <p>उतना ही अहम यह है कि टूल क्या नहीं करता। यह आपकी age, weight, माप या लक्ष्य कहीं नहीं भेजता — हर calculation आपके ब्राउज़र में ही चलती है, इसलिए आप पूरी निजता में जितनी बार चाहें अपने आँकड़े देख सकते हैं, और लोड होने के बाद यह offline भी काम करता है। आप results सहेज सकते हैं, हाल के देख सकते हैं और summary को CSV, Excel या PDF में export कर सकते हैं, या print/copy कर सकते हैं। inputs validate होते हैं। सबसे बढ़कर, calculator जान-बूझकर संतुलित और ईमानदार है: यह extreme deficits के बजाय धीरे-धीरे, टिकाऊ targets को प्राथमिकता देता है, और एक स्पष्ट medical disclaimer दोहराता है, क्योंकि ये आबादी-औसत formulas से शैक्षिक अनुमान हैं, किसी डॉक्टर या पंजीकृत आहार-विशेषज्ञ की व्यक्तिगत सलाह का विकल्प नहीं।</p>
+
+  <!-- ===== FAQ (immediately after About — required order) ===== -->
+  <h2>❓ Frequently Asked Questions</h2>
+  <div class="hn-faq" id="hnFaq">
+    <details><summary>Is this calculator free?</summary><p>Yes, completely free with no account, no signup and no limits. / हाँ, यह पूरी तरह मुफ़्त है।</p></details>
+    <details><summary>Is my health data uploaded anywhere?</summary><p>No. Every calculation runs locally in your browser; your age, weight and measurements never leave your device. / नहीं, सब कुछ आपके ब्राउज़र में ही होता है।</p></details>
+    <details><summary>What is the difference between BMR and TDEE?</summary><p>BMR is the calories your body burns at complete rest; TDEE is BMR plus the calories from daily activity and exercise. / BMR आराम में जली calories है; TDEE में activity भी जुड़ती है।</p></details>
+    <details><summary>Which BMR formula should I use?</summary><p>Mifflin-St Jeor for most people; Katch-McArdle or Cunningham if you know your body-fat % and are lean/muscular. / अधिकतर के लिए Mifflin-St Jeor; lean लोगों के लिए Katch-McArdle।</p></details>
+    <details><summary>How accurate is it?</summary><p>These are population-average estimates; real needs vary with muscle, genetics and hormones. Use it as a starting point and adjust from real results. / ये औसत अनुमान हैं; असली ज़रूरत अलग हो सकती है।</p></details>
+    <details><summary>How do I lose weight with this?</summary><p>Eat in the mild or moderate deficit range (about 300–500 kcal below maintenance) for gradual, sustainable fat loss. / maintenance से ~300–500 kcal कम खाएँ।</p></details>
+    <details><summary>How much protein do I need?</summary><p>The tool sets protein from your weight and goal — typically 1.6–2.2 g per kg for fat loss or muscle gain. / लक्ष्य के अनुसार लगभग 1.6–2.2 g/kg।</p></details>
+    <details><summary>How is body fat calculated?</summary><p>Using the US-Navy circumference method from neck, waist (and hip for women) and height. / US-Navy विधि से माप और height से।</p></details>
+    <details><summary>What is Katch-McArdle and when is it better?</summary><p>It bases BMR on lean body mass, so it is more accurate for lean, muscular people than weight-only formulas. / यह lean body mass पर आधारित है।</p></details>
+    <details><summary>Does it support imperial units?</summary><p>Yes. Switch between metric (cm, kg) and imperial (inches, lb) instantly. / हाँ, metric और imperial दोनों।</p></details>
+    <details><summary>What activity level should I pick?</summary><p>Choose the one matching your typical week; when unsure, pick the lower option to avoid overestimating calories. / अपने हफ्ते से मेल खाता विकल्प चुनें।</p></details>
+    <details><summary>How much water should I drink?</summary><p>Roughly 30–35 ml per kg of body weight, plus more for exercise and hot weather — the tool shows all three. / लगभग 30–35 ml प्रति kg, exercise/गर्मी में ज़्यादा।</p></details>
+    <details><summary>Can I plan my meals with it?</summary><p>Yes. The meal panel splits your goal calories across breakfast, lunch, dinner and snacks. / हाँ, meal panel calories बाँटता है।</p></details>
+    <details><summary>Can I save and compare results?</summary><p>Yes. Save results to your browser and view recent calculations to track changes over time. / हाँ, results सहेजें और तुलना करें।</p></details>
+    <details><summary>Can I export or print the results?</summary><p>Yes — CSV, Excel, PDF, print and copy are all supported. / हाँ, CSV, Excel, PDF, print और copy।</p></details>
+    <details><summary>Is BMI reliable for athletes?</summary><p>Not always — muscle raises BMI without extra fat, so check body-fat % alongside it. / athletes के लिए body-fat % भी देखें।</p></details>
+    <details><summary>Does it work offline?</summary><p>Yes, there are no external libraries, so it works without internet once loaded. / हाँ, यह offline काम करता है।</p></details>
+    <details><summary>Is this medical advice?</summary><p>No. It is educational only; consult a doctor or dietitian before major diet or training changes. / नहीं, यह चिकित्सा सलाह नहीं है।</p></details>
+    <details><summary>Is it mobile friendly and accessible?</summary><p>Yes, it is responsive and the controls are labelled and keyboard-operable. / हाँ, यह मोबाइल-अनुकूल और सुलभ है।</p></details>
+    <details><summary>Does it use any AI?</summary><p>No. Every figure comes from transparent, standard formulas with no AI. / नहीं, इसमें कोई AI नहीं है।</p></details>
+    <details><summary>Why did my calories change when I switched formula?</summary><p>Each formula weights age, weight and height differently, so BMR — and therefore TDEE — will differ slightly. / हर formula अलग वज़न देता है।</p></details>
+  </div>
+
+  <!-- ===== Privacy ===== -->
+  <h2>🔒 Privacy</h2>
+  <p>This tool is privacy-first. All calculations — BMR, TDEE, macros, BMI, body fat, water and meal planning — run entirely in your browser with JavaScript. Your age, gender, weight, height, body measurements, goals and saved results are never uploaded to a server, shared with analytics, or processed by any AI service. Saved and recent results live only in your own browser's local storage, and clearing your browser data removes them. Because it is fully client-side, the tool is safe for sensitive personal-health figures and keeps working offline once loaded. / यह टूल privacy-first है — सारा काम आपके ब्राउज़र में होता है, कोई डेटा अपलोड नहीं होता, और सहेजे गए results सिर्फ़ आपके ब्राउज़र में रहते हैं।</p>
+
+  <!-- ===== Troubleshooting ===== -->
+  <h2>🛠️ Troubleshooting</h2>
+  <ul>
+    <li><strong>Results show a dash:</strong> a required field (age, height or weight) is empty or out of range — check the highlighted input.</li>
+    <li><strong>Body fat shows "—":</strong> the US-Navy method needs neck, waist and height (plus hip for women); fill those in the measurements section.</li>
+    <li><strong>Katch-McArdle/Cunningham look off:</strong> they need a body-fat %. Enter it, or the tool estimates it from your measurements.</li>
+    <li><strong>Numbers seem too high:</strong> your activity level may be overstated — pick a lower level or a custom multiplier.</li>
+    <li><strong>Imperial values look wrong:</strong> after switching units, re-check that height (inches) and weight (lb) reflect your real figures.</li>
+    <li><strong>Export didn't download:</strong> allow downloads for this site and try again.</li>
+  </ul>
 </div>
 
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
 <script src="../assets/common.js"></script>
 <script>
-let gender = 'male';
+(function(){
+  'use strict';
+  function $(id){ return document.getElementById(id); }
+  var gender='male', units='metric';
 
-document.querySelectorAll('.tab-btn').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    gender = btn.dataset.gender;
+  // ---------- Unit helpers (internal always metric: cm, kg) ----------
+  function toCm(v){ return units==='imperial'? v*2.54 : v; }
+  function toKg(v){ return units==='imperial'? v*0.453592 : v; }
+  function fromCm(v){ return units==='imperial'? v/2.54 : v; }
+  function fromKg(v){ return units==='imperial'? v/0.453592 : v; }
+  function wUnit(){ return units==='imperial'?'lb':'kg'; }
+  function lUnit(){ return units==='imperial'?'in':'cm'; }
+
+  // ---------- Gender / units toggles ----------
+  document.querySelectorAll('[data-gender]').forEach(function(b){ b.addEventListener('click',function(){ document.querySelectorAll('[data-gender]').forEach(function(x){x.classList.remove('active');}); b.classList.add('active'); gender=b.getAttribute('data-gender'); $('hipField').style.display=gender==='female'?'':'none'; calculate(); }); });
+  document.querySelectorAll('[data-units]').forEach(function(b){ b.addEventListener('click',function(){
+    if(units===b.getAttribute('data-units'))return;
+    // convert current field values
+    var old=units; units=b.getAttribute('data-units');
+    document.querySelectorAll('[data-units]').forEach(function(x){x.classList.remove('active');}); b.classList.add('active');
+    ['height','weight','neck','waist','hip','goalWeight'].forEach(function(id){ var el=$(id); if(el.value==='')return; var v=parseFloat(el.value); if(isNaN(v))return;
+      var metric = old==='imperial' ? (['weight','goalWeight'].indexOf(id)>-1? v*0.453592 : v*2.54) : v;
+      el.value = Math.round((units==='imperial' ? (['weight','goalWeight'].indexOf(id)>-1? metric/0.453592 : metric/2.54) : metric)*10)/10;
+    });
+    $('heightLabel').textContent='Height ('+lUnit()+')'; $('weightLabel').textContent='Weight ('+wUnit()+')';
+    $('neckLabel').textContent='Neck ('+lUnit()+')'; $('waistLabel').textContent='Waist ('+lUnit()+')'; $('hipLabel').textContent='Hip ('+lUnit()+', female)'; $('goalWeightLabel').textContent='Goal weight ('+wUnit()+')';
     calculate();
-  });
-});
+  }); });
 
-function calculate(){
-  const age = parseFloat(document.getElementById('age').value) || 0;
-  const height = parseFloat(document.getElementById('height').value) || 0;
-  const weight = parseFloat(document.getElementById('weight').value) || 0;
-  const activity = parseFloat(document.getElementById('activity').value);
+  $('activity').addEventListener('change',function(){ $('customMultRow').style.display=this.value==='custom'?'block':'none'; calculate(); });
 
-  let bmr;
-  if(gender === 'male'){
-    bmr = 10*weight + 6.25*height - 5*age + 5;
-  } else {
-    bmr = 10*weight + 6.25*height - 5*age - 161;
+  // ---------- Formulas ----------
+  function lbm(kg, cm, bf){ if(bf&&bf>0&&bf<70) return kg*(1-bf/100); return null; }
+  function schofield(kg, age, g){
+    var m={ '18':[15.057,692.2],'30':[11.472,873.1],'60':[11.711,587.7] };
+    var f={ '18':[14.818,486.6],'30':[8.126,845.6],'60':[9.082,658.5] };
+    var band = age<30?'18':(age<60?'30':'60');
+    var c=(g==='male'?m:f)[band]; return c[0]*kg+c[1];
   }
-  const tdee = bmr * activity;
+  function computeBMR(kg,cm,age,bf){
+    var f=$('formula').value;
+    if(f==='mifflin') return 10*kg+6.25*cm-5*age+(gender==='male'?5:-161);
+    if(f==='harris') return gender==='male'? 66.47+13.75*kg+5.003*cm-6.755*age : 655.1+9.563*kg+1.850*cm-4.676*age;
+    if(f==='revharris') return gender==='male'? 88.362+13.397*kg+4.799*cm-5.677*age : 447.593+9.247*kg+3.098*cm-4.330*age;
+    if(f==='owen') return gender==='male'? 879+10.2*kg : 795+7.18*kg;
+    if(f==='schofield') return schofield(kg,age,gender);
+    if(f==='katch'||f==='cunningham'){ var l=bf; if(!l) l=kg*0.8; return f==='katch'? 370+21.6*l : 500+22*l; }
+    return 10*kg+6.25*cm-5*age+(gender==='male'?5:-161);
+  }
+  function navyBodyFat(cm,neck,waist,hip){
+    if(!neck||!waist) return null;
+    var h=cm;
+    if(gender==='male'){ if(waist-neck<=0) return null; return 495/(1.0324-0.19077*Math.log10(waist-neck)+0.15456*Math.log10(h))-450; }
+    if(!hip||waist+hip-neck<=0) return null;
+    return 495/(1.29579-0.35004*Math.log10(waist+hip-neck)+0.22100*Math.log10(h))-450;
+  }
+  if(!Math.log10){ Math.log10=function(x){return Math.log(x)/Math.LN10;}; }
 
-  const grid = document.getElementById('goalGrid');
-  grid.innerHTML = `
-    <div class="goal-card">
-      <div class="kcal">${Math.round(tdee - 350)}–${Math.round(tdee - 250)}</div>
-      <div class="lbl">Mild calorie range for gradual weight loss</div>
-    </div>
-    <div class="goal-card">
-      <div class="kcal">${Math.round(tdee)}</div>
-      <div class="lbl">Estimated Maintenance Calories</div>
-    </div>
-    <div class="goal-card">
-      <div class="kcal">${Math.round(tdee + 250)}–${Math.round(tdee + 350)}</div>
-      <div class="lbl">Mild calorie range for gradual weight gain</div>
-    </div>
-  `;
-}
+  // ---------- Validation ----------
+  function validate(){
+    var ok=true;
+    [['age',10,120],['height',20,300],['weight',5,500]].forEach(function(c){
+      var el=$(c[0]),wrap=el.closest('.hn-field'),v=parseFloat(el.value);
+      var metricV = c[0]==='age'?v:(c[0]==='height'?toCm(v):toKg(v));
+      var bad=el.value===''||isNaN(v)||v<=0||(c[0]==='age'&&(v<c[1]||v>c[2]));
+      wrap.classList.toggle('invalid',bad); if(bad)ok=false;
+    });
+    return ok;
+  }
 
-['age','height','weight','activity'].forEach(id=>{
-  document.getElementById(id).addEventListener('input', calculate);
-});
+  // ---------- Currency-free number format ----------
+  function n0(x){ return isFinite(x)? Math.round(x).toLocaleString('en-IN'):'—'; }
 
-calculate();
+  // ---------- Main ----------
+  var last=null;
+  function calculate(){
+    if(!validate()){ return; }
+    var age=parseFloat($('age').value)||0;
+    var cm=toCm(parseFloat($('height').value)||0);
+    var kg=toKg(parseFloat($('weight').value)||0);
+    var neck=$('neck').value?toCm(parseFloat($('neck').value)):0;
+    var waist=$('waist').value?toCm(parseFloat($('waist').value)):0;
+    var hip=$('hip').value?toCm(parseFloat($('hip').value)):0;
+    var bfInput=parseFloat($('bodyFat').value)||0;
+    var act=$('activity').value==='custom'?(parseFloat($('customMult').value)||1.5):parseFloat($('activity').value);
+    var goal=$('goal').value;
+
+    var navyBF=navyBodyFat(cm,neck,waist,hip);
+    var bf = bfInput>0?bfInput:(navyBF&&navyBF>0?navyBF:0);
+    var lean=lbm(kg,cm,bf);
+    var bmr=computeBMR(kg,cm,age,lean);
+    var tdee=bmr*act;
+
+    $('bmrVal').textContent=n0(bmr); $('tdeeVal').textContent=n0(tdee);
+    $('weeklyVal').textContent=n0(tdee*7); $('monthlyVal').textContent=n0(tdee*30); $('annualVal').textContent=n0(tdee*365);
+
+    // Calorie targets (3 main cards preserved in #goalGrid)
+    $('goalGrid').innerHTML=
+      card(n0(tdee-500)+'–'+n0(tdee-250),'Weight loss range')+
+      card(n0(tdee),'Maintenance')+
+      card(n0(tdee+250)+'–'+n0(tdee+500),'Weight gain range');
+    $('targetGrid').innerHTML=
+      tgt('Mild loss (−0.25 kg/wk)',n0(tdee-250))+tgt('Moderate loss (−0.5 kg/wk)',n0(tdee-500))+tgt('Aggressive loss',n0(Math.max(bmr,tdee-750)))+
+      tgt('Maintenance',n0(tdee))+tgt('Lean gain',n0(tdee+250))+tgt('Muscle gain',n0(tdee+500));
+
+    // Goal target for macros
+    var target = goal==='loss'?tdee-500 : goal==='gain'?tdee+400 : goal==='leanbulk'?tdee+250 : goal==='muscle'?tdee+400 : tdee;
+    target=Math.max(bmr, target);
+    // Protein g/kg by goal
+    var pPerKg = goal==='loss'?2.0 : (goal==='muscle'||goal==='leanbulk')?2.0 : goal==='gain'?1.8 : 1.6;
+    var protein=pPerKg*kg;
+    var fatKcal=target*0.25, fat=fatKcal/9;
+    var proteinKcal=protein*4;
+    var carbKcal=Math.max(0,target-proteinKcal-fatKcal), carbs=carbKcal/4;
+    var fiber=target/1000*14, sugar=target*0.10/4;
+    var waterL=kg*0.033;
+
+    $('proteinVal').textContent=Math.round(protein)+' g';
+    $('carbVal').textContent=Math.round(carbs)+' g';
+    $('fatVal').textContent=Math.round(fat)+' g';
+    $('fiberVal').textContent=Math.round(fiber)+' g';
+    $('sugarVal').textContent=Math.round(sugar)+' g';
+    $('waterVal').textContent=waterL.toFixed(1)+' L';
+    drawMacro(proteinKcal,carbKcal,fatKcal);
+
+    // BMI
+    var bmi=kg/Math.pow(cm/100,2);
+    $('bmiVal').textContent=isFinite(bmi)?bmi.toFixed(1):'—';
+    $('bmiCat').textContent=bmiCat(bmi);
+    var lo=18.5*Math.pow(cm/100,2), hi=24.9*Math.pow(cm/100,2);
+    $('healthyRange').textContent=Math.round(fromKg(lo))+'–'+Math.round(fromKg(hi))+' '+wUnit();
+    $('bodyFatVal').textContent = bf>0? bf.toFixed(1)+'%' : '—';
+    $('leanMassVal').textContent = lean? Math.round(fromKg(lean))+' '+wUnit() : '—';
+    $('fatMassVal').textContent = lean? Math.round(fromKg(kg-lean))+' '+wUnit() : '—';
+
+    // Water
+    $('waterDaily').textContent=waterL.toFixed(1)+' L';
+    $('waterWorkout').textContent='+0.5–0.7 L';
+    $('waterHot').textContent=(waterL+0.7).toFixed(1)+' L';
+
+    // Meals
+    var meals=[['🍳','Breakfast',.25],['🥗','Lunch',.35],['🍲','Dinner',.30],['🍎','Snacks',.10]];
+    $('mealGrid').innerHTML=meals.map(function(m){ return '<div class="hn-meal"><div class="mi">'+m[0]+'</div><div class="mk">'+n0(target*m[2])+'</div><div class="ml">'+m[1]+' ('+Math.round(m[2]*100)+'%)</div></div>'; }).join('');
+
+    drawCalorie(bmr,tdee,target);
+    last={gender:gender,units:units,age:age,cm:cm,kg:kg,bmr:bmr,tdee:tdee,target:target,goal:goal,protein:protein,carbs:carbs,fat:fat,bmi:bmi,bf:bf,formula:$('formula').value};
+    pushHistory();
+  }
+  function card(v,l){ return '<div class="goal-card"><div class="kcal">'+v+'</div><div class="lbl">'+l+'</div></div>'; }
+  function tgt(l,v){ return '<div class="hn-target"><div class="t">'+l+'</div><div class="v">'+v+' kcal</div></div>'; }
+  function bmiCat(b){ if(!isFinite(b))return '—'; if(b<18.5)return 'Underweight'; if(b<25)return 'Healthy'; if(b<30)return 'Overweight'; return 'Obese'; }
+
+  // ---------- Charts ----------
+  function dpr(){ return Math.min(window.devicePixelRatio||1,2); }
+  function drawMacro(p,c,f){
+    var cv=$('macroCanvas'); var w=cv.parentElement.clientWidth-20; cv.style.width=w+'px'; cv.width=w*dpr(); cv.height=180*dpr();
+    var x=cv.getContext('2d'); var W=cv.width,H=cv.height; x.clearRect(0,0,W,H);
+    var tot=p+c+f; if(tot<=0)return; var cx=W/2,cy=H/2,r=Math.min(W,H)/2-8*dpr(); var a0=-Math.PI/2;
+    [[p,'#7c5cfc'],[c,'#16c079'],[f,'#f59e0b']].forEach(function(s){ var a1=a0+s[0]/tot*Math.PI*2; x.beginPath(); x.moveTo(cx,cy); x.arc(cx,cy,r,a0,a1); x.closePath(); x.fillStyle=s[1]; x.fill(); a0=a1; });
+    x.fillStyle='#0d0d16'; x.beginPath(); x.arc(cx,cy,r*0.55,0,Math.PI*2); x.fill();
+    x.fillStyle='#fff'; x.font='bold '+(13*dpr())+'px system-ui'; x.textAlign='center'; x.fillText(Math.round(tot)+' kcal',cx,cy+5*dpr()); x.textAlign='left';
+  }
+  function drawCalorie(bmr,tdee,target){
+    var cv=$('calorieCanvas'); var w=cv.parentElement.clientWidth-20; cv.style.width=w+'px'; cv.width=w*dpr(); cv.height=200*dpr();
+    var x=cv.getContext('2d'); var W=cv.width,H=cv.height; x.clearRect(0,0,W,H);
+    var data=[['BMR',bmr,'#3b82f6'],['Loss',tdee-500,'#ef4444'],['Maintain',tdee,'#16c079'],['Your goal',target,'#7c5cfc'],['Gain',tdee+500,'#f59e0b']];
+    var max=Math.max.apply(null,data.map(function(d){return d[1];}))*1.1;
+    var pad=30*dpr(), bw=(W-pad*2)/data.length*0.6, gap=(W-pad*2)/data.length;
+    data.forEach(function(d,i){ var h=(H-pad*1.6)*(d[1]/max); var bx=pad+i*gap+(gap-bw)/2, by=H-pad-h;
+      x.fillStyle=d[2]; x.fillRect(bx,by,bw,h);
+      x.fillStyle='#fff'; x.font=(11*dpr())+'px system-ui'; x.textAlign='center'; x.fillText(Math.round(d[1]),bx+bw/2,by-4*dpr());
+      x.fillStyle='rgba(255,255,255,.6)'; x.fillText(d[0],bx+bw/2,H-pad+14*dpr()); });
+    x.textAlign='left';
+  }
+
+  // ---------- Export / share ----------
+  function summaryLines(){
+    if(!last)return [];
+    return ['Health & Nutrition Summary','Gender: '+last.gender+'  Age: '+last.age,
+      'BMR: '+n0(last.bmr)+' kcal   TDEE: '+n0(last.tdee)+' kcal',
+      'Goal ('+last.goal+') target: '+n0(last.target)+' kcal',
+      'Protein: '+Math.round(last.protein)+' g   Carbs: '+Math.round(last.carbs)+' g   Fat: '+Math.round(last.fat)+' g',
+      'BMI: '+(isFinite(last.bmi)?last.bmi.toFixed(1):'-')+' ('+bmiCat(last.bmi)+')',
+      (last.bf>0?'Body fat: '+last.bf.toFixed(1)+'%':''),
+      'Formula: '+last.formula,'(via ApneSoftware Health Calculator)'].filter(Boolean);
+  }
+  function dl(blob,fn){ var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=fn; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){URL.revokeObjectURL(a.href);},1500); }
+  function rows(){ return [['Metric','Value'],['Gender',last.gender],['Age',last.age],['BMR (kcal)',Math.round(last.bmr)],['TDEE (kcal)',Math.round(last.tdee)],['Goal target (kcal)',Math.round(last.target)],['Protein (g)',Math.round(last.protein)],['Carbs (g)',Math.round(last.carbs)],['Fat (g)',Math.round(last.fat)],['BMI',isFinite(last.bmi)?last.bmi.toFixed(1):''],['Body fat %',last.bf>0?last.bf.toFixed(1):''],['Formula',last.formula]]; }
+  document.querySelectorAll('[data-export]').forEach(function(b){ b.addEventListener('click',function(){ if(!last)return; var t=b.getAttribute('data-export');
+    if(t==='csv'){ dl(new Blob([rows().map(function(r){return r.join(',');}).join('\n')],{type:'text/csv'}),'health-summary.csv'); }
+    else if(t==='xls'){ var h='<table>'+rows().map(function(r){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>';}).join('')+'</table>'; dl(new Blob(['﻿<html><head><meta charset="UTF-8"></head><body>'+h+'</body></html>'],{type:'application/vnd.ms-excel'}),'health-summary.xls'); }
+    else if(t==='pdf'){ dl(makePDF(summaryLines()),'health-summary.pdf'); }
+  }); });
+  function makePDF(lines){ var e=function(s){return String(s).replace(/([\\()])/g,'\\$1').replace(/[^\x00-\x7F]/g,'');};
+    var content='BT /F1 12 Tf 40 800 Td 16 TL\n'+lines.map(function(l,i){return (i===0?'':'T* ')+'('+e(l)+') Tj';}).join('\n')+'\nET';
+    var objs=['<< /Type /Catalog /Pages 2 0 R >>','<< /Type /Pages /Kids [3 0 R] /Count 1 >>','<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>','<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>','<< /Length '+content.length+' >>\nstream\n'+content+'\nendstream'];
+    var pdf='%PDF-1.4\n',off=[]; objs.forEach(function(o,i){ off.push(pdf.length); pdf+=(i+1)+' 0 obj\n'+o+'\nendobj\n'; });
+    var xr=pdf.length; pdf+='xref\n0 '+(objs.length+1)+'\n0000000000 65535 f \n'; off.forEach(function(o){ pdf+=('0000000000'+o).slice(-10)+' 00000 n \n'; });
+    pdf+='trailer\n<< /Size '+(objs.length+1)+' /Root 1 0 R >>\nstartxref\n'+xr+'\n%%EOF'; return new Blob([pdf],{type:'application/pdf'}); }
+  $('printBtn').addEventListener('click',function(){ window.print(); });
+  $('copyBtn').addEventListener('click',function(){ navigator.clipboard.writeText(summaryLines().join('\n')).then(function(){ toast('Copied'); },function(){ toast('Copy failed'); }); });
+
+  // ---------- History ----------
+  var HKEY='hn_history_v1';
+  function loadH(){ try{return JSON.parse(localStorage.getItem(HKEY)||'[]');}catch(e){return [];} }
+  function saveH(h){ try{localStorage.setItem(HKEY,JSON.stringify(h.slice(0,25)));}catch(e){} }
+  function pushHistory(){ if(!last)return; var h=loadH(); var label='TDEE '+n0(last.tdee)+' • '+last.goal+' '+n0(last.target)+' • BMI '+(isFinite(last.bmi)?last.bmi.toFixed(1):'-'); var e={label:label,auto:true,fav:false}; if(h.length&&h[0].auto&&!h[0].fav){h[0]=e;}else{h.unshift(e);} saveH(h); renderHist(); }
+  function renderHist(){ var h=loadH(),w=$('historyList'); if(!h.length){ w.innerHTML='<div style="font-size:.76rem;color:var(--text-dim)">No results yet.</div>'; return; } w.innerHTML=h.map(function(it,i){ return '<div class="hitem"><span class="g">'+(it.fav?'⭐ ':'')+it.label+'</span><button data-fav="'+i+'">'+(it.fav?'★':'☆')+'</button><button data-del="'+i+'">✕</button></div>'; }).join('');
+    w.querySelectorAll('[data-fav]').forEach(function(b){ b.addEventListener('click',function(){ var i=+b.getAttribute('data-fav'); h[i].fav=!h[i].fav; h[i].auto=false; saveH(h); renderHist(); }); });
+    w.querySelectorAll('[data-del]').forEach(function(b){ b.addEventListener('click',function(){ h.splice(+b.getAttribute('data-del'),1); saveH(h); renderHist(); }); });
+  }
+  $('saveBtn').addEventListener('click',function(){ var h=loadH(); if(h.length){ h[0].fav=true; h[0].auto=false; saveH(h); renderHist(); toast('Saved'); } });
+  $('clearHistBtn').addEventListener('click',function(){ if(confirm('Clear all saved results?')){ saveH([]); renderHist(); } });
+
+  function toast(m){ var t=document.createElement('div'); t.textContent=m; t.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#1a1a2e;color:#fff;border:1px solid rgba(255,255,255,.15);padding:10px 18px;border-radius:10px;font-size:.85rem;z-index:9999'; document.body.appendChild(t); setTimeout(function(){t.style.transition='.3s';t.style.opacity='0';},1500); setTimeout(function(){t.remove();},1900); }
+
+  // ---------- Wire ----------
+  ['age','height','weight','activity','customMult','formula','goal','neck','waist','hip','bodyFat','goalWeight'].forEach(function(id){ var el=$(id); if(el)el.addEventListener('input',calculate); });
+  window.addEventListener('resize',function(){ if(last)calculate(); });
+
+  // ---------- Init ----------
+  $('hipField').style.display='none';
+  try{ $('targetDate').value=''; }catch(e){}
+  renderHist(); calculate();
+})();
 </script>
 <!-- Default Statcounter code for Apne Software
 https://apnesoftware.com -->
 <script type="text/javascript">
-var sc_project=13334460; 
-var sc_invisible=1; 
-var sc_security="a5854dc7"; 
+var sc_project=13334460;
+var sc_invisible=1;
+var sc_security="a5854dc7";
 </script>
 <script type="text/javascript"
 src="https://www.statcounter.com/counter/counter.js"
@@ -181,5 +663,32 @@ src="https://c.statcounter.com/13334460/0/a5854dc7/1/"
 alt="Web Analytics"
 referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 <!-- End of Statcounter Code -->
+
+<!-- FAQ structured data -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is this calculator free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no account, no signup and no limits."}},
+{"@type":"Question","name":"Is my health data uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Every calculation runs locally in your browser; your age, weight and measurements never leave your device."}},
+{"@type":"Question","name":"What is the difference between BMR and TDEE?","acceptedAnswer":{"@type":"Answer","text":"BMR is the calories your body burns at complete rest; TDEE is BMR plus the calories from daily activity and exercise."}},
+{"@type":"Question","name":"Which BMR formula should I use?","acceptedAnswer":{"@type":"Answer","text":"Mifflin-St Jeor for most people; Katch-McArdle or Cunningham if you know your body-fat percentage and are lean or muscular."}},
+{"@type":"Question","name":"How accurate is it?","acceptedAnswer":{"@type":"Answer","text":"These are population-average estimates; real needs vary with muscle, genetics and hormones. Use it as a starting point and adjust from real results."}},
+{"@type":"Question","name":"How do I lose weight with this?","acceptedAnswer":{"@type":"Answer","text":"Eat in the mild or moderate deficit range, about 300 to 500 kcal below maintenance, for gradual, sustainable fat loss."}},
+{"@type":"Question","name":"How much protein do I need?","acceptedAnswer":{"@type":"Answer","text":"The tool sets protein from your weight and goal, typically 1.6 to 2.2 grams per kilogram for fat loss or muscle gain."}},
+{"@type":"Question","name":"How is body fat calculated?","acceptedAnswer":{"@type":"Answer","text":"Using the US Navy circumference method from neck, waist, hip for women, and height."}},
+{"@type":"Question","name":"What is Katch-McArdle and when is it better?","acceptedAnswer":{"@type":"Answer","text":"It bases BMR on lean body mass, so it is more accurate for lean, muscular people than weight-only formulas."}},
+{"@type":"Question","name":"Does it support imperial units?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch between metric (cm, kg) and imperial (inches, lb) instantly."}},
+{"@type":"Question","name":"What activity level should I pick?","acceptedAnswer":{"@type":"Answer","text":"Choose the one matching your typical week; when unsure, pick the lower option to avoid overestimating calories."}},
+{"@type":"Question","name":"How much water should I drink?","acceptedAnswer":{"@type":"Answer","text":"Roughly 30 to 35 ml per kilogram of body weight, plus more for exercise and hot weather; the tool shows all three."}},
+{"@type":"Question","name":"Can I plan my meals with it?","acceptedAnswer":{"@type":"Answer","text":"Yes. The meal panel splits your goal calories across breakfast, lunch, dinner and snacks."}},
+{"@type":"Question","name":"Can I save and compare results?","acceptedAnswer":{"@type":"Answer","text":"Yes. Save results to your browser and view recent calculations to track changes over time."}},
+{"@type":"Question","name":"Can I export or print the results?","acceptedAnswer":{"@type":"Answer","text":"Yes, CSV, Excel, PDF, print and copy are all supported."}},
+{"@type":"Question","name":"Is BMI reliable for athletes?","acceptedAnswer":{"@type":"Answer","text":"Not always; muscle raises BMI without extra fat, so check body-fat percentage alongside it."}},
+{"@type":"Question","name":"Does it work offline?","acceptedAnswer":{"@type":"Answer","text":"Yes, there are no external libraries, so it works without internet once loaded."}},
+{"@type":"Question","name":"Is this medical advice?","acceptedAnswer":{"@type":"Answer","text":"No. It is educational only; consult a doctor or dietitian before major diet or training changes."}},
+{"@type":"Question","name":"Is it mobile friendly and accessible?","acceptedAnswer":{"@type":"Answer","text":"Yes, it is responsive and the controls are labelled and keyboard-operable."}},
+{"@type":"Question","name":"Does it use any AI?","acceptedAnswer":{"@type":"Answer","text":"No. Every figure comes from transparent, standard formulas with no AI."}},
+{"@type":"Question","name":"Why did my calories change when I switched formula?","acceptedAnswer":{"@type":"Answer","text":"Each formula weights age, weight and height differently, so BMR and therefore TDEE will differ slightly."}}
+]}
+</script>
 </body>
 </html>

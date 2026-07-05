@@ -1576,13 +1576,14 @@
         },
         {
             "id": "bmr-calorie-calculator",
-            "name": "BMR & Calorie Calculator",
-            "description": "Estimate daily calorie needs (Mifflin-St Jeor)",
+            "name": "Health & Nutrition Calculator (BMR, TDEE, Macros)",
+            "description": "BMR & TDEE with 7 formulas (Mifflin-St Jeor, Harris-Benedict, Katch-McArdle & more), calorie targets, protein/carb/fat macros, BMI, US-Navy body fat, water intake, meal planning, charts and PDF/CSV export in metric & imperial",
             "icon": "🔥",
             "url": "tools/bmr-calorie-calculator.html",
             "category": "calculator",
             "categories": [
-                "calculator"
+                "calculator",
+                "pdf"
             ],
             "published": true
         },
