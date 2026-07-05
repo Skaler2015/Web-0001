@@ -1654,13 +1654,14 @@
         },
         {
             "id": "text-readability-score",
-            "name": "Text Readability Score",
-            "description": "Flesch Reading Ease & Grade Level scores",
+            "name": "Text Readability Score Analyzer",
+            "description": "10 readability formulas, full text statistics, vocabulary, passive voice, keyword density and charts — all in your browser.",
             "icon": "📖",
             "url": "tools/text-readability-score.html",
             "category": "text",
             "categories": [
-                "text"
+                "text",
+                "seo"
             ],
             "published": true
         },

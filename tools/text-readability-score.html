@@ -4,27 +4,70 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
+<meta name="description" content="Free professional Text Readability Analyzer. Flesch, Gunning Fog, SMOG, Coleman-Liau, ARI, Dale-Chall, LIX & RIX scores plus full text statistics, vocabulary, passive voice, keyword density and charts. 100% in-browser, no upload.">
 <link rel="canonical" href="https://apnesoftware.com/tools/text-readability-score.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Text Readability Score | ApneSoftware">
-<meta property="og:description" content="Flesch Reading Ease & Grade Level scores. Free online tool — no signup required.">
+<meta property="og:title" content="Text Readability Score Analyzer | ApneSoftware">
+<meta property="og:description" content="Analyze readability with 10 formulas, full statistics, vocabulary, passive voice, keyword density and charts. Free, private, no signup.">
 <meta property="og:url" content="https://apnesoftware.com/tools/text-readability-score.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Text Readability Score | ApneSoftware">
-<meta name="twitter:description" content="Flesch Reading Ease & Grade Level scores. Free online tool — no signup required.">
+<meta name="twitter:title" content="Text Readability Score Analyzer | ApneSoftware">
+<meta name="twitter:description" content="10 readability formulas, full statistics, vocabulary, passive voice, keyword density and charts. Free & private.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Text Readability Score","description":"Flesch Reading Ease & Grade Level scores. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/text-readability-score.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Text Readability Score Analyzer","description":"Professional in-browser readability analyzer with 10 formulas, full text statistics, vocabulary analysis, passive voice detection, keyword density, charts and export.","url":"https://apnesoftware.com/tools/text-readability-score.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
 </script>
 <meta name="color-scheme" content="dark">
-<title>Text Readability Score | ApneSoftware</title>
+<title>Text Readability Score Analyzer | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-  .gauge-wrap{text-align:center;margin-top:14px}
-  .gauge-score{font-size:2.2rem;font-weight:800;color:var(--accent-2)}
-  .gauge-label{font-size:.95rem;color:var(--text-dim);margin-top:4px}
+  .trs-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+  .trs-tab{padding:9px 16px;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-dim);cursor:pointer;font-size:.85rem;font-weight:600;font-family:inherit}
+  .trs-tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .trs-pane{display:none}
+  .trs-pane.active{display:block}
+  .trs-toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+  .trs-gauge-wrap{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:center;margin-top:14px}
+  .trs-gauge-box{flex:1;min-width:220px;text-align:center;background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:16px}
+  .gauge-score{font-size:2.4rem;font-weight:800;color:var(--accent-2)}
+  .gauge-label{font-size:.9rem;color:var(--text-dim);margin-top:4px}
+  .trs-level-badge{display:inline-block;margin-top:8px;padding:5px 14px;border-radius:999px;font-weight:700;font-size:.85rem;background:rgba(var(--accent-rgb),.18);color:#fff}
+  .trs-section-title{font-size:1.05rem;font-weight:700;margin:26px 0 10px;color:#fff;display:flex;align-items:center;gap:8px}
+  .trs-scores-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+  .trs-score-card{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:14px}
+  .trs-score-card .sv{font-size:1.5rem;font-weight:800;color:var(--accent)}
+  .trs-score-card .sn{font-size:.8rem;color:#fff;font-weight:600;margin-top:2px}
+  .trs-score-card .sd{font-size:.72rem;color:var(--text-dim);margin-top:3px}
+  .trs-two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:640px){.trs-two{grid-template-columns:1fr}}
+  .trs-list{list-style:none;padding:0;margin:0}
+  .trs-list li{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed var(--border);font-size:.88rem}
+  .trs-list li:last-child{border-bottom:0}
+  .trs-list li b{color:#fff;font-weight:700}
+  .trs-table{width:100%;border-collapse:collapse;font-size:.85rem}
+  .trs-table th,.trs-table td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border)}
+  .trs-table th{color:var(--text-dim);font-weight:600}
+  .trs-table td:nth-child(n+2),.trs-table th:nth-child(n+2){text-align:right}
+  .trs-bar{height:8px;border-radius:6px;background:var(--surface-2);overflow:hidden;margin-top:6px}
+  .trs-bar span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+  .trs-chart-wrap{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:12px;margin-top:12px}
+  .trs-chart-wrap h4{font-size:.85rem;color:var(--text-dim);font-weight:600;margin-bottom:8px}
+  .trs-chart-wrap canvas{width:100%;height:auto;display:block}
+  .trs-flags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .trs-flag{padding:5px 12px;border-radius:999px;font-size:.78rem;font-weight:600;border:1px solid var(--border)}
+  .trs-flag.ok{background:rgba(22,192,121,.15);color:#7ef0bd;border-color:rgba(22,192,121,.4)}
+  .trs-flag.warn{background:rgba(248,113,113,.15);color:#fca5a5;border-color:rgba(248,113,113,.4)}
+  .trs-flag.neutral{background:var(--surface-2);color:var(--text-dim)}
+  .trs-muted{color:var(--text-dim);font-size:.82rem;margin-top:6px}
+  .trs-pill{display:inline-block;padding:3px 10px;border-radius:999px;background:var(--surface-2);border:1px solid var(--border);font-size:.75rem;margin:3px 4px 0 0;color:var(--text-dim)}
+  .trs-cmp-table td.better{color:#7ef0bd;font-weight:700}
+  .related-grid a .ri{margin-right:6px}
+  @media print{
+    .site-header,.left-sidebar,.right-sidebar,.trs-toolbar,.trs-tabs,#trsRateWrap,footer{display:none!important}
+    body{background:#fff!important;color:#000!important}
+  }
 </style>
 </head>
 <body>
@@ -37,67 +80,591 @@
 
 <div class="container">
   <div class="tool-header">
-    <h1>📖 Text Readability Score</h1>
-    <p>Check how easy your writing is to read, using the Flesch Reading Ease and Flesch-Kincaid Grade Level scores.</p>
+    <h1>📖 Text Readability Score Analyzer</h1>
+    <p>Measure how easy your writing is to read with 10 readability formulas, full text statistics, vocabulary and passive-voice analysis, keyword density and charts — all in your browser, nothing uploaded.</p>
   </div>
 
   <div class="panel">
-    <div class="field">
-      <label for="textInput">Paste your text</label>
-      <textarea id="textInput" style="min-height:200px" placeholder="Paste an article, essay, or any text here..."></textarea>
+    <div class="trs-tabs" role="tablist">
+      <button class="trs-tab active" id="tabSingle" role="tab" aria-selected="true">📝 Analyze Text</button>
+      <button class="trs-tab" id="tabCompare" role="tab" aria-selected="false">⚖️ Compare A / B</button>
     </div>
 
-    <div class="gauge-wrap">
-      <div class="gauge-score" id="easeScore">—</div>
-      <div class="gauge-label" id="easeLabel">Flesch Reading Ease</div>
+    <!-- ===== Single analysis pane ===== -->
+    <div class="trs-pane active" id="paneSingle">
+      <div class="field">
+        <label for="textInput">Paste your text</label>
+        <textarea id="textInput" style="min-height:200px" placeholder="Paste an article, essay, blog post or any text here… / यहाँ अपना टेक्स्ट पेस्ट करें…"></textarea>
+      </div>
+
+      <div class="field" style="max-width:280px">
+        <label for="langSelect">Language</label>
+        <select id="langSelect">
+          <option value="auto">Auto-detect</option>
+          <option value="en">English</option>
+          <option value="hi">Hindi (हिंदी)</option>
+          <option value="hinglish">Hinglish / Mixed</option>
+        </select>
+      </div>
+
+      <div class="trs-toolbar">
+        <button class="btn secondary" id="sampleBtn" type="button">Load sample</button>
+        <button class="btn secondary" id="clearBtn" type="button">Clear</button>
+        <button class="btn secondary" id="copyBtn" type="button">Copy results</button>
+        <button class="btn secondary" id="txtBtn" type="button">Download TXT</button>
+        <button class="btn secondary" id="csvBtn" type="button">Download CSV</button>
+        <button class="btn secondary" id="pdfBtn" type="button">Download PDF</button>
+        <button class="btn secondary" id="printBtn" type="button">Print report</button>
+      </div>
+      <div id="langDetected" class="trs-muted"></div>
+
+      <!-- Primary gauges -->
+      <div class="trs-gauge-wrap">
+        <div class="trs-gauge-box">
+          <div class="gauge-score" id="easeScore">—</div>
+          <div class="gauge-label" id="easeLabel">Flesch Reading Ease</div>
+        </div>
+        <div class="trs-gauge-box">
+          <div class="gauge-score" id="gradeVal">—</div>
+          <div class="gauge-label">Flesch-Kincaid Grade Level</div>
+          <div class="trs-level-badge" id="readingLevelBadge">Reading level</div>
+        </div>
+      </div>
+
+      <!-- Core stat grid (preserved IDs) -->
+      <div class="stat-grid" style="margin-top:14px">
+        <div class="stat-box"><div class="num" id="wordsVal">0</div><div class="lbl">Words</div></div>
+        <div class="stat-box"><div class="num" id="sentencesVal">0</div><div class="lbl">Sentences</div></div>
+        <div class="stat-box"><div class="num" id="syllablesVal">0</div><div class="lbl">Syllables</div></div>
+        <div class="stat-box"><div class="num" id="charsVal">0</div><div class="lbl">Characters</div></div>
+      </div>
+
+      <!-- Full statistics -->
+      <div class="trs-section-title">📊 Complete Text Statistics</div>
+      <div class="trs-two">
+        <ul class="trs-list" id="statsColA"></ul>
+        <ul class="trs-list" id="statsColB"></ul>
+      </div>
+
+      <!-- Readability scores -->
+      <div class="trs-section-title">🎯 Readability Scores</div>
+      <div class="trs-scores-grid" id="scoresGrid"></div>
+
+      <!-- Reading & speaking time -->
+      <div class="trs-two">
+        <div>
+          <div class="trs-section-title">⏱️ Reading Time</div>
+          <ul class="trs-list" id="readingTimeList"></ul>
+        </div>
+        <div>
+          <div class="trs-section-title">🎤 Speaking Time</div>
+          <ul class="trs-list" id="speakingTimeList"></ul>
+        </div>
+      </div>
+
+      <!-- Sentence & paragraph analysis -->
+      <div class="trs-two">
+        <div>
+          <div class="trs-section-title">✒️ Sentence Analysis</div>
+          <ul class="trs-list" id="sentenceList"></ul>
+        </div>
+        <div>
+          <div class="trs-section-title">¶ Paragraph Analysis</div>
+          <ul class="trs-list" id="paragraphList"></ul>
+        </div>
+      </div>
+
+      <!-- Vocabulary & complexity -->
+      <div class="trs-two">
+        <div>
+          <div class="trs-section-title">📚 Vocabulary Analysis</div>
+          <ul class="trs-list" id="vocabList"></ul>
+        </div>
+        <div>
+          <div class="trs-section-title">🧩 Word Complexity</div>
+          <ul class="trs-list" id="complexityList"></ul>
+        </div>
+      </div>
+
+      <!-- Passive & transitions -->
+      <div class="trs-two">
+        <div>
+          <div class="trs-section-title">🔄 Passive Voice</div>
+          <ul class="trs-list" id="passiveList"></ul>
+        </div>
+        <div>
+          <div class="trs-section-title">🔗 Transition Words</div>
+          <ul class="trs-list" id="transitionList"></ul>
+          <div id="transitionPills"></div>
+        </div>
+      </div>
+
+      <!-- Keyword density -->
+      <div class="trs-section-title">🔑 Keyword Density</div>
+      <table class="trs-table" id="keywordTable">
+        <thead><tr><th>Keyword</th><th>Count</th><th>Density</th></tr></thead>
+        <tbody></tbody>
+      </table>
+
+      <!-- Grammar indicators -->
+      <div class="trs-section-title">🧹 Grammar &amp; Style Indicators</div>
+      <ul class="trs-list" id="grammarList"></ul>
+
+      <!-- SEO metrics -->
+      <div class="trs-section-title">🔍 SEO Metrics</div>
+      <ul class="trs-list" id="seoList"></ul>
+      <div class="trs-flags" id="seoFlags"></div>
+
+      <!-- Charts -->
+      <div class="trs-section-title">📈 Charts</div>
+      <div class="trs-chart-wrap"><h4>Readability Gauge (Flesch Reading Ease)</h4><canvas id="chartGauge" width="600" height="220"></canvas></div>
+      <div class="trs-chart-wrap"><h4>Reading Level Meter (grade)</h4><canvas id="chartLevel" width="600" height="120"></canvas></div>
+      <div class="trs-two">
+        <div class="trs-chart-wrap"><h4>Word Length Distribution</h4><canvas id="chartWordLen" width="500" height="240"></canvas></div>
+        <div class="trs-chart-wrap"><h4>Sentence Length Distribution</h4><canvas id="chartSentLen" width="500" height="240"></canvas></div>
+      </div>
+      <div class="trs-chart-wrap"><h4>Paragraph Length Distribution (words per paragraph)</h4><canvas id="chartPara" width="600" height="240"></canvas></div>
     </div>
 
-    <div class="stat-grid" style="margin-top:14px">
-      <div class="stat-box"><div class="num" id="gradeVal">—</div><div class="lbl">Flesch-Kincaid Grade Level</div></div>
-      <div class="stat-box"><div class="num" id="wordsVal">0</div><div class="lbl">Words</div></div>
-      <div class="stat-box"><div class="num" id="sentencesVal">0</div><div class="lbl">Sentences</div></div>
-      <div class="stat-box"><div class="num" id="syllablesVal">0</div><div class="lbl">Syllables</div></div>
+    <!-- ===== Compare pane ===== -->
+    <div class="trs-pane" id="paneCompare">
+      <div class="trs-two">
+        <div class="field">
+          <label for="cmpA">Text A (before)</label>
+          <textarea id="cmpA" style="min-height:150px" placeholder="Paste the first / original version…"></textarea>
+        </div>
+        <div class="field">
+          <label for="cmpB">Text B (after)</label>
+          <textarea id="cmpB" style="min-height:150px" placeholder="Paste the second / edited version…"></textarea>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn" id="cmpRunBtn" type="button">Compare</button>
+        <button class="btn secondary" id="cmpClearBtn" type="button">Clear both</button>
+      </div>
+      <table class="trs-table trs-cmp-table" id="cmpTable" style="margin-top:16px">
+        <thead><tr><th>Metric</th><th>Text A</th><th>Text B</th><th>Change</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <p class="trs-muted">Higher Flesch Reading Ease and lower grade / index values generally mean easier reading. Green marks the easier-to-read side.</p>
     </div>
+
+    <div id="statusMsg" class="trs-muted" role="status" aria-live="polite"></div>
   </div>
 </div>
+<div class="info-wrap" style="display:block;max-width:none">
+<div class="info-block" style="max-width:900px;margin:0 auto">
 
+<h2>📖 Introduction</h2>
+<p>The original Text Readability Score tool did one thing well: it calculated the Flesch Reading Ease and Flesch-Kincaid Grade Level for whatever you pasted into the box, updating live as you typed. That single-purpose design was fast, private and genuinely useful — but it only told half the story. Two of the ten formulas writers, editors, teachers and SEO professionals actually rely on were missing, and there was no way to see word-level detail, sentence and paragraph breakdowns, vocabulary or passive-voice patterns, keyword density, or export a shareable report. The <strong>Professional Text Readability Score Analyzer</strong> keeps everything that worked — instant, in-browser, live analysis with the original two scores front and centre — and builds a complete writing-analysis workbench around it: ten readability formulas, full text statistics, vocabulary and complexity breakdowns, passive-voice and transition-word detection, keyword density, grammar indicators, five charts, an A/B comparison mode, SEO guidance and one-click export, all without uploading a single character or using any AI.</p>
 
-<div class="info-wrap">
-  <div class="info-section">
-    <div class="info-block">
-      <h2>ℹ️ About This Tool</h2>
-      <p>Measures how easy your writing is to read using two well-known formulas: Flesch Reading Ease (higher score = easier to read, 0-100 scale) and Flesch-Kincaid Grade Level (the US school grade level needed to understand the text). Useful for blog posts, reports, or simplifying technical writing.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Paste your text into the box.</li>
-        <li>See your readability scores update instantly.</li>
-      </ol>
-    </div>
-    <hr class="info-divider">
-    <div class="info-block">
-      <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>आपकी writing पढ़ने में कितनी आसान है, यह दो जाने-माने फॉर्मूले से मापता है: Flesch Reading Ease (ज़्यादा स्कोर = पढ़ने में आसान, 0-100 स्केल) और Flesch-Kincaid Grade Level (टेक्स्ट समझने के लिए ज़रूरी ग्रेड लेवल)। ब्लॉग पोस्ट, रिपोर्ट, या टेक्निकल राइटिंग को आसान बनाने के लिए उपयोगी।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>अपना टेक्स्ट बॉक्स में पेस्ट करें।</li>
-        <li>readability स्कोर तुरंत देखें।</li>
-      </ol>
-    </div>
-  </div>
+<h2>🔍 Analysis of the Original Tool</h2>
+<p>The previous version accepted pasted text in a single textarea and re-ran its calculation on every keystroke — a strength worth keeping, since instant feedback is exactly what a writer wants while editing. It computed word count with a simple regex, counted sentences by splitting on <code>.!?</code>, estimated syllables per word with a lightweight vowel-cluster heuristic, and combined those into the two Flesch formulas, showing the Reading Ease score with a plain-language label ("Fairly Easy", "Difficult", etc.) and the Grade Level as a number. It was lightweight, worked offline, and never sent text anywhere.</p>
+<p>Its weaknesses were mostly gaps rather than bugs: only English text was handled (Hindi and mixed Hinglish writing broke the word/sentence detection); only two of the ten standard readability formulas were available, so a Gunning-Fog- or SMOG-oriented workflow (common in health and government writing) had no home here; there was no paragraph, vocabulary, passive-voice, or keyword analysis at all; results could not be copied, exported or printed; and there was no way to compare two drafts side by side. The rebuild below closes every one of those gaps while keeping the instant, no-upload core intact.</p>
+
+<h2>✨ Features</h2>
+<ul>
+  <li><strong>Instant, live analysis</strong> — every score and statistic updates as you type, with no button to press.</li>
+  <li><strong>Ten readability formulas</strong> in one place, not just two.</li>
+  <li><strong>Complete text statistics</strong> — characters, words, sentences, paragraphs, lines, pages and more.</li>
+  <li><strong>Vocabulary &amp; complexity analysis</strong> — unique, rare, repeated and difficult words.</li>
+  <li><strong>Reading &amp; speaking time</strong> for fast, average and slow readers, plus speech, presentation and podcast pacing.</li>
+  <li><strong>Passive voice and transition-word detection</strong> to sharpen your style.</li>
+  <li><strong>Keyword density</strong> and grammar/style indicators (double spaces, repeated punctuation, capitalisation).</li>
+  <li><strong>Five hand-drawn charts</strong> — no chart library, no tracking script.</li>
+  <li><strong>SEO metrics</strong> — recommended sentence and paragraph length, keyword usage and heading ratio.</li>
+  <li><strong>Compare mode</strong> — analyse Text A versus Text B, or a before/after edit, side by side.</li>
+  <li><strong>Export</strong> — copy, download as TXT, CSV or PDF, or print a clean report.</li>
+  <li><strong>English, Hindi and Hinglish</strong> support with automatic language detection.</li>
+  <li><strong>100% private</strong> — nothing you type ever leaves your browser.</li>
+</ul>
+
+<h2>🎯 Readability Scores Explained</h2>
+<ul class="trs-list">
+  <li><span><strong>Flesch Reading Ease</strong></span><b>0–100, higher = easier</b></li>
+  <li><span><strong>Flesch-Kincaid Grade Level</strong></span><b>US school grade to understand the text</b></li>
+  <li><span><strong>Gunning Fog Index</strong></span><b>Years of formal education needed</b></li>
+  <li><span><strong>SMOG Index</strong></span><b>Grade level, tuned for health/medical writing</b></li>
+  <li><span><strong>Coleman-Liau Index</strong></span><b>Grade level from letters &amp; sentences, not syllables</b></li>
+  <li><span><strong>Automated Readability Index (ARI)</strong></span><b>Grade level from characters per word</b></li>
+  <li><span><strong>Dale-Chall Score</strong></span><b>Higher score = more unfamiliar vocabulary</b></li>
+  <li><span><strong>Linsear Write Formula</strong></span><b>US grade level, weighted by easy/hard words</b></li>
+  <li><span><strong>LIX</strong></span><b>Swedish index — words per sentence + long-word ratio</b></li>
+  <li><span><strong>RIX</strong></span><b>Long words per sentence</b></li>
+</ul>
+<p class="trs-muted">These formulas were built and validated for English; when Hindi or mixed text is detected the same maths still runs on an approximate syllable count, so treat non-English scores as indicative rather than exact.</p>
+
+<h2>📊 Statistics You Get</h2>
+<p>Beyond the headline scores, the analyzer reports characters (with and without spaces), words, unique words, sentences, paragraphs, lines, an estimated page count (275 words/page), reading time, speaking time, and the average word length, sentence length and paragraph length — everything you need to judge pacing and density at a glance.</p>
+
+<h2>📚 Vocabulary Analysis</h2>
+<p>The vocabulary panel breaks your word list into unique words, common words (drawn from a curated list of everyday English words), rare or uncommon words, words repeated three or more times, and an estimate of "difficult" words — those with three or more syllables that aren't in the common-word list, the same heuristic behind the Dale-Chall formula. A companion complexity panel splits words into simple (1–2 syllables) versus complex (3+ syllables) and reports the multi-syllable ratio directly.</p>
+
+<h2>⏱️ Reading Time</h2>
+<p>Silent reading time is shown for three paces — a fast reader (300 words/minute), an average reader (200 wpm) and a slow or careful reader (150 wpm) — so you can gauge how long different audiences will actually spend with your text.</p>
+
+<h2>🎤 Speaking Time</h2>
+<p>For anyone turning text into speech, the tool estimates speech time at a natural speaking pace (130 wpm), presentation time at a slower, pause-friendly pace (100 wpm), and podcast duration at a brisker conversational pace (150 wpm).</p>
+
+<h2>📈 Charts</h2>
+<p>Five charts are drawn directly on the page with plain canvas drawing code — no charting library, no external request: a readability gauge for the Flesch score, a reading-level meter for the consensus grade, a word-length distribution, a sentence-length distribution, and a paragraph-length distribution.</p>
+
+<h2>🔍 SEO Metrics</h2>
+<p>For content written with search engines in mind, the tool flags whether your average sentence length (aim for ≤20 words), paragraph length (aim for ≤150 words) and top-keyword density (a healthy 0.5–3%) are in a comfortable range, and reports how many heading lines it can detect.</p>
+
+<h2>⚖️ Comparison Mode</h2>
+<p>Switch to the Compare tab to paste two versions of a text — an original and a rewrite, or two candidate drafts — and see every major statistic and readability score side by side, with the easier-to-read value highlighted in green for each row.</p>
+
+<h2>✅ Benefits</h2>
+<ul>
+  <li><strong>Complete:</strong> ten formulas and a full statistics suite instead of just two numbers.</li>
+  <li><strong>Instant:</strong> results update as you type, even for very large documents.</li>
+  <li><strong>Private:</strong> 100% browser-based; nothing is ever uploaded or stored on a server.</li>
+  <li><strong>Actionable:</strong> passive voice, transition words, keyword density and SEO flags point at exactly what to fix.</li>
+  <li><strong>Shareable:</strong> copy, TXT, CSV, PDF and print exports for reports and reviews.</li>
+  <li><strong>Bilingual:</strong> English, Hindi and Hinglish text are all recognised automatically.</li>
+</ul>
+
+<!-- ===== Related Tools (ABOVE About — required order) ===== -->
+<h2>🧰 Related Tools</h2>
+<div class="related-grid">
+  <a href="word-counter.html"><span class="ri">🔢</span> Word Counter</a>
+  <a href="word-counter.html"><span class="ri">🔤</span> Character Counter</a>
+  <a href="case-converter.html"><span class="ri">🔠</span> Case Converter</a>
+  <a href="text-diff.html"><span class="ri">🔍</span> Text Compare</a>
+  <a href="duplicate-line-remover.html"><span class="ri">🧹</span> Duplicate Line Remover</a>
+  <a href="json-formatter.html"><span class="ri">{ }</span> JSON Formatter</a>
+  <a href="markdown-to-html.html"><span class="ri">📝</span> Markdown to HTML</a>
+  <a href="html-beautifier-minifier.html"><span class="ri">🌐</span> HTML Formatter</a>
+  <a href="slug-generator.html"><span class="ri">🔗</span> Slug Generator</a>
+  <a href="text-to-speech.html"><span class="ri">🔊</span> Text to Speech</a>
 </div>
+
+</div>
+</div>
+<div class="info-wrap" style="display:block;max-width:none">
+<div class="info-block" style="max-width:900px;margin:0 auto">
+
+<!-- ===== About (English) ===== -->
+<h2>ℹ️ About This Tool</h2>
+<p>The <strong>Professional Text Readability Score Analyzer</strong> is a free, browser-based tool that measures exactly how easy — or difficult — a piece of writing is to read, and then tells you why, in enough detail to actually improve the draft. It grew out of a much simpler Flesch-only calculator, and while it keeps that tool's best quality — instant, live analysis with nothing ever uploaded — it now answers questions that single-number readability checkers cannot: which sentences are too long, how much of the text is passive voice, whether the vocabulary is unusually difficult, how the keyword density looks to a search engine, and how two drafts compare side by side.</p>
+
+<p>At its core sit ten industry-standard readability formulas rather than just one or two. Flesch Reading Ease and Flesch-Kincaid Grade Level remain the headline numbers, shown as a large gauge and a grade-level figure the moment you paste text in. Alongside them the tool computes the Gunning Fog Index and SMOG Index, both widely used for technical, government and medical writing where a specific grade-level target matters; the Coleman-Liau Index and Automated Readability Index, which estimate difficulty from letters and characters rather than syllables and so stay accurate even on text with unusual spellings; the Dale-Chall Score, which flags unfamiliar vocabulary specifically; the Linsear Write Formula, popular in technical documentation; and the LIX and RIX indices, two European measures based on sentence length and the proportion of long words, useful for translators and international content teams. Every formula is computed from the same underlying word, sentence and syllable counts, so you can trust that the ten numbers are internally consistent rather than coming from ten different tools with ten different assumptions.</p>
+
+<p>Underneath the scores, a full statistics panel reports characters with and without spaces, total and unique words, sentences, paragraphs, lines, an estimated page count, and the average word length, sentence length and paragraph length — the raw numbers that feed every formula above, laid out so you can spot a runaway 80-word sentence or a wall-of-text paragraph before a formula even flags it. A dedicated sentence-analysis panel names your longest and shortest sentences by word count and counts how many sentences run past 25 words, while a paragraph panel does the same at paragraph level, highlighting your largest block of text.</p>
+
+<p>Vocabulary gets its own two-part breakdown. The vocabulary panel classifies your words as common, rare, repeated three-or-more times, or "difficult" — a heuristic borrowed from the Dale-Chall method that flags multi-syllable words absent from a curated list of everyday English. A companion complexity panel then simply counts simple words (one or two syllables) against complex words (three or more) and reports the ratio, giving you a quick sense of how dense the vocabulary is without reading every sentence yourself.</p>
+
+<p>Style issues that word counts alone can't catch get their own detectors. A passive-voice detector scans every sentence for the classic "was/were/is/are + past participle" pattern — including a curated list of common irregular participles such as "written", "given" and "thrown" that a naive regex would otherwise miss — and reports both the count of passive sentences and the percentage of your text written passively. A transition-word detector searches for more than sixty common connector words and phrases (however, therefore, in addition, as a result, and so on), counting each one so you can tell at a glance whether your argument is well signposted or reads as a list of disconnected statements. Grammar and style indicators round this out by flagging double or multiple spaces, stray empty lines, repeated punctuation like "!!" or "..", and sentences that start with a lowercase letter.</p>
+
+<p>For anyone writing with search engines in mind, an SEO panel checks your average sentence and paragraph length against commonly recommended limits, reports your top keyword and its density as a percentage of total words, and flags whether that density sits in the healthy 0.5–3% range or looks like keyword stuffing. A keyword-density table lists your top ten most frequent meaningful words (common stop-words like "the" and "and" are excluded automatically) with their counts and densities.</p>
+
+<p>Five charts make all of this visual: a readability gauge needle that sweeps across the Flesch 0–100 scale, a reading-level meter for the consensus grade across five of the formulas, and bar charts for word-length distribution, sentence-length distribution and paragraph-length distribution. Every chart is drawn with plain HTML canvas drawing commands — there is no charting library, no external script and nothing to load from a CDN, which keeps the page fast and keeps your text off the network entirely.</p>
+
+<p>A Compare tab extends the same engine to two texts at once: paste an original and a rewrite, or two candidate drafts, click Compare, and a table lays every major statistic and formula side by side, highlighting in green whichever version scores easier to read on each metric. It is the fastest way to confirm that an edit actually improved readability rather than just feeling different.</p>
+
+<p>Results can be copied to the clipboard in one click, downloaded as a plain-text report, exported as a CSV for spreadsheets, saved as a simple PDF report generated entirely in the browser, or printed directly with a clean, navigation-free layout. The tool automatically detects whether your text is English, Hindi or a Hindi–English mix (Hinglish), adjusting its word- and sentence-splitting accordingly so that Devanagari text is measured as accurately as the underlying heuristics allow; because the classic readability formulas were designed and validated for English, non-English results are labelled as approximate rather than exact. For privacy on shared or public computers, the text box automatically clears itself after ten minutes of inactivity, and because nothing is ever sent to a server, closing the tab or refreshing the page removes every trace of what you typed. The whole tool is lightweight, mobile-friendly, keyboard-accessible and built to work equally well for students checking an essay, bloggers and copywriters polishing a post, technical writers targeting a specific grade level, and SEO professionals auditing on-page content — with no signup, no AI, and no limit on how much text you paste.</p>
+
+<!-- ===== About (Hindi) ===== -->
+<h2>ℹ️ इस टूल के बारे में (हिंदी में)</h2>
+<p class="dt-lang-note">The same guide in Hindi / यही जानकारी हिंदी में।</p>
+
+<p><strong>Professional Text Readability Score Analyzer</strong> एक फ्री, ब्राउज़र-आधारित टूल है जो बताता है कि आपकी writing पढ़ने में कितनी आसान या मुश्किल है, और साथ ही यह भी बताता है कि क्यों — इतनी detail के साथ कि आप असल में अपने draft को बेहतर बना सकें। यह एक बहुत सादे Flesch-only calculator से शुरू हुआ था, और उस टूल की सबसे अच्छी खूबी — instant, live analysis जिसमें कुछ भी upload नहीं होता — उसे बनाए रखते हुए, अब यह वे सवाल भी हल करता है जो सिर्फ़ एक नंबर देने वाले readability checker नहीं कर सकते: कौन-से sentences बहुत लंबे हैं, टेक्स्ट का कितना हिस्सा passive voice में है, vocabulary कितनी मुश्किल है, keyword density search engine को कैसी दिखेगी, और दो drafts आपस में कैसे compare करते हैं।</p>
+
+<p>इसके केंद्र में सिर्फ़ एक-दो नहीं, बल्कि दस industry-standard readability formulas हैं। Flesch Reading Ease और Flesch-Kincaid Grade Level अब भी मुख्य नंबर हैं, जो टेक्स्ट पेस्ट करते ही एक बड़े gauge और grade-level आँकड़े के रूप में दिखते हैं। इनके साथ Gunning Fog Index और SMOG Index भी हैं, जो technical, सरकारी और medical writing में बहुत उपयोग होते हैं जहाँ एक खास grade-level लक्ष्य ज़रूरी होता है; Coleman-Liau Index और Automated Readability Index, जो syllables के बजाय letters और characters से कठिनाई का अनुमान लगाते हैं और असामान्य spellings वाले टेक्स्ट पर भी सटीक रहते हैं; Dale-Chall Score, जो खासतौर पर अपरिचित vocabulary को चिह्नित करता है; Linsear Write Formula, जो technical documentation में लोकप्रिय है; और LIX तथा RIX indices, दो यूरोपीय मापदंड जो sentence length और लंबे शब्दों के अनुपात पर आधारित हैं, अनुवादकों और अंतरराष्ट्रीय content टीमों के लिए उपयोगी। हर formula एक ही underlying word, sentence और syllable counts से निकाला जाता है, इसलिए ये दसों नंबर आपस में सुसंगत रहते हैं।</p>
+
+<p>स्कोर के नीचे, एक पूरा statistics panel characters (spaces सहित और बिना spaces), कुल और unique words, sentences, paragraphs, lines, अनुमानित page count, और औसत word length, sentence length तथा paragraph length दिखाता है — वे raw numbers जो ऊपर के हर formula को feed करते हैं, इस तरह दिखाए गए कि कोई भी 80-शब्दों का लंबा sentence या पूरे टेक्स्ट जैसा paragraph किसी formula के चेतावनी देने से पहले ही आपको दिख जाए। एक अलग sentence-analysis panel आपके सबसे लंबे और सबसे छोटे sentence को word count के साथ बताता है और गिनता है कि कितने sentences 25 शब्दों से ज़्यादा लंबे हैं, जबकि एक paragraph panel यही काम paragraph स्तर पर करता है।</p>
+
+<p>Vocabulary को अपना दो-भाग वाला breakdown मिलता है। Vocabulary panel आपके शब्दों को common, rare, तीन या ज़्यादा बार दोहराए गए, या "difficult" के रूप में classify करता है — यह heuristic Dale-Chall पद्धति से लिया गया है जो आम शब्दों की एक curated list में न मिलने वाले multi-syllable शब्दों को चिह्नित करता है। एक साथी complexity panel फिर बस simple शब्दों (एक या दो syllables) की गिनती complex शब्दों (तीन या ज़्यादा) से करता है और अनुपात बताता है, जिससे आपको बिना हर sentence पढ़े vocabulary की सघनता का अंदाज़ा मिल जाता है।</p>
+
+<p>वे style समस्याएँ जिन्हें सिर्फ़ word count नहीं पकड़ सकता, उनके लिए अलग detectors हैं। एक passive-voice detector हर sentence में classic "was/were/is/are + past participle" pattern खोजता है — साथ ही आम irregular participles जैसे "written", "given" और "thrown" की एक curated list भी शामिल है जिसे एक साधारण regex चूक जाता — और passive sentences की गिनती तथा आपके टेक्स्ट का कितना प्रतिशत passive voice में लिखा है, दोनों बताता है। एक transition-word detector साठ से ज़्यादा आम connector words और phrases (however, therefore, in addition, as a result, वगैरह) खोजता है और हर एक को गिनता है, ताकि आप एक नज़र में बता सकें कि आपका तर्क अच्छी तरह जुड़ा हुआ है या अलग-अलग वाक्यों की सूची जैसा लगता है। Grammar और style indicators double या multiple spaces, बीच में खाली lines, दोहराए गए punctuation जैसे "!!" या ".." और lowercase letter से शुरू होने वाले sentences को चिह्नित करके इसे पूरा करते हैं।</p>
+
+<p>Search engine को ध्यान में रखकर लिखने वालों के लिए, एक SEO panel आपकी औसत sentence और paragraph length को सामान्य रूप से सुझाई गई सीमाओं से जाँचता है, आपका top keyword और उसकी density कुल शब्दों के प्रतिशत के रूप में बताता है, और यह चिह्नित करता है कि वह density स्वस्थ 0.5–3% सीमा में है या keyword stuffing जैसी लगती है। एक keyword-density table आपके सबसे ज़्यादा बार आने वाले दस meaningful शब्दों को उनकी गिनती और density के साथ सूचीबद्ध करती है (आम stop-words जैसे "the" और "and" अपने-आप छोड़ दिए जाते हैं)।</p>
+
+<p>पाँच charts यह सब visual बना देते हैं: एक readability gauge जो Flesch 0–100 स्केल पर घूमता है, पाँच formulas के consensus grade के लिए एक reading-level meter, और word-length distribution, sentence-length distribution तथा paragraph-length distribution के लिए bar charts। हर chart plain HTML canvas drawing commands से बनाया गया है — कोई charting library नहीं, कोई external script नहीं और CDN से कुछ भी load नहीं होता, जिससे पेज तेज़ रहता है और आपका टेक्स्ट पूरी तरह network से बाहर रहता है।</p>
+
+<p>एक Compare tab उसी engine को एक साथ दो texts तक बढ़ा देता है: original और rewrite, या दो संभावित drafts पेस्ट करें, Compare पर क्लिक करें, और एक table हर बड़े statistic और formula को साथ-साथ दिखाती है, हर metric पर जो version पढ़ने में आसान है उसे हरे रंग में highlight करते हुए। यह पुष्टि करने का सबसे तेज़ तरीका है कि किसी edit ने वाकई readability सुधारी है, सिर्फ़ अलग महसूस नहीं होती।</p>
+
+<p>Results को एक क्लिक में clipboard पर copy किया जा सकता है, plain-text report के रूप में download किया जा सकता है, spreadsheets के लिए CSV में export किया जा सकता है, ब्राउज़र में ही बने एक सादे PDF report के रूप में save किया जा सकता है, या एक साफ़, navigation-रहित layout में सीधे print किया जा सकता है। यह टूल अपने-आप पहचान लेता है कि आपका टेक्स्ट English, Hindi या Hindi-English मिश्रण (Hinglish) है, और उसी के अनुसार word और sentence splitting को समायोजित करता है ताकि Devanagari टेक्स्ट भी underlying heuristics जितनी सटीकता से मापा जाए; चूँकि classic readability formulas English के लिए बनाए और validate किए गए थे, non-English परिणामों को exact के बजाय approximate बताया जाता है। साझा या public कंप्यूटर पर privacy के लिए, text box दस मिनट की निष्क्रियता के बाद अपने-आप साफ़ हो जाता है, और चूँकि कुछ भी कभी server पर नहीं भेजा जाता, tab बंद करने या page refresh करने से आपने जो भी टाइप किया था उसका हर निशान मिट जाता है। यह टूल हल्का, मोबाइल-अनुकूल, keyboard से चलाने योग्य है और छात्रों से लेकर bloggers, copywriters, technical writers और SEO professionals तक सबके लिए समान रूप से काम करने के लिए बनाया गया है — बिना signup, बिना AI, और आप जितना चाहें उतना टेक्स्ट पेस्ट कर सकते हैं।</p>
+
+</div>
+</div>
+<div class="info-wrap" style="display:block;max-width:none">
+<div class="info-block" style="max-width:900px;margin:0 auto">
+
+<!-- ===== FAQ (immediately after About — required order) ===== -->
+<h2>❓ Frequently Asked Questions</h2>
+<div class="dt-faq" id="trsFaq">
+<details><summary>Is this Readability Analyzer free to use?</summary><p>Yes, completely free with no signup, no account and no limit on how much text you paste. / हाँ, यह पूरी तरह मुफ़्त है, बिना signup या account के।</p></details>
+<details><summary>Is my text uploaded anywhere?</summary><p>No. Every calculation runs locally in your browser; your text never leaves your device. / नहीं, सारी calculations आपके ब्राउज़र में ही होती हैं।</p></details>
+<details><summary>Does this tool use any AI?</summary><p>No. Every score comes from standard, published readability formulas and regex-based heuristics — there is no AI or machine learning involved. / नहीं, इसमें कोई AI इस्तेमाल नहीं होता।</p></details>
+<details><summary>What is Flesch Reading Ease and what score is "good"?</summary><p>It's a 0–100 scale where higher means easier to read; 60–70 is considered standard, plain-English writing suitable for most readers. / 60–70 का स्कोर आम पाठकों के लिए उपयुक्त माना जाता है।</p></details>
+<details><summary>What is Flesch-Kincaid Grade Level?</summary><p>It estimates the US school grade a reader needs to easily understand the text, e.g. 8.0 means an eighth-grade reading level. / यह टेक्स्ट समझने के लिए ज़रूरी स्कूल ग्रेड बताता है।</p></details>
+<details><summary>Why are there ten readability formulas instead of just Flesch?</summary><p>Different fields prefer different formulas — SMOG for health writing, Gunning Fog for business writing, LIX/RIX for European languages — so all ten are computed from the same word/sentence data for convenience. / अलग-अलग क्षेत्र अलग-अलग formula पसंद करते हैं, इसलिए सभी दस यहाँ उपलब्ध हैं।</p></details>
+<details><summary>Do the formulas work accurately on Hindi text?</summary><p>The tool detects Hindi and Hinglish and applies an approximate syllable count for Devanagari script, but the formulas themselves were designed and validated for English, so treat non-English scores as indicative rather than exact. / हिंदी टेक्स्ट के लिए स्कोर अनुमानित होते हैं, बिल्कुल सटीक नहीं।</p></details>
+<details><summary>How is the "Reading Level" (Primary School to Professional) decided?</summary><p>It's based on the average grade-level result across five formulas (Flesch-Kincaid, Gunning Fog, SMOG, ARI, Coleman-Liau). / यह पाँच formulas के औसत grade level पर आधारित है।</p></details>
+<details><summary>How is reading time calculated?</summary><p>Word count divided by a reading speed — 300 wpm for a fast reader, 200 wpm average, 150 wpm slow — shown in minutes and seconds. / शब्द संख्या को पढ़ने की गति से भाग देकर।</p></details>
+<details><summary>How is speaking time calculated?</summary><p>Word count divided by a speaking pace — 130 wpm for natural speech, 100 wpm for presentations, 150 wpm for podcasts. / शब्द संख्या को बोलने की गति से भाग देकर।</p></details>
+<details><summary>How does passive voice detection work?</summary><p>It looks for "was/were/is/are/be/been/being" followed by a past-participle word (regular -ed/-en endings plus a curated list of common irregular participles like "written" or "thrown"). It's a heuristic, not a perfect grammar parser, so a few edge cases may be missed or over-flagged. / यह was/were + past participle पैटर्न खोजता है, पूरी तरह सटीक नहीं है।</p></details>
+<details><summary>What counts as a "transition word"?</summary><p>Common connector words and phrases such as however, therefore, in addition, as a result and for example — over sixty are checked and counted. / however, therefore, in addition जैसे साठ से ज़्यादा शब्द जाँचे जाते हैं।</p></details>
+<details><summary>What is keyword density and why does it matter for SEO?</summary><p>It's how often a word appears relative to your total word count; 0.5–3% is generally considered healthy, while much higher can look like keyword stuffing to search engines. / 0.5–3% density को स्वस्थ माना जाता है।</p></details>
+<details><summary>What counts as a "difficult" word?</summary><p>A simplified Dale-Chall-style heuristic: words with three or more syllables that aren't in a curated list of common everyday English words. / तीन या ज़्यादा syllables वाले असामान्य शब्द।</p></details>
+<details><summary>How do the charts work — do they use a charting library?</summary><p>No. All five charts (gauge, level meter, word-length, sentence-length, paragraph-length) are drawn with plain HTML canvas commands, with no external library or network request. / सभी charts plain canvas drawing से बनते हैं, कोई library नहीं।</p></details>
+<details><summary>How does Compare mode work?</summary><p>Paste two texts into the Text A / Text B boxes on the Compare tab and click Compare; every statistic and formula is shown side by side, with the easier-to-read value highlighted in green. / दो texts को Compare tab में डालकर तुलना करें।</p></details>
+<details><summary>Can I export or print my results?</summary><p>Yes — copy to clipboard, download as TXT, CSV or a generated PDF report, or print directly with a clean, distraction-free layout. / हाँ, copy, TXT, CSV, PDF और print सभी उपलब्ध हैं।</p></details>
+<details><summary>Does the tool save or remember my text?</summary><p>No. Nothing is stored in localStorage or on a server; for extra privacy, the text box also auto-clears itself after 10 minutes of inactivity. / नहीं, कुछ भी save नहीं होता; 10 मिनट बाद अपने-आप साफ़ हो जाता है।</p></details>
+<details><summary>Does it work on very large documents?</summary><p>Yes. Analysis is debounced for smooth typing and all computation is lightweight regex and arithmetic, so even multi-thousand-word documents analyze quickly. / बड़े documents पर भी यह तेज़ी से काम करता है।</p></details>
+<details><summary>Is it mobile-friendly and accessible?</summary><p>Yes — the layout is fully responsive, controls are labelled for screen readers, and every action is reachable by keyboard. / हाँ, यह मोबाइल-अनुकूल और सुलभ है।</p></details>
+<details><summary>Does it work offline once loaded?</summary><p>Yes, since no external library or server call is required for the analysis itself; only the page's own scripts are used. / हाँ, यह offline भी काम करता है।</p></details>
+<details><summary>What browsers are supported?</summary><p>All modern browsers — Chrome, Firefox, Edge and Safari on both desktop and mobile — since the tool only uses standard, widely supported JavaScript and canvas APIs. / सभी आधुनिक browsers पर काम करता है।</p></details>
+<details><summary>How can I actually improve my readability score?</summary><p>Shorten long sentences, replace passive constructions with active ones, break up long paragraphs, swap difficult words for simpler synonyms, and add transition words to connect ideas — the tool flags exactly where each of these applies. / लंबे sentences छोटे करें, passive voice कम करें, कठिन शब्द आसान करें।</p></details>
+</div>
+
+<!-- ===== Troubleshooting ===== -->
+<h2>🛠️ Troubleshooting</h2>
+<ul>
+  <li><strong>Scores show "—" or 0:</strong> the box is empty, or your text has no sentence-ending punctuation (., !, ?, ।) for the tool to count sentences — add at least one and the scores will appear.</li>
+  <li><strong>Hindi text looks off:</strong> readability formulas were built for English; Hindi/Hinglish results are approximate by design — use the statistics panel (words, sentences, reading time) for a more reliable picture of Devanagari text.</li>
+  <li><strong>Charts look empty:</strong> paste text and wait a moment — charts redraw automatically a fraction of a second after you stop typing, and also redraw on window resize.</li>
+  <li><strong>My text disappeared:</strong> the box auto-clears after 10 minutes of inactivity for privacy on shared computers; simply paste your text again — nothing was ever saved anywhere.</li>
+  <li><strong>PDF/CSV/TXT download does nothing:</strong> make sure you've analyzed some text first (the buttons build a report from the current analysis); check that your browser isn't blocking downloads or pop-ups for this page.</li>
+  <li><strong>Compare tab shows no results:</strong> both Text A and Text B boxes need some text before clicking Compare.</li>
+  <li><strong>Print looks wrong:</strong> the print stylesheet hides navigation and the toolbar automatically; if your browser's print preview looks unstyled, try "Print backgrounds" off in the print dialog.</li>
+</ul>
+
+</div>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is this Readability Analyzer free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no signup, no account and no limit on how much text you paste."}},
+{"@type":"Question","name":"Is my text uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Every calculation runs locally in your browser; your text never leaves your device."}},
+{"@type":"Question","name":"Does this tool use any AI?","acceptedAnswer":{"@type":"Answer","text":"No. Every score comes from standard, published readability formulas and regex-based heuristics — there is no AI or machine learning involved."}},
+{"@type":"Question","name":"What is Flesch Reading Ease and what score is good?","acceptedAnswer":{"@type":"Answer","text":"It is a 0-100 scale where higher means easier to read; 60-70 is considered standard, plain-English writing suitable for most readers."}},
+{"@type":"Question","name":"What is Flesch-Kincaid Grade Level?","acceptedAnswer":{"@type":"Answer","text":"It estimates the US school grade a reader needs to easily understand the text, e.g. 8.0 means an eighth-grade reading level."}},
+{"@type":"Question","name":"Why are there ten readability formulas instead of just Flesch?","acceptedAnswer":{"@type":"Answer","text":"Different fields prefer different formulas - SMOG for health writing, Gunning Fog for business writing, LIX/RIX for European languages - so all ten are computed from the same word and sentence data for convenience."}},
+{"@type":"Question","name":"Do the formulas work accurately on Hindi text?","acceptedAnswer":{"@type":"Answer","text":"The tool detects Hindi and Hinglish and applies an approximate syllable count for Devanagari script, but the formulas themselves were designed and validated for English, so treat non-English scores as indicative rather than exact."}},
+{"@type":"Question","name":"How is the Reading Level decided?","acceptedAnswer":{"@type":"Answer","text":"It is based on the average grade-level result across five formulas: Flesch-Kincaid, Gunning Fog, SMOG, ARI and Coleman-Liau."}},
+{"@type":"Question","name":"How is reading time calculated?","acceptedAnswer":{"@type":"Answer","text":"Word count divided by a reading speed - 300 words per minute for a fast reader, 200 average, 150 slow - shown in minutes and seconds."}},
+{"@type":"Question","name":"How is speaking time calculated?","acceptedAnswer":{"@type":"Answer","text":"Word count divided by a speaking pace - 130 words per minute for natural speech, 100 for presentations, 150 for podcasts."}},
+{"@type":"Question","name":"How does passive voice detection work?","acceptedAnswer":{"@type":"Answer","text":"It looks for was, were, is, are, be, been or being followed by a past-participle word, including regular -ed/-en endings plus a curated list of common irregular participles like written or thrown. It is a heuristic, not a perfect grammar parser."}},
+{"@type":"Question","name":"What counts as a transition word?","acceptedAnswer":{"@type":"Answer","text":"Common connector words and phrases such as however, therefore, in addition, as a result and for example - over sixty are checked and counted."}},
+{"@type":"Question","name":"What is keyword density and why does it matter for SEO?","acceptedAnswer":{"@type":"Answer","text":"It is how often a word appears relative to your total word count; 0.5 to 3 percent is generally considered healthy, while much higher can look like keyword stuffing to search engines."}},
+{"@type":"Question","name":"What counts as a difficult word?","acceptedAnswer":{"@type":"Answer","text":"A simplified Dale-Chall-style heuristic: words with three or more syllables that are not in a curated list of common everyday English words."}},
+{"@type":"Question","name":"How do the charts work - do they use a charting library?","acceptedAnswer":{"@type":"Answer","text":"No. All five charts are drawn with plain HTML canvas commands, with no external library or network request."}},
+{"@type":"Question","name":"How does Compare mode work?","acceptedAnswer":{"@type":"Answer","text":"Paste two texts into the Text A and Text B boxes on the Compare tab and click Compare; every statistic and formula is shown side by side, with the easier-to-read value highlighted in green."}},
+{"@type":"Question","name":"Can I export or print my results?","acceptedAnswer":{"@type":"Answer","text":"Yes - copy to clipboard, download as TXT, CSV or a generated PDF report, or print directly with a clean, distraction-free layout."}},
+{"@type":"Question","name":"Does the tool save or remember my text?","acceptedAnswer":{"@type":"Answer","text":"No. Nothing is stored in localStorage or on a server; for extra privacy, the text box also auto-clears itself after 10 minutes of inactivity."}},
+{"@type":"Question","name":"Does it work on very large documents?","acceptedAnswer":{"@type":"Answer","text":"Yes. Analysis is debounced for smooth typing and all computation is lightweight regex and arithmetic, so even multi-thousand-word documents analyze quickly."}},
+{"@type":"Question","name":"Is it mobile-friendly and accessible?","acceptedAnswer":{"@type":"Answer","text":"Yes - the layout is fully responsive, controls are labelled for screen readers, and every action is reachable by keyboard."}},
+{"@type":"Question","name":"Does it work offline once loaded?","acceptedAnswer":{"@type":"Answer","text":"Yes, since no external library or server call is required for the analysis itself; only the page's own scripts are used."}},
+{"@type":"Question","name":"What browsers are supported?","acceptedAnswer":{"@type":"Answer","text":"All modern browsers - Chrome, Firefox, Edge and Safari on both desktop and mobile - since the tool only uses standard, widely supported JavaScript and canvas APIs."}},
+{"@type":"Question","name":"How can I actually improve my readability score?","acceptedAnswer":{"@type":"Answer","text":"Shorten long sentences, replace passive constructions with active ones, break up long paragraphs, swap difficult words for simpler synonyms, and add transition words to connect ideas - the tool flags exactly where each of these applies."}}
+]}
+</script>
+<!-- CONTENT-END -->
+
+
 
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
 <script src="../assets/common.js"></script>
 <script>
+(function(){
+'use strict';
+
+/* ---------- Word lists (small curated sets; heuristic, not AI) ---------- */
+var STOPWORDS = {"the":1,"a":1,"an":1,"and":1,"or":1,"but":1,"if":1,"then":1,"so":1,"of":1,"in":1,
+"on":1,"at":1,"by":1,"for":1,"with":1,"about":1,"against":1,"between":1,"into":1,"through":1,
+"during":1,"before":1,"after":1,"above":1,"below":1,"to":1,"from":1,"up":1,"down":1,"out":1,
+"off":1,"over":1,"under":1,"again":1,"further":1,"is":1,"am":1,"are":1,"was":1,"were":1,"be":1,
+"been":1,"being":1,"have":1,"has":1,"had":1,"having":1,"do":1,"does":1,"did":1,"doing":1,
+"this":1,"that":1,"these":1,"those":1,"i":1,"you":1,"he":1,"she":1,"it":1,"we":1,"they":1,
+"me":1,"him":1,"her":1,"us":1,"them":1,"my":1,"your":1,"his":1,"its":1,"our":1,"their":1,
+"as":1,"not":1,"no":1,"nor":1,"can":1,"will":1,"just":1,"than":1,"too":1,"very":1,"such":1,
+"there":1,"here":1,"what":1,"which":1,"who":1,"whom":1,"how":1,"why":1,"when":1,"where":1};
+
+var COMMON_WORDS = {"time":1,"person":1,"year":1,"way":1,"day":1,"thing":1,"man":1,"world":1,
+"life":1,"hand":1,"part":1,"child":1,"eye":1,"woman":1,"place":1,"work":1,"week":1,"case":1,
+"point":1,"government":1,"company":1,"number":1,"group":1,"problem":1,"fact":1,"good":1,
+"new":1,"first":1,"last":1,"long":1,"great":1,"little":1,"own":1,"other":1,"old":1,"right":1,
+"big":1,"high":1,"different":1,"small":1,"large":1,"next":1,"early":1,"young":1,"important":1,
+"few":1,"public":1,"bad":1,"same":1,"able":1,"go":1,"get":1,"make":1,"know":1,"take":1,
+"see":1,"come":1,"think":1,"look":1,"want":1,"give":1,"use":1,"find":1,"tell":1,"ask":1,
+"need":1,"feel":1,"become":1,"leave":1,"put":1,"mean":1,"keep":1,"let":1,"begin":1,"seem":1,
+"help":1,"talk":1,"turn":1,"start":1,"show":1,"play":1,"run":1,"move":1,"like":1,"live":1,
+"believe":1,"bring":1,"happen":1,"write":1,"provide":1,"sit":1,"stand":1,"lose":1,"pay":1,
+"meet":1,"include":1,"continue":1,"set":1,"learn":1,"change":1,"lead":1,"understand":1,
+"watch":1,"follow":1,"stop":1,"create":1,"speak":1,"read":1,"allow":1,"add":1,"spend":1,
+"grow":1,"open":1,"walk":1,"win":1,"offer":1,"remember":1,"love":1,"consider":1,"appear":1,
+"buy":1,"wait":1,"serve":1,"die":1,"send":1,"expect":1,"build":1,"stay":1,"fall":1,"cut":1,
+"reach":1,"kill":1,"remain":1};
+
+var TRANSITION_WORDS = ["however","therefore","moreover","furthermore","in addition",
+"for example","for instance","consequently","nevertheless","thus","meanwhile","similarly",
+"in contrast","on the other hand","as a result","in conclusion","in fact","indeed","likewise",
+"otherwise","subsequently","accordingly","additionally","also","besides","finally","first",
+"second","third","next","then","afterward","before","after","since","because","although",
+"though","unless","until","while","whereas","hence","so","yet","still","instead","rather",
+"overall","in summary","to summarize","in short","altogether","above all","in particular",
+"notably","specifically","such as","in other words","to conclude","as well as","despite",
+"in spite of","due to","for this reason"];
+
+/* ---------- Language detection ---------- */
+function detectLanguage(text){
+  var dev = (text.match(/[ऀ-ॿ]/g)||[]).length;
+  var lat = (text.match(/[A-Za-z]/g)||[]).length;
+  if(dev===0 && lat===0) return 'en';
+  if(dev>0 && lat>0) return 'hinglish';
+  if(dev>lat) return 'hi';
+  return 'en';
+}
+
+/* ---------- Syllable counting ---------- */
+function countSyllablesEN(word){
+  word = word.toLowerCase().replace(/[^a-z]/g,'');
+  if(!word) return 0;
+  if(word.length<=3) return 1;
+  word = word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/,'');
+  word = word.replace(/^y/,'');
+  var m = word.match(/[aeiouy]{1,2}/g);
+  return m ? m.length : 1;
+}
+function countSyllablesHI(word){
+  var matras = word.match(/[\u093E-\u094C\u0955-\u0957]/g);
+  var indep = word.match(/[\u0904-\u0914]/g);
+  var cons = word.match(/[\u0915-\u0939\u0958-\u095F]/g);
+  var n = (matras?matras.length:0) + (indep?indep.length:0);
+  if(n===0 && cons) n = cons.length;
+  return Math.max(1,n);
+}
 function countSyllables(word){
-  word = word.toLowerCase().replace(/[^a-z]/g, '');
-  if(word.length === 0) return 0;
-  if(word.length <= 3) return 1;
-  word = word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '');
-  word = word.replace(/^y/, '');
-  const matches = word.match(/[aeiouy]{1,2}/g);
-  return matches ? matches.length : 1;
+  if(/[ऀ-ॿ]/.test(word)) return countSyllablesHI(word);
+  return countSyllablesEN(word);
+}
+
+/* ---------- Tokenization ---------- */
+function tokenizeWords(text){
+  return text.match(/[A-Za-z']+|[ऀ-ॿ]+/g) || [];
+}
+function splitSentences(text){
+  var trimmed = text.trim();
+  if(!trimmed) return [];
+  var raw = trimmed.match(/[^.!?।॥]+[.!?।॥]*/g) || [];
+  return raw.map(function(s){ return s.trim(); }).filter(Boolean);
+}
+function splitParagraphs(text){
+  return text.split(/\n\s*\n/).map(function(p){ return p.trim(); }).filter(Boolean);
+}
+
+/* ---------- Core statistics ---------- */
+function computeStats(text){
+  var words = tokenizeWords(text);
+  var sentences = splitSentences(text);
+  var paragraphs = splitParagraphs(text);
+  var lines = text.length ? text.split('\n').length : 0;
+
+  var wordCount = words.length;
+  var sentenceCount = sentences.length || (wordCount ? 1 : 0);
+  var paragraphCount = paragraphs.length || (wordCount ? 1 : 0);
+
+  var charCount = text.length;
+  var charsNoSpaces = text.replace(/\s/g,'').length;
+
+  var lower = words.map(function(w){ return w.toLowerCase(); });
+  var uniqueSet = {};
+  lower.forEach(function(w){ uniqueSet[w] = (uniqueSet[w]||0) + 1; });
+  var uniqueWordCount = Object.keys(uniqueSet).length;
+
+  var syllableCount = 0, letterCount = 0, complexWordCount = 0, longWordCount = 0, difficultWordCount = 0;
+  var wordLenBuckets = {};
+  words.forEach(function(w){
+    var syl = countSyllables(w);
+    syllableCount += syl;
+    letterCount += w.length;
+    if(syl >= 3) complexWordCount++;
+    if(w.length > 6) longWordCount++;
+    var lw = w.toLowerCase();
+    if(syl >= 3 && !COMMON_WORDS[lw] && !STOPWORDS[lw]) difficultWordCount++;
+    var bucket = w.length >= 10 ? '10+' : String(w.length);
+    wordLenBuckets[bucket] = (wordLenBuckets[bucket]||0) + 1;
+  });
+
+  var sentenceWordCounts = sentences.map(function(s){ return tokenizeWords(s).length; });
+  var paragraphWordCounts = paragraphs.map(function(p){ return tokenizeWords(p).length; });
+
+  var avgWordLen = wordCount ? letterCount / wordCount : 0;
+  var avgSentenceLen = sentenceCount ? wordCount / sentenceCount : 0;
+  var avgParagraphLen = paragraphCount ? wordCount / paragraphCount : 0;
+
+  var estimatedPages = wordCount / 275;
+
+  return {
+    text: text,
+    words: words,
+    sentences: sentences,
+    paragraphs: paragraphs,
+    lines: lines,
+    wordCount: wordCount,
+    sentenceCount: sentenceCount,
+    paragraphCount: paragraphCount,
+    charCount: charCount,
+    charsNoSpaces: charsNoSpaces,
+    uniqueWordCount: uniqueWordCount,
+    uniqueFreq: uniqueSet,
+    syllableCount: syllableCount,
+    letterCount: letterCount,
+    complexWordCount: complexWordCount,
+    longWordCount: longWordCount,
+    difficultWordCount: difficultWordCount,
+    wordLenBuckets: wordLenBuckets,
+    sentenceWordCounts: sentenceWordCounts,
+    paragraphWordCounts: paragraphWordCounts,
+    avgWordLen: avgWordLen,
+    avgSentenceLen: avgSentenceLen,
+    avgParagraphLen: avgParagraphLen,
+    estimatedPages: estimatedPages
+  };
+}
+
+/* ---------- Readability formulas ---------- */
+function computeReadability(st){
+  var W = st.wordCount, S = st.sentenceCount, Sy = st.syllableCount;
+  var CW = st.complexWordCount, C = st.letterCount, DW = st.difficultWordCount;
+  var LW = st.longWordCount;
+
+  if(W === 0 || S === 0){
+    return null;
+  }
+
+  var wps = W / S;
+  var spw = Sy / W;
+
+  var flesch = 206.835 - 1.015 * wps - 84.6 * spw;
+  var fk = 0.39 * wps + 11.8 * spw - 15.59;
+  var fog = 0.4 * (wps + 100 * (CW / W));
+  var smog = S >= 3 ? 1.043 * Math.sqrt(CW * (30 / S)) + 3.1291 : 1.043 * Math.sqrt(CW * 10) + 3.1291;
+  var lettersPer100 = (C / W) * 100;
+  var sentencesPer100 = (S / W) * 100;
+  var coleman = 0.0588 * lettersPer100 - 0.296 * sentencesPer100 - 15.8;
+  var ari = 4.71 * (C / W) + 0.5 * wps - 21.43;
+  var pctDifficult = (DW / W) * 100;
+  var daleChall = 0.1579 * pctDifficult + 0.0496 * wps + (pctDifficult > 5 ? 3.6365 : 0);
+
+  var easyCount = 0, hardCount = 0;
+  st.words.forEach(function(w){
+    if(countSyllables(w) <= 2) easyCount++; else hardCount++;
+  });
+  var lwScore = (easyCount * 1 + hardCount * 3) / S;
+  var linsear = lwScore > 20 ? lwScore / 2 : (lwScore - 2) / 2;
+
+  var lix = wps + (LW * 100 / W);
+  var rix = LW / S;
+
+  return {
+    flesch: flesch, fk: fk, fog: fog, smog: smog, coleman: coleman, ari: ari,
+    daleChall: daleChall, linsear: linsear, lix: lix, rix: rix
+  };
 }
 
 function easeLabel(score){
@@ -110,43 +677,772 @@ function easeLabel(score){
   return 'Very Difficult (College graduate)';
 }
 
-function analyze(){
-  const text = document.getElementById('textInput').value;
-  const sentenceMatches = text.match(/[.!?]+/g);
-  const sentences = sentenceMatches ? sentenceMatches.length : (text.trim() ? 1 : 0);
-  const words = text.match(/\b[a-zA-Z']+\b/g) || [];
-  const wordCount = words.length;
-  const syllableCount = words.reduce((sum,w)=>sum+countSyllables(w),0);
+function readingLevelFromGrade(grade){
+  if(grade <= 5) return 'Primary School';
+  if(grade <= 8) return 'Middle School';
+  if(grade <= 12) return 'High School';
+  if(grade <= 15) return 'College';
+  if(grade <= 17) return 'Graduate';
+  return 'Professional';
+}
 
-  document.getElementById('wordsVal').textContent = wordCount.toLocaleString('en-IN');
-  document.getElementById('sentencesVal').textContent = sentences.toLocaleString('en-IN');
-  document.getElementById('syllablesVal').textContent = syllableCount.toLocaleString('en-IN');
+function consensusGrade(rs){
+  var vals = [rs.fk, rs.fog, rs.smog, rs.ari, rs.coleman].filter(function(v){ return isFinite(v); });
+  if(!vals.length) return 0;
+  var sum = vals.reduce(function(a,b){ return a+b; }, 0);
+  return sum / vals.length;
+}
 
-  if(wordCount === 0 || sentences === 0){
+/* ---------- Passive voice ---------- */
+var IRREGULAR_PARTICIPLES = ("thrown given taken written made done seen known shown broken chosen " +
+  "driven eaten fallen forgotten grown hidden ridden risen spoken stolen sworn torn worn woven " +
+  "bitten blown drawn flown frozen sung swum born beaten bound bought brought built burnt caught " +
+  "dealt dug felt fought found held kept laid led left lent lost meant met paid put read said sent " +
+  "set shot shut sold sought spent spilt split spread stood struck taught told understood won begun " +
+  "drunk rung sunk swung gone come run").split(' ').join('|');
+var PASSIVE_RE = new RegExp('\\b(am|is|are|was|were|be|been|being)\\s+(\\w+ed|\\w+en|' +
+  IRREGULAR_PARTICIPLES + ')\\b', 'i');
+function analyzePassive(sentences){
+  var passiveSentences = 0;
+  sentences.forEach(function(s){
+    if(PASSIVE_RE.test(s)) passiveSentences++;
+  });
+  var pct = sentences.length ? (passiveSentences / sentences.length) * 100 : 0;
+  return { passiveSentences: passiveSentences, percentage: pct, total: sentences.length };
+}
+
+/* ---------- Transition words ---------- */
+function analyzeTransitions(text){
+  var lower = text.toLowerCase();
+  var found = [];
+  var total = 0;
+  TRANSITION_WORDS.forEach(function(phrase){
+    var re = new RegExp('\\b' + phrase.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + '\\b', 'gi');
+    var m = lower.match(re);
+    if(m && m.length){
+      found.push({ phrase: phrase, count: m.length });
+      total += m.length;
+    }
+  });
+  found.sort(function(a,b){ return b.count - a.count; });
+  return { total: total, items: found };
+}
+
+/* ---------- Keyword density ---------- */
+function analyzeKeywords(words, limit){
+  var freq = {};
+  words.forEach(function(w){
+    var lw = w.toLowerCase();
+    if(lw.length < 3 || STOPWORDS[lw]) return;
+    freq[lw] = (freq[lw]||0) + 1;
+  });
+  var total = words.length || 1;
+  var list = Object.keys(freq).map(function(k){
+    return { word: k, count: freq[k], density: (freq[k] / total) * 100 };
+  });
+  list.sort(function(a,b){ return b.count - a.count; });
+  return list.slice(0, limit || 10);
+}
+
+/* ---------- Grammar indicators ---------- */
+function analyzeGrammar(text){
+  var doubleSpaces = (text.match(/ {2,}/g) || []).length;
+  var lines = text.split('\n');
+  var emptyLines = 0;
+  for(var i = 1; i < lines.length - 1; i++){
+    if(lines[i].trim() === '') emptyLines++;
+  }
+  var repeatedPunct = (text.match(/([!?.,;:])\1{1,}/g) || []).length;
+  var sentences = splitSentences(text);
+  var capIssues = 0;
+  sentences.forEach(function(s){
+    var m = s.match(/[A-Za-z]/);
+    if(m && m[0] === m[0].toLowerCase() && m[0] !== m[0].toUpperCase()) capIssues++;
+  });
+  return {
+    doubleSpaces: doubleSpaces,
+    emptyLines: emptyLines,
+    repeatedPunct: repeatedPunct,
+    capIssues: capIssues
+  };
+}
+
+/* ---------- SEO metrics ---------- */
+function analyzeSeo(st, keywords){
+  var headingLines = (st.text.match(/^#{1,6}\s+.+$/gm) || []).length;
+  var headingRatio = st.paragraphCount ? headingLines / st.paragraphCount : 0;
+  var topKeyword = keywords[0] || null;
+  return {
+    avgSentenceLen: st.avgSentenceLen,
+    avgParagraphLen: st.avgParagraphLen,
+    headingLines: headingLines,
+    headingRatio: headingRatio,
+    topKeyword: topKeyword
+  };
+}
+
+/* ---------- Chart drawing (hand-rolled canvas 2D, no libraries) ---------- */
+function dpr(){ return window.devicePixelRatio || 1; }
+
+function setupCanvas(canvas){
+  var ratio = dpr();
+  var w = canvas.clientWidth || canvas.width;
+  var h = canvas.height / (canvas.width / w) || canvas.height;
+  canvas.width = Math.round(w * ratio);
+  canvas.height = Math.round(h * ratio);
+  var ctx = canvas.getContext('2d');
+  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+  return { ctx: ctx, w: w, h: h };
+}
+
+function drawGauge(canvasId, value, min, max){
+  var canvas = document.getElementById(canvasId);
+  if(!canvas) return;
+  var setup = setupCanvas(canvas);
+  var ctx = setup.ctx, w = setup.w, h = setup.h;
+  ctx.clearRect(0, 0, w, h);
+  var cx = w / 2, cy = h - 20, r = Math.min(w / 2 - 20, h - 40);
+  var startAngle = Math.PI, endAngle = 2 * Math.PI;
+
+  var zones = [
+    { from: 0, to: 30, color: '#F87171' },
+    { from: 30, to: 50, color: '#FBBF24' },
+    { from: 50, to: 70, color: '#FDE68A' },
+    { from: 70, to: 90, color: '#86EFAC' },
+    { from: 90, to: 100, color: '#16C079' }
+  ];
+  zones.forEach(function(z){
+    var a1 = startAngle + (z.from / 100) * Math.PI;
+    var a2 = startAngle + (z.to / 100) * Math.PI;
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, a1, a2);
+    ctx.lineWidth = 18;
+    ctx.strokeStyle = z.color;
+    ctx.stroke();
+  });
+
+  var clamped = Math.max(min, Math.min(max, value));
+  var angle = startAngle + (clamped / 100) * Math.PI;
+  var nx = cx + Math.cos(angle) * (r - 26);
+  var ny = cy + Math.sin(angle) * (r - 26);
+  ctx.beginPath();
+  ctx.moveTo(cx, cy);
+  ctx.lineTo(nx, ny);
+  ctx.lineWidth = 3;
+  ctx.strokeStyle = '#fff';
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(cx, cy, 5, 0, Math.PI * 2);
+  ctx.fillStyle = '#fff';
+  ctx.fill();
+}
+
+function drawLevelMeter(canvasId, grade){
+  var canvas = document.getElementById(canvasId);
+  if(!canvas) return;
+  var setup = setupCanvas(canvas);
+  var ctx = setup.ctx, w = setup.w, h = setup.h;
+  ctx.clearRect(0, 0, w, h);
+  var maxGrade = 20;
+  var barY = h / 2 - 10, barH = 20;
+  var grad = ctx.createLinearGradient(0, 0, w, 0);
+  grad.addColorStop(0, '#16C079');
+  grad.addColorStop(0.5, '#FBBF24');
+  grad.addColorStop(1, '#F87171');
+  ctx.fillStyle = grad;
+  ctx.fillRect(10, barY, w - 20, barH);
+
+  var clamped = Math.max(0, Math.min(maxGrade, grade));
+  var x = 10 + (clamped / maxGrade) * (w - 20);
+  ctx.beginPath();
+  ctx.moveTo(x, barY - 8);
+  ctx.lineTo(x - 7, barY - 20);
+  ctx.lineTo(x + 7, barY - 20);
+  ctx.closePath();
+  ctx.fillStyle = '#fff';
+  ctx.fill();
+}
+
+function drawBarChart(canvasId, labels, values, color){
+  var canvas = document.getElementById(canvasId);
+  if(!canvas) return;
+  var setup = setupCanvas(canvas);
+  var ctx = setup.ctx, w = setup.w, h = setup.h;
+  ctx.clearRect(0, 0, w, h);
+  if(!values.length){
+    ctx.fillStyle = 'rgba(255,255,255,.4)';
+    ctx.font = '13px sans-serif';
+    ctx.fillText('No data yet — paste some text above.', 10, h / 2);
+    return;
+  }
+  var max = Math.max.apply(null, values) || 1;
+  var padBottom = 26, padTop = 10;
+  var barW = (w - 10) / values.length;
+  ctx.fillStyle = color || '#7C5CFC';
+  values.forEach(function(v, i){
+    var bh = (v / max) * (h - padBottom - padTop);
+    var x = i * barW + 4;
+    var y = h - padBottom - bh;
+    ctx.fillRect(x, y, Math.max(2, barW - 6), bh);
+  });
+  ctx.fillStyle = 'rgba(255,255,255,.55)';
+  ctx.font = '10px sans-serif';
+  labels.forEach(function(l, i){
+    var x = i * barW + barW / 2;
+    ctx.textAlign = 'center';
+    ctx.fillText(String(l), x, h - 10);
+  });
+  ctx.textAlign = 'left';
+}
+
+function bucketize(counts, edges){
+  var buckets = new Array(edges.length + 1).fill(0);
+  counts.forEach(function(n){
+    var placed = false;
+    for(var i = 0; i < edges.length; i++){
+      if(n <= edges[i]){ buckets[i]++; placed = true; break; }
+    }
+    if(!placed) buckets[buckets.length - 1]++;
+  });
+  return buckets;
+}
+
+/* ---------- Minimal single-font text PDF writer (no external library) ---------- */
+function pdfEscape(s){
+  return s.replace(/\\/g,'\\\\').replace(/\(/g,'\\(').replace(/\)/g,'\\)');
+}
+function wrapLine(line, maxChars){
+  if(line.length <= maxChars) return [line];
+  var words = line.split(' ');
+  var out = [], cur = '';
+  words.forEach(function(w){
+    if((cur + ' ' + w).trim().length > maxChars){
+      if(cur) out.push(cur);
+      cur = w;
+    } else {
+      cur = (cur ? cur + ' ' : '') + w;
+    }
+  });
+  if(cur) out.push(cur);
+  return out;
+}
+function buildReportPdf(lines){
+  var pageW = 595, pageH = 842, margin = 44, lineH = 14, fontSize = 10;
+  var maxChars = 95;
+  var wrapped = [];
+  lines.forEach(function(l){ wrapLine(l, maxChars).forEach(function(w){ wrapped.push(w); }); });
+  var linesPerPage = Math.floor((pageH - margin * 2) / lineH);
+  var pages = [];
+  for(var i = 0; i < wrapped.length; i += linesPerPage){
+    pages.push(wrapped.slice(i, i + linesPerPage));
+  }
+  if(!pages.length) pages.push(['']);
+
+  var objects = [];
+  function addObj(body){
+    objects.push(body);
+    return objects.length;
+  }
+
+  var fontRef = addObj('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>');
+  var pageRefs = [];
+  var contentRefs = [];
+
+  pages.forEach(function(pageLines){
+    var y = pageH - margin;
+    var stream = 'BT /F1 ' + fontSize + ' Tf ' + lineH + ' TL ' + margin + ' ' + y + ' Td\n';
+    pageLines.forEach(function(l, idx){
+      stream += (idx === 0 ? '' : 'T*\n') + '(' + pdfEscape(l) + ') Tj\n';
+    });
+    stream += 'ET';
+    var contentRef = addObj('<< /Length ' + stream.length + ' >>\nstream\n' + stream + '\nendstream');
+    contentRefs.push(contentRef);
+  });
+
+  var pagesObjIndex = objects.length + 1 + pages.length;
+  pages.forEach(function(_, i){
+    var pageRef = addObj('<< /Type /Page /Parent ' + pagesObjIndex + ' 0 R /Resources << /Font << /F1 ' +
+      fontRef + ' 0 R >> >> /MediaBox [0 0 ' + pageW + ' ' + pageH + '] /Contents ' + contentRefs[i] + ' 0 R >>');
+    pageRefs.push(pageRef);
+  });
+
+  var kids = pageRefs.map(function(r){ return r + ' 0 R'; }).join(' ');
+  addObj('<< /Type /Pages /Kids [' + kids + '] /Count ' + pageRefs.length + ' >>');
+  var catalogRef = addObj('<< /Type /Catalog /Pages ' + pagesObjIndex + ' 0 R >>');
+
+  var out = '%PDF-1.4\n';
+  var offsets = [0];
+  objects.forEach(function(body, i){
+    offsets.push(out.length);
+    out += (i + 1) + ' 0 obj\n' + body + '\nendobj\n';
+  });
+  var xrefStart = out.length;
+  out += 'xref\n0 ' + (objects.length + 1) + '\n0000000000 65535 f \n';
+  for(var j = 1; j <= objects.length; j++){
+    out += String(offsets[j]).padStart(10, '0') + ' 00000 n \n';
+  }
+  out += 'trailer\n<< /Size ' + (objects.length + 1) + ' /Root ' + catalogRef + ' 0 R >>\nstartxref\n' + xrefStart + '\n%%EOF';
+  return new Blob([out], { type: 'application/pdf' });
+}
+
+/* ---------- Formatting helpers ---------- */
+function fmtNum(n, d){
+  if(!isFinite(n)) return '0';
+  var v = d ? n.toFixed(d) : Math.round(n);
+  return Number(v).toLocaleString('en-IN', d ? { minimumFractionDigits: d, maximumFractionDigits: d } : {});
+}
+function fmtDuration(minutes){
+  if(!isFinite(minutes) || minutes <= 0) return '0 sec';
+  var totalSec = Math.round(minutes * 60);
+  if(totalSec < 60) return totalSec + ' sec';
+  var m = Math.floor(totalSec / 60), s = totalSec % 60;
+  return m + ' min ' + (s ? s + ' sec' : '');
+}
+
+var READING_SPEEDS = { fast: 300, average: 200, slow: 150 };
+var SPEAKING_SPEEDS = { speech: 130, presentation: 100, podcast: 150 };
+
+/* ---------- Report text (used for copy / txt / pdf) ---------- */
+function buildReportLines(st, rs){
+  var grade = consensusGrade(rs);
+  var lines = [];
+  lines.push('TEXT READABILITY REPORT — ApneSoftware.com');
+  lines.push('');
+  lines.push('Flesch Reading Ease: ' + fmtNum(rs.flesch, 1) + ' (' + easeLabel(rs.flesch) + ')');
+  lines.push('Flesch-Kincaid Grade Level: ' + fmtNum(rs.fk, 1));
+  lines.push('Gunning Fog Index: ' + fmtNum(rs.fog, 1));
+  lines.push('SMOG Index: ' + fmtNum(rs.smog, 1));
+  lines.push('Coleman-Liau Index: ' + fmtNum(rs.coleman, 1));
+  lines.push('Automated Readability Index: ' + fmtNum(rs.ari, 1));
+  lines.push('Dale-Chall Score: ' + fmtNum(rs.daleChall, 1));
+  lines.push('Linsear Write Formula: ' + fmtNum(rs.linsear, 1));
+  lines.push('LIX: ' + fmtNum(rs.lix, 1));
+  lines.push('RIX: ' + fmtNum(rs.rix, 1));
+  lines.push('Reading Level: ' + readingLevelFromGrade(grade));
+  lines.push('');
+  lines.push('Characters: ' + st.charCount + ' | Without spaces: ' + st.charsNoSpaces);
+  lines.push('Words: ' + st.wordCount + ' | Unique words: ' + st.uniqueWordCount);
+  lines.push('Sentences: ' + st.sentenceCount + ' | Paragraphs: ' + st.paragraphCount + ' | Lines: ' + st.lines);
+  lines.push('Estimated pages: ' + fmtNum(st.estimatedPages, 1));
+  lines.push('Average word length: ' + fmtNum(st.avgWordLen, 1) + ' letters');
+  lines.push('Average sentence length: ' + fmtNum(st.avgSentenceLen, 1) + ' words');
+  lines.push('Average paragraph length: ' + fmtNum(st.avgParagraphLen, 1) + ' words');
+  lines.push('');
+  lines.push('Silent reading time (average): ' + fmtDuration(st.wordCount / READING_SPEEDS.average));
+  lines.push('Speaking time (speech pace): ' + fmtDuration(st.wordCount / SPEAKING_SPEEDS.speech));
+  return lines;
+}
+
+/* ---------- Main render ---------- */
+function fillList(id, rows){
+  var el = document.getElementById(id);
+  if(!el) return;
+  el.innerHTML = rows.map(function(r){
+    return '<li><span>' + r[0] + '</span><b>' + r[1] + '</b></li>';
+  }).join('');
+}
+
+function renderStats(st){
+  document.getElementById('wordsVal').textContent = fmtNum(st.wordCount);
+  document.getElementById('sentencesVal').textContent = fmtNum(st.sentenceCount);
+  document.getElementById('syllablesVal').textContent = fmtNum(st.syllableCount);
+  document.getElementById('charsVal').textContent = fmtNum(st.charCount);
+
+  fillList('statsColA', [
+    ['Characters', fmtNum(st.charCount)],
+    ['Characters (no spaces)', fmtNum(st.charsNoSpaces)],
+    ['Words', fmtNum(st.wordCount)],
+    ['Unique words', fmtNum(st.uniqueWordCount)],
+    ['Sentences', fmtNum(st.sentenceCount)],
+    ['Paragraphs', fmtNum(st.paragraphCount)]
+  ]);
+  fillList('statsColB', [
+    ['Lines', fmtNum(st.lines)],
+    ['Estimated pages', fmtNum(st.estimatedPages, 1)],
+    ['Reading time (avg)', fmtDuration(st.wordCount / READING_SPEEDS.average)],
+    ['Speaking time (avg)', fmtDuration(st.wordCount / SPEAKING_SPEEDS.speech)],
+    ['Avg. word length', fmtNum(st.avgWordLen, 1) + ' letters'],
+    ['Avg. sentence length', fmtNum(st.avgSentenceLen, 1) + ' words']
+  ]);
+}
+
+function renderScores(rs){
+  var grade = consensusGrade(rs);
+  document.getElementById('easeScore').textContent = fmtNum(Math.max(0, Math.min(100, rs.flesch)), 0);
+  document.getElementById('easeLabel').textContent = easeLabel(rs.flesch);
+  document.getElementById('gradeVal').textContent = fmtNum(Math.max(0, rs.fk), 1);
+  document.getElementById('readingLevelBadge').textContent = readingLevelFromGrade(grade);
+
+  var cards = [
+    ['Flesch Reading Ease', fmtNum(rs.flesch, 1), '0-100 scale, higher = easier'],
+    ['Flesch-Kincaid Grade', fmtNum(rs.fk, 1), 'US school grade level'],
+    ['Gunning Fog Index', fmtNum(rs.fog, 1), 'Years of education needed'],
+    ['SMOG Index', fmtNum(rs.smog, 1), 'Grade level (health texts)'],
+    ['Coleman-Liau Index', fmtNum(rs.coleman, 1), 'Grade level, letter-based'],
+    ['Automated Readability', fmtNum(rs.ari, 1), 'Grade level, character-based'],
+    ['Dale-Chall Score', fmtNum(rs.daleChall, 1), 'Higher = harder vocabulary'],
+    ['Linsear Write Formula', fmtNum(rs.linsear, 1), 'US grade level'],
+    ['LIX', fmtNum(rs.lix, 1), 'Swedish readability index'],
+    ['RIX', fmtNum(rs.rix, 1), 'Long words per sentence']
+  ];
+  document.getElementById('scoresGrid').innerHTML = cards.map(function(c){
+    return '<div class="trs-score-card"><div class="sv">' + c[1] + '</div><div class="sn">' + c[0] +
+      '</div><div class="sd">' + c[2] + '</div></div>';
+  }).join('');
+}
+
+function renderTimes(st){
+  fillList('readingTimeList', [
+    ['Fast reader (300 wpm)', fmtDuration(st.wordCount / READING_SPEEDS.fast)],
+    ['Average reader (200 wpm)', fmtDuration(st.wordCount / READING_SPEEDS.average)],
+    ['Slow reader (150 wpm)', fmtDuration(st.wordCount / READING_SPEEDS.slow)]
+  ]);
+  fillList('speakingTimeList', [
+    ['Speech pace (130 wpm)', fmtDuration(st.wordCount / SPEAKING_SPEEDS.speech)],
+    ['Presentation pace (100 wpm)', fmtDuration(st.wordCount / SPEAKING_SPEEDS.presentation)],
+    ['Podcast pace (150 wpm)', fmtDuration(st.wordCount / SPEAKING_SPEEDS.podcast)]
+  ]);
+}
+
+function renderSentenceParagraph(st){
+  var swc = st.sentenceWordCounts;
+  var longest = 0, shortest = swc.length ? swc[0] : 0, longIdx = 0, shortIdx = 0;
+  swc.forEach(function(n, i){
+    if(n > longest){ longest = n; longIdx = i; }
+    if(n < shortest){ shortest = n; shortIdx = i; }
+  });
+  var longSentenceCount = swc.filter(function(n){ return n > 25; }).length;
+  fillList('sentenceList', [
+    ['Longest sentence', longest + ' words'],
+    ['Shortest sentence', (swc.length ? shortest : 0) + ' words'],
+    ['Average length', fmtNum(st.avgSentenceLen, 1) + ' words'],
+    ['Long sentences (>25 words)', longSentenceCount]
+  ]);
+
+  var pwc = st.paragraphWordCounts;
+  var largest = pwc.length ? Math.max.apply(null, pwc) : 0;
+  fillList('paragraphList', [
+    ['Paragraph count', st.paragraphCount],
+    ['Largest paragraph', largest + ' words'],
+    ['Average paragraph length', fmtNum(st.avgParagraphLen, 1) + ' words']
+  ]);
+}
+
+function renderVocabulary(st){
+  var repeated = 0, rare = 0, common = 0;
+  Object.keys(st.uniqueFreq).forEach(function(w){
+    if(st.uniqueFreq[w] > 2) repeated++;
+    if(COMMON_WORDS[w] || STOPWORDS[w]) common++; else rare++;
+  });
+  fillList('vocabList', [
+    ['Unique words', st.uniqueWordCount],
+    ['Common words', common],
+    ['Rare / uncommon words', rare],
+    ['Repeated words (3+ times)', repeated],
+    ['Difficult words (est.)', st.difficultWordCount]
+  ]);
+
+  var simple = st.wordCount - st.complexWordCount;
+  fillList('complexityList', [
+    ['Simple words (1-2 syllables)', simple],
+    ['Complex words (3+ syllables)', st.complexWordCount],
+    ['Multi-syllable ratio', st.wordCount ? fmtNum((st.complexWordCount / st.wordCount) * 100, 1) + '%' : '0%']
+  ]);
+}
+
+function renderPassiveTransitions(st){
+  var pv = analyzePassive(st.sentences);
+  fillList('passiveList', [
+    ['Passive sentences', pv.passiveSentences + ' / ' + pv.total],
+    ['Passive voice percentage', fmtNum(pv.percentage, 1) + '%']
+  ]);
+  var tr = analyzeTransitions(st.text);
+  fillList('transitionList', [
+    ['Transition words found', tr.total],
+    ['Distinct transition phrases', tr.items.length]
+  ]);
+  document.getElementById('transitionPills').innerHTML = tr.items.slice(0, 15).map(function(t){
+    return '<span class="trs-pill">' + t.phrase + ' × ' + t.count + '</span>';
+  }).join('');
+}
+
+function renderKeywords(st){
+  var kws = analyzeKeywords(st.words, 10);
+  var tbody = document.querySelector('#keywordTable tbody');
+  tbody.innerHTML = kws.map(function(k){
+    return '<tr><td>' + k.word + '</td><td>' + k.count + '</td><td>' + fmtNum(k.density, 1) + '%</td></tr>';
+  }).join('') || '<tr><td colspan="3">No keywords yet — paste some text above.</td></tr>';
+  return kws;
+}
+
+function renderGrammar(st){
+  var g = analyzeGrammar(st.text);
+  fillList('grammarList', [
+    ['Double / multiple spaces', g.doubleSpaces],
+    ['Empty lines', g.emptyLines],
+    ['Repeated punctuation (!!, .., ??)', g.repeatedPunct],
+    ['Sentences with lower-case start', g.capIssues]
+  ]);
+}
+
+function renderSeo(st, kws){
+  var seo = analyzeSeo(st, kws);
+  fillList('seoList', [
+    ['Average sentence length', fmtNum(seo.avgSentenceLen, 1) + ' words (aim ≤ 20)'],
+    ['Average paragraph length', fmtNum(seo.avgParagraphLen, 1) + ' words (aim ≤ 150)'],
+    ['Top keyword density', seo.topKeyword ? seo.topKeyword.word + ' — ' + fmtNum(seo.topKeyword.density, 1) + '%' : '—'],
+    ['Heading lines detected', seo.headingLines]
+  ]);
+  var flags = [];
+  flags.push(seo.avgSentenceLen <= 20
+    ? '<span class="trs-flag ok">Sentence length OK</span>'
+    : '<span class="trs-flag warn">Sentences too long</span>');
+  flags.push(seo.avgParagraphLen <= 150
+    ? '<span class="trs-flag ok">Paragraph size OK</span>'
+    : '<span class="trs-flag warn">Paragraphs too long</span>');
+  if(seo.topKeyword){
+    var d = seo.topKeyword.density;
+    flags.push(d >= 0.5 && d <= 3
+      ? '<span class="trs-flag ok">Keyword density healthy</span>'
+      : '<span class="trs-flag warn">Keyword density ' + (d > 3 ? 'too high' : 'too low') + '</span>');
+  } else {
+    flags.push('<span class="trs-flag neutral">No keyword data</span>');
+  }
+  document.getElementById('seoFlags').innerHTML = flags.join('');
+}
+
+function renderCharts(st, rs){
+  var grade = consensusGrade(rs);
+  drawGauge('chartGauge', Math.max(0, Math.min(100, rs.flesch)), 0, 100);
+  drawLevelMeter('chartLevel', Math.max(0, grade));
+
+  var wlLabels = ['1-3','4','5','6','7','8','9','10+'];
+  var wlBuckets = { '1':0,'2':0,'3':0,'4':0,'5':0,'6':0,'7':0,'8':0,'9':0,'10+':0 };
+  Object.keys(st.wordLenBuckets).forEach(function(k){ wlBuckets[k] = (wlBuckets[k]||0) + st.wordLenBuckets[k]; });
+  var wlValues = [
+    (wlBuckets['1']||0) + (wlBuckets['2']||0) + (wlBuckets['3']||0),
+    wlBuckets['4']||0, wlBuckets['5']||0, wlBuckets['6']||0,
+    wlBuckets['7']||0, wlBuckets['8']||0, wlBuckets['9']||0, wlBuckets['10+']||0
+  ];
+  drawBarChart('chartWordLen', wlLabels, wlValues, '#7C5CFC');
+
+  var slEdges = [5, 10, 15, 20, 25];
+  var slLabels = ['1-5','6-10','11-15','16-20','21-25','26+'];
+  var slValues = bucketize(st.sentenceWordCounts, slEdges);
+  drawBarChart('chartSentLen', slLabels, slValues, '#16C079');
+
+  var paLabels = st.paragraphWordCounts.map(function(_, i){ return 'P' + (i + 1); }).slice(0, 20);
+  var paValues = st.paragraphWordCounts.slice(0, 20);
+  drawBarChart('chartPara', paLabels, paValues, '#FBBF24');
+}
+
+/* ---------- Analyze orchestration ---------- */
+var lastStats = null, lastReadability = null;
+var analyzeTimer = null;
+
+function runAnalyze(){
+  var text = document.getElementById('textInput').value;
+  var langSel = document.getElementById('langSelect').value;
+  var detected = detectLanguage(text);
+  document.getElementById('langDetected').textContent = text.trim()
+    ? 'Detected language: ' + (detected === 'hi' ? 'Hindi' : detected === 'hinglish' ? 'Hinglish / Mixed' : 'English') +
+      (langSel !== 'auto' ? ' (manual override: ' + langSel + ')' : '')
+    : '';
+
+  var st = computeStats(text);
+  var rs = computeReadability(st);
+  lastStats = st;
+  lastReadability = rs;
+
+  if(!rs){
     document.getElementById('easeScore').textContent = '—';
     document.getElementById('easeLabel').textContent = 'Flesch Reading Ease';
     document.getElementById('gradeVal').textContent = '—';
+    document.getElementById('readingLevelBadge').textContent = 'Reading level';
+    ['wordsVal','sentencesVal','syllablesVal','charsVal'].forEach(function(id){
+      document.getElementById(id).textContent = '0';
+    });
+    document.getElementById('statusMsg').textContent = 'Paste some text above to see the full analysis.';
     return;
   }
 
-  const ease = 206.835 - 1.015*(wordCount/sentences) - 84.6*(syllableCount/wordCount);
-  const grade = 0.39*(wordCount/sentences) + 11.8*(syllableCount/wordCount) - 15.59;
-
-  const clampedEase = Math.max(0, Math.min(100, ease));
-  document.getElementById('easeScore').textContent = Math.round(clampedEase);
-  document.getElementById('easeLabel').textContent = easeLabel(clampedEase);
-  document.getElementById('gradeVal').textContent = Math.max(0, grade).toFixed(1);
+  renderStats(st);
+  renderScores(rs);
+  renderTimes(st);
+  renderSentenceParagraph(st);
+  renderVocabulary(st);
+  renderPassiveTransitions(st);
+  var kws = renderKeywords(st);
+  renderGrammar(st);
+  renderSeo(st, kws);
+  renderCharts(st, rs);
+  document.getElementById('statusMsg').textContent = '✅ Analysis complete — ' + fmtNum(st.wordCount) + ' words analyzed.';
 }
 
-document.getElementById('textInput').addEventListener('input', analyze);
-analyze();
+function scheduleAnalyze(){
+  clearTimeout(analyzeTimer);
+  analyzeTimer = setTimeout(runAnalyze, 180);
+}
+
+/* ---------- Compare mode ---------- */
+function runCompare(){
+  var textA = document.getElementById('cmpA').value;
+  var textB = document.getElementById('cmpB').value;
+  var stA = computeStats(textA), stB = computeStats(textB);
+  var rsA = computeReadability(stA), rsB = computeReadability(stB);
+  var tbody = document.querySelector('#cmpTable tbody');
+  if(!rsA || !rsB){
+    tbody.innerHTML = '<tr><td colspan="4">Paste text into both boxes to compare.</td></tr>';
+    return;
+  }
+  function row(label, a, b, higherIsBetter){
+    var aBetter = higherIsBetter ? a > b : a < b;
+    var bBetter = higherIsBetter ? b > a : b < a;
+    var change = b - a;
+    return '<tr><td>' + label + '</td><td' + (aBetter ? ' class="better"' : '') + '>' + fmtNum(a, 1) +
+      '</td><td' + (bBetter ? ' class="better"' : '') + '>' + fmtNum(b, 1) + '</td><td>' +
+      (change > 0 ? '+' : '') + fmtNum(change, 1) + '</td></tr>';
+  }
+  tbody.innerHTML =
+    row('Words', stA.wordCount, stB.wordCount, false) +
+    row('Sentences', stA.sentenceCount, stB.sentenceCount, false) +
+    row('Flesch Reading Ease', rsA.flesch, rsB.flesch, true) +
+    row('Flesch-Kincaid Grade', rsA.fk, rsB.fk, false) +
+    row('Gunning Fog', rsA.fog, rsB.fog, false) +
+    row('SMOG', rsA.smog, rsB.smog, false) +
+    row('Coleman-Liau', rsA.coleman, rsB.coleman, false) +
+    row('ARI', rsA.ari, rsB.ari, false) +
+    row('Dale-Chall', rsA.daleChall, rsB.daleChall, false) +
+    row('LIX', rsA.lix, rsB.lix, false) +
+    row('Avg sentence length', stA.avgSentenceLen, stB.avgSentenceLen, false);
+}
+
+/* ---------- Export ---------- */
+function currentReportText(){
+  if(!lastStats || !lastReadability) return 'No analysis yet. Paste text and try again.';
+  return buildReportLines(lastStats, lastReadability).join('\n');
+}
+function currentReportCsv(){
+  if(!lastStats || !lastReadability) return 'metric,value\n';
+  var rows = [['metric','value']];
+  buildReportLines(lastStats, lastReadability).forEach(function(l){
+    var idx = l.indexOf(':');
+    if(idx > -1) rows.push([l.slice(0, idx).replace(/,/g,';'), l.slice(idx + 1).trim().replace(/,/g,';')]);
+  });
+  return rows.map(function(r){ return r.join(','); }).join('\n');
+}
+
+function wireExport(){
+  document.getElementById('copyBtn').addEventListener('click', function(){
+    var text = currentReportText();
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){
+        document.getElementById('statusMsg').textContent = '✅ Report copied to clipboard.';
+      }).catch(function(){
+        document.getElementById('statusMsg').textContent = 'Could not copy — please copy manually.';
+      });
+    }
+  });
+  document.getElementById('txtBtn').addEventListener('click', function(){
+    downloadBlob('readability-report.txt', new Blob([currentReportText()], { type: 'text/plain' }));
+  });
+  document.getElementById('csvBtn').addEventListener('click', function(){
+    downloadBlob('readability-report.csv', new Blob([currentReportCsv()], { type: 'text/csv' }));
+  });
+  document.getElementById('pdfBtn').addEventListener('click', function(){
+    if(!lastStats || !lastReadability){
+      document.getElementById('statusMsg').textContent = 'Paste and analyze some text first.';
+      return;
+    }
+    var blob = buildReportPdf(buildReportLines(lastStats, lastReadability));
+    downloadBlob('readability-report.pdf', blob);
+  });
+  document.getElementById('printBtn').addEventListener('click', function(){
+    window.print();
+  });
+}
+
+/* ---------- Tabs ---------- */
+function wireTabs(){
+  var tabSingle = document.getElementById('tabSingle');
+  var tabCompare = document.getElementById('tabCompare');
+  var paneSingle = document.getElementById('paneSingle');
+  var paneCompare = document.getElementById('paneCompare');
+  function activate(tab){
+    var single = tab === 'single';
+    tabSingle.classList.toggle('active', single);
+    tabCompare.classList.toggle('active', !single);
+    tabSingle.setAttribute('aria-selected', single);
+    tabCompare.setAttribute('aria-selected', !single);
+    paneSingle.classList.toggle('active', single);
+    paneCompare.classList.toggle('active', !single);
+    if(!single) runCompare();
+  }
+  tabSingle.addEventListener('click', function(){ activate('single'); });
+  tabCompare.addEventListener('click', function(){ activate('compare'); });
+}
+
+/* ---------- Auto-clear (privacy) ---------- */
+var AUTO_CLEAR_MS = 10 * 60 * 1000;
+var autoClearTimer = null;
+function resetAutoClear(){
+  clearTimeout(autoClearTimer);
+  autoClearTimer = setTimeout(function(){
+    var ta = document.getElementById('textInput');
+    if(ta.value){
+      ta.value = '';
+      scheduleAnalyze();
+      document.getElementById('statusMsg').textContent = '🔒 Text auto-cleared after 10 minutes of inactivity for your privacy.';
+    }
+  }, AUTO_CLEAR_MS);
+}
+
+/* ---------- Sample / clear ---------- */
+var SAMPLE_TEXT = 'Reading is a fundamental skill that opens doors to knowledge and opportunity. However, not all writing is equally easy to understand. Some sentences are short and direct. Others, in contrast, wind on for a very long time, burying their main point beneath several clauses, qualifications and asides, which makes them considerably harder to follow. Therefore, professional writers measure readability before publishing. For example, a newspaper article usually aims for a grade level around eight, while a legal contract may be written at a graduate level. In addition, good writing avoids the passive voice, uses transition words to guide the reader, and keeps paragraphs reasonably short. As a result, readers stay engaged instead of getting lost.\n\nThis tool was designed to help you check exactly that. Paste any article, essay, email or report, and it will instantly calculate ten different readability formulas alongside detailed statistics about vocabulary, sentence structure and more. Consequently, you can revise your draft with confidence before you publish it.';
+
+function wireSampleClear(){
+  document.getElementById('sampleBtn').addEventListener('click', function(){
+    document.getElementById('textInput').value = SAMPLE_TEXT;
+    scheduleAnalyze();
+  });
+  document.getElementById('clearBtn').addEventListener('click', function(){
+    document.getElementById('textInput').value = '';
+    scheduleAnalyze();
+  });
+}
+
+/* ---------- Init ---------- */
+function init(){
+  var ta = document.getElementById('textInput');
+  ta.addEventListener('input', function(){ scheduleAnalyze(); resetAutoClear(); });
+  document.getElementById('langSelect').addEventListener('change', runAnalyze);
+  document.getElementById('cmpRunBtn').addEventListener('click', runCompare);
+  document.getElementById('cmpClearBtn').addEventListener('click', function(){
+    document.getElementById('cmpA').value = '';
+    document.getElementById('cmpB').value = '';
+    runCompare();
+  });
+  wireTabs();
+  wireExport();
+  wireSampleClear();
+  window.addEventListener('resize', function(){
+    if(lastStats && lastReadability) renderCharts(lastStats, lastReadability);
+  });
+  resetAutoClear();
+  runAnalyze();
+}
+
+init();
+
+})();
 </script>
+
 <!-- Default Statcounter code for Apne Software
 https://apnesoftware.com -->
 <script type="text/javascript">
-var sc_project=13334460; 
-var sc_invisible=1; 
-var sc_security="a5854dc7"; 
+var sc_project=13334460;
+var sc_invisible=1;
+var sc_security="a5854dc7";
 </script>
 <script type="text/javascript"
 src="https://www.statcounter.com/counter/counter.js"
