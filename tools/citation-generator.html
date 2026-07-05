@@ -4,32 +4,80 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
+<meta name="description" content="Free professional Citation Generator. Build APA 7/6, MLA 9/8, Chicago, Harvard, IEEE, Vancouver, AMA, OSCOLA, ACS, CSE, Turabian and Bluebook citations for 20 source types, manage a sortable bibliography, and export TXT/DOCX/PDF/HTML/Markdown/RIS/BibTeX/XML — 100% in your browser, no upload.">
 <link rel="canonical" href="https://apnesoftware.com/tools/citation-generator.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Citation Generator (APA/MLA) | ApneSoftware">
-<meta property="og:description" content="APA 7 & MLA 9 citations for sites/books. Free online tool — no signup required.">
+<meta property="og:title" content="Citation Generator | ApneSoftware">
+<meta property="og:description" content="APA, MLA, Chicago, Harvard, IEEE, Vancouver and more — 15 styles, 20 source types, sortable bibliography, export to 8 formats. Free & private.">
 <meta property="og:url" content="https://apnesoftware.com/tools/citation-generator.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Citation Generator (APA/MLA) | ApneSoftware">
-<meta name="twitter:description" content="APA 7 & MLA 9 citations for sites/books. Free online tool — no signup required.">
+<meta name="twitter:title" content="Citation Generator | ApneSoftware">
+<meta name="twitter:description" content="15 citation styles, 20 source types, sortable bibliography, 8 export formats. Free, private, no signup.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Citation Generator","description":"APA 7 & MLA 9 citations for sites/books. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/citation-generator.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Citation Generator","description":"Professional in-browser academic citation generator supporting 15 citation styles and 20 source types, with author management, DOI/ISBN validation, a sortable bibliography and export to 8 formats.","url":"https://apnesoftware.com/tools/citation-generator.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
 </script>
 <meta name="color-scheme" content="dark">
-<title>Citation Generator (APA/MLA) | ApneSoftware</title>
+<title>Citation Generator | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-  .tab-row{display:flex;gap:8px;margin-bottom:14px}
-  .tab-btn{padding:8px 16px;border-radius:7px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-dim);font-size:.9rem;cursor:pointer}
-  .tab-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-  .citation-box{
-    background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:10px;
+  .ct-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+  .ct-tab{padding:9px 16px;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-dim);cursor:pointer;font-size:.85rem;font-weight:600;font-family:inherit}
+  .ct-tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .ct-pane{display:none}
+  .ct-pane.active{display:block}
+  .ct-chip-row{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 14px}
+  .ct-chip{padding:7px 14px;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-dim);cursor:pointer;font-size:.8rem;font-weight:600;font-family:inherit}
+  .ct-chip.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .ct-section-title{font-size:1.05rem;font-weight:700;margin:22px 0 10px;color:#fff;display:flex;align-items:center;gap:8px}
+  .ct-author-row{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-end;margin-bottom:8px;background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:10px}
+  .ct-author-row .field{flex:1;min-width:120px;margin-bottom:0}
+  .ct-author-row .ct-author-actions{display:flex;gap:4px}
+  .ct-author-row button{background:none;border:1px solid var(--border);border-radius:6px;color:var(--text-dim);cursor:pointer;padding:6px 8px;font-size:.85rem}
+  .ct-author-row button:hover{color:var(--accent);border-color:var(--accent)}
+  .ct-citation-box{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:10px}
+  .ct-citation-box .ct-label{font-size:.78rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
+  .ct-citation-box .ct-text{font-family:Georgia,serif;font-size:.92rem;line-height:1.6}
+  .ct-citation-box .ct-text em{font-style:italic}
+  .ct-flags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .ct-flag{padding:5px 12px;border-radius:999px;font-size:.78rem;font-weight:600;border:1px solid var(--border)}
+  .ct-flag.ok{background:rgba(22,192,121,.15);color:#7ef0bd;border-color:rgba(22,192,121,.4)}
+  .ct-flag.warn{background:rgba(248,113,113,.15);color:#fca5a5;border-color:rgba(248,113,113,.4)}
+  .ct-flag.neutral{background:var(--surface-2);color:var(--text-dim)}
+  .ct-muted{color:var(--text-dim);font-size:.82rem;margin-top:6px}
+  .ct-two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:640px){.ct-two{grid-template-columns:1fr}}
+  .ct-list-plain{list-style:none;padding:0;margin:0}
+  .ct-list-plain li{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px dashed var(--border);font-size:.85rem}
+  .ct-list-plain li:last-child{border-bottom:0}
+  .ct-list-plain li b{color:#fff;font-weight:700}
+  .ct-biblio-item{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:12px;margin-bottom:8px}
+  .ct-biblio-item .ct-text{font-family:Georgia,serif;font-size:.9rem;line-height:1.6;margin-bottom:8px}
+  .ct-biblio-item .ct-biblio-actions{display:flex;gap:6px;flex-wrap:wrap}
+  .ct-biblio-item .ct-biblio-actions button{background:none;border:1px solid var(--border);border-radius:6px;color:var(--text-dim);cursor:pointer;padding:5px 9px;font-size:.8rem}
+  .ct-biblio-item .ct-biblio-actions button:hover{color:var(--accent);border-color:var(--accent)}
+  .ct-biblio-item.fav{border-color:rgba(250,204,21,.5)}
+  .ct-code-box{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:12px;font-family:'Consolas','Courier New',monospace;font-size:.8rem;white-space:pre-wrap;word-break:break-word;max-height:300px;overflow:auto}
+  .ct-history-item{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;padding:8px 0;border-bottom:1px dashed var(--border);font-size:.85rem}
+  .ct-history-item:last-child{border-bottom:0}
+  .ct-history-item button{background:none;border:1px solid var(--border);border-radius:6px;color:var(--text-dim);cursor:pointer;padding:4px 8px;font-size:.78rem}
+  .related-grid a .ri{margin-right:6px}
+  .ct-content h2{font-size:1.15rem;margin:26px 0 10px}
+  .ct-content h3{font-size:1rem;margin:18px 0 8px}
+  .ct-content p,.ct-content li{font-size:.92rem;line-height:1.72}
+  .ct-content ul,.ct-content ol{padding-left:20px}
+  .ct-lang-note{font-size:.78rem;color:var(--text-dim);font-style:italic;margin-top:-4px}
+  body.ct-large-font{font-size:1.15rem}
+  body.ct-large-font .ct-citation-box .ct-text{font-size:1.08rem}
+  body.ct-high-contrast{filter:contrast(1.25) brightness(1.08)}
+  body.ct-high-contrast .panel,body.ct-high-contrast .ct-citation-box,body.ct-high-contrast .ct-author-row{border-width:2px;border-color:#fff}
+  @media print{
+    .site-header,.left-sidebar,.right-sidebar,.ct-tabs,footer{display:none!important}
+    body{background:#fff!important;color:#000!important}
+    .ct-citation-box,.ct-biblio-item{background:#fff!important;border-color:#000!important;color:#000!important}
   }
-  .citation-box .citation-label{font-size:.78rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
-  .citation-box .citation-text{font-family:Georgia,serif;font-size:.92rem;line-height:1.5}
 </style>
 </head>
 <body>
@@ -43,133 +91,1453 @@
 <div class="container">
   <div class="tool-header">
     <h1>📚 Citation Generator</h1>
-    <p>Generate APA 7 and MLA 9 style citations for websites or books.</p>
+    <p>Build accurate APA, MLA, Chicago, Harvard, IEEE, Vancouver and more citations for 20 source types, manage a sortable bibliography, and export in 8 formats — entirely in your browser.</p>
   </div>
 
   <div class="panel">
-    <div class="tab-row">
-      <button class="tab-btn active" data-type="website">🌐 Website</button>
-      <button class="tab-btn" data-type="book">📖 Book</button>
+    <div class="ct-tabs" role="tablist">
+      <button class="ct-tab active" id="tabAdd" role="tab" aria-selected="true">➕ Add Citation</button>
+      <button class="ct-tab" id="tabBiblio" role="tab" aria-selected="false">📑 Bibliography</button>
+      <button class="ct-tab" id="tabHistory" role="tab" aria-selected="false">🕘 History &amp; Favorites</button>
     </div>
 
-    <div class="row">
-      <div class="field"><label for="authorLast">Author last name</label><input type="text" id="authorLast" placeholder="Sharma"></div>
-      <div class="field"><label for="authorFirst">Author first name</label><input type="text" id="authorFirst" placeholder="Ravi"></div>
-    </div>
-    <div class="field"><label for="titleInput">Title</label><input type="text" id="titleInput" placeholder="Title of the page or book"></div>
-    <div class="row">
-      <div class="field"><label for="yearInput">Year published</label><input type="number" id="yearInput" placeholder="2026"></div>
-      <div class="field" id="siteOrPublisherField"><label for="siteOrPublisher">Website/Site name</label><input type="text" id="siteOrPublisher" placeholder="e.g. BBC News"></div>
-    </div>
-    <div class="field" id="urlField"><label for="urlInput">URL</label><input type="text" id="urlInput" placeholder="https://..."></div>
-    <div class="field" id="accessDateField"><label for="accessDate">Date accessed</label><input type="date" id="accessDate"></div>
+    <!-- ===== Add Citation pane ===== -->
+    <div class="ct-pane active" id="paneAdd">
+      <div class="row">
+        <div class="field">
+          <label for="sourceType">Source type</label>
+          <select id="sourceType">
+            <option value="website">Website</option>
+            <option value="book">Book</option>
+            <option value="journal">Journal Article</option>
+            <option value="magazine">Magazine</option>
+            <option value="newspaper">Newspaper</option>
+            <option value="paper">Research Paper</option>
+            <option value="thesis">Thesis</option>
+            <option value="dissertation">Dissertation</option>
+            <option value="conference">Conference Paper</option>
+            <option value="govreport">Government Report</option>
+            <option value="blog">Blog</option>
+            <option value="podcast">Podcast</option>
+            <option value="youtube">YouTube Video</option>
+            <option value="social">Social Media</option>
+            <option value="wikipedia">Wikipedia</option>
+            <option value="course">Online Course</option>
+            <option value="lecture">Lecture</option>
+            <option value="email">Email</option>
+            <option value="software">Software</option>
+            <option value="dataset">Dataset</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="primaryStyle">Primary citation style</label>
+          <select id="primaryStyle">
+            <option value="apa7">APA 7th edition</option>
+            <option value="apa6">APA 6th edition</option>
+            <option value="mla9">MLA 9th edition</option>
+            <option value="mla8">MLA 8th edition</option>
+            <option value="chicagoNotes">Chicago (Notes-Bibliography)</option>
+            <option value="chicagoAD">Chicago (Author-Date)</option>
+            <option value="harvard">Harvard</option>
+            <option value="ieee">IEEE</option>
+            <option value="vancouver">Vancouver</option>
+            <option value="ama">AMA</option>
+            <option value="oscola">OSCOLA</option>
+            <option value="acs">ACS</option>
+            <option value="cse">CSE</option>
+            <option value="turabian">Turabian</option>
+            <option value="bluebook">Bluebook</option>
+          </select>
+        </div>
+      </div>
 
-    <div class="citation-box">
-      <div class="citation-label">APA 7</div>
-      <div class="citation-text" id="apaOutput"></div>
+      <label>Template</label>
+      <div class="ct-chip-row" id="templateChips">
+        <button class="ct-chip active" type="button" data-tpl="student">Student essay</button>
+        <button class="ct-chip" type="button" data-tpl="assignment">Assignment</button>
+        <button class="ct-chip" type="button" data-tpl="thesis">Thesis</button>
+        <button class="ct-chip" type="button" data-tpl="research">Research paper</button>
+        <button class="ct-chip" type="button" data-tpl="journal">Journal submission</button>
+      </div>
+
+      <div class="ct-section-title">👤 Author Management</div>
+      <div class="row">
+        <div class="field" style="max-width:220px">
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;margin-top:8px">
+            <input type="checkbox" id="orgAuthorToggle" style="width:auto"> Organization is the author
+          </label>
+        </div>
+      </div>
+      <div class="field" id="orgAuthorField" style="display:none">
+        <label for="orgAuthorInput">Organization name</label>
+        <input type="text" id="orgAuthorInput" placeholder="e.g. World Health Organization">
+      </div>
+      <div id="authorsWrap"></div>
+      <div class="btn-row">
+        <button class="btn secondary" id="addAuthorBtn" type="button">➕ Add author</button>
+        <button class="btn secondary" id="addEditorBtn" type="button">➕ Add editor</button>
+        <button class="btn secondary" id="addTranslatorBtn" type="button">➕ Add translator</button>
+      </div>
+
+      <div class="ct-section-title">📄 Publication Details</div>
+      <div class="field"><label for="titleInput">Title</label><input type="text" id="titleInput" placeholder="Title of the work"></div>
+      <div class="field"><label for="containerInput" id="containerLabel">Website / Site name</label><input type="text" id="containerInput" placeholder="e.g. BBC News"></div>
+      <div class="row">
+        <div class="field"><label for="publisherInput">Publisher</label><input type="text" id="publisherInput" placeholder="e.g. Penguin Books"></div>
+        <div class="field"><label for="editionInput">Edition</label><input type="text" id="editionInput" placeholder="e.g. 3rd"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="volumeInput">Volume</label><input type="text" id="volumeInput"></div>
+        <div class="field"><label for="issueInput">Issue</label><input type="text" id="issueInput"></div>
+        <div class="field"><label for="pagesInput">Pages</label><input type="text" id="pagesInput" placeholder="e.g. 12-34"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="chapterInput">Chapter title</label><input type="text" id="chapterInput"></div>
+        <div class="field"><label for="cityInput">City</label><input type="text" id="cityInput"></div>
+        <div class="field"><label for="countryInput">Country</label><input type="text" id="countryInput"></div>
+      </div>
+      <div class="field" id="extraField">
+        <label for="extraInput" id="extraLabel">Additional detail</label>
+        <input type="text" id="extraInput" placeholder="">
+      </div>
+
+      <div class="ct-section-title">📅 Dates</div>
+      <div class="row">
+        <div class="field" style="max-width:120px"><label for="yearInput">Year</label><input type="number" id="yearInput" placeholder="2026"></div>
+        <div class="field" style="max-width:140px"><label for="monthInput">Month</label><input type="text" id="monthInput" placeholder="e.g. March"></div>
+        <div class="field" style="max-width:100px"><label for="dayInput">Day</label><input type="number" id="dayInput" min="1" max="31"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="updatedDateInput">Updated date</label><input type="date" id="updatedDateInput"></div>
+        <div class="field"><label for="accessDateInput">Date accessed</label><input type="date" id="accessDateInput"></div>
+        <div class="field"><label for="onlineFirstInput">Online-first date</label><input type="date" id="onlineFirstInput"></div>
+      </div>
+
+      <div class="ct-section-title">🔗 URL, DOI &amp; ISBN</div>
+      <div class="field">
+        <label for="urlInput">URL</label>
+        <input type="url" id="urlInput" placeholder="https://...">
+        <div id="urlValidation" class="ct-muted"></div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="doiInput">DOI</label>
+          <input type="text" id="doiInput" placeholder="10.1000/xyz123">
+          <div id="doiValidation" class="ct-muted"></div>
+        </div>
+        <div class="field">
+          <label for="isbnInput">ISBN</label>
+          <input type="text" id="isbnInput" placeholder="978-3-16-148410-0">
+          <div id="isbnValidation" class="ct-muted"></div>
+        </div>
+      </div>
+
+      <div id="fieldValidation" class="ct-flags"></div>
+
+      <div class="btn-row">
+        <button class="btn" id="addToBiblioBtn" type="button">📑 Add to bibliography</button>
+        <button class="btn secondary" id="clearFormBtn" type="button">Clear form</button>
+        <button class="btn secondary" id="favoriteBtn" type="button">☆ Save to favorites</button>
+      </div>
+
+      <!-- Citation Preview: multi-style (required by spec) -->
+      <div class="ct-section-title">👁️ Citation Preview</div>
+      <div class="ct-citation-box">
+        <div class="ct-label">Primary style — <span id="primaryStyleLabel">APA 7</span> <button class="btn secondary" id="copyPrimaryBtn" type="button" style="padding:3px 10px;font-size:.75rem">📋 Copy</button></div>
+        <div class="ct-text" id="primaryOutput"></div>
+      </div>
+      <div class="ct-two">
+        <div class="ct-citation-box"><div class="ct-label">APA 7 <button class="btn secondary" id="copyApaBtn" type="button" style="padding:3px 10px;font-size:.75rem">📋</button></div><div class="ct-text" id="apaOutput"></div></div>
+        <div class="ct-citation-box"><div class="ct-label">MLA 9 <button class="btn secondary" id="copyMlaBtn" type="button" style="padding:3px 10px;font-size:.75rem">📋</button></div><div class="ct-text" id="mlaOutput"></div></div>
+        <div class="ct-citation-box"><div class="ct-label">Chicago <button class="btn secondary" id="copyChicagoBtn" type="button" style="padding:3px 10px;font-size:.75rem">📋</button></div><div class="ct-text" id="chicagoOutput"></div></div>
+        <div class="ct-citation-box"><div class="ct-label">Harvard <button class="btn secondary" id="copyHarvardBtn" type="button" style="padding:3px 10px;font-size:.75rem">📋</button></div><div class="ct-text" id="harvardOutput"></div></div>
+        <div class="ct-citation-box" style="grid-column:1/-1"><div class="ct-label">IEEE <button class="btn secondary" id="copyIeeeBtn" type="button" style="padding:3px 10px;font-size:.75rem">📋</button></div><div class="ct-text" id="ieeeOutput"></div></div>
+      </div>
+
+      <div class="ct-section-title">♿ Accessibility</div>
+      <div class="row">
+        <div class="field" style="max-width:200px">
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;margin-top:8px">
+            <input type="checkbox" id="highContrastToggle" style="width:auto"> High contrast
+          </label>
+        </div>
+        <div class="field" style="max-width:200px">
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;margin-top:8px">
+            <input type="checkbox" id="largeFontToggle" style="width:auto"> Large fonts
+          </label>
+        </div>
+      </div>
+
+      <div id="statusMsg" class="ct-muted" role="status" aria-live="polite"></div>
     </div>
-    <div class="citation-box">
-      <div class="citation-label">MLA 9</div>
-      <div class="citation-text" id="mlaOutput"></div>
+
+    <!-- ===== Bibliography pane ===== -->
+    <div class="ct-pane" id="paneBiblio">
+      <div class="row">
+        <div class="field" style="max-width:220px">
+          <label for="biblioStyle">Bibliography style</label>
+          <select id="biblioStyle">
+            <option value="apa7">APA 7th edition</option>
+            <option value="apa6">APA 6th edition</option>
+            <option value="mla9">MLA 9th edition</option>
+            <option value="mla8">MLA 8th edition</option>
+            <option value="chicagoNotes">Chicago (Notes-Bibliography)</option>
+            <option value="chicagoAD">Chicago (Author-Date)</option>
+            <option value="harvard">Harvard</option>
+            <option value="ieee">IEEE</option>
+            <option value="vancouver">Vancouver</option>
+            <option value="ama">AMA</option>
+            <option value="oscola">OSCOLA</option>
+            <option value="acs">ACS</option>
+            <option value="cse">CSE</option>
+            <option value="turabian">Turabian</option>
+            <option value="bluebook">Bluebook</option>
+          </select>
+        </div>
+        <div class="field" style="max-width:220px">
+          <label for="biblioHeading">List title</label>
+          <select id="biblioHeading">
+            <option value="References">References</option>
+            <option value="Works Cited">Works Cited</option>
+            <option value="Bibliography">Bibliography</option>
+            <option value="Reference List">Reference List</option>
+          </select>
+        </div>
+        <div class="field" style="max-width:220px">
+          <label for="sortOrder">Sort by</label>
+          <select id="sortOrder">
+            <option value="author">Author</option>
+            <option value="date">Date</option>
+            <option value="alpha">Alphabetical (title)</option>
+            <option value="title">Title</option>
+          </select>
+        </div>
+      </div>
+      <div class="field" style="max-width:280px">
+        <label for="biblioSearch">Search citations</label>
+        <input type="text" id="biblioSearch" placeholder="Search author, title, source…">
+      </div>
+
+      <div class="ct-code-box" id="biblioPreview"></div>
+
+      <div class="btn-row">
+        <button class="btn secondary" id="copyBiblioBtn" type="button">📋 Copy Bibliography</button>
+        <button class="btn secondary" id="printBiblioBtn" type="button">🖨️ Print Bibliography</button>
+      </div>
+
+      <div class="ct-section-title">📤 Export</div>
+      <div class="btn-row">
+        <button class="btn secondary" id="exportTxtBtn" type="button">TXT</button>
+        <button class="btn secondary" id="exportDocxBtn" type="button">DOCX</button>
+        <button class="btn secondary" id="exportPdfBtn" type="button">PDF</button>
+        <button class="btn secondary" id="exportHtmlBtn" type="button">HTML</button>
+        <button class="btn secondary" id="exportMdBtn" type="button">Markdown</button>
+        <button class="btn secondary" id="exportRisBtn" type="button">RIS</button>
+        <button class="btn secondary" id="exportBibtexBtn" type="button">BibTeX</button>
+        <button class="btn secondary" id="exportXmlBtn" type="button">XML</button>
+      </div>
+
+      <div class="ct-section-title">📚 Citations in this bibliography</div>
+      <div id="biblioList"></div>
+      <p class="ct-muted">Each citation shows in your chosen bibliography style. Remove or favorite any entry — changes apply instantly to the list above and every export.</p>
     </div>
-    <div class="btn-row">
-      <button class="btn secondary" id="copyApaBtn">📋 Copy APA</button>
-      <button class="btn secondary" id="copyMlaBtn">📋 Copy MLA</button>
+
+    <!-- ===== History pane ===== -->
+    <div class="ct-pane" id="paneHistory">
+      <div class="row">
+        <div class="field" style="max-width:260px">
+          <label for="historySearch">Search history</label>
+          <input type="text" id="historySearch" placeholder="Search author, title, source…">
+        </div>
+        <div class="field" style="max-width:180px">
+          <label for="historyFavOnly" style="display:flex;align-items:center;gap:8px;cursor:pointer;margin-top:26px">
+            <input type="checkbox" id="historyFavOnly" style="width:auto"> Favorites only
+          </label>
+        </div>
+      </div>
+      <div id="historyList"></div>
+      <div class="btn-row">
+        <button class="btn danger" id="clearHistoryBtn" type="button">🗑️ Clear all history</button>
+      </div>
+      <p class="ct-muted">History and favorites are saved only in this browser (localStorage) — never uploaded anywhere.</p>
     </div>
   </div>
 </div>
+<div class="ct-content">
 
+<h2>📚 Introduction</h2>
+<p>The original Citation Generator did one job well: it built an APA 7 and an MLA 9 citation for a website or a book from a handful of fields, updating live as you typed. That covered a common student need but left out almost everything else a real bibliography requires — other citation styles your course or journal might mandate, the eighteen other source types you actually cite (journal articles, theses, government reports, YouTube videos, datasets and more), multiple authors, editors and translators, DOI and ISBN validation, and any way to manage more than one citation at a time. The <strong>Professional Citation Generator</strong> keeps the instant, in-browser simplicity of the original tool and builds a complete academic citation workbench around it: fifteen citation styles, twenty source types, full author/editor/translator management, DOI and ISBN checksum validation, a sortable, searchable bibliography, and export to eight formats — all generated locally, with nothing ever uploaded.</p>
 
-<div class="info-wrap">
-  <div class="info-section">
-    <div class="info-block">
-      <h2>ℹ️ About This Tool</h2>
-      <p>Generates properly formatted citations in both APA 7th edition and MLA 9th edition styles, for websites or books, based on the details you enter. Useful for essays, research papers, and bibliographies.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Choose Website or Book.</li>
-        <li>Fill in the author, title, year, and other details.</li>
-        <li>Copy the APA or MLA citation as needed.</li>
-      </ol>
-    </div>
-    <hr class="info-divider">
-    <div class="info-block">
-      <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>आपकी डाली गई डिटेल्स के आधार पर websites या books के लिए APA 7th edition और MLA 9th edition दोनों स्टाइल में सही फॉर्मेट की citations बनाता है। essays, research papers, और bibliographies के लिए उपयोगी।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>Website या Book चुनें।</li>
-        <li>author, title, year, और बाकी डिटेल्स भरें।</li>
-        <li>ज़रूरत के हिसाब से APA या MLA citation कॉपी करें।</li>
-      </ol>
-    </div>
-  </div>
+<h2>✨ Features</h2>
+<p>Pick a <strong>source type</strong> from twenty options — website, book, journal article, magazine, newspaper, research paper, thesis, dissertation, conference paper, government report, blog, podcast, YouTube video, social media post, Wikipedia article, online course, lecture, email, software or dataset — and the form's labels and placeholders adapt to match (a "Website / Site name" field becomes "Journal name" for an article, "Institution" for a thesis, "Channel name" for a YouTube video, and so on). Add any number of <strong>authors</strong>, plus separate <strong>editors</strong> and <strong>translators</strong>, reorder them, or mark an <strong>organization</strong> as the author instead of a person. Fill in publisher, edition, volume, issue, pages, chapter, city and country, plus published, updated, access and online-first dates, and the tool builds five citation previews simultaneously — APA 7, MLA 9, Chicago, Harvard and IEEE — alongside a primary-style box you can set to any of the fifteen supported styles. A <strong>DOI</strong> field is checked against the standard DOI pattern and an <strong>ISBN</strong> field is verified with the real ISBN-10 and ISBN-13 checksum algorithms, while a <strong>URL</strong> field is checked for valid syntax and flagged if it's missing its protocol.</p>
+
+<h2>🎓 Supported Citation Styles</h2>
+<p>Fifteen styles are available: <strong>APA 7th and 6th edition</strong>, <strong>MLA 9th and 8th edition</strong>, <strong>Chicago</strong> in both its Notes-Bibliography and Author-Date forms, <strong>Harvard</strong>, <strong>IEEE</strong>, <strong>Vancouver</strong>, <strong>AMA</strong>, <strong>ACS</strong>, <strong>CSE</strong>, <strong>Turabian</strong>, <strong>OSCOLA</strong> and <strong>Bluebook</strong>. The seven styles used by the overwhelming majority of students and researchers — APA, MLA, Chicago (both variants), Harvard, IEEE and Vancouver — are implemented in full detail: correct author-list rules (initials versus full names, "&amp;" versus "and", et al. thresholds that differ by style), correct date placement, correct italics/quotation-mark conventions for titles and containers, and correct volume/issue/page formatting for each style's own numbering convention. AMA, ACS and CSE share Vancouver's proven numbered, no-nonsense author-title-source structure, since all three biomedical/science families follow closely related rules in practice. Turabian — the student manual built directly on the Chicago Manual of Style — uses the Chicago Notes-Bibliography engine, which is precisely how Turabian is taught. OSCOLA and Bluebook, the two major legal-citation systems, are provided in a simplified general/secondary-source format (author, title, publisher, year); their full scope covers case law, statutes and specialised legal instruments with rules far beyond what any general-purpose citation tool can responsibly automate, so always check your law school's or journal's style guide for primary legal sources.</p>
+
+<h2>🗂️ Supported Source Types</h2>
+<p>Twenty source types are supported, each mapped sensibly onto a shared set of fields so the form never feels like twenty different forms: <strong>website</strong>, <strong>book</strong>, <strong>journal article</strong>, <strong>magazine</strong>, <strong>newspaper</strong>, <strong>research paper</strong>, <strong>thesis</strong>, <strong>dissertation</strong>, <strong>conference paper</strong>, <strong>government report</strong>, <strong>blog</strong>, <strong>podcast</strong>, <strong>YouTube video</strong>, <strong>social media post</strong>, <strong>Wikipedia article</strong>, <strong>online course</strong>, <strong>lecture</strong>, <strong>email</strong>, <strong>software</strong> and <strong>dataset</strong>. The tool knows which of these are "standalone" works (a book, a thesis, a piece of software) whose title itself is the italicised, headline element of a citation, and which are "part of a larger work" (a journal article inside a journal, a video on a channel, a post on a platform) whose title is the short, quoted element while the container — journal, channel, platform, course provider — becomes the italicised part. This single distinction, applied consistently, is what makes every style's output read correctly regardless of which of the twenty source types you're citing.</p>
+
+<h2>👤 Author Management</h2>
+<p>Add as many authors as a source has, each with last, first and middle name fields, and reorder them with the up/down arrows since author order matters for every citation style. Editors and translators are tracked separately from authors — useful for an edited volume, a translated novel, or a report where the named "authors" are really editors of contributed chapters. An organisation-as-author toggle replaces the whole author list with a single organisation name for reports, standards bodies and institutional publications, formatted correctly (no comma-inversion) in every style.</p>
+
+<h2>📖 Publication Details</h2>
+<p>Beyond author and title, the tool captures publisher, edition, volume, issue, page range, chapter title, city and country, plus published date (year, month, day), an updated date for revised web content, an access date for anything you retrieved online, and an online-first date for articles published ahead of their print issue. Every one of these feeds directly into the style-appropriate position and punctuation for whichever citation style you've selected — you fill the fields once, and every one of the fifteen styles reads the same information back correctly.</p>
+
+<h2>🔗 DOI &amp; ISBN</h2>
+<p>A DOI is checked against the standard <code>10.NNNN/suffix</code> pattern used by every registered digital object identifier; an ISBN is checked with the genuine ISBN-10 and ISBN-13 checksum algorithms (the same modulus-11 and modulus-10 arithmetic publishers use), not just a length check, so a mistyped ISBN with a wrong final digit is caught immediately. A URL is checked for valid syntax and, if you typed a bare domain without "https://", the tool suggests the corrected version — this is a syntax check only, performed entirely offline; it does not fetch the page to test whether it's actually reachable, in keeping with the tool's no-network-requests privacy design.</p>
+
+<h2>📑 Bibliography</h2>
+<p>Add any number of citations to a running bibliography, labelled "References", "Works Cited", "Bibliography" or "Reference List" as your assignment requires, and sort the whole list by author, by date, or alphabetically by title. A live search narrows the list to whatever you're looking for by author, title or source name. Numbered styles like IEEE and Vancouver automatically number every entry in the order shown, so switching the sort order renumbers them correctly. Every entry can be edited (which sends it back to the Add Citation form pre-filled), starred as a favourite, or removed — all without losing your place in the list.</p>
+
+<h2>📤 Export Options</h2>
+<p>Export the whole bibliography as plain <strong>TXT</strong>, a Word-openable <strong>DOCX</strong>, a simple <strong>PDF</strong>, a styled <strong>HTML</strong> page, <strong>Markdown</strong>, reference-manager-ready <strong>RIS</strong> or <strong>BibTeX</strong> (for Zotero, Mendeley, EndNote or LaTeX), or a structured <strong>XML</strong> document — plus one-click clipboard copy and a dedicated print view that strips away navigation and shows only your citations.</p>
+
+<h2>🔒 Privacy</h2>
+<p>Every citation is built, validated and formatted entirely inside your browser; nothing you type is ever uploaded to a server. Your bibliography, history and favourites are saved only in this browser's local storage, under your control, and can be cleared at any time. The tool keeps working offline once loaded, needs no account or signup, and includes no AI-powered functionality anywhere.</p>
+
+<!-- ===== Related Tools (ABOVE About — required order) ===== -->
+<h2>🧰 Related Tools</h2>
+<div class="related-grid">
+  <a href="word-counter.html"><span class="ri">🔤</span> Word Counter</a>
+  <a href="case-converter.html"><span class="ri">🔠</span> Case Converter</a>
+  <a href="text-readability-score.html"><span class="ri">📖</span> Text Readability Score</a>
+  <a href="markdown-to-html.html"><span class="ri">📄</span> Markdown to HTML</a>
+  <a href="json-formatter.html"><span class="ri">{ }</span> JSON Formatter</a>
+  <a href="pdf-ocr.html"><span class="ri">🔍</span> PDF OCR</a>
+  <a href="pdf-to-word.html"><span class="ri">📃</span> PDF to Word</a>
+  <a href="hash-generator.html"><span class="ri">#️⃣</span> Hash Generator</a>
+  <a href="uuid-generator.html"><span class="ri">🆔</span> UUID Generator</a>
+  <a href="qr-generator.html"><span class="ri">📱</span> QR Code Generator</a>
 </div>
+
+</div>
+<div class="ct-content">
+
+<!-- ===== About (English) ===== -->
+<h2>ℹ️ About This Tool</h2>
+<p>The <strong>Professional Citation Generator</strong> is a free, entirely browser-based tool for building accurate academic citations across the citation styles and source types that real coursework, theses and publications actually require. It grew out of a simple APA/MLA website-and-book generator, but a serious student or researcher rarely needs just two styles and two source types — a single literature review might cite a journal article for one class, a government report for a policy assignment, and a YouTube lecture for a third, each perhaps required in a different citation style entirely. This tool was rebuilt from the ground up to handle that reality: fifteen citation styles, twenty source types, full author/editor/translator handling, DOI and ISBN validation, a sortable and searchable bibliography, and export into eight formats, all computed instantly on your own device with nothing ever sent to a server.</p>
+
+<p>At the centre of the tool is a single, shared model of what a citation actually contains — authors, editors, translators or an organisation as author; a title; a container (the journal, website, channel or platform the work sits inside, when it has one); a publisher, edition, volume, issue and page range; a city and country; a set of dates (published, updated, accessed, and online-first); and identifiers (URL, DOI, ISBN). Every one of the twenty source types simply maps its own fields onto this shared model with sensible labels — a "container" becomes "Journal name" for an article, "Institution" for a thesis, "Channel name" for a YouTube video, "Podcast name" for a podcast episode — so filling in the form always feels natural regardless of what you're citing, and you only ever have to learn one form.</p>
+
+<p>The formatting logic is where the real engineering lives, because every citation style has surprisingly specific rules that are easy to get subtly wrong. APA 7 lists up to twenty authors with an ampersand before the last one and switches to an ellipsis for larger teams, while APA 6 draws that line at seven authors and, unlike APA 7, expects a full retrieval statement and publisher location for web sources — this tool implements both editions with their real differences, not just a relabelled copy of one. MLA inverts only the first author's name and spells out "et al." from a third author onward, uses full first names rather than initials, and places a period inside closing quotation marks around an article title — while the larger container (a journal, magazine or website name) is italicised instead. Chicago's two forms — Notes-Bibliography and Author-Date — share author formatting but place the publication year in completely different positions, and Turabian, the version most commonly taught to undergraduates, is built on exactly the same Notes-Bibliography rules Chicago itself uses. Harvard wraps an article title in single quotation marks rather than double, and states the year immediately after the author list in parentheses with no comma in between — a small detail that trips up a lot of manually-written Harvard citations. IEEE numbers every reference, orders each author's initials before their surname, and puts a comma — not a period — after a quoted title. Vancouver, and the closely related AMA, ACS and CSE styles used across medicine and the sciences, drop italics and quotation marks entirely, list authors as surname followed by bare initials with no periods, and separate volume, issue and page range with a semicolon and colon rather than the word "pp." OSCOLA and Bluebook, the two dominant legal-citation systems, are offered here in a deliberately simplified secondary-source format — author, title, publisher and year — because their full systems for citing cases, statutes and legislative history are large, specialised bodies of rules that a general-purpose citation generator cannot responsibly claim to automate; always check your law school's or journal's house style for primary legal authorities.</p>
+
+<p>Beyond formatting, the tool validates what you enter rather than silently accepting anything. A DOI is checked against the real <code>10.NNNN/suffix</code> pattern every registered digital object identifier follows. An ISBN is verified with the actual ISBN-10 and ISBN-13 check-digit algorithms — the same modulus-11 and modulus-10 arithmetic publishers themselves use — so a single mistyped digit is caught immediately rather than silently producing a citation with a broken ISBN. A URL is checked for valid syntax, and if you type a bare domain name without "https://" in front, the tool offers the corrected version; this check is purely about syntax, performed entirely offline, and does not attempt to fetch the page, in keeping with the promise that nothing you type ever leaves your device.</p>
+
+<p>Once you've built one citation, the bibliography brings everything together. Add as many entries as your paper needs, label the list "References", "Works Cited", "Bibliography" or "Reference List" to match your assignment's requirements, and sort it by author, by publication date, or alphabetically by title — numbered styles like IEEE and Vancouver renumber automatically whenever the sort order changes, so the numbers in your text always match the list. A live search narrows a long bibliography down to exactly what you're looking for. Every entry can be edited in place, starred as a favourite for a project you're returning to, or removed, and the whole list exports as plain text, a Word-openable document, a simple PDF, a styled HTML page, Markdown, or the RIS and BibTeX formats that reference managers like Zotero, Mendeley and EndNote (and LaTeX's BibTeX-based tools) expect to import directly — plus one-click clipboard copy and a clean print view with no navigation or clutter. History and favourites persist across sessions in your browser's local storage alone, accessible only to you, clearable at any time, and never uploaded anywhere — the tool works offline once the page has loaded, needs no account, and contains no AI-powered functionality of any kind.</p>
+
+<!-- ===== About (Hindi) ===== -->
+<h2>ℹ️ इस टूल के बारे में (हिंदी में)</h2>
+<p class="ct-lang-note">The same guide in Hindi / यही जानकारी हिंदी में।</p>
+<p><strong>Professional Citation Generator</strong> एक फ्री, पूरी तरह ब्राउज़र-आधारित टूल है जो असल coursework, theses और publications में ज़रूरी citation styles और source types में सटीक academic citations बनाने के लिए है। यह एक साधारण APA/MLA website-and-book generator से शुरू हुआ था, लेकिन किसी गंभीर student या researcher को शायद ही कभी सिर्फ़ दो styles और दो source types की ज़रूरत होती है — एक ही literature review में एक class के लिए journal article, किसी policy assignment के लिए government report, और किसी तीसरे के लिए YouTube lecture cite करना पड़ सकता है, हर एक शायद बिल्कुल अलग citation style में। यह टूल इस असलियत को संभालने के लिए शुरू से फिर से बनाया गया है: पंद्रह citation styles, बीस source types, पूरी author/editor/translator handling, DOI और ISBN validation, एक sortable और searchable bibliography, और आठ formats में export — सब कुछ आपके अपने डिवाइस पर तुरंत गणना होती है, कुछ भी server पर नहीं भेजा जाता।</p>
+
+<p>टूल के केंद्र में एक ही, साझा model है कि एक citation में असल में क्या होता है — authors, editors, translators या organisation as author; एक title; एक container (journal, website, channel या platform जिसके अंदर काम है, जब वह हो); एक publisher, edition, volume, issue और page range; एक city और country; तारीख़ों का एक सेट (published, updated, accessed, और online-first); और identifiers (URL, DOI, ISBN)। बीस source types में से हर एक अपने fields को इसी साझा model पर समझदार labels के साथ mapping करता है — एक "container" article के लिए "Journal name" बन जाता है, thesis के लिए "Institution", YouTube video के लिए "Channel name", podcast episode के लिए "Podcast name" — इसलिए form भरना हमेशा स्वाभाविक लगता है चाहे आप कुछ भी cite कर रहे हों, और आपको सिर्फ़ एक ही form सीखनी पड़ती है।</p>
+
+<p>Formatting logic ही असली engineering है, क्योंकि हर citation style के आश्चर्यजनक रूप से specific नियम हैं जो आसानी से थोड़े ग़लत हो सकते हैं। APA 7 बीस authors तक सूचीबद्ध करता है, आख़िरी से पहले ampersand के साथ, और बड़ी teams के लिए ellipsis पर switch करता है, जबकि APA 6 यह सीमा सात authors पर खींचता है और, APA 7 के विपरीत, web sources के लिए पूरा retrieval statement और publisher location चाहता है — यह टूल दोनों editions को उनके असली अंतर के साथ implement करता है, सिर्फ़ एक की relabelled copy नहीं। MLA सिर्फ़ पहले author का नाम उलटता है और तीसरे author से "et al." लिखता है, initials के बजाय पूरे first names इस्तेमाल करता है, और article title के चारों ओर closing quotation marks के अंदर एक period रखता है — जबकि बड़ा container (journal, magazine या website name) italicised होता है। Chicago के दो रूप — Notes-Bibliography और Author-Date — author formatting साझा करते हैं पर publication year को बिल्कुल अलग जगह रखते हैं, और Turabian, जो undergraduates को सबसे ज़्यादा सिखाया जाने वाला version है, ठीक उन्हीं Notes-Bibliography नियमों पर बना है जो Chicago खुद इस्तेमाल करता है। Harvard article title को double के बजाय single quotation marks में लपेटता है, और year को author list के तुरंत बाद parentheses में बिना बीच में comma के बताता है — एक छोटी सी बात जो हाथ से लिखी गई बहुत सी Harvard citations में गड़बड़ कर देती है। IEEE हर reference को numbered करता है, हर author के surname से पहले initials रखता है, और quoted title के बाद period नहीं बल्कि comma लगाता है। Vancouver, और medicine व sciences में इस्तेमाल होने वाले नज़दीकी AMA, ACS और CSE styles, italics और quotation marks पूरी तरह छोड़ देते हैं, authors को surname के बाद बिना periods वाले bare initials के रूप में सूचीबद्ध करते हैं, और volume, issue व page range को "pp." शब्द के बजाय semicolon और colon से अलग करते हैं। OSCOLA और Bluebook, दो प्रमुख legal-citation systems, यहाँ जान-बूझकर एक simplified secondary-source format में दिए गए हैं — author, title, publisher और year — क्योंकि cases, statutes और legislative history को cite करने के उनके पूरे systems बड़े, specialised नियमों के समूह हैं जिन्हें कोई general-purpose citation generator ज़िम्मेदारी से automate करने का दावा नहीं कर सकता; primary legal authorities के लिए हमेशा अपने law school या journal की house style जाँचें।</p>
+
+<p>Formatting से आगे, यह टूल जो भी आप डालते हैं उसे verify करता है, चुपचाप कुछ भी स्वीकार नहीं करता। एक DOI को असली <code>10.NNNN/suffix</code> pattern के विरुद्ध जाँचा जाता है जिसे हर registered digital object identifier फॉलो करता है। एक ISBN को असली ISBN-10 और ISBN-13 check-digit algorithms से verify किया जाता है — वही modulus-11 और modulus-10 arithmetic जो publishers खुद इस्तेमाल करते हैं — इसलिए एक भी ग़लत टाइप किया गया digit तुरंत पकड़ा जाता है, चुपचाप एक टूटे हुए ISBN वाली citation बनाने के बजाय। एक URL की syntax जाँची जाती है, और अगर आप "https://" के बिना एक bare domain name टाइप करते हैं, तो टूल सही किया हुआ version सुझाता है; यह जाँच पूरी तरह syntax के बारे में है, पूरी तरह offline की जाती है, और page को fetch करने की कोशिश नहीं करती, इस वादे के अनुरूप कि आप जो भी टाइप करते हैं वह कभी आपका डिवाइस नहीं छोड़ता।</p>
+
+<p>एक बार जब आप एक citation बना लेते हैं, bibliography सब कुछ एक साथ ले आती है। अपने paper की ज़रूरत जितनी entries जोड़ें, list को "References", "Works Cited", "Bibliography" या "Reference List" नाम दें जैसा आपके assignment को चाहिए, और इसे author, publication date, या title के हिसाब से alphabetically sort करें — IEEE और Vancouver जैसी numbered styles sort order बदलने पर अपने-आप फिर से number हो जाती हैं, इसलिए आपके text में नंबर हमेशा list से मेल खाते हैं। एक live search एक लंबी bibliography को ठीक उसी चीज़ तक सीमित कर देती है जो आप ढूंढ रहे हैं। हर entry को edit किया जा सकता है, favourite के रूप में star किया जा सकता है, या हटाया जा सकता है, और पूरी list plain text, एक Word-openable document, एक सादा PDF, एक styled HTML page, Markdown, या RIS और BibTeX formats के रूप में export होती है जिन्हें Zotero, Mendeley और EndNote जैसे reference managers (और LaTeX के BibTeX-आधारित tools) सीधे import करने की उम्मीद करते हैं — साथ ही एक-क्लिक clipboard copy और बिना navigation या clutter वाला एक साफ़ print view। History और favourites सिर्फ़ आपके ब्राउज़र के local storage में sessions के बीच बनी रहती हैं, सिर्फ़ आपको उपलब्ध, कभी भी साफ़ की जा सकती हैं, और कहीं भी upload नहीं होतीं — लोड होने के बाद टूल offline काम करता है, किसी account की ज़रूरत नहीं, और इसमें किसी भी तरह की कोई AI-powered functionality नहीं है।</p>
+
+</div>
+<div class="ct-content">
+
+<!-- ===== FAQ (immediately after About — required order) ===== -->
+<h2>❓ Frequently Asked Questions</h2>
+<div class="ct-faq" id="ctFaq">
+<details><summary>Is this Citation Generator free to use?</summary><p>Yes, completely free with no signup, no account and no limit on how many citations you build. / हाँ, यह पूरी तरह मुफ़्त है, बिना signup या account के।</p></details>
+<details><summary>Are my sources or citations uploaded anywhere?</summary><p>No. Every citation is built and formatted locally in your browser; nothing is ever sent to a server. / नहीं, सब कुछ आपके ब्राउज़र में ही बनता है।</p></details>
+<details><summary>Which citation styles are supported?</summary><p>APA 7, APA 6, MLA 9, MLA 8, Chicago (Notes-Bibliography and Author-Date), Harvard, IEEE, Vancouver, AMA, ACS, CSE, Turabian, OSCOLA and Bluebook — fifteen in total. / कुल पंद्रह citation styles उपलब्ध हैं।</p></details>
+<details><summary>Which source types can I cite?</summary><p>Twenty types: website, book, journal article, magazine, newspaper, research paper, thesis, dissertation, conference paper, government report, blog, podcast, YouTube video, social media, Wikipedia, online course, lecture, email, software and dataset. / बीस source types उपलब्ध हैं।</p></details>
+<details><summary>What's the difference between APA 6 and APA 7?</summary><p>APA 7 lists up to 20 authors before using an ellipsis and generally omits retrieval dates for web sources; APA 6 caps the author list at 7 and typically requires a full "Retrieved from" statement. Both are implemented with their real differences. / APA 6 और 7 के author-list और retrieval-date नियम अलग हैं।</p></details>
+<details><summary>How accurate are OSCOLA and Bluebook here?</summary><p>They cover a simplified general/secondary-source format (author, title, publisher, year). Their full systems for case law, statutes and legislative history are far more specialised — always check your law school's or journal's house style for primary legal sources. / ये दो styles simplified secondary-source format में हैं, case law के लिए अपनी house style जाँचें।</p></details>
+<details><summary>Can I cite a source with multiple authors?</summary><p>Yes. Add as many author rows as you need; each style applies its own rule for how many are listed before switching to "et al." or an ellipsis. / जितने चाहें उतने authors जोड़ सकते हैं।</p></details>
+<details><summary>Can I add editors or translators separately from authors?</summary><p>Yes. Use "Add editor" or "Add translator" — they're tracked separately and formatted correctly for edited volumes and translated works. / editors और translators अलग से जोड़े जा सकते हैं।</p></details>
+<details><summary>How do I cite a source with an organization as the author?</summary><p>Check "Organization is the author" and type the organization's name — it replaces the author list and is never comma-inverted like a person's name. / "Organization is the author" चेक करें और नाम डालें।</p></details>
+<details><summary>What does "container" mean on the form?</summary><p>It's the larger work a source sits inside — the journal for an article, the website for a webpage, the channel for a video, the platform for a course. The label changes automatically based on your source type. / container वह बड़ा काम है जिसके अंदर आपका source है।</p></details>
+<details><summary>How does DOI validation work?</summary><p>Your DOI is checked against the standard 10.NNNN/suffix pattern every registered DOI follows — this is a format check, not a live lookup against any registry. / DOI का format 10.NNNN/suffix पैटर्न से जाँचा जाता है।</p></details>
+<details><summary>How does ISBN validation work?</summary><p>Both ISBN-10 and ISBN-13 are verified with their real checksum algorithms (modulus-11 and modulus-10), the same math publishers use — not just a length check. / असली ISBN checksum algorithms से जाँच होती है।</p></details>
+<details><summary>Does the tool check if my URL actually works?</summary><p>No. It checks URL syntax only, entirely offline; it never fetches the page, in keeping with the tool's no-network-requests privacy design. / यह सिर्फ़ syntax जाँचता है, page को fetch नहीं करता।</p></details>
+<details><summary>My URL is flagged as "missing protocol" — what does that mean?</summary><p>You typed a bare domain like "example.com" without "https://" in front; the tool suggests the corrected version with the protocol added. / "https://" जोड़ने का सुझाव दिया जाता है।</p></details>
+<details><summary>Can I manage more than one citation at a time?</summary><p>Yes. Use "Add to bibliography" to build a running list, viewable and exportable from the Bibliography tab. / Bibliography tab में कई citations प्रबंधित कर सकते हैं।</p></details>
+<details><summary>How do I sort my bibliography?</summary><p>By author, by publication date, or alphabetically by title — numbered styles like IEEE and Vancouver renumber automatically when you change the sort order. / author, date, या title से sort कर सकते हैं।</p></details>
+<details><summary>Can I search within a long bibliography?</summary><p>Yes, the search box on the Bibliography tab filters by author, title or source name instantly. / search box से bibliography फ़िल्टर कर सकते हैं।</p></details>
+<details><summary>What export formats are available?</summary><p>TXT, DOCX, PDF, HTML, Markdown, RIS, BibTeX and XML, plus clipboard copy and a clean print view. / TXT, DOCX, PDF, HTML, Markdown, RIS, BibTeX और XML export उपलब्ध हैं।</p></details>
+<details><summary>Can I import my bibliography into Zotero, Mendeley or EndNote?</summary><p>Yes — export as RIS or BibTeX, both of which these reference managers (and BibTeX-based LaTeX tools) can import directly. / RIS या BibTeX export करके इन tools में import कर सकते हैं।</p></details>
+<details><summary>Where is my bibliography, history and favourites saved?</summary><p>Only in this browser's local storage, on your own device — never uploaded. Clear it any time from the History tab. / यह सिर्फ़ आपके browser में सहेजा जाता है।</p></details>
+<details><summary>Can I edit a citation after adding it to the bibliography?</summary><p>Yes — click "Edit" on any bibliography entry to load it back into the Add Citation form, make changes, and re-save. / "Edit" पर क्लिक करके citation बदल सकते हैं।</p></details>
+<details><summary>Does the tool flag missing or invalid fields?</summary><p>Yes — missing titles, non-numeric or oddly-formatted years, and invalid DOI/ISBN/URL values are flagged as you type. / missing fields और invalid values तुरंत दिखाए जाते हैं।</p></details>
+<details><summary>Are the accessibility options (high contrast, large fonts) saved?</summary><p>They apply instantly for your current session; toggle them any time from the Add Citation tab. / high contrast और large fonts turant apply होते हैं।</p></details>
+<details><summary>Does this tool use any AI?</summary><p>No. Every citation is built from published style-guide rules implemented in plain JavaScript — no AI anywhere. / नहीं, इसमें कोई AI शामिल नहीं है।</p></details>
+<details><summary>Does it work offline?</summary><p>Yes, once the page has loaded. Every formatter, validator and export function is self-contained. / लोड होने के बाद यह offline भी काम करता है।</p></details>
+</div>
+
+<!-- ===== Troubleshooting ===== -->
+<h2>🛠️ Troubleshooting</h2>
+<ul>
+  <li><strong>My citation shows "Untitled":</strong> the Title field is empty — fill it in and every preview updates instantly.</li>
+  <li><strong>Author name looks wrong in the citation:</strong> double-check last name vs. first name are in the correct boxes; some styles (MLA, Chicago) show full first names while others (APA, Harvard, IEEE) show initials only — that's expected, not a bug.</li>
+  <li><strong>DOI/ISBN/URL shows an error but looks right to me:</strong> remove any extra spaces or stray characters; ISBN validation checks the real checksum digit, so a single mistyped digit will correctly fail.</li>
+  <li><strong>"Add to bibliography" does nothing:</strong> a title is required before an entry can be saved — add one and try again.</li>
+  <li><strong>My bibliography is empty after reopening the page:</strong> the bibliography is stored in this browser's local storage; a private/incognito window, blocked storage, or cleared site data will not persist it between visits.</li>
+  <li><strong>Numbered styles (IEEE/Vancouver) show the wrong numbers:</strong> numbering follows the current sort order — change "Sort by" and the numbers update to match.</li>
+  <li><strong>Export/download button does nothing:</strong> add at least one citation to the bibliography first, and check your browser isn't blocking downloads or pop-ups for this page.</li>
+  <li><strong>Print looks wrong:</strong> the print stylesheet hides navigation and sidebars automatically; if the preview looks unstyled, try turning off "Print backgrounds" in your browser's print dialog.</li>
+</ul>
+
+</div>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is this Citation Generator free to use?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, completely free with no signup, no account and no limit on how many citations you build."}}, {"@type": "Question", "name": "Are my sources or citations uploaded anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. Every citation is built and formatted locally in your browser; nothing is ever sent to a server."}}, {"@type": "Question", "name": "Which citation styles are supported?", "acceptedAnswer": {"@type": "Answer", "text": "APA 7, APA 6, MLA 9, MLA 8, Chicago (Notes-Bibliography and Author-Date), Harvard, IEEE, Vancouver, AMA, ACS, CSE, Turabian, OSCOLA and Bluebook — fifteen in total."}}, {"@type": "Question", "name": "Which source types can I cite?", "acceptedAnswer": {"@type": "Answer", "text": "Twenty types: website, book, journal article, magazine, newspaper, research paper, thesis, dissertation, conference paper, government report, blog, podcast, YouTube video, social media, Wikipedia, online course, lecture, email, software and dataset."}}, {"@type": "Question", "name": "What's the difference between APA 6 and APA 7?", "acceptedAnswer": {"@type": "Answer", "text": "APA 7 lists up to 20 authors before using an ellipsis and generally omits retrieval dates for web sources; APA 6 caps the author list at 7 and typically requires a full \"Retrieved from\" statement. Both are implemented with their real differences."}}, {"@type": "Question", "name": "How accurate are OSCOLA and Bluebook here?", "acceptedAnswer": {"@type": "Answer", "text": "They cover a simplified general/secondary-source format (author, title, publisher, year). Their full systems for case law, statutes and legislative history are far more specialised — always check your law school's or journal's house style for primary legal sources."}}, {"@type": "Question", "name": "Can I cite a source with multiple authors?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Add as many author rows as you need; each style applies its own rule for how many are listed before switching to \"et al.\" or an ellipsis."}}, {"@type": "Question", "name": "Can I add editors or translators separately from authors?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use \"Add editor\" or \"Add translator\" — they're tracked separately and formatted correctly for edited volumes and translated works."}}, {"@type": "Question", "name": "How do I cite a source with an organization as the author?", "acceptedAnswer": {"@type": "Answer", "text": "Check \"Organization is the author\" and type the organization's name — it replaces the author list and is never comma-inverted like a person's name."}}, {"@type": "Question", "name": "What does \"container\" mean on the form?", "acceptedAnswer": {"@type": "Answer", "text": "It's the larger work a source sits inside — the journal for an article, the website for a webpage, the channel for a video, the platform for a course. The label changes automatically based on your source type."}}, {"@type": "Question", "name": "How does DOI validation work?", "acceptedAnswer": {"@type": "Answer", "text": "Your DOI is checked against the standard 10.NNNN/suffix pattern every registered DOI follows — this is a format check, not a live lookup against any registry."}}, {"@type": "Question", "name": "How does ISBN validation work?", "acceptedAnswer": {"@type": "Answer", "text": "Both ISBN-10 and ISBN-13 are verified with their real checksum algorithms (modulus-11 and modulus-10), the same math publishers use — not just a length check."}}, {"@type": "Question", "name": "Does the tool check if my URL actually works?", "acceptedAnswer": {"@type": "Answer", "text": "No. It checks URL syntax only, entirely offline; it never fetches the page, in keeping with the tool's no-network-requests privacy design."}}, {"@type": "Question", "name": "My URL is flagged as \"missing protocol\" — what does that mean?", "acceptedAnswer": {"@type": "Answer", "text": "You typed a bare domain like \"example.com\" without \"https://\" in front; the tool suggests the corrected version with the protocol added."}}, {"@type": "Question", "name": "Can I manage more than one citation at a time?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use \"Add to bibliography\" to build a running list, viewable and exportable from the Bibliography tab."}}, {"@type": "Question", "name": "How do I sort my bibliography?", "acceptedAnswer": {"@type": "Answer", "text": "By author, by publication date, or alphabetically by title — numbered styles like IEEE and Vancouver renumber automatically when you change the sort order."}}, {"@type": "Question", "name": "Can I search within a long bibliography?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, the search box on the Bibliography tab filters by author, title or source name instantly."}}, {"@type": "Question", "name": "What export formats are available?", "acceptedAnswer": {"@type": "Answer", "text": "TXT, DOCX, PDF, HTML, Markdown, RIS, BibTeX and XML, plus clipboard copy and a clean print view."}}, {"@type": "Question", "name": "Can I import my bibliography into Zotero, Mendeley or EndNote?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — export as RIS or BibTeX, both of which these reference managers (and BibTeX-based LaTeX tools) can import directly."}}, {"@type": "Question", "name": "Where is my bibliography, history and favourites saved?", "acceptedAnswer": {"@type": "Answer", "text": "Only in this browser's local storage, on your own device — never uploaded. Clear it any time from the History tab."}}, {"@type": "Question", "name": "Can I edit a citation after adding it to the bibliography?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — click \"Edit\" on any bibliography entry to load it back into the Add Citation form, make changes, and re-save."}}, {"@type": "Question", "name": "Does the tool flag missing or invalid fields?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — missing titles, non-numeric or oddly-formatted years, and invalid DOI/ISBN/URL values are flagged as you type."}}, {"@type": "Question", "name": "Are the accessibility options (high contrast, large fonts) saved?", "acceptedAnswer": {"@type": "Answer", "text": "They apply instantly for your current session; toggle them any time from the Add Citation tab."}}, {"@type": "Question", "name": "Does this tool use any AI?", "acceptedAnswer": {"@type": "Answer", "text": "No. Every citation is built from published style-guide rules implemented in plain JavaScript — no AI anywhere."}}, {"@type": "Question", "name": "Does it work offline?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, once the page has loaded. Every formatter, validator and export function is self-contained."}}]}
+</script>
 
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
 <script src="../assets/common.js"></script>
 <script>
-let type = 'website';
+(function(){
+'use strict';
 
-document.querySelectorAll('.tab-btn').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    type = btn.dataset.type;
-    document.querySelector('#siteOrPublisherField label').textContent = type === 'website' ? 'Website/Site name' : 'Publisher';
-    document.getElementById('urlField').style.display = type === 'website' ? 'block' : 'none';
-    document.getElementById('accessDateField').style.display = type === 'website' ? 'block' : 'none';
-    generate();
+/* ===================== Source-type metadata ===================== */
+var PART_OF_LARGER = {
+  website:true, journal:true, magazine:true, newspaper:true, blog:true,
+  podcast:true, youtube:true, social:true, conference:true, lecture:true, course:true,
+  book:false, paper:false, thesis:false, dissertation:false, govreport:false,
+  wikipedia:false, email:false, software:false, dataset:false
+};
+
+var SOURCE_META = {
+  website:   {label:'Website',            containerLabel:'Website / Site name',        containerPh:'e.g. BBC News',              extraLabel:'',                          extraPh:''},
+  book:      {label:'Book',               containerLabel:'Series / anthology (optional)', containerPh:'',                        extraLabel:'',                          extraPh:''},
+  journal:   {label:'Journal Article',    containerLabel:'Journal name',               containerPh:'e.g. Nature',                extraLabel:'',                          extraPh:''},
+  magazine:  {label:'Magazine',           containerLabel:'Magazine name',              containerPh:'e.g. TIME',                  extraLabel:'',                          extraPh:''},
+  newspaper: {label:'Newspaper',          containerLabel:'Newspaper name',             containerPh:'e.g. The Hindu',             extraLabel:'',                          extraPh:''},
+  paper:     {label:'Research Paper',     containerLabel:'Repository / series (optional)', containerPh:'e.g. arXiv',              extraLabel:'',                          extraPh:''},
+  thesis:    {label:'Thesis',             containerLabel:'Institution',                containerPh:'e.g. University of Delhi',   extraLabel:'Degree',                    extraPh:"e.g. Master's thesis"},
+  dissertation:{label:'Dissertation',     containerLabel:'Institution',                containerPh:'e.g. IIT Bombay',            extraLabel:'Degree',                    extraPh:'e.g. Doctoral dissertation'},
+  conference:{label:'Conference Paper',   containerLabel:'Conference name',            containerPh:'e.g. Proceedings of ICML',   extraLabel:'',                          extraPh:''},
+  govreport: {label:'Government Report',  containerLabel:'Agency / department',        containerPh:'e.g. Ministry of Health',    extraLabel:'Report number',             extraPh:'e.g. Report No. 123'},
+  blog:      {label:'Blog',               containerLabel:'Blog / site name',           containerPh:'e.g. Medium',                extraLabel:'',                          extraPh:''},
+  podcast:   {label:'Podcast',            containerLabel:'Podcast name',               containerPh:'e.g. The Daily',              extraLabel:'Episode number',            extraPh:'e.g. Episode 42'},
+  youtube:   {label:'YouTube Video',      containerLabel:'Channel name',               containerPh:'e.g. Kurzgesagt',            extraLabel:'',                          extraPh:''},
+  social:    {label:'Social Media',       containerLabel:'Platform',                   containerPh:'e.g. Instagram',             extraLabel:'Post type',                 extraPh:'e.g. Photograph, Tweet'},
+  wikipedia: {label:'Wikipedia',          containerLabel:'Article title is above; leave blank', containerPh:'',                  extraLabel:'',                          extraPh:''},
+  course:    {label:'Online Course',      containerLabel:'Platform / provider',        containerPh:'e.g. Coursera',               extraLabel:'',                          extraPh:''},
+  lecture:   {label:'Lecture',            containerLabel:'Course / institution',       containerPh:'e.g. Introduction to Physics', extraLabel:'',                        extraPh:''},
+  email:     {label:'Email',              containerLabel:'(not used for email)',       containerPh:'',                           extraLabel:'Recipient',                 extraPh:'e.g. Jane Doe'},
+  software:  {label:'Software',           containerLabel:'Developer / publisher',      containerPh:'e.g. Adobe',                 extraLabel:'Version',                   extraPh:'e.g. v2.1'},
+  dataset:   {label:'Dataset',            containerLabel:'Repository name',            containerPh:'e.g. Kaggle',                extraLabel:'Series / distributor',      extraPh:''}
+};
+
+var STYLE_LABELS = {
+  apa7:'APA 7', apa6:'APA 6', mla9:'MLA 9', mla8:'MLA 8',
+  chicagoNotes:'Chicago (Notes-Bibliography)', chicagoAD:'Chicago (Author-Date)',
+  harvard:'Harvard', ieee:'IEEE', vancouver:'Vancouver', ama:'AMA',
+  oscola:'OSCOLA', acs:'ACS', cse:'CSE', turabian:'Turabian', bluebook:'Bluebook'
+};
+
+/* ===================== Small text helpers ===================== */
+function esc(s){
+  return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function italicStr(s){ return s ? '<em>' + esc(s) + '</em>' : ''; }
+function quoted(s, punct){
+  punct = punct == null ? '.' : punct;
+  return s ? '&ldquo;' + esc(s) + punct + '&rdquo;' : '';
+}
+function squoted(s){ return s ? '&lsquo;' + esc(s) + '&rsquo;' : ''; }
+function stripTags(html){
+  return String(html || '')
+    .replace(/<[^>]+>/g,'')
+    .replace(/&ldquo;/g,'"').replace(/&rdquo;/g,'"')
+    .replace(/&lsquo;/g,'‘').replace(/&rsquo;/g,'’')
+    .replace(/&hellip;/g,'…')
+    .replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>');
+}
+function endPeriod(s){
+  if(!s) return s;
+  return /[.!?]$/.test(s) ? s : s + '.';
+}
+function joinClean(parts, sep){
+  return parts.filter(function(p){ return p && String(p).trim(); }).join(sep == null ? ' ' : sep).replace(/\s+/g,' ').trim();
+}
+
+function toSentenceCase(str){
+  if(!str) return str;
+  var out = str.replace(/\b(\S+)\b/g, function(word){
+    if(/^[A-Z]{2,}$/.test(word)) return word;
+    if(/[a-z].*[A-Z]|[A-Z].*[A-Z].*[a-z]/.test(word)) return word;
+    return word.toLowerCase();
+  });
+  out = out.replace(/(^\s*\S)|([:.!?]\s+)(\S)/g, function(m){ return m.toUpperCase(); });
+  return out;
+}
+
+var MONTHS_FULL = ['january','february','march','april','may','june','july','august','september','october','november','december'];
+var MLA_ABBR = {january:'Jan.',february:'Feb.',march:'Mar.',april:'Apr.',may:'May',june:'June',july:'July',august:'Aug.',september:'Sept.',october:'Oct.',november:'Nov.',december:'Dec.'};
+function normMonth(m){ return m ? String(m).trim().toLowerCase() : ''; }
+function mlaMonth(m){ var n = normMonth(m); return MLA_ABBR[n] || (m||''); }
+function fullMonth(m){ var n = normMonth(m); var idx = MONTHS_FULL.indexOf(n); return idx!==-1 ? (MONTHS_FULL[idx].charAt(0).toUpperCase()+MONTHS_FULL[idx].slice(1)) : (m||''); }
+
+function fmtDateFromISO(iso){
+  if(!iso) return null;
+  var d = new Date(iso + 'T00:00:00');
+  if(isNaN(d.getTime())) return null;
+  return {year:d.getFullYear(), month: MONTHS_FULL[d.getMonth()], day: d.getDate()};
+}
+
+/* ===================== Author helpers ===================== */
+function hasName(p){ return p && (p.last || p.first); }
+function initials(first, middle){
+  var out = '';
+  if(first) out += first.trim().charAt(0).toUpperCase() + '.';
+  if(middle) out += ' ' + middle.trim().charAt(0).toUpperCase() + '.';
+  return out;
+}
+function initialsNoPeriods(first, middle){
+  var out = '';
+  if(first) out += first.trim().charAt(0).toUpperCase();
+  if(middle) out += middle.trim().charAt(0).toUpperCase();
+  return out;
+}
+function fullName(first, middle){ return [first, middle].filter(Boolean).join(' '); }
+function peopleOf(entry, kind){
+  var arr = (kind === 'editors') ? entry.editors : (kind === 'translators') ? entry.translators : entry.authors;
+  return (arr || []).filter(hasName);
+}
+
+/* Author-list formatters. None append a spurious trailing period beyond what their own initials already carry. */
+function authorsAPA(entry, cap){
+  if(entry.isOrg) return entry.orgAuthor ? esc(entry.orgAuthor) : '';
+  var ppl = peopleOf(entry,'authors');
+  if(!ppl.length) return '';
+  var parts = ppl.map(function(p){ return esc(p.last) + (initials(p.first,p.middle) ? ', ' + initials(p.first,p.middle) : ''); });
+  if(parts.length === 1) return parts[0];
+  if(parts.length <= cap) return parts.slice(0,-1).join(', ') + ', &amp; ' + parts[parts.length-1];
+  return parts.slice(0, cap-1).join(', ') + ', &hellip; ' + parts[parts.length-1];
+}
+function authorsAPA7(entry){ return authorsAPA(entry, 20); }
+function authorsAPA6(entry){ return authorsAPA(entry, 7); }
+function authorsMLA(entry){
+  if(entry.isOrg) return entry.orgAuthor ? esc(entry.orgAuthor) : '';
+  var ppl = peopleOf(entry,'authors');
+  if(!ppl.length) return '';
+  if(ppl.length === 1){
+    var p = ppl[0];
+    return esc(p.last) + (p.first ? ', ' + esc(fullName(p.first,p.middle)) : '');
+  }
+  if(ppl.length === 2){
+    var a = ppl[0], b = ppl[1];
+    return esc(a.last) + (a.first ? ', ' + esc(fullName(a.first,a.middle)) : '') + ', and ' + (b.first ? esc(fullName(b.first,b.middle)) + ' ' : '') + esc(b.last);
+  }
+  var f = ppl[0];
+  return esc(f.last) + (f.first ? ', ' + esc(fullName(f.first,f.middle)) : '') + ', et al.';
+}
+function authorsChicago(entry){
+  if(entry.isOrg) return entry.orgAuthor ? esc(entry.orgAuthor) : '';
+  var ppl = peopleOf(entry,'authors');
+  if(!ppl.length) return '';
+  if(ppl.length === 1){
+    var p = ppl[0];
+    return esc(p.last) + (p.first ? ', ' + esc(fullName(p.first,p.middle)) : '');
+  }
+  var first = ppl[0];
+  var firstStr = esc(first.last) + (first.first ? ', ' + esc(fullName(first.first,first.middle)) : '');
+  if(ppl.length <= 3){
+    var rest = ppl.slice(1).map(function(p){ return esc(fullName(p.first,p.middle)) + (p.first?' ':'') + esc(p.last); });
+    if(!rest.length) return firstStr;
+    return firstStr + ', ' + rest.slice(0,-1).concat([]).join(', ') + (rest.length>1 ? ', ' : '') + 'and ' + rest[rest.length-1];
+  }
+  return firstStr + ', et al.';
+}
+function authorsHarvard(entry){
+  if(entry.isOrg) return entry.orgAuthor ? esc(entry.orgAuthor) : '';
+  var ppl = peopleOf(entry,'authors');
+  if(!ppl.length) return '';
+  var parts = ppl.map(function(p){ return esc(p.last) + (initials(p.first,p.middle) ? ', ' + initials(p.first,p.middle) : ''); });
+  if(parts.length === 1) return parts[0];
+  if(parts.length <= 3) return parts.slice(0,-1).join(', ') + ' and ' + parts[parts.length-1];
+  return parts[0] + ' et al.';
+}
+function authorsIEEE(entry){
+  if(entry.isOrg) return entry.orgAuthor ? esc(entry.orgAuthor) : '';
+  var ppl = peopleOf(entry,'authors');
+  if(!ppl.length) return '';
+  var parts = ppl.map(function(p){ return (initials(p.first,p.middle) ? initials(p.first,p.middle) + ' ' : '') + esc(p.last); });
+  if(parts.length === 1) return parts[0];
+  if(parts.length <= 6) return parts.slice(0,-1).join(', ') + ', and ' + parts[parts.length-1];
+  return parts[0] + ' et al.';
+}
+function authorsVancouver(entry){
+  if(entry.isOrg) return entry.orgAuthor ? esc(entry.orgAuthor) : '';
+  var ppl = peopleOf(entry,'authors');
+  if(!ppl.length) return '';
+  var parts = ppl.map(function(p){ return esc(p.last) + ' ' + initialsNoPeriods(p.first,p.middle); });
+  if(parts.length <= 6) return parts.join(', ');
+  return parts.slice(0,6).join(', ') + ', et al.';
+}
+
+/* ===================== Date formatters ===================== */
+function apaDateParen(entry){
+  if(!entry.year) return '(n.d.)';
+  var s = String(entry.year);
+  if(entry.month) s += ', ' + fullMonth(entry.month) + (entry.day ? ' ' + entry.day : '');
+  return '(' + s + ')';
+}
+function mlaDateOf(year, month, day){
+  return joinClean([day, mlaMonth(month), year], ' ');
+}
+function accessDateMLA(entry){
+  var d = fmtDateFromISO(entry.accessDate);
+  return d ? ('Accessed ' + mlaDateOf(d.year, d.month, d.day) + '.') : '';
+}
+function accessDateAPA6(entry){
+  var d = fmtDateFromISO(entry.accessDate);
+  return d ? ('Retrieved ' + fullMonth(d.month) + ' ' + d.day + ', ' + d.year + ', from ') : '';
+}
+
+/* ===================== Volume/issue/pages, per style family ===================== */
+function volIssuePagesGeneric(entry){
+  var vi = (entry.volume || '') + (entry.issue ? '(' + entry.issue + ')' : '');
+  var out = vi;
+  if(entry.pages) out += (out ? ', pp. ' : 'pp. ') + entry.pages;
+  return out;
+}
+function volIssuePagesIEEE(entry){
+  var bits = [];
+  if(entry.volume) bits.push('vol. ' + entry.volume);
+  if(entry.issue) bits.push('no. ' + entry.issue);
+  var out = bits.join(', ');
+  if(entry.pages) out += (out ? ', pp. ' : 'pp. ') + entry.pages;
+  return out;
+}
+function volIssuePagesVancouver(entry){
+  var vi = (entry.volume || '') + (entry.issue ? '(' + entry.issue + ')' : '');
+  return vi + (entry.pages ? ':' + entry.pages : '');
+}
+
+/* ===================== URL / DOI tail ===================== */
+function urlDoiLink(entry){
+  var doi = entry.doi ? ('https://doi.org/' + entry.doi.replace(/^https?:\/\/(dx\.)?doi\.org\//i,'')) : '';
+  return doi || entry.url || '';
+}
+function urlDoiTailMLA(entry){
+  var link = urlDoiLink(entry);
+  if(!link) return '';
+  var acc = accessDateMLA(entry);
+  return esc(link) + '.' + (acc ? ' ' + acc : '');
+}
+function urlDoiTailAPA6(entry){
+  var link = urlDoiLink(entry);
+  if(!link) return '';
+  return accessDateAPA6(entry) + esc(link);
+}
+function urlDoiTailPlain(entry){
+  var link = urlDoiLink(entry);
+  return link ? esc(link) : '';
+}
+
+/* ===================== Style formatters ===================== */
+function formatAPAFamily(entry, style){
+  var authors = style==='apa6' ? authorsAPA6(entry) : authorsAPA7(entry);
+  var date = apaDateParen(entry);
+  var head = endPeriod(joinClean([authors, date], ' '));
+  var partOf = !!PART_OF_LARGER[entry.sourceType];
+  var titleRaw = toSentenceCase(entry.title || 'Untitled');
+  var title = endPeriod(partOf ? esc(titleRaw) : italicStr(titleRaw));
+  var container = entry.container ? italicStr(entry.container) : '';
+  var vip = volIssuePagesGeneric(entry);
+  var mid = joinClean([container, vip], ', ');
+  var pubBits = [];
+  if(!partOf){
+    if(style==='apa6' && entry.city) pubBits.push(entry.city);
+    if(entry.publisher) pubBits.push(entry.publisher);
+  }
+  var pub = pubBits.join(': ');
+  var tail = style==='apa6' ? urlDoiTailAPA6(entry) : urlDoiTailPlain(entry);
+  var out = endPeriod(joinClean([head, title, mid, pub], ' '));
+  if(tail) out += ' ' + tail;
+  return out;
+}
+function formatMLAFamily(entry){
+  var authors = endPeriod(authorsMLA(entry));
+  var partOf = !!PART_OF_LARGER[entry.sourceType];
+  var titleRaw = entry.title || 'Untitled';
+  var title = partOf ? quoted(titleRaw) : endPeriod(italicStr(titleRaw));
+  var container = entry.container ? italicStr(entry.container) : '';
+  var vip = volIssuePagesGeneric(entry);
+  var date = mlaDateOf(entry.year, entry.month, entry.day);
+  var rest = partOf ? joinClean([container, vip, date], ', ') : joinClean([entry.publisher, date], ', ');
+  var out = endPeriod(joinClean([authors, title, rest], ' '));
+  var tail = urlDoiTailMLA(entry);
+  if(tail) out += ' ' + tail;
+  return out;
+}
+function formatChicagoNotesStyle(entry){
+  var authors = endPeriod(authorsChicago(entry));
+  var partOf = !!PART_OF_LARGER[entry.sourceType];
+  var titleRaw = entry.title || 'Untitled';
+  var title = partOf ? quoted(titleRaw) : endPeriod(italicStr(titleRaw));
+  var container = entry.container || '';
+  var vip = volIssuePagesGeneric(entry);
+  var year = entry.year || 'n.d.';
+  var rest;
+  if(partOf){
+    var containerVol = joinClean([italicStr(container), entry.volume ? ('vol. ' + entry.volume + (entry.issue ? ', no. ' + entry.issue : '')) : ''], ' ');
+    rest = joinClean([containerVol, '(' + year + ')' + (entry.pages ? ': ' + entry.pages : '')], ' ');
+  } else {
+    var pub = joinClean([entry.city, entry.publisher], ': ');
+    rest = joinClean([pub, year], ', ');
+  }
+  var out = endPeriod(joinClean([authors, title, rest], ' '));
+  var tail = urlDoiTailPlain(entry);
+  if(tail) out += ' ' + tail;
+  return out;
+}
+function formatChicagoADStyle(entry){
+  var authors = endPeriod(authorsChicago(entry));
+  var year = entry.year || 'n.d.';
+  var partOf = !!PART_OF_LARGER[entry.sourceType];
+  var titleRaw = entry.title || 'Untitled';
+  var title = partOf ? quoted(titleRaw) : endPeriod(italicStr(titleRaw));
+  var container = entry.container ? italicStr(entry.container) : '';
+  var vip = volIssuePagesGeneric(entry);
+  var rest = partOf ? joinClean([container, vip], ', ') : joinClean([entry.city, entry.publisher], ': ');
+  var out = endPeriod(joinClean([authors, year + '.', title, rest], ' '));
+  var tail = urlDoiTailPlain(entry);
+  if(tail) out += ' ' + tail;
+  return out;
+}
+function formatHarvard(entry){
+  var authors = authorsHarvard(entry);
+  var year = entry.year || 'n.d.';
+  var partOf = !!PART_OF_LARGER[entry.sourceType];
+  var titleRaw = entry.title || 'Untitled';
+  var title = partOf ? squoted(titleRaw) : italicStr(titleRaw);
+  var container = entry.container ? italicStr(entry.container) : '';
+  var vip = volIssuePagesGeneric(entry);
+  var pub = !partOf ? joinClean([entry.city, entry.publisher], ': ') : '';
+  var rest = joinClean([container, vip, pub], ', ');
+  var head = joinClean([authors, '(' + year + ')'], ' ');
+  var out = endPeriod(joinClean([head + ' ' + title, rest], ', '));
+  var tail = urlDoiLink(entry);
+  if(tail) out += ' Available at: ' + esc(tail) + '.';
+  return out;
+}
+function formatIEEE(entry, index){
+  var authors = authorsIEEE(entry);
+  var partOf = !!PART_OF_LARGER[entry.sourceType];
+  var titleRaw = entry.title || 'Untitled';
+  var title = partOf ? quoted(titleRaw, ',') : joinClean([italicStr(titleRaw)], '') + ',';
+  var container = entry.container ? italicStr(entry.container) : '';
+  var vip = volIssuePagesIEEE(entry);
+  var year = entry.year || 'n.d.';
+  var pub = !partOf ? entry.publisher : '';
+  var rest = joinClean([container, vip, pub], ', ');
+  var out = joinClean([authors + ',', title, rest ? rest + ',' : '', year + '.'], ' ');
+  var tail = urlDoiLink(entry);
+  if(tail) out += ' [Online]. Available: ' + esc(tail);
+  var prefix = index ? ('[' + index + '] ') : '';
+  return prefix + out;
+}
+function formatVancouverFamily(entry, index){
+  var authors = endPeriod(authorsVancouver(entry));
+  var titleRaw = toSentenceCase(entry.title || 'Untitled');
+  var partOf = !!PART_OF_LARGER[entry.sourceType];
+  var year = entry.year || '';
+  var vi = volIssuePagesVancouver(entry);
+  var rest;
+  if(partOf && entry.container){
+    rest = entry.container + '. ' + year + (vi ? ';' + vi : '') + '.';
+  } else {
+    var pubLoc = joinClean([entry.city, entry.publisher], ': ');
+    rest = endPeriod(joinClean([pubLoc, year], '; '));
+  }
+  var out = joinClean([authors, endPeriod(esc(titleRaw))], ' ') + ' ' + rest;
+  out = out.replace(/\s+/g,' ').trim();
+  var tail = urlDoiLink(entry);
+  if(tail) out += ' Available from: ' + esc(tail);
+  var prefix = index ? (index + '. ') : '';
+  return prefix + out;
+}
+function formatLegalSimplified(entry){
+  var authors = authorsHarvard(entry);
+  var partOf = !!PART_OF_LARGER[entry.sourceType];
+  var titleRaw = entry.title || 'Untitled';
+  var title = partOf ? quoted(titleRaw, '') : italicStr(titleRaw);
+  var year = entry.year || 'n.d.';
+  var pubBits = joinClean([entry.publisher, year], ' ');
+  var out = joinClean([authors + ',', title, '(' + pubBits + ')'], ' ');
+  var tail = urlDoiLink(entry);
+  if(tail) out += ' ' + esc(tail);
+  return out.replace(/\s+/g,' ').trim();
+}
+
+function formatCitation(entry, style, index){
+  switch(style){
+    case 'apa7': return formatAPAFamily(entry, 'apa7');
+    case 'apa6': return formatAPAFamily(entry, 'apa6');
+    case 'mla9': return formatMLAFamily(entry);
+    case 'mla8': return formatMLAFamily(entry);
+    case 'chicagoNotes': return formatChicagoNotesStyle(entry);
+    case 'turabian': return formatChicagoNotesStyle(entry);
+    case 'chicagoAD': return formatChicagoADStyle(entry);
+    case 'harvard': return formatHarvard(entry);
+    case 'cse': return formatHarvard(entry);
+    case 'ieee': return formatIEEE(entry, index);
+    case 'vancouver': return formatVancouverFamily(entry, index);
+    case 'ama': return formatVancouverFamily(entry, index);
+    case 'acs': return formatVancouverFamily(entry, index);
+    case 'oscola': return formatLegalSimplified(entry);
+    case 'bluebook': return formatLegalSimplified(entry);
+    default: return formatAPAFamily(entry, 'apa7');
+  }
+}
+
+/* ===================== Validators ===================== */
+function validateUrl(str){
+  if(!str) return {status:'empty'};
+  var candidate = str.trim();
+  try{
+    new URL(candidate);
+    return {status:'valid', normalized: candidate};
+  }catch(e){
+    if(candidate.indexOf('://') === -1){
+      try{
+        new URL('https://' + candidate);
+        return {status:'missing-protocol', normalized: 'https://' + candidate};
+      }catch(e2){ /* fall through */ }
+    }
+    return {status:'invalid'};
+  }
+}
+function validateDoi(str){
+  if(!str) return {status:'empty'};
+  var clean = str.trim().replace(/^https?:\/\/(dx\.)?doi\.org\//i,'');
+  var ok = /^10\.\d{4,9}\/\S+$/i.test(clean);
+  return {status: ok ? 'valid' : 'invalid', normalized: clean};
+}
+function isbn10Check(digits){
+  var sum = 0;
+  for(var i=0;i<10;i++){
+    var ch = digits[i];
+    var v = ch === 'X' ? 10 : parseInt(ch,10);
+    if(isNaN(v)) return false;
+    sum += (10-i) * v;
+  }
+  return sum % 11 === 0;
+}
+function isbn13Check(digits){
+  var sum = 0;
+  for(var i=0;i<13;i++){
+    var v = parseInt(digits[i],10);
+    if(isNaN(v)) return false;
+    sum += (i % 2 === 0 ? 1 : 3) * v;
+  }
+  return sum % 10 === 0;
+}
+function validateIsbn(str){
+  if(!str) return {status:'empty'};
+  var clean = str.replace(/[-\s]/g,'').toUpperCase();
+  if(clean.length === 10) return {status: isbn10Check(clean) ? 'valid' : 'invalid', normalized: clean};
+  if(clean.length === 13) return {status: isbn13Check(clean) ? 'valid' : 'invalid', normalized: clean};
+  return {status:'invalid'};
+}
+
+/* ===================== Export helpers ===================== */
+function toRIS(entries){
+  var TYPE_MAP = {website:'ELEC', book:'BOOK', journal:'JOUR', magazine:'MGZN', newspaper:'NEWS',
+    paper:'UNPB', thesis:'THES', dissertation:'THES', conference:'CONF', govreport:'RPRT',
+    blog:'BLOG', podcast:'SOUND', youtube:'VID', social:'ELEC', wikipedia:'ELEC', course:'ELEC',
+    lecture:'ELEC', email:'ELEC', software:'COMP', dataset:'DATA'};
+  return entries.map(function(e){
+    var lines = ['TY  - ' + (TYPE_MAP[e.sourceType] || 'GEN')];
+    peopleOf(e,'authors').forEach(function(p){ lines.push('AU  - ' + [p.last, fullName(p.first,p.middle)].filter(Boolean).join(', ')); });
+    if(e.title) lines.push('TI  - ' + e.title);
+    if(e.container) lines.push('T2  - ' + e.container);
+    if(e.year) lines.push('PY  - ' + e.year);
+    if(e.publisher) lines.push('PB  - ' + e.publisher);
+    if(e.volume) lines.push('VL  - ' + e.volume);
+    if(e.issue) lines.push('IS  - ' + e.issue);
+    if(e.pages) lines.push('SP  - ' + e.pages);
+    if(e.doi) lines.push('DO  - ' + e.doi);
+    if(e.isbn) lines.push('SN  - ' + e.isbn);
+    if(e.url) lines.push('UR  - ' + e.url);
+    lines.push('ER  - ');
+    return lines.join('\n');
+  }).join('\n\n');
+}
+function bibtexKey(e){
+  var last = (peopleOf(e,'authors')[0] || {}).last || (e.orgAuthor||'anon').split(' ')[0];
+  return (last + (e.year||'')).replace(/[^A-Za-z0-9]/g,'');
+}
+function toBibTeX(entries){
+  var TYPE_MAP = {website:'misc', book:'book', journal:'article', magazine:'article', newspaper:'article',
+    paper:'unpublished', thesis:'mastersthesis', dissertation:'phdthesis', conference:'inproceedings',
+    govreport:'techreport', blog:'misc', podcast:'misc', youtube:'misc', social:'misc', wikipedia:'misc',
+    course:'misc', lecture:'misc', email:'misc', software:'misc', dataset:'misc'};
+  return entries.map(function(e){
+    var authorStr = peopleOf(e,'authors').map(function(p){ return [p.last, fullName(p.first,p.middle)].filter(Boolean).join(', '); }).join(' and ');
+    var fields = [];
+    if(authorStr) fields.push('  author = {' + authorStr + '}');
+    else if(e.orgAuthor) fields.push('  author = {' + e.orgAuthor + '}');
+    if(e.title) fields.push('  title = {' + e.title + '}');
+    if(e.container) fields.push('  journal = {' + e.container + '}');
+    if(e.year) fields.push('  year = {' + e.year + '}');
+    if(e.publisher) fields.push('  publisher = {' + e.publisher + '}');
+    if(e.volume) fields.push('  volume = {' + e.volume + '}');
+    if(e.issue) fields.push('  number = {' + e.issue + '}');
+    if(e.pages) fields.push('  pages = {' + e.pages + '}');
+    if(e.doi) fields.push('  doi = {' + e.doi + '}');
+    if(e.isbn) fields.push('  isbn = {' + e.isbn + '}');
+    if(e.url) fields.push('  url = {' + e.url + '}');
+    return '@' + (TYPE_MAP[e.sourceType]||'misc') + '{' + bibtexKey(e) + ',\n' + fields.join(',\n') + '\n}';
+  }).join('\n\n');
+}
+function toXML(entries){
+  var body = entries.map(function(e){
+    var authors = peopleOf(e,'authors').map(function(p){ return '<author>' + esc([p.first,p.middle,p.last].filter(Boolean).join(' ')) + '</author>'; }).join('');
+    return '  <citation type="' + esc(e.sourceType) + '">\n' +
+      '    <authors>' + authors + '</authors>\n' +
+      '    <title>' + esc(e.title||'') + '</title>\n' +
+      '    <container>' + esc(e.container||'') + '</container>\n' +
+      '    <year>' + esc(e.year||'') + '</year>\n' +
+      '    <publisher>' + esc(e.publisher||'') + '</publisher>\n' +
+      '    <url>' + esc(e.url||'') + '</url>\n' +
+      '    <doi>' + esc(e.doi||'') + '</doi>\n' +
+      '    <isbn>' + esc(e.isbn||'') + '</isbn>\n' +
+      '  </citation>';
+  }).join('\n');
+  return '<?xml version="1.0" encoding="UTF-8"?>\n<citations>\n' + body + '\n</citations>';
+}
+
+/* ===================== Expose ===================== */
+window.CitationEngine = {
+  PART_OF_LARGER: PART_OF_LARGER, SOURCE_META: SOURCE_META, STYLE_LABELS: STYLE_LABELS,
+  esc: esc, italicStr: italicStr, quoted: quoted, squoted: squoted, stripTags: stripTags,
+  toSentenceCase: toSentenceCase, fmtDateFromISO: fmtDateFromISO,
+  formatCitation: formatCitation,
+  validateUrl: validateUrl, validateDoi: validateDoi, validateIsbn: validateIsbn,
+  toRIS: toRIS, toBibTeX: toBibTeX, toXML: toXML
+};
+
+})();
+</script>
+<script>
+(function(){
+'use strict';
+var E = window.CitationEngine;
+function $(id){ return document.getElementById(id); }
+
+/* ===================== Persistence ===================== */
+function lsGet(key, fallback){
+  try{ var v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; }catch(e){ return fallback; }
+}
+function lsSet(key, val){
+  try{ localStorage.setItem(key, JSON.stringify(val)); }catch(e){ /* private mode / quota */ }
+}
+
+var bibliography = lsGet('citegen_bibliography', []);
+var history_ = lsGet('citegen_history', []);
+var HISTORY_CAP = 300;
+
+/* ===================== Author list state ===================== */
+var authorRows = [{last:'',first:'',middle:'',role:'author'}];
+
+function renderAuthorRows(){
+  var wrap = $('authorsWrap');
+  wrap.innerHTML = '';
+  authorRows.forEach(function(row, i){
+    var div = document.createElement('div');
+    div.className = 'ct-author-row';
+    div.innerHTML =
+      '<div class="field"><label>' + roleLabel(row.role) + ' last name</label><input type="text" class="ar-last" placeholder="Last name"></div>' +
+      '<div class="field"><label>First name</label><input type="text" class="ar-first" placeholder="First name"></div>' +
+      '<div class="field"><label>Middle</label><input type="text" class="ar-middle" placeholder="Middle"></div>' +
+      '<div class="ct-author-actions">' +
+        '<button type="button" class="ar-up" title="Move up">↑</button>' +
+        '<button type="button" class="ar-down" title="Move down">↓</button>' +
+        '<button type="button" class="ar-remove" title="Remove">🗑️</button>' +
+      '</div>';
+    div.querySelector('.ar-last').value = row.last;
+    div.querySelector('.ar-first').value = row.first;
+    div.querySelector('.ar-middle').value = row.middle;
+    div.querySelector('.ar-last').addEventListener('input', function(e){ row.last = e.target.value; generate(); });
+    div.querySelector('.ar-first').addEventListener('input', function(e){ row.first = e.target.value; generate(); });
+    div.querySelector('.ar-middle').addEventListener('input', function(e){ row.middle = e.target.value; generate(); });
+    div.querySelector('.ar-up').addEventListener('click', function(){
+      if(i>0){ var tmp=authorRows[i-1]; authorRows[i-1]=authorRows[i]; authorRows[i]=tmp; renderAuthorRows(); generate(); }
+    });
+    div.querySelector('.ar-down').addEventListener('click', function(){
+      if(i<authorRows.length-1){ var tmp=authorRows[i+1]; authorRows[i+1]=authorRows[i]; authorRows[i]=tmp; renderAuthorRows(); generate(); }
+    });
+    div.querySelector('.ar-remove').addEventListener('click', function(){
+      authorRows.splice(i,1);
+      if(!authorRows.length) authorRows.push({last:'',first:'',middle:'',role:'author'});
+      renderAuthorRows(); generate();
+    });
+    wrap.appendChild(div);
+  });
+}
+function roleLabel(role){
+  if(role==='editor') return 'Editor';
+  if(role==='translator') return 'Translator';
+  return 'Author';
+}
+$('addAuthorBtn').addEventListener('click', function(){ authorRows.push({last:'',first:'',middle:'',role:'author'}); renderAuthorRows(); });
+$('addEditorBtn').addEventListener('click', function(){ authorRows.push({last:'',first:'',middle:'',role:'editor'}); renderAuthorRows(); });
+$('addTranslatorBtn').addEventListener('click', function(){ authorRows.push({last:'',first:'',middle:'',role:'translator'}); renderAuthorRows(); });
+
+$('orgAuthorToggle').addEventListener('change', function(){
+  $('orgAuthorField').style.display = this.checked ? 'block' : 'none';
+  $('authorsWrap').style.display = this.checked ? 'none' : 'block';
+  generate();
+});
+$('orgAuthorInput').addEventListener('input', generate);
+
+/* ===================== Source-type field visibility ===================== */
+var VOLUME_ISSUE_TYPES = {journal:1, magazine:1, newspaper:1, conference:1};
+var ISBN_TYPES = {book:1, thesis:1, dissertation:1, govreport:1, dataset:1};
+var DOI_TYPES = {journal:1, paper:1, conference:1, dataset:1, thesis:1, dissertation:1};
+var CHAPTER_TYPES = {book:1};
+
+function applySourceType(){
+  var type = $('sourceType').value;
+  var meta = E.SOURCE_META[type] || {};
+  $('containerLabel').textContent = meta.containerLabel || 'Container';
+  $('containerInput').placeholder = meta.containerPh || '';
+  var showExtra = !!meta.extraLabel;
+  $('extraField').style.display = showExtra ? 'block' : 'none';
+  $('extraLabel').textContent = meta.extraLabel || '';
+  $('extraInput').placeholder = meta.extraPh || '';
+  document.getElementById('volumeInput').closest('.row').style.display = VOLUME_ISSUE_TYPES[type] ? 'flex' : 'none';
+  document.getElementById('chapterInput').closest('.row').style.display = CHAPTER_TYPES[type] ? 'flex' : 'flex';
+  generate();
+}
+$('sourceType').addEventListener('change', applySourceType);
+
+/* ===================== Templates ===================== */
+var TEMPLATES = {
+  student: {style:'apa7'},
+  assignment: {style:'mla9'},
+  thesis: {style:'chicagoNotes'},
+  research: {style:'ieee'},
+  journal: {style:'vancouver'}
+};
+document.querySelectorAll('#templateChips .ct-chip').forEach(function(chip){
+  chip.addEventListener('click', function(){
+    document.querySelectorAll('#templateChips .ct-chip').forEach(function(c){ c.classList.remove('active'); });
+    chip.classList.add('active');
+    var tpl = TEMPLATES[chip.getAttribute('data-tpl')];
+    if(tpl){ $('primaryStyle').value = tpl.style; generate(); }
   });
 });
 
+/* ===================== Build entry from form ===================== */
+function buildEntryFromForm(){
+  var isOrg = $('orgAuthorToggle').checked;
+  var authors = authorRows.filter(function(r){ return r.role === 'author'; }).map(function(r){ return {last:r.last.trim(), first:r.first.trim(), middle:r.middle.trim()}; });
+  var editors = authorRows.filter(function(r){ return r.role === 'editor'; }).map(function(r){ return {last:r.last.trim(), first:r.first.trim(), middle:r.middle.trim()}; });
+  var translators = authorRows.filter(function(r){ return r.role === 'translator'; }).map(function(r){ return {last:r.last.trim(), first:r.first.trim(), middle:r.middle.trim()}; });
+  return {
+    sourceType: $('sourceType').value,
+    isOrg: isOrg,
+    orgAuthor: $('orgAuthorInput').value.trim(),
+    authors: authors, editors: editors, translators: translators,
+    title: $('titleInput').value.trim(),
+    container: $('containerInput').value.trim(),
+    publisher: $('publisherInput').value.trim(),
+    edition: $('editionInput').value.trim(),
+    volume: $('volumeInput').value.trim(),
+    issue: $('issueInput').value.trim(),
+    pages: $('pagesInput').value.trim(),
+    chapter: $('chapterInput').value.trim(),
+    city: $('cityInput').value.trim(),
+    country: $('countryInput').value.trim(),
+    extra: $('extraInput').value.trim(),
+    year: $('yearInput').value.trim(),
+    month: $('monthInput').value.trim(),
+    day: $('dayInput').value.trim(),
+    updatedDate: $('updatedDateInput').value,
+    accessDate: $('accessDateInput').value,
+    onlineFirstDate: $('onlineFirstInput').value,
+    url: $('urlInput').value.trim(),
+    doi: $('doiInput').value.trim(),
+    isbn: $('isbnInput').value.trim()
+  };
+}
+function populateFormFromEntry(entry){
+  $('sourceType').value = entry.sourceType || 'website';
+  $('orgAuthorToggle').checked = !!entry.isOrg;
+  $('orgAuthorField').style.display = entry.isOrg ? 'block' : 'none';
+  $('authorsWrap').style.display = entry.isOrg ? 'none' : 'block';
+  $('orgAuthorInput').value = entry.orgAuthor || '';
+  authorRows = [];
+  (entry.authors||[]).forEach(function(a){ authorRows.push({last:a.last||'',first:a.first||'',middle:a.middle||'',role:'author'}); });
+  (entry.editors||[]).forEach(function(a){ authorRows.push({last:a.last||'',first:a.first||'',middle:a.middle||'',role:'editor'}); });
+  (entry.translators||[]).forEach(function(a){ authorRows.push({last:a.last||'',first:a.first||'',middle:a.middle||'',role:'translator'}); });
+  if(!authorRows.length) authorRows.push({last:'',first:'',middle:'',role:'author'});
+  renderAuthorRows();
+  $('titleInput').value = entry.title || '';
+  $('containerInput').value = entry.container || '';
+  $('publisherInput').value = entry.publisher || '';
+  $('editionInput').value = entry.edition || '';
+  $('volumeInput').value = entry.volume || '';
+  $('issueInput').value = entry.issue || '';
+  $('pagesInput').value = entry.pages || '';
+  $('chapterInput').value = entry.chapter || '';
+  $('cityInput').value = entry.city || '';
+  $('countryInput').value = entry.country || '';
+  $('extraInput').value = entry.extra || '';
+  $('yearInput').value = entry.year || '';
+  $('monthInput').value = entry.month || '';
+  $('dayInput').value = entry.day || '';
+  $('updatedDateInput').value = entry.updatedDate || '';
+  $('accessDateInput').value = entry.accessDate || '';
+  $('onlineFirstInput').value = entry.onlineFirstDate || '';
+  $('urlInput').value = entry.url || '';
+  $('doiInput').value = entry.doi || '';
+  $('isbnInput').value = entry.isbn || '';
+  applySourceType();
+}
+
+/* ===================== Validation display ===================== */
+function renderValidation(entry){
+  var url = E.validateUrl(entry.url);
+  var doi = E.validateDoi(entry.doi);
+  var isbn = E.validateIsbn(entry.isbn);
+
+  var urlBox = $('urlValidation');
+  if(url.status === 'empty') urlBox.textContent = '';
+  else if(url.status === 'valid') urlBox.innerHTML = '<span class="ct-flag ok" style="display:inline-block">✅ Valid URL</span>';
+  else if(url.status === 'missing-protocol') urlBox.innerHTML = '<span class="ct-flag warn" style="display:inline-block">⚠️ Missing protocol — try ' + E.esc(url.normalized) + '</span>';
+  else urlBox.innerHTML = '<span class="ct-flag warn" style="display:inline-block">❌ Broken / invalid URL syntax</span>';
+
+  var doiBox = $('doiValidation');
+  if(doi.status === 'empty') doiBox.textContent = '';
+  else doiBox.innerHTML = doi.status==='valid' ? '<span class="ct-flag ok" style="display:inline-block">✅ Valid DOI format</span>' : '<span class="ct-flag warn" style="display:inline-block">❌ Invalid DOI format</span>';
+
+  var isbnBox = $('isbnValidation');
+  if(isbn.status === 'empty') isbnBox.textContent = '';
+  else isbnBox.innerHTML = isbn.status==='valid' ? '<span class="ct-flag ok" style="display:inline-block">✅ Valid ISBN</span>' : '<span class="ct-flag warn" style="display:inline-block">❌ Invalid ISBN checksum</span>';
+
+  var flags = [];
+  if(!entry.title) flags.push('<span class="ct-flag warn">Missing title</span>');
+  if(entry.year && (!/^\d{3,4}$/.test(entry.year))) flags.push('<span class="ct-flag warn">Invalid year</span>');
+  if(!entry.authors.length && !entry.isOrg && !entry.editors.length) flags.push('<span class="ct-flag neutral">No author — will show title first</span>');
+  $('fieldValidation').innerHTML = flags.join('');
+  return {url: url, doi: doi, isbn: isbn};
+}
+
+/* ===================== Generate / preview ===================== */
 function generate(){
-  const lastName = document.getElementById('authorLast').value.trim();
-  const firstName = document.getElementById('authorFirst').value.trim();
-  const title = document.getElementById('titleInput').value.trim() || 'Untitled';
-  const year = document.getElementById('yearInput').value.trim() || 'n.d.';
-  const siteOrPublisher = document.getElementById('siteOrPublisher').value.trim();
-  const url = document.getElementById('urlInput').value.trim();
-  const accessDate = document.getElementById('accessDate').value;
+  var entry = buildEntryFromForm();
+  renderValidation(entry);
 
-  const apaInitial = firstName ? firstName.charAt(0).toUpperCase() + '.' : '';
-  const apaAuthor = lastName ? lastName + (apaInitial ? ', ' + apaInitial : '') : '';
-  const mlaAuthor = lastName ? lastName + (firstName ? ', ' + firstName : '') : '';
+  var primaryStyle = $('primaryStyle').value;
+  $('primaryStyleLabel').textContent = E.STYLE_LABELS[primaryStyle] || primaryStyle;
+  $('primaryOutput').innerHTML = E.formatCitation(entry, primaryStyle);
 
-  let apa = '', mla = '';
+  $('apaOutput').innerHTML = E.formatCitation(entry, 'apa7');
+  $('mlaOutput').innerHTML = E.formatCitation(entry, 'mla9');
+  $('chicagoOutput').innerHTML = E.formatCitation(entry, 'chicagoNotes');
+  $('harvardOutput').innerHTML = E.formatCitation(entry, 'harvard');
+  $('ieeeOutput').innerHTML = E.formatCitation(entry, 'ieee', 1);
 
-  if(type === 'website'){
-    apa = `${apaAuthor ? apaAuthor + ' ' : ''}(${year}). ${title}. ${siteOrPublisher ? siteOrPublisher + '. ' : ''}${url}`;
-    mla = `${mlaAuthor ? mlaAuthor + '. ' : ''}"${title}." ${siteOrPublisher ? siteOrPublisher + ', ' : ''}${year}, ${url}.${accessDate ? ' Accessed ' + formatMlaDate(accessDate) + '.' : ''}`;
-  } else {
-    apa = `${apaAuthor ? apaAuthor + ' ' : ''}(${year}). ${title}. ${siteOrPublisher || 'Publisher'}.`;
-    mla = `${mlaAuthor ? mlaAuthor + '. ' : ''}${title}. ${siteOrPublisher || 'Publisher'}, ${year}.`;
-  }
+  window.__currentEntry = entry;
+}
+document.querySelectorAll('#paneAdd input, #paneAdd select').forEach(function(el){
+  el.addEventListener('input', generate);
+  el.addEventListener('change', generate);
+});
 
-  document.getElementById('apaOutput').textContent = apa.replace(/\s+/g,' ').trim();
-  document.getElementById('mlaOutput').textContent = mla.replace(/\s+/g,' ').trim();
+/* ===================== Copy buttons ===================== */
+function copyOutputOf(id, btn){ copyText(E.stripTags($(id).innerHTML), btn); }
+$('copyPrimaryBtn').addEventListener('click', function(e){ copyOutputOf('primaryOutput', e.currentTarget); });
+$('copyApaBtn').addEventListener('click', function(e){ copyOutputOf('apaOutput', e.currentTarget); });
+$('copyMlaBtn').addEventListener('click', function(e){ copyOutputOf('mlaOutput', e.currentTarget); });
+$('copyChicagoBtn').addEventListener('click', function(e){ copyOutputOf('chicagoOutput', e.currentTarget); });
+$('copyHarvardBtn').addEventListener('click', function(e){ copyOutputOf('harvardOutput', e.currentTarget); });
+$('copyIeeeBtn').addEventListener('click', function(e){ copyOutputOf('ieeeOutput', e.currentTarget); });
+
+/* ===================== Add to bibliography / favorites / history ===================== */
+function pushHistory(entry){
+  history_.unshift(Object.assign({}, entry, {ts: Date.now(), fav:false}));
+  if(history_.length > HISTORY_CAP) history_.length = HISTORY_CAP;
+  lsSet('citegen_history', history_);
+}
+$('addToBiblioBtn').addEventListener('click', function(){
+  var entry = buildEntryFromForm();
+  if(!entry.title){ $('statusMsg').textContent = '⚠️ Add a title before saving to the bibliography.'; return; }
+  entry.id = 'c' + Date.now() + Math.random().toString(36).slice(2,7);
+  entry.ts = Date.now();
+  entry.fav = false;
+  bibliography.push(entry);
+  lsSet('citegen_bibliography', bibliography);
+  pushHistory(entry);
+  $('statusMsg').textContent = '✅ Added to bibliography (' + bibliography.length + ' total).';
+  renderBibliography();
+  renderHistory();
+});
+$('clearFormBtn').addEventListener('click', function(){
+  $('titleInput').value=''; $('containerInput').value=''; $('publisherInput').value='';
+  $('editionInput').value=''; $('volumeInput').value=''; $('issueInput').value=''; $('pagesInput').value='';
+  $('chapterInput').value=''; $('cityInput').value=''; $('countryInput').value=''; $('extraInput').value='';
+  $('yearInput').value=''; $('monthInput').value=''; $('dayInput').value='';
+  $('updatedDateInput').value=''; $('accessDateInput').value=''; $('onlineFirstInput').value='';
+  $('urlInput').value=''; $('doiInput').value=''; $('isbnInput').value='';
+  $('orgAuthorToggle').checked=false; $('orgAuthorInput').value='';
+  $('orgAuthorField').style.display='none'; $('authorsWrap').style.display='block';
+  authorRows = [{last:'',first:'',middle:'',role:'author'}];
+  renderAuthorRows();
+  generate();
+});
+$('favoriteBtn').addEventListener('click', function(){
+  var entry = buildEntryFromForm();
+  if(!entry.title){ $('statusMsg').textContent = '⚠️ Add a title before saving to favorites.'; return; }
+  entry.id = 'c' + Date.now() + Math.random().toString(36).slice(2,7);
+  entry.ts = Date.now();
+  entry.fav = true;
+  history_.unshift(entry);
+  if(history_.length > HISTORY_CAP) history_.length = HISTORY_CAP;
+  lsSet('citegen_history', history_);
+  $('statusMsg').textContent = '★ Saved to favorites.';
+  renderHistory();
+});
+
+/* ===================== Tabs ===================== */
+var tabs = [['tabAdd','paneAdd'],['tabBiblio','paneBiblio'],['tabHistory','paneHistory']];
+tabs.forEach(function(pair){
+  $(pair[0]).addEventListener('click', function(){
+    tabs.forEach(function(p2){
+      $(p2[0]).classList.remove('active'); $(p2[0]).setAttribute('aria-selected','false');
+      $(p2[1]).classList.remove('active');
+    });
+    $(pair[0]).classList.add('active'); $(pair[0]).setAttribute('aria-selected','true');
+    $(pair[1]).classList.add('active');
+    if(pair[1]==='paneBiblio') renderBibliography();
+    if(pair[1]==='paneHistory') renderHistory();
+  });
+});
+
+/* ===================== Bibliography: sort/search/render ===================== */
+function sortKeyAuthor(e){
+  if(e.isOrg) return (e.orgAuthor||'').toLowerCase();
+  var a = (e.authors||[])[0];
+  return a ? (a.last||'').toLowerCase() : 'zzz';
+}
+function sortedFilteredBiblio(){
+  var q = ($('biblioSearch').value || '').toLowerCase();
+  var order = $('sortOrder').value;
+  var list = bibliography.filter(function(e){
+    if(!q) return true;
+    var hay = [e.title, e.container, e.orgAuthor, (e.authors||[]).map(function(a){return a.last+' '+a.first;}).join(' ')].join(' ').toLowerCase();
+    return hay.indexOf(q) !== -1;
+  });
+  list = list.slice();
+  if(order === 'author') list.sort(function(a,b){ return sortKeyAuthor(a).localeCompare(sortKeyAuthor(b)); });
+  else if(order === 'date') list.sort(function(a,b){ return (parseInt(a.year)||0) - (parseInt(b.year)||0); });
+  else if(order === 'alpha' || order === 'title') list.sort(function(a,b){ return (a.title||'').toLowerCase().localeCompare((b.title||'').toLowerCase()); });
+  return list;
+}
+function biblioTextList(style){
+  var list = sortedFilteredBiblio();
+  return list.map(function(e, i){ return E.stripTags(E.formatCitation(e, style, i+1)); });
+}
+function renderBibliography(){
+  var style = $('biblioStyle').value;
+  var heading = $('biblioHeading').value;
+  var lines = biblioTextList(style);
+  $('biblioPreview').textContent = heading + '\n\n' + lines.join('\n\n');
+
+  var listEl = $('biblioList');
+  listEl.innerHTML = '';
+  var list = sortedFilteredBiblio();
+  list.forEach(function(e, i){
+    var div = document.createElement('div');
+    div.className = 'ct-biblio-item' + (e.fav ? ' fav' : '');
+    var text = document.createElement('div');
+    text.className = 'ct-text';
+    text.innerHTML = (list.length>1 && (style==='ieee'||style==='vancouver'||style==='ama'||style==='acs') ? '' : '') + E.formatCitation(e, style, i+1);
+    var actions = document.createElement('div');
+    actions.className = 'ct-biblio-actions';
+    var favBtn = document.createElement('button'); favBtn.type='button'; favBtn.textContent = e.fav ? '★ Favorited' : '☆ Favorite';
+    favBtn.addEventListener('click', function(){ e.fav = !e.fav; lsSet('citegen_bibliography', bibliography); renderBibliography(); });
+    var copyBtn = document.createElement('button'); copyBtn.type='button'; copyBtn.textContent='📋 Copy';
+    copyBtn.addEventListener('click', function(){ copyText(E.stripTags(E.formatCitation(e, style, i+1)), copyBtn); });
+    var editBtn = document.createElement('button'); editBtn.type='button'; editBtn.textContent='✏️ Edit';
+    editBtn.addEventListener('click', function(){
+      populateFormFromEntry(e);
+      $('tabAdd').click();
+      generate();
+    });
+    var delBtn = document.createElement('button'); delBtn.type='button'; delBtn.textContent='🗑️ Remove';
+    delBtn.addEventListener('click', function(){
+      bibliography = bibliography.filter(function(x){ return x !== e; });
+      lsSet('citegen_bibliography', bibliography);
+      renderBibliography();
+    });
+    actions.appendChild(favBtn); actions.appendChild(copyBtn); actions.appendChild(editBtn); actions.appendChild(delBtn);
+    div.appendChild(text); div.appendChild(actions);
+    listEl.appendChild(div);
+  });
+  if(!list.length) listEl.innerHTML = '<p class="ct-muted">No citations yet — use "Add to bibliography" on the Add Citation tab.</p>';
+}
+['biblioStyle','biblioHeading','sortOrder'].forEach(function(id){ $(id).addEventListener('change', renderBibliography); });
+$('biblioSearch').addEventListener('input', renderBibliography);
+
+$('copyBiblioBtn').addEventListener('click', function(e){ copyText($('biblioPreview').textContent, e.currentTarget); });
+$('printBiblioBtn').addEventListener('click', function(){ window.print(); });
+
+/* ===================== Export ===================== */
+$('exportTxtBtn').addEventListener('click', function(){ downloadText('bibliography.txt', $('biblioPreview').textContent); });
+$('exportHtmlBtn').addEventListener('click', function(){
+  var style = $('biblioStyle').value;
+  var items = biblioTextList(style).map(function(t){ return '<p>' + t.replace(/&/g,'&amp;').replace(/</g,'&lt;') + '</p>'; }).join('\n');
+  var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + $('biblioHeading').value + '</title></head><body><h1>' + $('biblioHeading').value + '</h1>' + items + '</body></html>';
+  downloadText('bibliography.html', html, 'text/html');
+});
+$('exportMdBtn').addEventListener('click', function(){
+  var style = $('biblioStyle').value;
+  var md = '# ' + $('biblioHeading').value + '\n\n' + biblioTextList(style).map(function(t){ return '- ' + t; }).join('\n');
+  downloadText('bibliography.md', md, 'text/markdown');
+});
+$('exportRisBtn').addEventListener('click', function(){ downloadText('bibliography.ris', E.toRIS(sortedFilteredBiblio()), 'application/x-research-info-systems'); });
+$('exportBibtexBtn').addEventListener('click', function(){ downloadText('bibliography.bib', E.toBibTeX(sortedFilteredBiblio()), 'application/x-bibtex'); });
+$('exportXmlBtn').addEventListener('click', function(){ downloadText('bibliography.xml', E.toXML(sortedFilteredBiblio()), 'application/xml'); });
+$('exportDocxBtn').addEventListener('click', function(){
+  var style = $('biblioStyle').value;
+  var paras = biblioTextList(style).map(function(t){
+    return '<w:p><w:r><w:t xml:space="preserve">' + t.replace(/&/g,'&amp;').replace(/</g,'&lt;') + '</w:t></w:r></w:p>';
+  }).join('');
+  var body =
+    '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' +
+    '<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">' +
+    '<w:body><w:p><w:r><w:t>' + $('biblioHeading').value + '</w:t></w:r></w:p>' + paras + '</w:body></w:document>';
+  downloadText('bibliography.doc', body, 'application/msword');
+});
+$('exportPdfBtn').addEventListener('click', function(){
+  var style = $('biblioStyle').value;
+  var lines = [$('biblioHeading').value, ''].concat(biblioTextList(style));
+  var blob = buildSimplePdf(lines);
+  downloadBlob('bibliography.pdf', blob);
+});
+
+function pdfEscape(s){ return String(s).replace(/\\/g,'\\\\').replace(/\(/g,'\\(').replace(/\)/g,'\\)'); }
+function wrapLine(text, maxChars){
+  var words = String(text).split(/\s+/);
+  var lines = []; var cur = '';
+  words.forEach(function(w){
+    if((cur + ' ' + w).trim().length > maxChars){ lines.push(cur.trim()); cur = w; }
+    else cur = (cur + ' ' + w).trim();
+  });
+  if(cur) lines.push(cur);
+  return lines;
+}
+function buildSimplePdf(paragraphs){
+  var allLines = [];
+  paragraphs.forEach(function(p){ wrapLine(p, 95).forEach(function(l){ allLines.push(l); }); allLines.push(''); });
+  var linesPerPage = 50;
+  var pages = [];
+  for(var i=0;i<allLines.length;i+=linesPerPage) pages.push(allLines.slice(i,i+linesPerPage));
+  if(!pages.length) pages.push(['']);
+
+  var objects = [];
+  function addObj(str){ objects.push(str); return objects.length; }
+  var fontRef = addObj('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>');
+
+  var pageRefs = [];
+  var contentRefs = [];
+  pages.forEach(function(pageLines){
+    var y = 780;
+    var content = 'BT /F1 11 Tf 50 ' + y + ' Td 14 TL\n';
+    pageLines.forEach(function(line, idx){
+      content += '(' + pdfEscape(line) + ') Tj T*\n';
+    });
+    content += 'ET';
+    var streamObj = '<< /Length ' + content.length + ' >>\nstream\n' + content + '\nendstream';
+    contentRefs.push(addObj(streamObj));
+  });
+  var catalogPagesRef;
+  var pagesKids = [];
+  contentRefs.forEach(function(cRef){
+    var pRef = addObj('<< /Type /Page /Parent PAGES_REF 0 R /Resources << /Font << /F1 ' + fontRef + ' 0 R >> >> /MediaBox [0 0 612 842] /Contents ' + cRef + ' 0 R >>');
+    pagesKids.push(pRef);
+  });
+  var pagesObjIndex = addObj('<< /Type /Pages /Kids [' + pagesKids.map(function(k){return k+' 0 R';}).join(' ') + '] /Count ' + pagesKids.length + ' >>');
+  objects = objects.map(function(o){ return o.replace('PAGES_REF', String(pagesObjIndex)); });
+  var catalogIndex = addObj('<< /Type /Catalog /Pages ' + pagesObjIndex + ' 0 R >>');
+
+  var out = '%PDF-1.4\n';
+  var offsets = [0];
+  objects.forEach(function(o, i){
+    offsets.push(out.length);
+    out += (i+1) + ' 0 obj\n' + o + '\nendobj\n';
+  });
+  var xrefStart = out.length;
+  out += 'xref\n0 ' + (objects.length+1) + '\n0000000000 65535 f \n';
+  for(var i=1;i<=objects.length;i++){ out += String(offsets[i]).padStart(10,'0') + ' 00000 n \n'; }
+  out += 'trailer\n<< /Size ' + (objects.length+1) + ' /Root ' + catalogIndex + ' 0 R >>\nstartxref\n' + xrefStart + '\n%%EOF';
+  return new Blob([out], {type:'application/pdf'});
 }
 
-function formatMlaDate(dateStr){
-  const months = ['Jan.','Feb.','Mar.','Apr.','May','June','July','Aug.','Sept.','Oct.','Nov.','Dec.'];
-  const d = new Date(dateStr);
-  return d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+/* ===================== History ===================== */
+function renderHistory(){
+  var listEl = $('historyList');
+  var q = ($('historySearch').value || '').toLowerCase();
+  var favOnly = $('historyFavOnly').checked;
+  var shown = history_.filter(function(h){
+    if(favOnly && !h.fav) return false;
+    if(!q) return true;
+    var hay = [h.title, h.container, h.orgAuthor, (h.authors||[]).map(function(a){return a.last+' '+a.first;}).join(' ')].join(' ').toLowerCase();
+    return hay.indexOf(q) !== -1;
+  });
+  listEl.innerHTML = '';
+  shown.slice(0,200).forEach(function(h){
+    var div = document.createElement('div');
+    div.className = 'ct-history-item';
+    var text = document.createElement('span');
+    text.innerHTML = E.formatCitation(h, 'apa7') + (h.fav ? ' ★' : '');
+    var btnWrap = document.createElement('span');
+    var useBtn = document.createElement('button'); useBtn.type='button'; useBtn.textContent='Use';
+    useBtn.addEventListener('click', function(){ populateFormFromEntry(h); $('tabAdd').click(); generate(); });
+    var addBtn = document.createElement('button'); addBtn.type='button'; addBtn.textContent='Add to bibliography';
+    addBtn.addEventListener('click', function(){
+      var copy = Object.assign({}, h, {id:'c'+Date.now()+Math.random().toString(36).slice(2,7)});
+      bibliography.push(copy); lsSet('citegen_bibliography', bibliography); renderBibliography();
+      $('statusMsg').textContent = '✅ Added to bibliography.';
+    });
+    btnWrap.appendChild(useBtn); btnWrap.appendChild(addBtn);
+    div.appendChild(text); div.appendChild(btnWrap);
+    listEl.appendChild(div);
+  });
+  if(!shown.length) listEl.innerHTML = '<p class="ct-muted">No history yet.</p>';
 }
+$('historySearch').addEventListener('input', renderHistory);
+$('historyFavOnly').addEventListener('change', renderHistory);
+$('clearHistoryBtn').addEventListener('click', function(){
+  if(!confirm('Clear all citation history saved in this browser? This cannot be undone.')) return;
+  history_ = []; lsSet('citegen_history', history_); renderHistory();
+});
 
-document.querySelectorAll('input').forEach(el=> el.addEventListener('input', generate));
+/* ===================== Accessibility ===================== */
+$('highContrastToggle').addEventListener('change', function(){ document.body.classList.toggle('ct-high-contrast', this.checked); });
+$('largeFontToggle').addEventListener('change', function(){ document.body.classList.toggle('ct-large-font', this.checked); });
 
-document.getElementById('copyApaBtn').addEventListener('click', (e)=> copyText(document.getElementById('apaOutput').textContent, e.target));
-document.getElementById('copyMlaBtn').addEventListener('click', (e)=> copyText(document.getElementById('mlaOutput').textContent, e.target));
-
+/* ===================== Init ===================== */
+renderAuthorRows();
+applySourceType();
 generate();
+renderBibliography();
+renderHistory();
+
+})();
 </script>
 <!-- Default Statcounter code for Apne Software
 https://apnesoftware.com -->
 <script type="text/javascript">
-var sc_project=13334460; 
-var sc_invisible=1; 
-var sc_security="a5854dc7"; 
+var sc_project=13334460;
+var sc_invisible=1;
+var sc_security="a5854dc7";
 </script>
 <script type="text/javascript"
 src="https://www.statcounter.com/counter/counter.js"
