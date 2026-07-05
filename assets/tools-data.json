@@ -1680,7 +1680,7 @@
         {
             "id": "citation-generator",
             "name": "Citation Generator",
-            "description": "APA 7 & MLA 9 citations for sites/books",
+            "description": "APA, MLA, Chicago, Harvard, IEEE, Vancouver and more — 15 styles, 20 source types, sortable bibliography, 8 export formats.",
             "icon": "📚",
             "url": "tools/citation-generator.html",
             "category": "text",
