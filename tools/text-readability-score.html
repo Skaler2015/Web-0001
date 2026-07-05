@@ -256,7 +256,974 @@
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
 <script src="../assets/common.js"></script>
-<!-- MAIN-SCRIPT-PLACEHOLDER -->
+<script>
+(function(){
+'use strict';
+
+/* ---------- Word lists (small curated sets; heuristic, not AI) ---------- */
+var STOPWORDS = {"the":1,"a":1,"an":1,"and":1,"or":1,"but":1,"if":1,"then":1,"so":1,"of":1,"in":1,
+"on":1,"at":1,"by":1,"for":1,"with":1,"about":1,"against":1,"between":1,"into":1,"through":1,
+"during":1,"before":1,"after":1,"above":1,"below":1,"to":1,"from":1,"up":1,"down":1,"out":1,
+"off":1,"over":1,"under":1,"again":1,"further":1,"is":1,"am":1,"are":1,"was":1,"were":1,"be":1,
+"been":1,"being":1,"have":1,"has":1,"had":1,"having":1,"do":1,"does":1,"did":1,"doing":1,
+"this":1,"that":1,"these":1,"those":1,"i":1,"you":1,"he":1,"she":1,"it":1,"we":1,"they":1,
+"me":1,"him":1,"her":1,"us":1,"them":1,"my":1,"your":1,"his":1,"its":1,"our":1,"their":1,
+"as":1,"not":1,"no":1,"nor":1,"can":1,"will":1,"just":1,"than":1,"too":1,"very":1,"such":1,
+"there":1,"here":1,"what":1,"which":1,"who":1,"whom":1,"how":1,"why":1,"when":1,"where":1};
+
+var COMMON_WORDS = {"time":1,"person":1,"year":1,"way":1,"day":1,"thing":1,"man":1,"world":1,
+"life":1,"hand":1,"part":1,"child":1,"eye":1,"woman":1,"place":1,"work":1,"week":1,"case":1,
+"point":1,"government":1,"company":1,"number":1,"group":1,"problem":1,"fact":1,"good":1,
+"new":1,"first":1,"last":1,"long":1,"great":1,"little":1,"own":1,"other":1,"old":1,"right":1,
+"big":1,"high":1,"different":1,"small":1,"large":1,"next":1,"early":1,"young":1,"important":1,
+"few":1,"public":1,"bad":1,"same":1,"able":1,"go":1,"get":1,"make":1,"know":1,"take":1,
+"see":1,"come":1,"think":1,"look":1,"want":1,"give":1,"use":1,"find":1,"tell":1,"ask":1,
+"need":1,"feel":1,"become":1,"leave":1,"put":1,"mean":1,"keep":1,"let":1,"begin":1,"seem":1,
+"help":1,"talk":1,"turn":1,"start":1,"show":1,"play":1,"run":1,"move":1,"like":1,"live":1,
+"believe":1,"bring":1,"happen":1,"write":1,"provide":1,"sit":1,"stand":1,"lose":1,"pay":1,
+"meet":1,"include":1,"continue":1,"set":1,"learn":1,"change":1,"lead":1,"understand":1,
+"watch":1,"follow":1,"stop":1,"create":1,"speak":1,"read":1,"allow":1,"add":1,"spend":1,
+"grow":1,"open":1,"walk":1,"win":1,"offer":1,"remember":1,"love":1,"consider":1,"appear":1,
+"buy":1,"wait":1,"serve":1,"die":1,"send":1,"expect":1,"build":1,"stay":1,"fall":1,"cut":1,
+"reach":1,"kill":1,"remain":1};
+
+var TRANSITION_WORDS = ["however","therefore","moreover","furthermore","in addition",
+"for example","for instance","consequently","nevertheless","thus","meanwhile","similarly",
+"in contrast","on the other hand","as a result","in conclusion","in fact","indeed","likewise",
+"otherwise","subsequently","accordingly","additionally","also","besides","finally","first",
+"second","third","next","then","afterward","before","after","since","because","although",
+"though","unless","until","while","whereas","hence","so","yet","still","instead","rather",
+"overall","in summary","to summarize","in short","altogether","above all","in particular",
+"notably","specifically","such as","in other words","to conclude","as well as","despite",
+"in spite of","due to","for this reason"];
+
+/* ---------- Language detection ---------- */
+function detectLanguage(text){
+  var dev = (text.match(/[ऀ-ॿ]/g)||[]).length;
+  var lat = (text.match(/[A-Za-z]/g)||[]).length;
+  if(dev===0 && lat===0) return 'en';
+  if(dev>0 && lat>0) return 'hinglish';
+  if(dev>lat) return 'hi';
+  return 'en';
+}
+
+/* ---------- Syllable counting ---------- */
+function countSyllablesEN(word){
+  word = word.toLowerCase().replace(/[^a-z]/g,'');
+  if(!word) return 0;
+  if(word.length<=3) return 1;
+  word = word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/,'');
+  word = word.replace(/^y/,'');
+  var m = word.match(/[aeiouy]{1,2}/g);
+  return m ? m.length : 1;
+}
+function countSyllablesHI(word){
+  var matras = word.match(/[\u093E-\u094C\u0955-\u0957]/g);
+  var indep = word.match(/[\u0904-\u0914]/g);
+  var cons = word.match(/[\u0915-\u0939\u0958-\u095F]/g);
+  var n = (matras?matras.length:0) + (indep?indep.length:0);
+  if(n===0 && cons) n = cons.length;
+  return Math.max(1,n);
+}
+function countSyllables(word){
+  if(/[ऀ-ॿ]/.test(word)) return countSyllablesHI(word);
+  return countSyllablesEN(word);
+}
+
+/* ---------- Tokenization ---------- */
+function tokenizeWords(text){
+  return text.match(/[A-Za-z']+|[ऀ-ॿ]+/g) || [];
+}
+function splitSentences(text){
+  var trimmed = text.trim();
+  if(!trimmed) return [];
+  var raw = trimmed.match(/[^.!?।॥]+[.!?।॥]*/g) || [];
+  return raw.map(function(s){ return s.trim(); }).filter(Boolean);
+}
+function splitParagraphs(text){
+  return text.split(/\n\s*\n/).map(function(p){ return p.trim(); }).filter(Boolean);
+}
+
+/* ---------- Core statistics ---------- */
+function computeStats(text){
+  var words = tokenizeWords(text);
+  var sentences = splitSentences(text);
+  var paragraphs = splitParagraphs(text);
+  var lines = text.length ? text.split('\n').length : 0;
+
+  var wordCount = words.length;
+  var sentenceCount = sentences.length || (wordCount ? 1 : 0);
+  var paragraphCount = paragraphs.length || (wordCount ? 1 : 0);
+
+  var charCount = text.length;
+  var charsNoSpaces = text.replace(/\s/g,'').length;
+
+  var lower = words.map(function(w){ return w.toLowerCase(); });
+  var uniqueSet = {};
+  lower.forEach(function(w){ uniqueSet[w] = (uniqueSet[w]||0) + 1; });
+  var uniqueWordCount = Object.keys(uniqueSet).length;
+
+  var syllableCount = 0, letterCount = 0, complexWordCount = 0, longWordCount = 0, difficultWordCount = 0;
+  var wordLenBuckets = {};
+  words.forEach(function(w){
+    var syl = countSyllables(w);
+    syllableCount += syl;
+    letterCount += w.length;
+    if(syl >= 3) complexWordCount++;
+    if(w.length > 6) longWordCount++;
+    var lw = w.toLowerCase();
+    if(syl >= 3 && !COMMON_WORDS[lw] && !STOPWORDS[lw]) difficultWordCount++;
+    var bucket = w.length >= 10 ? '10+' : String(w.length);
+    wordLenBuckets[bucket] = (wordLenBuckets[bucket]||0) + 1;
+  });
+
+  var sentenceWordCounts = sentences.map(function(s){ return tokenizeWords(s).length; });
+  var paragraphWordCounts = paragraphs.map(function(p){ return tokenizeWords(p).length; });
+
+  var avgWordLen = wordCount ? letterCount / wordCount : 0;
+  var avgSentenceLen = sentenceCount ? wordCount / sentenceCount : 0;
+  var avgParagraphLen = paragraphCount ? wordCount / paragraphCount : 0;
+
+  var estimatedPages = wordCount / 275;
+
+  return {
+    text: text,
+    words: words,
+    sentences: sentences,
+    paragraphs: paragraphs,
+    lines: lines,
+    wordCount: wordCount,
+    sentenceCount: sentenceCount,
+    paragraphCount: paragraphCount,
+    charCount: charCount,
+    charsNoSpaces: charsNoSpaces,
+    uniqueWordCount: uniqueWordCount,
+    uniqueFreq: uniqueSet,
+    syllableCount: syllableCount,
+    letterCount: letterCount,
+    complexWordCount: complexWordCount,
+    longWordCount: longWordCount,
+    difficultWordCount: difficultWordCount,
+    wordLenBuckets: wordLenBuckets,
+    sentenceWordCounts: sentenceWordCounts,
+    paragraphWordCounts: paragraphWordCounts,
+    avgWordLen: avgWordLen,
+    avgSentenceLen: avgSentenceLen,
+    avgParagraphLen: avgParagraphLen,
+    estimatedPages: estimatedPages
+  };
+}
+
+/* ---------- Readability formulas ---------- */
+function computeReadability(st){
+  var W = st.wordCount, S = st.sentenceCount, Sy = st.syllableCount;
+  var CW = st.complexWordCount, C = st.letterCount, DW = st.difficultWordCount;
+  var LW = st.longWordCount;
+
+  if(W === 0 || S === 0){
+    return null;
+  }
+
+  var wps = W / S;
+  var spw = Sy / W;
+
+  var flesch = 206.835 - 1.015 * wps - 84.6 * spw;
+  var fk = 0.39 * wps + 11.8 * spw - 15.59;
+  var fog = 0.4 * (wps + 100 * (CW / W));
+  var smog = S >= 3 ? 1.043 * Math.sqrt(CW * (30 / S)) + 3.1291 : 1.043 * Math.sqrt(CW * 10) + 3.1291;
+  var lettersPer100 = (C / W) * 100;
+  var sentencesPer100 = (S / W) * 100;
+  var coleman = 0.0588 * lettersPer100 - 0.296 * sentencesPer100 - 15.8;
+  var ari = 4.71 * (C / W) + 0.5 * wps - 21.43;
+  var pctDifficult = (DW / W) * 100;
+  var daleChall = 0.1579 * pctDifficult + 0.0496 * wps + (pctDifficult > 5 ? 3.6365 : 0);
+
+  var easyCount = 0, hardCount = 0;
+  st.words.forEach(function(w){
+    if(countSyllables(w) <= 2) easyCount++; else hardCount++;
+  });
+  var lwScore = (easyCount * 1 + hardCount * 3) / S;
+  var linsear = lwScore > 20 ? lwScore / 2 : (lwScore - 2) / 2;
+
+  var lix = wps + (LW * 100 / W);
+  var rix = LW / S;
+
+  return {
+    flesch: flesch, fk: fk, fog: fog, smog: smog, coleman: coleman, ari: ari,
+    daleChall: daleChall, linsear: linsear, lix: lix, rix: rix
+  };
+}
+
+function easeLabel(score){
+  if(score >= 90) return 'Very Easy (5th grade)';
+  if(score >= 80) return 'Easy (6th grade)';
+  if(score >= 70) return 'Fairly Easy (7th grade)';
+  if(score >= 60) return 'Standard (8th-9th grade)';
+  if(score >= 50) return 'Fairly Difficult (10th-12th grade)';
+  if(score >= 30) return 'Difficult (College level)';
+  return 'Very Difficult (College graduate)';
+}
+
+function readingLevelFromGrade(grade){
+  if(grade <= 5) return 'Primary School';
+  if(grade <= 8) return 'Middle School';
+  if(grade <= 12) return 'High School';
+  if(grade <= 15) return 'College';
+  if(grade <= 17) return 'Graduate';
+  return 'Professional';
+}
+
+function consensusGrade(rs){
+  var vals = [rs.fk, rs.fog, rs.smog, rs.ari, rs.coleman].filter(function(v){ return isFinite(v); });
+  if(!vals.length) return 0;
+  var sum = vals.reduce(function(a,b){ return a+b; }, 0);
+  return sum / vals.length;
+}
+
+/* ---------- Passive voice ---------- */
+var IRREGULAR_PARTICIPLES = ("thrown given taken written made done seen known shown broken chosen " +
+  "driven eaten fallen forgotten grown hidden ridden risen spoken stolen sworn torn worn woven " +
+  "bitten blown drawn flown frozen sung swum born beaten bound bought brought built burnt caught " +
+  "dealt dug felt fought found held kept laid led left lent lost meant met paid put read said sent " +
+  "set shot shut sold sought spent spilt split spread stood struck taught told understood won begun " +
+  "drunk rung sunk swung gone come run").split(' ').join('|');
+var PASSIVE_RE = new RegExp('\\b(am|is|are|was|were|be|been|being)\\s+(\\w+ed|\\w+en|' +
+  IRREGULAR_PARTICIPLES + ')\\b', 'i');
+function analyzePassive(sentences){
+  var passiveSentences = 0;
+  sentences.forEach(function(s){
+    if(PASSIVE_RE.test(s)) passiveSentences++;
+  });
+  var pct = sentences.length ? (passiveSentences / sentences.length) * 100 : 0;
+  return { passiveSentences: passiveSentences, percentage: pct, total: sentences.length };
+}
+
+/* ---------- Transition words ---------- */
+function analyzeTransitions(text){
+  var lower = text.toLowerCase();
+  var found = [];
+  var total = 0;
+  TRANSITION_WORDS.forEach(function(phrase){
+    var re = new RegExp('\\b' + phrase.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + '\\b', 'gi');
+    var m = lower.match(re);
+    if(m && m.length){
+      found.push({ phrase: phrase, count: m.length });
+      total += m.length;
+    }
+  });
+  found.sort(function(a,b){ return b.count - a.count; });
+  return { total: total, items: found };
+}
+
+/* ---------- Keyword density ---------- */
+function analyzeKeywords(words, limit){
+  var freq = {};
+  words.forEach(function(w){
+    var lw = w.toLowerCase();
+    if(lw.length < 3 || STOPWORDS[lw]) return;
+    freq[lw] = (freq[lw]||0) + 1;
+  });
+  var total = words.length || 1;
+  var list = Object.keys(freq).map(function(k){
+    return { word: k, count: freq[k], density: (freq[k] / total) * 100 };
+  });
+  list.sort(function(a,b){ return b.count - a.count; });
+  return list.slice(0, limit || 10);
+}
+
+/* ---------- Grammar indicators ---------- */
+function analyzeGrammar(text){
+  var doubleSpaces = (text.match(/ {2,}/g) || []).length;
+  var lines = text.split('\n');
+  var emptyLines = 0;
+  for(var i = 1; i < lines.length - 1; i++){
+    if(lines[i].trim() === '') emptyLines++;
+  }
+  var repeatedPunct = (text.match(/([!?.,;:])\1{1,}/g) || []).length;
+  var sentences = splitSentences(text);
+  var capIssues = 0;
+  sentences.forEach(function(s){
+    var m = s.match(/[A-Za-z]/);
+    if(m && m[0] === m[0].toLowerCase() && m[0] !== m[0].toUpperCase()) capIssues++;
+  });
+  return {
+    doubleSpaces: doubleSpaces,
+    emptyLines: emptyLines,
+    repeatedPunct: repeatedPunct,
+    capIssues: capIssues
+  };
+}
+
+/* ---------- SEO metrics ---------- */
+function analyzeSeo(st, keywords){
+  var headingLines = (st.text.match(/^#{1,6}\s+.+$/gm) || []).length;
+  var headingRatio = st.paragraphCount ? headingLines / st.paragraphCount : 0;
+  var topKeyword = keywords[0] || null;
+  return {
+    avgSentenceLen: st.avgSentenceLen,
+    avgParagraphLen: st.avgParagraphLen,
+    headingLines: headingLines,
+    headingRatio: headingRatio,
+    topKeyword: topKeyword
+  };
+}
+
+/* ---------- Chart drawing (hand-rolled canvas 2D, no libraries) ---------- */
+function dpr(){ return window.devicePixelRatio || 1; }
+
+function setupCanvas(canvas){
+  var ratio = dpr();
+  var w = canvas.clientWidth || canvas.width;
+  var h = canvas.height / (canvas.width / w) || canvas.height;
+  canvas.width = Math.round(w * ratio);
+  canvas.height = Math.round(h * ratio);
+  var ctx = canvas.getContext('2d');
+  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+  return { ctx: ctx, w: w, h: h };
+}
+
+function drawGauge(canvasId, value, min, max){
+  var canvas = document.getElementById(canvasId);
+  if(!canvas) return;
+  var setup = setupCanvas(canvas);
+  var ctx = setup.ctx, w = setup.w, h = setup.h;
+  ctx.clearRect(0, 0, w, h);
+  var cx = w / 2, cy = h - 20, r = Math.min(w / 2 - 20, h - 40);
+  var startAngle = Math.PI, endAngle = 2 * Math.PI;
+
+  var zones = [
+    { from: 0, to: 30, color: '#F87171' },
+    { from: 30, to: 50, color: '#FBBF24' },
+    { from: 50, to: 70, color: '#FDE68A' },
+    { from: 70, to: 90, color: '#86EFAC' },
+    { from: 90, to: 100, color: '#16C079' }
+  ];
+  zones.forEach(function(z){
+    var a1 = startAngle + (z.from / 100) * Math.PI;
+    var a2 = startAngle + (z.to / 100) * Math.PI;
+    ctx.beginPath();
+    ctx.arc(cx, cy, r, a1, a2);
+    ctx.lineWidth = 18;
+    ctx.strokeStyle = z.color;
+    ctx.stroke();
+  });
+
+  var clamped = Math.max(min, Math.min(max, value));
+  var angle = startAngle + (clamped / 100) * Math.PI;
+  var nx = cx + Math.cos(angle) * (r - 26);
+  var ny = cy + Math.sin(angle) * (r - 26);
+  ctx.beginPath();
+  ctx.moveTo(cx, cy);
+  ctx.lineTo(nx, ny);
+  ctx.lineWidth = 3;
+  ctx.strokeStyle = '#fff';
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(cx, cy, 5, 0, Math.PI * 2);
+  ctx.fillStyle = '#fff';
+  ctx.fill();
+}
+
+function drawLevelMeter(canvasId, grade){
+  var canvas = document.getElementById(canvasId);
+  if(!canvas) return;
+  var setup = setupCanvas(canvas);
+  var ctx = setup.ctx, w = setup.w, h = setup.h;
+  ctx.clearRect(0, 0, w, h);
+  var maxGrade = 20;
+  var barY = h / 2 - 10, barH = 20;
+  var grad = ctx.createLinearGradient(0, 0, w, 0);
+  grad.addColorStop(0, '#16C079');
+  grad.addColorStop(0.5, '#FBBF24');
+  grad.addColorStop(1, '#F87171');
+  ctx.fillStyle = grad;
+  ctx.fillRect(10, barY, w - 20, barH);
+
+  var clamped = Math.max(0, Math.min(maxGrade, grade));
+  var x = 10 + (clamped / maxGrade) * (w - 20);
+  ctx.beginPath();
+  ctx.moveTo(x, barY - 8);
+  ctx.lineTo(x - 7, barY - 20);
+  ctx.lineTo(x + 7, barY - 20);
+  ctx.closePath();
+  ctx.fillStyle = '#fff';
+  ctx.fill();
+}
+
+function drawBarChart(canvasId, labels, values, color){
+  var canvas = document.getElementById(canvasId);
+  if(!canvas) return;
+  var setup = setupCanvas(canvas);
+  var ctx = setup.ctx, w = setup.w, h = setup.h;
+  ctx.clearRect(0, 0, w, h);
+  if(!values.length){
+    ctx.fillStyle = 'rgba(255,255,255,.4)';
+    ctx.font = '13px sans-serif';
+    ctx.fillText('No data yet — paste some text above.', 10, h / 2);
+    return;
+  }
+  var max = Math.max.apply(null, values) || 1;
+  var padBottom = 26, padTop = 10;
+  var barW = (w - 10) / values.length;
+  ctx.fillStyle = color || '#7C5CFC';
+  values.forEach(function(v, i){
+    var bh = (v / max) * (h - padBottom - padTop);
+    var x = i * barW + 4;
+    var y = h - padBottom - bh;
+    ctx.fillRect(x, y, Math.max(2, barW - 6), bh);
+  });
+  ctx.fillStyle = 'rgba(255,255,255,.55)';
+  ctx.font = '10px sans-serif';
+  labels.forEach(function(l, i){
+    var x = i * barW + barW / 2;
+    ctx.textAlign = 'center';
+    ctx.fillText(String(l), x, h - 10);
+  });
+  ctx.textAlign = 'left';
+}
+
+function bucketize(counts, edges){
+  var buckets = new Array(edges.length + 1).fill(0);
+  counts.forEach(function(n){
+    var placed = false;
+    for(var i = 0; i < edges.length; i++){
+      if(n <= edges[i]){ buckets[i]++; placed = true; break; }
+    }
+    if(!placed) buckets[buckets.length - 1]++;
+  });
+  return buckets;
+}
+
+/* ---------- Minimal single-font text PDF writer (no external library) ---------- */
+function pdfEscape(s){
+  return s.replace(/\\/g,'\\\\').replace(/\(/g,'\\(').replace(/\)/g,'\\)');
+}
+function wrapLine(line, maxChars){
+  if(line.length <= maxChars) return [line];
+  var words = line.split(' ');
+  var out = [], cur = '';
+  words.forEach(function(w){
+    if((cur + ' ' + w).trim().length > maxChars){
+      if(cur) out.push(cur);
+      cur = w;
+    } else {
+      cur = (cur ? cur + ' ' : '') + w;
+    }
+  });
+  if(cur) out.push(cur);
+  return out;
+}
+function buildReportPdf(lines){
+  var pageW = 595, pageH = 842, margin = 44, lineH = 14, fontSize = 10;
+  var maxChars = 95;
+  var wrapped = [];
+  lines.forEach(function(l){ wrapLine(l, maxChars).forEach(function(w){ wrapped.push(w); }); });
+  var linesPerPage = Math.floor((pageH - margin * 2) / lineH);
+  var pages = [];
+  for(var i = 0; i < wrapped.length; i += linesPerPage){
+    pages.push(wrapped.slice(i, i + linesPerPage));
+  }
+  if(!pages.length) pages.push(['']);
+
+  var objects = [];
+  function addObj(body){
+    objects.push(body);
+    return objects.length;
+  }
+
+  var fontRef = addObj('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>');
+  var pageRefs = [];
+  var contentRefs = [];
+
+  pages.forEach(function(pageLines){
+    var y = pageH - margin;
+    var stream = 'BT /F1 ' + fontSize + ' Tf ' + lineH + ' TL ' + margin + ' ' + y + ' Td\n';
+    pageLines.forEach(function(l, idx){
+      stream += (idx === 0 ? '' : 'T*\n') + '(' + pdfEscape(l) + ') Tj\n';
+    });
+    stream += 'ET';
+    var contentRef = addObj('<< /Length ' + stream.length + ' >>\nstream\n' + stream + '\nendstream');
+    contentRefs.push(contentRef);
+  });
+
+  var pagesObjIndex = objects.length + 1 + pages.length;
+  pages.forEach(function(_, i){
+    var pageRef = addObj('<< /Type /Page /Parent ' + pagesObjIndex + ' 0 R /Resources << /Font << /F1 ' +
+      fontRef + ' 0 R >> >> /MediaBox [0 0 ' + pageW + ' ' + pageH + '] /Contents ' + contentRefs[i] + ' 0 R >>');
+    pageRefs.push(pageRef);
+  });
+
+  var kids = pageRefs.map(function(r){ return r + ' 0 R'; }).join(' ');
+  addObj('<< /Type /Pages /Kids [' + kids + '] /Count ' + pageRefs.length + ' >>');
+  var catalogRef = addObj('<< /Type /Catalog /Pages ' + pagesObjIndex + ' 0 R >>');
+
+  var out = '%PDF-1.4\n';
+  var offsets = [0];
+  objects.forEach(function(body, i){
+    offsets.push(out.length);
+    out += (i + 1) + ' 0 obj\n' + body + '\nendobj\n';
+  });
+  var xrefStart = out.length;
+  out += 'xref\n0 ' + (objects.length + 1) + '\n0000000000 65535 f \n';
+  for(var j = 1; j <= objects.length; j++){
+    out += String(offsets[j]).padStart(10, '0') + ' 00000 n \n';
+  }
+  out += 'trailer\n<< /Size ' + (objects.length + 1) + ' /Root ' + catalogRef + ' 0 R >>\nstartxref\n' + xrefStart + '\n%%EOF';
+  return new Blob([out], { type: 'application/pdf' });
+}
+
+/* ---------- Formatting helpers ---------- */
+function fmtNum(n, d){
+  if(!isFinite(n)) return '0';
+  var v = d ? n.toFixed(d) : Math.round(n);
+  return Number(v).toLocaleString('en-IN', d ? { minimumFractionDigits: d, maximumFractionDigits: d } : {});
+}
+function fmtDuration(minutes){
+  if(!isFinite(minutes) || minutes <= 0) return '0 sec';
+  var totalSec = Math.round(minutes * 60);
+  if(totalSec < 60) return totalSec + ' sec';
+  var m = Math.floor(totalSec / 60), s = totalSec % 60;
+  return m + ' min ' + (s ? s + ' sec' : '');
+}
+
+var READING_SPEEDS = { fast: 300, average: 200, slow: 150 };
+var SPEAKING_SPEEDS = { speech: 130, presentation: 100, podcast: 150 };
+
+/* ---------- Report text (used for copy / txt / pdf) ---------- */
+function buildReportLines(st, rs){
+  var grade = consensusGrade(rs);
+  var lines = [];
+  lines.push('TEXT READABILITY REPORT — ApneSoftware.com');
+  lines.push('');
+  lines.push('Flesch Reading Ease: ' + fmtNum(rs.flesch, 1) + ' (' + easeLabel(rs.flesch) + ')');
+  lines.push('Flesch-Kincaid Grade Level: ' + fmtNum(rs.fk, 1));
+  lines.push('Gunning Fog Index: ' + fmtNum(rs.fog, 1));
+  lines.push('SMOG Index: ' + fmtNum(rs.smog, 1));
+  lines.push('Coleman-Liau Index: ' + fmtNum(rs.coleman, 1));
+  lines.push('Automated Readability Index: ' + fmtNum(rs.ari, 1));
+  lines.push('Dale-Chall Score: ' + fmtNum(rs.daleChall, 1));
+  lines.push('Linsear Write Formula: ' + fmtNum(rs.linsear, 1));
+  lines.push('LIX: ' + fmtNum(rs.lix, 1));
+  lines.push('RIX: ' + fmtNum(rs.rix, 1));
+  lines.push('Reading Level: ' + readingLevelFromGrade(grade));
+  lines.push('');
+  lines.push('Characters: ' + st.charCount + ' | Without spaces: ' + st.charsNoSpaces);
+  lines.push('Words: ' + st.wordCount + ' | Unique words: ' + st.uniqueWordCount);
+  lines.push('Sentences: ' + st.sentenceCount + ' | Paragraphs: ' + st.paragraphCount + ' | Lines: ' + st.lines);
+  lines.push('Estimated pages: ' + fmtNum(st.estimatedPages, 1));
+  lines.push('Average word length: ' + fmtNum(st.avgWordLen, 1) + ' letters');
+  lines.push('Average sentence length: ' + fmtNum(st.avgSentenceLen, 1) + ' words');
+  lines.push('Average paragraph length: ' + fmtNum(st.avgParagraphLen, 1) + ' words');
+  lines.push('');
+  lines.push('Silent reading time (average): ' + fmtDuration(st.wordCount / READING_SPEEDS.average));
+  lines.push('Speaking time (speech pace): ' + fmtDuration(st.wordCount / SPEAKING_SPEEDS.speech));
+  return lines;
+}
+
+/* ---------- Main render ---------- */
+function fillList(id, rows){
+  var el = document.getElementById(id);
+  if(!el) return;
+  el.innerHTML = rows.map(function(r){
+    return '<li><span>' + r[0] + '</span><b>' + r[1] + '</b></li>';
+  }).join('');
+}
+
+function renderStats(st){
+  document.getElementById('wordsVal').textContent = fmtNum(st.wordCount);
+  document.getElementById('sentencesVal').textContent = fmtNum(st.sentenceCount);
+  document.getElementById('syllablesVal').textContent = fmtNum(st.syllableCount);
+  document.getElementById('charsVal').textContent = fmtNum(st.charCount);
+
+  fillList('statsColA', [
+    ['Characters', fmtNum(st.charCount)],
+    ['Characters (no spaces)', fmtNum(st.charsNoSpaces)],
+    ['Words', fmtNum(st.wordCount)],
+    ['Unique words', fmtNum(st.uniqueWordCount)],
+    ['Sentences', fmtNum(st.sentenceCount)],
+    ['Paragraphs', fmtNum(st.paragraphCount)]
+  ]);
+  fillList('statsColB', [
+    ['Lines', fmtNum(st.lines)],
+    ['Estimated pages', fmtNum(st.estimatedPages, 1)],
+    ['Reading time (avg)', fmtDuration(st.wordCount / READING_SPEEDS.average)],
+    ['Speaking time (avg)', fmtDuration(st.wordCount / SPEAKING_SPEEDS.speech)],
+    ['Avg. word length', fmtNum(st.avgWordLen, 1) + ' letters'],
+    ['Avg. sentence length', fmtNum(st.avgSentenceLen, 1) + ' words']
+  ]);
+}
+
+function renderScores(rs){
+  var grade = consensusGrade(rs);
+  document.getElementById('easeScore').textContent = fmtNum(Math.max(0, Math.min(100, rs.flesch)), 0);
+  document.getElementById('easeLabel').textContent = easeLabel(rs.flesch);
+  document.getElementById('gradeVal').textContent = fmtNum(Math.max(0, rs.fk), 1);
+  document.getElementById('readingLevelBadge').textContent = readingLevelFromGrade(grade);
+
+  var cards = [
+    ['Flesch Reading Ease', fmtNum(rs.flesch, 1), '0-100 scale, higher = easier'],
+    ['Flesch-Kincaid Grade', fmtNum(rs.fk, 1), 'US school grade level'],
+    ['Gunning Fog Index', fmtNum(rs.fog, 1), 'Years of education needed'],
+    ['SMOG Index', fmtNum(rs.smog, 1), 'Grade level (health texts)'],
+    ['Coleman-Liau Index', fmtNum(rs.coleman, 1), 'Grade level, letter-based'],
+    ['Automated Readability', fmtNum(rs.ari, 1), 'Grade level, character-based'],
+    ['Dale-Chall Score', fmtNum(rs.daleChall, 1), 'Higher = harder vocabulary'],
+    ['Linsear Write Formula', fmtNum(rs.linsear, 1), 'US grade level'],
+    ['LIX', fmtNum(rs.lix, 1), 'Swedish readability index'],
+    ['RIX', fmtNum(rs.rix, 1), 'Long words per sentence']
+  ];
+  document.getElementById('scoresGrid').innerHTML = cards.map(function(c){
+    return '<div class="trs-score-card"><div class="sv">' + c[1] + '</div><div class="sn">' + c[0] +
+      '</div><div class="sd">' + c[2] + '</div></div>';
+  }).join('');
+}
+
+function renderTimes(st){
+  fillList('readingTimeList', [
+    ['Fast reader (300 wpm)', fmtDuration(st.wordCount / READING_SPEEDS.fast)],
+    ['Average reader (200 wpm)', fmtDuration(st.wordCount / READING_SPEEDS.average)],
+    ['Slow reader (150 wpm)', fmtDuration(st.wordCount / READING_SPEEDS.slow)]
+  ]);
+  fillList('speakingTimeList', [
+    ['Speech pace (130 wpm)', fmtDuration(st.wordCount / SPEAKING_SPEEDS.speech)],
+    ['Presentation pace (100 wpm)', fmtDuration(st.wordCount / SPEAKING_SPEEDS.presentation)],
+    ['Podcast pace (150 wpm)', fmtDuration(st.wordCount / SPEAKING_SPEEDS.podcast)]
+  ]);
+}
+
+function renderSentenceParagraph(st){
+  var swc = st.sentenceWordCounts;
+  var longest = 0, shortest = swc.length ? swc[0] : 0, longIdx = 0, shortIdx = 0;
+  swc.forEach(function(n, i){
+    if(n > longest){ longest = n; longIdx = i; }
+    if(n < shortest){ shortest = n; shortIdx = i; }
+  });
+  var longSentenceCount = swc.filter(function(n){ return n > 25; }).length;
+  fillList('sentenceList', [
+    ['Longest sentence', longest + ' words'],
+    ['Shortest sentence', (swc.length ? shortest : 0) + ' words'],
+    ['Average length', fmtNum(st.avgSentenceLen, 1) + ' words'],
+    ['Long sentences (>25 words)', longSentenceCount]
+  ]);
+
+  var pwc = st.paragraphWordCounts;
+  var largest = pwc.length ? Math.max.apply(null, pwc) : 0;
+  fillList('paragraphList', [
+    ['Paragraph count', st.paragraphCount],
+    ['Largest paragraph', largest + ' words'],
+    ['Average paragraph length', fmtNum(st.avgParagraphLen, 1) + ' words']
+  ]);
+}
+
+function renderVocabulary(st){
+  var repeated = 0, rare = 0, common = 0;
+  Object.keys(st.uniqueFreq).forEach(function(w){
+    if(st.uniqueFreq[w] > 2) repeated++;
+    if(COMMON_WORDS[w] || STOPWORDS[w]) common++; else rare++;
+  });
+  fillList('vocabList', [
+    ['Unique words', st.uniqueWordCount],
+    ['Common words', common],
+    ['Rare / uncommon words', rare],
+    ['Repeated words (3+ times)', repeated],
+    ['Difficult words (est.)', st.difficultWordCount]
+  ]);
+
+  var simple = st.wordCount - st.complexWordCount;
+  fillList('complexityList', [
+    ['Simple words (1-2 syllables)', simple],
+    ['Complex words (3+ syllables)', st.complexWordCount],
+    ['Multi-syllable ratio', st.wordCount ? fmtNum((st.complexWordCount / st.wordCount) * 100, 1) + '%' : '0%']
+  ]);
+}
+
+function renderPassiveTransitions(st){
+  var pv = analyzePassive(st.sentences);
+  fillList('passiveList', [
+    ['Passive sentences', pv.passiveSentences + ' / ' + pv.total],
+    ['Passive voice percentage', fmtNum(pv.percentage, 1) + '%']
+  ]);
+  var tr = analyzeTransitions(st.text);
+  fillList('transitionList', [
+    ['Transition words found', tr.total],
+    ['Distinct transition phrases', tr.items.length]
+  ]);
+  document.getElementById('transitionPills').innerHTML = tr.items.slice(0, 15).map(function(t){
+    return '<span class="trs-pill">' + t.phrase + ' × ' + t.count + '</span>';
+  }).join('');
+}
+
+function renderKeywords(st){
+  var kws = analyzeKeywords(st.words, 10);
+  var tbody = document.querySelector('#keywordTable tbody');
+  tbody.innerHTML = kws.map(function(k){
+    return '<tr><td>' + k.word + '</td><td>' + k.count + '</td><td>' + fmtNum(k.density, 1) + '%</td></tr>';
+  }).join('') || '<tr><td colspan="3">No keywords yet — paste some text above.</td></tr>';
+  return kws;
+}
+
+function renderGrammar(st){
+  var g = analyzeGrammar(st.text);
+  fillList('grammarList', [
+    ['Double / multiple spaces', g.doubleSpaces],
+    ['Empty lines', g.emptyLines],
+    ['Repeated punctuation (!!, .., ??)', g.repeatedPunct],
+    ['Sentences with lower-case start', g.capIssues]
+  ]);
+}
+
+function renderSeo(st, kws){
+  var seo = analyzeSeo(st, kws);
+  fillList('seoList', [
+    ['Average sentence length', fmtNum(seo.avgSentenceLen, 1) + ' words (aim ≤ 20)'],
+    ['Average paragraph length', fmtNum(seo.avgParagraphLen, 1) + ' words (aim ≤ 150)'],
+    ['Top keyword density', seo.topKeyword ? seo.topKeyword.word + ' — ' + fmtNum(seo.topKeyword.density, 1) + '%' : '—'],
+    ['Heading lines detected', seo.headingLines]
+  ]);
+  var flags = [];
+  flags.push(seo.avgSentenceLen <= 20
+    ? '<span class="trs-flag ok">Sentence length OK</span>'
+    : '<span class="trs-flag warn">Sentences too long</span>');
+  flags.push(seo.avgParagraphLen <= 150
+    ? '<span class="trs-flag ok">Paragraph size OK</span>'
+    : '<span class="trs-flag warn">Paragraphs too long</span>');
+  if(seo.topKeyword){
+    var d = seo.topKeyword.density;
+    flags.push(d >= 0.5 && d <= 3
+      ? '<span class="trs-flag ok">Keyword density healthy</span>'
+      : '<span class="trs-flag warn">Keyword density ' + (d > 3 ? 'too high' : 'too low') + '</span>');
+  } else {
+    flags.push('<span class="trs-flag neutral">No keyword data</span>');
+  }
+  document.getElementById('seoFlags').innerHTML = flags.join('');
+}
+
+function renderCharts(st, rs){
+  var grade = consensusGrade(rs);
+  drawGauge('chartGauge', Math.max(0, Math.min(100, rs.flesch)), 0, 100);
+  drawLevelMeter('chartLevel', Math.max(0, grade));
+
+  var wlLabels = ['1-3','4','5','6','7','8','9','10+'];
+  var wlBuckets = { '1':0,'2':0,'3':0,'4':0,'5':0,'6':0,'7':0,'8':0,'9':0,'10+':0 };
+  Object.keys(st.wordLenBuckets).forEach(function(k){ wlBuckets[k] = (wlBuckets[k]||0) + st.wordLenBuckets[k]; });
+  var wlValues = [
+    (wlBuckets['1']||0) + (wlBuckets['2']||0) + (wlBuckets['3']||0),
+    wlBuckets['4']||0, wlBuckets['5']||0, wlBuckets['6']||0,
+    wlBuckets['7']||0, wlBuckets['8']||0, wlBuckets['9']||0, wlBuckets['10+']||0
+  ];
+  drawBarChart('chartWordLen', wlLabels, wlValues, '#7C5CFC');
+
+  var slEdges = [5, 10, 15, 20, 25];
+  var slLabels = ['1-5','6-10','11-15','16-20','21-25','26+'];
+  var slValues = bucketize(st.sentenceWordCounts, slEdges);
+  drawBarChart('chartSentLen', slLabels, slValues, '#16C079');
+
+  var paLabels = st.paragraphWordCounts.map(function(_, i){ return 'P' + (i + 1); }).slice(0, 20);
+  var paValues = st.paragraphWordCounts.slice(0, 20);
+  drawBarChart('chartPara', paLabels, paValues, '#FBBF24');
+}
+
+/* ---------- Analyze orchestration ---------- */
+var lastStats = null, lastReadability = null;
+var analyzeTimer = null;
+
+function runAnalyze(){
+  var text = document.getElementById('textInput').value;
+  var langSel = document.getElementById('langSelect').value;
+  var detected = detectLanguage(text);
+  document.getElementById('langDetected').textContent = text.trim()
+    ? 'Detected language: ' + (detected === 'hi' ? 'Hindi' : detected === 'hinglish' ? 'Hinglish / Mixed' : 'English') +
+      (langSel !== 'auto' ? ' (manual override: ' + langSel + ')' : '')
+    : '';
+
+  var st = computeStats(text);
+  var rs = computeReadability(st);
+  lastStats = st;
+  lastReadability = rs;
+
+  if(!rs){
+    document.getElementById('easeScore').textContent = '—';
+    document.getElementById('easeLabel').textContent = 'Flesch Reading Ease';
+    document.getElementById('gradeVal').textContent = '—';
+    document.getElementById('readingLevelBadge').textContent = 'Reading level';
+    ['wordsVal','sentencesVal','syllablesVal','charsVal'].forEach(function(id){
+      document.getElementById(id).textContent = '0';
+    });
+    document.getElementById('statusMsg').textContent = 'Paste some text above to see the full analysis.';
+    return;
+  }
+
+  renderStats(st);
+  renderScores(rs);
+  renderTimes(st);
+  renderSentenceParagraph(st);
+  renderVocabulary(st);
+  renderPassiveTransitions(st);
+  var kws = renderKeywords(st);
+  renderGrammar(st);
+  renderSeo(st, kws);
+  renderCharts(st, rs);
+  document.getElementById('statusMsg').textContent = '✅ Analysis complete — ' + fmtNum(st.wordCount) + ' words analyzed.';
+}
+
+function scheduleAnalyze(){
+  clearTimeout(analyzeTimer);
+  analyzeTimer = setTimeout(runAnalyze, 180);
+}
+
+/* ---------- Compare mode ---------- */
+function runCompare(){
+  var textA = document.getElementById('cmpA').value;
+  var textB = document.getElementById('cmpB').value;
+  var stA = computeStats(textA), stB = computeStats(textB);
+  var rsA = computeReadability(stA), rsB = computeReadability(stB);
+  var tbody = document.querySelector('#cmpTable tbody');
+  if(!rsA || !rsB){
+    tbody.innerHTML = '<tr><td colspan="4">Paste text into both boxes to compare.</td></tr>';
+    return;
+  }
+  function row(label, a, b, higherIsBetter){
+    var aBetter = higherIsBetter ? a > b : a < b;
+    var bBetter = higherIsBetter ? b > a : b < a;
+    var change = b - a;
+    return '<tr><td>' + label + '</td><td' + (aBetter ? ' class="better"' : '') + '>' + fmtNum(a, 1) +
+      '</td><td' + (bBetter ? ' class="better"' : '') + '>' + fmtNum(b, 1) + '</td><td>' +
+      (change > 0 ? '+' : '') + fmtNum(change, 1) + '</td></tr>';
+  }
+  tbody.innerHTML =
+    row('Words', stA.wordCount, stB.wordCount, false) +
+    row('Sentences', stA.sentenceCount, stB.sentenceCount, false) +
+    row('Flesch Reading Ease', rsA.flesch, rsB.flesch, true) +
+    row('Flesch-Kincaid Grade', rsA.fk, rsB.fk, false) +
+    row('Gunning Fog', rsA.fog, rsB.fog, false) +
+    row('SMOG', rsA.smog, rsB.smog, false) +
+    row('Coleman-Liau', rsA.coleman, rsB.coleman, false) +
+    row('ARI', rsA.ari, rsB.ari, false) +
+    row('Dale-Chall', rsA.daleChall, rsB.daleChall, false) +
+    row('LIX', rsA.lix, rsB.lix, false) +
+    row('Avg sentence length', stA.avgSentenceLen, stB.avgSentenceLen, false);
+}
+
+/* ---------- Export ---------- */
+function currentReportText(){
+  if(!lastStats || !lastReadability) return 'No analysis yet. Paste text and try again.';
+  return buildReportLines(lastStats, lastReadability).join('\n');
+}
+function currentReportCsv(){
+  if(!lastStats || !lastReadability) return 'metric,value\n';
+  var rows = [['metric','value']];
+  buildReportLines(lastStats, lastReadability).forEach(function(l){
+    var idx = l.indexOf(':');
+    if(idx > -1) rows.push([l.slice(0, idx).replace(/,/g,';'), l.slice(idx + 1).trim().replace(/,/g,';')]);
+  });
+  return rows.map(function(r){ return r.join(','); }).join('\n');
+}
+
+function wireExport(){
+  document.getElementById('copyBtn').addEventListener('click', function(){
+    var text = currentReportText();
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){
+        document.getElementById('statusMsg').textContent = '✅ Report copied to clipboard.';
+      }).catch(function(){
+        document.getElementById('statusMsg').textContent = 'Could not copy — please copy manually.';
+      });
+    }
+  });
+  document.getElementById('txtBtn').addEventListener('click', function(){
+    downloadBlob('readability-report.txt', new Blob([currentReportText()], { type: 'text/plain' }));
+  });
+  document.getElementById('csvBtn').addEventListener('click', function(){
+    downloadBlob('readability-report.csv', new Blob([currentReportCsv()], { type: 'text/csv' }));
+  });
+  document.getElementById('pdfBtn').addEventListener('click', function(){
+    if(!lastStats || !lastReadability){
+      document.getElementById('statusMsg').textContent = 'Paste and analyze some text first.';
+      return;
+    }
+    var blob = buildReportPdf(buildReportLines(lastStats, lastReadability));
+    downloadBlob('readability-report.pdf', blob);
+  });
+  document.getElementById('printBtn').addEventListener('click', function(){
+    window.print();
+  });
+}
+
+/* ---------- Tabs ---------- */
+function wireTabs(){
+  var tabSingle = document.getElementById('tabSingle');
+  var tabCompare = document.getElementById('tabCompare');
+  var paneSingle = document.getElementById('paneSingle');
+  var paneCompare = document.getElementById('paneCompare');
+  function activate(tab){
+    var single = tab === 'single';
+    tabSingle.classList.toggle('active', single);
+    tabCompare.classList.toggle('active', !single);
+    tabSingle.setAttribute('aria-selected', single);
+    tabCompare.setAttribute('aria-selected', !single);
+    paneSingle.classList.toggle('active', single);
+    paneCompare.classList.toggle('active', !single);
+    if(!single) runCompare();
+  }
+  tabSingle.addEventListener('click', function(){ activate('single'); });
+  tabCompare.addEventListener('click', function(){ activate('compare'); });
+}
+
+/* ---------- Auto-clear (privacy) ---------- */
+var AUTO_CLEAR_MS = 10 * 60 * 1000;
+var autoClearTimer = null;
+function resetAutoClear(){
+  clearTimeout(autoClearTimer);
+  autoClearTimer = setTimeout(function(){
+    var ta = document.getElementById('textInput');
+    if(ta.value){
+      ta.value = '';
+      scheduleAnalyze();
+      document.getElementById('statusMsg').textContent = '🔒 Text auto-cleared after 10 minutes of inactivity for your privacy.';
+    }
+  }, AUTO_CLEAR_MS);
+}
+
+/* ---------- Sample / clear ---------- */
+var SAMPLE_TEXT = 'Reading is a fundamental skill that opens doors to knowledge and opportunity. However, not all writing is equally easy to understand. Some sentences are short and direct. Others, in contrast, wind on for a very long time, burying their main point beneath several clauses, qualifications and asides, which makes them considerably harder to follow. Therefore, professional writers measure readability before publishing. For example, a newspaper article usually aims for a grade level around eight, while a legal contract may be written at a graduate level. In addition, good writing avoids the passive voice, uses transition words to guide the reader, and keeps paragraphs reasonably short. As a result, readers stay engaged instead of getting lost.\n\nThis tool was designed to help you check exactly that. Paste any article, essay, email or report, and it will instantly calculate ten different readability formulas alongside detailed statistics about vocabulary, sentence structure and more. Consequently, you can revise your draft with confidence before you publish it.';
+
+function wireSampleClear(){
+  document.getElementById('sampleBtn').addEventListener('click', function(){
+    document.getElementById('textInput').value = SAMPLE_TEXT;
+    scheduleAnalyze();
+  });
+  document.getElementById('clearBtn').addEventListener('click', function(){
+    document.getElementById('textInput').value = '';
+    scheduleAnalyze();
+  });
+}
+
+/* ---------- Init ---------- */
+function init(){
+  var ta = document.getElementById('textInput');
+  ta.addEventListener('input', function(){ scheduleAnalyze(); resetAutoClear(); });
+  document.getElementById('langSelect').addEventListener('change', runAnalyze);
+  document.getElementById('cmpRunBtn').addEventListener('click', runCompare);
+  document.getElementById('cmpClearBtn').addEventListener('click', function(){
+    document.getElementById('cmpA').value = '';
+    document.getElementById('cmpB').value = '';
+    runCompare();
+  });
+  wireTabs();
+  wireExport();
+  wireSampleClear();
+  window.addEventListener('resize', function(){
+    if(lastStats && lastReadability) renderCharts(lastStats, lastReadability);
+  });
+  resetAutoClear();
+  runAnalyze();
+}
+
+init();
+
+})();
+</script>
+
 <!-- Default Statcounter code for Apne Software
 https://apnesoftware.com -->
 <script type="text/javascript">
