@@ -4,27 +4,70 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
+<meta name="description" content="Free professional Text Readability Analyzer. Flesch, Gunning Fog, SMOG, Coleman-Liau, ARI, Dale-Chall, LIX & RIX scores plus full text statistics, vocabulary, passive voice, keyword density and charts. 100% in-browser, no upload.">
 <link rel="canonical" href="https://apnesoftware.com/tools/text-readability-score.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Text Readability Score | ApneSoftware">
-<meta property="og:description" content="Flesch Reading Ease & Grade Level scores. Free online tool — no signup required.">
+<meta property="og:title" content="Text Readability Score Analyzer | ApneSoftware">
+<meta property="og:description" content="Analyze readability with 10 formulas, full statistics, vocabulary, passive voice, keyword density and charts. Free, private, no signup.">
 <meta property="og:url" content="https://apnesoftware.com/tools/text-readability-score.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Text Readability Score | ApneSoftware">
-<meta name="twitter:description" content="Flesch Reading Ease & Grade Level scores. Free online tool — no signup required.">
+<meta name="twitter:title" content="Text Readability Score Analyzer | ApneSoftware">
+<meta name="twitter:description" content="10 readability formulas, full statistics, vocabulary, passive voice, keyword density and charts. Free & private.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Text Readability Score","description":"Flesch Reading Ease & Grade Level scores. Free online tool — no signup required.","url":"https://apnesoftware.com/tools/text-readability-score.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Text Readability Score Analyzer","description":"Professional in-browser readability analyzer with 10 formulas, full text statistics, vocabulary analysis, passive voice detection, keyword density, charts and export.","url":"https://apnesoftware.com/tools/text-readability-score.html","applicationCategory":"WebApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
 </script>
 <meta name="color-scheme" content="dark">
-<title>Text Readability Score | ApneSoftware</title>
+<title>Text Readability Score Analyzer | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
-  .gauge-wrap{text-align:center;margin-top:14px}
-  .gauge-score{font-size:2.2rem;font-weight:800;color:var(--accent-2)}
-  .gauge-label{font-size:.95rem;color:var(--text-dim);margin-top:4px}
+  .trs-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+  .trs-tab{padding:9px 16px;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-dim);cursor:pointer;font-size:.85rem;font-weight:600;font-family:inherit}
+  .trs-tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .trs-pane{display:none}
+  .trs-pane.active{display:block}
+  .trs-toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+  .trs-gauge-wrap{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:center;margin-top:14px}
+  .trs-gauge-box{flex:1;min-width:220px;text-align:center;background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:16px}
+  .gauge-score{font-size:2.4rem;font-weight:800;color:var(--accent-2)}
+  .gauge-label{font-size:.9rem;color:var(--text-dim);margin-top:4px}
+  .trs-level-badge{display:inline-block;margin-top:8px;padding:5px 14px;border-radius:999px;font-weight:700;font-size:.85rem;background:rgba(var(--accent-rgb),.18);color:#fff}
+  .trs-section-title{font-size:1.05rem;font-weight:700;margin:26px 0 10px;color:#fff;display:flex;align-items:center;gap:8px}
+  .trs-scores-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+  .trs-score-card{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:14px}
+  .trs-score-card .sv{font-size:1.5rem;font-weight:800;color:var(--accent)}
+  .trs-score-card .sn{font-size:.8rem;color:#fff;font-weight:600;margin-top:2px}
+  .trs-score-card .sd{font-size:.72rem;color:var(--text-dim);margin-top:3px}
+  .trs-two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:640px){.trs-two{grid-template-columns:1fr}}
+  .trs-list{list-style:none;padding:0;margin:0}
+  .trs-list li{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed var(--border);font-size:.88rem}
+  .trs-list li:last-child{border-bottom:0}
+  .trs-list li b{color:#fff;font-weight:700}
+  .trs-table{width:100%;border-collapse:collapse;font-size:.85rem}
+  .trs-table th,.trs-table td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border)}
+  .trs-table th{color:var(--text-dim);font-weight:600}
+  .trs-table td:nth-child(n+2),.trs-table th:nth-child(n+2){text-align:right}
+  .trs-bar{height:8px;border-radius:6px;background:var(--surface-2);overflow:hidden;margin-top:6px}
+  .trs-bar span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+  .trs-chart-wrap{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:12px;margin-top:12px}
+  .trs-chart-wrap h4{font-size:.85rem;color:var(--text-dim);font-weight:600;margin-bottom:8px}
+  .trs-chart-wrap canvas{width:100%;height:auto;display:block}
+  .trs-flags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .trs-flag{padding:5px 12px;border-radius:999px;font-size:.78rem;font-weight:600;border:1px solid var(--border)}
+  .trs-flag.ok{background:rgba(22,192,121,.15);color:#7ef0bd;border-color:rgba(22,192,121,.4)}
+  .trs-flag.warn{background:rgba(248,113,113,.15);color:#fca5a5;border-color:rgba(248,113,113,.4)}
+  .trs-flag.neutral{background:var(--surface-2);color:var(--text-dim)}
+  .trs-muted{color:var(--text-dim);font-size:.82rem;margin-top:6px}
+  .trs-pill{display:inline-block;padding:3px 10px;border-radius:999px;background:var(--surface-2);border:1px solid var(--border);font-size:.75rem;margin:3px 4px 0 0;color:var(--text-dim)}
+  .trs-cmp-table td.better{color:#7ef0bd;font-weight:700}
+  .related-grid a .ri{margin-right:6px}
+  @media print{
+    .site-header,.left-sidebar,.right-sidebar,.trs-toolbar,.trs-tabs,#trsRateWrap,footer{display:none!important}
+    body{background:#fff!important;color:#000!important}
+  }
 </style>
 </head>
 <body>
@@ -37,116 +80,189 @@
 
 <div class="container">
   <div class="tool-header">
-    <h1>📖 Text Readability Score</h1>
-    <p>Check how easy your writing is to read, using the Flesch Reading Ease and Flesch-Kincaid Grade Level scores.</p>
+    <h1>📖 Text Readability Score Analyzer</h1>
+    <p>Measure how easy your writing is to read with 10 readability formulas, full text statistics, vocabulary and passive-voice analysis, keyword density and charts — all in your browser, nothing uploaded.</p>
   </div>
 
   <div class="panel">
-    <div class="field">
-      <label for="textInput">Paste your text</label>
-      <textarea id="textInput" style="min-height:200px" placeholder="Paste an article, essay, or any text here..."></textarea>
+    <div class="trs-tabs" role="tablist">
+      <button class="trs-tab active" id="tabSingle" role="tab" aria-selected="true">📝 Analyze Text</button>
+      <button class="trs-tab" id="tabCompare" role="tab" aria-selected="false">⚖️ Compare A / B</button>
     </div>
 
-    <div class="gauge-wrap">
-      <div class="gauge-score" id="easeScore">—</div>
-      <div class="gauge-label" id="easeLabel">Flesch Reading Ease</div>
+    <!-- ===== Single analysis pane ===== -->
+    <div class="trs-pane active" id="paneSingle">
+      <div class="field">
+        <label for="textInput">Paste your text</label>
+        <textarea id="textInput" style="min-height:200px" placeholder="Paste an article, essay, blog post or any text here… / यहाँ अपना टेक्स्ट पेस्ट करें…"></textarea>
+      </div>
+
+      <div class="field" style="max-width:280px">
+        <label for="langSelect">Language</label>
+        <select id="langSelect">
+          <option value="auto">Auto-detect</option>
+          <option value="en">English</option>
+          <option value="hi">Hindi (हिंदी)</option>
+          <option value="hinglish">Hinglish / Mixed</option>
+        </select>
+      </div>
+
+      <div class="trs-toolbar">
+        <button class="btn secondary" id="sampleBtn" type="button">Load sample</button>
+        <button class="btn secondary" id="clearBtn" type="button">Clear</button>
+        <button class="btn secondary" id="copyBtn" type="button">Copy results</button>
+        <button class="btn secondary" id="txtBtn" type="button">Download TXT</button>
+        <button class="btn secondary" id="csvBtn" type="button">Download CSV</button>
+        <button class="btn secondary" id="pdfBtn" type="button">Download PDF</button>
+        <button class="btn secondary" id="printBtn" type="button">Print report</button>
+      </div>
+      <div id="langDetected" class="trs-muted"></div>
+
+      <!-- Primary gauges -->
+      <div class="trs-gauge-wrap">
+        <div class="trs-gauge-box">
+          <div class="gauge-score" id="easeScore">—</div>
+          <div class="gauge-label" id="easeLabel">Flesch Reading Ease</div>
+        </div>
+        <div class="trs-gauge-box">
+          <div class="gauge-score" id="gradeVal">—</div>
+          <div class="gauge-label">Flesch-Kincaid Grade Level</div>
+          <div class="trs-level-badge" id="readingLevelBadge">Reading level</div>
+        </div>
+      </div>
+
+      <!-- Core stat grid (preserved IDs) -->
+      <div class="stat-grid" style="margin-top:14px">
+        <div class="stat-box"><div class="num" id="wordsVal">0</div><div class="lbl">Words</div></div>
+        <div class="stat-box"><div class="num" id="sentencesVal">0</div><div class="lbl">Sentences</div></div>
+        <div class="stat-box"><div class="num" id="syllablesVal">0</div><div class="lbl">Syllables</div></div>
+        <div class="stat-box"><div class="num" id="charsVal">0</div><div class="lbl">Characters</div></div>
+      </div>
+
+      <!-- Full statistics -->
+      <div class="trs-section-title">📊 Complete Text Statistics</div>
+      <div class="trs-two">
+        <ul class="trs-list" id="statsColA"></ul>
+        <ul class="trs-list" id="statsColB"></ul>
+      </div>
+
+      <!-- Readability scores -->
+      <div class="trs-section-title">🎯 Readability Scores</div>
+      <div class="trs-scores-grid" id="scoresGrid"></div>
+
+      <!-- Reading & speaking time -->
+      <div class="trs-two">
+        <div>
+          <div class="trs-section-title">⏱️ Reading Time</div>
+          <ul class="trs-list" id="readingTimeList"></ul>
+        </div>
+        <div>
+          <div class="trs-section-title">🎤 Speaking Time</div>
+          <ul class="trs-list" id="speakingTimeList"></ul>
+        </div>
+      </div>
+
+      <!-- Sentence & paragraph analysis -->
+      <div class="trs-two">
+        <div>
+          <div class="trs-section-title">✒️ Sentence Analysis</div>
+          <ul class="trs-list" id="sentenceList"></ul>
+        </div>
+        <div>
+          <div class="trs-section-title">¶ Paragraph Analysis</div>
+          <ul class="trs-list" id="paragraphList"></ul>
+        </div>
+      </div>
+
+      <!-- Vocabulary & complexity -->
+      <div class="trs-two">
+        <div>
+          <div class="trs-section-title">📚 Vocabulary Analysis</div>
+          <ul class="trs-list" id="vocabList"></ul>
+        </div>
+        <div>
+          <div class="trs-section-title">🧩 Word Complexity</div>
+          <ul class="trs-list" id="complexityList"></ul>
+        </div>
+      </div>
+
+      <!-- Passive & transitions -->
+      <div class="trs-two">
+        <div>
+          <div class="trs-section-title">🔄 Passive Voice</div>
+          <ul class="trs-list" id="passiveList"></ul>
+        </div>
+        <div>
+          <div class="trs-section-title">🔗 Transition Words</div>
+          <ul class="trs-list" id="transitionList"></ul>
+          <div id="transitionPills"></div>
+        </div>
+      </div>
+
+      <!-- Keyword density -->
+      <div class="trs-section-title">🔑 Keyword Density</div>
+      <table class="trs-table" id="keywordTable">
+        <thead><tr><th>Keyword</th><th>Count</th><th>Density</th></tr></thead>
+        <tbody></tbody>
+      </table>
+
+      <!-- Grammar indicators -->
+      <div class="trs-section-title">🧹 Grammar &amp; Style Indicators</div>
+      <ul class="trs-list" id="grammarList"></ul>
+
+      <!-- SEO metrics -->
+      <div class="trs-section-title">🔍 SEO Metrics</div>
+      <ul class="trs-list" id="seoList"></ul>
+      <div class="trs-flags" id="seoFlags"></div>
+
+      <!-- Charts -->
+      <div class="trs-section-title">📈 Charts</div>
+      <div class="trs-chart-wrap"><h4>Readability Gauge (Flesch Reading Ease)</h4><canvas id="chartGauge" width="600" height="220"></canvas></div>
+      <div class="trs-chart-wrap"><h4>Reading Level Meter (grade)</h4><canvas id="chartLevel" width="600" height="120"></canvas></div>
+      <div class="trs-two">
+        <div class="trs-chart-wrap"><h4>Word Length Distribution</h4><canvas id="chartWordLen" width="500" height="240"></canvas></div>
+        <div class="trs-chart-wrap"><h4>Sentence Length Distribution</h4><canvas id="chartSentLen" width="500" height="240"></canvas></div>
+      </div>
+      <div class="trs-chart-wrap"><h4>Paragraph Length Distribution (words per paragraph)</h4><canvas id="chartPara" width="600" height="240"></canvas></div>
     </div>
 
-    <div class="stat-grid" style="margin-top:14px">
-      <div class="stat-box"><div class="num" id="gradeVal">—</div><div class="lbl">Flesch-Kincaid Grade Level</div></div>
-      <div class="stat-box"><div class="num" id="wordsVal">0</div><div class="lbl">Words</div></div>
-      <div class="stat-box"><div class="num" id="sentencesVal">0</div><div class="lbl">Sentences</div></div>
-      <div class="stat-box"><div class="num" id="syllablesVal">0</div><div class="lbl">Syllables</div></div>
+    <!-- ===== Compare pane ===== -->
+    <div class="trs-pane" id="paneCompare">
+      <div class="trs-two">
+        <div class="field">
+          <label for="cmpA">Text A (before)</label>
+          <textarea id="cmpA" style="min-height:150px" placeholder="Paste the first / original version…"></textarea>
+        </div>
+        <div class="field">
+          <label for="cmpB">Text B (after)</label>
+          <textarea id="cmpB" style="min-height:150px" placeholder="Paste the second / edited version…"></textarea>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn" id="cmpRunBtn" type="button">Compare</button>
+        <button class="btn secondary" id="cmpClearBtn" type="button">Clear both</button>
+      </div>
+      <table class="trs-table trs-cmp-table" id="cmpTable" style="margin-top:16px">
+        <thead><tr><th>Metric</th><th>Text A</th><th>Text B</th><th>Change</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <p class="trs-muted">Higher Flesch Reading Ease and lower grade / index values generally mean easier reading. Green marks the easier-to-read side.</p>
     </div>
+
+    <div id="statusMsg" class="trs-muted" role="status" aria-live="polite"></div>
   </div>
 </div>
-
-
-<div class="info-wrap">
-  <div class="info-section">
-    <div class="info-block">
-      <h2>ℹ️ About This Tool</h2>
-      <p>Measures how easy your writing is to read using two well-known formulas: Flesch Reading Ease (higher score = easier to read, 0-100 scale) and Flesch-Kincaid Grade Level (the US school grade level needed to understand the text). Useful for blog posts, reports, or simplifying technical writing.</p>
-      <h3>How to use:</h3>
-      <ol>
-        <li>Paste your text into the box.</li>
-        <li>See your readability scores update instantly.</li>
-      </ol>
-    </div>
-    <hr class="info-divider">
-    <div class="info-block">
-      <h2>ℹ️ इस टूल के बारे में</h2>
-      <p>आपकी writing पढ़ने में कितनी आसान है, यह दो जाने-माने फॉर्मूले से मापता है: Flesch Reading Ease (ज़्यादा स्कोर = पढ़ने में आसान, 0-100 स्केल) और Flesch-Kincaid Grade Level (टेक्स्ट समझने के लिए ज़रूरी ग्रेड लेवल)। ब्लॉग पोस्ट, रिपोर्ट, या टेक्निकल राइटिंग को आसान बनाने के लिए उपयोगी।</p>
-      <h3>इस्तेमाल कैसे करें:</h3>
-      <ol>
-        <li>अपना टेक्स्ट बॉक्स में पेस्ट करें।</li>
-        <li>readability स्कोर तुरंत देखें।</li>
-      </ol>
-    </div>
-  </div>
-</div>
-
+<!-- CONTENT-SECTIONS-PLACEHOLDER -->
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
 <script src="../assets/common.js"></script>
-<script>
-function countSyllables(word){
-  word = word.toLowerCase().replace(/[^a-z]/g, '');
-  if(word.length === 0) return 0;
-  if(word.length <= 3) return 1;
-  word = word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '');
-  word = word.replace(/^y/, '');
-  const matches = word.match(/[aeiouy]{1,2}/g);
-  return matches ? matches.length : 1;
-}
-
-function easeLabel(score){
-  if(score >= 90) return 'Very Easy (5th grade)';
-  if(score >= 80) return 'Easy (6th grade)';
-  if(score >= 70) return 'Fairly Easy (7th grade)';
-  if(score >= 60) return 'Standard (8th-9th grade)';
-  if(score >= 50) return 'Fairly Difficult (10th-12th grade)';
-  if(score >= 30) return 'Difficult (College level)';
-  return 'Very Difficult (College graduate)';
-}
-
-function analyze(){
-  const text = document.getElementById('textInput').value;
-  const sentenceMatches = text.match(/[.!?]+/g);
-  const sentences = sentenceMatches ? sentenceMatches.length : (text.trim() ? 1 : 0);
-  const words = text.match(/\b[a-zA-Z']+\b/g) || [];
-  const wordCount = words.length;
-  const syllableCount = words.reduce((sum,w)=>sum+countSyllables(w),0);
-
-  document.getElementById('wordsVal').textContent = wordCount.toLocaleString('en-IN');
-  document.getElementById('sentencesVal').textContent = sentences.toLocaleString('en-IN');
-  document.getElementById('syllablesVal').textContent = syllableCount.toLocaleString('en-IN');
-
-  if(wordCount === 0 || sentences === 0){
-    document.getElementById('easeScore').textContent = '—';
-    document.getElementById('easeLabel').textContent = 'Flesch Reading Ease';
-    document.getElementById('gradeVal').textContent = '—';
-    return;
-  }
-
-  const ease = 206.835 - 1.015*(wordCount/sentences) - 84.6*(syllableCount/wordCount);
-  const grade = 0.39*(wordCount/sentences) + 11.8*(syllableCount/wordCount) - 15.59;
-
-  const clampedEase = Math.max(0, Math.min(100, ease));
-  document.getElementById('easeScore').textContent = Math.round(clampedEase);
-  document.getElementById('easeLabel').textContent = easeLabel(clampedEase);
-  document.getElementById('gradeVal').textContent = Math.max(0, grade).toFixed(1);
-}
-
-document.getElementById('textInput').addEventListener('input', analyze);
-analyze();
-</script>
+<!-- MAIN-SCRIPT-PLACEHOLDER -->
 <!-- Default Statcounter code for Apne Software
 https://apnesoftware.com -->
 <script type="text/javascript">
-var sc_project=13334460; 
-var sc_invisible=1; 
-var sc_security="a5854dc7"; 
+var sc_project=13334460;
+var sc_invisible=1;
+var sc_security="a5854dc7";
 </script>
 <script type="text/javascript"
 src="https://www.statcounter.com/counter/counter.js"
