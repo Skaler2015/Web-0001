@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Free Presumptive Tax Calculator for India (FY 2023-24 to FY 2026-27) — instant Presumptive Income and Tax Liability under Sections 44AD, 44ADA and 44AE, with eligibility checks, turnover/receipt limits, vehicle-based rates, deductions, Surcharge and Cess. 100% private, browser-only, no AI.">
+<meta name="keywords" content="presumptive tax calculator India, section 44AD calculator, section 44ADA calculator, section 44AE calculator, presumptive income business profession, goods carriage tax calculator, 6% 8% turnover tax">
+<link rel="canonical" href="https://apnesoftware.com/tools/presumptive-tax-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Presumptive Tax Calculator (Sec 44AD, 44ADA, 44AE, India) | ApneSoftware">
+<meta property="og:description" content="Calculate Presumptive Income and Tax Liability under Sections 44AD, 44ADA and 44AE instantly. Free, private, browser-only.">
+<meta property="og:url" content="https://apnesoftware.com/tools/presumptive-tax-calculator.html">
+<meta property="og:site_name" content="ApneSoftware">
+<meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Presumptive Tax Calculator (Sec 44AD, 44ADA, 44AE, India) | ApneSoftware">
+<meta name="twitter:description" content="Presumptive Income and Tax Liability under Sections 44AD, 44ADA and 44AE — instant, free, private, browser-only.">
+<meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Presumptive Tax Calculator","description":"Professional in-browser Presumptive Tax Calculator for India computing Presumptive Income and Tax Liability under Sections 44AD (eligible business), 44ADA (specified profession) and 44AE (goods carriages), with eligibility checks, turnover/receipt limits, vehicle-based rates, deductions, Surcharge and Health & Education Cess.","url":"https://apnesoftware.com/tools/presumptive-tax-calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"featureList":["Section 44AD presumptive income with digital/cash rate split","Section 44ADA flat 50% presumptive income for professionals","Section 44AE vehicle-based presumptive income","Eligibility and turnover/receipt limit checks","Deductions, Surcharge with Marginal Relief and 4% Cess","Export to PDF, Excel, CSV, print, copy and share"],"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Presumptive Tax Calculator","url":"https://apnesoftware.com/tools/presumptive-tax-calculator.html","description":"Browser-based Presumptive Tax Calculator for India under Sections 44AD, 44ADA and 44AE.","inLanguage":["en","hi"],"isPartOf":{"@type":"WebSite","name":"ApneSoftware","url":"https://apnesoftware.com"},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".tool-header p"]}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apnesoftware.com/index.html"},{"@type":"ListItem","position":2,"name":"Calculators & Converters","item":"https://apnesoftware.com/index.html#cat-calculator"},{"@type":"ListItem","position":3,"name":"Presumptive Tax Calculator","item":"https://apnesoftware.com/tools/presumptive-tax-calculator.html"}]}
+</script>
+<meta name="color-scheme" content="dark light">
+<title>Presumptive Tax Calculator (Sec 44AD, 44ADA, 44AE, India) | ApneSoftware</title>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  /* ===== Presumptive Tax Calculator — scoped pr- prefix ===== */
+
+  .pr-num, .pr-content .num, .pr-stat-cards .num, .pr-engine-row span:last-child,
+  .pr-content table td, .pr-content table th, .pr-formula-box, .pr-history-item .pr-amt{
+    white-space:nowrap; word-break:keep-all; overflow-wrap:normal;
+    font-variant-numeric: tabular-nums; font-feature-settings:"tnum" 1;
+  }
+
+  .pr-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:18px;align-items:start}
+  #pr-formSide,#pr-resultSide{min-width:0}
+  #pr-resultSide{position:sticky;top:16px}
+  @media(max-width:900px){ .pr-grid{grid-template-columns:1fr} #pr-resultSide{position:static} }
+
+  .pr-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+  .pr-tab{padding:9px 14px;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-dim);cursor:pointer;font-size:.82rem;font-weight:600;font-family:inherit}
+  .pr-tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .pr-pane{display:none}
+  .pr-pane.active{display:block}
+
+  .pr-card{background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:14px;backdrop-filter:blur(10px);
+    transition:transform .18s ease, box-shadow .18s ease}
+  .pr-card:hover{box-shadow:0 10px 30px rgba(124,92,252,.12)}
+  .pr-card h3{margin:0 0 10px;font-size:.95rem}
+  .pr-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-bottom:10px}
+  .pr-field label{display:block;font-size:.76rem;color:var(--text-dim);margin-bottom:4px}
+  .pr-field input,.pr-field select{width:100%;padding:8px 10px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:.88rem;transition:border-color .15s ease, box-shadow .15s ease}
+  .pr-field input:focus,.pr-field select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(124,92,252,.2)}
+  .pr-note{background:rgba(250,204,21,.08);border:1px solid rgba(250,204,21,.3);border-radius:10px;padding:10px 12px;font-size:.8rem;color:#fde68a;margin-top:10px}
+  .pr-err{display:none;color:#fca5a5;font-size:.78rem;margin-top:6px}
+  .pr-scheme-block{display:none}
+  .pr-scheme-block.active{display:block}
+
+  .pr-stat-cards{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+  .pr-stat-cards .num{font-size:1rem!important;overflow:hidden;text-overflow:ellipsis}
+  .pr-stat-cards .stat-box{flex:1;min-width:150px}
+  .pr-stat-cards .stat-box.pr-highlight{background:linear-gradient(135deg,rgba(124,92,252,.25),rgba(22,192,121,.18));border:1px solid var(--accent)}
+  .pr-stat-cards .stat-box.pr-refund{background:linear-gradient(135deg,rgba(22,192,121,.28),rgba(56,189,248,.16));border:1px solid #16C079}
+  .pr-stat-cards .stat-box.pr-text-card .num{font-size:1rem!important}
+
+  .pr-engine-box{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin:10px 0}
+  .pr-engine-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed var(--border);font-size:.86rem;gap:10px}
+  .pr-engine-row:last-child{border-bottom:none}
+  .pr-engine-row span:last-child{font-weight:700;color:var(--accent)}
+
+  .pr-steps{display:flex;flex-direction:column;gap:4px;margin:10px 0}
+  .pr-step{background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:8px 12px;font-size:.84rem;text-align:center}
+  .pr-step-arrow{text-align:center;color:var(--text-dim);font-size:.9rem}
+
+  .pr-formula-box{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:12px;font-family:'Consolas','Courier New',monospace;font-size:.8rem;white-space:pre-wrap;margin-top:10px}
+
+  .pr-chart-wrap{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:12px;margin-top:12px}
+  .pr-chart-wrap h4{font-size:.82rem;color:var(--text-dim);font-weight:600;margin-bottom:8px}
+  .pr-chart-wrap canvas{width:100%;height:auto;display:block}
+  .pr-legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;font-size:.76rem;color:var(--text-dim)}
+  .pr-legend span{display:inline-flex;align-items:center;gap:5px}
+  .pr-legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+
+  .pr-flags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .pr-flag{padding:5px 12px;border-radius:999px;font-size:.76rem;font-weight:600;border:1px solid var(--border)}
+  .pr-flag.ok{background:rgba(22,192,121,.15);color:#7ef0bd;border-color:rgba(22,192,121,.4)}
+  .pr-flag.warn{background:rgba(248,113,113,.15);color:#fca5a5;border-color:rgba(248,113,113,.4)}
+  .pr-flag.neutral{background:var(--surface-2);color:var(--text-dim)}
+  .pr-muted{color:var(--text-dim);font-size:.8rem;margin-top:6px}
+
+  .pr-history-item{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-radius:8px;background:var(--surface-2);border:1px solid var(--border);margin-bottom:6px;font-size:.84rem}
+  .pr-share-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  .pr-share-btn{padding:7px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface-2);color:var(--text);cursor:pointer;font-size:.8rem;text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:transform .15s ease, background .15s ease}
+  .pr-share-btn:hover{transform:translateY(-2px);background:var(--surface)}
+
+  .btn.pr-gradient{background:linear-gradient(135deg,#7C5CFC,#16C079);border:none;box-shadow:0 6px 20px rgba(124,92,252,.35);transition:transform .15s ease, box-shadow .15s ease}
+  .btn.pr-gradient:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(124,92,252,.5)}
+
+  #pr-stickyCalc{display:none}
+  @media(max-width:760px){
+    #pr-stickyCalc{
+      display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 14px;
+      background:linear-gradient(180deg,rgba(15,10,30,0),rgba(15,10,30,.96) 30%);
+      justify-content:center;
+    }
+    #pr-stickyCalc button{width:100%;max-width:420px;padding:13px 18px;font-size:.95rem;border-radius:999px}
+    body{padding-bottom:70px}
+  }
+
+  body.pr-large-font #pr-formSide,body.pr-large-font #pr-resultSide{font-size:1.1rem}
+  body.pr-high-contrast{filter:contrast(1.2) brightness(1.06)}
+
+  /* ===== Light mode — scoped strictly to the tool's own content ===== */
+  body.pr-light :is(.container,.pr-content){
+    --bg:#f4f2fb; --surface:#ffffff; --surface-2:#efeaf9; --border:rgba(20,10,45,.14); --border-strong:rgba(20,10,45,.24);
+    --text:#1c1533; --text-dim:rgba(28,21,51,.68);
+  }
+  body.pr-light .container,
+  body.pr-light .pr-content{
+    background:#f4f2fb; border-radius:18px; padding:20px 22px; box-shadow:0 8px 32px rgba(20,10,45,.12);
+  }
+  body.pr-light :is(.container,.pr-content) h1,
+  body.pr-light :is(.container,.pr-content) h2,
+  body.pr-light :is(.container,.pr-content) h3,
+  body.pr-light :is(.container,.pr-content) h4,
+  body.pr-light :is(.container,.pr-content) h5,
+  body.pr-light :is(.container,.pr-content) h6{color:var(--text)}
+  body.pr-light :is(.container,.pr-content) p{color:var(--text-dim)}
+  body.pr-light :is(.container,.pr-content) label{color:var(--text-dim)}
+  body.pr-light :is(.container,.pr-content) textarea,
+  body.pr-light :is(.container,.pr-content) input[type=text],
+  body.pr-light :is(.container,.pr-content) input[type=number],
+  body.pr-light :is(.container,.pr-content) input[type=date],
+  body.pr-light :is(.container,.pr-content) select{
+    background:#ffffff;border:1px solid rgba(20,10,45,.2);color:var(--text)
+  }
+  body.pr-light :is(.container,.pr-content) select option{background:#ffffff;color:var(--text)}
+  body.pr-light :is(.container,.pr-content) .panel{background:#ffffff!important;border:1px solid rgba(20,10,45,.1)!important;box-shadow:0 8px 28px rgba(20,10,45,.08)!important}
+  body.pr-light :is(.container,.pr-content) table th{background:rgba(20,10,45,.06);color:var(--text)}
+  body.pr-light :is(.container,.pr-content) table td{color:var(--text-dim);border-color:rgba(20,10,45,.1)}
+  body.pr-light :is(.container,.pr-content) .pr-tab{color:var(--text-dim)}
+  body.pr-light :is(.container,.pr-content) .pr-tab.active{color:#fff}
+  body.pr-light :is(.container,.pr-content) .btn.secondary{background:var(--surface-2);border-color:var(--border);color:var(--text)}
+
+  .related-grid a .ri{margin-right:6px}
+  .pr-content h2{font-size:1.15rem;margin:26px 0 10px}
+  .pr-content h3{font-size:1rem;margin:18px 0 8px}
+  .pr-content p,.pr-content li{font-size:.92rem;line-height:1.8}
+  .pr-content ul,.pr-content ol{padding-left:20px}
+  .pr-content table{width:100%;border-collapse:collapse;font-size:.86rem;margin:12px 0}
+  .pr-content table th,.pr-content table td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+  .pr-content table th{color:#c4b5fd}
+
+  .pr-faq-item{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:10px}
+  .pr-faq-item strong{color:#c4b5fd}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="../index.html">Apne<span>Software</span></a>
+    <a class="back-link" href="../index.html">← All Tools</a>
+  </div>
+</header>
+
+<div class="container">
+  <nav class="pr-muted" style="margin-bottom:10px" aria-label="Breadcrumb">
+    <a href="../index.html" style="color:#c4b5fd;text-decoration:none">Home</a> ›
+    <a href="../index.html#cat-calculator" style="color:#c4b5fd;text-decoration:none">Calculators &amp; Converters</a> ›
+    Presumptive Tax Calculator
+  </nav>
+
+  <div class="tool-header">
+    <h1>🧾 Presumptive Tax Calculator</h1>
+    <p>Calculate Presumptive Income and Tax Liability under Sections 44AD, 44ADA and 44AE instantly as per the latest Indian Income Tax Rules.</p>
+
+    <div class="pr-row" style="margin-top:14px">
+      <div class="pr-field">
+        <label for="pr-language">Language / भाषा</label>
+        <select id="pr-language"><option value="en">English</option><option value="hi">हिन्दी</option></select>
+      </div>
+      <div class="pr-field">
+        <label for="pr-theme">Theme</label>
+        <select id="pr-theme"><option value="dark">🌙 Dark</option><option value="light">☀️ Light</option></select>
+      </div>
+      <div class="pr-field">
+        <label for="pr-fy">Financial Year</label>
+        <select id="pr-fy">
+          <option value="2026-27">FY 2026-27</option>
+          <option value="2025-26" selected>FY 2025-26</option>
+          <option value="2024-25">FY 2024-25</option>
+          <option value="2023-24">FY 2023-24</option>
+        </select>
+      </div>
+      <div class="pr-field">
+        <label for="pr-ay">Assessment Year (Auto)</label>
+        <input type="text" id="pr-ay" readonly>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn pr-gradient" id="pr-calcBtn" type="button">🧮 Calculate</button>
+      <button class="btn secondary" id="pr-resetBtn" type="button">↺ Reset</button>
+      <button class="btn secondary" id="pr-printBtn" type="button">🖨️ Print</button>
+      <button class="btn secondary" id="pr-pdfBtn" type="button">📄 Download PDF</button>
+      <button class="btn secondary" id="pr-xlsxBtn" type="button">📊 Download Excel</button>
+      <button class="btn secondary" id="pr-csvBtn" type="button">📁 Download CSV</button>
+      <button class="btn secondary" id="pr-copyBtn" type="button">📋 Copy Results</button>
+    </div>
+    <div class="pr-share-row">
+      <a class="pr-share-btn" id="pr-shareWhatsapp" href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a class="pr-share-btn" id="pr-shareFacebook" href="#" target="_blank" rel="noopener">📘 Facebook</a>
+      <a class="pr-share-btn" id="pr-shareLinkedin" href="#" target="_blank" rel="noopener">💼 LinkedIn</a>
+      <a class="pr-share-btn" id="pr-shareTwitter" href="#" target="_blank" rel="noopener">🐦 X</a>
+      <button class="pr-share-btn" id="pr-copyLinkBtn" type="button">🔗 Copy Link</button>
+    </div>
+    <div id="pr-statusMsg" class="pr-muted" role="status" aria-live="polite"></div>
+  </div>
+
+  <div class="pr-grid">
+    <div id="pr-formSide">
+      <div class="panel">
+        <div class="pr-tabs" role="tablist">
+          <button class="pr-tab active" id="pr-tabScheme" role="tab" aria-selected="true">📋 Scheme &amp; Profile</button>
+          <button class="pr-tab" id="pr-tabReceipts" role="tab" aria-selected="false">💼 Receipts / Vehicle</button>
+          <button class="pr-tab" id="pr-tabOtherIncome" role="tab" aria-selected="false">💰 Other Income</button>
+          <button class="pr-tab" id="pr-tabDeductions" role="tab" aria-selected="false">🧾 Deductions</button>
+          <button class="pr-tab" id="pr-tabCredits" role="tab" aria-selected="false">💳 Tax Credits</button>
+          <button class="pr-tab" id="pr-tabHistory" role="tab" aria-selected="false">🕘 History</button>
+          <button class="pr-tab" id="pr-tabSettings" role="tab" aria-selected="false">⚙️ Settings</button>
+        </div>
+
+        <!-- ===== Tab: Scheme & Profile ===== -->
+        <div class="pr-pane active" id="pr-paneScheme">
+          <div class="pr-card">
+            <h3>👤 Taxpayer Profile</h3>
+            <div class="pr-row">
+              <div class="pr-field">
+                <label for="pr-taxpayerType">Taxpayer Type</label>
+                <select id="pr-taxpayerType">
+                  <option value="individual">Individual</option>
+                  <option value="huf">HUF</option>
+                  <option value="firm">Partnership Firm (not LLP)</option>
+                  <option value="llp">LLP</option>
+                  <option value="domesticCompany">Domestic Company</option>
+                </select>
+              </div>
+              <div class="pr-field">
+                <label for="pr-residentialStatus">Residential Status</label>
+                <select id="pr-residentialStatus">
+                  <option value="resident">Resident</option>
+                  <option value="rnor">Resident but Not Ordinarily Resident (RNOR)</option>
+                  <option value="nonResident">Non-Resident</option>
+                </select>
+              </div>
+              <div class="pr-field">
+                <label for="pr-ageCategory">Age Category</label>
+                <select id="pr-ageCategory">
+                  <option value="below60">Below 60 years</option>
+                  <option value="senior">60 - 80 years (Senior Citizen)</option>
+                  <option value="superSenior">Above 80 years (Super Senior Citizen)</option>
+                </select>
+              </div>
+              <div class="pr-field">
+                <label for="pr-regime">Tax Regime</label>
+                <select id="pr-regime">
+                  <option value="new">New Regime</option>
+                  <option value="old">Old Regime</option>
+                </select>
+              </div>
+            </div>
+            <p class="pr-muted">Presumptive Taxation Schemes are available only to Resident Individuals, HUFs and Partnership Firms (not LLPs) — LLPs and Companies are shown here for reference but are not eligible for Sections 44AD, 44ADA or 44AE.</p>
+          </div>
+          <div class="pr-card">
+            <h3>🗂️ Select Presumptive Scheme</h3>
+            <div class="pr-row">
+              <div class="pr-field">
+                <label for="pr-scheme">Presumptive Scheme</label>
+                <select id="pr-scheme">
+                  <option value="44AD">Section 44AD — Eligible Business</option>
+                  <option value="44ADA">Section 44ADA — Specified Profession</option>
+                  <option value="44AE">Section 44AE — Goods Carriages</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== Tab: Receipts / Vehicle (fields shown conditionally by scheme) ===== -->
+        <div class="pr-pane" id="pr-paneReceipts">
+          <div class="pr-card pr-scheme-block active" id="pr-block44AD">
+            <h3>💼 Section 44AD — Business Turnover / Gross Receipts</h3>
+            <div class="pr-row">
+              <div class="pr-field"><label for="pr-digitalReceipts">Digital Receipts</label><input type="number" id="pr-digitalReceipts" min="0" value="4000000"></div>
+              <div class="pr-field"><label for="pr-cashReceipts">Cash Receipts</label><input type="number" id="pr-cashReceipts" min="0" value="500000"></div>
+            </div>
+            <div class="pr-engine-box"><div class="pr-engine-row"><span>Business Turnover / Gross Receipts (Auto)</span><span id="pr-turnoverDisplay44AD">₹0.00</span></div></div>
+            <p class="pr-muted">Digital Receipts (account payee cheque, bank draft, ECS or other prescribed digital modes) are taxed at 6%; Cash Receipts at 8%. Turnover limit is ₹3 crore if cash receipts are 5% or less of total receipts, otherwise ₹2 crore.</p>
+          </div>
+
+          <div class="pr-card pr-scheme-block" id="pr-block44ADA">
+            <h3>💼 Section 44ADA — Professional Receipts</h3>
+            <div class="pr-row">
+              <div class="pr-field"><label for="pr-professionalReceipts">Professional Receipts</label><input type="number" id="pr-professionalReceipts" min="0" value="3000000"></div>
+              <div class="pr-field"><label for="pr-cashReceiptsADA">Cash Receipts (of the above)</label><input type="number" id="pr-cashReceiptsADA" min="0" value="0"></div>
+              <div class="pr-field">
+                <label for="pr-professionType">Profession Type</label>
+                <select id="pr-professionType">
+                  <option value="legal">Legal</option>
+                  <option value="medical">Medical</option>
+                  <option value="engineering">Engineering</option>
+                  <option value="architectural">Architectural</option>
+                  <option value="accountancy">Accountancy</option>
+                  <option value="technicalConsultancy">Technical Consultancy</option>
+                  <option value="interiorDecoration">Interior Decoration</option>
+                  <option value="itProfessional">IT / Technology Professional</option>
+                  <option value="other">Other Notified Profession</option>
+                </select>
+              </div>
+            </div>
+            <p class="pr-muted">Presumptive Income is a flat 50% of Professional Receipts. Receipt limit is ₹75 lakh if cash receipts are 5% or less of total receipts, otherwise ₹50 lakh.</p>
+          </div>
+
+          <div class="pr-card pr-scheme-block" id="pr-block44AE">
+            <h3>🚚 Section 44AE — Vehicle Details</h3>
+            <div class="pr-row">
+              <div class="pr-field"><label for="pr-heavyVehicles">Heavy Goods Vehicles (&gt;12,000 kg)</label><input type="number" id="pr-heavyVehicles" min="0" value="0"></div>
+              <div class="pr-field"><label for="pr-avgTonnage">Average Tonnage of Heavy Vehicles</label><input type="number" id="pr-avgTonnage" min="0" value="0"></div>
+              <div class="pr-field"><label for="pr-lightVehicles">Other Goods Vehicles (Light/Medium)</label><input type="number" id="pr-lightVehicles" min="0" value="2"></div>
+              <div class="pr-field"><label for="pr-monthsOwned">Months Owned (per vehicle, max 12)</label><input type="number" id="pr-monthsOwned" min="0" max="12" value="12"></div>
+            </div>
+            <div class="pr-err" id="pr-vehicleErr">Total vehicles cannot exceed 10, and vehicle counts must be valid non-negative numbers.</div>
+            <p class="pr-muted">Heavy goods vehicles (gross vehicle weight above 12,000 kg) are presumed at ₹1,000 per ton per month; other goods vehicles at a flat ₹7,500 per month. Eligible only if you own 10 or fewer goods carriages at any time in the year.</p>
+          </div>
+        </div>
+
+        <!-- ===== Tab: Other Income ===== -->
+        <div class="pr-pane" id="pr-paneOtherIncome">
+          <div class="pr-card">
+            <h3>💰 Other Income Heads</h3>
+            <div class="pr-row">
+              <div class="pr-field"><label for="pr-salaryIncome">Salary Income</label><input type="number" id="pr-salaryIncome" min="0" value="0"></div>
+              <div class="pr-field"><label for="pr-housePropertyIncome">House Property Income</label><input type="number" id="pr-housePropertyIncome" min="0" value="0"></div>
+              <div class="pr-field"><label for="pr-capitalGain">Capital Gain</label><input type="number" id="pr-capitalGain" min="0" value="0"></div>
+              <div class="pr-field"><label for="pr-otherSources">Income from Other Sources</label><input type="number" id="pr-otherSources" min="0" value="0"></div>
+            </div>
+            <div class="pr-err" id="pr-incomeErr">Income values cannot be negative or invalid.</div>
+          </div>
+        </div>
+
+        <!-- ===== Tab: Deductions ===== -->
+        <div class="pr-pane" id="pr-paneDeductions">
+          <div class="pr-card">
+            <h3>🧾 Chapter VI-A Deductions (Old Regime, Individual/HUF only)</h3>
+            <div class="pr-row">
+              <div class="pr-field"><label for="pr-sec80C">Section 80C</label><input type="number" id="pr-sec80C" min="0" value="0"></div>
+              <div class="pr-field"><label for="pr-sec80CCD1B">Section 80CCD(1B)</label><input type="number" id="pr-sec80CCD1B" min="0" value="0"></div>
+              <div class="pr-field"><label for="pr-sec80D">Section 80D</label><input type="number" id="pr-sec80D" min="0" value="0"></div>
+              <div class="pr-field"><label for="pr-sec80G">Section 80G</label><input type="number" id="pr-sec80G" min="0" value="0"></div>
+              <div class="pr-field"><label for="pr-otherDeductions">Other Deductions</label><input type="number" id="pr-otherDeductions" min="0" value="0"></div>
+            </div>
+            <p class="pr-muted">Deductions apply only under the Old Regime for Individuals/HUF. Section 80C is capped at ₹1,50,000 and Section 80CCD(1B) at ₹50,000; they are automatically ignored under the New Regime or for Firms.</p>
+          </div>
+        </div>
+
+        <!-- ===== Tab: Tax Credits ===== -->
+        <div class="pr-pane" id="pr-paneCredits">
+          <div class="pr-card">
+            <h3>💳 Taxes Already Paid</h3>
+            <div class="pr-row">
+              <div class="pr-field"><label for="pr-tds">TDS</label><input type="number" id="pr-tds" min="0" value="0"></div>
+              <div class="pr-field"><label for="pr-tcs">TCS</label><input type="number" id="pr-tcs" min="0" value="0"></div>
+              <div class="pr-field"><label for="pr-advanceTax">Advance Tax</label><input type="number" id="pr-advanceTax" min="0" value="0"></div>
+              <div class="pr-field"><label for="pr-selfAssessmentTax">Self Assessment Tax</label><input type="number" id="pr-selfAssessmentTax" min="0" value="0"></div>
+            </div>
+            <div class="pr-err" id="pr-taxErr">Tax and payment values cannot be negative.</div>
+          </div>
+        </div>
+
+        <!-- ===== Tab: History ===== -->
+        <div class="pr-pane" id="pr-paneHistory">
+          <div class="pr-card">
+            <h3>🕘 Calculation History</h3>
+            <div class="btn-row" style="margin-bottom:10px">
+              <button class="btn secondary" id="pr-clearHistoryBtn" type="button">🗑️ Clear History</button>
+            </div>
+            <div id="pr-historyList"></div>
+          </div>
+        </div>
+
+        <!-- ===== Tab: Settings ===== -->
+        <div class="pr-pane" id="pr-paneSettings">
+          <div class="pr-card">
+            <h3>⚙️ Accessibility Preferences</h3>
+            <div class="pr-row">
+              <div class="pr-field"><label style="display:flex;align-items:center;gap:6px;cursor:pointer"><input type="checkbox" id="pr-highContrast" style="width:auto"> High Contrast</label></div>
+              <div class="pr-field"><label style="display:flex;align-items:center;gap:6px;cursor:pointer"><input type="checkbox" id="pr-largeFont" style="width:auto"> Large Fonts</label></div>
+            </div>
+            <p class="pr-muted">Preferences are remembered in this browser for your next visit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="pr-resultSide">
+      <div class="panel">
+        <h3 style="margin:0 0 10px;font-size:1rem">📊 Presumptive Tax Summary</h3>
+        <div class="pr-stat-cards" id="pr-summaryCards"></div>
+        <div class="pr-flags" id="pr-resultFlags"></div>
+
+        <h3 style="margin:16px 0 6px;font-size:.95rem">🧠 Applicable Rule &amp; Eligibility</h3>
+        <div class="pr-engine-box" id="pr-slabBox"></div>
+
+        <h3 style="margin:16px 0 6px;font-size:.95rem">🧮 Calculation Steps</h3>
+        <div class="pr-steps" id="pr-stepsBox"></div>
+        <div class="pr-formula-box" id="pr-formulaBox"></div>
+
+        <h3 style="margin:16px 0 6px;font-size:.95rem">📋 Detailed Breakdown</h3>
+        <table id="pr-breakdownTable"><tbody></tbody></table>
+
+        <h3 style="margin:16px 0 6px;font-size:.95rem">📊 Charts</h3>
+        <div class="pr-chart-wrap"><h4>Presumptive Income vs Other Income vs Tax</h4><canvas id="pr-chartComposition" width="500" height="220"></canvas><div class="pr-legend" id="pr-legendComposition"></div></div>
+        <div class="pr-chart-wrap"><h4>Total Tax Liability vs Tax Paid vs Net Payable</h4><canvas id="pr-chartPayable" width="500" height="220"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:16px">
+    <h3 style="margin:0 0 10px;font-size:1rem">📚 Reference Tables</h3>
+    <h4 style="font-size:.9rem;margin:10px 0 6px">Scheme Comparison</h4>
+    <table>
+      <tr><th>Scheme</th><th>Applies To</th><th>Presumptive Rate</th><th>Limit</th></tr>
+      <tr><td>Section 44AD</td><td>Eligible business (Individual/HUF/Firm, not LLP)</td><td>6% (digital) / 8% (cash) of turnover</td><td>₹2 crore (₹3 crore if cash ≤5%)</td></tr>
+      <tr><td>Section 44ADA</td><td>Specified profession (Individual/HUF/Firm, not LLP)</td><td>50% of gross receipts</td><td>₹50 lakh (₹75 lakh if cash ≤5%)</td></tr>
+      <tr><td>Section 44AE</td><td>Goods carriage business, up to 10 vehicles</td><td>₹1,000/ton/month (heavy) or ₹7,500/month (other)</td><td>Max 10 vehicles owned</td></tr>
+    </table>
+    <h4 style="font-size:.9rem;margin:14px 0 6px">Eligibility Table</h4>
+    <table>
+      <tr><th>Entity</th><th>44AD</th><th>44ADA</th><th>44AE</th></tr>
+      <tr><td>Resident Individual / HUF</td><td>Eligible</td><td>Eligible (if specified profession)</td><td>Eligible</td></tr>
+      <tr><td>Partnership Firm (not LLP)</td><td>Eligible</td><td>Eligible (if specified profession)</td><td>Eligible</td></tr>
+      <tr><td>LLP</td><td>Not Eligible</td><td>Not Eligible</td><td>Not Eligible</td></tr>
+      <tr><td>Company</td><td>Not Eligible</td><td>Not Eligible</td><td>Not Eligible</td></tr>
+      <tr><td>Non-Resident</td><td>Not Eligible</td><td>Not Eligible</td><td>Not Eligible</td></tr>
+    </table>
+    <h4 style="font-size:.9rem;margin:14px 0 6px">Presumptive Rate Table</h4>
+    <table>
+      <tr><th>Section</th><th>Receipt Mode</th><th>Rate</th></tr>
+      <tr><td>44AD</td><td>Digital / Banking Channel</td><td>6%</td></tr>
+      <tr><td>44AD</td><td>Cash</td><td>8%</td></tr>
+      <tr><td>44ADA</td><td>Any Mode</td><td>50% (flat)</td></tr>
+      <tr><td>44AE — Heavy Goods Vehicle (&gt;12,000 kg)</td><td>Per Ton, Per Month</td><td>₹1,000</td></tr>
+      <tr><td>44AE — Other Goods Vehicle</td><td>Per Vehicle, Per Month</td><td>₹7,500 (flat)</td></tr>
+    </table>
+    <h4 style="font-size:.9rem;margin:14px 0 6px">Tax Slab Table (New Regime, FY 2025-26/2026-27, Individual/HUF)</h4>
+    <table>
+      <tr><th>Taxable Income</th><th>Rate</th></tr>
+      <tr><td>Up to ₹4,00,000</td><td>Nil</td></tr>
+      <tr><td>₹4,00,001 – ₹8,00,000</td><td>5%</td></tr>
+      <tr><td>₹8,00,001 – ₹12,00,000</td><td>10%</td></tr>
+      <tr><td>₹12,00,001 – ₹16,00,000</td><td>15%</td></tr>
+      <tr><td>₹16,00,001 – ₹20,00,000</td><td>20%</td></tr>
+      <tr><td>₹20,00,001 – ₹24,00,000</td><td>25%</td></tr>
+      <tr><td>Above ₹24,00,000</td><td>30%</td></tr>
+    </table>
+    <h4 style="font-size:.9rem;margin:14px 0 6px">Surcharge Table (Individual/HUF)</h4>
+    <table>
+      <tr><th>Taxable Income</th><th>Surcharge Rate</th></tr>
+      <tr><td>Up to ₹50 Lakh</td><td>0%</td></tr>
+      <tr><td>₹50 Lakh – ₹1 Crore</td><td>10%</td></tr>
+      <tr><td>₹1 Crore – ₹2 Crore</td><td>15%</td></tr>
+      <tr><td>₹2 Crore – ₹5 Crore</td><td>25%</td></tr>
+      <tr><td>Above ₹5 Crore</td><td>37% (Old Regime) / 25% (New Regime)</td></tr>
+    </table>
+    <p class="pr-muted" style="font-size:.8rem">Firms are taxed at a flat 30% with a 12% Surcharge above ₹1 crore. Reference figures only — always verify current rates before filing.</p>
+  </div>
+</div>
+
+<div class="pr-content">
+
+<h2>1. Related Tools</h2>
+<div class="related-grid">
+  <a href="income-tax-calculator.html"><span class="ri">💰</span> Income Tax Calculator</a>
+  <a href="surcharge-calculator.html"><span class="ri">📈</span> Surcharge Calculator</a>
+  <a href="health-education-cess-calculator.html"><span class="ri">❤️‍🩹</span> Health &amp; Education Cess Calculator</a>
+  <a href="capital-gain-tax-calculator.html"><span class="ri">📈</span> Capital Gain Tax Calculator</a>
+  <a href="tds-calculator.html"><span class="ri">🧾</span> TDS Calculator</a>
+  <a href="tcs-calculator.html"><span class="ri">🧾</span> TCS Calculator</a>
+  <a href="advance-tax-calculator.html"><span class="ri">🧾</span> Advance Tax Calculator</a>
+  <a href="salary-calculator.html"><span class="ri">💼</span> Salary Calculator</a>
+  <a href="gratuity-calculator.html"><span class="ri">🎁</span> Gratuity Calculator</a>
+  <a href="pf-calculator.html"><span class="ri">🏦</span> PF Calculator</a>
+</div>
+
+<h2>2. About This Tool | इस टूल के बारे में</h2>
+
+<p>यह टूल Income Tax Act की Sections 44AD, 44ADA एवं 44AE के अनुसार Presumptive Income और Tax Liability की सटीक गणना करता है। | This tool accurately calculates Presumptive Income and Tax Liability under Sections 44AD, 44ADA and 44AE of the Income Tax Act.</p>
+
+<p>Presumptive Taxation Scheme छोटे व्यवसायों और पेशेवरों को बिना विस्तृत बहीखाता रखे अपनी आय का अनुमान एक निश्चित प्रतिशत के आधार पर लगाने की अनुमति देती है। | The Presumptive Taxation Scheme allows small businesses and professionals to estimate their income at a fixed percentage, without maintaining detailed books of accounts.</p>
+
+<p>Section 44AD, ₹2 करोड़ तक के टर्नओवर वाले पात्र व्यवसायों पर लागू होता है — Digital Receipts पर 6% और Cash Receipts पर 8% की दर से Presumptive Income की गणना की जाती है, तथा Cash Receipts कुल प्राप्तियों के 5% से अधिक न होने पर सीमा बढ़कर ₹3 करोड़ हो जाती है। | Section 44AD applies to eligible businesses with turnover up to ₹2 crore — Presumptive Income is computed at 6% for Digital Receipts and 8% for Cash Receipts, with the limit rising to ₹3 crore if Cash Receipts do not exceed 5% of total receipts.</p>
+
+<p>Section 44ADA, कानून, चिकित्सा, इंजीनियरिंग, वास्तुकला, लेखांकन और अन्य अधिसूचित पेशों जैसे विशिष्ट पेशेवरों पर लागू होता है — Presumptive Income हमेशा Gross Receipts का सपाट 50% होता है, और सीमा सामान्यतः ₹50 लाख है, जो Cash Receipts 5% से कम होने पर ₹75 लाख तक बढ़ जाती है। | Section 44ADA applies to specified professionals such as legal, medical, engineering, architectural, accountancy and other notified professions — Presumptive Income is always a flat 50% of Gross Receipts, and the limit is normally ₹50 lakh, rising to ₹75 lakh if Cash Receipts are under 5%.</p>
+
+<p>Section 44AE, माल ढुलाई व्यवसाय में लगे उन Taxpayers पर लागू होता है जिनके पास वर्ष में किसी भी समय 10 से अधिक Goods Carriages नहीं हों — भारी वाहनों (12,000 किग्रा से अधिक) पर प्रति टन प्रति माह ₹1,000 तथा अन्य वाहनों पर प्रति माह सपाट ₹7,500 की दर से आय मानी जाती है। | Section 44AE applies to taxpayers in the goods carriage business who do not own more than 10 goods carriages at any time during the year — income is presumed at ₹1,000 per ton per month for heavy vehicles (above 12,000 kg) and a flat ₹7,500 per month for other vehicles.</p>
+
+<p>LLPs और Companies इन तीनों presumptive schemes के लिए पात्र नहीं हैं — केवल Resident Individuals, HUFs और Partnership Firms (LLP को छोड़कर) ही इनका लाभ उठा सकते हैं। | LLPs and Companies are not eligible for any of these three presumptive schemes — only Resident Individuals, HUFs and Partnership Firms (excluding LLPs) can avail of them.</p>
+
+<p>Chapter VI-A कटौतियाँ (जैसे Section 80C, 80CCD(1B), 80D, 80G) केवल Old Tax Regime के तहत Individuals और HUF के लिए लागू होती हैं — New Regime के तहत ये स्वतः अनदेखी कर दी जाती हैं। | Chapter VI-A deductions (such as Section 80C, 80CCD(1B), 80D, 80G) apply only under the Old Tax Regime for Individuals and HUF — they are automatically ignored under the New Regime.</p>
+
+<p>Presumptive Income के साथ-साथ Salary, House Property, Capital Gain और Other Sources से हुई अन्य आय भी Gross Total Income में जोड़ी जाती है, तथा कटौतियाँ घटाने के बाद Taxable Income प्राप्त होती है। | Along with Presumptive Income, other income from Salary, House Property, Capital Gain and Other Sources is added to arrive at Gross Total Income, and Taxable Income is obtained after subtracting deductions.</p>
+
+<p>Income Tax की गणना Individual/HUF के लिए slab दरों पर तथा Firms के लिए फ्लैट 30% दर पर की जाती है, जिसके बाद लागू Surcharge (Marginal Relief सहित) और 4% Health &amp; Education Cess जोड़ा जाता है। | Income Tax is computed at slab rates for Individual/HUF and a flat 30% rate for Firms, after which applicable Surcharge (including Marginal Relief) and 4% Health &amp; Education Cess are added.</p>
+
+<p>यदि Presumptive Scheme के तहत घोषित आय टर्नओवर या वाहन सीमा से अधिक हो, तो कैलकुलेटर इसे स्पष्ट रूप से ineligible के रूप में फ्लैग करता है, बजाय किसी संभावित रूप से गलत आंकड़े को दिखाने के। | If the income declared exceeds the turnover or vehicle limit under a Presumptive Scheme, the calculator clearly flags it as ineligible, rather than showing a potentially incorrect figure.</p>
+
+<p>अपने परिणाम को PDF, Excel या CSV के रूप में डाउनलोड करें, सीधे प्रिंट करें, या WhatsApp, Facebook, LinkedIn, X और Copy Link के माध्यम से तुरंत साझा करें। | Download your result as PDF, Excel or CSV, print it directly, or share it instantly via WhatsApp, Facebook, LinkedIn, X and Copy Link.</p>
+
+<p>हर गणना पूरी तरह आपके ब्राउज़र के भीतर होती है — कोई भी आय या व्यवसाय संबंधी जानकारी कभी किसी सर्वर पर अपलोड नहीं की जाती, और यह टूल किसी भी AI-आधारित सुविधा का उपयोग नहीं करता। | Every calculation runs entirely within your browser — no income or business-related data is ever uploaded to a server, and this tool does not use any AI-powered features.</p>
+
+<h2>3. Frequently Asked Questions | अक्सर पूछे जाने वाले प्रश्न</h2>
+<div class="pr-faq" id="prFaq">
+
+<div class="pr-faq-item"><p><strong>Q. What is Presumptive Taxation? | Presumptive Taxation क्या है?</strong><br>A scheme allowing small businesses and professionals to declare income at a fixed percentage without detailed books of accounts. | एक योजना जो छोटे व्यवसायों और पेशेवरों को विस्तृत बहीखाता के बिना एक निश्चित प्रतिशत पर आय घोषित करने की अनुमति देती है।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. Who is eligible for Section 44AD? | Section 44AD के लिए कौन पात्र है?</strong><br>Resident Individuals, HUFs and Partnership Firms (not LLPs) carrying on an eligible business with turnover up to ₹2 crore (₹3 crore if mostly digital). | Resident Individuals, HUFs और Partnership Firms (LLP को छोड़कर) जो ₹2 करोड़ तक टर्नओवर (मुख्यतः digital होने पर ₹3 करोड़) वाले eligible business में हों।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. What is the presumptive rate under Section 44AD? | Section 44AD के तहत presumptive दर क्या है?</strong><br>6% of digital/banking receipts and 8% of cash receipts. | Digital/banking प्राप्तियों का 6% और cash प्राप्तियों का 8%।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. Who is eligible for Section 44ADA? | Section 44ADA के लिए कौन पात्र है?</strong><br>Resident Individuals, HUFs and Firms in specified professions like legal, medical, engineering and accountancy, with receipts up to ₹50 lakh (₹75 lakh if mostly digital). | Resident Individuals, HUFs और Firms जो legal, medical, engineering, accountancy जैसे specified professions में हों, ₹50 लाख (मुख्यतः digital होने पर ₹75 लाख) तक receipts के साथ।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. What is the presumptive rate under Section 44ADA? | Section 44ADA के तहत presumptive दर क्या है?</strong><br>A flat 50% of gross professional receipts. | कुल professional receipts का सपाट 50%।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. Who is eligible for Section 44AE? | Section 44AE के लिए कौन पात्र है?</strong><br>Taxpayers in the goods carriage business owning 10 or fewer goods vehicles at any time in the year. | Goods carriage व्यवसाय में लगे taxpayers जिनके पास वर्ष में किसी भी समय 10 या उससे कम goods vehicles हों।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. What is the rate under Section 44AE? | Section 44AE के तहत दर क्या है?</strong><br>₹1,000 per ton per month for heavy goods vehicles, ₹7,500 per month flat for other vehicles. | भारी goods vehicles के लिए प्रति टन प्रति माह ₹1,000, अन्य वाहनों के लिए फ्लैट ₹7,500 प्रति माह।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. Are LLPs eligible for presumptive taxation? | क्या LLPs presumptive taxation के लिए पात्र हैं?</strong><br>No — LLPs are not eligible for Sections 44AD, 44ADA or 44AE. | नहीं — LLPs Sections 44AD, 44ADA या 44AE के लिए पात्र नहीं हैं।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. What happens if turnover exceeds the limit? | अगर टर्नओवर सीमा से अधिक हो जाए तो क्या होता है?</strong><br>The taxpayer becomes ineligible for the presumptive scheme and must maintain regular books of accounts, possibly with a tax audit. | Taxpayer presumptive scheme के लिए अपात्र हो जाता है और उसे नियमित बहीखाता रखना होगा, संभवतः tax audit के साथ।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. What is the enhanced turnover limit for Section 44AD? | Section 44AD के लिए बढ़ी हुई टर्नओवर सीमा क्या है?</strong><br>₹3 crore, if cash receipts do not exceed 5% of total receipts. | ₹3 करोड़, यदि cash receipts कुल प्राप्तियों के 5% से अधिक न हों।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. What is the enhanced receipt limit for Section 44ADA? | Section 44ADA के लिए बढ़ी हुई receipt सीमा क्या है?</strong><br>₹75 lakh, if cash receipts do not exceed 5% of total receipts. | ₹75 लाख, यदि cash receipts कुल प्राप्तियों के 5% से अधिक न हों।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. Can I declare income higher than the presumptive rate? | क्या मैं presumptive दर से अधिक आय घोषित कर सकता हूँ?</strong><br>Yes — you may voluntarily declare a higher income than the presumptive minimum. | हाँ — आप स्वेच्छा से presumptive न्यूनतम से अधिक आय घोषित कर सकते हैं।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. Do deductions apply under presumptive schemes? | क्या presumptive schemes के तहत कटौतियाँ लागू होती हैं?</strong><br>Chapter VI-A deductions like 80C apply to your Gross Total Income under the Old Regime, but no separate business expense deductions are allowed against Presumptive Income. | 80C जैसी Chapter VI-A कटौतियाँ Old Regime के तहत आपकी Gross Total Income पर लागू होती हैं, लेकिन Presumptive Income के विरुद्ध अलग से कोई business expense कटौती अनुमत नहीं है।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. Is Surcharge applicable on presumptive tax? | क्या presumptive tax पर Surcharge लागू होता है?</strong><br>Yes, based on your total taxable income, with the same slabs and Marginal Relief as regular income. | हाँ, आपकी कुल taxable income के आधार पर, नियमित आय के समान slabs और Marginal Relief के साथ।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. Is Health &amp; Education Cess applicable? | क्या Health &amp; Education Cess लागू होता है?</strong><br>Yes — a flat 4% on Income Tax plus Surcharge. | हाँ — Income Tax जमा Surcharge पर फ्लैट 4%।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. Can I switch out of a presumptive scheme? | क्या मैं presumptive scheme से बाहर निकल सकता हूँ?</strong><br>Yes, but under Section 44AD, opting out before 5 years can restrict re-entry into the scheme for the next 5 years. | हाँ, लेकिन Section 44AD के तहत 5 साल से पहले बाहर निकलने पर अगले 5 वर्षों के लिए scheme में दोबारा प्रवेश प्रतिबंधित हो सकता है।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. What if declared income is lower than the presumptive rate? | अगर घोषित आय presumptive दर से कम हो तो?</strong><br>The taxpayer must maintain books of accounts and get them audited if total income exceeds the basic exemption limit. | Taxpayer को बहीखाता रखना होगा और यदि कुल आय basic exemption सीमा से अधिक हो तो उसका audit कराना होगा।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. Does profession type affect the 44ADA rate? | क्या profession प्रकार 44ADA दर को प्रभावित करता है?</strong><br>No — the flat 50% rate applies uniformly to all specified professions. | नहीं — फ्लैट 50% दर सभी specified professions पर समान रूप से लागू होती है।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. What counts as a heavy goods vehicle under Section 44AE? | Section 44AE के तहत भारी goods vehicle क्या माना जाता है?</strong><br>A goods carriage with a gross vehicle weight exceeding 12,000 kg. | 12,000 किग्रा से अधिक gross vehicle weight वाला goods carriage।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. Is partial-year vehicle ownership pro-rated? | क्या आंशिक-वर्ष वाहन स्वामित्व pro-rate होता है?</strong><br>Yes — presumptive income under Section 44AE is computed per month (or part of month) of ownership. | हाँ — Section 44AE के तहत presumptive income स्वामित्व के प्रति माह (या माह के भाग) के आधार पर गणना की जाती है।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. Are Companies eligible for these schemes? | क्या Companies इन schemes के लिए पात्र हैं?</strong><br>No — Sections 44AD, 44ADA and 44AE are not available to Companies. | नहीं — Sections 44AD, 44ADA और 44AE Companies के लिए उपलब्ध नहीं हैं।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. Can Non-Residents use presumptive taxation? | क्या Non-Residents presumptive taxation का उपयोग कर सकते हैं?</strong><br>No — these schemes are available only to Residents. | नहीं — ये schemes केवल Residents के लिए उपलब्ध हैं।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. Can I download my calculation report? | क्या मैं अपनी calculation report download कर सकता हूँ?</strong><br>Yes — as PDF, Excel or CSV, or print it directly from your browser. | हाँ — PDF, Excel या CSV के रूप में, या सीधे अपने browser से print कर सकते हैं।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. Is my data uploaded anywhere? | क्या मेरा data कहीं upload होता है?</strong><br>No — every calculation runs entirely inside your browser and nothing is sent to a server. | नहीं — हर calculation पूरी तरह आपके browser के भीतर चलता है और कुछ भी server पर नहीं भेजा जाता।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. Does this tool use any AI? | क्या इस टूल में कोई AI इस्तेमाल होता है?</strong><br>No — every rule is deterministic, hand-written logic based on published Income Tax provisions. | नहीं — हर rule, प्रकाशित Income Tax प्रावधानों पर आधारित deterministic, hand-written logic है।</p></div>
+
+<div class="pr-faq-item"><p><strong>Q. Is this calculator a substitute for professional advice? | क्या यह पेशेवर सलाह का विकल्प है?</strong><br>No — always consult a Chartered Accountant or tax professional before making financial decisions. | नहीं — वित्तीय निर्णय लेने से पहले हमेशा किसी Chartered Accountant या tax professional से सलाह लें।</p></div>
+
+</div>
+
+</div>
+
+<p class="pr-muted" style="font-size:.85rem;text-align:center;padding:0 4px 4px">This calculator provides estimates based on the latest available Indian Income Tax rules. Tax laws may change over time. Please consult a Chartered Accountant or tax professional before making financial or tax-related decisions.</p>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Presumptive Taxation?", "acceptedAnswer": {"@type": "Answer", "text": "A scheme allowing small businesses and professionals to declare income at a fixed percentage without detailed books of accounts."}}, {"@type": "Question", "name": "Who is eligible for Section 44AD?", "acceptedAnswer": {"@type": "Answer", "text": "Resident Individuals, HUFs and Partnership Firms, not LLPs, carrying on an eligible business with turnover up to 2 crore rupees, or 3 crore if mostly digital."}}, {"@type": "Question", "name": "What is the presumptive rate under Section 44AD?", "acceptedAnswer": {"@type": "Answer", "text": "6 percent of digital or banking receipts and 8 percent of cash receipts."}}, {"@type": "Question", "name": "Who is eligible for Section 44ADA?", "acceptedAnswer": {"@type": "Answer", "text": "Resident Individuals, HUFs and Firms in specified professions like legal, medical, engineering and accountancy, with receipts up to 50 lakh rupees, or 75 lakh if mostly digital."}}, {"@type": "Question", "name": "What is the presumptive rate under Section 44ADA?", "acceptedAnswer": {"@type": "Answer", "text": "A flat 50 percent of gross professional receipts."}}, {"@type": "Question", "name": "Who is eligible for Section 44AE?", "acceptedAnswer": {"@type": "Answer", "text": "Taxpayers in the goods carriage business owning 10 or fewer goods vehicles at any time in the year."}}, {"@type": "Question", "name": "What is the rate under Section 44AE?", "acceptedAnswer": {"@type": "Answer", "text": "1,000 rupees per ton per month for heavy goods vehicles, 7,500 rupees per month flat for other vehicles."}}, {"@type": "Question", "name": "Are LLPs eligible for presumptive taxation?", "acceptedAnswer": {"@type": "Answer", "text": "No, LLPs are not eligible for Sections 44AD, 44ADA or 44AE."}}, {"@type": "Question", "name": "What happens if turnover exceeds the limit?", "acceptedAnswer": {"@type": "Answer", "text": "The taxpayer becomes ineligible for the presumptive scheme and must maintain regular books of accounts, possibly with a tax audit."}}, {"@type": "Question", "name": "What is the enhanced turnover limit for Section 44AD?", "acceptedAnswer": {"@type": "Answer", "text": "3 crore rupees, if cash receipts do not exceed 5 percent of total receipts."}}, {"@type": "Question", "name": "What is the enhanced receipt limit for Section 44ADA?", "acceptedAnswer": {"@type": "Answer", "text": "75 lakh rupees, if cash receipts do not exceed 5 percent of total receipts."}}, {"@type": "Question", "name": "Can I declare income higher than the presumptive rate?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, a taxpayer may voluntarily declare a higher income than the presumptive minimum."}}, {"@type": "Question", "name": "Do deductions apply under presumptive schemes?", "acceptedAnswer": {"@type": "Answer", "text": "Chapter VI-A deductions like 80C apply to Gross Total Income under the Old Regime, but no separate business expense deductions are allowed against Presumptive Income."}}, {"@type": "Question", "name": "Is Surcharge applicable on presumptive tax?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, based on total taxable income, with the same slabs and Marginal Relief as regular income."}}, {"@type": "Question", "name": "Is Health and Education Cess applicable?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, a flat 4 percent on Income Tax plus Surcharge."}}, {"@type": "Question", "name": "Can I switch out of a presumptive scheme?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but under Section 44AD, opting out before 5 years can restrict re-entry into the scheme for the next 5 years."}}, {"@type": "Question", "name": "What if declared income is lower than the presumptive rate?", "acceptedAnswer": {"@type": "Answer", "text": "The taxpayer must maintain books of accounts and get them audited if total income exceeds the basic exemption limit."}}, {"@type": "Question", "name": "Does profession type affect the 44ADA rate?", "acceptedAnswer": {"@type": "Answer", "text": "No, the flat 50 percent rate applies uniformly to all specified professions."}}, {"@type": "Question", "name": "What counts as a heavy goods vehicle under Section 44AE?", "acceptedAnswer": {"@type": "Answer", "text": "A goods carriage with a gross vehicle weight exceeding 12,000 kg."}}, {"@type": "Question", "name": "Is partial-year vehicle ownership pro-rated?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, presumptive income under Section 44AE is computed per month or part of month of ownership."}}, {"@type": "Question", "name": "Are Companies eligible for these schemes?", "acceptedAnswer": {"@type": "Answer", "text": "No, Sections 44AD, 44ADA and 44AE are not available to Companies."}}, {"@type": "Question", "name": "Can Non-Residents use presumptive taxation?", "acceptedAnswer": {"@type": "Answer", "text": "No, these schemes are available only to Residents."}}, {"@type": "Question", "name": "Can I download my calculation report?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, as PDF, Excel or CSV, or print it directly from your browser."}}, {"@type": "Question", "name": "Is my data uploaded anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No, every calculation runs entirely inside the browser and nothing is sent to a server."}}, {"@type": "Question", "name": "Does this tool use any AI?", "acceptedAnswer": {"@type": "Answer", "text": "No, every rule is deterministic, hand-written logic based on published Income Tax provisions."}}, {"@type": "Question", "name": "Is this calculator a substitute for professional advice?", "acceptedAnswer": {"@type": "Answer", "text": "No, always consult a Chartered Accountant or tax professional before making financial decisions."}}]}
+</script>
+
+<footer class="site-footer">© apnesoftware.COM — Presumptive Tax Calculator — Fast • Accurate • Secure • Mobile Friendly • SEO Optimized</footer>
+
+<div id="pr-stickyCalc"><button class="btn pr-gradient" id="pr-stickyCalcBtn" type="button">🧮 Calculate</button></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" defer></script>
+<script src="../assets/common.js"></script>
+<script>
+/* ===================== Presumptive Tax Calculator Engine (pure logic, no DOM) =====================
+   Covers Sections 44AD (business), 44ADA (profession) and 44AE (goods carriages), reflecting the
+   Finance Act 2023 enhanced turnover/receipt limits (effective FY2023-24 onwards) when cash receipts
+   do not exceed 5% of total receipts, and the Finance Act 2018 vehicle-based Section 44AE rates. */
+'use strict';
+
+var FY_LIST = ['2023-24', '2024-25', '2025-26', '2026-27'];
+var CESS_RATE = 0.04;
+
+function fyToAy(fy) {
+  var parts = fy.split('-');
+  var startYear = parseInt(parts[0], 10);
+  var endYYNext = (startYear + 2).toString().slice(-2);
+  return (startYear + 1) + '-' + endYYNext;
+}
+
+var SEC44AD_NORMAL_LIMIT = 20000000, SEC44AD_ENHANCED_LIMIT = 30000000;
+var SEC44AD_DIGITAL_RATE = 0.06, SEC44AD_CASH_RATE = 0.08;
+function compute44AD(inp) {
+  var digitalReceipts = Math.max(0, inp.digitalReceipts || 0);
+  var cashReceipts = Math.max(0, inp.cashReceipts || 0);
+  var totalReceipts = digitalReceipts + cashReceipts;
+  var cashRatio = totalReceipts > 0 ? cashReceipts / totalReceipts : 0;
+  var limit = cashRatio <= 0.05 ? SEC44AD_ENHANCED_LIMIT : SEC44AD_NORMAL_LIMIT;
+  var presumptiveIncome = digitalReceipts * SEC44AD_DIGITAL_RATE + cashReceipts * SEC44AD_CASH_RATE;
+  var eligibleEntity = inp.taxpayerType === 'individual' || inp.taxpayerType === 'huf' || inp.taxpayerType === 'firm';
+  var withinLimit = totalReceipts <= limit;
+  return { totalReceipts: totalReceipts, limit: limit, cashRatio: cashRatio, presumptiveIncome: presumptiveIncome, eligible: eligibleEntity && withinLimit, eligibleEntity: eligibleEntity, withinLimit: withinLimit };
+}
+
+var SEC44ADA_NORMAL_LIMIT = 5000000, SEC44ADA_ENHANCED_LIMIT = 7500000, SEC44ADA_RATE = 0.50;
+function compute44ADA(inp) {
+  var professionalReceipts = Math.max(0, inp.professionalReceipts || 0);
+  var cashReceipts = Math.max(0, inp.cashReceipts || 0);
+  var cashRatio = professionalReceipts > 0 ? Math.min(1, cashReceipts / professionalReceipts) : 0;
+  var limit = cashRatio <= 0.05 ? SEC44ADA_ENHANCED_LIMIT : SEC44ADA_NORMAL_LIMIT;
+  var presumptiveIncome = professionalReceipts * SEC44ADA_RATE;
+  var eligibleEntity = inp.taxpayerType === 'individual' || inp.taxpayerType === 'huf' || inp.taxpayerType === 'firm';
+  var withinLimit = professionalReceipts <= limit;
+  return { totalReceipts: professionalReceipts, limit: limit, cashRatio: cashRatio, presumptiveIncome: presumptiveIncome, eligible: eligibleEntity && withinLimit, eligibleEntity: eligibleEntity, withinLimit: withinLimit };
+}
+
+var SEC44AE_MAX_VEHICLES = 10, SEC44AE_HEAVY_RATE_PER_TON_PER_MONTH = 1000, SEC44AE_LIGHT_RATE_PER_MONTH = 7500;
+function compute44AE(inp) {
+  var heavyVehicles = Math.max(0, Math.round(inp.heavyVehicles || 0));
+  var lightVehicles = Math.max(0, Math.round(inp.lightVehicles || 0));
+  var avgTonnage = Math.max(0, inp.avgTonnage || 0);
+  var monthsOwned = Math.min(12, Math.max(0, inp.monthsOwned != null ? inp.monthsOwned : 12));
+  var totalVehicles = heavyVehicles + lightVehicles;
+  var heavyIncome = heavyVehicles * avgTonnage * SEC44AE_HEAVY_RATE_PER_TON_PER_MONTH * monthsOwned;
+  var lightIncome = lightVehicles * SEC44AE_LIGHT_RATE_PER_MONTH * monthsOwned;
+  var presumptiveIncome = heavyIncome + lightIncome;
+  var withinLimit = totalVehicles <= SEC44AE_MAX_VEHICLES;
+  return { totalVehicles: totalVehicles, heavyIncome: heavyIncome, lightIncome: lightIncome, presumptiveIncome: presumptiveIncome, eligible: withinLimit, withinLimit: withinLimit };
+}
+
+var OLD_REGIME_SLABS = {
+  below60: [[250000, 0], [500000, 0.05], [1000000, 0.20], [Infinity, 0.30]],
+  senior: [[300000, 0], [500000, 0.05], [1000000, 0.20], [Infinity, 0.30]],
+  superSenior: [[500000, 0], [1000000, 0.20], [Infinity, 0.30]]
+};
+function newRegimeSlabs(fy) {
+  if (fy === '2025-26' || fy === '2026-27') return [[400000, 0], [800000, 0.05], [1200000, 0.10], [1600000, 0.15], [2000000, 0.20], [2400000, 0.25], [Infinity, 0.30]];
+  return [[300000, 0], [600000, 0.05], [900000, 0.10], [1200000, 0.15], [1500000, 0.20], [Infinity, 0.30]];
+}
+function slabTax(income, bands) {
+  var tax = 0, lower = 0;
+  for (var i = 0; i < bands.length; i++) {
+    var upper = bands[i][0], rate = bands[i][1];
+    if (income > lower) tax += (Math.min(income, upper) - lower) * rate;
+    lower = upper;
+    if (income <= upper) break;
+  }
+  return Math.max(0, tax);
+}
+function rebate87A(taxableIncome, fy, regime, tax) {
+  if (regime === 'new') {
+    var limit = (fy === '2025-26' || fy === '2026-27') ? 1200000 : 700000;
+    var cap = (fy === '2025-26' || fy === '2026-27') ? 60000 : 25000;
+    if (taxableIncome <= limit) return Math.min(tax, cap);
+    return 0;
+  }
+  if (taxableIncome <= 500000) return Math.min(tax, 12500);
+  return 0;
+}
+function slabTaxFor(income, regime, fy, ageCategory) {
+  var bands = regime === 'new' ? newRegimeSlabs(fy) : (OLD_REGIME_SLABS[ageCategory] || OLD_REGIME_SLABS.below60);
+  var tax = slabTax(income, bands);
+  var rebate = rebate87A(income, fy, regime, tax);
+  return Math.max(0, tax - rebate);
+}
+function isIndividualLike(taxpayerType) { return taxpayerType === 'individual' || taxpayerType === 'huf'; }
+function computeIncomeTax(taxableIncome, taxpayerType, regime, fy, ageCategory) {
+  if (isIndividualLike(taxpayerType)) return slabTaxFor(taxableIncome, regime, fy, ageCategory);
+  return taxableIncome * 0.30;
+}
+function individualSurchargeSlabs(regime) {
+  var top = regime === 'new' ? 0.25 : 0.37;
+  return [{ threshold: 0, rate: 0 }, { threshold: 5000000, rate: 0.10 }, { threshold: 10000000, rate: 0.15 }, { threshold: 20000000, rate: 0.25 }, { threshold: 50000000, rate: top }];
+}
+function firmSurchargeSlabs() { return [{ threshold: 0, rate: 0 }, { threshold: 10000000, rate: 0.12 }]; }
+function getSurchargeSlabs(taxpayerType, regime) { return isIndividualLike(taxpayerType) ? individualSurchargeSlabs(regime) : firmSurchargeSlabs(); }
+function slabRateFor(totalIncome, slabs) {
+  var rate = 0;
+  for (var i = 0; i < slabs.length; i++) { if (totalIncome > slabs[i].threshold) rate = slabs[i].rate; }
+  return rate;
+}
+function activeSlabIndex(totalIncome, slabs) {
+  var idx = -1;
+  for (var i = 0; i < slabs.length; i++) { if (totalIncome > slabs[i].threshold) idx = i; }
+  return idx;
+}
+function computeSurchargeWithRelief(totalIncome, taxBeforeSurcharge, slabs, taxAtThresholdFn) {
+  var idx = activeSlabIndex(totalIncome, slabs);
+  if (idx <= 0 || slabs[idx].rate === 0) {
+    return { rate: idx >= 0 ? slabs[idx].rate : 0, surcharge: idx >= 0 ? taxBeforeSurcharge * slabs[idx].rate : 0, marginalRelief: 0 };
+  }
+  var rate = slabs[idx].rate, prevRate = slabs[idx - 1].rate, threshold = slabs[idx].threshold;
+  var normalSurcharge = taxBeforeSurcharge * rate;
+  var normalTotal = taxBeforeSurcharge + normalSurcharge;
+  var taxAtThreshold = taxAtThresholdFn ? taxAtThresholdFn(threshold) : taxBeforeSurcharge;
+  var cappedTotal = taxAtThreshold + (taxAtThreshold * prevRate) + (totalIncome - threshold);
+  var marginalRelief = 0;
+  if (normalTotal > cappedTotal) marginalRelief = normalTotal - cappedTotal;
+  var surcharge = normalSurcharge - marginalRelief;
+  if (surcharge < 0) surcharge = 0;
+  return { rate: rate, surcharge: surcharge, marginalRelief: marginalRelief };
+}
+var SEC80C_CAP = 150000, SEC80CCD1B_CAP = 50000;
+function computeDeductions(inp, regime, taxpayerType) {
+  if (regime !== 'old' || !isIndividualLike(taxpayerType)) return { sec80C: 0, sec80CCD1B: 0, sec80D: 0, sec80G: 0, otherDeductions: 0, total: 0 };
+  var sec80C = Math.min(SEC80C_CAP, Math.max(0, inp.sec80C || 0));
+  var sec80CCD1B = Math.min(SEC80CCD1B_CAP, Math.max(0, inp.sec80CCD1B || 0));
+  var sec80D = Math.max(0, inp.sec80D || 0);
+  var sec80G = Math.max(0, inp.sec80G || 0);
+  var otherDeductions = Math.max(0, inp.otherDeductions || 0);
+  var total = sec80C + sec80CCD1B + sec80D + sec80G + otherDeductions;
+  return { sec80C: sec80C, sec80CCD1B: sec80CCD1B, sec80D: sec80D, sec80G: sec80G, otherDeductions: otherDeductions, total: total };
+}
+function computePresumptiveTax(inp) {
+  var scheme = inp.scheme;
+  var schemeResult;
+  if (scheme === '44AD') schemeResult = compute44AD(inp);
+  else if (scheme === '44ADA') schemeResult = compute44ADA(inp);
+  else schemeResult = compute44AE(inp);
+
+  var presumptiveIncome = Math.max(0, schemeResult.presumptiveIncome);
+  var otherIncome = Math.max(0, inp.salaryIncome || 0) + Math.max(0, inp.housePropertyIncome || 0) + Math.max(0, inp.capitalGain || 0) + Math.max(0, inp.otherSources || 0);
+  var grossTotalIncome = presumptiveIncome + otherIncome;
+
+  var deductions = computeDeductions(inp, inp.regime, inp.taxpayerType);
+  var taxableIncome = Math.max(0, grossTotalIncome - deductions.total);
+
+  var incomeTax = computeIncomeTax(taxableIncome, inp.taxpayerType, inp.regime, inp.fy, inp.ageCategory || 'below60');
+  var slabs = getSurchargeSlabs(inp.taxpayerType, inp.regime);
+  var surchargeResult = computeSurchargeWithRelief(taxableIncome, incomeTax, slabs, function (threshold) {
+    return computeIncomeTax(threshold, inp.taxpayerType, inp.regime, inp.fy, inp.ageCategory || 'below60');
+  });
+
+  var cess = (incomeTax + surchargeResult.surcharge) * CESS_RATE;
+  var totalTaxLiability = incomeTax + surchargeResult.surcharge + cess;
+  var taxPaid = Math.max(0, inp.tds || 0) + Math.max(0, inp.tcs || 0) + Math.max(0, inp.advanceTax || 0) + Math.max(0, inp.selfAssessmentTax || 0);
+  var netTaxPayable = totalTaxLiability - taxPaid;
+  var refund = 0;
+  if (netTaxPayable < 0) { refund = -netTaxPayable; netTaxPayable = 0; }
+
+  return {
+    scheme: scheme, schemeResult: schemeResult, presumptiveIncome: presumptiveIncome, otherIncome: otherIncome,
+    grossTotalIncome: grossTotalIncome, deductions: deductions, taxableIncome: taxableIncome,
+    incomeTax: incomeTax, surchargeRate: surchargeResult.rate, surcharge: surchargeResult.surcharge,
+    marginalRelief: surchargeResult.marginalRelief, cess: cess, totalTaxLiability: totalTaxLiability,
+    taxPaid: taxPaid, netTaxPayable: netTaxPayable, refund: refund
+  };
+}
+function fmtINR(n) {
+  n = Number(n) || 0;
+  var neg = n < 0; n = Math.abs(n);
+  var fixed = n.toFixed(2);
+  var parts = fixed.split('.');
+  var intPart = parts[0], decPart = parts[1];
+  var lastThree = intPart.substring(intPart.length - 3);
+  var other = intPart.substring(0, intPart.length - 3);
+  if (other !== '') { lastThree = ',' + lastThree; other = other.replace(/\B(?=(\d{2})+(?!\d))/g, ','); }
+  return (neg ? '-' : '') + '₹' + other + lastThree + '.' + decPart;
+}
+
+var PresumptiveTaxEngine = {
+  FY_LIST: FY_LIST, fyToAy: fyToAy, SEC44AD_NORMAL_LIMIT: SEC44AD_NORMAL_LIMIT, SEC44AD_ENHANCED_LIMIT: SEC44AD_ENHANCED_LIMIT,
+  SEC44ADA_NORMAL_LIMIT: SEC44ADA_NORMAL_LIMIT, SEC44ADA_ENHANCED_LIMIT: SEC44ADA_ENHANCED_LIMIT, SEC44AE_MAX_VEHICLES: SEC44AE_MAX_VEHICLES,
+  compute44AD: compute44AD, compute44ADA: compute44ADA, compute44AE: compute44AE,
+  computeDeductions: computeDeductions, computePresumptiveTax: computePresumptiveTax, fmtINR: fmtINR
+};
+if (typeof module !== 'undefined' && module.exports) module.exports = PresumptiveTaxEngine;
+if (typeof window !== 'undefined') window.PresumptiveTaxEngine = PresumptiveTaxEngine;
+</script>
+<script>
+(function(){
+'use strict';
+var E = window.PresumptiveTaxEngine;
+function $(id){ return document.getElementById(id); }
+function num(id){ var el = $(id); if(!el) return 0; var v = parseFloat(el.value); return isFinite(v) && v > 0 ? v : 0; }
+function lsGet(key, fallback){ try{ var v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; }catch(e){ return fallback; } }
+function lsSet(key, val){ try{ localStorage.setItem(key, JSON.stringify(val)); }catch(e){} }
+function status(msg){ $('pr-statusMsg').textContent = msg; }
+function fmt(n){ return E.fmtINR(n); }
+
+/* ===================== Tabs ===================== */
+var tabs = [['pr-tabScheme','pr-paneScheme'],['pr-tabReceipts','pr-paneReceipts'],['pr-tabOtherIncome','pr-paneOtherIncome'],['pr-tabDeductions','pr-paneDeductions'],['pr-tabCredits','pr-paneCredits'],['pr-tabHistory','pr-paneHistory'],['pr-tabSettings','pr-paneSettings']];
+tabs.forEach(function(pair){
+  $(pair[0]).addEventListener('click', function(){
+    tabs.forEach(function(p2){
+      $(p2[0]).classList.remove('active'); $(p2[0]).setAttribute('aria-selected','false');
+      $(p2[1]).classList.remove('active');
+    });
+    $(pair[0]).classList.add('active'); $(pair[0]).setAttribute('aria-selected','true');
+    $(pair[1]).classList.add('active');
+  });
+});
+
+/* ===================== Scheme block toggling ===================== */
+var schemeBlocks = { '44AD': 'pr-block44AD', '44ADA': 'pr-block44ADA', '44AE': 'pr-block44AE' };
+function applySchemeVisibility(){
+  var scheme = $('pr-scheme').value;
+  Object.keys(schemeBlocks).forEach(function(key){
+    $(schemeBlocks[key]).classList.toggle('active', key === scheme);
+  });
+}
+$('pr-scheme').addEventListener('change', function(){ applySchemeVisibility(); compute(); });
+
+/* ===================== Assessment Year auto-fill ===================== */
+function updateAY(){ $('pr-ay').value = 'AY ' + E.fyToAy($('pr-fy').value); }
+$('pr-fy').addEventListener('change', function(){ updateAY(); compute(); });
+
+/* ===================== Validation ===================== */
+var negIds = ['pr-digitalReceipts','pr-cashReceipts','pr-professionalReceipts','pr-cashReceiptsADA',
+  'pr-salaryIncome','pr-housePropertyIncome','pr-capitalGain','pr-otherSources',
+  'pr-sec80C','pr-sec80CCD1B','pr-sec80D','pr-sec80G','pr-otherDeductions',
+  'pr-tds','pr-tcs','pr-advanceTax','pr-selfAssessmentTax'];
+function validateInputs(){
+  var negFound = negIds.some(function(id){ var v = parseFloat($(id).value); return isFinite(v) && v < 0; }) ||
+    negIds.some(function(id){ return $(id).value !== '' && !isFinite(parseFloat($(id).value)); });
+  var heavy = parseFloat($('pr-heavyVehicles').value) || 0;
+  var light = parseFloat($('pr-lightVehicles').value) || 0;
+  var vehicleInvalid = heavy < 0 || light < 0 || !isFinite(heavy) || !isFinite(light) || (heavy + light) > 10;
+  $('pr-incomeErr').style.display = negFound ? 'block' : 'none';
+  $('pr-taxErr').style.display = negFound ? 'block' : 'none';
+  $('pr-vehicleErr').style.display = (vehicleInvalid && $('pr-scheme').value === '44AE') ? 'block' : 'none';
+  return !negFound && !(vehicleInvalid && $('pr-scheme').value === '44AE');
+}
+
+/* ===================== Main compute ===================== */
+var lastResult = null;
+function compute(){
+  var valid = validateInputs();
+  var inp = {
+    scheme: $('pr-scheme').value, taxpayerType: $('pr-taxpayerType').value, regime: $('pr-regime').value,
+    fy: $('pr-fy').value, ageCategory: $('pr-ageCategory').value,
+    digitalReceipts: num('pr-digitalReceipts'), cashReceipts: num('pr-cashReceipts'),
+    professionalReceipts: num('pr-professionalReceipts'),
+    heavyVehicles: num('pr-heavyVehicles'), avgTonnage: num('pr-avgTonnage'), lightVehicles: num('pr-lightVehicles'),
+    monthsOwned: parseFloat($('pr-monthsOwned').value) || 0,
+    salaryIncome: num('pr-salaryIncome'), housePropertyIncome: num('pr-housePropertyIncome'),
+    capitalGain: num('pr-capitalGain'), otherSources: num('pr-otherSources'),
+    sec80C: num('pr-sec80C'), sec80CCD1B: num('pr-sec80CCD1B'), sec80D: num('pr-sec80D'), sec80G: num('pr-sec80G'), otherDeductions: num('pr-otherDeductions'),
+    tds: num('pr-tds'), tcs: num('pr-tcs'), advanceTax: num('pr-advanceTax'), selfAssessmentTax: num('pr-selfAssessmentTax')
+  };
+  /* 44ADA uses its own cash-receipts field id */
+  if (inp.scheme === '44ADA') inp.cashReceipts = num('pr-cashReceiptsADA');
+
+  var result = E.computePresumptiveTax(inp);
+  lastResult = { inp: inp, result: result, valid: valid };
+
+  $('pr-turnoverDisplay44AD').textContent = fmt(num('pr-digitalReceipts') + num('pr-cashReceipts'));
+
+  renderSummary();
+  renderSlabBox();
+  renderSteps();
+  renderBreakdownTable();
+  renderCharts();
+  updateShareLinks();
+}
+
+/* ===================== Summary cards ===================== */
+function statCard(label, value, cls){ return '<div class="stat-box' + (cls?' '+cls:'') + '"><div class="num">' + value + '</div><div class="lbl">' + label + '</div></div>'; }
+function schemeLabel(scheme){ return scheme === '44AD' ? 'Section 44AD' : (scheme === '44ADA' ? 'Section 44ADA' : 'Section 44AE'); }
+function renderSummary(){
+  var r = lastResult.result;
+  var gross = r.schemeResult.totalReceipts != null ? r.schemeResult.totalReceipts : null;
+  $('pr-summaryCards').innerHTML =
+    statCard('Gross Receipts', gross != null ? fmt(gross) : (r.schemeResult.totalVehicles + ' vehicles'), gross != null ? '' : 'pr-text-card') +
+    statCard('Applicable Section', schemeLabel(r.scheme), 'pr-text-card') +
+    statCard('Presumptive Income', fmt(r.presumptiveIncome), 'pr-highlight') +
+    statCard('Other Income', fmt(r.otherIncome)) +
+    statCard('Gross Total Income', fmt(r.grossTotalIncome)) +
+    statCard('Deductions', fmt(r.deductions.total)) +
+    statCard('Taxable Income', fmt(r.taxableIncome)) +
+    statCard('Income Tax', fmt(r.incomeTax)) +
+    statCard('Surcharge', fmt(r.surcharge)) +
+    statCard('Health &amp; Education Cess', fmt(r.cess)) +
+    statCard('Total Tax Liability', fmt(r.totalTaxLiability), 'pr-highlight') +
+    statCard('Tax Paid', fmt(r.taxPaid)) +
+    statCard(r.refund > 0 ? 'Refund' : 'Net Tax Payable', fmt(r.refund > 0 ? r.refund : r.netTaxPayable), r.refund > 0 ? 'pr-refund' : '');
+
+  var flags = [];
+  flags.push('<span class="pr-flag ' + (r.schemeResult.eligible ? 'ok' : 'warn') + '">' + (r.schemeResult.eligible ? 'Eligible' : 'Not Eligible') + '</span>');
+  if (r.schemeResult.eligibleEntity === false) flags.push('<span class="pr-flag warn">Entity Type Not Eligible</span>');
+  if (r.schemeResult.withinLimit === false) flags.push('<span class="pr-flag warn">Limit Exceeded</span>');
+  if (r.refund > 0) flags.push('<span class="pr-flag ok">Refund Due</span>');
+  $('pr-resultFlags').innerHTML = flags.join('');
+}
+
+/* ===================== Slab / rule box ===================== */
+function row(label, value){ return '<div class="pr-engine-row"><span>' + label + '</span><span>' + value + '</span></div>'; }
+function renderSlabBox(){
+  var r = lastResult.result;
+  var html = row('Applicable Section', schemeLabel(r.scheme));
+  if (r.schemeResult.limit != null) html += row('Applicable Limit', fmt(r.schemeResult.limit));
+  if (r.schemeResult.cashRatio != null) html += row('Cash Receipt Ratio', (r.schemeResult.cashRatio * 100).toFixed(1) + '%');
+  html += row('Eligibility', r.schemeResult.eligible ? 'Eligible for this Presumptive Scheme' : 'Not Eligible — regular provisions and tax audit may apply');
+  html += row('Applicable Surcharge Rate', (r.surchargeRate*100).toFixed(0) + '%');
+  $('pr-slabBox').innerHTML = html;
+}
+
+/* ===================== Calculation steps ===================== */
+function renderSteps(){
+  var r = lastResult.result;
+  var steps = [
+    'Presumptive Income (' + schemeLabel(r.scheme) + '): ' + fmt(r.presumptiveIncome),
+    'Other Income: ' + fmt(r.otherIncome),
+    'Gross Total Income: ' + fmt(r.grossTotalIncome),
+    'Less Deductions: ' + fmt(r.deductions.total),
+    'Taxable Income: ' + fmt(r.taxableIncome),
+    'Income Tax: ' + fmt(r.incomeTax),
+    'Surcharge: ' + fmt(r.surcharge),
+    'Health & Education Cess (4%): ' + fmt(r.cess),
+    'Total Tax Liability: ' + fmt(r.totalTaxLiability),
+    r.refund > 0 ? 'Refund Due: ' + fmt(r.refund) : 'Net Tax Payable: ' + fmt(r.netTaxPayable)
+  ];
+  $('pr-stepsBox').innerHTML = steps.map(function(s, i){
+    return '<div class="pr-step">' + s + '</div>' + (i < steps.length-1 ? '<div class="pr-step-arrow">↓</div>' : '');
+  }).join('');
+  $('pr-formulaBox').textContent =
+    'Section 44AD: Presumptive Income = Digital Receipts x 6% + Cash Receipts x 8%\n' +
+    'Section 44ADA: Presumptive Income = Professional Receipts x 50%\n' +
+    'Section 44AE: Presumptive Income = (Heavy Vehicles x Tonnage x Rs.1000 + Other Vehicles x Rs.7500) x Months Owned\n' +
+    'Total Tax Liability = Income Tax + Surcharge + Health & Education Cess (4%)';
+}
+
+/* ===================== Breakdown table ===================== */
+function renderBreakdownTable(){
+  var r = lastResult.result;
+  var rows = [
+    ['Applicable Section', schemeLabel(r.scheme)], ['Presumptive Income', fmt(r.presumptiveIncome)],
+    ['Other Income', fmt(r.otherIncome)], ['Gross Total Income', fmt(r.grossTotalIncome)],
+    ['Deductions', fmt(r.deductions.total)], ['Taxable Income', fmt(r.taxableIncome)],
+    ['Income Tax', fmt(r.incomeTax)], ['Surcharge', fmt(r.surcharge)], ['Health & Education Cess', fmt(r.cess)],
+    ['Total Tax Liability', fmt(r.totalTaxLiability)], ['Tax Paid', fmt(r.taxPaid)],
+    ['Net Tax Payable', fmt(r.netTaxPayable)], ['Refund', fmt(r.refund)]
+  ];
+  document.querySelector('#pr-breakdownTable tbody').innerHTML = rows.map(function(p){ return '<tr><td>' + p[0] + '</td><td>' + p[1] + '</td></tr>'; }).join('');
+}
+
+/* ===================== Canvas charts ===================== */
+var PALETTE = ['#7C5CFC','#16C079','#F59E0B','#F87171','#38BDF8','#A78BFA'];
+function drawPie(canvasId, legendId, data, doughnut){
+  var canvas = $(canvasId);
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var w = canvas.width, h = canvas.height;
+  ctx.clearRect(0,0,w,h);
+  var total = data.reduce(function(s,d){ return s + Math.max(0,d.value); }, 0);
+  var cx = w/2, cy = h/2, radius = Math.min(w,h)/2 - 10;
+  if(total <= 0){
+    ctx.fillStyle = 'rgba(255,255,255,.55)'; ctx.font = '13px sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText('No data to display', cx, cy);
+    if(legendId) $(legendId).innerHTML = '';
+    return;
+  }
+  var start = -Math.PI/2;
+  data.forEach(function(d, i){
+    var slice = (Math.max(0,d.value) / total) * Math.PI * 2;
+    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.arc(cx, cy, radius, start, start + slice); ctx.closePath();
+    ctx.fillStyle = PALETTE[i % PALETTE.length]; ctx.fill();
+    start += slice;
+  });
+  if(doughnut){ ctx.beginPath(); ctx.arc(cx, cy, radius*0.55, 0, Math.PI*2); ctx.fillStyle = '#160b2e'; ctx.fill(); }
+  if(legendId){
+    $(legendId).innerHTML = data.map(function(d,i){
+      return '<span><i style="background:' + PALETTE[i%PALETTE.length] + '"></i>' + d.label + ': ' + fmt(d.value) + '</span>';
+    }).join('');
+  }
+}
+function drawBar(canvasId, data){
+  var canvas = $(canvasId);
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var w = canvas.width, h = canvas.height;
+  ctx.clearRect(0,0,w,h);
+  var total = data.reduce(function(s,d){return s+Math.max(0,d.value);},0);
+  if(total <= 0){
+    ctx.fillStyle = 'rgba(255,255,255,.55)'; ctx.font = '13px sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText('No data to display', w/2, h/2);
+    return;
+  }
+  var max = Math.max.apply(null, data.map(function(d){ return d.value; }).concat([1]));
+  var barW = w / data.length * 0.6;
+  var gap = w / data.length;
+  data.forEach(function(d, i){
+    var barH = (Math.max(0,d.value) / max) * (h - 40);
+    var x = i * gap + (gap - barW)/2;
+    var y = h - 24 - barH;
+    ctx.fillStyle = PALETTE[i % PALETTE.length];
+    ctx.fillRect(x, y, barW, barH);
+    ctx.fillStyle = '#aaa'; ctx.font = '11px sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText(d.label, x + barW/2, h - 8);
+  });
+}
+function renderCharts(){
+  var r = lastResult.result;
+  drawPie('pr-chartComposition', 'pr-legendComposition', [
+    {label:'Presumptive Income', value: r.presumptiveIncome}, {label:'Other Income', value: r.otherIncome}, {label:'Total Tax', value: r.totalTaxLiability}
+  ], true);
+  drawBar('pr-chartPayable', [
+    {label:'Total Tax', value: r.totalTaxLiability}, {label:'Tax Paid', value: r.taxPaid}, {label:'Net Payable', value: r.netTaxPayable}
+  ]);
+}
+
+/* ===================== History ===================== */
+var HISTORY_KEY = 'pr_history';
+function loadHistory(){ return lsGet(HISTORY_KEY, []); }
+function saveHistory(list){ lsSet(HISTORY_KEY, list.slice(0, 50)); }
+function addToHistory(){
+  if(!lastResult) return;
+  var list = loadHistory();
+  var r = lastResult.result;
+  list.unshift({ ts: new Date().toISOString(), scheme: schemeLabel(r.scheme), presumptiveIncome: r.presumptiveIncome, totalTaxLiability: r.totalTaxLiability });
+  saveHistory(list);
+  renderHistory();
+}
+function renderHistory(){
+  var list = loadHistory();
+  var wrap = $('pr-historyList');
+  if(!list.length){ wrap.innerHTML = '<p class="pr-muted">No calculations saved yet.</p>'; return; }
+  wrap.innerHTML = list.map(function(item){
+    var d = new Date(item.ts);
+    return '<div class="pr-history-item"><span>' + item.scheme + ' — Presumptive Income ' + fmt(item.presumptiveIncome) + ' → Tax <span class="pr-amt">' + fmt(item.totalTaxLiability) + '</span><br><span class="pr-muted">' + d.toLocaleString() + '</span></span></div>';
+  }).join('');
+}
+$('pr-clearHistoryBtn').addEventListener('click', function(){
+  if(!confirm('Clear all saved calculation history?')) return;
+  saveHistory([]); renderHistory();
+  status('🗑️ History cleared.');
+});
+
+/* ===================== Buttons ===================== */
+function doCalculate(){
+  compute();
+  if(!lastResult.valid){ status('⚠️ Please correct the highlighted fields before calculating.'); return; }
+  addToHistory();
+  status('✅ Calculation updated and saved to history.');
+}
+$('pr-calcBtn').addEventListener('click', doCalculate);
+$('pr-stickyCalcBtn').addEventListener('click', doCalculate);
+$('pr-resetBtn').addEventListener('click', function(){
+  if(!confirm('Reset all fields to default?')) return;
+  $('pr-scheme').value = '44AD'; applySchemeVisibility();
+  $('pr-digitalReceipts').value = 4000000; $('pr-cashReceipts').value = 500000;
+  $('pr-professionalReceipts').value = 3000000; $('pr-cashReceiptsADA').value = 0;
+  $('pr-heavyVehicles').value = 0; $('pr-avgTonnage').value = 0; $('pr-lightVehicles').value = 2; $('pr-monthsOwned').value = 12;
+  ['pr-salaryIncome','pr-housePropertyIncome','pr-capitalGain','pr-otherSources',
+   'pr-sec80C','pr-sec80CCD1B','pr-sec80D','pr-sec80G','pr-otherDeductions',
+   'pr-tds','pr-tcs','pr-advanceTax','pr-selfAssessmentTax'].forEach(function(id){ $(id).value = 0; });
+  $('pr-taxpayerType').value = 'individual'; $('pr-residentialStatus').value = 'resident'; $('pr-ageCategory').value = 'below60'; $('pr-regime').value = 'new';
+  compute();
+  status('↺ Reset complete.');
+});
+$('pr-printBtn').addEventListener('click', function(){ window.print(); });
+
+function buildTextSummary(){
+  var r = lastResult.result;
+  return [
+    'Presumptive Tax Calculation Summary', 'Applicable Section: ' + schemeLabel(r.scheme),
+    'Presumptive Income: ' + fmt(r.presumptiveIncome), 'Gross Total Income: ' + fmt(r.grossTotalIncome),
+    'Taxable Income: ' + fmt(r.taxableIncome), 'Income Tax: ' + fmt(r.incomeTax), 'Surcharge: ' + fmt(r.surcharge),
+    'Health & Education Cess: ' + fmt(r.cess), 'Total Tax Liability: ' + fmt(r.totalTaxLiability),
+    'Net Tax Payable: ' + fmt(r.netTaxPayable), 'Refund: ' + fmt(r.refund)
+  ].join('\n');
+}
+$('pr-copyBtn').addEventListener('click', function(){
+  if(!lastResult){ status('⚠️ Calculate first.'); return; }
+  var text = buildTextSummary();
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(function(){ status('📋 Copied to clipboard.'); });
+  }
+});
+$('pr-pdfBtn').addEventListener('click', function(){
+  if(typeof html2pdf === 'undefined'){ alert('PDF engine failed to load — check your connection and refresh.'); return; }
+  html2pdf().from($('pr-resultSide')).set({filename:'presumptive-tax-summary.pdf', margin:10}).save();
+});
+$('pr-xlsxBtn').addEventListener('click', function(){
+  if(typeof XLSX === 'undefined'){ alert('Excel engine failed to load — check your connection and refresh.'); return; }
+  var r = lastResult.result;
+  var rows = [['Metric','Value'], ['Applicable Section', schemeLabel(r.scheme)], ['Presumptive Income', r.presumptiveIncome],
+    ['Gross Total Income', r.grossTotalIncome], ['Taxable Income', r.taxableIncome], ['Income Tax', r.incomeTax],
+    ['Surcharge', r.surcharge], ['Health & Education Cess', r.cess], ['Total Tax Liability', r.totalTaxLiability],
+    ['Net Tax Payable', r.netTaxPayable], ['Refund', r.refund]];
+  var ws = XLSX.utils.aoa_to_sheet(rows);
+  var wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Presumptive Tax');
+  XLSX.writeFile(wb, 'presumptive-tax-summary.xlsx');
+});
+$('pr-csvBtn').addEventListener('click', function(){
+  if(!lastResult){ status('⚠️ Calculate first.'); return; }
+  var r = lastResult.result;
+  var rows = [['Metric','Value'], ['Applicable Section', schemeLabel(r.scheme)], ['Presumptive Income', r.presumptiveIncome],
+    ['Gross Total Income', r.grossTotalIncome], ['Taxable Income', r.taxableIncome], ['Income Tax', r.incomeTax],
+    ['Surcharge', r.surcharge], ['Health & Education Cess', r.cess], ['Total Tax Liability', r.totalTaxLiability],
+    ['Net Tax Payable', r.netTaxPayable], ['Refund', r.refund]];
+  var csv = rows.map(function(row){ return row.map(function(v){ return '"' + String(v).replace(/"/g,'""') + '"'; }).join(','); }).join('\n');
+  var blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url; a.download = 'presumptive-tax-summary.csv';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+});
+
+/* ===================== Share links ===================== */
+function updateShareLinks(){
+  if(!lastResult) return;
+  var text = buildTextSummary();
+  var url = location.href;
+  $('pr-shareWhatsapp').href = 'https://wa.me/?text=' + encodeURIComponent(text + '\n' + url);
+  $('pr-shareFacebook').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+  $('pr-shareTwitter').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url);
+  $('pr-shareLinkedin').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+}
+$('pr-copyLinkBtn').addEventListener('click', function(){
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(location.href).then(function(){ status('🔗 Link copied to clipboard.'); });
+  }
+});
+
+/* ===================== Validation on inputs ===================== */
+document.querySelectorAll('#pr-formSide input, #pr-formSide select').forEach(function(el){
+  el.addEventListener('input', compute);
+  el.addEventListener('change', compute);
+});
+
+/* ===================== Settings: theme / language / accessibility ===================== */
+var I18N = {
+  en: {
+    tabScheme:'📋 Scheme & Profile', tabReceipts:'💼 Receipts / Vehicle', tabOtherIncome:'💰 Other Income', tabDeductions:'🧾 Deductions',
+    tabCredits:'💳 Tax Credits', tabHistory:'🕘 History', tabSettings:'⚙️ Settings',
+    calc:'🧮 Calculate', reset:'↺ Reset', print:'🖨️ Print', pdf:'📄 Download PDF', xlsx:'📊 Download Excel', csv:'📁 Download CSV', copy:'📋 Copy Results'
+  },
+  hi: {
+    tabScheme:'📋 Scheme और Profile', tabReceipts:'💼 Receipts / Vehicle', tabOtherIncome:'💰 अन्य आय', tabDeductions:'🧾 कटौतियाँ',
+    tabCredits:'💳 Tax Credits', tabHistory:'🕘 इतिहास', tabSettings:'⚙️ सेटिंग्स',
+    calc:'🧮 गणना करें', reset:'↺ रीसेट', print:'🖨️ प्रिंट', pdf:'📄 PDF डाउनलोड करें', xlsx:'📊 Excel डाउनलोड करें', csv:'📁 CSV डाउनलोड करें', copy:'📋 परिणाम कॉपी करें'
+  }
+};
+function applyLanguage(lang){
+  var t = I18N[lang] || I18N.en;
+  $('pr-tabScheme').textContent = t.tabScheme;
+  $('pr-tabReceipts').textContent = t.tabReceipts;
+  $('pr-tabOtherIncome').textContent = t.tabOtherIncome;
+  $('pr-tabDeductions').textContent = t.tabDeductions;
+  $('pr-tabCredits').textContent = t.tabCredits;
+  $('pr-tabHistory').textContent = t.tabHistory;
+  $('pr-tabSettings').textContent = t.tabSettings;
+  $('pr-calcBtn').textContent = t.calc;
+  $('pr-resetBtn').textContent = t.reset;
+  $('pr-printBtn').textContent = t.print;
+  $('pr-pdfBtn').textContent = t.pdf;
+  $('pr-xlsxBtn').textContent = t.xlsx;
+  $('pr-csvBtn').textContent = t.csv;
+  $('pr-copyBtn').textContent = t.copy;
+}
+$('pr-language').addEventListener('change', function(){ applyLanguage(this.value); lsSet('pr_lang', this.value); });
+$('pr-theme').addEventListener('change', function(){ document.body.classList.toggle('pr-light', this.value === 'light'); lsSet('pr_theme', this.value); });
+$('pr-highContrast').addEventListener('change', function(){ document.body.classList.toggle('pr-high-contrast', this.checked); lsSet('pr_hc', this.checked); });
+$('pr-largeFont').addEventListener('change', function(){ document.body.classList.toggle('pr-large-font', this.checked); lsSet('pr_lf', this.checked); });
+
+/* ===================== Init ===================== */
+var savedLang = lsGet('pr_lang', 'en'); $('pr-language').value = savedLang; applyLanguage(savedLang);
+var savedTheme = lsGet('pr_theme', 'dark'); $('pr-theme').value = savedTheme; document.body.classList.toggle('pr-light', savedTheme === 'light');
+var savedHc = lsGet('pr_hc', false); $('pr-highContrast').checked = savedHc; document.body.classList.toggle('pr-high-contrast', savedHc);
+var savedLf = lsGet('pr_lf', false); $('pr-largeFont').checked = savedLf; document.body.classList.toggle('pr-large-font', savedLf);
+
+applySchemeVisibility();
+updateAY();
+renderHistory();
+compute();
+
+})();
+</script>
+<script type="text/javascript">
+	var sc_project_id = 100000000;
+	var sc_invisible = 1;
+	var sc_security = "0000000";
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+
+</body>
+</html>
