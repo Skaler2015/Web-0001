@@ -252,7 +252,220 @@
     <div id="statusMsg" class="trs-muted" role="status" aria-live="polite"></div>
   </div>
 </div>
-<!-- CONTENT-SECTIONS-PLACEHOLDER -->
+<div class="info-wrap" style="display:block;max-width:none">
+<div class="info-block" style="max-width:900px;margin:0 auto">
+
+<h2>📖 Introduction</h2>
+<p>The original Text Readability Score tool did one thing well: it calculated the Flesch Reading Ease and Flesch-Kincaid Grade Level for whatever you pasted into the box, updating live as you typed. That single-purpose design was fast, private and genuinely useful — but it only told half the story. Two of the ten formulas writers, editors, teachers and SEO professionals actually rely on were missing, and there was no way to see word-level detail, sentence and paragraph breakdowns, vocabulary or passive-voice patterns, keyword density, or export a shareable report. The <strong>Professional Text Readability Score Analyzer</strong> keeps everything that worked — instant, in-browser, live analysis with the original two scores front and centre — and builds a complete writing-analysis workbench around it: ten readability formulas, full text statistics, vocabulary and complexity breakdowns, passive-voice and transition-word detection, keyword density, grammar indicators, five charts, an A/B comparison mode, SEO guidance and one-click export, all without uploading a single character or using any AI.</p>
+
+<h2>🔍 Analysis of the Original Tool</h2>
+<p>The previous version accepted pasted text in a single textarea and re-ran its calculation on every keystroke — a strength worth keeping, since instant feedback is exactly what a writer wants while editing. It computed word count with a simple regex, counted sentences by splitting on <code>.!?</code>, estimated syllables per word with a lightweight vowel-cluster heuristic, and combined those into the two Flesch formulas, showing the Reading Ease score with a plain-language label ("Fairly Easy", "Difficult", etc.) and the Grade Level as a number. It was lightweight, worked offline, and never sent text anywhere.</p>
+<p>Its weaknesses were mostly gaps rather than bugs: only English text was handled (Hindi and mixed Hinglish writing broke the word/sentence detection); only two of the ten standard readability formulas were available, so a Gunning-Fog- or SMOG-oriented workflow (common in health and government writing) had no home here; there was no paragraph, vocabulary, passive-voice, or keyword analysis at all; results could not be copied, exported or printed; and there was no way to compare two drafts side by side. The rebuild below closes every one of those gaps while keeping the instant, no-upload core intact.</p>
+
+<h2>✨ Features</h2>
+<ul>
+  <li><strong>Instant, live analysis</strong> — every score and statistic updates as you type, with no button to press.</li>
+  <li><strong>Ten readability formulas</strong> in one place, not just two.</li>
+  <li><strong>Complete text statistics</strong> — characters, words, sentences, paragraphs, lines, pages and more.</li>
+  <li><strong>Vocabulary &amp; complexity analysis</strong> — unique, rare, repeated and difficult words.</li>
+  <li><strong>Reading &amp; speaking time</strong> for fast, average and slow readers, plus speech, presentation and podcast pacing.</li>
+  <li><strong>Passive voice and transition-word detection</strong> to sharpen your style.</li>
+  <li><strong>Keyword density</strong> and grammar/style indicators (double spaces, repeated punctuation, capitalisation).</li>
+  <li><strong>Five hand-drawn charts</strong> — no chart library, no tracking script.</li>
+  <li><strong>SEO metrics</strong> — recommended sentence and paragraph length, keyword usage and heading ratio.</li>
+  <li><strong>Compare mode</strong> — analyse Text A versus Text B, or a before/after edit, side by side.</li>
+  <li><strong>Export</strong> — copy, download as TXT, CSV or PDF, or print a clean report.</li>
+  <li><strong>English, Hindi and Hinglish</strong> support with automatic language detection.</li>
+  <li><strong>100% private</strong> — nothing you type ever leaves your browser.</li>
+</ul>
+
+<h2>🎯 Readability Scores Explained</h2>
+<ul class="trs-list">
+  <li><span><strong>Flesch Reading Ease</strong></span><b>0–100, higher = easier</b></li>
+  <li><span><strong>Flesch-Kincaid Grade Level</strong></span><b>US school grade to understand the text</b></li>
+  <li><span><strong>Gunning Fog Index</strong></span><b>Years of formal education needed</b></li>
+  <li><span><strong>SMOG Index</strong></span><b>Grade level, tuned for health/medical writing</b></li>
+  <li><span><strong>Coleman-Liau Index</strong></span><b>Grade level from letters &amp; sentences, not syllables</b></li>
+  <li><span><strong>Automated Readability Index (ARI)</strong></span><b>Grade level from characters per word</b></li>
+  <li><span><strong>Dale-Chall Score</strong></span><b>Higher score = more unfamiliar vocabulary</b></li>
+  <li><span><strong>Linsear Write Formula</strong></span><b>US grade level, weighted by easy/hard words</b></li>
+  <li><span><strong>LIX</strong></span><b>Swedish index — words per sentence + long-word ratio</b></li>
+  <li><span><strong>RIX</strong></span><b>Long words per sentence</b></li>
+</ul>
+<p class="trs-muted">These formulas were built and validated for English; when Hindi or mixed text is detected the same maths still runs on an approximate syllable count, so treat non-English scores as indicative rather than exact.</p>
+
+<h2>📊 Statistics You Get</h2>
+<p>Beyond the headline scores, the analyzer reports characters (with and without spaces), words, unique words, sentences, paragraphs, lines, an estimated page count (275 words/page), reading time, speaking time, and the average word length, sentence length and paragraph length — everything you need to judge pacing and density at a glance.</p>
+
+<h2>📚 Vocabulary Analysis</h2>
+<p>The vocabulary panel breaks your word list into unique words, common words (drawn from a curated list of everyday English words), rare or uncommon words, words repeated three or more times, and an estimate of "difficult" words — those with three or more syllables that aren't in the common-word list, the same heuristic behind the Dale-Chall formula. A companion complexity panel splits words into simple (1–2 syllables) versus complex (3+ syllables) and reports the multi-syllable ratio directly.</p>
+
+<h2>⏱️ Reading Time</h2>
+<p>Silent reading time is shown for three paces — a fast reader (300 words/minute), an average reader (200 wpm) and a slow or careful reader (150 wpm) — so you can gauge how long different audiences will actually spend with your text.</p>
+
+<h2>🎤 Speaking Time</h2>
+<p>For anyone turning text into speech, the tool estimates speech time at a natural speaking pace (130 wpm), presentation time at a slower, pause-friendly pace (100 wpm), and podcast duration at a brisker conversational pace (150 wpm).</p>
+
+<h2>📈 Charts</h2>
+<p>Five charts are drawn directly on the page with plain canvas drawing code — no charting library, no external request: a readability gauge for the Flesch score, a reading-level meter for the consensus grade, a word-length distribution, a sentence-length distribution, and a paragraph-length distribution.</p>
+
+<h2>🔍 SEO Metrics</h2>
+<p>For content written with search engines in mind, the tool flags whether your average sentence length (aim for ≤20 words), paragraph length (aim for ≤150 words) and top-keyword density (a healthy 0.5–3%) are in a comfortable range, and reports how many heading lines it can detect.</p>
+
+<h2>⚖️ Comparison Mode</h2>
+<p>Switch to the Compare tab to paste two versions of a text — an original and a rewrite, or two candidate drafts — and see every major statistic and readability score side by side, with the easier-to-read value highlighted in green for each row.</p>
+
+<h2>✅ Benefits</h2>
+<ul>
+  <li><strong>Complete:</strong> ten formulas and a full statistics suite instead of just two numbers.</li>
+  <li><strong>Instant:</strong> results update as you type, even for very large documents.</li>
+  <li><strong>Private:</strong> 100% browser-based; nothing is ever uploaded or stored on a server.</li>
+  <li><strong>Actionable:</strong> passive voice, transition words, keyword density and SEO flags point at exactly what to fix.</li>
+  <li><strong>Shareable:</strong> copy, TXT, CSV, PDF and print exports for reports and reviews.</li>
+  <li><strong>Bilingual:</strong> English, Hindi and Hinglish text are all recognised automatically.</li>
+</ul>
+
+<!-- ===== Related Tools (ABOVE About — required order) ===== -->
+<h2>🧰 Related Tools</h2>
+<div class="related-grid">
+  <a href="word-counter.html"><span class="ri">🔢</span> Word Counter</a>
+  <a href="word-counter.html"><span class="ri">🔤</span> Character Counter</a>
+  <a href="case-converter.html"><span class="ri">🔠</span> Case Converter</a>
+  <a href="text-diff.html"><span class="ri">🔍</span> Text Compare</a>
+  <a href="duplicate-line-remover.html"><span class="ri">🧹</span> Duplicate Line Remover</a>
+  <a href="json-formatter.html"><span class="ri">{ }</span> JSON Formatter</a>
+  <a href="markdown-to-html.html"><span class="ri">📝</span> Markdown to HTML</a>
+  <a href="html-beautifier-minifier.html"><span class="ri">🌐</span> HTML Formatter</a>
+  <a href="slug-generator.html"><span class="ri">🔗</span> Slug Generator</a>
+  <a href="text-to-speech.html"><span class="ri">🔊</span> Text to Speech</a>
+</div>
+
+</div>
+</div>
+<div class="info-wrap" style="display:block;max-width:none">
+<div class="info-block" style="max-width:900px;margin:0 auto">
+
+<!-- ===== About (English) ===== -->
+<h2>ℹ️ About This Tool</h2>
+<p>The <strong>Professional Text Readability Score Analyzer</strong> is a free, browser-based tool that measures exactly how easy — or difficult — a piece of writing is to read, and then tells you why, in enough detail to actually improve the draft. It grew out of a much simpler Flesch-only calculator, and while it keeps that tool's best quality — instant, live analysis with nothing ever uploaded — it now answers questions that single-number readability checkers cannot: which sentences are too long, how much of the text is passive voice, whether the vocabulary is unusually difficult, how the keyword density looks to a search engine, and how two drafts compare side by side.</p>
+
+<p>At its core sit ten industry-standard readability formulas rather than just one or two. Flesch Reading Ease and Flesch-Kincaid Grade Level remain the headline numbers, shown as a large gauge and a grade-level figure the moment you paste text in. Alongside them the tool computes the Gunning Fog Index and SMOG Index, both widely used for technical, government and medical writing where a specific grade-level target matters; the Coleman-Liau Index and Automated Readability Index, which estimate difficulty from letters and characters rather than syllables and so stay accurate even on text with unusual spellings; the Dale-Chall Score, which flags unfamiliar vocabulary specifically; the Linsear Write Formula, popular in technical documentation; and the LIX and RIX indices, two European measures based on sentence length and the proportion of long words, useful for translators and international content teams. Every formula is computed from the same underlying word, sentence and syllable counts, so you can trust that the ten numbers are internally consistent rather than coming from ten different tools with ten different assumptions.</p>
+
+<p>Underneath the scores, a full statistics panel reports characters with and without spaces, total and unique words, sentences, paragraphs, lines, an estimated page count, and the average word length, sentence length and paragraph length — the raw numbers that feed every formula above, laid out so you can spot a runaway 80-word sentence or a wall-of-text paragraph before a formula even flags it. A dedicated sentence-analysis panel names your longest and shortest sentences by word count and counts how many sentences run past 25 words, while a paragraph panel does the same at paragraph level, highlighting your largest block of text.</p>
+
+<p>Vocabulary gets its own two-part breakdown. The vocabulary panel classifies your words as common, rare, repeated three-or-more times, or "difficult" — a heuristic borrowed from the Dale-Chall method that flags multi-syllable words absent from a curated list of everyday English. A companion complexity panel then simply counts simple words (one or two syllables) against complex words (three or more) and reports the ratio, giving you a quick sense of how dense the vocabulary is without reading every sentence yourself.</p>
+
+<p>Style issues that word counts alone can't catch get their own detectors. A passive-voice detector scans every sentence for the classic "was/were/is/are + past participle" pattern — including a curated list of common irregular participles such as "written", "given" and "thrown" that a naive regex would otherwise miss — and reports both the count of passive sentences and the percentage of your text written passively. A transition-word detector searches for more than sixty common connector words and phrases (however, therefore, in addition, as a result, and so on), counting each one so you can tell at a glance whether your argument is well signposted or reads as a list of disconnected statements. Grammar and style indicators round this out by flagging double or multiple spaces, stray empty lines, repeated punctuation like "!!" or "..", and sentences that start with a lowercase letter.</p>
+
+<p>For anyone writing with search engines in mind, an SEO panel checks your average sentence and paragraph length against commonly recommended limits, reports your top keyword and its density as a percentage of total words, and flags whether that density sits in the healthy 0.5–3% range or looks like keyword stuffing. A keyword-density table lists your top ten most frequent meaningful words (common stop-words like "the" and "and" are excluded automatically) with their counts and densities.</p>
+
+<p>Five charts make all of this visual: a readability gauge needle that sweeps across the Flesch 0–100 scale, a reading-level meter for the consensus grade across five of the formulas, and bar charts for word-length distribution, sentence-length distribution and paragraph-length distribution. Every chart is drawn with plain HTML canvas drawing commands — there is no charting library, no external script and nothing to load from a CDN, which keeps the page fast and keeps your text off the network entirely.</p>
+
+<p>A Compare tab extends the same engine to two texts at once: paste an original and a rewrite, or two candidate drafts, click Compare, and a table lays every major statistic and formula side by side, highlighting in green whichever version scores easier to read on each metric. It is the fastest way to confirm that an edit actually improved readability rather than just feeling different.</p>
+
+<p>Results can be copied to the clipboard in one click, downloaded as a plain-text report, exported as a CSV for spreadsheets, saved as a simple PDF report generated entirely in the browser, or printed directly with a clean, navigation-free layout. The tool automatically detects whether your text is English, Hindi or a Hindi–English mix (Hinglish), adjusting its word- and sentence-splitting accordingly so that Devanagari text is measured as accurately as the underlying heuristics allow; because the classic readability formulas were designed and validated for English, non-English results are labelled as approximate rather than exact. For privacy on shared or public computers, the text box automatically clears itself after ten minutes of inactivity, and because nothing is ever sent to a server, closing the tab or refreshing the page removes every trace of what you typed. The whole tool is lightweight, mobile-friendly, keyboard-accessible and built to work equally well for students checking an essay, bloggers and copywriters polishing a post, technical writers targeting a specific grade level, and SEO professionals auditing on-page content — with no signup, no AI, and no limit on how much text you paste.</p>
+
+<!-- ===== About (Hindi) ===== -->
+<h2>ℹ️ इस टूल के बारे में (हिंदी में)</h2>
+<p class="dt-lang-note">The same guide in Hindi / यही जानकारी हिंदी में।</p>
+
+<p><strong>Professional Text Readability Score Analyzer</strong> एक फ्री, ब्राउज़र-आधारित टूल है जो बताता है कि आपकी writing पढ़ने में कितनी आसान या मुश्किल है, और साथ ही यह भी बताता है कि क्यों — इतनी detail के साथ कि आप असल में अपने draft को बेहतर बना सकें। यह एक बहुत सादे Flesch-only calculator से शुरू हुआ था, और उस टूल की सबसे अच्छी खूबी — instant, live analysis जिसमें कुछ भी upload नहीं होता — उसे बनाए रखते हुए, अब यह वे सवाल भी हल करता है जो सिर्फ़ एक नंबर देने वाले readability checker नहीं कर सकते: कौन-से sentences बहुत लंबे हैं, टेक्स्ट का कितना हिस्सा passive voice में है, vocabulary कितनी मुश्किल है, keyword density search engine को कैसी दिखेगी, और दो drafts आपस में कैसे compare करते हैं।</p>
+
+<p>इसके केंद्र में सिर्फ़ एक-दो नहीं, बल्कि दस industry-standard readability formulas हैं। Flesch Reading Ease और Flesch-Kincaid Grade Level अब भी मुख्य नंबर हैं, जो टेक्स्ट पेस्ट करते ही एक बड़े gauge और grade-level आँकड़े के रूप में दिखते हैं। इनके साथ Gunning Fog Index और SMOG Index भी हैं, जो technical, सरकारी और medical writing में बहुत उपयोग होते हैं जहाँ एक खास grade-level लक्ष्य ज़रूरी होता है; Coleman-Liau Index और Automated Readability Index, जो syllables के बजाय letters और characters से कठिनाई का अनुमान लगाते हैं और असामान्य spellings वाले टेक्स्ट पर भी सटीक रहते हैं; Dale-Chall Score, जो खासतौर पर अपरिचित vocabulary को चिह्नित करता है; Linsear Write Formula, जो technical documentation में लोकप्रिय है; और LIX तथा RIX indices, दो यूरोपीय मापदंड जो sentence length और लंबे शब्दों के अनुपात पर आधारित हैं, अनुवादकों और अंतरराष्ट्रीय content टीमों के लिए उपयोगी। हर formula एक ही underlying word, sentence और syllable counts से निकाला जाता है, इसलिए ये दसों नंबर आपस में सुसंगत रहते हैं।</p>
+
+<p>स्कोर के नीचे, एक पूरा statistics panel characters (spaces सहित और बिना spaces), कुल और unique words, sentences, paragraphs, lines, अनुमानित page count, और औसत word length, sentence length तथा paragraph length दिखाता है — वे raw numbers जो ऊपर के हर formula को feed करते हैं, इस तरह दिखाए गए कि कोई भी 80-शब्दों का लंबा sentence या पूरे टेक्स्ट जैसा paragraph किसी formula के चेतावनी देने से पहले ही आपको दिख जाए। एक अलग sentence-analysis panel आपके सबसे लंबे और सबसे छोटे sentence को word count के साथ बताता है और गिनता है कि कितने sentences 25 शब्दों से ज़्यादा लंबे हैं, जबकि एक paragraph panel यही काम paragraph स्तर पर करता है।</p>
+
+<p>Vocabulary को अपना दो-भाग वाला breakdown मिलता है। Vocabulary panel आपके शब्दों को common, rare, तीन या ज़्यादा बार दोहराए गए, या "difficult" के रूप में classify करता है — यह heuristic Dale-Chall पद्धति से लिया गया है जो आम शब्दों की एक curated list में न मिलने वाले multi-syllable शब्दों को चिह्नित करता है। एक साथी complexity panel फिर बस simple शब्दों (एक या दो syllables) की गिनती complex शब्दों (तीन या ज़्यादा) से करता है और अनुपात बताता है, जिससे आपको बिना हर sentence पढ़े vocabulary की सघनता का अंदाज़ा मिल जाता है।</p>
+
+<p>वे style समस्याएँ जिन्हें सिर्फ़ word count नहीं पकड़ सकता, उनके लिए अलग detectors हैं। एक passive-voice detector हर sentence में classic "was/were/is/are + past participle" pattern खोजता है — साथ ही आम irregular participles जैसे "written", "given" और "thrown" की एक curated list भी शामिल है जिसे एक साधारण regex चूक जाता — और passive sentences की गिनती तथा आपके टेक्स्ट का कितना प्रतिशत passive voice में लिखा है, दोनों बताता है। एक transition-word detector साठ से ज़्यादा आम connector words और phrases (however, therefore, in addition, as a result, वगैरह) खोजता है और हर एक को गिनता है, ताकि आप एक नज़र में बता सकें कि आपका तर्क अच्छी तरह जुड़ा हुआ है या अलग-अलग वाक्यों की सूची जैसा लगता है। Grammar और style indicators double या multiple spaces, बीच में खाली lines, दोहराए गए punctuation जैसे "!!" या ".." और lowercase letter से शुरू होने वाले sentences को चिह्नित करके इसे पूरा करते हैं।</p>
+
+<p>Search engine को ध्यान में रखकर लिखने वालों के लिए, एक SEO panel आपकी औसत sentence और paragraph length को सामान्य रूप से सुझाई गई सीमाओं से जाँचता है, आपका top keyword और उसकी density कुल शब्दों के प्रतिशत के रूप में बताता है, और यह चिह्नित करता है कि वह density स्वस्थ 0.5–3% सीमा में है या keyword stuffing जैसी लगती है। एक keyword-density table आपके सबसे ज़्यादा बार आने वाले दस meaningful शब्दों को उनकी गिनती और density के साथ सूचीबद्ध करती है (आम stop-words जैसे "the" और "and" अपने-आप छोड़ दिए जाते हैं)।</p>
+
+<p>पाँच charts यह सब visual बना देते हैं: एक readability gauge जो Flesch 0–100 स्केल पर घूमता है, पाँच formulas के consensus grade के लिए एक reading-level meter, और word-length distribution, sentence-length distribution तथा paragraph-length distribution के लिए bar charts। हर chart plain HTML canvas drawing commands से बनाया गया है — कोई charting library नहीं, कोई external script नहीं और CDN से कुछ भी load नहीं होता, जिससे पेज तेज़ रहता है और आपका टेक्स्ट पूरी तरह network से बाहर रहता है।</p>
+
+<p>एक Compare tab उसी engine को एक साथ दो texts तक बढ़ा देता है: original और rewrite, या दो संभावित drafts पेस्ट करें, Compare पर क्लिक करें, और एक table हर बड़े statistic और formula को साथ-साथ दिखाती है, हर metric पर जो version पढ़ने में आसान है उसे हरे रंग में highlight करते हुए। यह पुष्टि करने का सबसे तेज़ तरीका है कि किसी edit ने वाकई readability सुधारी है, सिर्फ़ अलग महसूस नहीं होती।</p>
+
+<p>Results को एक क्लिक में clipboard पर copy किया जा सकता है, plain-text report के रूप में download किया जा सकता है, spreadsheets के लिए CSV में export किया जा सकता है, ब्राउज़र में ही बने एक सादे PDF report के रूप में save किया जा सकता है, या एक साफ़, navigation-रहित layout में सीधे print किया जा सकता है। यह टूल अपने-आप पहचान लेता है कि आपका टेक्स्ट English, Hindi या Hindi-English मिश्रण (Hinglish) है, और उसी के अनुसार word और sentence splitting को समायोजित करता है ताकि Devanagari टेक्स्ट भी underlying heuristics जितनी सटीकता से मापा जाए; चूँकि classic readability formulas English के लिए बनाए और validate किए गए थे, non-English परिणामों को exact के बजाय approximate बताया जाता है। साझा या public कंप्यूटर पर privacy के लिए, text box दस मिनट की निष्क्रियता के बाद अपने-आप साफ़ हो जाता है, और चूँकि कुछ भी कभी server पर नहीं भेजा जाता, tab बंद करने या page refresh करने से आपने जो भी टाइप किया था उसका हर निशान मिट जाता है। यह टूल हल्का, मोबाइल-अनुकूल, keyboard से चलाने योग्य है और छात्रों से लेकर bloggers, copywriters, technical writers और SEO professionals तक सबके लिए समान रूप से काम करने के लिए बनाया गया है — बिना signup, बिना AI, और आप जितना चाहें उतना टेक्स्ट पेस्ट कर सकते हैं।</p>
+
+</div>
+</div>
+<div class="info-wrap" style="display:block;max-width:none">
+<div class="info-block" style="max-width:900px;margin:0 auto">
+
+<!-- ===== FAQ (immediately after About — required order) ===== -->
+<h2>❓ Frequently Asked Questions</h2>
+<div class="dt-faq" id="trsFaq">
+<details><summary>Is this Readability Analyzer free to use?</summary><p>Yes, completely free with no signup, no account and no limit on how much text you paste. / हाँ, यह पूरी तरह मुफ़्त है, बिना signup या account के।</p></details>
+<details><summary>Is my text uploaded anywhere?</summary><p>No. Every calculation runs locally in your browser; your text never leaves your device. / नहीं, सारी calculations आपके ब्राउज़र में ही होती हैं।</p></details>
+<details><summary>Does this tool use any AI?</summary><p>No. Every score comes from standard, published readability formulas and regex-based heuristics — there is no AI or machine learning involved. / नहीं, इसमें कोई AI इस्तेमाल नहीं होता।</p></details>
+<details><summary>What is Flesch Reading Ease and what score is "good"?</summary><p>It's a 0–100 scale where higher means easier to read; 60–70 is considered standard, plain-English writing suitable for most readers. / 60–70 का स्कोर आम पाठकों के लिए उपयुक्त माना जाता है।</p></details>
+<details><summary>What is Flesch-Kincaid Grade Level?</summary><p>It estimates the US school grade a reader needs to easily understand the text, e.g. 8.0 means an eighth-grade reading level. / यह टेक्स्ट समझने के लिए ज़रूरी स्कूल ग्रेड बताता है।</p></details>
+<details><summary>Why are there ten readability formulas instead of just Flesch?</summary><p>Different fields prefer different formulas — SMOG for health writing, Gunning Fog for business writing, LIX/RIX for European languages — so all ten are computed from the same word/sentence data for convenience. / अलग-अलग क्षेत्र अलग-अलग formula पसंद करते हैं, इसलिए सभी दस यहाँ उपलब्ध हैं।</p></details>
+<details><summary>Do the formulas work accurately on Hindi text?</summary><p>The tool detects Hindi and Hinglish and applies an approximate syllable count for Devanagari script, but the formulas themselves were designed and validated for English, so treat non-English scores as indicative rather than exact. / हिंदी टेक्स्ट के लिए स्कोर अनुमानित होते हैं, बिल्कुल सटीक नहीं।</p></details>
+<details><summary>How is the "Reading Level" (Primary School to Professional) decided?</summary><p>It's based on the average grade-level result across five formulas (Flesch-Kincaid, Gunning Fog, SMOG, ARI, Coleman-Liau). / यह पाँच formulas के औसत grade level पर आधारित है।</p></details>
+<details><summary>How is reading time calculated?</summary><p>Word count divided by a reading speed — 300 wpm for a fast reader, 200 wpm average, 150 wpm slow — shown in minutes and seconds. / शब्द संख्या को पढ़ने की गति से भाग देकर।</p></details>
+<details><summary>How is speaking time calculated?</summary><p>Word count divided by a speaking pace — 130 wpm for natural speech, 100 wpm for presentations, 150 wpm for podcasts. / शब्द संख्या को बोलने की गति से भाग देकर।</p></details>
+<details><summary>How does passive voice detection work?</summary><p>It looks for "was/were/is/are/be/been/being" followed by a past-participle word (regular -ed/-en endings plus a curated list of common irregular participles like "written" or "thrown"). It's a heuristic, not a perfect grammar parser, so a few edge cases may be missed or over-flagged. / यह was/were + past participle पैटर्न खोजता है, पूरी तरह सटीक नहीं है।</p></details>
+<details><summary>What counts as a "transition word"?</summary><p>Common connector words and phrases such as however, therefore, in addition, as a result and for example — over sixty are checked and counted. / however, therefore, in addition जैसे साठ से ज़्यादा शब्द जाँचे जाते हैं।</p></details>
+<details><summary>What is keyword density and why does it matter for SEO?</summary><p>It's how often a word appears relative to your total word count; 0.5–3% is generally considered healthy, while much higher can look like keyword stuffing to search engines. / 0.5–3% density को स्वस्थ माना जाता है।</p></details>
+<details><summary>What counts as a "difficult" word?</summary><p>A simplified Dale-Chall-style heuristic: words with three or more syllables that aren't in a curated list of common everyday English words. / तीन या ज़्यादा syllables वाले असामान्य शब्द।</p></details>
+<details><summary>How do the charts work — do they use a charting library?</summary><p>No. All five charts (gauge, level meter, word-length, sentence-length, paragraph-length) are drawn with plain HTML canvas commands, with no external library or network request. / सभी charts plain canvas drawing से बनते हैं, कोई library नहीं।</p></details>
+<details><summary>How does Compare mode work?</summary><p>Paste two texts into the Text A / Text B boxes on the Compare tab and click Compare; every statistic and formula is shown side by side, with the easier-to-read value highlighted in green. / दो texts को Compare tab में डालकर तुलना करें।</p></details>
+<details><summary>Can I export or print my results?</summary><p>Yes — copy to clipboard, download as TXT, CSV or a generated PDF report, or print directly with a clean, distraction-free layout. / हाँ, copy, TXT, CSV, PDF और print सभी उपलब्ध हैं।</p></details>
+<details><summary>Does the tool save or remember my text?</summary><p>No. Nothing is stored in localStorage or on a server; for extra privacy, the text box also auto-clears itself after 10 minutes of inactivity. / नहीं, कुछ भी save नहीं होता; 10 मिनट बाद अपने-आप साफ़ हो जाता है।</p></details>
+<details><summary>Does it work on very large documents?</summary><p>Yes. Analysis is debounced for smooth typing and all computation is lightweight regex and arithmetic, so even multi-thousand-word documents analyze quickly. / बड़े documents पर भी यह तेज़ी से काम करता है।</p></details>
+<details><summary>Is it mobile-friendly and accessible?</summary><p>Yes — the layout is fully responsive, controls are labelled for screen readers, and every action is reachable by keyboard. / हाँ, यह मोबाइल-अनुकूल और सुलभ है।</p></details>
+<details><summary>Does it work offline once loaded?</summary><p>Yes, since no external library or server call is required for the analysis itself; only the page's own scripts are used. / हाँ, यह offline भी काम करता है।</p></details>
+<details><summary>What browsers are supported?</summary><p>All modern browsers — Chrome, Firefox, Edge and Safari on both desktop and mobile — since the tool only uses standard, widely supported JavaScript and canvas APIs. / सभी आधुनिक browsers पर काम करता है।</p></details>
+<details><summary>How can I actually improve my readability score?</summary><p>Shorten long sentences, replace passive constructions with active ones, break up long paragraphs, swap difficult words for simpler synonyms, and add transition words to connect ideas — the tool flags exactly where each of these applies. / लंबे sentences छोटे करें, passive voice कम करें, कठिन शब्द आसान करें।</p></details>
+</div>
+
+<!-- ===== Troubleshooting ===== -->
+<h2>🛠️ Troubleshooting</h2>
+<ul>
+  <li><strong>Scores show "—" or 0:</strong> the box is empty, or your text has no sentence-ending punctuation (., !, ?, ।) for the tool to count sentences — add at least one and the scores will appear.</li>
+  <li><strong>Hindi text looks off:</strong> readability formulas were built for English; Hindi/Hinglish results are approximate by design — use the statistics panel (words, sentences, reading time) for a more reliable picture of Devanagari text.</li>
+  <li><strong>Charts look empty:</strong> paste text and wait a moment — charts redraw automatically a fraction of a second after you stop typing, and also redraw on window resize.</li>
+  <li><strong>My text disappeared:</strong> the box auto-clears after 10 minutes of inactivity for privacy on shared computers; simply paste your text again — nothing was ever saved anywhere.</li>
+  <li><strong>PDF/CSV/TXT download does nothing:</strong> make sure you've analyzed some text first (the buttons build a report from the current analysis); check that your browser isn't blocking downloads or pop-ups for this page.</li>
+  <li><strong>Compare tab shows no results:</strong> both Text A and Text B boxes need some text before clicking Compare.</li>
+  <li><strong>Print looks wrong:</strong> the print stylesheet hides navigation and the toolbar automatically; if your browser's print preview looks unstyled, try "Print backgrounds" off in the print dialog.</li>
+</ul>
+
+</div>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is this Readability Analyzer free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no signup, no account and no limit on how much text you paste."}},
+{"@type":"Question","name":"Is my text uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Every calculation runs locally in your browser; your text never leaves your device."}},
+{"@type":"Question","name":"Does this tool use any AI?","acceptedAnswer":{"@type":"Answer","text":"No. Every score comes from standard, published readability formulas and regex-based heuristics — there is no AI or machine learning involved."}},
+{"@type":"Question","name":"What is Flesch Reading Ease and what score is good?","acceptedAnswer":{"@type":"Answer","text":"It is a 0-100 scale where higher means easier to read; 60-70 is considered standard, plain-English writing suitable for most readers."}},
+{"@type":"Question","name":"What is Flesch-Kincaid Grade Level?","acceptedAnswer":{"@type":"Answer","text":"It estimates the US school grade a reader needs to easily understand the text, e.g. 8.0 means an eighth-grade reading level."}},
+{"@type":"Question","name":"Why are there ten readability formulas instead of just Flesch?","acceptedAnswer":{"@type":"Answer","text":"Different fields prefer different formulas - SMOG for health writing, Gunning Fog for business writing, LIX/RIX for European languages - so all ten are computed from the same word and sentence data for convenience."}},
+{"@type":"Question","name":"Do the formulas work accurately on Hindi text?","acceptedAnswer":{"@type":"Answer","text":"The tool detects Hindi and Hinglish and applies an approximate syllable count for Devanagari script, but the formulas themselves were designed and validated for English, so treat non-English scores as indicative rather than exact."}},
+{"@type":"Question","name":"How is the Reading Level decided?","acceptedAnswer":{"@type":"Answer","text":"It is based on the average grade-level result across five formulas: Flesch-Kincaid, Gunning Fog, SMOG, ARI and Coleman-Liau."}},
+{"@type":"Question","name":"How is reading time calculated?","acceptedAnswer":{"@type":"Answer","text":"Word count divided by a reading speed - 300 words per minute for a fast reader, 200 average, 150 slow - shown in minutes and seconds."}},
+{"@type":"Question","name":"How is speaking time calculated?","acceptedAnswer":{"@type":"Answer","text":"Word count divided by a speaking pace - 130 words per minute for natural speech, 100 for presentations, 150 for podcasts."}},
+{"@type":"Question","name":"How does passive voice detection work?","acceptedAnswer":{"@type":"Answer","text":"It looks for was, were, is, are, be, been or being followed by a past-participle word, including regular -ed/-en endings plus a curated list of common irregular participles like written or thrown. It is a heuristic, not a perfect grammar parser."}},
+{"@type":"Question","name":"What counts as a transition word?","acceptedAnswer":{"@type":"Answer","text":"Common connector words and phrases such as however, therefore, in addition, as a result and for example - over sixty are checked and counted."}},
+{"@type":"Question","name":"What is keyword density and why does it matter for SEO?","acceptedAnswer":{"@type":"Answer","text":"It is how often a word appears relative to your total word count; 0.5 to 3 percent is generally considered healthy, while much higher can look like keyword stuffing to search engines."}},
+{"@type":"Question","name":"What counts as a difficult word?","acceptedAnswer":{"@type":"Answer","text":"A simplified Dale-Chall-style heuristic: words with three or more syllables that are not in a curated list of common everyday English words."}},
+{"@type":"Question","name":"How do the charts work - do they use a charting library?","acceptedAnswer":{"@type":"Answer","text":"No. All five charts are drawn with plain HTML canvas commands, with no external library or network request."}},
+{"@type":"Question","name":"How does Compare mode work?","acceptedAnswer":{"@type":"Answer","text":"Paste two texts into the Text A and Text B boxes on the Compare tab and click Compare; every statistic and formula is shown side by side, with the easier-to-read value highlighted in green."}},
+{"@type":"Question","name":"Can I export or print my results?","acceptedAnswer":{"@type":"Answer","text":"Yes - copy to clipboard, download as TXT, CSV or a generated PDF report, or print directly with a clean, distraction-free layout."}},
+{"@type":"Question","name":"Does the tool save or remember my text?","acceptedAnswer":{"@type":"Answer","text":"No. Nothing is stored in localStorage or on a server; for extra privacy, the text box also auto-clears itself after 10 minutes of inactivity."}},
+{"@type":"Question","name":"Does it work on very large documents?","acceptedAnswer":{"@type":"Answer","text":"Yes. Analysis is debounced for smooth typing and all computation is lightweight regex and arithmetic, so even multi-thousand-word documents analyze quickly."}},
+{"@type":"Question","name":"Is it mobile-friendly and accessible?","acceptedAnswer":{"@type":"Answer","text":"Yes - the layout is fully responsive, controls are labelled for screen readers, and every action is reachable by keyboard."}},
+{"@type":"Question","name":"Does it work offline once loaded?","acceptedAnswer":{"@type":"Answer","text":"Yes, since no external library or server call is required for the analysis itself; only the page's own scripts are used."}},
+{"@type":"Question","name":"What browsers are supported?","acceptedAnswer":{"@type":"Answer","text":"All modern browsers - Chrome, Firefox, Edge and Safari on both desktop and mobile - since the tool only uses standard, widely supported JavaScript and canvas APIs."}},
+{"@type":"Question","name":"How can I actually improve my readability score?","acceptedAnswer":{"@type":"Answer","text":"Shorten long sentences, replace passive constructions with active ones, break up long paragraphs, swap difficult words for simpler synonyms, and add transition words to connect ideas - the tool flags exactly where each of these applies."}}
+]}
+</script>
+<!-- CONTENT-END -->
+
+
+
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
 <script src="../assets/common.js"></script>
