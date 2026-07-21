@@ -27,6 +27,14 @@ jobs:
       - name: Check for broken internal links
         run: node scripts/seo/check-broken-links.js
 
+      - name: Image alt-text audit (advisory)
+        run: node scripts/seo/check-image-alt.js
+        continue-on-error: true
+
+      - name: Thin/duplicate meta description audit (advisory)
+        run: node scripts/seo/check-thin-duplicate-content.js
+        continue-on-error: true
+
   deploy:
     needs: validate
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
