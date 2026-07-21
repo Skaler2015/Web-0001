@@ -41,6 +41,21 @@ function gitLastModDate(relPath) {
   return new Date().toISOString().slice(0, 10);
 }
 
+/* Earliest commit date that touched this file — follows renames — used as
+   a schema.org datePublished. Falls back to today if there's no history yet
+   (a brand-new, uncommitted file). */
+function gitFirstCommitDate(relPath) {
+  try {
+    const out = execSync(`git log --follow --format=%cs -- "${relPath}"`, { cwd: ROOT, stdio: ['pipe', 'pipe', 'ignore'] })
+      .toString()
+      .trim()
+      .split('\n')
+      .filter(Boolean);
+    if (out.length) return out[out.length - 1];
+  } catch (e) { /* not a git repo / no history yet */ }
+  return new Date().toISOString().slice(0, 10);
+}
+
 function listOrphanToolFiles(toolsData) {
   const listed = new Set(toolsData.tools.map((t) => path.basename(t.url)));
   const dir = path.join(ROOT, 'tools');
@@ -48,4 +63,4 @@ function listOrphanToolFiles(toolsData) {
   return actual.filter((f) => !listed.has(f));
 }
 
-module.exports = { ROOT, SITE_URL, readToolsData, STATIC_PAGES, listCategoryPages, gitLastModDate, listOrphanToolFiles };
+module.exports = { ROOT, SITE_URL, readToolsData, STATIC_PAGES, listCategoryPages, gitLastModDate, gitFirstCommitDate, listOrphanToolFiles };
