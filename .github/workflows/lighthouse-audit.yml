@@ -1,0 +1,48 @@
+name: Lighthouse Audit (sampled)
+
+# Runs Lighthouse (performance/SEO/accessibility/best-practices) across a
+# representative sample of live tool pages — not all ~192, since a full
+# sweep would take too long and load the production server unnecessarily
+# for a routine check. The sample spans every category plus a few of the
+# heaviest tools (canvas/CodeMirror/large datasets) most likely to regress.
+# Informational only: never blocks anything, just reports scores.
+
+on:
+  schedule:
+    - cron: '0 3 * * 1' # every Monday 03:00 UTC
+  workflow_dispatch: {}
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lighthouse check (sampled pages)
+        uses: treosh/lighthouse-ci-action@v11
+        continue-on-error: true
+        with:
+          urls: |
+            https://apnesoftware.com/
+            https://apnesoftware.com/category/pdf-tools.html
+            https://apnesoftware.com/category/image-tools.html
+            https://apnesoftware.com/category/calculator-tools.html
+            https://apnesoftware.com/category/text-tools.html
+            https://apnesoftware.com/category/developer-tools.html
+            https://apnesoftware.com/category/seo-tools.html
+            https://apnesoftware.com/tools/html-to-pdf.html
+            https://apnesoftware.com/tools/cheque-printing-tool.html
+            https://apnesoftware.com/tools/ifsc-code-finder.html
+            https://apnesoftware.com/tools/website-preview.html
+            https://apnesoftware.com/tools/word-counter.html
+            https://apnesoftware.com/tools/age-calculator.html
+            https://apnesoftware.com/tools/qr-generator.html
+            https://apnesoftware.com/tools/image-compressor.html
+            https://apnesoftware.com/tools/pdf-merge.html
+            https://apnesoftware.com/tools/schema-markup-generator.html
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "### Lighthouse sample audit" >> "$GITHUB_STEP_SUMMARY"
+          echo "Audited homepage + all 6 category pages + 10 representative tools. Full reports are in the uploaded artifact above (informational only, never blocks)." >> "$GITHUB_STEP_SUMMARY"

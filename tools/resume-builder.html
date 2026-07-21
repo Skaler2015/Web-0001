@@ -441,7 +441,7 @@ table.rb-table th{background:rgba(167,139,250,.14);color:#fff;font-weight:600}
   $('accentColor').addEventListener('input',function(){ data.accent=this.value; render(); save(); });
   $('fontSel').addEventListener('change',function(){ data.font=this.value; render(); save(); });
   $('photoShape').addEventListener('change',function(){ data.photoShape=this.value; render(); save(); });
-  $('photoInput').addEventListener('change',function(e){ var f=e.target.files[0]; if(!f)return; var r=new FileReader(); r.onload=function(){ data.photo=r.result; $('photoPrev').src=r.result; $('photoPrev').style.display='inline-block'; render(); save(); }; r.readAsDataURL(f); });
+  $('photoInput').addEventListener('change',function(e){ var f=e.target.files[0]; if(!f)return; var r=new FileReader(); r.onload=function(){ data.photo=r.result; $('photoPrev').src=r.result; $('photoPrev').alt='Resume photo preview'; $('photoPrev').style.display='inline-block'; render(); save(); }; r.readAsDataURL(f); });
   Array.prototype.forEach.call(document.querySelectorAll('.tpl'),function(b){ b.addEventListener('click',function(){ document.querySelectorAll('.tpl').forEach(function(z){z.setAttribute('aria-pressed','false');}); b.setAttribute('aria-pressed','true'); data.template=b.getAttribute('data-tpl'); render(); save(); }); });
 
   /* ===== dynamic lists ===== */
@@ -555,7 +555,7 @@ table.rb-table th{background:rgba(167,139,250,.14);color:#fff;font-weight:600}
   function fillForm(){
     Array.prototype.forEach.call(document.querySelectorAll('[data-bind]'),function(el){ el.value=getPath(data, el.dataset.bind); });
     $('accentColor').value=data.accent; $('fontSel').value=data.font; $('photoShape').value=data.photoShape;
-    if(data.photo){ $('photoPrev').src=data.photo; $('photoPrev').style.display='inline-block'; }
+    if(data.photo){ $('photoPrev').src=data.photo; $('photoPrev').alt='Resume photo preview'; $('photoPrev').style.display='inline-block'; }
     document.querySelectorAll('.tpl').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-tpl')===data.template?'true':'false'); });
     renderExp(); renderEdu(); renderProj(); renderCustom();
   }
