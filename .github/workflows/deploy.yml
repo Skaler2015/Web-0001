@@ -46,6 +46,9 @@ jobs:
           node scripts/seo/generate-sitemap.js
           node scripts/seo/generate-llms-txt.js
 
+      - name: Refresh schema datePublished/dateModified
+        run: node scripts/seo/add-schema-dates.js
+
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -73,5 +76,5 @@ jobs:
         run: |
           echo "### Post-deploy checklist" >> "$GITHUB_STEP_SUMMARY"
           echo "- [ ] Purge the LiteSpeed cache: hPanel → Speed → Caching → Purge All (not automated — no Hostinger API credentials configured)." >> "$GITHUB_STEP_SUMMARY"
-          echo "- sitemap.xml / llms.txt were regenerated fresh for this deploy." >> "$GITHUB_STEP_SUMMARY"
+          echo "- sitemap.xml / llms.txt / schema datePublished-dateModified were regenerated fresh for this deploy." >> "$GITHUB_STEP_SUMMARY"
           echo "- IndexNow ping result is in the step above (best-effort, non-blocking)." >> "$GITHUB_STEP_SUMMARY"
