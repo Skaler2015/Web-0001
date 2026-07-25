@@ -306,6 +306,24 @@ function formatBytes(bytes){
       overlay.addEventListener('click', closeDrawer);
       drawer.querySelector('.drawer-close').addEventListener('click', closeDrawer);
 
+      // ---------- Mobile bottom nav (auto-injected, phones only) ----------
+      if(!document.querySelector('.mobile-bottom-nav')){
+        const bottomNav = document.createElement('div');
+        bottomNav.className = 'mobile-bottom-nav';
+        const isHome = /\/(index\.html)?$/.test(window.location.pathname);
+        bottomNav.innerHTML =
+          '<a class="mbn-item' + (isHome ? ' active' : '') + '" href="' + prefix + 'index.html"><span class="mbn-icon">🏠</span><span>Home</span></a>' +
+          '<button type="button" class="mbn-item" id="mbnSearch"><span class="mbn-icon">🔍</span><span>Search</span></button>' +
+          '<button type="button" class="mbn-item" id="mbnCategories"><span class="mbn-icon">🗂️</span><span>Categories</span></button>' +
+          '<a class="mbn-item" href="' + prefix + 'index.html#favSection"><span class="mbn-icon">⭐</span><span>Saved</span></a>';
+        document.body.appendChild(bottomNav);
+        bottomNav.querySelector('#mbnSearch').addEventListener('click', () => {
+          openDrawer();
+          setTimeout(() => drawerSearchInput.focus(), 300);
+        });
+        bottomNav.querySelector('#mbnCategories').addEventListener('click', openDrawer);
+      }
+
       // ---------- Left sidebar (tool pages only, wide screens) ----------
       const toolPageMatch = window.location.pathname.match(/\/tools\/([a-z0-9-]+)\.html$/i);
       if (toolPageMatch) {

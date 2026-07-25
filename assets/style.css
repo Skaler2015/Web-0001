@@ -477,6 +477,33 @@ canvas{max-width:100%}
   .prem-tab,.search-cat-pill,.filter-tab,.trending-tag{padding-top:9px;padding-bottom:9px}
 }
 
+/* ═══════════════════════════════════════════
+   MOBILE BOTTOM NAV (auto-injected by common.js, phones only)
+═══════════════════════════════════════════ */
+.mobile-bottom-nav{
+  display:none;
+  position:fixed;bottom:0;left:0;right:0;z-index:80;
+  background:var(--bg);
+  box-shadow:0 -4px 18px rgba(0,0,0,.35);
+  padding:6px 4px calc(6px + env(safe-area-inset-bottom,0px));
+  align-items:stretch;
+  justify-content:space-around;
+}
+.mbn-item{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  background:none;border:none;color:var(--text-dim);
+  font-family:var(--font);font-size:.64rem;font-weight:600;
+  padding:6px 4px;border-radius:12px;cursor:pointer;flex:1;min-width:0;
+  transition:.15s;text-decoration:none;
+}
+.mbn-item .mbn-icon{font-size:1.15rem;line-height:1}
+.mbn-item.active{color:var(--accent);background:var(--surface-2);box-shadow:var(--shadow-inset)}
+.mbn-item:active{transform:scale(.94)}
+@media(max-width:760px){
+  .mobile-bottom-nav{display:flex}
+  body{padding-bottom:64px}
+}
+
 
 /* ═══ SOFT EMBOSS GLOBAL FIXES ═══ */
 
