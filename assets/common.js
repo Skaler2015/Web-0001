@@ -1,5 +1,15 @@
 // Common helper functions used across tools
 
+// ---- PWA service worker registration (installable "app" shell) ---------
+// Only registers from the root scope (not from within /tools/, /category/
+// etc. via relative paths) so the SW's own scope always covers the whole
+// site regardless of which page loaded first.
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  });
+}
+
 // ---- Multi-category read helpers ----------------------------------------
 // A tool can belong to more than one category. Its categories live in the
 // `categories` array (baked into tools-data.json by assets/categorize.js);

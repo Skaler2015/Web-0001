@@ -1,0 +1,16 @@
+{
+  "name": "ApneSoftware — Free Online Tools",
+  "short_name": "ApneSoftware",
+  "description": "150+ free browser-based tools for PDF, image, calculator, text, and developer tasks. No signup, no upload, 100% free.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#262B3A",
+  "theme_color": "#262B3A",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
