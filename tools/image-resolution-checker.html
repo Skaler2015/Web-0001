@@ -29,7 +29,7 @@
 <meta name="twitter:description" content="Resolution, DPI/PPI, print size, colors, EXIF, quality score & social-media fit. Free & private.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":["SoftwareApplication","WebApplication"],"name":"Image Resolution & DPI Checker","description":"Check an image's resolution, DPI/PPI, print size, dominant colors, EXIF metadata, quality score and social-media fit — entirely in the browser.","url":"https://apnesoftware.com/tools/image-resolution-checker.html","applicationCategory":"MultimediaApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"1360"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"},"datePublished":"2026-06-30","dateModified":"2026-07-04"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["SoftwareApplication","WebApplication"],"name":"Image Resolution & DPI Checker","description":"Check an image's resolution, DPI/PPI, print size, dominant colors, EXIF metadata, quality score and social-media fit — entirely in the browser.","url":"https://apnesoftware.com/tools/image-resolution-checker.html","applicationCategory":"MultimediaApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"},"datePublished":"2026-06-30","dateModified":"2026-07-04"}</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com","logo":"https://apnesoftware.com/assets/og-image.png"}
 </script>
@@ -41,11 +41,7 @@
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"HowTo","name":"How to check image resolution and DPI","step":[{"@type":"HowToStep","position":1,"name":"Add an image","text":"Drag and drop, browse, or paste (Ctrl+V) an image — nothing is uploaded."},{"@type":"HowToStep","position":2,"name":"Read the details","text":"See dimensions, megapixels, real or estimated DPI/PPI, print size, colors and EXIF instantly."},{"@type":"HowToStep","position":3,"name":"Use the insights","text":"Check print readiness and social-media fit, then export a report as PDF, CSV, JSON or TXT."}]}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","itemReviewed":{"@type":"SoftwareApplication","name":"Image Resolution & DPI Checker","applicationCategory":"MultimediaApplication"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"ApneSoftware User"},"reviewBody":"Showed the real DPI and EXIF of my photo and told me exactly how large I could print it. No upload, instant, and free."}
-</script>
-<script type="application/ld+json">
+</script><script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"What is image resolution?","acceptedAnswer":{"@type":"Answer","text":"Image resolution is the number of pixels in an image, written as width × height (for example 1920×1080). More pixels mean more detail and a larger possible print or display size."}},
 {"@type":"Question","name":"What is DPI?","acceptedAnswer":{"@type":"Answer","text":"DPI (dots per inch) describes how many ink dots a printer places per inch. Higher DPI means finer print detail; 300 DPI is the standard for high-quality printing."}},
@@ -258,7 +254,7 @@ table.irc-tbl{width:100%;border-collapse:collapse;font-size:.85rem}
         <div>
           <div class="irc-card"><h3>📊 Image Information</h3><div class="irc-grid" id="basicInfo"></div></div>
           <div class="irc-card"><h3>🖨️ DPI / PPI &amp; Print Size <span id="unitToggle" style="margin-left:auto;font-size:.7rem"></span></h3><div id="dpiInfo"></div><div id="printTable" style="margin-top:10px"></div></div>
-          <div class="irc-card"><h3>🧠 AI Recommendation</h3><div class="irc-reco"><div class="ic">🤖</div><div><b id="recoBest">—</b><p style="color:var(--text-dim);font-size:.85rem;margin:4px 0 0" id="recoWhy"></p><div class="irc-tags" id="recoTags"></div></div></div></div>
+          <div class="irc-card"><h3>🎯 Smart Recommendation</h3><div class="irc-reco"><div class="ic">🎯</div><div><b id="recoBest">—</b><p style="color:var(--text-dim);font-size:.85rem;margin:4px 0 0" id="recoWhy"></p><div class="irc-tags" id="recoTags"></div></div></div></div>
           <div class="irc-card"><h3>⭐ Quality &amp; Health Scores</h3><div class="irc-scores" id="scores"></div><p id="qualityNote" style="color:var(--text-dim);font-size:.85rem;margin-top:12px"></p></div>
           <div class="irc-card"><h3>🎨 Colors</h3><div class="irc-grid" id="colorInfo" style="margin-bottom:12px"></div><div class="irc-palette" id="palette"></div></div>
           <div class="irc-card"><h3>📱 Social Media Fit</h3><div id="socialTable"></div></div>
@@ -554,7 +550,7 @@ table.irc-tbl{width:100%;border-collapse:collapse;font-size:.85rem}
     $('printTable').innerHTML = rows+'</table>';
   }
 
-  /* ═══ AI recommendation (heuristic best use) ═══ */
+  /* ═══ Smart recommendation (heuristic best use) ═══ */
   function renderReco(it){
     const {w,h}=it, mp=w*h/1e6, ar=w/h;
     let best, why;
@@ -565,7 +561,7 @@ table.irc-tbl{width:100%;border-collapse:collapse;font-size:.85rem}
     else if(w<=800 && mp<1){ best='Website / Blog thumbnail'; why='Small and light — well suited to fast-loading web thumbnails.'; }
     else if(w>=1200 && ar>1.5){ best='Website Banner / Cover'; why='Wide and large — great for hero banners and cover images.'; }
     else { best='Web & Social use'; why='Balanced size — works well across websites and social media.'; }
-    $('recoBest').textContent = '🤖 Best for: '+best;
+    $('recoBest').textContent = '🎯 Best for: '+best;
     $('recoWhy').textContent = why;
     const tags=[];
     if(mp>=8) tags.push('Print-ready'); if(w>=1920) tags.push('Full-HD+'); if(w<=1080) tags.push('Social-ready');
