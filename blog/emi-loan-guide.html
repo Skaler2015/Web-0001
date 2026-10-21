@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ApneSoftware">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#262B3A">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>How Loan EMI Is Actually Calculated — And Why Early Payments Matter — ApneSoftware</title>
+<meta name="description" content="A plain-language look at the EMI formula, why most of your early payments go toward interest rather than principal, and how a small prepayment early on saves more than the same amount later.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://apnesoftware.com/blog/emi-loan-guide.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How Loan EMI Is Actually Calculated — And Why Early Payments Matter">
+<meta property="og:description" content="Why most of your early EMI payments go toward interest rather than principal, and how a small prepayment early on saves more than the same amount later.">
+<meta property="og:url" content="https://apnesoftware.com/blog/emi-loan-guide.html">
+<meta property="og:site_name" content="ApneSoftware">
+<meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How Loan EMI Is Actually Calculated">
+<meta name="twitter:description" content="Why most of your early EMI payments go toward interest, not principal — and why early prepayment matters most.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How Loan EMI Is Actually Calculated — And Why Early Payments Matter",
+  "description": "A plain-language look at the EMI formula, why most of your early payments go toward interest rather than principal, and how a small prepayment early on saves more than the same amount later.",
+  "author": {"@type": "Organization", "name": "ApneSoftware"},
+  "publisher": {"@type": "Organization", "name": "ApneSoftware", "logo": {"@type": "ImageObject", "url": "https://apnesoftware.com/assets/og-image.png"}},
+  "mainEntityOfPage": "https://apnesoftware.com/blog/emi-loan-guide.html",
+  "datePublished": "2026-07-25",
+  "dateModified": "2026-07-25"
+}
+</script>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.doc-wrap{max-width:800px;margin:0 auto;}
+.doc-hero{background:linear-gradient(135deg,rgba(124,92,252,.12),rgba(22,192,121,.08));border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:40px 36px 32px;margin-bottom:36px;}
+.doc-hero h1{font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:800;margin-bottom:8px;}
+.doc-hero p{color:rgba(255,255,255,.65);font-size:.98rem;}
+.doc-body{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:36px;line-height:1.85;}
+.doc-body h2{font-size:1.15rem;font-weight:700;color:var(--accent-2);margin:28px 0 10px;}
+.doc-body h2:first-child{margin-top:0;}
+.doc-body h3{font-size:1rem;font-weight:700;margin:18px 0 7px;}
+.doc-body p,.doc-body li{color:rgba(255,255,255,.82);margin-bottom:10px;}
+.doc-body ul,.doc-body ol{padding-left:22px;margin-bottom:14px;}
+.doc-body a{color:var(--accent);}
+.doc-body strong{color:#fff;}
+.doc-body code{background:rgba(255,255,255,.08);padding:2px 6px;border-radius:4px;font-size:.88em;}
+.doc-body table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.9rem;}
+.doc-body th{background:rgba(124,92,252,.2);padding:10px 12px;text-align:left;border:1px solid rgba(255,255,255,.15);}
+.doc-body td{padding:10px 12px;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.78);}
+.doc-body tr:nth-child(even) td{background:rgba(255,255,255,.03);}
+.breadcrumb{display:flex;align-items:center;gap:6px;font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:20px;flex-wrap:wrap;}
+.breadcrumb a{color:rgba(255,255,255,.6);}
+.breadcrumb span{opacity:.4;}
+.cta-box{background:rgba(124,92,252,.1);border:1px solid rgba(124,92,252,.3);border-radius:12px;padding:16px 20px;margin:18px 0;}
+.cta-box a{font-weight:700;}
+.article-meta{display:flex;gap:14px;font-size:.82rem;color:rgba(255,255,255,.5);margin-top:10px;flex-wrap:wrap;}
+.disclaimer-note{font-size:.82rem;color:rgba(255,255,255,.5);border-top:1px solid rgba(255,255,255,.1);padding-top:14px;margin-top:20px;}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="../index.html">Apne<span>Software</span></a>
+    <a class="back-link" href="../blog.html">← All Articles</a>
+  </div>
+</header>
+<div class="container">
+  <div class="doc-wrap">
+    <nav class="breadcrumb"><a href="https://apnesoftware.com/">Home</a><span>›</span><a href="../blog.html">Blog</a><span>›</span><span>EMI &amp; Loan Guide</span></nav>
+
+<div class="doc-hero">
+  <h1>🏠 How Loan EMI Is Actually Calculated</h1>
+  <p>Your EMI amount stays the same every month — but what it's made of changes completely from the first payment to the last.</p>
+  <div class="article-meta"><span>📅 Updated July 2026</span><span>⏱ 6 min read</span></div>
+</div>
+
+<div class="doc-body">
+
+<h2>The EMI formula</h2>
+<p>Every standard EMI (Equated Monthly Installment) is calculated with one formula:</p>
+<p><code>EMI = P × r × (1+r)^n / ((1+r)^n − 1)</code></p>
+<p>where <strong>P</strong> is the loan principal, <strong>r</strong> is the monthly interest rate (annual rate ÷ 12 ÷ 100), and <strong>n</strong> is the total number of monthly installments (loan tenure in months). This formula guarantees the same payment amount every month for the life of the loan — but the split between interest and principal inside that fixed payment changes every single month.</p>
+
+<h2>Why your early EMIs are mostly interest</h2>
+<p>Interest for any given month is calculated on the <strong>outstanding principal</strong> — the amount you still owe. In month 1, the outstanding principal is the entire loan amount, so the interest portion of that month's EMI is at its highest. As each EMI gradually chips away at the principal, the interest portion shrinks slightly every month while the principal portion grows — but the total EMI amount itself never changes.</p>
+<p>In practice, for a typical 20-year home loan, well over half of your payments in the first several years go toward interest, not toward reducing what you owe. This is normal amortization behavior, not a sign of an unfair loan — but it's exactly why loan tenure and prepayment timing matter so much.</p>
+
+<h2>Why a prepayment early in the loan saves more</h2>
+<p>Because interest is calculated on outstanding principal, reducing that principal earlier means every subsequent month's interest is calculated on a smaller base — the saving compounds for the rest of the loan term. The exact same prepayment amount made in year 1 saves meaningfully more total interest than making it in year 15, simply because it has more remaining months left to "work."</p>
+
+<table>
+<tr><th>Scenario</th><th>Effect</th></tr>
+<tr><td>Prepay a lump sum early in the loan</td><td>Larger total interest savings, since it reduces the principal that interest compounds on for longer</td></tr>
+<tr><td>Prepay the same amount late in the loan</td><td>Smaller total interest savings — most of the "interest-heavy" period has already passed</td></tr>
+<tr><td>Increase EMI amount instead of a lump sum</td><td>Shortens tenure faster than a one-time prepayment of similar total value, spread over time</td></tr>
+</table>
+
+<h2>Tenure vs interest rate — which matters more?</h2>
+<p>A longer tenure lowers your monthly EMI but increases total interest paid substantially, since you're paying interest on a high outstanding balance for more months. A small difference in interest rate, meanwhile, compounds across the entire loan — which is why comparing the <em>effective rate</em> between lenders (not just the advertised headline rate) before committing to a long-tenure loan is worth the extra few minutes.</p>
+
+<h2>Working it out for your own loan</h2>
+<ol>
+<li>Use the <a href="../tools/emi-calculator.html">EMI Calculator</a> to get your monthly payment, total interest, and a full month-by-month amortization schedule for any principal, rate, and tenure.</li>
+<li>Check how a lump-sum or increased-EMI prepayment at different points in the loan changes your total interest paid.</li>
+<li>If you're also investing alongside loan repayment, compare expected returns using the <a href="../tools/sip-calculator.html">SIP Calculator</a> — whether prepaying a loan or investing the same amount is better depends on your loan's interest rate versus your expected investment return.</li>
+</ol>
+
+<div class="cta-box">💡 Related: planning a big purchase involving GST? The <a href="../tools/gst-calculator.html">GST Calculator</a> splits CGST/SGST/IGST and adds or removes GST from a price instantly.</div>
+
+<h2>Common mistakes</h2>
+<ul>
+<li><strong>Comparing only the EMI amount between two loan offers.</strong> A lower EMI with a longer tenure can cost significantly more in total interest than a higher EMI with a shorter tenure.</li>
+<li><strong>Assuming a late-stage prepayment saves as much as an early one.</strong> As shown above, timing changes the savings substantially, even for the identical prepayment amount.</li>
+<li><strong>Ignoring processing fees and prepayment charges.</strong> Some loans charge a fee for prepayment — factor this in before assuming a prepayment is purely beneficial.</li>
+</ul>
+
+<p class="disclaimer-note">This article explains the general EMI/amortization concept and is not financial advice. Actual loan terms, fees and prepayment rules vary by lender — confirm specifics with your bank or NBFC before making a decision.</p>
+
+</div>
+  </div>
+</div>
+<script src="../assets/common.js"></script>
+<!-- Default Statcounter code for Apne Software
+https://apnesoftware.com -->
+<script type="text/javascript">
+var sc_project=13334460;
+var sc_invisible=1;
+var sc_security="a5854dc7";
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/13334460/0/a5854dc7/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+</body>
+</html>

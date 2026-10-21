@@ -288,6 +288,26 @@ body.dark-mode { background: var(--bg, #0e1117) !important; }
   </div>
 </main>
 
+<div class="generic-about" style="max-width:1040px;margin:0 auto;padding:26px 22px">
+<h2>About This Tool | इस टूल के बारे में</h2>
+<p>Code Preview is a browser-based HTML, CSS and JavaScript playground with a live preview pane and console, plus a separate Website Preview mode that renders an uploaded ZIP of an entire multi-page site right inside your browser. | Code Preview एक browser-आधारित HTML, CSS और JavaScript playground है जिसमें live preview pane और console है, साथ ही एक अलग Website Preview mode भी है जो upload किए गए पूरे multi-page site के ZIP को सीधे आपके browser में render करता है।</p>
+
+<h3>Live editor vs. Website Preview | Live editor बनाम Website Preview</h3>
+<p>The HTML/CSS/JS Editor tab is meant for writing and testing a small snippet or component from scratch, with Run, Format, templates and one-click CDN libraries like Bootstrap or Tailwind to speed up experimentation. | HTML/CSS/JS Editor tab किसी छोटे snippet या component को शुरू से लिखने और test करने के लिए है, साथ में Run, Format, templates और experimentation तेज़ करने के लिए Bootstrap या Tailwind जैसी one-click CDN libraries।</p>
+<p>The Website Preview tab is for checking an already-built site: upload its ZIP (exported from a static site builder, a theme, or your own project folder) and the tool reconstructs the file tree and lets you click through its actual pages and links. | Website Preview tab एक पहले से बनी हुई site को check करने के लिए है: उसका ZIP (static site builder, theme, या अपने project folder से exported) upload करें और tool file tree को reconstruct करके उसके असली pages और links पर क्लिक करने देता है।</p>
+
+<h3>What does and doesn't work in the preview | Preview में क्या काम करता है और क्या नहीं</h3>
+<p>HTML, CSS, JavaScript, images, and CDN-loaded libraries like Bootstrap, Tailwind or jQuery render correctly, and multi-page navigation inside an uploaded ZIP works because the tool rewrites internal links to point at the in-memory files. | HTML, CSS, JavaScript, images, और Bootstrap, Tailwind या jQuery जैसी CDN-loaded libraries सही से render होती हैं, और uploaded ZIP के भीतर multi-page navigation काम करता है क्योंकि tool internal links को in-memory files की ओर rewrite कर देता है।</p>
+<p>Anything that needs a real server — PHP or other backend code, database queries, or genuine API calls — will not execute, since there is no server behind the preview; this is a browser-only sandbox, not a hosting environment. | जिस किसी चीज़ को असली server चाहिए — PHP या backend code, database queries, या genuine API calls — वह नहीं चलेगी, क्योंकि preview के पीछे कोई server नहीं है; यह एक browser-only sandbox है, कोई hosting environment नहीं।</p>
+
+<h3>Sharing and saving your work | अपना काम share और save करना</h3>
+<p>The Share button encodes your HTML, CSS and JS directly into the page URL so you can send a working link without any account or backend storage — useful for quick code reviews or bug reports. | Share button आपके HTML, CSS और JS को सीधे page URL में encode कर देता है ताकि आप बिना किसी account या backend storage के एक working link भेज सकें — यह quick code reviews या bug reports के लिए उपयोगी है।</p>
+<p>Download saves a single self-contained HTML file with your CSS and JS inlined, while the Website Preview's Download button repackages the previewed project so you can keep or re-upload it elsewhere. | Download एक single self-contained HTML file save करता है जिसमें आपका CSS और JS inline होता है, जबकि Website Preview का Download button preview किए गए project को फिर से package करता है ताकि आप उसे कहीं और रख सकें या फिर से upload कर सकें।</p>
+
+<h3>Privacy and Security | गोपनीयता और सुरक्षा</h3>
+<p>Both the code editor and the Website Preview process everything locally — your HTML/CSS/JS and any ZIP or file you upload are read and rendered entirely in your browser and are never uploaded to an ApneSoftware server. | Code editor और Website Preview दोनों सब कुछ locally process करते हैं — आपका HTML/CSS/JS और आपके द्वारा upload किया गया कोई भी ZIP या file पूरी तरह आपके browser में पढ़ा और render होता है और कभी ApneSoftware server पर upload नहीं होता।</p>
+</div>
+
 <!-- ═══════════ SEO / CONTENT (scrolls below the app) ═══════════ -->
 <style>
 .cp-seo{background:#0e1117;border-top:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.75)}

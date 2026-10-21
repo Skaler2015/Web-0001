@@ -331,6 +331,19 @@ label{font-size:.8rem;color:var(--text-dim);display:block;margin-bottom:6px;font
 /* swatch / color */
 .swatch{width:100%;height:80px;border-radius:12px;border:none;box-shadow:var(--shadow-raised-sm);margin-bottom:10px}
 
+/* ===== Shared Related/About/FAQ content blocks — auto-available on EVERY tool page ===== */
+.generic-related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:14px 0 26px}
+.generic-related-grid a{display:flex;align-items:center;gap:8px;padding:12px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;color:var(--text);text-decoration:none;font-size:.92rem;transition:border-color .15s,transform .15s}
+.generic-related-grid a:hover{border-color:var(--accent);transform:translateY(-2px)}
+.generic-about{margin-bottom:26px}
+.generic-about h2{margin-top:0}
+.generic-about h3{margin:18px 0 8px;color:var(--accent-2,var(--accent))}
+.generic-about p{line-height:1.7;color:var(--text-dim);margin:0 0 12px}
+.generic-faq{margin-top:8px}
+.generic-faq-item{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.generic-faq-item strong{color:var(--accent)}
+.generic-faq-item p{margin:0;line-height:1.65;color:var(--text-dim)}
+
 /* How-to / about-this-tool info section */
 .info-wrap{
   max-width:100%;margin:28px auto 0;padding:0 22px;

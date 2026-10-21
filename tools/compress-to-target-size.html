@@ -127,6 +127,50 @@
   </div>
 </div>
 
+<div class="generic-faq">
+<h2>Frequently Asked Questions | अक्सर पूछे जाने वाले प्रश्न</h2>
+
+<div class="generic-faq-item"><p><strong>Q. How is this different from a normal image compressor? | यह normal image compressor से कैसे अलग है?</strong><br>A normal compressor asks you to pick a quality percentage and you must guess the resulting KB; this tool asks for the KB you need and automatically searches for the quality that gets you there. | Normal compressor में आपको एक quality percentage चुनना होता है और resulting KB का अंदाज़ा लगाना पड़ता है; इस tool में आप चाहिए गई KB बताते हैं और यह खुद वह quality खोज लेता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. What image format does the output use? | Output किस image format में होता है?</strong><br>The compressed result is always saved as a JPEG, which compresses far more efficiently by size than PNG and is accepted by virtually every form that enforces a KB limit. | Compressed result हमेशा JPEG के रूप में save होता है, जो size के हिसाब से PNG से कहीं ज़्यादा efficiently compress होता है और लगभग हर KB-limit वाले form में accepted होता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. What common target sizes should I use? | मुझे किस common target size का उपयोग करना चाहिए?</strong><br>Exam and application forms often ask for 20–50 KB, most government portals ask for around 100 KB, and general uploads are usually fine around 200 KB — always check the specific form's stated limit first. | Exam और application forms अक्सर 20–50 KB मांगते हैं, ज़्यादातर government portals लगभग 100 KB मांगते हैं, और general uploads आमतौर पर लगभग 200 KB पर ठीक रहते हैं — पहले हमेशा form की बताई गई limit देखें।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Why couldn't the tool hit my exact target size? | Tool मेरी exact target size क्यों नहीं पा सका?</strong><br>If a photo is highly detailed or very high resolution, even the lowest usable JPEG quality may not fit under an extremely tight target like 20 KB; the tool is honest about this and returns the smallest size it genuinely achieved. | अगर कोई फोटो बहुत detailed या बहुत high resolution है, तो सबसे कम usable JPEG quality पर भी 20 KB जैसी बहुत सख्त target के अंदर फिट नहीं हो सकती; tool इसके बारे में ईमानदार रहता है और जो सबसे छोटी size genuinely achieve कर सका वह देता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. What can I do if my photo still won't fit the target? | अगर मेरी फोटो फिर भी target में फिट नहीं होती तो क्या करूं?</strong><br>Try cropping out unnecessary background, reducing the photo's resolution before uploading, or starting from a simpler, less detailed photo — all of these make it easier to hit a tight KB limit. | फालतू background crop करें, upload करने से पहले फोटो की resolution कम करें, या एक simpler, कम detailed फोटो से शुरू करें — ये सभी एक सख्त KB limit को पाना आसान बना देते हैं।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Does the tool resize the image dimensions? | क्या tool image के dimensions resize करता है?</strong><br>No, by default it keeps the original width and height and only adjusts JPEG quality to hit your target size; the pixel dimensions stay the same as your uploaded photo. | नहीं, default रूप से यह original width और height बनाए रखता है और केवल आपकी target size पाने के लिए JPEG quality adjust करता है; pixel dimensions आपकी uploaded फोटो जैसी ही रहती हैं।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Will the compressed photo look noticeably worse? | क्या compressed फोटो दिखने में काफी खराब लगेगी?</strong><br>The tool deliberately searches for the highest quality that still fits your target, so visible quality loss is minimized for the size you specified, though very tight targets on detailed photos will show more compression artifacts. | Tool जानबूझकर आपकी target के अंदर फिट होने वाली सबसे अच्छी quality खोजता है, इसलिए दी गई size के लिए visible quality loss कम से कम रहता है, हालांकि detailed फ़ोटो पर बहुत सख्त targets में compression artifacts ज़्यादा दिख सकते हैं।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. How long does compression take? | Compression में कितना समय लगता है?</strong><br>Just a few seconds for most photos, since the binary-search algorithm only needs a handful of trial compressions to converge on the right quality level. | ज़्यादातर फ़ोटो के लिए सिर्फ़ कुछ seconds, क्योंकि binary-search algorithm को सही quality level पर पहुंचने के लिए सिर्फ़ कुछ trial compressions चाहिए होते हैं।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Can I compress a PNG or other format with this tool? | क्या मैं PNG या किसी दूसरे format को इस tool से compress कर सकता हूँ?</strong><br>You can upload any common image format (PNG, JPEG, WebP etc.), but the final downloaded result is always converted to JPEG for maximum size efficiency. | आप कोई भी common image format (PNG, JPEG, WebP आदि) upload कर सकते हैं, लेकिन final downloaded result हमेशा maximum size efficiency के लिए JPEG में convert होता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Is my photo uploaded to a server? | क्या मेरी फोटो server पर upload होती है?</strong><br>No — the entire compression process, including the canvas rendering and quality search, happens locally in your browser; your photo never leaves your device. | नहीं — पूरी compression process, canvas rendering और quality search सहित, आपके browser में locally होती है; आपकी फोटो कभी आपके device से बाहर नहीं जाती।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Can I check the exact file size before downloading? | क्या मैं download करने से पहले exact file size देख सकता हूँ?</strong><br>Yes — the result box displays both the original file size and the final compressed size in KB before you click Download. | हाँ — result box download पर click करने से पहले original file size और final compressed size दोनों KB में दिखाता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Is this tool free? | क्या यह tool free है?</strong><br>Yes, it's completely free to use with no signup and no limit on how many photos you compress. | हाँ, यह पूरी तरह free है, बिना signup और आप कितनी भी फोटो compress करें उसकी कोई limit नहीं है।</p></div>
+</div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How is this different from a normal image compressor?","acceptedAnswer":{"@type":"Answer","text":"A normal compressor asks you to pick a quality percentage and you must guess the resulting KB; this tool asks for the KB you need and automatically searches for the quality that gets you there."}},
+{"@type":"Question","name":"What image format does the output use?","acceptedAnswer":{"@type":"Answer","text":"The compressed result is always saved as a JPEG, which compresses far more efficiently by size than PNG and is accepted by virtually every form that enforces a KB limit."}},
+{"@type":"Question","name":"What common target sizes should I use?","acceptedAnswer":{"@type":"Answer","text":"Exam and application forms often ask for 20-50 KB, most government portals ask for around 100 KB, and general uploads are usually fine around 200 KB; always check the specific form's stated limit first."}},
+{"@type":"Question","name":"Why couldn't the tool hit my exact target size?","acceptedAnswer":{"@type":"Answer","text":"If a photo is highly detailed or very high resolution, even the lowest usable JPEG quality may not fit under an extremely tight target like 20 KB; the tool returns the smallest size it genuinely achieved."}},
+{"@type":"Question","name":"What can I do if my photo still won't fit the target?","acceptedAnswer":{"@type":"Answer","text":"Try cropping out unnecessary background, reducing the photo's resolution before uploading, or starting from a simpler, less detailed photo."}},
+{"@type":"Question","name":"Does the tool resize the image dimensions?","acceptedAnswer":{"@type":"Answer","text":"No, by default it keeps the original width and height and only adjusts JPEG quality to hit your target size."}},
+{"@type":"Question","name":"Will the compressed photo look noticeably worse?","acceptedAnswer":{"@type":"Answer","text":"The tool searches for the highest quality that still fits your target, so visible quality loss is minimized, though very tight targets on detailed photos show more compression artifacts."}},
+{"@type":"Question","name":"How long does compression take?","acceptedAnswer":{"@type":"Answer","text":"Just a few seconds for most photos, since the binary-search algorithm only needs a handful of trial compressions to converge on the right quality level."}},
+{"@type":"Question","name":"Can I compress a PNG or other format with this tool?","acceptedAnswer":{"@type":"Answer","text":"You can upload any common image format, but the final downloaded result is always converted to JPEG for maximum size efficiency."}},
+{"@type":"Question","name":"Is my photo uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No, the entire compression process happens locally in your browser; your photo never leaves your device."}},
+{"@type":"Question","name":"Can I check the exact file size before downloading?","acceptedAnswer":{"@type":"Answer","text":"Yes, the result box displays both the original file size and the final compressed size in KB before you click Download."}},
+{"@type":"Question","name":"Is this tool free?","acceptedAnswer":{"@type":"Answer","text":"Yes, it's completely free to use with no signup and no limit on how many photos you compress."}}
+]}
+</script>
+
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
 <script src="../assets/common.js"></script>

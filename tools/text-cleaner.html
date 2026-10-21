@@ -117,6 +117,48 @@
   </div>
 </div>
 
+<div class="generic-faq">
+<h2>Frequently Asked Questions | अक्सर पूछे जाने वाले प्रश्न</h2>
+
+<div class="generic-faq-item"><p><strong>Q. What does "Remove blank lines" actually remove? | "Remove blank lines" असल में क्या हटाता है?</strong><br>It deletes every line that is empty or contains only whitespace after trimming, collapsing any run of blank lines down to none. | यह हर उस line को हटा देता है जो trim करने के बाद खाली है या सिर्फ़ whitespace रखती है, blank lines की किसी भी श्रृंखला को पूरी तरह हटा देता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. What's the difference between trimming and collapsing spaces? | Trimming और spaces collapse करने में क्या अंतर है?</strong><br>Trimming removes whitespace only at the start and end of each line; collapsing multiple spaces turns any run of spaces inside a line into a single space. | Trimming सिर्फ़ हर line की शुरुआत और आख़िर के whitespace को हटाता है; multiple spaces collapse करना line के अंदर spaces की किसी भी लड़ी को एक single space में बदल देता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Why is "Convert tabs to spaces" off by default? | "Convert tabs to spaces" default रूप से बंद क्यों है?</strong><br>Because tabs are sometimes intentional (like indentation in code), so this option is opt-in rather than applied automatically. | क्योंकि tabs कभी-कभी intentional होते हैं (जैसे code में indentation), इसलिए यह option automatic की बजाय opt-in है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Can I choose which cleanup steps run? | क्या मैं चुन सकता हूँ कि कौन से cleanup steps चलें?</strong><br>Yes — each option (blank lines, trimming, multiple spaces, tabs) is its own checkbox, so you control exactly what gets changed. | हाँ — हर option (blank lines, trimming, multiple spaces, tabs) अपना अलग checkbox है, तो आप पूरा control रखते हैं कि क्या बदला जाए।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Why does text copied from a PDF have odd blank lines? | PDF से copy किया text में अजीब blank lines क्यों होती हैं?</strong><br>PDFs often store internal line breaks for layout purposes, and these get carried over when copying, resulting in extra blank lines when pasted elsewhere. | PDFs अक्सर layout के लिए internal line breaks store करते हैं, और copy करते वक्त यह साथ आ जाते हैं, जिससे कहीं और paste करने पर extra blank lines बन जाती हैं।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Does this tool change the order of my lines? | क्या यह tool मेरी lines का order बदलता है?</strong><br>No — it only removes or trims whitespace and empty lines; the relative order of your remaining content is never changed. | नहीं — यह सिर्फ़ whitespace और empty lines हटाता या trim करता है; बाकी बचे content का relative order कभी नहीं बदलता।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Will this remove intentional blank lines between paragraphs? | क्या यह paragraphs के बीच की intentional blank lines भी हटा देगा?</strong><br>Yes, if "Remove blank lines" is checked, it removes every blank line including ones used to separate paragraphs — uncheck that option if you want to keep paragraph spacing. | हाँ, अगर "Remove blank lines" checked है, तो यह paragraphs अलग करने वाली blank lines भी हटा देगा — paragraph spacing रखने के लिए उस option को uncheck करें।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Can I download the cleaned text? | क्या मैं cleaned text download कर सकता हूँ?</strong><br>Yes — click "Download .txt" to save the cleaned output as a plain text file. | हाँ — cleaned output को plain text file के रूप में save करने के लिए "Download .txt" पर क्लिक करें।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Is there a limit on how much text I can clean? | मैं कितना text clean कर सकता हूँ इसकी कोई limit है?</strong><br>No practical limit — the tool processes whatever is in your browser's text box, though extremely large text may process slightly slower. | कोई practical limit नहीं — tool आपके browser के text box में जो भी है उसे process करता है, हालांकि बहुत बड़ा text थोड़ा slower process हो सकता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Is my pasted text uploaded anywhere? | क्या मेरा paste किया text कहीं upload होता है?</strong><br>No — all cleaning happens instantly inside your browser; nothing is ever sent to a server, which makes it safe for confidential drafts too. | नहीं — सारी cleaning तुरंत आपके browser के अंदर होती है; कुछ भी कभी server पर नहीं भेजा जाता, जो इसे confidential drafts के लिए भी safe बनाता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Can I use this to clean code snippets? | क्या मैं इसे code snippets साफ़ करने के लिए इस्तेमाल कर सकता हूँ?</strong><br>Yes, though be careful with the "collapse spaces" option on code where indentation spacing matters — you may want to use only the tab-conversion option for code. | हाँ, पर code पर "collapse spaces" option से सावधान रहें जहां indentation spacing मायने रखती है — code के लिए सिर्फ़ tab-conversion option इस्तेमाल करना बेहतर हो सकता है।</p></div>
+
+</div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What does \"Remove blank lines\" actually remove?","acceptedAnswer":{"@type":"Answer","text":"It deletes every line that is empty or contains only whitespace after trimming, collapsing any run of blank lines down to none."}},
+{"@type":"Question","name":"What's the difference between trimming and collapsing spaces?","acceptedAnswer":{"@type":"Answer","text":"Trimming removes whitespace only at the start and end of each line; collapsing multiple spaces turns any run of spaces inside a line into a single space."}},
+{"@type":"Question","name":"Why is \"Convert tabs to spaces\" off by default?","acceptedAnswer":{"@type":"Answer","text":"Because tabs are sometimes intentional (like indentation in code), so this option is opt-in rather than applied automatically."}},
+{"@type":"Question","name":"Can I choose which cleanup steps run?","acceptedAnswer":{"@type":"Answer","text":"Yes — each option (blank lines, trimming, multiple spaces, tabs) is its own checkbox, so you control exactly what gets changed."}},
+{"@type":"Question","name":"Why does text copied from a PDF have odd blank lines?","acceptedAnswer":{"@type":"Answer","text":"PDFs often store internal line breaks for layout purposes, and these get carried over when copying, resulting in extra blank lines when pasted elsewhere."}},
+{"@type":"Question","name":"Does this tool change the order of my lines?","acceptedAnswer":{"@type":"Answer","text":"No — it only removes or trims whitespace and empty lines; the relative order of your remaining content is never changed."}},
+{"@type":"Question","name":"Will this remove intentional blank lines between paragraphs?","acceptedAnswer":{"@type":"Answer","text":"Yes, if \"Remove blank lines\" is checked, it removes every blank line including ones used to separate paragraphs — uncheck that option if you want to keep paragraph spacing."}},
+{"@type":"Question","name":"Can I download the cleaned text?","acceptedAnswer":{"@type":"Answer","text":"Yes — click \"Download .txt\" to save the cleaned output as a plain text file."}},
+{"@type":"Question","name":"Is there a limit on how much text I can clean?","acceptedAnswer":{"@type":"Answer","text":"No practical limit — the tool processes whatever is in your browser's text box, though extremely large text may process slightly slower."}},
+{"@type":"Question","name":"Is my pasted text uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No — all cleaning happens instantly inside your browser; nothing is ever sent to a server, which makes it safe for confidential drafts too."}},
+{"@type":"Question","name":"Can I use this to clean code snippets?","acceptedAnswer":{"@type":"Answer","text":"Yes, though be careful with the \"collapse spaces\" option on code where indentation spacing matters — you may want to use only the tab-conversion option for code."}}
+]}
+</script>
+
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
 <script src="../assets/common.js"></script>

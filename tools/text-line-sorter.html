@@ -126,6 +126,48 @@
   </div>
 </div>
 
+<div class="generic-faq">
+<h2>Frequently Asked Questions | अक्सर पूछे जाने वाले प्रश्न</h2>
+
+<div class="generic-faq-item"><p><strong>Q. How does numeric sort handle lines with text and numbers mixed? | Numeric sort text और numbers मिले-जुले lines को कैसे handle करता है?</strong><br>It reads the first number it finds anywhere in each line and sorts by that value, treating a line with no number at all as zero. | यह हर line में कहीं भी मिलने वाला पहला number पढ़ता है और उस value से sort करता है, बिना किसी number वाली line को zero मानता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. What does "Case-insensitive" change during sorting? | Sorting के दौरान "Case-insensitive" क्या बदलता है?</strong><br>It makes "Apple" and "apple" sort as equivalent, instead of capital letters always sorting before lowercase ones. | यह "Apple" और "apple" को sorting में बराबर बना देता है, बजाय इसके कि capital letters हमेशा lowercase से पहले sort हों।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. How does "Remove duplicate lines" decide what's a duplicate? | "Remove duplicate lines" कैसे तय करता है कि क्या duplicate है?</strong><br>It compares each line's exact text (respecting the case-insensitive option if checked) and keeps only the first occurrence of each unique line. | यह हर line के exact text को compare करता है (case-insensitive option checked होने पर उसका ध्यान रखते हुए) और हर unique line की सिर्फ़ पहली occurrence रखता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. What does the random shuffle option do exactly? | Random shuffle option असल में क्या करता है?</strong><br>It rearranges all lines into a completely random order using a fair shuffle algorithm, different every time you click "Sort Lines." | यह सभी lines को एक fair shuffle algorithm से पूरी तरह random order में rearrange करता है, हर बार "Sort Lines" click करने पर अलग।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Does "Trim blank lines" remove lines with only spaces? | क्या "Trim blank lines" सिर्फ़ spaces वाली lines भी हटाता है?</strong><br>Yes — a line is considered blank if it is empty or contains only whitespace after trimming, and both are removed when this option is on. | हाँ — किसी line को blank माना जाता है अगर वह खाली हो या trim करने के बाद सिर्फ़ whitespace हो, और यह option चालू होने पर दोनों हटा दी जाती हैं।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Can I sort lines by length? | क्या मैं lines को length से sort कर सकता हूँ?</strong><br>Yes — choose "Shortest line first" or "Longest line first" from the sort method dropdown. | हाँ — sort method dropdown से "Shortest line first" या "Longest line first" चुनें।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Can I combine deduplication with sorting? | क्या मैं deduplication को sorting के साथ combine कर सकता हूँ?</strong><br>Yes — "Remove duplicate lines" and your chosen sort order both apply together in a single click. | हाँ — "Remove duplicate lines" और आपका चुना हुआ sort order दोनों एक ही click में साथ लागू होते हैं।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. What should my input look like? | मेरा input कैसा दिखना चाहिए?</strong><br>Paste one item per line into the input box — each line break separates one entry from the next. | Input box में हर item को एक अलग line में paste करें — हर line break एक entry को दूसरे से अलग करता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Can I download the sorted list? | क्या मैं sorted list download कर सकता हूँ?</strong><br>Yes — click "Download .txt" to save the sorted output as a plain text file. | हाँ — sorted output को plain text file के रूप में save करने के लिए "Download .txt" पर क्लिक करें।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Is my list uploaded anywhere? | क्या मेरी list कहीं upload होती है?</strong><br>No — all sorting and shuffling happens entirely inside your browser; nothing is sent to any server. | नहीं — सारी sorting और shuffling पूरी तरह आपके browser के अंदर होती है; कुछ भी किसी server पर नहीं भेजा जाता।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Why would I use the random shuffle beyond games? | Games से आगे मैं random shuffle क्यों इस्तेमाल करूं?</strong><br>Teachers use it to randomize presentation order, event organizers use it for raffle draws, and it's handy for any fair, unbiased ordering of a list. | Teachers इसे presentation order randomize करने के लिए, event organizers raffle draws के लिए इस्तेमाल करते हैं, और यह किसी list को fair, unbiased order देने के लिए उपयोगी है।</p></div>
+
+</div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How does numeric sort handle lines with text and numbers mixed?","acceptedAnswer":{"@type":"Answer","text":"It reads the first number it finds anywhere in each line and sorts by that value, treating a line with no number at all as zero."}},
+{"@type":"Question","name":"What does \"Case-insensitive\" change during sorting?","acceptedAnswer":{"@type":"Answer","text":"It makes \"Apple\" and \"apple\" sort as equivalent, instead of capital letters always sorting before lowercase ones."}},
+{"@type":"Question","name":"How does \"Remove duplicate lines\" decide what's a duplicate?","acceptedAnswer":{"@type":"Answer","text":"It compares each line's exact text (respecting the case-insensitive option if checked) and keeps only the first occurrence of each unique line."}},
+{"@type":"Question","name":"What does the random shuffle option do exactly?","acceptedAnswer":{"@type":"Answer","text":"It rearranges all lines into a completely random order using a fair shuffle algorithm, different every time you click \"Sort Lines.\""}},
+{"@type":"Question","name":"Does \"Trim blank lines\" remove lines with only spaces?","acceptedAnswer":{"@type":"Answer","text":"Yes — a line is considered blank if it is empty or contains only whitespace after trimming, and both are removed when this option is on."}},
+{"@type":"Question","name":"Can I sort lines by length?","acceptedAnswer":{"@type":"Answer","text":"Yes — choose \"Shortest line first\" or \"Longest line first\" from the sort method dropdown."}},
+{"@type":"Question","name":"Can I combine deduplication with sorting?","acceptedAnswer":{"@type":"Answer","text":"Yes — \"Remove duplicate lines\" and your chosen sort order both apply together in a single click."}},
+{"@type":"Question","name":"What should my input look like?","acceptedAnswer":{"@type":"Answer","text":"Paste one item per line into the input box — each line break separates one entry from the next."}},
+{"@type":"Question","name":"Can I download the sorted list?","acceptedAnswer":{"@type":"Answer","text":"Yes — click \"Download .txt\" to save the sorted output as a plain text file."}},
+{"@type":"Question","name":"Is my list uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No — all sorting and shuffling happens entirely inside your browser; nothing is sent to any server."}},
+{"@type":"Question","name":"Why would I use the random shuffle beyond games?","acceptedAnswer":{"@type":"Answer","text":"Teachers use it to randomize presentation order, event organizers use it for raffle draws, and it's handy for any fair, unbiased ordering of a list."}}
+]}
+</script>
+
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
 <script src="../assets/common.js"></script>

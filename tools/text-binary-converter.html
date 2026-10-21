@@ -105,6 +105,48 @@
   </div>
 </div>
 
+<div class="generic-faq">
+<h2>Frequently Asked Questions | अक्सर पूछे जाने वाले प्रश्न</h2>
+
+<div class="generic-faq-item"><p><strong>Q. How does text become binary? | Text binary कैसे बनता है?</strong><br>Each character is first converted to its byte value using UTF-8 encoding, then that byte value is written out as an 8-digit binary number. | हर character को पहले UTF-8 encoding का उपयोग करके उसके byte value में convert किया जाता है, फिर वह byte value 8-digit binary number के रूप में लिखा जाता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Why is each group exactly 8 digits? | हर group बिल्कुल 8 digits का क्यों है?</strong><br>Because a byte holds 8 bits, and every value from 0-255 needs up to 8 binary digits to represent fully. | क्योंकि एक byte में 8 bits होती हैं, और 0-255 तक की कोई भी value पूरी तरह represent करने के लिए 8 binary digits तक चाहिए।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Can I convert emoji or non-English text? | क्या मैं emoji या non-English text convert कर सकता हूँ?</strong><br>Yes, since the tool uses UTF-8 encoding, but characters outside basic English may take up more than one byte, making the binary output longer. | हाँ, क्योंकि tool UTF-8 encoding इस्तेमाल करता है, पर basic English के बाहर के characters एक से ज़्यादा byte ले सकते हैं, जिससे binary output लंबा हो जाता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Why did decoding fail with an error? | Decoding error के साथ fail क्यों हुआ?</strong><br>Each group must be exactly 8 digits of only 0s and 1s separated by a single space; extra characters, wrong group length, or missing spaces will cause an error. | हर group बिल्कुल 8 digits का होना चाहिए, सिर्फ़ 0s और 1s का, एक single space से अलग; extra characters, गलत group length, या missing spaces error का कारण बनते हैं।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. What spacing format does the decoder expect? | Decoder किस spacing format की उम्मीद करता है?</strong><br>A single space between every 8-digit byte group, exactly matching the format this tool produces when encoding text to binary. | हर 8-digit byte group के बीच एक single space, बिल्कुल वैसा format जैसा यह tool text को binary में encode करते वक्त बनाता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Is this the same as ASCII code? | क्या यह ASCII code जैसा ही है?</strong><br>Closely related — standard English letters and symbols map to the same byte values in both UTF-8 and ASCII, so the binary output matches for plain English text. | बारीकी से जुड़ा हुआ — standard English letters और symbols UTF-8 और ASCII दोनों में एक जैसे byte values पर map होते हैं, तो plain English text के लिए binary output मेल खाता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Can this tool handle very long text? | क्या यह tool बहुत लंबे text को handle कर सकता है?</strong><br>Yes — there's no built-in length limit, though extremely long input will naturally produce a very long binary output since each character expands to 8+ digits. | हाँ — कोई built-in length limit नहीं है, हालांकि बहुत लंबा input स्वाभाविक रूप से बहुत लंबा binary output बनाएगा क्योंकि हर character 8+ digits में फैलता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Why would someone need to convert text to binary? | किसी को text को binary में convert करने की ज़रूरत क्यों पड़ती है?</strong><br>Common reasons include learning how computers represent characters, solving puzzles or escape-room codes, and hobbyist electronics projects. | सामान्य कारणों में शामिल हैं यह सीखना कि computer characters को कैसे represent करते हैं, puzzles या escape-room codes solve करना, और hobbyist electronics projects।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Does switching tabs clear my input? | Tabs switch करने पर क्या मेरा input clear हो जाता है?</strong><br>Yes — switching between "Text → Binary" and "Binary → Text" resets the input box to a sample value for that mode. | हाँ — "Text → Binary" और "Binary → Text" के बीच switch करने पर input box उस mode के लिए एक sample value पर reset हो जाता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Is my text uploaded anywhere? | क्या मेरा text कहीं upload होता है?</strong><br>No — the conversion happens entirely in your browser using built-in JavaScript encoding functions; nothing is sent to a server. | नहीं — conversion पूरी तरह आपके browser में built-in JavaScript encoding functions का उपयोग करके होता है; कुछ भी किसी server पर नहीं भेजा जाता।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Can I copy the result easily? | क्या मैं result आसानी से copy कर सकता हूँ?</strong><br>Yes — click "Copy Result" to copy the output text to your clipboard in one click. | हाँ — output text को एक click में अपने clipboard पर copy करने के लिए "Copy Result" पर क्लिक करें।</p></div>
+
+</div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How does text become binary?","acceptedAnswer":{"@type":"Answer","text":"Each character is first converted to its byte value using UTF-8 encoding, then that byte value is written out as an 8-digit binary number."}},
+{"@type":"Question","name":"Why is each group exactly 8 digits?","acceptedAnswer":{"@type":"Answer","text":"Because a byte holds 8 bits, and every value from 0-255 needs up to 8 binary digits to represent fully."}},
+{"@type":"Question","name":"Can I convert emoji or non-English text?","acceptedAnswer":{"@type":"Answer","text":"Yes, since the tool uses UTF-8 encoding, but characters outside basic English may take up more than one byte, making the binary output longer."}},
+{"@type":"Question","name":"Why did decoding fail with an error?","acceptedAnswer":{"@type":"Answer","text":"Each group must be exactly 8 digits of only 0s and 1s separated by a single space; extra characters, wrong group length, or missing spaces will cause an error."}},
+{"@type":"Question","name":"What spacing format does the decoder expect?","acceptedAnswer":{"@type":"Answer","text":"A single space between every 8-digit byte group, exactly matching the format this tool produces when encoding text to binary."}},
+{"@type":"Question","name":"Is this the same as ASCII code?","acceptedAnswer":{"@type":"Answer","text":"Closely related — standard English letters and symbols map to the same byte values in both UTF-8 and ASCII, so the binary output matches for plain English text."}},
+{"@type":"Question","name":"Can this tool handle very long text?","acceptedAnswer":{"@type":"Answer","text":"Yes — there's no built-in length limit, though extremely long input will naturally produce a very long binary output since each character expands to 8+ digits."}},
+{"@type":"Question","name":"Why would someone need to convert text to binary?","acceptedAnswer":{"@type":"Answer","text":"Common reasons include learning how computers represent characters, solving puzzles or escape-room codes, and hobbyist electronics projects."}},
+{"@type":"Question","name":"Does switching tabs clear my input?","acceptedAnswer":{"@type":"Answer","text":"Yes — switching between \"Text → Binary\" and \"Binary → Text\" resets the input box to a sample value for that mode."}},
+{"@type":"Question","name":"Is my text uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No — the conversion happens entirely in your browser using built-in JavaScript encoding functions; nothing is sent to a server."}},
+{"@type":"Question","name":"Can I copy the result easily?","acceptedAnswer":{"@type":"Answer","text":"Yes — click \"Copy Result\" to copy the output text to your clipboard in one click."}}
+]}
+</script>
+
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
 <script src="../assets/common.js"></script>
