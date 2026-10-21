@@ -16,25 +16,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://apnesoftware.com/tools/pdf-compress.html">
-<meta name="description" content="Free online PDF Compressor with AI analysis. Compress PDF to an exact target size (500KB, 1MB, 2MB…), choose Basic→Maximum or Lossless modes, batch-compress multiple files, and download — 100% in your browser, no upload.">
+<meta name="description" content="Free online PDF Compressor with smart analysis. Compress PDF to an exact target size (500KB, 1MB, 2MB…), choose Basic→Maximum or Lossless modes, batch-compress multiple files, and download — 100% in your browser, no upload.">
 <meta name="keywords" content="pdf compress, compress pdf, reduce pdf size, pdf compressor online, compress pdf to 500kb, compress pdf to 1mb, batch pdf compress, lossless pdf compression">
 <meta property="og:type" content="website">
-<meta property="og:title" content="PDF Compressor — AI Smart Compress to Target Size | ApneSoftware">
-<meta property="og:description" content="Compress PDF to an exact size with AI recommendations, 6 compression modes, batch queue and before/after comparison. Free, private, browser-only.">
+<meta property="og:title" content="PDF Compressor — Smart Compress to Target Size | ApneSoftware">
+<meta property="og:description" content="Compress PDF to an exact size with smart recommendations, 6 compression modes, batch queue and before/after comparison. Free, private, browser-only.">
 <meta property="og:url" content="https://apnesoftware.com/tools/pdf-compress.html">
 <meta property="og:site_name" content="ApneSoftware">
 <meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PDF Compressor — AI Smart Compress to Target Size | ApneSoftware">
-<meta name="twitter:description" content="Compress PDF to an exact size with AI recommendations, 6 modes, batch queue and before/after comparison. Free, private, browser-only.">
+<meta name="twitter:title" content="PDF Compressor — Smart Compress to Target Size | ApneSoftware">
+<meta name="twitter:description" content="Compress PDF to an exact size with smart recommendations, 6 modes, batch queue and before/after comparison. Free, private, browser-only.">
 <meta name="twitter:image" content="https://apnesoftware.com/assets/og-image.png">
 
 <!-- ===== Structured data: SoftwareApplication + WebApplication ===== -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":["SoftwareApplication","WebApplication"],"name":"PDF Compressor","description":"Compress PDF files to a target size with AI analysis, six compression modes, batch processing and before/after comparison — entirely in your browser.","url":"https://apnesoftware.com/tools/pdf-compress.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"1240"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"},"datePublished":"2026-06-30","dateModified":"2026-07-04"}</script>
-<!-- ===== Structured data: Review ===== -->
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Review","itemReviewed":{"@type":"SoftwareApplication","name":"PDF Compressor","applicationCategory":"UtilitiesApplication"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"author":{"@type":"Person","name":"ApneSoftware User"},"reviewBody":"Compressed my scanned PDF from 18MB to under 2MB right in the browser, with no upload. The target-size feature is brilliant."}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["SoftwareApplication","WebApplication"],"name":"PDF Compressor","description":"Compress PDF files to a target size with automatic smart analysis, six compression modes, batch processing and before/after comparison — entirely in your browser.","url":"https://apnesoftware.com/tools/pdf-compress.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"provider":{"@type":"Organization","name":"ApneSoftware","url":"https://apnesoftware.com"},"datePublished":"2026-06-30","dateModified":"2026-07-04"}</script>
 <!-- ===== Structured data: Breadcrumb ===== -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://apnesoftware.com/"},{"@type":"ListItem","position":2,"name":"PDF Tools","item":"https://apnesoftware.com/category/pdf-tools.html"},{"@type":"ListItem","position":3,"name":"PDF Compress","item":"https://apnesoftware.com/tools/pdf-compress.html"}]}
@@ -53,7 +49,7 @@
 </script>
 
 <meta name="color-scheme" content="dark light">
-<title>PDF Compressor — AI Smart Compress to Target Size | ApneSoftware</title>
+<title>PDF Compressor — Smart Compress to Target Size | ApneSoftware</title>
 <link rel="stylesheet" href="../assets/style.css">
 <style>
 /* Premium upload enhancement for this tool (kept from original) */
@@ -256,7 +252,7 @@ body.pdfc-light .pdfc-opt select,body.pdfc-light .pdfc-opt input[type=number]{ba
   </nav>
   <div class="tool-header">
     <h1>📉 PDF Compressor</h1>
-    <p>Smart, private PDF compression — pick a mode (Basic → Maximum), an exact target size, or <b>Lossless</b> (keeps text selectable). AI analyzes your file and recommends the best settings. Everything runs in your browser.</p>
+    <p>Smart, private PDF compression — pick a mode (Basic → Maximum), an exact target size, or <b>Lossless</b> (keeps text selectable). Built-in smart detection analyzes your file and recommends the best settings. Everything runs in your browser.</p>
   </div>
 
   <!-- Security / privacy badges -->
@@ -293,9 +289,9 @@ body.pdfc-light .pdfc-opt select,body.pdfc-light .pdfc-opt input[type=number]{ba
         </div>
       </div>
 
-      <!-- AI recommendation -->
+      <!-- Smart recommendation -->
       <div class="pdfc-reco" id="recoBox" style="display:none">
-        <div class="ic">🤖</div>
+        <div class="ic">💡</div>
         <div>
           <b id="recoTitle">Analyzing…</b>
           <p id="recoText">Reading your document to recommend the best compression.</p>
@@ -308,9 +304,9 @@ body.pdfc-light .pdfc-opt select,body.pdfc-light .pdfc-opt input[type=number]{ba
         <div class="pdfc-grid" id="analysisGrid"></div>
       </div>
 
-      <!-- AI document report + health -->
+      <!-- Document report + health -->
       <div class="pdfc-card" id="reportCard" style="display:none">
-        <h3>🧠 AI Document Report</h3>
+        <h3>📋 Document Report</h3>
         <div class="pdfc-type" id="docType">Document</div>
         <div class="pdfc-tags" id="docTags"></div>
         <div class="pdfc-scores" id="healthScores" style="margin-top:16px"></div>
@@ -653,7 +649,7 @@ body.pdfc-light .pdfc-opt select,body.pdfc-light .pdfc-opt input[type=number]{ba
       $('previewName').textContent = file.name;
       $('previewMeta').textContent = totalPages + ' pages • ' + formatBytes(file.size);
 
-      // Deep analysis + AI report (non-blocking failures)
+      // Deep analysis + document report (non-blocking failures)
       analysis = await analyzePDF(file, pdf, buf).catch(e => { console.warn('analyze', e); return null; });
       if(analysis){ renderAnalysis(analysis); renderReport(analysis); applyRecommendation(analysis); }
       updatePrediction();
@@ -788,7 +784,7 @@ body.pdfc-light .pdfc-opt select,body.pdfc-light .pdfc-opt input[type=number]{ba
     $('analysisCard').style.display = 'block';
   }
 
-  /* ════════════ 3. AI DOCUMENT REPORT + HEALTH ════════════ */
+  /* ════════════ 3. DOCUMENT REPORT + HEALTH ════════════ */
   function classify(a){
     const t = a.firstText || '';
     const has = (...w) => w.some(x => t.includes(x));
@@ -846,7 +842,7 @@ body.pdfc-light .pdfc-opt select,body.pdfc-light .pdfc-opt input[type=number]{ba
     else if(a.searchable && a.images===0){ mode='lossless'; why='Text-only document — Lossless keeps your text selectable with no quality loss.'; }
     else { mode='recommended'; why='Best balance of size and quality for this document.'; }
     selectMode(mode);
-    $('recoTitle').textContent = '🤖 Recommended: ' + MODES[mode].label;
+    $('recoTitle').textContent = '💡 Recommended: ' + MODES[mode].label;
     $('recoText').textContent = why;
     $('recoBox').style.display = 'flex';
   }
@@ -1132,7 +1128,7 @@ body.pdfc-light .pdfc-opt select,body.pdfc-light .pdfc-opt input[type=number]{ba
   }
   $('compressBtn').addEventListener('click', runCompression);
 
-  // Smart Optimize: apply AI recommendation, target off, then run
+  // Smart Optimize: apply smart recommendation, target off, then run
   $('smartBtn').addEventListener('click', () => {
     if(analysis) applyRecommendation(analysis);
     [...targetChips.children].forEach(c=>c.classList.toggle('active', c.dataset.target==='0'));
