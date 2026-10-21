@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://apnesoftware.com/</loc><lastmod>2026-07-04</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://apnesoftware.com/blog.html</loc><lastmod>2026-07-04</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://apnesoftware.com/blog.html</loc><lastmod>2026-07-25</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://apnesoftware.com/blog/pdf-compress-guide.html</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://apnesoftware.com/blog/image-format-guide.html</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://apnesoftware.com/blog/ifsc-micr-swift-guide.html</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://apnesoftware.com/blog/income-tax-regime-guide.html</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://apnesoftware.com/blog/seo-meta-tags-guide.html</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://apnesoftware.com/blog/emi-loan-guide.html</loc><lastmod>2026-07-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://apnesoftware.com/about.html</loc><lastmod>2026-07-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://apnesoftware.com/contact.html</loc><lastmod>2026-07-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://apnesoftware.com/privacy.html</loc><lastmod>2026-07-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>

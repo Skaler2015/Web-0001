@@ -704,6 +704,30 @@ body.light-mode textarea{background:rgba(255,255,255,.8)!important;color:#1a0a35
   </div>
 </div>
 
+<div class="generic-about">
+<h2>About This Tool | इस टूल के बारे में</h2>
+<p>This Barcode Generator creates scannable 1D barcodes (CODE128, EAN-13, EAN-8, UPC-A, UPC-E, ITF-14, MSI, Pharmacode, Codabar) and 2D QR codes directly in your browser, with a built-in scanner, a product-label designer, and a batch mode for turning a whole spreadsheet of values into barcodes at once. | यह Barcode Generator आपके browser में सीधे scannable 1D barcodes (CODE128, EAN-13, EAN-8, UPC-A, UPC-E, ITF-14, MSI, Pharmacode, Codabar) और 2D QR codes बनाता है, साथ में एक built-in scanner, एक product-label designer, और पूरी spreadsheet को एक साथ barcodes में बदलने वाला batch mode भी है।</p>
+
+<h3>Choosing the right barcode format | सही barcode format कैसे चुनें</h3>
+<p>CODE128 is the safest default because it encodes any ASCII text and any length, which makes it ideal for internal SKUs, serial numbers and warehouse bin labels. | CODE128 सबसे safe default है क्योंकि यह किसी भी ASCII text और किसी भी length को encode करता है, जो internal SKUs, serial numbers और warehouse bin labels के लिए ideal बनाता है।</p>
+<p>EAN-13, EAN-8 and UPC-A are strict numeric retail standards with a fixed digit count and a built-in check digit, so they are the right choice only when you already have an assigned, GS1-registered product number — generating one yourself does not make it a valid, globally unique retail code. | EAN-13, EAN-8 और UPC-A सख्त numeric retail standards हैं जिनमें fixed digit count और एक built-in check digit होता है, इसलिए इन्हें तभी चुनें जब आपके पास पहले से एक assigned, GS1-registered product number हो — खुद generate करने से वह globally unique retail code मान्य नहीं बन जाता।</p>
+
+<h3>QR codes and when to use them | QR codes और इन्हें कब इस्तेमाल करें</h3>
+<p>Unlike 1D barcodes, a QR code is a 2D grid that can hold a full URL, Wi-Fi credentials, or several lines of text, and it is readable by any modern phone camera without a dedicated scanner app. | 1D barcodes के विपरीत, QR code एक 2D grid है जो पूरा URL, Wi-Fi credentials, या कई लाइनों का text रख सकता है, और यह किसी भी modern phone camera से बिना dedicated scanner app के पढ़ा जा सकता है।</p>
+<p>Choosing a higher Error Correction level (Q or H) makes the QR code denser but lets it still scan even if part of it is scratched, dirty or partially covered — useful for printed packaging that will be handled a lot. | ज़्यादा Error Correction level (Q या H) चुनने से QR code सघन हो जाता है लेकिन अगर उसका कुछ हिस्सा खराब, गंदा या थोड़ा ढका हो तो भी scan होता रहता है — यह ज़्यादा इस्तेमाल होने वाली printed packaging के लिए उपयोगी है।</p>
+
+<h3>Batch generation and label printing | Batch generation और label printing</h3>
+<p>The Batch tab is built for anyone who needs dozens or hundreds of barcodes at once — upload a CSV or paste values, and every barcode downloads together in one ZIP file instead of generating each one by hand. | Batch tab उन लोगों के लिए बना है जिन्हें एक साथ दर्जनों या सैकड़ों barcodes चाहिए — CSV upload करें या values paste करें, और हर एक को हाथ से बनाने के बजाय सभी barcodes एक साथ एक ZIP file में download हो जाते हैं।</p>
+<p>The Label tab wraps a barcode with a company name, SKU, price and expiry into a ready-to-print layout, which removes the extra step of recreating that layout in a separate design tool before sending it to a thermal or label printer. | Label tab barcode को company name, SKU, price और expiry के साथ एक print-ready layout में लपेट देता है, जिससे thermal या label printer पर भेजने से पहले उस layout को किसी अलग design tool में दोबारा बनाने की ज़रूरत नहीं रहती।</p>
+
+<h3>Printing tips for reliable scanning | भरोसेमंद scanning के लिए printing tips</h3>
+<p>Always print barcodes at 100% scale — "fit to page" stretches or shrinks the bar widths and can make an otherwise correct barcode unreadable by a scanner. | Barcodes को हमेशा 100% scale पर print करें — "fit to page" bar widths को खींच या सिकोड़ देता है और एक सही barcode को भी scanner के लिए अपठनीय बना सकता है।</p>
+<p>Keep a clear white margin (the "quiet zone") around the barcode and use dark bars on a light background, since low contrast or a cramped margin is the most common reason a printed barcode fails to scan. | Barcode के चारों ओर एक साफ़ सफ़ेद margin ("quiet zone") रखें और light background पर dark bars इस्तेमाल करें, क्योंकि कम contrast या तंग margin ही सबसे common वजह है जिससे printed barcode scan नहीं होता।</p>
+
+<h3>Privacy and Security | गोपनीयता और सुरक्षा</h3>
+<p>Barcode generation, QR generation, image/camera scanning and batch processing all run entirely inside your browser using JavaScript libraries loaded once from a CDN — no value you type, image you scan, or CSV you upload is ever sent to an ApneSoftware server. | Barcode generation, QR generation, image/camera scanning और batch processing सब कुछ आपके browser के भीतर JavaScript libraries का उपयोग करके होता है जो एक बार CDN से load होती हैं — आपके द्वारा टाइप की गई कोई value, scan की गई image, या upload की गई CSV कभी किसी ApneSoftware server को नहीं भेजी जाती।</p>
+</div>
+
 <!-- ── INFO SECTION ── -->
 <div class="info-wrap">
   <div class="info-section">

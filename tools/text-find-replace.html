@@ -112,6 +112,48 @@
   </div>
 </div>
 
+<div class="generic-faq">
+<h2>Frequently Asked Questions | अक्सर पूछे जाने वाले प्रश्न</h2>
+
+<div class="generic-faq-item"><p><strong>Q. What does "Case-sensitive" do? | "Case-sensitive" क्या करता है?</strong><br>When on, "Apple" and "apple" are treated as different text; when off, the search ignores capitalization entirely. | जब चालू हो, "Apple" और "apple" को अलग text माना जाता है; जब बंद हो, search capitalization को पूरी तरह नज़रअंदाज़ करती है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. What does "Whole word only" do? | "Whole word only" क्या करता है?</strong><br>It prevents a search for "cat" from matching the "cat" inside longer words like "category" or "concatenate." | यह "cat" की search को "category" या "concatenate" जैसे लंबे words के अंदर वाले "cat" से matching होने से रोकता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. How does regex mode change the "Find" field? | Regex mode "Find" field को कैसे बदलता है?</strong><br>With regex on, the Find field is read as a regular expression pattern, so characters like . * + ( ) have special meaning rather than matching themselves literally. | Regex चालू होने पर, Find field को regular expression pattern के रूप में पढ़ा जाता है, तो . * + ( ) जैसे characters का खुद से literally मेल खाने की बजाय खास मतलब होता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. What if I get an "Invalid pattern" error? | अगर मुझे "Invalid pattern" error मिले तो क्या करूं?</strong><br>This means your regex syntax is malformed — check for unmatched parentheses or brackets, or turn off regex mode to search for the literal text instead. | इसका मतलब है आपका regex syntax malformed है — unmatched parentheses या brackets जांचें, या literal text search करने के लिए regex mode बंद कर दें।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Does "Replace All" replace one occurrence or every occurrence? | "Replace All" एक occurrence replace करता है या सभी?</strong><br>Every matching occurrence in the text is replaced in one click, not just the first one. | Text में हर matching occurrence एक click में replace हो जाती है, सिर्फ़ पहली वाली नहीं।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Can I combine whole-word and case-sensitive options? | क्या मैं whole-word और case-sensitive options combine कर सकता हूँ?</strong><br>Yes — all three options (case-sensitive, whole word, regex) can be toggled independently and combined as needed. | हाँ — तीनों options (case-sensitive, whole word, regex) independently toggle किए जा सकते हैं और ज़रूरत के अनुसार combine किए जा सकते हैं।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. How many matches were replaced? | कितनी matches replace हुईं?</strong><br>The status message below the button shows the exact count of occurrences replaced after each click. | बटन के नीचे status message हर click के बाद replace हुई occurrences की exact count दिखाता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. What happens if "Find" is empty? | अगर "Find" खाली हो तो क्या होता है?</strong><br>The tool shows a warning asking you to enter text to find, and no replacement happens until you do. | Tool एक warning दिखाता है कि find करने के लिए text डालें, और जब तक आप न डालें replacement नहीं होती।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Can I download or copy the replaced text? | क्या मैं replace किया गया text download या copy कर सकता हूँ?</strong><br>Yes — use "Copy Result" to copy it to your clipboard or "Download .txt" to save it as a text file. | हाँ — इसे clipboard पर copy करने के लिए "Copy Result" या text file के रूप में save करने के लिए "Download .txt" इस्तेमाल करें।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Is my text uploaded to a server? | क्या मेरा text server पर upload होता है?</strong><br>No — the find-and-replace operation runs entirely in your browser using JavaScript; nothing leaves your device. | नहीं — find-and-replace operation पूरी तरह आपके browser में JavaScript का उपयोग करके होता है; कुछ भी आपके device से बाहर नहीं जाता।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Can I replace text with an empty string to delete it? | क्या मैं text हटाने के लिए उसे empty string से replace कर सकता हूँ?</strong><br>Yes — leave the "Replace with" field empty and every match of "Find" will simply be removed from the text. | हाँ — "Replace with" field खाली छोड़ें और "Find" की हर match text से सीधे हटा दी जाएगी।</p></div>
+
+</div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What does \"Case-sensitive\" do?","acceptedAnswer":{"@type":"Answer","text":"When on, \"Apple\" and \"apple\" are treated as different text; when off, the search ignores capitalization entirely."}},
+{"@type":"Question","name":"What does \"Whole word only\" do?","acceptedAnswer":{"@type":"Answer","text":"It prevents a search for \"cat\" from matching the \"cat\" inside longer words like \"category\" or \"concatenate.\""}},
+{"@type":"Question","name":"How does regex mode change the \"Find\" field?","acceptedAnswer":{"@type":"Answer","text":"With regex on, the Find field is read as a regular expression pattern, so characters like . * + ( ) have special meaning rather than matching themselves literally."}},
+{"@type":"Question","name":"What if I get an \"Invalid pattern\" error?","acceptedAnswer":{"@type":"Answer","text":"This means your regex syntax is malformed — check for unmatched parentheses or brackets, or turn off regex mode to search for the literal text instead."}},
+{"@type":"Question","name":"Does \"Replace All\" replace one occurrence or every occurrence?","acceptedAnswer":{"@type":"Answer","text":"Every matching occurrence in the text is replaced in one click, not just the first one."}},
+{"@type":"Question","name":"Can I combine whole-word and case-sensitive options?","acceptedAnswer":{"@type":"Answer","text":"Yes — all three options (case-sensitive, whole word, regex) can be toggled independently and combined as needed."}},
+{"@type":"Question","name":"How many matches were replaced?","acceptedAnswer":{"@type":"Answer","text":"The status message below the button shows the exact count of occurrences replaced after each click."}},
+{"@type":"Question","name":"What happens if \"Find\" is empty?","acceptedAnswer":{"@type":"Answer","text":"The tool shows a warning asking you to enter text to find, and no replacement happens until you do."}},
+{"@type":"Question","name":"Can I download or copy the replaced text?","acceptedAnswer":{"@type":"Answer","text":"Yes — use \"Copy Result\" to copy it to your clipboard or \"Download .txt\" to save it as a text file."}},
+{"@type":"Question","name":"Is my text uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No — the find-and-replace operation runs entirely in your browser using JavaScript; nothing leaves your device."}},
+{"@type":"Question","name":"Can I replace text with an empty string to delete it?","acceptedAnswer":{"@type":"Answer","text":"Yes — leave the \"Replace with\" field empty and every match of \"Find\" will simply be removed from the text."}}
+]}
+</script>
+
 <footer class="site-footer">© 2026 ApneSoftware.com</footer>
 
 <script src="../assets/common.js"></script>

@@ -131,6 +131,68 @@
   </div>
 </div></div>
 
+<div class="generic-about">
+<h2>About This Tool | इस टूल के बारे में</h2>
+<p>This Robots.txt Generator builds a correctly-formatted robots.txt file through visual controls instead of hand-writing directives — toggle which bots the rules apply to, add Allow/Disallow paths with simple rows, set an optional crawl delay, and attach your sitemap URL, then copy or download the finished file. It's built for anyone who wants a clean, error-free robots.txt without memorizing exact directive syntax. | यह Robots.txt Generator directives को हाथ से लिखने के बजाय visual controls के ज़रिए एक सही-सही formatted robots.txt file बनाता है — किन bots पर rules लागू हों यह toggle करें, simple rows से Allow/Disallow paths जोड़ें, optional crawl delay set करें, और अपना sitemap URL जोड़ें, फिर finished file copy या download करें। यह उन सभी के लिए बनाया गया है जो exact directive syntax याद किए बिना एक clean, error-free robots.txt चाहते हैं।</p>
+
+<h3>Choosing Which Bots to Target | किन Bots को Target करना है यह चुनना</h3>
+<p>Leaving "All Bots (*)" selected applies your rules to every crawler by default — the safest and most common choice. You can additionally target specific bots like Googlebot, Bingbot, or SEO crawlers such as AhrefsBot and SemrushBot separately, which is useful if you want search engines to crawl normally while blocking third-party SEO tools from repeatedly hitting your server. | "All Bots (*)" selected छोड़ना by default आपके rules को हर crawler पर लागू करता है — यह सबसे safe और common choice है। आप अलग से Googlebot, Bingbot, या AhrefsBot और SemrushBot जैसे SEO crawlers को भी target कर सकते हैं, जो उपयोगी है जब आप चाहते हैं कि search engines normally crawl करें जबकि third-party SEO tools आपके server को बार-बार hit करने से block हो जाएं।</p>
+
+<h3>Allow, Disallow and Crawl-Delay Explained | Allow, Disallow और Crawl-Delay की व्याख्या</h3>
+<p>A Disallow rule tells the selected bots not to crawl a path; an Allow rule creates an exception within a disallowed area (for example, disallowing "/private/" but allowing "/private/public-page.html"). Crawl-delay asks a bot to wait a given number of seconds between requests to reduce server load — note that Google ignores Crawl-delay entirely (use Google Search Console's crawl-rate settings instead), while Bing and Yandex generally respect it. | एक Disallow rule selected bots को किसी path को crawl न करने के लिए कहता है; एक Allow rule disallowed area के भीतर एक exception बनाता है (जैसे "/private/" को disallow करना लेकिन "/private/public-page.html" को allow करना)। Crawl-delay किसी bot से requests के बीच कुछ seconds रुकने के लिए कहता है ताकि server load कम हो — ध्यान दें कि Google Crawl-delay को पूरी तरह ignore करता है (इसके बजाय Google Search Console की crawl-rate settings उपयोग करें), जबकि Bing और Yandex आमतौर पर इसे respect करते हैं।</p>
+
+<h3>Where to Put the Generated File | Generated File कहाँ रखें</h3>
+<p>Once downloaded, the file must be uploaded to the absolute root of your domain — accessible at exactly https://yourdomain.com/robots.txt — and nowhere else; a robots.txt placed in a subfolder is ignored by crawlers entirely. The filename must also be exactly "robots.txt" in lowercase. | Download करने के बाद, file को आपके domain के absolute root पर upload करना ज़रूरी है — exactly https://yourdomain.com/robots.txt पर accessible — और कहीं और नहीं; किसी subfolder में रखा गया robots.txt crawlers द्वारा पूरी तरह ignore कर दिया जाता है। Filename भी exactly lowercase में "robots.txt" होना चाहिए।</p>
+
+<h3>Robots.txt vs noindex — Don't Confuse the Two | Robots.txt बनाम noindex — दोनों को confuse न करें</h3>
+<p>Disallowing a path in robots.txt stops crawling, but doesn't guarantee a URL is removed from Google's index if other sites link to it. If your real goal is to prevent a page from appearing in search results at all, use a noindex meta tag or HTTP header on that page instead, and make sure the page is NOT disallowed in robots.txt — a disallowed page can't be crawled to even see its noindex tag. | robots.txt में किसी path को disallow करना crawling रोकता है, लेकिन अगर दूसरी sites उससे link करती हैं तो यह guarantee नहीं देता कि URL Google के index से हट जाएगा। अगर आपका real goal यह है कि कोई page search results में बिल्कुल न दिखे, तो उस page पर noindex meta tag या HTTP header उपयोग करें, और सुनिश्चित करें कि वह page robots.txt में disallowed न हो — एक disallowed page को उसका noindex tag देखने के लिए crawl भी नहीं किया जा सकता।</p>
+
+<h3>Privacy and Security | गोपनीयता और सुरक्षा</h3>
+<p>All bot selections, rules, and the file you generate are built entirely inside your browser — nothing is uploaded to a server, no cookies track your inputs, and this tool does not use any AI-powered features. | सभी bot selections, rules, और generate की गई file पूरी तरह आपके browser के भीतर बनती है — कुछ भी server पर upload नहीं होता, कोई cookies आपके inputs को track नहीं करती, और यह टूल किसी भी AI-आधारित सुविधा का उपयोग नहीं करता।</p>
+</div>
+
+<div class="generic-faq">
+<h2>Frequently Asked Questions | अक्सर पूछे जाने वाले प्रश्न</h2>
+
+<div class="generic-faq-item"><p><strong>Q. Where exactly do I upload the generated robots.txt? | Generated robots.txt को exactly कहाँ upload करें?</strong><br>At the absolute root of your domain, so it's reachable at https://yourdomain.com/robots.txt — not in any subfolder. | अपने domain के absolute root पर, ताकि यह https://yourdomain.com/robots.txt पर पहुँचा जा सके — किसी subfolder में नहीं।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Does Google respect the Crawl-delay directive? | क्या Google Crawl-delay directive को respect करता है?</strong><br>No — Google ignores Crawl-delay entirely; use Google Search Console's crawl-rate settings instead. Bing and Yandex generally do respect it. | नहीं — Google Crawl-delay को पूरी तरह ignore करता है; इसके बजाय Google Search Console की crawl-rate settings उपयोग करें। Bing और Yandex आमतौर पर इसे respect करते हैं।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Can I block specific bots like AhrefsBot while allowing Google? | क्या मैं Google को allow करते हुए AhrefsBot जैसे specific bots को block कर सकता हूँ?</strong><br>Yes — toggle on the specific bot and add its own Disallow rules, while leaving Googlebot (or All Bots) configured to allow normal crawling. | हाँ — उस specific bot को toggle on करें और उसके अपने Disallow rules जोड़ें, जबकि Googlebot (या All Bots) को normal crawling allow करने के लिए configured रहने दें।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Does robots.txt prevent a page from showing in Google? | क्या robots.txt किसी page को Google में दिखने से रोकता है?</strong><br>Not reliably — it blocks crawling, not indexing. For guaranteed removal from search results, use a noindex tag on the page itself instead. | पूरी तरह नहीं — यह crawling को रोकता है, indexing को नहीं। Search results से guaranteed removal के लिए, उस page पर noindex tag उपयोग करें।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. What's the difference between Allow and Disallow? | Allow और Disallow में क्या अंतर है?</strong><br>Disallow blocks a path from crawling; Allow creates an exception inside a broader disallowed area, letting a specific sub-path be crawled anyway. | Disallow किसी path को crawling से block करता है; Allow एक broader disallowed area के भीतर exception बनाता है, जिससे कोई specific sub-path फिर भी crawl हो सके।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Do I need to add a Sitemap URL? | क्या मुझे Sitemap URL जोड़ना चाहिए?</strong><br>It's optional but recommended — it helps crawlers discover your pages faster, especially on larger or newer sites. | यह optional है पर recommended है — यह crawlers को आपके pages तेज़ी से discover करने में मदद करता है, खासकर बड़ी या नई sites पर।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. What filename and case should the downloaded file use? | Downloaded file का filename और case क्या होना चाहिए?</strong><br>Exactly "robots.txt" in lowercase — anything else, like "Robots.txt" or "robots.html", will not be recognized by crawlers. | Exactly lowercase में "robots.txt" — कुछ और, जैसे "Robots.txt" या "robots.html", crawlers द्वारा recognize नहीं किया जाएगा।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Can I add multiple Allow and Disallow rules? | क्या मैं कई Allow और Disallow rules जोड़ सकता हूँ?</strong><br>Yes — use "+ Add Allow" and "+ Add Disallow" as many times as needed, and remove any rule with its ✕ button. | हाँ — "+ Add Allow" और "+ Add Disallow" को जितनी बार चाहें उपयोग करें, और किसी rule को उसके ✕ button से हटा दें।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Will this tool verify my file once it's live on my site? | क्या यह टूल मेरी file live होने के बाद उसे verify करेगा?</strong><br>No — it only generates the file; after uploading, verify it using Google Search Console's robots.txt testing feature. | नहीं — यह केवल file generate करता है; upload करने के बाद, Google Search Console की robots.txt testing feature से इसे verify करें।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Is my configuration saved or uploaded anywhere? | क्या मेरा configuration कहीं save या upload होता है?</strong><br>No — everything is built and generated locally in your browser; nothing is sent to a server. | नहीं — सब कुछ आपके browser में locally बनता और generate होता है; कुछ भी server पर नहीं भेजा जाता।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Is this generator free to use? | क्या यह generator उपयोग करने के लिए मुफ़्त है?</strong><br>Yes — completely free, with instant copy and download and no signup required. | हाँ — पूरी तरह मुफ़्त, instant copy और download के साथ और किसी signup की ज़रूरत नहीं।</p></div>
+
+</div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Where exactly do I upload the generated robots.txt?","acceptedAnswer":{"@type":"Answer","text":"At the absolute root of your domain, so it is reachable at https://yourdomain.com/robots.txt, not in any subfolder."}},
+{"@type":"Question","name":"Does Google respect the Crawl-delay directive?","acceptedAnswer":{"@type":"Answer","text":"No, Google ignores Crawl-delay entirely. Use Google Search Console's crawl-rate settings instead. Bing and Yandex generally do respect it."}},
+{"@type":"Question","name":"Can I block specific bots like AhrefsBot while allowing Google?","acceptedAnswer":{"@type":"Answer","text":"Yes, toggle on the specific bot and add its own Disallow rules, while leaving Googlebot or All Bots configured to allow normal crawling."}},
+{"@type":"Question","name":"Does robots.txt prevent a page from showing in Google?","acceptedAnswer":{"@type":"Answer","text":"Not reliably. It blocks crawling, not indexing. For guaranteed removal from search results, use a noindex tag on the page itself instead."}},
+{"@type":"Question","name":"What's the difference between Allow and Disallow?","acceptedAnswer":{"@type":"Answer","text":"Disallow blocks a path from crawling, while Allow creates an exception inside a broader disallowed area, letting a specific sub-path be crawled anyway."}},
+{"@type":"Question","name":"Do I need to add a Sitemap URL?","acceptedAnswer":{"@type":"Answer","text":"It is optional but recommended, since it helps crawlers discover pages faster, especially on larger or newer sites."}},
+{"@type":"Question","name":"What filename and case should the downloaded file use?","acceptedAnswer":{"@type":"Answer","text":"Exactly robots.txt in lowercase. Anything else will not be recognized by crawlers."}},
+{"@type":"Question","name":"Can I add multiple Allow and Disallow rules?","acceptedAnswer":{"@type":"Answer","text":"Yes, use Add Allow and Add Disallow as many times as needed, and remove any rule with its remove button."}},
+{"@type":"Question","name":"Will this tool verify my file once it's live on my site?","acceptedAnswer":{"@type":"Answer","text":"No, it only generates the file. After uploading, verify it using Google Search Console's robots.txt testing feature."}},
+{"@type":"Question","name":"Is my configuration saved or uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No, everything is built and generated locally in your browser and nothing is sent to a server."}},
+{"@type":"Question","name":"Is this generator free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, it is completely free with instant copy and download, and no signup is required."}}
+]}
+</script>
+
 <button id="rtgScrollTop">↑</button>
 <footer class="site-footer"><p>© 2025 <a href="../index.html">ApneSoftware.com</a> · Free Tools for Everyone</p></footer>
 <script src="../assets/common.js"></script>

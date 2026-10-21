@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="manifest" href="/site.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ApneSoftware">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#262B3A">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>JPG vs PNG vs WebP vs HEIC — Which Image Format Should You Use? — ApneSoftware</title>
+<meta name="description" content="A plain-language comparison of JPG, PNG, WebP and HEIC — what each format is actually good at, when converting between them makes sense, and when it doesn't.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://apnesoftware.com/blog/image-format-guide.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JPG vs PNG vs WebP vs HEIC — Which Image Format Should You Use?">
+<meta property="og:description" content="A plain-language comparison of JPG, PNG, WebP and HEIC — what each format is actually good at, and when converting between them makes sense.">
+<meta property="og:url" content="https://apnesoftware.com/blog/image-format-guide.html">
+<meta property="og:site_name" content="ApneSoftware">
+<meta property="og:image" content="https://apnesoftware.com/assets/og-image.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JPG vs PNG vs WebP vs HEIC — Which Image Format Should You Use?">
+<meta name="twitter:description" content="What each image format is actually good at, and when converting between them makes sense.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "JPG vs PNG vs WebP vs HEIC — Which Image Format Should You Use?",
+  "description": "A plain-language comparison of JPG, PNG, WebP and HEIC — what each format is actually good at, when converting between them makes sense, and when it doesn't.",
+  "author": {"@type": "Organization", "name": "ApneSoftware"},
+  "publisher": {"@type": "Organization", "name": "ApneSoftware", "logo": {"@type": "ImageObject", "url": "https://apnesoftware.com/assets/og-image.png"}},
+  "mainEntityOfPage": "https://apnesoftware.com/blog/image-format-guide.html",
+  "datePublished": "2026-07-25",
+  "dateModified": "2026-07-25"
+}
+</script>
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.doc-wrap{max-width:800px;margin:0 auto;}
+.doc-hero{background:linear-gradient(135deg,rgba(124,92,252,.12),rgba(22,192,121,.08));border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:40px 36px 32px;margin-bottom:36px;}
+.doc-hero h1{font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:800;margin-bottom:8px;}
+.doc-hero p{color:rgba(255,255,255,.65);font-size:.98rem;}
+.doc-body{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:36px;line-height:1.85;}
+.doc-body h2{font-size:1.15rem;font-weight:700;color:var(--accent-2);margin:28px 0 10px;}
+.doc-body h2:first-child{margin-top:0;}
+.doc-body h3{font-size:1rem;font-weight:700;margin:18px 0 7px;}
+.doc-body p,.doc-body li{color:rgba(255,255,255,.82);margin-bottom:10px;}
+.doc-body ul,.doc-body ol{padding-left:22px;margin-bottom:14px;}
+.doc-body a{color:var(--accent);}
+.doc-body strong{color:#fff;}
+.doc-body table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.9rem;}
+.doc-body th{background:rgba(124,92,252,.2);padding:10px 12px;text-align:left;border:1px solid rgba(255,255,255,.15);}
+.doc-body td{padding:10px 12px;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.78);}
+.doc-body tr:nth-child(even) td{background:rgba(255,255,255,.03);}
+.breadcrumb{display:flex;align-items:center;gap:6px;font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:20px;flex-wrap:wrap;}
+.breadcrumb a{color:rgba(255,255,255,.6);}
+.breadcrumb span{opacity:.4;}
+.cta-box{background:rgba(124,92,252,.1);border:1px solid rgba(124,92,252,.3);border-radius:12px;padding:16px 20px;margin:18px 0;}
+.cta-box a{font-weight:700;}
+.article-meta{display:flex;gap:14px;font-size:.82rem;color:rgba(255,255,255,.5);margin-top:10px;flex-wrap:wrap;}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <a class="brand" href="../index.html">Apne<span>Software</span></a>
+    <a class="back-link" href="../blog.html">← All Articles</a>
+  </div>
+</header>
+<div class="container">
+  <div class="doc-wrap">
+    <nav class="breadcrumb"><a href="https://apnesoftware.com/">Home</a><span>›</span><a href="../blog.html">Blog</a><span>›</span><span>Image Format Guide</span></nav>
+
+<div class="doc-hero">
+  <h1>🖼️ JPG vs PNG vs WebP vs HEIC — Which Should You Use?</h1>
+  <p>Four formats, four very different jobs. Here's what each one is actually for, and when converting between them makes sense.</p>
+  <div class="article-meta"><span>📅 Updated July 2026</span><span>⏱ 7 min read</span><span>🔒 100% browser-based tools used</span></div>
+</div>
+
+<div class="doc-body">
+
+<h2>The short version</h2>
+<table>
+<tr><th>Format</th><th>Best for</th><th>Weak point</th></tr>
+<tr><td><strong>JPG / JPEG</strong></td><td>Photos, scanned documents — small file size</td><td>No transparency; loses a little quality every time it's re-saved</td></tr>
+<tr><td><strong>PNG</strong></td><td>Logos, screenshots, graphics with sharp edges or text, transparency</td><td>Much larger file size for photos</td></tr>
+<tr><td><strong>WebP</strong></td><td>Websites — smaller than JPG/PNG at similar quality, supports transparency</td><td>Still not universally supported by older software outside browsers</td></tr>
+<tr><td><strong>HEIC</strong></td><td>iPhone photos — very efficient storage on-device</td><td>Barely supported outside Apple devices; most websites and Android apps reject it</td></tr>
+</table>
+
+<h2>JPG: the universal default for photos</h2>
+<p>JPG uses "lossy" compression — it throws away image detail the human eye is less likely to notice, which is why a photo can shrink to a tenth of its raw size and still look fine. The trade-off is that detail, once discarded, is gone; re-saving a JPG repeatedly (edit, save, edit, save) compounds the quality loss slightly each time. JPG has no support for transparency, so a logo saved as JPG will always get a solid background instead of a see-through one.</p>
+
+<h2>PNG: when edges and transparency matter</h2>
+<p>PNG uses "lossless" compression — nothing is discarded, which is exactly why it's the right choice for screenshots, logos, and anything with flat colors or sharp text edges (lossy compression tends to create visible fuzz around sharp edges). PNG also supports a transparent background, which JPG cannot do at all. The cost is file size: a PNG photo is typically several times larger than the same photo as a JPG.</p>
+
+<h2>WebP: a smaller, modern alternative</h2>
+<p>WebP was built specifically to beat both JPG and PNG at their own games — it supports both lossy and lossless modes, transparency, and typically produces files 25-35% smaller than an equivalent-quality JPG. Nearly every modern browser supports WebP natively, which is why it's increasingly the default output of image-editing and screenshot tools. The catch: some older desktop software, print workflows, and a few government/form-upload portals still only accept JPG or PNG, so you may need to convert a WebP image back before using it outside a browser.</p>
+
+<h2>HEIC: efficient, but only on Apple's turf</h2>
+<p>HEIC (High Efficiency Image Container) is the default photo format on modern iPhones — it stores photos at roughly half the size of an equivalent JPG with no visible quality loss, which is great for saving storage on your phone. The problem shows up the moment you try to use that photo somewhere else: most Android devices, Windows programs, websites, and online forms either can't open a HEIC file at all or display a broken-image icon. <a href="../tools/heic-to-jpg-converter.html">Converting HEIC to JPG</a> before uploading or sharing solves this instantly.</p>
+
+<h2>A practical decision guide</h2>
+<ul>
+<li><strong>Uploading a photo to a form, portal, or job application?</strong> Use JPG — it's the format virtually every system accepts.</li>
+<li><strong>Need a logo or screenshot with a transparent background?</strong> Use PNG, or WebP if the destination supports it.</li>
+<li><strong>Building or optimizing a website?</strong> WebP — smaller files mean faster page loads.</li>
+<li><strong>Got a HEIC photo from an iPhone that won't open on a website or a friend's Android phone?</strong> Convert it to JPG first.</li>
+<li><strong>File too big for an upload limit, regardless of format?</strong> Compress it rather than switching format.</li>
+</ul>
+
+<div class="cta-box">💡 Tools that can help: <a href="../tools/image-converter.html">Image Converter</a> (switch between JPG/PNG/WebP), <a href="../tools/heic-to-jpg-converter.html">HEIC to JPG Converter</a>, and <a href="../tools/image-compressor.html">Image Compressor</a> (shrink file size without changing format).</div>
+
+<h2>Common mistakes</h2>
+<ul>
+<li><strong>Converting JPG → PNG expecting better quality.</strong> PNG can't restore detail a JPG already discarded — it will just produce a larger file with the same (already-lossy) image inside.</li>
+<li><strong>Using PNG for ordinary photos.</strong> This is the most common cause of a photo library or website being unnecessarily large.</li>
+<li><strong>Repeatedly re-saving the same JPG while editing.</strong> Each save degrades it slightly; keep an original copy and export only the final version as JPG.</li>
+</ul>
+
+<h2>Privacy note</h2>
+<p>Conversion and compression both happen entirely inside your browser on this site — your photos are never uploaded to a server.</p>
+
+</div>
+  </div>
+</div>
+<script src="../assets/common.js"></script>
+<!-- Default Statcounter code for Apne Software
+https://apnesoftware.com -->
+<script type="text/javascript">
+var sc_project=13334460;
+var sc_invisible=1;
+var sc_security="a5854dc7";
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/13334460/0/a5854dc7/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+</body>
+</html>

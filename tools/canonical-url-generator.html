@@ -144,6 +144,72 @@
   </div>
 </div></div>
 
+<div class="generic-about">
+<h2>About This Tool | इस टूल के बारे में</h2>
+<p>This Canonical URL Generator builds a clean <code>&lt;link rel="canonical"&gt;</code> tag from any page URL, normalizing it by forcing HTTPS, optionally stripping "www", removing tracking parameters and trailing slashes, and lowercasing the path — then lets you generate the same clean tag for a whole list of URLs at once. | यह Canonical URL Generator किसी भी page URL से एक साफ़ <code>&lt;link rel="canonical"&gt;</code> tag बनाता है, जिसमें HTTPS लागू करना, वैकल्पिक रूप से "www" हटाना, tracking parameters और trailing slashes हटाना, और path को lowercase करना शामिल है — और फिर पूरी URLs की list के लिए एक साथ वही clean tag generate करने देता है।</p>
+
+<h3>Why duplicate content needs a canonical tag | Duplicate content को canonical tag की ज़रूरत क्यों है</h3>
+<p>The same piece of content is often reachable at several different URLs — with and without "www", with a tracking parameter like utm_source, or with and without a trailing slash — and search engines treat each variant as a separate page unless told otherwise. | एक ही content अक्सर कई अलग-अलग URLs पर पहुंचा जा सकता है — "www" के साथ और बिना, utm_source जैसे tracking parameter के साथ, या trailing slash के साथ और बिना — और search engines हर variant को अलग page मानते हैं जब तक उन्हें बताया न जाए।</p>
+<p>A self-referencing or cross-referencing canonical tag tells Google exactly which URL is the "master" version, consolidating ranking signals onto that one URL instead of splitting them thinly across several near-duplicate addresses. | एक self-referencing या cross-referencing canonical tag Google को exactly बता देता है कि कौन-सा URL "master" version है, ranking signals को कई near-duplicate addresses में बंटने के बजाय उस एक URL पर इकट्ठा कर देता है।</p>
+
+<h3>What each normalization checkbox does | हर normalization checkbox क्या करता है</h3>
+<p>Force HTTPS rewrites an http:// URL to https://, since canonical tags should always point at the secure version even if your server redirects automatically; Remove www strips a leading "www." from the hostname if your site's canonical version doesn't use it. | Force HTTPS किसी http:// URL को https:// में बदल देता है, क्योंकि canonical tags को हमेशा secure version की ओर point करना चाहिए भले ही server automatically redirect करता हो; Remove www hostname से शुरुआती "www." हटा देता है अगर आपकी site का canonical version इसे इस्तेमाल नहीं करता।</p>
+<p>Remove trailing slash and Lowercase URL fix the two most common sources of accidental duplicate URLs, while Remove tracking params strips common analytics parameters (utm_source, gclid, fbclid, session IDs and more) that should never appear in a canonical URL. | Remove trailing slash और Lowercase URL accidental duplicate URLs के दो सबसे common sources को fix करते हैं, जबकि Remove tracking params common analytics parameters (utm_source, gclid, fbclid, session IDs और भी कई) हटा देता है जिन्हें canonical URL में कभी नहीं होना चाहिए।</p>
+
+<h3>Using the Bulk Canonical Generator | Bulk Canonical Generator का इस्तेमाल</h3>
+<p>For a whole site migration or a batch of product pages, paste one URL per line into the bulk box, generate all the tags together, and download the list as a file to hand off to a developer or paste into a CMS. | पूरी site migration या product pages के batch के लिए, bulk box में एक line में एक URL paste करें, सभी tags एक साथ generate करें, और list को एक file के रूप में download करें ताकि किसी developer को दे सकें या CMS में paste कर सकें।</p>
+
+<h3>Privacy and Security | गोपनीयता और सुरक्षा</h3>
+<p>All URL parsing and tag generation happens locally using the browser's built-in URL API — no URL you type or paste, single or bulk, is ever sent to an ApneSoftware server. | सभी URL parsing और tag generation browser के built-in URL API का उपयोग करके locally होती है — आपके द्वारा टाइप या paste किया गया कोई भी URL, single या bulk, कभी ApneSoftware server को नहीं भेजा जाता।</p>
+</div>
+
+<div class="generic-faq">
+<h2>Frequently Asked Questions | अक्सर पूछे जाने वाले प्रश्न</h2>
+
+<div class="generic-faq-item"><p><strong>Q. What exactly does a canonical tag do? | Canonical tag असल में क्या करता है?</strong><br>It tells search engines which URL is the definitive, "master" version of a page's content when the same or similar content is reachable at more than one address. | यह search engines को बताता है कि किसी page के content का definitive, "master" version कौन-सा URL है, जब एक जैसा या similar content एक से ज़्यादा address पर पहुंचा जा सकता हो।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Where do I paste the generated tag? | Generated tag को कहाँ paste करूं?</strong><br>Inside the <code>&lt;head&gt;</code> section of the HTML page it refers to, anywhere before the closing <code>&lt;/head&gt;</code> tag. | उस HTML page के <code>&lt;head&gt;</code> section के भीतर जिसे यह refer करता है, closing <code>&lt;/head&gt;</code> tag से पहले कहीं भी।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Should every page have its own canonical tag, even with no duplicates? | क्या हर page का अपना canonical tag होना चाहिए, duplicates न होने पर भी?</strong><br>Yes — a self-referencing canonical (pointing at the page's own clean URL) is considered an SEO best practice even when no duplicate currently exists. | हाँ — एक self-referencing canonical (page के अपने clean URL की ओर point करता हुआ) बिना किसी duplicate के भी एक SEO best practice माना जाता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Why remove UTM and tracking parameters from the canonical URL? | Canonical URL से UTM और tracking parameters क्यों हटाएं?</strong><br>Tracking parameters create technically different URLs for the same content, so including them in a canonical tag would defeat its purpose of pointing to one clean master version. | Tracking parameters एक ही content के लिए technically अलग URLs बना देते हैं, इसलिए canonical tag में उन्हें शामिल करना एक clean master version की ओर point करने के उद्देश्य को ही खत्म कर देगा।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Should I use a relative or absolute URL in the tag? | Tag में relative या absolute URL इस्तेमाल करूं?</strong><br>Always absolute — a canonical tag should always use the full URL including https:// and the domain, never a relative path like /page/. | हमेशा absolute — canonical tag में हमेशा https:// और domain सहित पूरा URL इस्तेमाल होना चाहिए, कभी /page/ जैसा relative path नहीं।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Does trailing slash vs. no trailing slash really matter? | क्या trailing slash होने या न होने से असल में फ़र्क़ पड़ता है?</strong><br>Yes, to a search engine example.com/page/ and example.com/page can be seen as two different URLs, so pick one style and apply it consistently sitewide via your canonical tags. | हाँ, search engine के लिए example.com/page/ और example.com/page दो अलग URLs हो सकते हैं, इसलिए एक style चुनें और canonical tags के ज़रिए पूरी site पर consistently लागू करें।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. How should paginated pages (page 2, 3...) use canonical tags? | Paginated pages (page 2, 3...) canonical tags कैसे इस्तेमाल करें?</strong><br>Each paginated page should canonicalize to itself, not to page 1, since each page shows distinct content that search engines should be able to index separately. | हर paginated page को खुद को canonicalize करना चाहिए, page 1 को नहीं, क्योंकि हर page अलग content दिखाता है जिसे search engines अलग से index कर सकें।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Can a canonical tag point to a completely different domain? | क्या canonical tag पूरी तरह अलग domain की ओर point कर सकता है?</strong><br>Yes — this is common for syndicated content, where the republishing site canonicalizes to the original source domain to avoid duplicate-content competition. | हाँ — यह syndicated content के लिए common है, जहाँ republish करने वाली site duplicate-content competition से बचने के लिए original source domain को canonicalize करती है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. What's the difference between a canonical tag and a 301 redirect? | Canonical tag और 301 redirect में क्या फ़र्क़ है?</strong><br>A 301 redirect actually sends visitors and search engines to a new URL and the old one stops loading, while a canonical tag lets the original URL still load normally but tells search engines to credit a different URL for ranking purposes. | 301 redirect असल में visitors और search engines को एक नए URL पर भेज देता है और पुराना URL load होना बंद कर देता है, जबकि canonical tag original URL को सामान्य रूप से load होने देता है पर search engines को ranking के लिए किसी दूसरे URL को credit देने के लिए कहता है।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Will adding a canonical tag fix duplicate content immediately? | Canonical tag जोड़ने से duplicate content तुरंत fix हो जाएगा?</strong><br>It guides search engines going forward, but re-crawling and re-consolidation of ranking signals can take days to weeks, so results are not instant. | यह आगे के लिए search engines को guide करता है, पर ranking signals का re-crawling और re-consolidation होने में दिनों से हफ़्तों लग सकते हैं, इसलिए results instant नहीं होते।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Is this tool only for SEO professionals? | क्या यह tool केवल SEO professionals के लिए है?</strong><br>No — any website owner, blogger or developer who wants to avoid duplicate-content issues can use it; no SEO expertise is required to generate or apply the tag. | नहीं — कोई भी website owner, blogger या developer जो duplicate-content issues से बचना चाहता है इसे इस्तेमाल कर सकता है; tag generate या apply करने के लिए किसी SEO expertise की ज़रूरत नहीं।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Is my URL list uploaded anywhere when I use bulk generation? | Bulk generation इस्तेमाल करते समय क्या मेरी URL list कहीं upload होती है?</strong><br>No — bulk generation runs the same local URL-parsing logic on each line you paste, entirely inside your browser, with nothing sent to a server. | नहीं — bulk generation आपके द्वारा paste की गई हर line पर वही local URL-parsing logic चलाता है, पूरी तरह आपके browser के भीतर, server को कुछ भी नहीं भेजा जाता।</p></div>
+
+<div class="generic-faq-item"><p><strong>Q. Is this tool free? | क्या यह tool free है?</strong><br>Yes, completely free with no signup, and no limit on how many single or bulk canonical tags you generate. | हाँ, पूरी तरह free बिना signup के, और आप कितने भी single या bulk canonical tags generate करें उसकी कोई limit नहीं।</p></div>
+</div>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What exactly does a canonical tag do?","acceptedAnswer":{"@type":"Answer","text":"It tells search engines which URL is the definitive, master version of a page's content when the same or similar content is reachable at more than one address."}},
+{"@type":"Question","name":"Where do I paste the generated tag?","acceptedAnswer":{"@type":"Answer","text":"Inside the head section of the HTML page it refers to, anywhere before the closing head tag."}},
+{"@type":"Question","name":"Should every page have its own canonical tag, even with no duplicates?","acceptedAnswer":{"@type":"Answer","text":"Yes, a self-referencing canonical pointing at the page's own clean URL is considered an SEO best practice even when no duplicate currently exists."}},
+{"@type":"Question","name":"Why remove UTM and tracking parameters from the canonical URL?","acceptedAnswer":{"@type":"Answer","text":"Tracking parameters create technically different URLs for the same content, so including them in a canonical tag would defeat its purpose of pointing to one clean master version."}},
+{"@type":"Question","name":"Should I use a relative or absolute URL in the tag?","acceptedAnswer":{"@type":"Answer","text":"Always absolute; a canonical tag should always use the full URL including https and the domain, never a relative path."}},
+{"@type":"Question","name":"Does trailing slash vs no trailing slash really matter?","acceptedAnswer":{"@type":"Answer","text":"Yes, to a search engine example.com/page/ and example.com/page can be seen as two different URLs, so pick one style and apply it consistently sitewide."}},
+{"@type":"Question","name":"How should paginated pages use canonical tags?","acceptedAnswer":{"@type":"Answer","text":"Each paginated page should canonicalize to itself, not to page 1, since each page shows distinct content that search engines should index separately."}},
+{"@type":"Question","name":"Can a canonical tag point to a completely different domain?","acceptedAnswer":{"@type":"Answer","text":"Yes, this is common for syndicated content, where the republishing site canonicalizes to the original source domain to avoid duplicate-content competition."}},
+{"@type":"Question","name":"What is the difference between a canonical tag and a 301 redirect?","acceptedAnswer":{"@type":"Answer","text":"A 301 redirect actually sends visitors and search engines to a new URL and the old one stops loading, while a canonical tag lets the original URL still load normally but tells search engines to credit a different URL for ranking."}},
+{"@type":"Question","name":"Will adding a canonical tag fix duplicate content immediately?","acceptedAnswer":{"@type":"Answer","text":"It guides search engines going forward, but re-crawling and re-consolidation of ranking signals can take days to weeks."}},
+{"@type":"Question","name":"Is this tool only for SEO professionals?","acceptedAnswer":{"@type":"Answer","text":"No, any website owner, blogger or developer who wants to avoid duplicate-content issues can use it; no SEO expertise is required."}},
+{"@type":"Question","name":"Is my URL list uploaded anywhere when I use bulk generation?","acceptedAnswer":{"@type":"Answer","text":"No, bulk generation runs the same local URL-parsing logic on each line you paste, entirely inside your browser, with nothing sent to a server."}},
+{"@type":"Question","name":"Is this tool free?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no signup, and no limit on how many single or bulk canonical tags you generate."}}
+]}
+</script>
+
 <button id="canScrollTop">↑</button>
 <footer class="site-footer"><p>© 2025 <a href="../index.html">ApneSoftware.com</a> · Free Tools for Everyone</p></footer>
 <script src="../assets/common.js"></script>
